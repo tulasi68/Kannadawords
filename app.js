@@ -22,6 +22,7 @@ function castVote(entryId, altId) {
   if (!state.votes[entryId]) state.votes[entryId] = {};
   state.votes[entryId][altId] = (state.votes[entryId][altId] || 0) + 1;
   saveState(state); filterAndRender();
+renderContextual();
 }
 function getSuggestions(entryId) {
   const state = loadState(); return state.suggestions[entryId] || [];
@@ -125,6 +126,52 @@ function submitSuggestion(id) {
   if(!input.value.trim()){input.focus();return;}
   addSuggestion(id,input.value); input.value=""; document.getElementById("improve-"+id).classList.add("hidden");
 }
+
+const contextualGrid = document.getElementById("contextual-grid");
+const naturalnessBody = document.getElementById("naturalness-body");
+function highlightSwaps(text, swaps, side) {
+  let safe = escapeHtml(text);
+  const terms = swaps.map(pair => pair[side]).filter(Boolean).sort((a,b)=>b.length-a.length);
+  terms.forEach(term => {
+    const escaped = escapeHtml(term).replace(/[.*+?^${}()|[\]\\]/g, "\\function filterAndRender() {");
+    safe = safe.replace(new RegExp(escaped, "g"), match => "<strong class='font-bold text-amber-800'>" + match + "</strong>");
+  });
+  return safe;
+}
+function voteContext(id, choice) {
+  const state = loadState();
+  if (!state.contextualVotes) state.contextualVotes = {};
+  if (!state.contextualVotes[id]) state.contextualVotes[id] = { support:0, revise:0 };
+  state.contextualVotes[id][choice] = (state.contextualVotes[id][choice] || 0) + 1;
+  saveState(state); renderContextual();
+}
+function renderContextual() {
+  if (!contextualGrid || typeof contextualExamples === "undefined") return;
+  const state = loadState();
+  contextualGrid.innerHTML = contextualExamples.map(item => {
+    const votes = (state.contextualVotes && state.contextualVotes[item.id]) || {support:0,revise:0};
+    return `<article class="bg-white border border-stone-200 rounded-xl p-4 shadow-sm">
+      <h3 class="font-semibold text-stone-800 mb-3">${escapeHtml(item.title)}</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="rounded-lg bg-stone-50 p-3"><p class="text-xs uppercase tracking-wide text-stone-500 mb-2">Original sentence</p><p class="kn leading-7">${highlightSwaps(item.original,item.swaps,0)}</p></div>
+        <div class="rounded-lg bg-amber-50 p-3"><p class="text-xs uppercase tracking-wide text-amber-800 mb-2">Proposed rendering</p><p class="kn leading-7">${highlightSwaps(item.proposed,item.swaps,1)}</p></div>
+      </div>
+      <p class="text-xs text-stone-500 mt-3">${item.swaps.map(pair=>escapeHtml(pair[0])+" → "+escapeHtml(pair[1])).join(" · ")}</p>
+      ${item.note ? `<p class="text-xs text-stone-500 mt-2">${escapeHtml(item.note)}</p>` : ""}
+      <div class="flex flex-wrap items-center gap-2 mt-4">
+        <button onclick="voteContext('${item.id}','support')" class="text-xs rounded-full border border-emerald-300 text-emerald-800 px-3 py-1.5 hover:bg-emerald-50">Works in context · ${votes.support||0}</button>
+        <button onclick="voteContext('${item.id}','revise')" class="text-xs rounded-full border border-orange-300 text-orange-800 px-3 py-1.5 hover:bg-orange-50">Needs revision · ${votes.revise||0}</button>
+      </div>
+    </article>`;
+  }).join("");
+  if (naturalnessBody && typeof replacementNaturalness !== "undefined") {
+    naturalnessBody.innerHTML = replacementNaturalness.map(row => `<tr class="border-t border-stone-100">
+      <td class="p-2 kn">${escapeHtml(row.word)}</td><td class="p-2 kn">${escapeHtml(row.alternative)}</td>
+      <td class="p-2"><span class="inline-block rounded-full px-2 py-0.5 text-xs ${row.status==="natural"?"bg-emerald-100 text-emerald-800":row.status==="coined"?"bg-yellow-100 text-yellow-800":row.status==="contested"?"bg-orange-100 text-orange-800":row.status==="archaic"?"bg-red-100 text-red-800":"bg-stone-200 text-stone-800"}">${escapeHtml(row.status)}</span></td>
+      <td class="p-2 text-stone-600">${escapeHtml(row.why)}</td></tr>`).join("");
+  }
+}
+window.voteContext = voteContext;
 function filterAndRender() {
   const q=searchInput.value.trim().toLocaleLowerCase(), cat=categorySelect.value;
   const filtered=wordEntries.filter(e => {

@@ -186,3 +186,4 @@ window.castVote=castVote; window.toggleImproveForm=toggleImproveForm; window.sub
 searchInput.addEventListener("input",filterAndRender);
 categorySelect.addEventListener("change",filterAndRender);
 filterAndRender();
+renderContextual();

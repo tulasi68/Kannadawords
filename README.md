@@ -7,12 +7,12 @@ A community-driven Kannada vocabulary project exploring native Kannada alternati
 - Static HTML, CSS and JavaScript frontend hosted at Vercel.
 - Cloudflare Worker API for shared community activity.
 - Cloudflare D1 database for shared votes and suggestions.
-- Existing 42? starter word pairs remain bundled in `data.js`; community data is fetched from the API.
+- Existing 42 starter word pairs remain bundled in `data.js`; community data is fetched from the API.
 - Search and category filters run in the browser.
 
 ## Shared community storage
 
-The API is deployed as `https://kannadawords-api.tulasianand6.workers.dev`.
+The intended API endpoint is `https://kannadawords-api.tulasianand6.workers.dev`. The Worker has not yet been deployed because Cloudflare's D1 management API is returning 404 for the newly created database; shared community features will become active after the binding and migration are successfully applied.
 
 - `GET /api/health` — service health check.
 - `GET /api/community` — aggregated votes and visible suggestions.
@@ -23,8 +23,8 @@ The browser stores a random device identifier in localStorage. This prevents acc
 
 ## Cloudflare resources
 
-- D1 database: `kannadawords-db`
-- Worker: `kannadawords-api`
+- D1 database: `kannadawords-db` (created; API binding and migration pending)
+- Worker: `kannadawords-api` (deployment pending)
 - D1 binding in the Worker: `DB`
 - Migration: `database/002_cloudflare_d1_community.sql`
 

@@ -61,7 +61,7 @@ The separate `halegannadaEntries` array contains these further candidates. It cu
 | ಅಕ್ಕಜ | Wonder / surprise | Unverified |
 | ಅಗಡು | Mischief / valour | Unverified |
 | ಹೊಂತ | Vow / pledge | Unverified |
-| ಹೊಂದु | To die | Unverified |
+| ಹೊಂದು | To die | Unverified |
 | ಹೊಗರು | Radiance / splendour | Unverified |
 | ಎರ್ದೆ | Husband; to captivate | Unverified — senses need separation |
 | ಒಳಪೊಕ್ಕಳ್ | To enter | Unverified |

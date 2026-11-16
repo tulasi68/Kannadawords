@@ -6,7 +6,40 @@ const STORAGE_KEY = "kannada_desi_v3";
 const grid = document.getElementById("grid");
 const searchInput = document.getElementById("search");
 const categorySelect = document.getElementById("category");
+
 const stats = document.getElementById("stats");
+
+// Merge the audited set into existing cards (rather than duplicating them),
+// then append new terms and the explicitly labelled no-alternative records.
+const auditedById = Object.fromEntries((typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries).map(item => [item.id, item]));
+const votingEntries = wordEntries.map(entry => {
+  const audit = auditedById[entry.id];
+  return audit ? {
+    ...entry,
+    sanskrit: audit.sourceForm,
+    meaning: audit.sourceMeaning || entry.meaning,
+    category: audit.category || entry.category,
+    sourceEtymology: audit.sourceEtymology,
+    alternatives: audit.alternatives,
+    rejectedAlternatives: audit.rejectedAlternatives || [],
+    editorialNote: audit.editorialNote || ""
+  } : entry;
+}).concat((typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries)
+  .filter(item => !wordEntries.some(entry => entry.id === item.id))
+  .map(item => ({...item, sanskrit:item.sourceForm, meaning:item.sourceMeaning, category:item.category || "Audited proposals", rejectedAlternatives:item.rejectedAlternatives || []})))
+  .concat((typeof noAlternativeEntries === "undefined" ? [] : noAlternativeEntries).map(item => ({
+    id:"no-alt-" + item.id,
+    sanskrit:item.sourceForm,
+    meaning:item.meaning,
+    category:"No viable native alternative",
+    sourceEtymology:[{form:item.sourceForm,etymology:item.etymology}],
+    rejectedAlternatives:item.rejected || [],
+    editorialNote:item.note,
+    noAlternative:true,
+    alternatives:[{id:"no-alternative",word:"No viable native alternative",note:"Community position — vote to agree or propose a candidate",isNoAlternative:true,viability:"no_alternative",etymologyParts:[]}]
+  })));
+
+const etymologyName = code => (typeof etymologyLabels !== "undefined" && etymologyLabels[code]) || code || "Unknown";
 
 function loadState() {
   try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { votes: {}, suggestions: {} }; }
@@ -49,6 +82,21 @@ function languageRows(entry, alts) {
     ["Halegannada", entry.halegannada || "Not yet sourced"],
     ["Proto-Dravidian root", first.proto || "Not reconstructed / not yet sourced"]
   ];
+  const sourceParts = Array.isArray(entry.sourceEtymology) ? entry.sourceEtymology : (entry.sourceEtymology ? [entry.sourceEtymology] : []);
+  const replacementParts = first.etymologyParts || [];
+  const pure = replacementParts.length > 0 && replacementParts.every(part =>
+    part.etymology === "dravidian" || (part.etymology === "coinage" && part.builtFromDravidian === true)
+  );
+  const sourceHtml = sourceParts.length ? sourceParts.map(part =>
+    `<span class="inline-block mr-2">${escapeHtml(part.form)} <span class="text-xs text-stone-500">(${escapeHtml(etymologyName(part.etymology))})</span></span>`
+  ).join("") : "Not yet classified";
+  const replacementHtml = replacementParts.length ? replacementParts.map(part =>
+    `<span class="inline-block mr-2">${escapeHtml(part.form)} <span class="text-xs text-stone-500">(${escapeHtml(etymologyName(part.etymology))})</span></span>`
+  ).join("") : (entry.noAlternative ? "No replacement proposed" : "Not individually classified");
+  rows.push(["Source-word etymology", sourceHtml]);
+  rows.push(["Replacement breakdown", replacementHtml]);
+  if (first.viability) rows.push(["Assessment", first.viability === "coinage" ? "Coinage — component origins shown above" : first.viability === "clean" ? "Proposed clean alternative" : "No viable native alternative"]);
+  if (replacementParts.length) rows.push(["Dravidian-only check", pure ? "Passes the proposed token audit" : "Does not pass — review required"]);
   return rows.map(([label,value]) => {
     const evidence = label === "Halegannada" ? entry.halegannadaEvidence : null;
     const status = evidence?.status || (label === "Halegannada" && entry.halegannada ? "unverified" : null);
@@ -81,22 +129,26 @@ function render(entries) {
     const rows = languageRows(entry, alts);
     const voteHtml = alts.map(alt => {
       const count = getVoteCount(entry.id,alt.id);
-      return `<button onclick="castVote('${entry.id}','${alt.id}')" class="text-xs border border-emerald-200 text-emerald-800 rounded-full px-2 py-1 hover:bg-emerald-50">${escapeHtml(alt.word)} · ${count} vote${count===1?"":"s"}</button>`;
+      const label = alt.isNoAlternative ? "Agree: no viable native alternative" : alt.word;
+      return `<button onclick="castVote('${entry.id}','${alt.id}')" class="text-xs border border-emerald-200 text-emerald-800 rounded-full px-2 py-1 hover:bg-emerald-50">${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
     }).join(" ");
     card.innerHTML = `
       <div class="flex items-start justify-between gap-2 mb-3">
         <span class="text-xs font-medium uppercase tracking-wide text-amber-700 bg-amber-50 px-2 py-0.5 rounded">${escapeHtml(entry.category)}</span>
         ${totalVotes ? `<span class="text-xs text-stone-400">${totalVotes} votes</span>` : ""}
       </div>
+      ${entry.noAlternative ? '<div class="mb-3 rounded-lg border border-orange-200 bg-orange-50 px-3 py-2 text-sm text-orange-900"><strong>No viable native alternative</strong><p class="text-xs mt-1">This is an honest open category, not a failed card. Community proposals can still be added for review.</p></div>' : ''}
       <div class="mb-3">
-        <p class="text-xs text-stone-400 mb-0.5">Sanskrit-derived word used in Kannada</p>
+        <p class="text-xs text-stone-400 mb-0.5">Word used in Kannada</p>
         <p class="kn text-2xl font-medium text-stone-800">${escapeHtml(entry.sanskrit)}</p>
         <p class="text-sm text-stone-600 mt-1">${escapeHtml(entry.meaning)}</p>
       </div>
       <section class="rounded-lg bg-stone-50 border border-stone-200 px-3 py-2">
-        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Equivalent words across languages</h3>
+        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Word-by-word etymology and equivalents</h3>
         ${rows}
       </section>
+      ${entry.rejectedAlternatives && entry.rejectedAlternatives.length ? `<div class="mt-3 rounded-lg border border-red-100 bg-red-50 px-3 py-2"><p class="text-xs font-semibold text-red-800 mb-1">Rejected / non-native proposals</p>${entry.rejectedAlternatives.map(item => `<p class="text-xs text-red-900 mt-1"><span class="kn font-semibold">${escapeHtml(item.word)}</span> · ${escapeHtml(etymologyName(item.etymology))} — ${escapeHtml(item.reason || "Not accepted as a Dravidian-only alternative.")}</p>`).join("")}</div>` : ""}
+      ${entry.editorialNote ? `<p class="text-xs text-stone-600 mt-2">${escapeHtml(entry.editorialNote)}</p>` : ""}
       <div class="mt-3 pt-3 border-t border-stone-100">
         <p class="text-xs text-stone-500 mb-2">Vote for a Kannada alternative</p>
         <div class="flex flex-wrap gap-2">${voteHtml}</div>
@@ -222,10 +274,10 @@ window.submitSentenceReview = submitSentenceReview;
 
 function filterAndRender() {
   const q=searchInput.value.trim().toLocaleLowerCase(), cat=categorySelect.value;
-  const filtered=wordEntries.filter(e => {
+  const filtered=votingEntries.filter(e => {
     if(cat!=="all" && e.category!==cat) return false;
     const sentence=sentenceExamples[e.id] || {};
-    const terms=[e.sanskrit,e.meaning,e.halegannada,...e.alternatives.flatMap(a=>[a.word,a.tamil,a.tulu,a.proto]),sentence.source,sentence.kannada,sentence.proto,sentence.hale].filter(Boolean);
+    const terms=[e.sanskrit,e.meaning,e.halegannada,e.editorialNote,...(e.sourceEtymology||[]).map(p=>p.form),...e.alternatives.flatMap(a=>[a.word,a.tamil,a.tulu,a.proto,...(a.etymologyParts||[]).map(p=>p.form)]),...(e.rejectedAlternatives||[]).map(a=>a.word),sentence.source,sentence.kannada,sentence.proto,sentence.hale].filter(Boolean);
     return !q || terms.some(v=>String(v).toLocaleLowerCase().includes(q));
   });
   render(filtered);

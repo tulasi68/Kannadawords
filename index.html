@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ಕನ್ನಡ ದೇಸಿ · Kannada Desi Words</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    .kn { font-family: 'Noto Sans Kannada', 'Noto Sans', sans-serif; }
+    .card { transition: all 0.2s ease; }
+    .card:hover { transform: translateY(-2px); }
+  </style>
+</head>
+<body class="bg-stone-50 text-stone-800 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white border-b border-stone-200 sticky top-0 z-10">
+    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+      <div>
+        <h1 class="text-xl font-semibold tracking-tight">
+          <span class="kn text-2xl">ಕನ್ನಡ ದೇಸಿ</span>
+          <span class="text-stone-400 font-normal text-base ml-2">Kannada Desi Words</span>
+        </h1>
+        <p class="text-sm text-stone-500 mt-0.5">Sanskrit → Native Dravidian alternatives</p>
+      </div>
+      <div class="flex gap-2">
+        <input id="search" type="search" placeholder="Search word or meaning..." 
+               class="px-3 py-1.5 text-sm border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 w-48 sm:w-56" />
+        <select id="category" class="px-3 py-1.5 text-sm border border-stone-300 rounded-lg bg-white">
+          <option value="all">All categories</option>
+          <option value="Everyday">Everyday</option>
+          <option value="Nature">Nature</option>
+          <option value="Body">Body</option>
+          <option value="Directions">Directions</option>
+          <option value="Abstract">Abstract</option>
+        </select>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <div class="mb-6 text-sm text-stone-600 bg-amber-50 border border-amber-100 rounded-lg px-4 py-3">
+      <strong>Open sources only.</strong> All pairs below are drawn from common knowledge, public comparative lists, and open datasets such as DravLex (CC BY 4.0). No copyrighted books were used.
+    </div>
+
+    <div id="stats" class="mb-6 text-sm text-stone-500"></div>
+
+    <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Cards injected by JS -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-stone-200 mt-12 py-8 text-center text-sm text-stone-500">
+    <p>Built for the Kannada community · Data from open sources · Share freely</p>
+    <p class="mt-1">Want to contribute better pairs? Open an issue or fork the project.</p>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

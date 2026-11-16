@@ -1,46 +1,297 @@
-// Open / common-knowledge Sanskrit → native Dravidian / Kannada pairs
-// Sources: everyday usage, public comparative lists, DravLex (CC BY 4.0), Wiktionary
+// Crowdsourcing data model
+// Each entry has one Sanskrit word and multiple possible native alternatives
 
-const wordPairs = [
-  // Everyday
-  { id: 1, sanskrit: "ಕ್ಷೀರ", native: "ಹಾಲು", meaning: "Milk", category: "Everyday", note: "Classic desi form (pāl root)" },
-  { id: 2, sanskrit: "ಸರ್ಪ", native: "ಹಾವು", meaning: "Snake", category: "Everyday", note: "pāmpu / hāvu" },
-  { id: 3, sanskrit: "ವೃಕ್ಷ", native: "ಮರ", meaning: "Tree", category: "Everyday", note: "maram root" },
-  { id: 4, sanskrit: "ಗೃಹ", native: "ಮನೆ", meaning: "House", category: "Everyday", note: "manai / mane" },
-  { id: 5, sanskrit: "ವಸ್ತ್ರ", native: "ಬಟ್ಟೆ", meaning: "Cloth / Clothes", category: "Everyday", note: "Everyday speech" },
-  { id: 6, sanskrit: "ಭೋಜನ", native: "ಊಟ", meaning: "Meal / Food", category: "Everyday", note: "Common spoken form" },
-  { id: 7, sanskrit: "ಜಲ", native: "ನೀರು", meaning: "Water", category: "Everyday", note: "nīr root" },
-  { id: 8, sanskrit: "ಪುಷ್ಪ", native: "ಹೂವು", meaning: "Flower", category: "Everyday", note: "pū / hūvu" },
-  { id: 9, sanskrit: "ಪಕ್ಷಿ", native: "ಹಕ್ಕಿ", meaning: "Bird", category: "Everyday", note: "Assimilated tadbhava form widely preferred" },
-  { id: 10, sanskrit: "ಗ್ರಾಮ", native: "ಹಳ್ಳಿ", meaning: "Village", category: "Everyday", note: "Common native term" },
-
-  // Nature
-  { id: 11, sanskrit: "ಸೂರ್ಯ", native: "ನೇಸರ", meaning: "Sun", category: "Nature", note: "Classic Kannada form (ñāyiṟu cognate)" },
-  { id: 12, sanskrit: "ರಾತ್ರಿ", native: "ಇರುಳು", meaning: "Night", category: "Nature", note: "irul root – strong desi" },
-  { id: 13, sanskrit: "ಅಗ್ನಿ", native: "ಬೆಂಕಿ", meaning: "Fire", category: "Nature", note: "veṅkai / beṅki" },
-  { id: 14, sanskrit: "ಛಾಯೆ", native: "ನೆರಳು", meaning: "Shadow", category: "Nature", note: "Everyday native" },
-  { id: 15, sanskrit: "ಆಕಾಶ", native: "ಆಗಸ", meaning: "Sky", category: "Nature", note: "Widely used desi form" },
-  { id: 16, sanskrit: "ಭೂಮಿ", native: "ನೆಲ", meaning: "Earth / Ground", category: "Nature", note: "nel / nela" },
-
-  // Body
-  { id: 17, sanskrit: "ಹಸ್ತ", native: "ಕೈ", meaning: "Hand", category: "Body", note: "kai – core Dravidian" },
-  { id: 18, sanskrit: "ರಕ್ತ", native: "ನೆತ್ತರು", meaning: "Blood", category: "Body", note: "nettar" },
-  { id: 19, sanskrit: "ಕೇಶ", native: "ಕೂದಲು", meaning: "Hair", category: "Body", note: "kūtal / kūdalu" },
-  { id: 20, sanskrit: "ನಯನ / ನೇತ್ರ", native: "ಕಣ್ಣು", meaning: "Eye", category: "Body", note: "kaṇ root" },
-  { id: 21, sanskrit: "ದಂತ", native: "ಹಲ್ಲು", meaning: "Tooth", category: "Body", note: "pal / hallu" },
-  { id: 22, sanskrit: "ಶಿರ / ಮಸ್ತಕ", native: "ತಲೆ", meaning: "Head", category: "Body", note: "talai / tale" },
-
-  // Directions
-  { id: 23, sanskrit: "ಉತ್ತರ", native: "ಬಡಗಣ", meaning: "North", category: "Directions", note: "Traditional Kannada directional" },
-  { id: 24, sanskrit: "ದಕ್ಷಿಣ", native: "ತೆಂಕಣ", meaning: "South", category: "Directions", note: "Traditional Kannada directional" },
-  { id: 25, sanskrit: "ಪೂರ್ವ", native: "ಮೂಡಣ", meaning: "East", category: "Directions", note: "Traditional Kannada directional" },
-  { id: 26, sanskrit: "ಪಶ್ಚಿಮ", native: "ಪಡುವಣ", meaning: "West", category: "Directions", note: "Traditional Kannada directional" },
-
-  // Abstract
-  { id: 27, sanskrit: "ಭಾಷೆ", native: "ನುಡಿ", meaning: "Language / Speech", category: "Abstract", note: "nuḍi – strong desi (DEDR-attested publicly)" },
-  { id: 28, sanskrit: "ಸ್ನೇಹ / ಸ್ನೇಹಿತ", native: "ಗೆಳೆಯ", meaning: "Friend", category: "Abstract", note: "keḷ / geḷeya" },
-  { id: 29, sanskrit: "ದುಃಖ", native: "ಅಳಲು", meaning: "Sorrow / Grief", category: "Abstract", note: "aḻu root" },
-  { id: 30, sanskrit: "ಪ್ರಶ್ನೆ", native: "ಕೇಳ್ವೆ", meaning: "Question", category: "Abstract", note: "kēḷ root" },
-  { id: 31, sanskrit: "ಸಂತೋಷ", native: "ಸಂತಸ", meaning: "Happiness", category: "Abstract", note: "Assimilated form preferred by many" },
-  { id: 32, sanskrit: "ಧ್ವನಿ", native: "ಸಪ್ಪಳ", meaning: "Sound / Noise", category: "Abstract", note: "Everyday native" }
+const wordEntries = [
+  {
+    id: "milk",
+    sanskrit: "ಕ್ಷೀರ",
+    meaning: "Milk",
+    category: "Everyday",
+    alternatives: [
+      { id: "halu", word: "ಹಾಲು", note: "Most common desi form" },
+      { id: "palu", word: "ಪಾಲು", note: "Older / related form" }
+    ]
+  },
+  {
+    id: "snake",
+    sanskrit: "ಸರ್ಪ",
+    meaning: "Snake",
+    category: "Everyday",
+    alternatives: [
+      { id: "havu", word: "ಹಾವು", note: "Standard native form" },
+      { id: "pambu", word: "ಪಾಂಬು", note: "Cognate form" }
+    ]
+  },
+  {
+    id: "tree",
+    sanskrit: "ವೃಕ್ಷ",
+    meaning: "Tree",
+    category: "Everyday",
+    alternatives: [
+      { id: "mara", word: "ಮರ", note: "Core Dravidian root" }
+    ]
+  },
+  {
+    id: "house",
+    sanskrit: "ಗೃಹ",
+    meaning: "House",
+    category: "Everyday",
+    alternatives: [
+      { id: "mane", word: "ಮನೆ", note: "Everyday native" }
+    ]
+  },
+  {
+    id: "cloth",
+    sanskrit: "ವಸ್ತ್ರ",
+    meaning: "Cloth / Clothes",
+    category: "Everyday",
+    alternatives: [
+      { id: "batte", word: "ಬಟ್ಟೆ", note: "Common spoken form" }
+    ]
+  },
+  {
+    id: "food",
+    sanskrit: "ಭೋಜನ",
+    meaning: "Meal / Food",
+    category: "Everyday",
+    alternatives: [
+      { id: "uta", word: "ಊಟ", note: "Most natural spoken form" },
+      { id: "kulu", word: "ಕೂಳು", note: "Older / regional form for cooked rice" }
+    ]
+  },
+  {
+    id: "water",
+    sanskrit: "ಜಲ",
+    meaning: "Water",
+    category: "Everyday",
+    alternatives: [
+      { id: "niru", word: "ನೀರು", note: "Core native word" }
+    ]
+  },
+  {
+    id: "flower",
+    sanskrit: "ಪುಷ್ಪ",
+    meaning: "Flower",
+    category: "Everyday",
+    alternatives: [
+      { id: "huvu", word: "ಹೂವು", note: "Standard desi" }
+    ]
+  },
+  {
+    id: "bird",
+    sanskrit: "ಪಕ್ಷಿ",
+    meaning: "Bird",
+    category: "Everyday",
+    alternatives: [
+      { id: "hakki", word: "ಹಕ್ಕಿ", note: "Widely preferred tadbhava/native form" }
+    ]
+  },
+  {
+    id: "village",
+    sanskrit: "ಗ್ರಾಮ",
+    meaning: "Village",
+    category: "Everyday",
+    alternatives: [
+      { id: "halli", word: "ಹಳ್ಳಿ", note: "Common native term" }
+    ]
+  },
+  {
+    id: "sun",
+    sanskrit: "ಸೂರ್ಯ",
+    meaning: "Sun",
+    category: "Nature",
+    alternatives: [
+      { id: "nesara", word: "ನೇಸರ", note: "Classic Kannada form" }
+    ]
+  },
+  {
+    id: "night",
+    sanskrit: "ರಾತ್ರಿ",
+    meaning: "Night",
+    category: "Nature",
+    alternatives: [
+      { id: "irulu", word: "ಇರುಳು", note: "Strong desi form" }
+    ]
+  },
+  {
+    id: "fire",
+    sanskrit: "ಅಗ್ನಿ",
+    meaning: "Fire",
+    category: "Nature",
+    alternatives: [
+      { id: "benki", word: "ಬೆಂಕಿ", note: "Everyday native" }
+    ]
+  },
+  {
+    id: "shadow",
+    sanskrit: "ಛಾಯೆ",
+    meaning: "Shadow",
+    category: "Nature",
+    alternatives: [
+      { id: "neralu", word: "ನೆರಳು", note: "Common desi" }
+    ]
+  },
+  {
+    id: "sky",
+    sanskrit: "ಆಕಾಶ",
+    meaning: "Sky",
+    category: "Nature",
+    alternatives: [
+      { id: "agasa", word: "ಆಗಸ", note: "Widely used form" }
+    ]
+  },
+  {
+    id: "earth",
+    sanskrit: "ಭೂಮಿ",
+    meaning: "Earth / Ground",
+    category: "Nature",
+    alternatives: [
+      { id: "nela", word: "ನೆಲ", note: "Core native" }
+    ]
+  },
+  {
+    id: "hand",
+    sanskrit: "ಹಸ್ತ",
+    meaning: "Hand",
+    category: "Body",
+    alternatives: [
+      { id: "kai", word: "ಕೈ", note: "Core Dravidian" }
+    ]
+  },
+  {
+    id: "blood",
+    sanskrit: "ರಕ್ತ",
+    meaning: "Blood",
+    category: "Body",
+    alternatives: [
+      { id: "nettaru", word: "ನೆತ್ತರು", note: "Native form" }
+    ]
+  },
+  {
+    id: "hair",
+    sanskrit: "ಕೇಶ",
+    meaning: "Hair",
+    category: "Body",
+    alternatives: [
+      { id: "kudalu", word: "ಕೂದಲು", note: "Standard desi" }
+    ]
+  },
+  {
+    id: "eye",
+    sanskrit: "ನಯನ / ನೇತ್ರ",
+    meaning: "Eye",
+    category: "Body",
+    alternatives: [
+      { id: "kannu", word: "ಕಣ್ಣು", note: "Core native" }
+    ]
+  },
+  {
+    id: "tooth",
+    sanskrit: "ದಂತ",
+    meaning: "Tooth",
+    category: "Body",
+    alternatives: [
+      { id: "hallu", word: "ಹಲ್ಲು", note: "Everyday form" }
+    ]
+  },
+  {
+    id: "head",
+    sanskrit: "ಶಿರ / ಮಸ್ತಕ",
+    meaning: "Head",
+    category: "Body",
+    alternatives: [
+      { id: "tale", word: "ತಲೆ", note: "Core native" }
+    ]
+  },
+  {
+    id: "north",
+    sanskrit: "ಉತ್ತರ",
+    meaning: "North",
+    category: "Directions",
+    alternatives: [
+      { id: "badagana", word: "ಬಡಗಣ", note: "Traditional directional" }
+    ]
+  },
+  {
+    id: "south",
+    sanskrit: "ದಕ್ಷಿಣ",
+    meaning: "South",
+    category: "Directions",
+    alternatives: [
+      { id: "tenkana", word: "ತೆಂಕಣ", note: "Traditional directional" }
+    ]
+  },
+  {
+    id: "east",
+    sanskrit: "ಪೂರ್ವ",
+    meaning: "East",
+    category: "Directions",
+    alternatives: [
+      { id: "mudana", word: "ಮೂಡಣ", note: "Traditional directional" }
+    ]
+  },
+  {
+    id: "west",
+    sanskrit: "ಪಶ್ಚಿಮ",
+    meaning: "West",
+    category: "Directions",
+    alternatives: [
+      { id: "paduvana", word: "ಪಡುವಣ", note: "Traditional directional" }
+    ]
+  },
+  {
+    id: "language",
+    sanskrit: "ಭಾಷೆ",
+    meaning: "Language / Speech",
+    category: "Abstract",
+    alternatives: [
+      { id: "nudi", word: "ನುಡಿ", note: "Strong desi form" }
+    ]
+  },
+  {
+    id: "friend",
+    sanskrit: "ಸ್ನೇಹ / ಸ್ನೇಹಿತ",
+    meaning: "Friend",
+    category: "Abstract",
+    alternatives: [
+      { id: "geleya", word: "ಗೆಳೆಯ", note: "Native form" }
+    ]
+  },
+  {
+    id: "sorrow",
+    sanskrit: "ದುಃಖ",
+    meaning: "Sorrow / Grief",
+    category: "Abstract",
+    alternatives: [
+      { id: "alalu", word: "ಅಳಲು", note: "Desi form" },
+      { id: "novu", word: "ನೋವು", note: "Also commonly used" }
+    ]
+  },
+  {
+    id: "question",
+    sanskrit: "ಪ್ರಶ್ನೆ",
+    meaning: "Question",
+    category: "Abstract",
+    alternatives: [
+      { id: "kelve", word: "ಕೇಳ್ವೆ", note: "Native alternative" }
+    ]
+  },
+  {
+    id: "happiness",
+    sanskrit: "ಸಂತೋಷ",
+    meaning: "Happiness",
+    category: "Abstract",
+    alternatives: [
+      { id: "santasa", word: "ಸಂತಸ", note: "Assimilated preferred form" }
+    ]
+  },
+  {
+    id: "sound",
+    sanskrit: "ಧ್ವನಿ",
+    meaning: "Sound / Noise",
+    category: "Abstract",
+    alternatives: [
+      { id: "sappala", word: "ಸಪ್ಪಳ", note: "Everyday native" }
+    ]
+  }
 ];

@@ -15,12 +15,12 @@ A word must not be labelled verified merely because it appears in an OCR, scrape
 
 | Kannada form | Current gloss | Audit status | Evidence / next action |
 |---|---|---|---|
-| ಆಲಿಸು | Listen; heed | Unverified | The earlier lead only equated ಕೇಳು with ಆಲಿಸು in a modern gloss; it did not establish an Old Kannada attestation. Retain only as a candidate until a dictionary entry or dated text is located. |
-| ಆವಣ | Shop | Unverified | No precise dictionary entry or primary-text citation identified. Locate in P. V. Narayana's *ಹಳಗನ್ನಡ ಪದಸಂಪದ*, *ಪಂಪನ ನುಡಿಗಣಿ* or another reliable lexicon before retaining as sourced. |
-| ಮುಗಿಲ್ | Cloud | Provisional | A grammatical discussion explicitly analyses ಬೆಳ್ + ಮುಗಿಲ್ as an Old Kannada phrase; a separate Sūkti Sudhārṇava transcription also contains ಮುಗಿಲ್. Confirm the scholarly edition, date and exact headword meaning. [Honalu discussion](https://honalu.net/2013/05/29/ಶಬ್ದಮಣಿದರ್ಪಣದಲ್ಲಿ-ತಳಮಟ್ಟದ-ತಪ್ಪುಗಳು-3/) · [Literary transcription](https://knningaiah.blogspot.com/2019/03/blog-post.html) |
-| ಜವನಿಕೆ | Curtain / screen | Provisional | Occurs in a secondary transcription of Harihara's *ಗಿರಿಜಾ ಕಲ್ಯಾಣ*. Verify the exact reading, context and date against a scholarly edition. [Transcribed text](https://knningaiah.blogspot.com/2017/09/blog-post.html) |
+| ಆಲಿಸು | Listen; heed | Provisional | Digitised *Pampana Nudigani* entry: ಗಮನವಿರಿಸಿ ಕೇಳು; cites *Pampabharata* 1.142. Verify against the printed dictionary and scholarly text. |
+| ಆವಣ | Shop | Provisional | Digitised *Champu Nudigannadi* entry: ಆಪಣ / ಅಂಗಡಿ; cites *Harivamsha* 1.24. Verify against the printed dictionary and scholarly text. |
+| ಮುಗಿಲ್ | Cloud | Provisional | Digitised *Pampana Nudigani* entry: ಮೋಡ, citing *Pampabharata* 7.23. *Champu Nudigannadi* also gives ಮೋಡ (ವಡ್ಡಾರಾಧನೆ, p.109, story 5) and ಆಕಾಶ (ಕಬ್ಬಿಗರ ಕಾವ್ಯ, 27v). Honalu also analyses ಬೆಳ್ + ಮುಗಿಲ್. Check the cited editions before upgrading. [Digitised dictionary source](https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Pampana%20Nudigani) · [Honalu discussion](https://honalu.net/2013/05/29/ಶಬ್ದಮಣಿದರ್ಪಣದಲ್ಲಿ-ತಳಮಟ್ಟದ-ತಪ್ಪುಗಳು-3/) |
+| ಜವನಿಕೆ | Curtain / screen | Provisional | Digitised *Pampana Nudigani* entry: ತೆರೆ; glossed [ಯವನಿಕಾ], citing *Adipurana* 9.20. Verify the spelling, sense and verse against the printed dictionary and scholarly text. [Digitised dictionary source](https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Pampana%20Nudigani) |
 | ಪೊಸ | New | Provisional | A grammatical discussion explicitly identifies ಪೊಸ as an Old Kannada adjectival base form; a literary transcription also contains it. Verify against a scholarly edition and record the exact work/verse. [Honalu discussion](https://honalu.net/2013/05/29/ಶಬ್ದಮಣಿದರ್ಪಣದಲ್ಲಿ-ತಳಮಟ್ಟದ-ತಪ್ಪುಗಳು-3/) · [Literary transcription](https://knningaiah.blogspot.com/2017/07/blog-post_16.html) |
-| ಕರ್ಬು | Sugarcane | Provisional | Kannada Prabha carries the same claim in an article by independent researcher Vijay Mahantesh Papanala. It does not give an exact dictionary page or inscription reference; retain as provisional. [Kannada Prabha article](https://www.kannadaprabha.in/amp/special-news/evidence-of-the-antiquity-of-kannada-language/articleshow-gs6ee3m) |
+| ಕರ್ವು (also reported ಕರ್ಬು) | Sugarcane | Provisional | Digitised *Pampana Nudigani* headword ಕರ್ವು, glossed ಕಬ್ಬು, cites *Pampabharata* 4.37v. Kannada Prabha independently reports ಕರ್ವು / ಕರ್ಬು. Use the dictionary headword spelling for now; verify against the original edition. [Digitised dictionary source](https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Pampana%20Nudigani) · [Kannada Prabha article](https://www.kannadaprabha.in/amp/special-news/evidence-of-the-antiquity-of-kannada-language/articleshow-gs6ee3m) |
 
 ## Priority reference works and discovery collections
 
@@ -88,3 +88,30 @@ The official Bharatavani catalogue confirms that *ಹಳಗನ್ನಡ ಪದ�
 - [Bharatavani — ಚಂಪೂ ನುಡಿಗನ್ನಡಿ](https://bharatavani.in/english/book?id=ಚಂಪೂ%20ನುಡಿಗನ್ನಡಿ)
 
 The open Indic-dictionaries repository says its headwords were scraped from Bharatavani and flags alternative-form and OCR/corruption cleanup. Use it to locate candidate entries, not as the final authority. [Repository methodology and caveats](https://github.com/omshivaprakash/Indic-dictionaries).
+
+
+## Third-pass dictionary-entry audit (16 November 2026)
+
+A targeted search of the digitised CSV transcriptions in the public [Indic-dictionaries repository](https://github.com/omshivaprakash/Indic-dictionaries) located exact headword entries for five of the six vocabulary-card forms:
+
+| Headword | Dictionary gloss | Cited occurrence in the transcription | Current app status |
+|---|---|---|---|
+| ಆಲಿಸು | ಗಮನವಿರಿಸಿ ಕೇಳು | *Pampabharata* 1.142 | Provisional |
+| ಆವಣ | ಆಪಣ, ಅಂಗಡಿ | *Harivamsha* 1.24 | Provisional |
+| ಜವನಿಕೆ | [ಯವನಿಕಾ] ತೆರೆ | *Adipurana* 9.20 | Provisional |
+| ಮುಗಿಲ್ | ಮೋಡ; also ಆಕಾಶ in another entry | *Pampabharata* 7.23; *Vaddaradhane*, p.109, story 5; *Kabbigara Kava*, 27v | Provisional |
+| ಕರ್ವು | ಕಬ್ಬು | *Pampabharata* 4.37v | Provisional |
+| ಪೊಸ | New | No exact headword entry located in this targeted pass | Provisional; Honalu grammatical discussion remains the lead |
+
+The sugarcane card now uses the exact dictionary headword **ಕರ್ವು**. The community-facing example inflection has been adjusted to match. The alternate spelling ಕರ್ಬು remains documented as a reported variant in the Kannada Prabha article.
+
+### Important limitation
+
+These CSVs are openly accessible transcriptions scraped from Bharatavani; the dataset maintainer explicitly warns about alternative-headword cleanup and OCR corruption. The CSV gives useful dictionary glosses and work/verse references, but it is not itself the printed source. No item above has been upgraded to **verified**. The next editorial step is to inspect the corresponding entries in P. V. Narayana's printed/digitised dictionary and then verify each cited passage in a reliable edition of the named work.
+
+The relevant source files are indexed under:
+- [Pampana Nudigani — digitised transcription](https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Pampana%20Nudigani)
+- [Champu Nudigannadi — digitised transcription](https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Champu%20Nudigannadi)
+- [Bharatavani catalogue — Halagannada Padasampada](https://bharatavani.in/home/book?id=ಹಳಗನ್ನಡ%20ಪದಸಂಪದ)
+
+This pass found no direct dictionary headword for ಪೊಸ in the specific CSV sections searched. That absence is not proof that the word is absent from the full dictionary corpus.

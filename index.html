@@ -41,6 +41,11 @@
 
   <!-- Main -->
   <main class="max-w-5xl mx-auto px-4 py-8">
+    <nav class="flex gap-2 border-b border-stone-200 mb-6" aria-label="Community review sections">
+      <button id="word-tab" type="button" onclick="showTab('words')" class="px-4 py-3 text-sm font-semibold border-b-2 border-amber-600 text-amber-800">Word replacement voting</button>
+      <button id="sentence-tab" type="button" onclick="showTab('sentences')" class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-stone-500">Sentence-level community review</button>
+    </nav>
+    <section id="words-panel">
     <div class="mb-6 text-sm text-stone-600 bg-amber-50 border border-amber-100 rounded-lg px-4 py-3">
       <strong>How to use:</strong><br>
       • <strong>Click any native word</strong> → it counts as a vote and shows the number of clicks<br>
@@ -48,8 +53,14 @@
       New suggestions appear below and can also be voted on.
     </div>
 
-    <section class="mb-10">
-      <div class="mb-4">
+    <div id="stats" class="mb-6 text-sm text-stone-500"></div>
+    <div id="grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <!-- Word cards injected by JS -->
+    </div>
+    </section>
+
+    <section id="sentences-panel" class="hidden">
+      <div class="mb-5">
         <h2 class="text-lg font-semibold text-stone-800">Sentence-level community review</h2>
         <p class="text-sm text-stone-600 mt-1">Compare the original with a <strong>proposed rendering</strong>. Proposed versions are constructed illustrations, not attested quotations or established usage. Bold text marks suggested swaps. Vote on the sentence in context.</p>
       </div>
@@ -64,12 +75,19 @@
           </table>
         </div>
       </div>
+      <div class="mt-8 pt-6 border-t border-stone-200 text-center">
+        <p class="text-sm text-stone-600 mb-3">Have an example from everyday Kannada? Add it for community review.</p>
+        <button id="open-sentence-form" type="button" onclick="toggleSentenceForm()" class="px-5 py-2.5 rounded-lg bg-amber-600 text-white text-sm font-semibold hover:bg-amber-700">＋ Add sentence-level review</button>
+        <form id="sentence-form" class="hidden mt-5 max-w-2xl mx-auto text-left bg-white border border-stone-200 rounded-xl p-4 space-y-3" onsubmit="submitSentenceReview(event)">
+          <div><label class="block text-xs font-medium text-stone-600 mb-1" for="review-title">Title / context</label><input id="review-title" required maxlength="100" placeholder="e.g. School notice, newspaper sentence" class="w-full px-3 py-2 text-sm border border-stone-300 rounded-lg"></div>
+          <div><label class="block text-xs font-medium text-stone-600 mb-1" for="review-original">Original Kannada sentence</label><textarea id="review-original" required rows="3" class="kn w-full px-3 py-2 text-sm border border-stone-300 rounded-lg" placeholder="Enter the sentence currently in use"></textarea></div>
+          <div><label class="block text-xs font-medium text-stone-600 mb-1" for="review-proposed">Your proposed native-Kannada rendering</label><textarea id="review-proposed" required rows="3" class="kn w-full px-3 py-2 text-sm border border-stone-300 rounded-lg" placeholder="Rewrite it using the alternatives you suggest"></textarea></div>
+          <div><label class="block text-xs font-medium text-stone-600 mb-1" for="review-note">Why this replacement? (optional)</label><textarea id="review-note" rows="2" class="w-full px-3 py-2 text-sm border border-stone-300 rounded-lg" placeholder="Explain nuance, source, or uncertainty"></textarea></div>
+          <div class="flex gap-2 justify-end"><button type="button" onclick="toggleSentenceForm()" class="px-4 py-2 text-sm rounded-lg border border-stone-300">Cancel</button><button type="submit" class="px-4 py-2 text-sm rounded-lg bg-amber-600 text-white">Submit for community review</button></div>
+          <p class="text-xs text-stone-500">Submissions are saved in this browser on this device. They are not yet shared with other visitors.</p>
+        </form>
+      </div>
     </section>
-    <div id="stats" class="mb-6 text-sm text-stone-500"></div>
-
-    <div id="grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
-      <!-- Cards injected by JS -->
-    </div>
   </main>
 
   <!-- Footer -->

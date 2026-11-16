@@ -145,21 +145,31 @@ function voteContext(id, choice) {
   state.contextualVotes[id][choice] = (state.contextualVotes[id][choice] || 0) + 1;
   saveState(state); renderContextual();
 }
+let activeContextualDomain = "all";
+function filterContextualByDomain(domain) {
+  activeContextualDomain = domain;
+  renderContextual();
+}
+window.filterContextualByDomain = filterContextualByDomain;
 function renderContextual() {
   if (!contextualGrid || typeof contextualExamples === "undefined") return;
   const state = loadState();
   const submitted = state.submittedContextualExamples || [];
   const allExamples = [...contextualExamples, ...submitted];
-  contextualGrid.innerHTML = allExamples.map(item => {
+  const visibleExamples = allExamples.filter(item => {
+    const domain = item.sourceDomain || (item.id === "gruha-mandali" ? "Legislative Council" : item.submitted ? "Community submissions" : "Earlier examples");
+    return activeContextualDomain === "all" || domain === activeContextualDomain;
+  });
+  contextualGrid.innerHTML = visibleExamples.map(item => {
     const votes = (state.contextualVotes && state.contextualVotes[item.id]) || {support:0,revise:0};
     const swaps = item.swaps || [];
     return `<article class="bg-white border border-stone-200 rounded-xl p-4 shadow-sm">
-      <div class="flex items-start justify-between gap-2 mb-3"><h3 class="font-semibold text-stone-800">${escapeHtml(item.title)}</h3>${item.submitted ? '<span class="text-xs rounded-full bg-sky-50 text-sky-800 px-2 py-1">Community submission</span>' : ''}</div>
+      <div class="flex items-start justify-between gap-2 mb-3"><div><h3 class="font-semibold text-stone-800">${escapeHtml(item.title)}</h3><p class="text-xs text-stone-500 mt-1">${escapeHtml(item.sourceDomain || (item.id === "gruha-mandali" ? "Legislative Council" : item.submitted ? "Community submissions" : "Earlier examples"))}</p></div>${item.submitted ? '<span class="text-xs rounded-full bg-sky-50 text-sky-800 px-2 py-1">Community submission</span>' : ''}</div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="rounded-lg bg-stone-50 p-3"><p class="text-xs uppercase tracking-wide text-stone-500 mb-2">Original sentence</p><p class="kn leading-7">${highlightSwaps(item.original,swaps,0)}</p></div>
         <div class="rounded-lg bg-amber-50 p-3"><p class="text-xs uppercase tracking-wide text-amber-800 mb-2">Proposed rendering</p><p class="kn leading-7">${highlightSwaps(item.proposed,swaps,1)}</p></div>
       </div>
-      <p class="text-xs text-stone-500 mt-3">${swaps.map(pair=>escapeHtml(pair[0])+" → "+escapeHtml(pair[1])).join(" · ")}</p>
+      <p class="text-xs text-stone-500 mt-3">${swaps.filter(pair=>pair[0] && pair[1]).map(pair=>escapeHtml(pair[0])+" → "+escapeHtml(pair[1])).join(" · ")}</p>
       ${item.note ? `<p class="text-xs text-stone-500 mt-2">${escapeHtml(item.note)}</p>` : ""}
       <div class="flex flex-wrap items-center gap-2 mt-4">
         <button onclick="voteContext('${item.id}','support')" class="text-xs rounded-full border border-emerald-300 text-emerald-800 px-3 py-1.5 hover:bg-emerald-50">Works in context · ${votes.support||0}</button>
@@ -171,7 +181,7 @@ function renderContextual() {
     naturalnessBody.innerHTML = replacementNaturalness.map(row => `<tr class="border-t border-stone-100">
       <td class="p-2 kn">${escapeHtml(row.word)}</td><td class="p-2 kn">${escapeHtml(row.alternative)}</td>
       <td class="p-2"><span class="inline-block rounded-full px-2 py-0.5 text-xs ${row.status==="natural"?"bg-emerald-100 text-emerald-800":row.status==="coined"?"bg-yellow-100 text-yellow-800":row.status==="contested"?"bg-orange-100 text-orange-800":row.status==="archaic"?"bg-red-100 text-red-800":"bg-stone-200 text-stone-800"}">${escapeHtml(row.status)}</span></td>
-      <td class="p-2 text-stone-600">${escapeHtml(row.why)}</td></tr>`).join("");
+      <td class="p-2 text-stone-500">${escapeHtml(row.sourceDomain || "Earlier examples")}</td><td class="p-2 text-stone-600">${escapeHtml(row.why)}</td></tr>`).join("");
   }
 }
 window.voteContext = voteContext;

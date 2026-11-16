@@ -1,35 +1,62 @@
-// Crowdsourcing voting app – localStorage version
+// Crowdsourcing app – click to vote + Improve to add new alternative
 
-const STORAGE_KEY = "kannada_desi_votes_v1";
+const STORAGE_KEY = "kannada_desi_v2";
 
 const grid = document.getElementById("grid");
 const searchInput = document.getElementById("search");
 const categorySelect = document.getElementById("category");
 const stats = document.getElementById("stats");
 
-// ---------- Vote storage ----------
-function loadVotes() {
+// ---------- Storage ----------
+function loadState() {
   try {
-    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { votes: {}, suggestions: {} };
   } catch {
-    return {};
+    return { votes: {}, suggestions: {} };
   }
 }
 
-function saveVotes(votes) {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(votes));
+function saveState(state) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
 }
 
 function getVoteCount(entryId, altId) {
-  const votes = loadVotes();
-  return (votes[entryId] && votes[entryId][altId]) || 0;
+  const state = loadState();
+  return (state.votes[entryId] && state.votes[entryId][altId]) || 0;
 }
 
 function castVote(entryId, altId) {
-  const votes = loadVotes();
-  if (!votes[entryId]) votes[entryId] = {};
-  votes[entryId][altId] = (votes[entryId][altId] || 0) + 1;
-  saveVotes(votes);
+  const state = loadState();
+  if (!state.votes[entryId]) state.votes[entryId] = {};
+  state.votes[entryId][altId] = (state.votes[entryId][altId] || 0) + 1;
+  saveState(state);
+  filterAndRender();
+}
+
+function getSuggestions(entryId) {
+  const state = loadState();
+  return state.suggestions[entryId] || [];
+}
+
+function addSuggestion(entryId, word, note = "") {
+  if (!word || !word.trim()) return;
+  const state = loadState();
+  if (!state.suggestions[entryId]) state.suggestions[entryId] = [];
+  
+  // Avoid exact duplicates
+  const exists = state.suggestions[entryId].some(s => s.word === word.trim());
+  if (exists) {
+    alert("This alternative is already listed.");
+    return;
+  }
+
+  const newId = "user_" + Date.now();
+  state.suggestions[entryId].push({
+    id: newId,
+    word: word.trim(),
+    note: note.trim() || "User suggestion"
+  });
+  saveState(state);
   filterAndRender();
 }
 
@@ -47,32 +74,38 @@ function render(entries) {
     const card = document.createElement("article");
     card.className = "bg-white border border-stone-200 rounded-xl p-5 shadow-sm";
 
-    // Calculate total votes for this entry
+    // Merge original alternatives + user suggestions
+    const allAlts = [
+      ...entry.alternatives,
+      ...getSuggestions(entry.id)
+    ];
+
     let totalVotes = 0;
-    entry.alternatives.forEach(alt => {
+    allAlts.forEach(alt => {
       totalVotes += getVoteCount(entry.id, alt.id);
     });
 
-    let altsHtml = entry.alternatives.map(alt => {
+    let altsHtml = allAlts.map(alt => {
       const count = getVoteCount(entry.id, alt.id);
       const percent = totalVotes > 0 ? Math.round((count / totalVotes) * 100) : 0;
+      const isUser = alt.id.startsWith("user_");
 
       return `
-        <div class="flex items-center justify-between gap-3 py-2 border-b border-stone-100 last:border-0">
+        <div class="flex items-center justify-between gap-3 py-3 border-b border-stone-100 last:border-0 group">
           <div class="flex-1 min-w-0">
-            <p class="kn text-xl font-semibold text-emerald-700">${alt.word}</p>
-            ${alt.note ? `<p class="text-xs text-stone-500 mt-0.5">${alt.note}</p>` : ""}
-          </div>
-          <div class="flex items-center gap-3 shrink-0">
-            <div class="text-right">
-              <p class="text-sm font-medium text-stone-700">${count} vote${count === 1 ? "" : "s"}</p>
-              ${totalVotes > 0 ? `<p class="text-xs text-stone-400">${percent}%</p>` : ""}
-            </div>
             <button 
               onclick="castVote('${entry.id}', '${alt.id}')"
-              class="px-3 py-1.5 text-sm font-medium rounded-lg bg-emerald-50 text-emerald-700 hover:bg-emerald-100 border border-emerald-200 transition">
-              Vote
+              class="kn text-xl font-semibold text-emerald-700 hover:text-emerald-900 hover:underline text-left transition">
+              ${alt.word}
             </button>
+            ${alt.note ? `<p class="text-xs text-stone-500 mt-0.5">${alt.note}${isUser ? " · added by user" : ""}</p>` : ""}
+          </div>
+
+          <div class="flex items-center gap-3 shrink-0">
+            <div class="text-right min-w-[60px]">
+              <p class="text-sm font-medium text-stone-700">${count}</p>
+              ${totalVotes > 0 ? `<p class="text-xs text-stone-400">${percent}%</p>` : `<p class="text-xs text-stone-300">votes</p>`}
+            </div>
           </div>
         </div>
       `;
@@ -92,10 +125,39 @@ function render(entries) {
         <p class="text-sm text-stone-600 mt-1">${entry.meaning}</p>
       </div>
 
-      <div>
-        <p class="text-xs font-medium text-stone-500 mb-2 uppercase tracking-wide">Choose the best native alternative</p>
-        <div class="space-y-1">
+      <div class="mb-4">
+        <p class="text-xs font-medium text-stone-500 mb-1 uppercase tracking-wide">Click a word to vote for it</p>
+        <div>
           ${altsHtml}
+        </div>
+      </div>
+
+      <!-- Improve section -->
+      <div class="pt-3 border-t border-stone-100">
+        <button 
+          onclick="toggleImproveForm('${entry.id}')"
+          class="text-sm font-medium text-amber-700 hover:text-amber-900 flex items-center gap-1">
+          <span>Improve / Suggest better alternative</span>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4" />
+          </svg>
+        </button>
+
+        <div id="improve-${entry.id}" class="hidden mt-3 p-3 bg-stone-50 rounded-lg border border-stone-200">
+          <p class="text-xs text-stone-500 mb-2">Add a new native alternative for <span class="kn font-medium">${entry.sanskrit}</span></p>
+          <div class="flex flex-col sm:flex-row gap-2">
+            <input 
+              id="newword-${entry.id}" 
+              type="text" 
+              placeholder="New Kannada word..." 
+              class="flex-1 px-3 py-1.5 text-sm border border-stone-300 rounded-lg kn focus:outline-none focus:ring-2 focus:ring-amber-400"
+            />
+            <button 
+              onclick="submitSuggestion('${entry.id}')"
+              class="px-4 py-1.5 text-sm font-medium rounded-lg bg-amber-600 text-white hover:bg-amber-700 transition">
+              Add
+            </button>
+          </div>
         </div>
       </div>
     `;
@@ -104,6 +166,26 @@ function render(entries) {
   });
 
   stats.textContent = `${entries.length} entr${entries.length === 1 ? "y" : "ies"} shown`;
+}
+
+function toggleImproveForm(entryId) {
+  const form = document.getElementById(`improve-${entryId}`);
+  form.classList.toggle("hidden");
+  if (!form.classList.contains("hidden")) {
+    document.getElementById(`newword-${entryId}`).focus();
+  }
+}
+
+function submitSuggestion(entryId) {
+  const input = document.getElementById(`newword-${entryId}`);
+  const word = input.value;
+  if (!word.trim()) {
+    input.focus();
+    return;
+  }
+  addSuggestion(entryId, word);
+  input.value = "";
+  document.getElementById(`improve-${entryId}`).classList.add("hidden");
 }
 
 function filterAndRender() {
@@ -117,18 +199,23 @@ function filterAndRender() {
   }
 
   if (q) {
-    filtered = filtered.filter(e =>
-      e.sanskrit.toLowerCase().includes(q) ||
-      e.meaning.toLowerCase().includes(q) ||
-      e.alternatives.some(a => a.word.toLowerCase().includes(q) || (a.note && a.note.toLowerCase().includes(q)))
-    );
+    filtered = filtered.filter(e => {
+      const allAlts = [...e.alternatives, ...getSuggestions(e.id)];
+      return (
+        e.sanskrit.toLowerCase().includes(q) ||
+        e.meaning.toLowerCase().includes(q) ||
+        allAlts.some(a => a.word.toLowerCase().includes(q) || (a.note && a.note.toLowerCase().includes(q)))
+      );
+    });
   }
 
   render(filtered);
 }
 
-// Make castVote available globally for the onclick handlers
+// Global functions for onclick
 window.castVote = castVote;
+window.toggleImproveForm = toggleImproveForm;
+window.submitSuggestion = submitSuggestion;
 
 // Event listeners
 searchInput.addEventListener("input", filterAndRender);

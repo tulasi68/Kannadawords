@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ಕನ್ನಡ ದೇಸಿ · Vote for Native Words</title>
+  <title>ಕನ್ನಡ ದೇಸಿ · Vote & Improve</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -20,9 +20,9 @@
       <div>
         <h1 class="text-xl font-semibold tracking-tight">
           <span class="kn text-2xl">ಕನ್ನಡ ದೇಸಿ</span>
-          <span class="text-stone-400 font-normal text-base ml-2">Vote for Native Words</span>
+          <span class="text-stone-400 font-normal text-base ml-2">Vote & Improve</span>
         </h1>
-        <p class="text-sm text-stone-500 mt-0.5">Choose the best Dravidian alternative for Sanskrit words</p>
+        <p class="text-sm text-stone-500 mt-0.5">Click a word to vote · Improve to suggest better alternatives</p>
       </div>
       <div class="flex gap-2">
         <input id="search" type="search" placeholder="Search word or meaning..." 
@@ -42,9 +42,10 @@
   <!-- Main -->
   <main class="max-w-5xl mx-auto px-4 py-8">
     <div class="mb-6 text-sm text-stone-600 bg-amber-50 border border-amber-100 rounded-lg px-4 py-3">
-      <strong>How it works:</strong> For each Sanskrit word you will see one or more native alternatives. 
-      Click <strong>Vote</strong> on the option you think is the best fit. Vote counts update immediately 
-      (stored in your browser). Later versions will sync votes across users.
+      <strong>How to use:</strong><br>
+      • <strong>Click any native word</strong> → it counts as a vote and shows the number of clicks<br>
+      • Click <strong>Improve / Suggest better alternative</strong> → type a new word and add it<br>
+      New suggestions appear below and can also be voted on.
     </div>
 
     <div id="stats" class="mb-6 text-sm text-stone-500"></div>
@@ -56,8 +57,8 @@
 
   <!-- Footer -->
   <footer class="border-t border-stone-200 mt-12 py-8 text-center text-sm text-stone-500">
-    <p>Built for the Kannada community · Open sources only · Votes stored locally for now</p>
-    <p class="mt-1">Share the link so more people can vote and suggest better alternatives.</p>
+    <p>Built for the Kannada community · Open sources only · Votes & suggestions stored in your browser</p>
+    <p class="mt-1">Share the link so more people can vote and improve the list.</p>
   </footer>
 
   <script src="data.js"></script>

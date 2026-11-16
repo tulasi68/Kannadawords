@@ -6,6 +6,7 @@ const grid = document.getElementById("grid");
 const searchInput = document.getElementById("search");
 const categorySelect = document.getElementById("category");
 const stats = document.getElementById("stats");
+const halegannadaGrid = document.getElementById("halegannada-grid");
 
 function loadState() {
   try {
@@ -198,6 +199,56 @@ function submitSuggestion(entryId) {
   document.getElementById(`improve-${entryId}`).classList.add("hidden");
 }
 
+
+function escapeHtml(value) {
+  return String(value ?? "").replace(/[&<>"']/g, ch => ({
+    "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"
+  }[ch]));
+}
+
+function renderHalegannada(query = "") {
+  if (!halegannadaGrid) return;
+  const q = query.toLocaleLowerCase();
+  const entries = (halegannadaEntries || []).filter(entry =>
+    !q || [entry.word, entry.meaning, entry.modernKannada, entry.note]
+      .filter(Boolean).some(value => value.toLocaleLowerCase().includes(q))
+  );
+
+  halegannadaGrid.innerHTML = entries.map(entry => {
+    const sentence = entry.sentence;
+    const sentenceHtml = sentence ? `
+      <div class="mt-3 rounded-lg bg-stone-50 border border-stone-200 p-3">
+        <p class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-2">Same idea · sentence comparison</p>
+        <div class="space-y-2 text-sm">
+          <p><span class="text-xs text-stone-500 block">Sanskrit-derived wording (${escapeHtml(sentence.sanskritLabel || "source form")})</span><span class="kn">${escapeHtml(sentence.source)}</span></p>
+          <p><span class="text-xs text-emerald-700 block">Modern Kannada</span><span class="kn">${escapeHtml(sentence.kannada)}</span></p>
+          ${sentence.proto ? `<p><span class="text-xs text-violet-700 block">Proto-Dravidian root in an illustrative Kannada frame</span><span class="kn">${escapeHtml(sentence.proto)}</span></p>` : ""}
+          <p><span class="text-xs text-amber-700 block">Halegannada</span><span class="kn">${escapeHtml(sentence.hale)}</span></p>
+        </div>
+        ${sentence.protoRoot ? `<p class="text-xs text-violet-800 mt-2">${escapeHtml(sentence.protoRoot)}</p>` : ""}
+        ${sentence.note ? `<p class="text-xs text-stone-500 mt-2">${escapeHtml(sentence.note)}</p>` : ""}
+      </div>` : "";
+
+    return `
+      <article class="bg-white border border-amber-200 rounded-xl p-4 shadow-sm">
+        <div class="flex items-start justify-between gap-3">
+          <div class="min-w-0">
+            <p class="kn text-xl font-semibold text-amber-800">${escapeHtml(entry.word)}</p>
+            <p class="text-sm text-stone-700 mt-1">${escapeHtml(entry.meaning)}</p>
+            ${entry.modernKannada ? `<p class="text-xs text-stone-500 mt-1">Modern Kannada comparison: <span class="kn font-medium">${escapeHtml(entry.modernKannada)}</span></p>` : ""}
+          </div>
+          <span class="shrink-0 text-xs bg-amber-50 text-amber-800 rounded px-2 py-1">Halegannada</span>
+        </div>
+        ${entry.note ? `<p class="text-xs text-stone-500 mt-2">${escapeHtml(entry.note)}</p>` : ""}
+        ${sentenceHtml}
+      </article>`;
+  }).join("");
+
+  if (entries.length === 0) {
+    halegannadaGrid.innerHTML = '<p class="col-span-full text-sm text-stone-500 py-4">No matching Halegannada words.</p>';
+  }
+}
+
 function filterAndRender() {
   const q = searchInput.value.trim().toLowerCase();
   const cat = categorySelect.value;
@@ -226,6 +277,7 @@ function filterAndRender() {
   }
 
   render(filtered);
+  renderHalegannada(q);
 }
 
 window.castVote = castVote;

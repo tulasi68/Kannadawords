@@ -692,15 +692,15 @@ const halegannadaEntries = [
   { id:"ambudaratha", word:"ಅಂಬುದರಥ", meaning:"Indra", note:"Literary / historical form" },
   { id:"ambupayi", word:"ಅಂಬುಪಾಯಿ", meaning:"One who drinks water", note:"Compound form; literal gloss" },
   { id:"amburuha", word:"ಅಂಬುರುಹ", meaning:"Lotus", note:"Literary / historical form" },
-  { id:"ambuvీಡು", word:"ಅಂಬುವೀಡು", meaning:"Range of an arrow", note:"Historical sense; verify context" },
+  { id:"ambuveedu", word:"ಅಂಬುವೀಡು", meaning:"Range of an arrow", note:"Historical sense; verify context" },
   { id:"alivelaga", word:"ಆಲಿವೆಳಗ", meaning:"Moon", note:"Literary / historical form" },
   {
     id:"aalisu", word:"ಆಲಿಸು", meaning:"Listen attentively; heed; expect",
     modernKannada:"ಕೇಳು", sentence:{
-      source:"ಮಾತನ್ನು ಶ್ರವಣಿಸು.",
-      kannada:"ಮಾತನ್ನು ಕೇಳು.",
-      proto:"ಮಾತನ್ನು *kēḷ.",
-      hale:"ಮಾತನ್ನು ಆಲಿಸು.",
+      source:"ಅವನ ಮಾತನ್ನು ಶ್ರವಣಿಸು.",
+      kannada:"ಅವನ ಮಾತನ್ನು ಕೇಳು.",
+      proto:"ಅವನ ಮಾತನ್ನು *kēḷ.",
+      hale:"ಅವನ ಮಾತನ್ನು ಆಲಿಸು.",
       sanskritLabel:"ಶ್ರವಣಿಸು",
       protoRoot:"*kēḷ — reconstructed Proto-Dravidian root; verify the exact reconstruction and semantic range.",
       note:"The Proto-Dravidian line inserts a reconstructed root into a Kannada sentence frame; it is not claimed to be an attested Proto-Dravidian sentence."
@@ -725,7 +725,7 @@ const halegannadaEntries = [
   { id:"akkaja", word:"ಅಕ್ಕಜ", meaning:"Wonder / surprise", note:"Historical / literary form" },
   { id:"agadu", word:"ಅಗಡು", meaning:"Mischief / valour", note:"Multiple senses; context is important" },
   { id:"honta", word:"ಹೊಂತ", meaning:"Vow / pledge", note:"Historical form" },
-  { id:"hond(u)", word:"ಹೊಂದು", meaning:"To die", note:"Source spelling and sense require specialist verification" },
+  { id:"hondu", word:"ಹೊಂದು", meaning:"To die", note:"Source spelling and sense require specialist verification" },
   { id:"hogaru", word:"ಹೊಗರು", meaning:"Radiance / splendour", note:"Historical / literary form" },
   {
     id:"mugil", word:"ಮುಗಿಲ್", meaning:"Cloud",
@@ -754,7 +754,7 @@ const halegannadaEntries = [
     id:"posa", word:"ಪೊಸ", meaning:"New",
     modernKannada:"ಹೊಸ",
     sentence:{
-      source:"ಇದು ನವ ಮನೆ.",
+      source:"ಇದು ನವೀನ ಗೃಹ.",
       kannada:"ಇದು ಹೊಸ ಮನೆ.",
       proto:"ಇದು *putu ಮನೆ.",
       hale:"ಇದು ಪೊಸ ಮನೆ.",

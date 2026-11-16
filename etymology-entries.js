@@ -44,3 +44,12 @@ const etymologyLabels = {
   sanskrit_tadbhava:"Sanskrit tadbhava", perso_arabic:"Perso-Arabic",
   english:"English", coinage:"Coinage", unknown:"Unknown"
 };
+
+
+// Non-Sanskrit loanword checks: retained for transparency, but kept outside
+// the Sanskrit-derived replacement tally. Origins are contributor-proposed
+// and explicitly marked for independent review.
+const originAuditEntries = [
+  {id:"maryade-origin",sourceForm:"ಮರ್ಯಾದೆ",meaning:"Respect / propriety",etymology:"unknown",proposedClassification:"perso_arabic",note:"Contributor flags this as Perso-Arabic rather than Dravidian. Exact route and historical form need independent verification; do not count it as a Sanskrit-derived target."},
+  {id:"begane-origin",sourceForm:"ಬೇಗನೆ",meaning:"Quickly / soon",etymologyParts:[{form:"ಬೇಗ",etymology:"perso_arabic"},{form:"-ನೆ",etymology:"dravidian"}],proposedClassification:"perso_arabic + Dravidian suffix",note:"Contributor traces ಬೇಗ to Persian beg. This proposed etymology needs independent historical verification; the suffix -ನೆ is tagged separately."}
+];

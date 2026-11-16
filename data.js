@@ -710,9 +710,9 @@ const wordEntries = [
   },
 ]; 
 
-// Curated starter Halegannada word list.
-// Meanings are working glosses from the cited Halegannada–Hosakannada resource;
-// historical sense, spelling and usage should be checked by Kannada specialists.
+// Candidate starter list only — not a verified Halegannada wordlist.
+// Individual entries lack traceable page/entry citations and must not be treated as established Old Kannada
+// until checked against the underlying dictionary or a dated primary text.
 const halegannadaEntries = [
   { id:"ambudaratha", word:"ಅಂಬುದರಥ", meaning:"Indra", note:"Literary / historical form" },
   { id:"ambupayi", word:"ಅಂಬುಪಾಯಿ", meaning:"One who drinks water", note:"Compound form; literal gloss" },

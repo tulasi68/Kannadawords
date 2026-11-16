@@ -30,12 +30,12 @@ const auditedWordEntries = [
 ];
 
 const noAlternativeEntries = [
-  {id:"minister",sourceForm:"ಸಚಿವ",meaning:"Minister",etymology:"sanskrit_tatsama",rejected:[{word:"ಸೇವಕ",etymology:"sanskrit_tatsama"}],note:"No viable native equivalent established in this proposal. ಸೇವಕ is Sanskrit-derived and must not be presented as Dravidian."},
+  {id:"minister",sourceForm:"ಸಚಿವ",meaning:"Minister",etymology:"sanskrit_tatsama",rejected:[{word:"ಸೇವಕ",etymology:"sanskrit_tatsama",etymologyParts:[{form:"ಸೇವಕ",etymology:"sanskrit_tatsama"}]}],note:"No viable native equivalent established in this proposal. ಸೇವಕ is Sanskrit-derived and must not be presented as Dravidian."},
   {id:"health",sourceForm:"ಆರೋಗ್ಯ",meaning:"Health",etymology:"sanskrit_tadbhava",note:"No widely established native equivalent proposed here."},
   {id:"news",sourceForm:"ಸುದ್ದಿ",meaning:"News",etymology:"sanskrit_tadbhava",note:"Contributor classifies this as a Sanskrit-derived tadbhava; no native equivalent proposed. Historical derivation needs specialist verification."},
-  {id:"trade",sourceForm:"ವ್ಯಾಪಾರ",meaning:"Trade / commerce",etymology:"sanskrit_tatsama",rejected:[{word:"ಮಾರಾಟ",etymology:"unknown"}],note:"No clean native equivalent established here. The claim that ಮಾರಾಟ is Sanskrit-derived is not independently verified; do not treat it as settled."},
+  {id:"trade",sourceForm:"ವ್ಯಾಪಾರ",meaning:"Trade / commerce",etymology:"sanskrit_tatsama",rejected:[{word:"ಮಾರಾಟ",etymology:"unknown",etymologyParts:[{form:"ಮಾರಾಟ",etymology:"unknown"}]}],note:"No clean native equivalent established here. The claim that ಮಾರಾಟ is Sanskrit-derived is not independently verified; do not treat it as settled."},
   {id:"society",sourceForm:"ಸಮಾಜ",meaning:"Society",etymology:"sanskrit_tatsama",note:"No native equivalent proposed at this register."},
-  {id:"disability",sourceForm:"ಅಂಗವಿಕಲ",meaning:"Person with a disability",etymology:"sanskrit_tatsama",rejected:[{word:"ಕುರುಡ",etymology:"dravidian",etymologyParts:[{form:"ಕುರುಡ",etymology:"dravidian"}]},{word:"ಕಿವುಡ",etymology:"dravidian",etymologyParts:[{form:"ಕಿವುಡ",etymology:"dravidian"}]}],note:"No generic native term proposed. Specific words such as ಕುರುಡ and ಕಿವುಡ refer to particular disabilities and are not general substitutes."},
+  {id:"disability",sourceForm:"ಅಂಗವಿಕಲ",meaning:"Person with a disability",etymology:"sanskrit_tatsama",rejected:[{word:"ಕುರುಡ",etymology:"dravidian",etymologyParts:[{form:"ಕುರುಡ",etymology:"dravidian"}]},{word:"ಕಿವುಡ",etymology:"dravidian",etymologyParts:[{form:"ಕಿವುಡ",etymology:"dravidian"}]}],note:"No generic native term proposed. Specific words such as ಕುರುಡ and ಕಿವುಡ refer to particular disabilities and are not general substitutes.",etymologyParts:[{form:"ಅಂಗ",etymology:"sanskrit_tatsama"},{form:"ವಿಕಲ",etymology:"sanskrit_tatsama"}]},
   {id:"connection",sourceForm:"ಸಂಪರ್ಕ",meaning:"Connection / contact",etymology:"sanskrit_tatsama",rejected:[{word:"ಸೇರಿಕೆ",etymology:"coinage",etymologyParts:[{form:"ಸೇರು",etymology:"dravidian"},{form:"-ಇಕೆ",etymology:"dravidian"}]}],note:"ಸೇರಿಕೆ is a possible coinage, not an established equivalent; keep the entry open for community proposals."}
 ];
 

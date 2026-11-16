@@ -685,19 +685,19 @@ const wordEntries = [
   },
   // Sanskrit-first entries that connect to words in the curated Halegannada source list.
   {
-    id:"listen", sanskrit:"ಶ್ರವಣ / ಶ್ರವಣಿಸು", meaning:"Listening; to listen", category:"Abstract", halegannada:"ಆಲಿಸು", halegannadaEvidence:{status:"unverified",sourceTitle:null,sourceUrl:null,evidenceType:null,note:"The earlier lead only supplied a modern gloss equating ಕೇಳು with ಆಲಿಸು; it did not establish an Old Kannada attestation. Keep as a candidate, not a sourced historical form."},
+    id:"listen", sanskrit:"ಶ್ರವಣ / ಶ್ರವಣಿಸು", meaning:"Listening; to listen", category:"Abstract", halegannada:"ಆಲಿಸು", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Pampana Nudigani — digitised dictionary transcription",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Pampana%20Nudigani",evidenceType:"Scraped dictionary entry with literary citation",note:"The digitised entry glosses ಆಲಿಸು as ಗಮನವಿರಿಸಿ ಕೇಳು and cites ಪಂಪಭಾ 1.142 (ಧನುರ್ಲತಾಗುಣನಿನಾದಮಂ ಆಲಿಸಿ ಕೇಳಲುಳ). Confirm the reading and gloss against the printed dictionary and scholarly edition before marking verified."},
     alternatives:[{id:"kelu",word:"ಕೇಳು",note:"Native Kannada",proto:"*kēḷ",tamil:"கேள் (kēḷ)",tulu:null}]
   },
   {
-    id:"shop", sanskrit:"ಆಪಣ", meaning:"Shop / marketplace", category:"Everyday", halegannada:"ಆವಣ", halegannadaEvidence:{status:"unverified",sourceTitle:null,sourceUrl:null,evidenceType:null,note:"No traceable dictionary entry or primary-text occurrence identified in this audit. Do not treat this form as established until sourced."},
+    id:"shop", sanskrit:"ಆಪಣ", meaning:"Shop / marketplace", category:"Everyday", halegannada:"ಆವಣ", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Champu Nudigannadi — digitised dictionary transcription",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Champu%20Nudigannadi",evidenceType:"Scraped dictionary entry with literary citation",note:"The digitised entry glosses ಆವಣ as ಆಪಣ / ಅಂಗಡಿ and cites ಹರಿವಂಶ 1.24 (ಆವರದ ಎಡೆಯ ಆವಣಂಗಳೊಳ್ ಒಳವೆಂದುಂ). Confirm the original text reading and contextual sense before marking verified."},
     alternatives:[{id:"angadi",word:"ಅಂಗಡಿ",note:"Common Kannada",proto:null,tamil:"கடை (kaṭai)",tulu:null}]
   },
   {
-    id:"cloud", sanskrit:"ಮೇಘ", meaning:"Cloud", category:"Nature", halegannada:"ಮುಗಿಲ್", halegannadaEvidence:{status:"provisional",sourceTitle:"Old Kannada grammatical discussion — Honalu; corroborating literary transcription: Sūkti Sudhārṇava",sourceUrl:"https://honalu.net/2013/05/29/%E0%B2%B6%E0%B2%AC%E0%B3%8D%E0%B2%A6%E0%B2%AE%E0%B2%A3%E0%B2%BF%E0%B2%A6%E0%B2%B0%E2%80%8D%E0%B3%8D%E0%B2%AA%E0%B2%A3%E0%B2%A6%E0%B2%B2%E0%B3%8D%E0%B2%B2%E0%B2%BF-%E0%B2%A4%E0%B2%B3%E0%B2%AE-3/ ",evidenceType:"Secondary grammatical discussion and historical literary transcription",note:"The grammatical article explicitly analyses ಬೆಳ್ + ಮುಗಿಲ್ as an Old Kannada phrase. A separate Sūkti Sudhārṇava transcription also contains ಮುಗಿಲ್. Confirm the poem's edition, date and headword sense before marking verified."},
+    id:"cloud", sanskrit:"ಮೇಘ", meaning:"Cloud", category:"Nature", halegannada:"ಮುಗಿಲ್", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Pampana Nudigani and Champu Nudigannadi — digitised dictionary transcriptions; corroborating Honalu discussion",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Pampana%20Nudigani",evidenceType:"Scraped dictionary entries with literary citations; secondary grammatical discussion",note:"The digitised Pampana entry glosses ಮುಗಿಲ್ as ಮೋಡ and cites ಪಂಪಭಾ 7.23. The Champu entry gives ಮೋಡ (ವಡ್ಡಾರಾ, p.109, story 5) and ಆಕಾಶ (ಕಬ್ಬಿಗಕಾ 27v). Honalu also analyses ಬೆಳ್ + ಮುಗಿಲ್ as an Old Kannada phrase. Verify the cited editions and readings before marking verified."},
     alternatives:[{id:"moda",word:"ಮೋಡ",note:"Common Kannada",proto:null,tamil:"மேகம் (mēkam)",tulu:null}]
   },
   {
-    id:"curtain", sanskrit:"ಯವನಿಕಾ", meaning:"Curtain / screen", category:"Everyday", halegannada:"ಜವನಿಕೆ", halegannadaEvidence:{status:"provisional",sourceTitle:"ಹರಿಹರ — ಗಿರಿಜಾ ಕಲ್ಯಾಣ (transcribed verses)",sourceUrl:"https://knningaiah.blogspot.com/2017/09/blog-post.html",evidenceType:"Secondary transcription of literary text",note:"ಜವನಿಕೆ occurs in the transcribed verses. The page is not a critical edition; verify spelling, date and sense against a scholarly edition."},
+    id:"curtain", sanskrit:"ಯವನಿಕಾ", meaning:"Curtain / screen", category:"Everyday", halegannada:"ಜವನಿಕೆ", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Pampana Nudigani — digitised dictionary transcription",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Pampana%20Nudigani",evidenceType:"Scraped dictionary entry with literary citation",note:"The digitised entry glosses ಜವನಿಕೆ as ತೆರೆ and gives the derivational gloss [ಯವನಿಕಾ]; it cites ಆದಿಪು 9.20 (ನಿಲ್ತು ಜವನಿಕೆಯ ಮಱೆಯೊಳ್ ...). Confirm the spelling, sense and verse against the printed dictionary and scholarly edition before marking verified."},
     alternatives:[{id:"parade",word:"ಪರದೆ",note:"Common Kannada",proto:null,tamil:"திரை (tirai)",tulu:null}]
   },
   {
@@ -705,7 +705,7 @@ const wordEntries = [
     alternatives:[{id:"hosa",word:"ಹೊಸ",note:"Native Kannada",proto:"*putu",tamil:"புது (putu)",tulu:null}]
   },
   {
-    id:"sugarcane", sanskrit:"ಇಕ್ಷು", meaning:"Sugarcane", category:"Nature", halegannada:"ಕರ್ಬು", halegannadaEvidence:{status:"provisional",sourceTitle:"Kannada Prabha — evidence article by Vijay Mahantesh Papanala",sourceUrl:"https://www.kannadaprabha.in/amp/special-news/evidence-of-the-antiquity-of-kannada-language/articleshow-gs6ee3m",evidenceType:"Secondary linguistic and epigraphic commentary",note:"The article lists ಕರ್ವು / ಕರ್ಬು as historical Kannada forms corresponding to ಕಬ್ಬು. It does not provide an exact dictionary page or inscription reference here; retain as provisional pending primary-source confirmation."},
+    id:"sugarcane", sanskrit:"ಇಕ್ಷು", meaning:"Sugarcane", category:"Nature", halegannada:"ಕರ್ವು", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Pampana Nudigani — digitised dictionary transcription; Kannada Prabha corroboration",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/tree/main/%5BKA%5D%20Pampana%20Nudigani",evidenceType:"Scraped dictionary entry with literary citation; secondary linguistic commentary",note:"The digitised entry exact headword is ಕರ್ವು, glossed ಕಬ್ಬು, with a citation to ಪಂಪಭಾ 4.37v. Kannada Prabha also mentions ಕರ್ವು / ಕರ್ಬು. Prefer the dictionary headword ಕರ್ವು in this card; confirm the original edition and verse before marking verified."},
     alternatives:[{id:"kabbu",word:"ಕಬ್ಬು",note:"Common Kannada",proto:null,tamil:"கரும்பு (karumpu)",tulu:null}]
   },
 ]; 
@@ -789,12 +789,12 @@ const halegannadaEntries = [
     }
   },
   {
-    id:"karbu", word:"ಕರ್ಬು", meaning:"Sugarcane",
+    id:"karbu", word:"ಕರ್ವು", meaning:"Sugarcane",
     modernKannada:"ಕಬ್ಬು",
     sentence:{
       source:"ರೈತನು ಇಕ್ಷುವನ್ನು ಬೆಳೆದನು.",
       kannada:"ರೈತನು ಕಬ್ಬನ್ನು ಬೆಳೆದನು.",
-      hale:"ರೈತನು ಕರ್ಬನ್ನು ಬೆಳೆದನು.",
+      hale:"ರೈತನು ಕರ್ವನ್ನು ಬೆಳೆದನು.",
       sanskritLabel:"ಇಕ್ಷು",
       note:"Sentence is illustrative; the Halegannada form and inflection need verification in a primary text."
     }

@@ -683,7 +683,32 @@ const wordEntries = [
       }
     ]
   }
-];
+  // Sanskrit-first entries that connect to words in the curated Halegannada source list.
+  {
+    id:"listen", sanskrit:"ಶ್ರವಣ / ಶ್ರವಣಿಸು", meaning:"Listening; to listen", category:"Abstract", halegannada:"ಆಲಿಸು",
+    alternatives:[{id:"kelu",word:"ಕೇಳು",note:"Native Kannada",proto:"*kēḷ",tamil:"கேள் (kēḷ)",tulu:null}]
+  },
+  {
+    id:"shop", sanskrit:"ಆಪಣ", meaning:"Shop / marketplace", category:"Everyday", halegannada:"ಆವಣ",
+    alternatives:[{id:"angadi",word:"ಅಂಗಡಿ",note:"Common Kannada",proto:null,tamil:"கடை (kaṭai)",tulu:null}]
+  },
+  {
+    id:"cloud", sanskrit:"ಮೇಘ", meaning:"Cloud", category:"Nature", halegannada:"ಮುಗಿಲ್",
+    alternatives:[{id:"moda",word:"ಮೋಡ",note:"Common Kannada",proto:null,tamil:"மேகம் (mēkam)",tulu:null}]
+  },
+  {
+    id:"curtain", sanskrit:"ಯವನಿಕಾ", meaning:"Curtain / screen", category:"Everyday", halegannada:"ಜವನಿಕೆ",
+    alternatives:[{id:"parade",word:"ಪರದೆ",note:"Common Kannada",proto:null,tamil:"திரை (tirai)",tulu:null}]
+  },
+  {
+    id:"new", sanskrit:"ನವ / ನವೀನ", meaning:"New", category:"Abstract", halegannada:"ಪೊಸ",
+    alternatives:[{id:"hosa",word:"ಹೊಸ",note:"Native Kannada",proto:"*putu",tamil:"புது (putu)",tulu:null}]
+  },
+  {
+    id:"sugarcane", sanskrit:"ಇಕ್ಷು", meaning:"Sugarcane", category:"Nature", halegannada:"ಕರ್ಬು",
+    alternatives:[{id:"kabbu",word:"ಕಬ್ಬು",note:"Common Kannada",proto:null,tamil:"கரும்பு (karumpu)",tulu:null}]
+  },
+]; 
 
 // Curated starter Halegannada word list.
 // Meanings are working glosses from the cited Halegannada–Hosakannada resource;

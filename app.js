@@ -44,7 +44,7 @@ const votingEntries = wordEntries.map(entry => {
     meaning:item.meaning,
     category:"Origin audit",
     sourceEtymology:item.etymologyParts || [{form:item.sourceForm,etymology:item.etymology}],
-    editorialNote:item.note,
+    editorialNote:(item.note || "") + (item.proposedClassification ? " Proposed classification: " + item.proposedClassification + " (unverified)." : ""),
     scopeAudit:true,
     alternatives:[{id:"scope-audit",word:"Outside Sanskrit-origin scope",note:"This item should not be counted as a Sanskrit-derived target until its origin is confirmed.",isScopeAudit:true,viability:"scope_audit",etymologyParts:[]}]
   })));

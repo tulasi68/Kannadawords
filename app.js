@@ -32,7 +32,7 @@ const votingEntries = wordEntries.map(entry => {
     sanskrit:item.sourceForm,
     meaning:item.meaning,
     category:"No viable native alternative",
-    sourceEtymology:[{form:item.sourceForm,etymology:item.etymology}],
+    sourceEtymology:item.etymologyParts || [{form:item.sourceForm,etymology:item.etymology}],
     rejectedAlternatives:item.rejected || [],
     editorialNote:item.note,
     noAlternative:true,
@@ -153,10 +153,10 @@ function render(entries) {
         <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Word-by-word etymology and equivalents</h3>
         ${rows}
       </section>
-      ${entry.rejectedAlternatives && entry.rejectedAlternatives.length ? `<div class="mt-3 rounded-lg border border-red-100 bg-red-50 px-3 py-2"><p class="text-xs font-semibold text-red-800 mb-1">Rejected / non-native proposals</p>${entry.rejectedAlternatives.map(item => `<p class="text-xs text-red-900 mt-1"><span class="kn font-semibold">${escapeHtml(item.word)}</span> · ${escapeHtml(etymologyName(item.etymology))} — ${escapeHtml(item.reason || "Not accepted as a Dravidian-only alternative.")}</p>`).join("")}</div>` : ""}
+      ${entry.rejectedAlternatives && entry.rejectedAlternatives.length ? `<div class="mt-3 rounded-lg border border-red-100 bg-red-50 px-3 py-2"><p class="text-xs font-semibold text-red-800 mb-1">Rejected / non-native proposals</p>${entry.rejectedAlternatives.map(item => `<p class="text-xs text-red-900 mt-1"><span class="kn font-semibold">${escapeHtml(item.word)}</span> · ${(item.etymologyParts || [{form:item.word,etymology:item.etymology}]).map(part => escapeHtml(part.form) + " (" + escapeHtml(etymologyName(part.etymology)) + ")").join(" · ")} — ${escapeHtml(item.reason || "Not accepted as a Dravidian-only alternative.")}</p>`).join("")}</div>` : ""}
       ${entry.editorialNote ? `<p class="text-xs text-stone-600 mt-2">${escapeHtml(entry.editorialNote)}</p>` : ""}
       <div class="mt-3 pt-3 border-t border-stone-100">
-        <p class="text-xs text-stone-500 mb-2">Vote for a Kannada alternative</p>
+        <p class="text-xs text-stone-500 mb-2">${entry.noAlternative || entry.scopeAudit ? "Vote on this classification" : "Vote for a Kannada alternative"}</p>
         <div class="flex flex-wrap gap-2">${voteHtml}</div>
         <button onclick="toggleImproveForm('${entry.id}')" class="mt-3 text-sm font-medium text-amber-700 hover:text-amber-900">Improve / Suggest a Kannada alternative</button>
         <div id="improve-${entry.id}" class="hidden mt-3 p-3 bg-stone-50 rounded-lg border border-stone-200">

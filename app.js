@@ -1,13 +1,12 @@
-// Crowdsourcing app – click to vote + Improve to add new alternative
+// Crowdsourcing app – click to vote + Improve + show Proto / Tamil / Tulu
 
-const STORAGE_KEY = "kannada_desi_v2";
+const STORAGE_KEY = "kannada_desi_v3";
 
 const grid = document.getElementById("grid");
 const searchInput = document.getElementById("search");
 const categorySelect = document.getElementById("category");
 const stats = document.getElementById("stats");
 
-// ---------- Storage ----------
 function loadState() {
   try {
     return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { votes: {}, suggestions: {} };
@@ -38,12 +37,11 @@ function getSuggestions(entryId) {
   return state.suggestions[entryId] || [];
 }
 
-function addSuggestion(entryId, word, note = "") {
+function addSuggestion(entryId, word) {
   if (!word || !word.trim()) return;
   const state = loadState();
   if (!state.suggestions[entryId]) state.suggestions[entryId] = [];
   
-  // Avoid exact duplicates
   const exists = state.suggestions[entryId].some(s => s.word === word.trim());
   if (exists) {
     alert("This alternative is already listed.");
@@ -54,13 +52,15 @@ function addSuggestion(entryId, word, note = "") {
   state.suggestions[entryId].push({
     id: newId,
     word: word.trim(),
-    note: note.trim() || "User suggestion"
+    note: "User suggestion",
+    proto: null,
+    tamil: null,
+    tulu: null
   });
   saveState(state);
   filterAndRender();
 }
 
-// ---------- Rendering ----------
 function render(entries) {
   grid.innerHTML = "";
 
@@ -74,7 +74,6 @@ function render(entries) {
     const card = document.createElement("article");
     card.className = "bg-white border border-stone-200 rounded-xl p-5 shadow-sm";
 
-    // Merge original alternatives + user suggestions
     const allAlts = [
       ...entry.alternatives,
       ...getSuggestions(entry.id)
@@ -90,19 +89,31 @@ function render(entries) {
       const percent = totalVotes > 0 ? Math.round((count / totalVotes) * 100) : 0;
       const isUser = alt.id.startsWith("user_");
 
-      return `
-        <div class="flex items-center justify-between gap-3 py-3 border-b border-stone-100 last:border-0 group">
-          <div class="flex-1 min-w-0">
-            <button 
-              onclick="castVote('${entry.id}', '${alt.id}')"
-              class="kn text-xl font-semibold text-emerald-700 hover:text-emerald-900 hover:underline text-left transition">
-              ${alt.word}
-            </button>
-            ${alt.note ? `<p class="text-xs text-stone-500 mt-0.5">${alt.note}${isUser ? " · added by user" : ""}</p>` : ""}
+      let cognateHtml = "";
+      if (alt.proto || alt.tamil || alt.tulu) {
+        cognateHtml = `
+          <div class="mt-1.5 text-xs text-stone-500 space-y-0.5">
+            ${alt.proto ? `<div><span class="font-medium text-stone-600">Proto-Dravidian:</span> ${alt.proto}</div>` : ""}
+            ${alt.tamil ? `<div><span class="font-medium text-stone-600">Tamil:</span> ${alt.tamil}</div>` : ""}
+            ${alt.tulu ? `<div><span class="font-medium text-stone-600">Tulu:</span> ${alt.tulu}</div>` : ""}
           </div>
+        `;
+      }
 
-          <div class="flex items-center gap-3 shrink-0">
-            <div class="text-right min-w-[60px]">
+      return `
+        <div class="py-3 border-b border-stone-100 last:border-0">
+          <div class="flex items-start justify-between gap-3">
+            <div class="flex-1 min-w-0">
+              <button 
+                onclick="castVote('${entry.id}', '${alt.id}')"
+                class="kn text-xl font-semibold text-emerald-700 hover:text-emerald-900 hover:underline text-left transition">
+                ${alt.word}
+              </button>
+              ${alt.note ? `<p class="text-xs text-stone-500 mt-0.5">${alt.note}${isUser ? " · added by user" : ""}</p>` : ""}
+              ${cognateHtml}
+            </div>
+
+            <div class="text-right min-w-[55px] shrink-0 pt-1">
               <p class="text-sm font-medium text-stone-700">${count}</p>
               ${totalVotes > 0 ? `<p class="text-xs text-stone-400">${percent}%</p>` : `<p class="text-xs text-stone-300">votes</p>`}
             </div>
@@ -126,13 +137,12 @@ function render(entries) {
       </div>
 
       <div class="mb-4">
-        <p class="text-xs font-medium text-stone-500 mb-1 uppercase tracking-wide">Click a word to vote for it</p>
+        <p class="text-xs font-medium text-stone-500 mb-1 uppercase tracking-wide">Click a word to vote · Cognates help invent better forms</p>
         <div>
           ${altsHtml}
         </div>
       </div>
 
-      <!-- Improve section -->
       <div class="pt-3 border-t border-stone-100">
         <button 
           onclick="toggleImproveForm('${entry.id}')"
@@ -204,7 +214,13 @@ function filterAndRender() {
       return (
         e.sanskrit.toLowerCase().includes(q) ||
         e.meaning.toLowerCase().includes(q) ||
-        allAlts.some(a => a.word.toLowerCase().includes(q) || (a.note && a.note.toLowerCase().includes(q)))
+        allAlts.some(a => 
+          a.word.toLowerCase().includes(q) || 
+          (a.note && a.note.toLowerCase().includes(q)) ||
+          (a.proto && a.proto.toLowerCase().includes(q)) ||
+          (a.tamil && a.tamil.toLowerCase().includes(q)) ||
+          (a.tulu && a.tulu.toLowerCase().includes(q))
+        )
       );
     });
   }
@@ -212,14 +228,11 @@ function filterAndRender() {
   render(filtered);
 }
 
-// Global functions for onclick
 window.castVote = castVote;
 window.toggleImproveForm = toggleImproveForm;
 window.submitSuggestion = submitSuggestion;
 
-// Event listeners
 searchInput.addEventListener("input", filterAndRender);
 categorySelect.addEventListener("change", filterAndRender);
 
-// Initial render
 filterAndRender();

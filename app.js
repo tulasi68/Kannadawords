@@ -45,7 +45,8 @@ function languageRows(entry, alts) {
     ["Native Kannada", first.word || "—"],
     ["Tamil", first.tamil || "—"],
     ["Tulu", first.tulu || "—"],
-    ["Halegannada", entry.halegannada || "Not yet sourced"]
+    ["Halegannada", entry.halegannada || "Not yet sourced"],
+    ["Proto-Dravidian root", first.proto || "Not reconstructed / not yet sourced"]
   ];
   return rows.map(([label,value]) => `
     <div class="grid grid-cols-[112px_1fr] gap-2 py-2 border-b border-stone-100 last:border-0">
@@ -71,8 +72,8 @@ function render(entries) {
       <section class="mt-4 pt-4 border-t border-stone-200">
         <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-2">Sentence comparison</h3>
         <div class="space-y-3">
-          <div><p class="text-xs text-stone-500 mb-1">Sanskrit-derived Kannada sentence</p><p class="kn text-base">${escapeHtml(sentence.source)}</p></div>
-          <div><p class="text-xs text-emerald-700 mb-1">Rewritten with native Kannada</p><p class="kn text-base">${escapeHtml(sentence.kannada)}</p></div>
+          <div><p class="text-xs text-stone-500 mb-1">Sample Kannada sentence using the Sanskrit-derived word</p><p class="kn text-base">${escapeHtml(sentence.source)}</p></div>
+          <div><p class="text-xs text-emerald-700 mb-1">Rewritten with a native Kannada equivalent</p><p class="kn text-base">${escapeHtml(sentence.kannada)}</p></div>
           ${sentence.proto ? `<div><p class="text-xs text-violet-700 mb-1">Proto-Dravidian root (illustrative substitution)</p><p class="kn text-base">${escapeHtml(sentence.proto)}</p></div>` : ""}
           ${sentence.hale ? `<div><p class="text-xs text-amber-700 mb-1">Halegannada wording</p><p class="kn text-base">${escapeHtml(sentence.hale)}</p></div>` : ""}
         </div>

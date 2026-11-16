@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ಕನ್ನಡ ದೇಸಿ · Vote & Improve</title>
+  <title>ಕನ್ನಡ ದೇಸಿ · Sanskrit → Dravidian word explorer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -22,7 +22,7 @@
           <span class="kn text-2xl">ಕನ್ನಡ ದೇಸಿ</span>
           <span class="text-stone-400 font-normal text-base ml-2">Vote & Improve</span>
         </h1>
-        <p class="text-sm text-stone-500 mt-0.5">Click a word to vote · Improve to suggest better alternatives</p>
+        <p class="text-sm text-stone-500 mt-0.5">Explore Kannada, Tamil, Tulu and Halegannada equivalents</p>
       </div>
       <div class="flex gap-2">
         <input id="search" type="search" placeholder="Search word or meaning..." 
@@ -48,15 +48,6 @@
       New suggestions appear below and can also be voted on.
     </div>
 
-    <section class="mb-9" aria-labelledby="halegannada-title">
-      <div class="mb-4">
-        <h2 id="halegannada-title" class="kn text-xl font-semibold text-stone-800">ಹಳಗನ್ನಡ ಪದಗಳ ಸಂಗ್ರಹ · Halegannada word collection</h2>
-        <p class="text-sm text-stone-600 mt-1">Historical words with modern meanings and example sentence transformations. Some entries and senses need specialist verification.</p>
-      </div>
-      <div id="halegannada-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
-      <p class="text-xs text-stone-500 mt-3">Source: Halegannada–Hosakannada dataset by Kishan Panaganti and Badrinath Gopal. Dataset release marked CC BY 4.0; underlying source rights and individual entries require review. <a class="underline" href="https://huggingface.co/datasets/kishanpb/halegannada-hosakannada" target="_blank" rel="noopener noreferrer">Dataset and source notes</a>.</p>
-    </section>
-
     <div id="stats" class="mb-6 text-sm text-stone-500"></div>
 
     <div id="grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -71,6 +62,7 @@
   </footer>
 
   <script src="data.js"></script>
+  <script src="sentence-examples.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

@@ -41,3 +41,33 @@ Digitised/OCR datasets, including the Halegannada–Hosagannada pair dataset and
 - Distinguish an Old Kannada attestation from a word that merely survives in modern Kannada.
 - A literary occurrence proves use in that text; it does not automatically prove the proposed gloss in every context.
 - Upgrade to **verified** only after a human editor checks the cited source.
+
+## Additional candidate-list audit
+
+The separate `halegannadaEntries` array contains these further candidates. It currently has no individual page, entry, verse or inscription references for them. They therefore remain **unverified** and must not be described as sourced Old Kannada words:
+
+| Candidate | Working gloss | Status |
+|---|---|---|
+| ಅಂಬುದರಥ | Indra | Unverified |
+| ಅಂಬುಪಾಯಿ | One who drinks water | Unverified |
+| ಅಂಬುರುಹ | Lotus | Unverified |
+| ಅಂಬುವೀಡು | Range of an arrow | Unverified |
+| ಆಲಿವೆಳಗ | Moon | Unverified |
+| ಆಲೀಢ | Tasted / eaten | Unverified |
+| ಆವಗಂ | Always; abundantly | Unverified |
+| ಆವರಿಸು | Surround; pervade; enclose | Unverified |
+| ಅಟ್ಟಟ್ಟಿ | Messenger / courier | Unverified |
+| ಅಡಕಿಲ್ | Heap / pile | Unverified |
+| ಅಕ್ಕಜ | Wonder / surprise | Unverified |
+| ಅಗಡು | Mischief / valour | Unverified |
+| ಹೊಂತ | Vow / pledge | Unverified |
+| ಹೊಂದु | To die | Unverified |
+| ಹೊಗರು | Radiance / splendour | Unverified |
+| ಎರ್ದೆ | Husband; to captivate | Unverified — senses need separation |
+| ಒಳಪೊಕ್ಕಳ್ | To enter | Unverified |
+
+The candidate array's own comment has been corrected to make clear that it is not a verified wordlist. A candidate's presence in that array is not evidence of Old Kannada status.
+
+## Important distinction
+
+A word appearing in a historical or literary Kannada work is not automatically an **Old Kannada** attestation. The work's date, linguistic period, exact reading and contextual meaning must also be established. In particular, the Jaimini Bharata and Rajashankara Vilasa web transcriptions cited above are discovery leads only; their presence on a page titled as a Halegannada collection does not independently establish the period of the work or prove Old Kannada status.

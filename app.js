@@ -282,8 +282,9 @@ function filterAndRender() {
   const q=searchInput.value.trim().toLocaleLowerCase(), cat=categorySelect.value;
   const filtered=votingEntries.filter(e => {
     if(cat!=="all" && e.category!==cat) return false;
-    const sentence=sentenceExamples[e.id] || {};
-    const terms=[e.sanskrit,e.meaning,e.halegannada,e.editorialNote,...(e.sourceEtymology||[]).map(p=>p.form),...e.alternatives.flatMap(a=>[a.word,a.tamil,a.tulu,a.proto,...(a.etymologyParts||[]).map(p=>p.form)]),...(e.rejectedAlternatives||[]).map(a=>a.word),sentence.source,sentence.kannada,sentence.proto,sentence.hale].filter(Boolean);
+    const sentence=(typeof sentenceExamples !== "undefined" && sentenceExamples[e.id]) || {};
+    const sourceParts = Array.isArray(e.sourceEtymology) ? e.sourceEtymology : (e.sourceEtymology ? [e.sourceEtymology] : []);
+    const terms=[e.sanskrit,e.meaning,e.halegannada,e.editorialNote,...sourceParts.map(p=>p.form),...(e.alternatives || []).flatMap(a=>[a.word,a.tamil,a.tulu,a.proto,...(a.etymologyParts||[]).map(p=>p.form)]),...(e.rejectedAlternatives||[]).map(a=>a.word),sentence.source,sentence.kannada,sentence.proto,sentence.hale].filter(Boolean);
     return !q || terms.some(v=>String(v).toLocaleLowerCase().includes(q));
   });
   render(filtered);

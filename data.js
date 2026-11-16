@@ -685,27 +685,27 @@ const wordEntries = [
   },
   // Sanskrit-first entries that connect to words in the curated Halegannada source list.
   {
-    id:"listen", sanskrit:"ಶ್ರವಣ / ಶ್ರವಣಿಸು", meaning:"Listening; to listen", category:"Abstract", halegannada:"ಆಲಿಸು",
+    id:"listen", sanskrit:"ಶ್ರವಣ / ಶ್ರವಣಿಸು", meaning:"Listening; to listen", category:"Abstract", halegannada:"ಆಲಿಸು", halegannadaEvidence:{status:"provisional",sourceTitle:"ಹಳಗನ್ನಡ ಕಾವ್ಯ ಸಂಗ್ರಹ — Jaimini Bharata, canto 17",sourceUrl:"https://knningaiah.blogspot.com/2025/10/17.html",evidenceType:"Secondary transcription and gloss",note:"The page glosses ಕೇಳು as ಆಲಿಸು. Useful lexical evidence, but not checked against a critical edition or manuscript."},
     alternatives:[{id:"kelu",word:"ಕೇಳು",note:"Native Kannada",proto:"*kēḷ",tamil:"கேள் (kēḷ)",tulu:null}]
   },
   {
-    id:"shop", sanskrit:"ಆಪಣ", meaning:"Shop / marketplace", category:"Everyday", halegannada:"ಆವಣ",
+    id:"shop", sanskrit:"ಆಪಣ", meaning:"Shop / marketplace", category:"Everyday", halegannada:"ಆವಣ", halegannadaEvidence:{status:"unverified",sourceTitle:null,sourceUrl:null,evidenceType:null,note:"No traceable dictionary entry or primary-text occurrence identified in this audit. Do not treat this form as established until sourced."},
     alternatives:[{id:"angadi",word:"ಅಂಗಡಿ",note:"Common Kannada",proto:null,tamil:"கடை (kaṭai)",tulu:null}]
   },
   {
-    id:"cloud", sanskrit:"ಮೇಘ", meaning:"Cloud", category:"Nature", halegannada:"ಮುಗಿಲ್",
+    id:"cloud", sanskrit:"ಮೇಘ", meaning:"Cloud", category:"Nature", halegannada:"ಮುಗಿಲ್", halegannadaEvidence:{status:"unverified",sourceTitle:null,sourceUrl:null,evidenceType:null,note:"No traceable dictionary entry or primary-text occurrence identified in this audit. Do not treat this form as established until sourced."},
     alternatives:[{id:"moda",word:"ಮೋಡ",note:"Common Kannada",proto:null,tamil:"மேகம் (mēkam)",tulu:null}]
   },
   {
-    id:"curtain", sanskrit:"ಯವನಿಕಾ", meaning:"Curtain / screen", category:"Everyday", halegannada:"ಜವನಿಕೆ",
+    id:"curtain", sanskrit:"ಯವನಿಕಾ", meaning:"Curtain / screen", category:"Everyday", halegannada:"ಜವನಿಕೆ", halegannadaEvidence:{status:"provisional",sourceTitle:"ಹರಿಹರ — ಗಿರಿಜಾ ಕಲ್ಯಾಣ (transcribed verses)",sourceUrl:"https://knningaiah.blogspot.com/2017/09/blog-post.html",evidenceType:"Secondary transcription of literary text",note:"ಜವನಿಕೆ occurs in the transcribed verses. The page is not a critical edition; verify spelling, date and sense against a scholarly edition."},
     alternatives:[{id:"parade",word:"ಪರದೆ",note:"Common Kannada",proto:null,tamil:"திரை (tirai)",tulu:null}]
   },
   {
-    id:"new", sanskrit:"ನವ / ನವೀನ", meaning:"New", category:"Abstract", halegannada:"ಪೊಸ",
+    id:"new", sanskrit:"ನವ / ನವೀನ", meaning:"New", category:"Abstract", halegannada:"ಪೊಸ", halegannadaEvidence:{status:"provisional",sourceTitle:"ಷಡಕ್ಷರಿದೇವ — ರಾಜಶಂಖರವಿಳಾಸ (transcribed verse)",sourceUrl:"https://knningaiah.blogspot.com/2017/07/blog-post_16.html",evidenceType:"Secondary transcription of literary text",note:"ಪೊಸ occurs in the transcribed verse. The page is not a critical edition; verify spelling, date and sense against a scholarly edition."},
     alternatives:[{id:"hosa",word:"ಹೊಸ",note:"Native Kannada",proto:"*putu",tamil:"புது (putu)",tulu:null}]
   },
   {
-    id:"sugarcane", sanskrit:"ಇಕ್ಷು", meaning:"Sugarcane", category:"Nature", halegannada:"ಕರ್ಬು",
+    id:"sugarcane", sanskrit:"ಇಕ್ಷು", meaning:"Sugarcane", category:"Nature", halegannada:"ಕರ್ಬು", halegannadaEvidence:{status:"provisional",sourceTitle:"Kannada First, Then Tamil — secondary article",sourceUrl:"https://kannada.asianetnews.com/amp/state/kannada-first-then-tamil-independent-researcher-ancient-history-and-epigraphy-vijay-mahantesh-papanala-column-rav/articleshow-rgiku8r",evidenceType:"Secondary linguistic claim",note:"The article mentions ಕರ್ವು / ಕರ್ಬು as a historical Kannada form corresponding to ಕಬ್ಬು. This is not primary evidence and needs dictionary or dated-text confirmation."},
     alternatives:[{id:"kabbu",word:"ಕಬ್ಬು",note:"Common Kannada",proto:null,tamil:"கரும்பு (karumpu)",tulu:null}]
   },
 ]; 

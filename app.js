@@ -87,12 +87,8 @@ function languageRows(entry, alts) {
   const pure = replacementParts.length > 0 && replacementParts.every(part =>
     part.etymology === "dravidian" || (part.etymology === "coinage" && part.builtFromDravidian === true)
   );
-  const sourceHtml = sourceParts.length ? sourceParts.map(part =>
-    `<span class="inline-block mr-2">${escapeHtml(part.form)} <span class="text-xs text-stone-500">(${escapeHtml(etymologyName(part.etymology))})</span></span>`
-  ).join("") : "Not yet classified";
-  const replacementHtml = replacementParts.length ? replacementParts.map(part =>
-    `<span class="inline-block mr-2">${escapeHtml(part.form)} <span class="text-xs text-stone-500">(${escapeHtml(etymologyName(part.etymology))})</span></span>`
-  ).join("") : (entry.noAlternative ? "No replacement proposed" : "Not individually classified");
+  const sourceHtml = sourceParts.length ? sourceParts.map(part => `${part.form} (${etymologyName(part.etymology)})`).join(" · ") : "Not yet classified";
+  const replacementHtml = replacementParts.length ? replacementParts.map(part => `${part.form} (${etymologyName(part.etymology)})`).join(" · ") : (entry.noAlternative ? "No replacement proposed" : "Not individually classified");
   rows.push(["Source-word etymology", sourceHtml]);
   rows.push(["Replacement breakdown", replacementHtml]);
   if (first.viability) rows.push(["Assessment", first.viability === "coinage" ? "Coinage — component origins shown above" : first.viability === "clean" ? "Proposed clean alternative" : "No viable native alternative"]);

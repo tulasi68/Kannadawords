@@ -682,7 +682,7 @@ const wordEntries = [
         tulu: "ಕಲ್ಪು"
       }
     ]
-  }
+  },
   // Sanskrit-first entries that connect to words in the curated Halegannada source list.
   {
     id:"listen", sanskrit:"ಶ್ರವಣ / ಶ್ರವಣಿಸು", meaning:"Listening; to listen", category:"Abstract", halegannada:"ಆಲಿಸು",

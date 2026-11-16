@@ -52,7 +52,7 @@ function languageRows(entry, alts) {
   return rows.map(([label,value]) => {
     const evidence = label === "Halegannada" ? entry.halegannadaEvidence : null;
     const status = evidence?.status || (label === "Halegannada" && entry.halegannada ? "unverified" : null);
-    const statusLabel = status === "provisional" ? "Provisional evidence" : status === "verified" ? "Verified source" : status === "unverified" ? "Unverified — source needed" : "";
+    const statusLabel = status === "provisional" ? "Secondary evidence — primary check needed" : status === "verified" ? "Verified source" : status === "unverified" ? "Unverified — source needed" : "";
     const statusClass = status === "verified" ? "text-emerald-700" : status === "provisional" ? "text-amber-700" : "text-stone-500";
     const source = evidence?.sourceUrl && evidence?.sourceTitle
       ? `<a class="block text-xs underline text-stone-600 mt-1" href="${escapeHtml(evidence.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(evidence.sourceTitle)}</a>`

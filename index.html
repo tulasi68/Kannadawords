@@ -3,15 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ಕನ್ನಡ ದೇಸಿ · Kannada Desi Words</title>
+  <title>ಕನ್ನಡ ದೇಸಿ · Vote for Native Words</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Kannada:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .kn { font-family: 'Noto Sans Kannada', 'Noto Sans', sans-serif; }
-    .card { transition: all 0.2s ease; }
-    .card:hover { transform: translateY(-2px); }
   </style>
 </head>
 <body class="bg-stone-50 text-stone-800 min-h-screen">
@@ -22,9 +20,9 @@
       <div>
         <h1 class="text-xl font-semibold tracking-tight">
           <span class="kn text-2xl">ಕನ್ನಡ ದೇಸಿ</span>
-          <span class="text-stone-400 font-normal text-base ml-2">Kannada Desi Words</span>
+          <span class="text-stone-400 font-normal text-base ml-2">Vote for Native Words</span>
         </h1>
-        <p class="text-sm text-stone-500 mt-0.5">Sanskrit → Native Dravidian alternatives</p>
+        <p class="text-sm text-stone-500 mt-0.5">Choose the best Dravidian alternative for Sanskrit words</p>
       </div>
       <div class="flex gap-2">
         <input id="search" type="search" placeholder="Search word or meaning..." 
@@ -44,20 +42,22 @@
   <!-- Main -->
   <main class="max-w-5xl mx-auto px-4 py-8">
     <div class="mb-6 text-sm text-stone-600 bg-amber-50 border border-amber-100 rounded-lg px-4 py-3">
-      <strong>Open sources only.</strong> All pairs below are drawn from common knowledge, public comparative lists, and open datasets such as DravLex (CC BY 4.0). No copyrighted books were used.
+      <strong>How it works:</strong> For each Sanskrit word you will see one or more native alternatives. 
+      Click <strong>Vote</strong> on the option you think is the best fit. Vote counts update immediately 
+      (stored in your browser). Later versions will sync votes across users.
     </div>
 
     <div id="stats" class="mb-6 text-sm text-stone-500"></div>
 
-    <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div id="grid" class="grid grid-cols-1 md:grid-cols-2 gap-5">
       <!-- Cards injected by JS -->
     </div>
   </main>
 
   <!-- Footer -->
   <footer class="border-t border-stone-200 mt-12 py-8 text-center text-sm text-stone-500">
-    <p>Built for the Kannada community · Data from open sources · Share freely</p>
-    <p class="mt-1">Want to contribute better pairs? Open an issue or fork the project.</p>
+    <p>Built for the Kannada community · Open sources only · Votes stored locally for now</p>
+    <p class="mt-1">Share the link so more people can vote and suggest better alternatives.</p>
   </footer>
 
   <script src="data.js"></script>

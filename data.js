@@ -1,5 +1,5 @@
-// Expanded crowdsourcing data – Sanskrit → native Dravidian alternatives
-// Includes Kannada, with notes on Tamil / Tulu / Proto-Dravidian where relevant
+// Expanded data with Proto-Dravidian roots + Tamil + Tulu cognates
+// Helps users invent better native alternatives
 
 const wordEntries = [
   // ===== Everyday =====
@@ -9,8 +9,14 @@ const wordEntries = [
     meaning: "Milk",
     category: "Everyday",
     alternatives: [
-      { id: "halu", word: "ಹಾಲು", note: "Kannada – most common (pāl root; Tamil pāl, Tulu pēr)" },
-      { id: "palu", word: "ಪಾಲು", note: "Older form" }
+      { 
+        id: "halu", 
+        word: "ಹಾಲು", 
+        note: "Most common Kannada form",
+        proto: "*pāl",
+        tamil: "பால் (pāl)",
+        tulu: "ಪೇರ್ (pēr) / ಪಾಲ್"
+      }
     ]
   },
   {
@@ -19,7 +25,14 @@ const wordEntries = [
     meaning: "Snake",
     category: "Everyday",
     alternatives: [
-      { id: "havu", word: "ಹಾವು", note: "Standard Kannada (pāmpu root; Tamil pāmpu)" }
+      { 
+        id: "havu", 
+        word: "ಹಾವು", 
+        note: "Standard Kannada",
+        proto: "*pāmpu",
+        tamil: "பாம்பு (pāmpu)",
+        tulu: "ಪಾಮು / ಹಾವು"
+      }
     ]
   },
   {
@@ -28,7 +41,14 @@ const wordEntries = [
     meaning: "Tree",
     category: "Everyday",
     alternatives: [
-      { id: "mara", word: "ಮರ", note: "Core Dravidian (Tamil maram, Tulu mara)" }
+      { 
+        id: "mara", 
+        word: "ಮರ", 
+        note: "Core Dravidian",
+        proto: "*maram",
+        tamil: "மரம் (maram)",
+        tulu: "ಮರ (mara)"
+      }
     ]
   },
   {
@@ -37,44 +57,46 @@ const wordEntries = [
     meaning: "House",
     category: "Everyday",
     alternatives: [
-      { id: "mane", word: "ಮನೆ", note: "Everyday native (Tamil maṉai)" }
-    ]
-  },
-  {
-    id: "cloth",
-    sanskrit: "ವಸ್ತ್ರ",
-    meaning: "Cloth / Clothes",
-    category: "Everyday",
-    alternatives: [
-      { id: "batte", word: "ಬಟ್ಟೆ", note: "Common spoken form" }
-    ]
-  },
-  {
-    id: "food",
-    sanskrit: "ಭೋಜನ / ಆಹಾರ",
-    meaning: "Meal / Food",
-    category: "Everyday",
-    alternatives: [
-      { id: "uta", word: "ಊಟ", note: "Most natural spoken form" },
-      { id: "tindi", word: "ತಿಂಡಿ", note: "Snack / light food" }
+      { 
+        id: "mane", 
+        word: "ಮನೆ", 
+        note: "Everyday native",
+        proto: "*manay",
+        tamil: "மனை (maṉai)",
+        tulu: "ಇಲ್ಲ್ / ಮನೆ"
+      }
     ]
   },
   {
     id: "water",
-    sanskrit: "ಜಲ / ನೀರ್",
+    sanskrit: "ಜಲ",
     meaning: "Water",
     category: "Everyday",
     alternatives: [
-      { id: "niru", word: "ನೀರು", note: "Core native (Tamil nīr, Tulu nīr)" }
+      { 
+        id: "niru", 
+        word: "ನೀರು", 
+        note: "Core native",
+        proto: "*nīr",
+        tamil: "நீர் (nīr)",
+        tulu: "ನೀರ್ (nīr)"
+      }
     ]
   },
   {
     id: "flower",
-    sanskrit: "ಪುಷ್ಪ / ಪುಷ್ಪಕ",
+    sanskrit: "ಪುಷ್ಪ",
     meaning: "Flower",
     category: "Everyday",
     alternatives: [
-      { id: "huvu", word: "ಹೂವು", note: "Standard desi (Tamil pū)" }
+      { 
+        id: "huvu", 
+        word: "ಹೂವು", 
+        note: "Standard desi",
+        proto: "*pū",
+        tamil: "பூ (pū)",
+        tulu: "ಪೂ / ಹೂವು"
+      }
     ]
   },
   {
@@ -83,7 +105,46 @@ const wordEntries = [
     meaning: "Bird",
     category: "Everyday",
     alternatives: [
-      { id: "hakki", word: "ಹಕ್ಕಿ", note: "Widely preferred form" }
+      { 
+        id: "hakki", 
+        word: "ಹಕ್ಕಿ", 
+        note: "Widely preferred",
+        proto: "*paṟava",
+        tamil: "பறவை (paṟavai)",
+        tulu: "ಪಕ್ಕಿ / ಹಕ್ಕಿ"
+      }
+    ]
+  },
+  {
+    id: "cloth",
+    sanskrit: "ವಸ್ತ್ರ",
+    meaning: "Cloth / Clothes",
+    category: "Everyday",
+    alternatives: [
+      { 
+        id: "batte", 
+        word: "ಬಟ್ಟೆ", 
+        note: "Common spoken",
+        proto: "*vaṭṭi",
+        tamil: "ஆடை / துணி",
+        tulu: "ಬಟ್ಟೆ"
+      }
+    ]
+  },
+  {
+    id: "food",
+    sanskrit: "ಭೋಜನ / ಆಹಾರ",
+    meaning: "Meal / Food",
+    category: "Everyday",
+    alternatives: [
+      { 
+        id: "uta", 
+        word: "ಊಟ", 
+        note: "Most natural spoken form",
+        proto: "*ūṭu",
+        tamil: "உணவு / சோறு",
+        tulu: "ಊಟ"
+      }
     ]
   },
   {
@@ -92,17 +153,14 @@ const wordEntries = [
     meaning: "Village",
     category: "Everyday",
     alternatives: [
-      { id: "halli", word: "ಹಳ್ಳಿ", note: "Common native term" }
-    ]
-  },
-  {
-    id: "book",
-    sanskrit: "ಪುಸ್ತಕ",
-    meaning: "Book",
-    category: "Everyday",
-    alternatives: [
-      { id: "hottige", word: "ಹೊತ್ತಿಗೆ", note: "Traditional Kannada form" },
-      { id: "hottige2", word: "ಹೊತ್ತಗೆ", note: "Variant" }
+      { 
+        id: "halli", 
+        word: "ಹಳ್ಳಿ", 
+        note: "Common native",
+        proto: "*paḷḷi / *ūr",
+        tamil: "ஊர் (ūr)",
+        tulu: "ಊರು / ಹಳ್ಳಿ"
+      }
     ]
   },
   {
@@ -111,8 +169,14 @@ const wordEntries = [
     meaning: "Lamp / Light",
     category: "Everyday",
     alternatives: [
-      { id: "sodaru", word: "ಸೊಡರು", note: "Pure Kannada form preferred by many" },
-      { id: "deepa", word: "ದೀಪ", note: "Commonly used (Sanskrit)" }
+      { 
+        id: "sodaru", 
+        word: "ಸೊಡರು", 
+        note: "Pure Kannada form",
+        proto: "*cuṭar",
+        tamil: "சுடர் (cuṭar)",
+        tulu: "ಸೊಡರು"
+      }
     ]
   },
   {
@@ -121,27 +185,14 @@ const wordEntries = [
     meaning: "Path / Way",
     category: "Everyday",
     alternatives: [
-      { id: "dari", word: "ದಾರಿ", note: "Everyday native" },
-      { id: "hadi", word: "ಹಾದಿ", note: "Also common" }
-    ]
-  },
-  {
-    id: "time",
-    sanskrit: "ಕಾಲ / ಸಮಯ",
-    meaning: "Time",
-    category: "Everyday",
-    alternatives: [
-      { id: "vela", word: "ವೇಳೆ", note: "Common spoken" },
-      { id: "hottu", word: "ಹೊತ್ತು", note: "Native sense of time of day" }
-    ]
-  },
-  {
-    id: "work",
-    sanskrit: "ಕಾರ್ಯ / ಕೆಲಸ",
-    meaning: "Work / Task",
-    category: "Everyday",
-    alternatives: [
-      { id: "kelasa", word: "ಕೆಲಸ", note: "Most natural everyday word" }
+      { 
+        id: "dari", 
+        word: "ದಾರಿ", 
+        note: "Everyday native",
+        proto: "*vaḻi",
+        tamil: "வழி (vaḻi)",
+        tulu: "ದಾರಿ"
+      }
     ]
   },
 
@@ -152,7 +203,14 @@ const wordEntries = [
     meaning: "Sun",
     category: "Nature",
     alternatives: [
-      { id: "nesara", word: "ನೇಸರ", note: "Classic Kannada (Tamil ñāyiṟu)" }
+      { 
+        id: "nesara", 
+        word: "ನೇಸರ", 
+        note: "Classic Kannada",
+        proto: "*ñāyiṟu",
+        tamil: "ஞாயிறு (ñāyiṟu)",
+        tulu: "ನೇಸರ"
+      }
     ]
   },
   {
@@ -161,7 +219,14 @@ const wordEntries = [
     meaning: "Night",
     category: "Nature",
     alternatives: [
-      { id: "irulu", word: "ಇರುಳು", note: "Strong desi (Tamil iruḷ)" }
+      { 
+        id: "irulu", 
+        word: "ಇರುಳು", 
+        note: "Strong desi",
+        proto: "*irul",
+        tamil: "இருள் (iruḷ)",
+        tulu: "ಇರುಳು"
+      }
     ]
   },
   {
@@ -170,16 +235,14 @@ const wordEntries = [
     meaning: "Fire",
     category: "Nature",
     alternatives: [
-      { id: "benki", word: "ಬೆಂಕಿ", note: "Everyday native (Tamil veṅkai)" }
-    ]
-  },
-  {
-    id: "shadow",
-    sanskrit: "ಛಾಯೆ",
-    meaning: "Shadow",
-    category: "Nature",
-    alternatives: [
-      { id: "neralu", word: "ನೆರಳು", note: "Common desi" }
+      { 
+        id: "benki", 
+        word: "ಬೆಂಕಿ", 
+        note: "Everyday native",
+        proto: "*veṅkay",
+        tamil: "நெருப்பு",
+        tulu: "ಬೆಂಕಿ"
+      }
     ]
   },
   {
@@ -188,7 +251,14 @@ const wordEntries = [
     meaning: "Sky",
     category: "Nature",
     alternatives: [
-      { id: "agasa", word: "ಆಗಸ", note: "Widely used desi form" }
+      { 
+        id: "agasa", 
+        word: "ಆಗಸ", 
+        note: "Widely used desi",
+        proto: null,
+        tamil: "வானம் (vāṉam)",
+        tulu: "ಆಗಸ"
+      }
     ]
   },
   {
@@ -197,25 +267,46 @@ const wordEntries = [
     meaning: "Earth / Ground",
     category: "Nature",
     alternatives: [
-      { id: "nela", word: "ನೆಲ", note: "Core native (Tamil nilam)" }
+      { 
+        id: "nela", 
+        word: "ನೆಲ", 
+        note: "Core native",
+        proto: "*nilam",
+        tamil: "நிலம் (nilam)",
+        tulu: "ನೆಲ"
+      }
     ]
   },
   {
     id: "wind",
-    sanskrit: "ವಾಯು / ಪವನ",
+    sanskrit: "ವಾಯು",
     meaning: "Wind / Air",
     category: "Nature",
     alternatives: [
-      { id: "gali", word: "ಗಾಳಿ", note: "Everyday Kannada" }
+      { 
+        id: "gali", 
+        word: "ಗಾಳಿ", 
+        note: "Everyday Kannada",
+        proto: "*kāṟṟu",
+        tamil: "காற்று (kāṟṟu)",
+        tulu: "ಗಾಳಿ"
+      }
     ]
   },
   {
     id: "rain",
-    sanskrit: "ವರ್ಷ / ಮಳೆ",
+    sanskrit: "ವರ್ಷ",
     meaning: "Rain",
     category: "Nature",
     alternatives: [
-      { id: "male", word: "ಮಳೆ", note: "Standard native" }
+      { 
+        id: "male", 
+        word: "ಮಳೆ", 
+        note: "Standard native",
+        proto: "*maḻai",
+        tamil: "மழை (maḻai)",
+        tulu: "ಮಳೆ"
+      }
     ]
   },
   {
@@ -224,8 +315,14 @@ const wordEntries = [
     meaning: "Mountain",
     category: "Nature",
     alternatives: [
-      { id: "betta", word: "ಬೆಟ್ಟ", note: "Common Kannada" },
-      { id: "gudda", word: "ಗುಡ್ಡ", note: "Also widely used" }
+      { 
+        id: "betta", 
+        word: "ಬೆಟ್ಟ", 
+        note: "Common Kannada",
+        proto: "*veṭṭam",
+        tamil: "மலை (malai)",
+        tulu: "ಬೆಟ್ಟ"
+      }
     ]
   },
   {
@@ -234,17 +331,14 @@ const wordEntries = [
     meaning: "Forest",
     category: "Nature",
     alternatives: [
-      { id: "adavi", word: "ಅಡವಿ", note: "Native form" },
-      { id: "kadu", word: "ಕಾಡು", note: "Very common spoken" }
-    ]
-  },
-  {
-    id: "river",
-    sanskrit: "ನದಿ",
-    meaning: "River",
-    category: "Nature",
-    alternatives: [
-      { id: "hole", word: "ಹೊಳೆ", note: "Native Kannada for stream/river" }
+      { 
+        id: "kadu", 
+        word: "ಕಾಡು", 
+        note: "Very common spoken",
+        proto: "*kāṭu",
+        tamil: "காடு (kāṭu)",
+        tulu: "ಕಾಡು"
+      }
     ]
   },
 
@@ -255,25 +349,14 @@ const wordEntries = [
     meaning: "Hand",
     category: "Body",
     alternatives: [
-      { id: "kai", word: "ಕೈ", note: "Core Dravidian (Tamil kai, Tulu kai)" }
-    ]
-  },
-  {
-    id: "blood",
-    sanskrit: "ರಕ್ತ",
-    meaning: "Blood",
-    category: "Body",
-    alternatives: [
-      { id: "nettaru", word: "ನೆತ್ತರು", note: "Native form" }
-    ]
-  },
-  {
-    id: "hair",
-    sanskrit: "ಕೇಶ",
-    meaning: "Hair",
-    category: "Body",
-    alternatives: [
-      { id: "kudalu", word: "ಕೂದಲು", note: "Standard desi" }
+      { 
+        id: "kai", 
+        word: "ಕೈ", 
+        note: "Core Dravidian",
+        proto: "*kay",
+        tamil: "கை (kai)",
+        tulu: "ಕೈ (kai)"
+      }
     ]
   },
   {
@@ -282,16 +365,14 @@ const wordEntries = [
     meaning: "Eye",
     category: "Body",
     alternatives: [
-      { id: "kannu", word: "ಕಣ್ಣು", note: "Core native (Tamil kaṇ)" }
-    ]
-  },
-  {
-    id: "tooth",
-    sanskrit: "ದಂತ",
-    meaning: "Tooth",
-    category: "Body",
-    alternatives: [
-      { id: "hallu", word: "ಹಲ್ಲು", note: "Everyday form (Tamil pal)" }
+      { 
+        id: "kannu", 
+        word: "ಕಣ್ಣು", 
+        note: "Core native",
+        proto: "*kaṇ",
+        tamil: "கண் (kaṇ)",
+        tulu: "ಕಣ್ / ಕಣ್ಣು"
+      }
     ]
   },
   {
@@ -300,34 +381,46 @@ const wordEntries = [
     meaning: "Head",
     category: "Body",
     alternatives: [
-      { id: "tale", word: "ತಲೆ", note: "Core native (Tamil talai)" }
+      { 
+        id: "tale", 
+        word: "ತಲೆ", 
+        note: "Core native",
+        proto: "*talay",
+        tamil: "தலை (talai)",
+        tulu: "ತರೆ / ತಲೆ"
+      }
     ]
   },
   {
-    id: "face",
-    sanskrit: "ಮುಖ",
-    meaning: "Face",
+    id: "tooth",
+    sanskrit: "ದಂತ",
+    meaning: "Tooth",
     category: "Body",
     alternatives: [
-      { id: "moga", word: "ಮೊಗ", note: "Tadbhava / desi form" }
-    ]
-  },
-  {
-    id: "mouth",
-    sanskrit: "ಮುಖ / ಆಸ್ಯ",
-    meaning: "Mouth",
-    category: "Body",
-    alternatives: [
-      { id: "bayi", word: "ಬಾಯಿ", note: "Standard native" }
+      { 
+        id: "hallu", 
+        word: "ಹಲ್ಲು", 
+        note: "Everyday form",
+        proto: "*pal",
+        tamil: "பல் (pal)",
+        tulu: "ಪಲ್ಲ್ / ಹಲ್ಲು"
+      }
     ]
   },
   {
     id: "leg",
-    sanskrit: "ಪಾದ / ಜಂಘ",
+    sanskrit: "ಪಾದ",
     meaning: "Leg / Foot",
     category: "Body",
     alternatives: [
-      { id: "kalu", word: "ಕಾಲು", note: "Core native (Tamil kāl)" }
+      { 
+        id: "kalu", 
+        word: "ಕಾಲು", 
+        note: "Core native",
+        proto: "*kāl",
+        tamil: "கால் (kāl)",
+        tulu: "ಕಾರ್ / ಕಾಲು"
+      }
     ]
   },
   {
@@ -336,7 +429,14 @@ const wordEntries = [
     meaning: "Ear",
     category: "Body",
     alternatives: [
-      { id: "kivi", word: "ಕಿವಿ", note: "Native form" }
+      { 
+        id: "kivi", 
+        word: "ಕಿವಿ", 
+        note: "Native form",
+        proto: "*kevi",
+        tamil: "காது (kātu)",
+        tulu: "ಕೆಮಿ / ಕಿವಿ"
+      }
     ]
   },
   {
@@ -345,16 +445,62 @@ const wordEntries = [
     meaning: "Nose",
     category: "Body",
     alternatives: [
-      { id: "mugu", word: "ಮೂಗು", note: "Everyday native" }
+      { 
+        id: "mugu", 
+        word: "ಮೂಗು", 
+        note: "Everyday native",
+        proto: "*mūkku",
+        tamil: "மூக்கு (mūkku)",
+        tulu: "ಮೂಗು"
+      }
     ]
   },
   {
-    id: "stomach",
-    sanskrit: "ಉದರ / ಹೊಟ್ಟೆ",
-    meaning: "Stomach / Belly",
+    id: "mouth",
+    sanskrit: "ಮುಖ / ಆಸ್ಯ",
+    meaning: "Mouth",
     category: "Body",
     alternatives: [
-      { id: "hotte", word: "ಹೊಟ್ಟೆ", note: "Common spoken" }
+      { 
+        id: "bayi", 
+        word: "ಬಾಯಿ", 
+        note: "Standard native",
+        proto: "*vāy",
+        tamil: "வாய் (vāy)",
+        tulu: "ಬಾಯಿ"
+      }
+    ]
+  },
+  {
+    id: "blood",
+    sanskrit: "ರಕ್ತ",
+    meaning: "Blood",
+    category: "Body",
+    alternatives: [
+      { 
+        id: "nettaru", 
+        word: "ನೆತ್ತರು", 
+        note: "Native form",
+        proto: "*nettar",
+        tamil: "இரத்தம்",
+        tulu: "ನೆತ್ತೆರ್"
+      }
+    ]
+  },
+  {
+    id: "hair",
+    sanskrit: "ಕೇಶ",
+    meaning: "Hair",
+    category: "Body",
+    alternatives: [
+      { 
+        id: "kudalu", 
+        word: "ಕೂದಲು", 
+        note: "Standard desi",
+        proto: "*kūtal",
+        tamil: "கூந்தல்",
+        tulu: "ಕೂದಲು"
+      }
     ]
   },
 
@@ -365,7 +511,14 @@ const wordEntries = [
     meaning: "North",
     category: "Directions",
     alternatives: [
-      { id: "badagana", word: "ಬಡಗಣ", note: "Traditional Kannada directional" }
+      { 
+        id: "badagana", 
+        word: "ಬಡಗಣ", 
+        note: "Traditional directional",
+        proto: "*vaṭakk-",
+        tamil: "வடக்கு (vaṭakku)",
+        tulu: "ಬಡಕಾಯಿ"
+      }
     ]
   },
   {
@@ -374,7 +527,14 @@ const wordEntries = [
     meaning: "South",
     category: "Directions",
     alternatives: [
-      { id: "tenkana", word: "ತೆಂಕಣ", note: "Traditional Kannada directional" }
+      { 
+        id: "tenkana", 
+        word: "ತೆಂಕಣ", 
+        note: "Traditional directional",
+        proto: "*teṉk-",
+        tamil: "தெற்கு (teṟku)",
+        tulu: "ತೆಂಕಾಯಿ"
+      }
     ]
   },
   {
@@ -383,7 +543,14 @@ const wordEntries = [
     meaning: "East",
     category: "Directions",
     alternatives: [
-      { id: "mudana", word: "ಮೂಡಣ", note: "Traditional Kannada directional" }
+      { 
+        id: "mudana", 
+        word: "ಮೂಡಣ", 
+        note: "Traditional directional",
+        proto: "*mūṭal",
+        tamil: "கிழக்கு (kiḻakku)",
+        tulu: "ಮೂಡಾಯಿ"
+      }
     ]
   },
   {
@@ -392,92 +559,48 @@ const wordEntries = [
     meaning: "West",
     category: "Directions",
     alternatives: [
-      { id: "paduvana", word: "ಪಡುವಣ", note: "Traditional Kannada directional" }
+      { 
+        id: "paduvana", 
+        word: "ಪಡುವಣ", 
+        note: "Traditional directional",
+        proto: "*paṭu",
+        tamil: "மேற்கு (mēṟku)",
+        tulu: "ಪಡ್ಡಾಯಿ"
+      }
     ]
   },
 
-  // ===== Abstract / Other =====
+  // ===== Abstract =====
   {
     id: "language",
     sanskrit: "ಭಾಷೆ",
     meaning: "Language / Speech",
     category: "Abstract",
     alternatives: [
-      { id: "nudi", word: "ನುಡಿ", note: "Strong desi form" }
+      { 
+        id: "nudi", 
+        word: "ನುಡಿ", 
+        note: "Strong desi form",
+        proto: "*nuṭi / *moḻi",
+        tamil: "மொழி (moḻi)",
+        tulu: "ನುಡಿ"
+      }
     ]
   },
   {
     id: "friend",
-    sanskrit: "ಸ್ನೇಹ / ಸ್ನೇಹಿತ",
+    sanskrit: "ಸ್ನೇಹಿತ",
     meaning: "Friend",
     category: "Abstract",
     alternatives: [
-      { id: "geleya", word: "ಗೆಳೆಯ", note: "Native form" }
-    ]
-  },
-  {
-    id: "sorrow",
-    sanskrit: "ದುಃಖ",
-    meaning: "Sorrow / Grief",
-    category: "Abstract",
-    alternatives: [
-      { id: "alalu", word: "ಅಳಲು", note: "Desi form" },
-      { id: "novu", word: "ನೋವು", note: "Also commonly used" }
-    ]
-  },
-  {
-    id: "question",
-    sanskrit: "ಪ್ರಶ್ನೆ",
-    meaning: "Question",
-    category: "Abstract",
-    alternatives: [
-      { id: "kelve", word: "ಕೇಳ್ವೆ", note: "Native alternative" }
-    ]
-  },
-  {
-    id: "happiness",
-    sanskrit: "ಸಂತೋಷ",
-    meaning: "Happiness",
-    category: "Abstract",
-    alternatives: [
-      { id: "santasa", word: "ಸಂತಸ", note: "Assimilated preferred form" }
-    ]
-  },
-  {
-    id: "sound",
-    sanskrit: "ಧ್ವನಿ",
-    meaning: "Sound / Noise",
-    category: "Abstract",
-    alternatives: [
-      { id: "sappala", word: "ಸಪ್ಪಳ", note: "Everyday native" }
-    ]
-  },
-  {
-    id: "knowledge",
-    sanskrit: "ವಿದ್ಯೆ / ಜ್ಞಾನ",
-    meaning: "Knowledge / Learning",
-    category: "Abstract",
-    alternatives: [
-      { id: "odu", word: "ಓದು", note: "Reading / study (native verb root)" },
-      { id: "kalike", word: "ಕಲಿಕೆ", note: "Learning" }
-    ]
-  },
-  {
-    id: "life",
-    sanskrit: "ಜೀವನ / ಜೀವ",
-    meaning: "Life",
-    category: "Abstract",
-    alternatives: [
-      { id: "baduku", word: "ಬದುಕು", note: "Living / life (native)" }
-    ]
-  },
-  {
-    id: "death",
-    sanskrit: "ಮರಣ",
-    meaning: "Death",
-    category: "Abstract",
-    alternatives: [
-      { id: "savu", word: "ಸಾವು", note: "Everyday native" }
+      { 
+        id: "geleya", 
+        word: "ಗೆಳೆಯ", 
+        note: "Native form",
+        proto: "*keḷi",
+        tamil: "நண்பன்",
+        tulu: "ಗೆಳೆಯೆ"
+      }
     ]
   },
   {
@@ -486,7 +609,46 @@ const wordEntries = [
     meaning: "Name",
     category: "Abstract",
     alternatives: [
-      { id: "hesaru", word: "ಹೆಸರು", note: "Standard native" }
+      { 
+        id: "hesaru", 
+        word: "ಹೆಸರು", 
+        note: "Standard native",
+        proto: "*peyar",
+        tamil: "பெயர் (peyar)",
+        tulu: "ಪುದರ್ / ಹೆಸರು"
+      }
+    ]
+  },
+  {
+    id: "life",
+    sanskrit: "ಜೀವನ",
+    meaning: "Life",
+    category: "Abstract",
+    alternatives: [
+      { 
+        id: "baduku", 
+        word: "ಬದುಕು", 
+        note: "Living / life (native)",
+        proto: "*vāḻ",
+        tamil: "வாழ்க்கை (vāḻkkai)",
+        tulu: "ಬದ್ಕ್"
+      }
+    ]
+  },
+  {
+    id: "death",
+    sanskrit: "ಮರಣ",
+    meaning: "Death",
+    category: "Abstract",
+    alternatives: [
+      { 
+        id: "savu", 
+        word: "ಸಾವು", 
+        note: "Everyday native",
+        proto: "*cāvu",
+        tamil: "சாவு (cāvu)",
+        tulu: "ಸಾವು"
+      }
     ]
   },
   {
@@ -495,17 +657,30 @@ const wordEntries = [
     meaning: "King",
     category: "Abstract",
     alternatives: [
-      { id: "raya", word: "ರಾಯ", note: "Traditional Kannada title form" },
-      { id: "arasu", word: "ಅರಸು", note: "Native ruler term" }
+      { 
+        id: "arasu", 
+        word: "ಅರಸು", 
+        note: "Native ruler term",
+        proto: "*aracu",
+        tamil: "அரசு / அரசன்",
+        tulu: "ಅರಸು"
+      }
     ]
   },
   {
-    id: "day",
-    sanskrit: "ದಿನ / ದಿವಸ",
-    meaning: "Day",
+    id: "knowledge",
+    sanskrit: "ವಿದ್ಯೆ / ಜ್ಞಾನ",
+    meaning: "Knowledge / Learning",
     category: "Abstract",
     alternatives: [
-      { id: "hagalu", word: "ಹಗಲು", note: "Daytime (native)" }
+      { 
+        id: "kalike", 
+        word: "ಕಲಿಕೆ", 
+        note: "Learning",
+        proto: "*kal",
+        tamil: "கல்வி (kalvi)",
+        tulu: "ಕಲ್ಪು"
+      }
     ]
   }
 ];

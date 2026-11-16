@@ -97,8 +97,8 @@ function languageRows(entry, alts) {
   const pure = replacementParts.length > 0 && replacementParts.every(part =>
     part.etymology === "dravidian" || (part.etymology === "coinage" && part.builtFromDravidian === true)
   );
-  const sourceHtml = sourceParts.length ? sourceParts.map(part => `${part.form} (${etymologyName(part.etymology)})`).join(" · ") : "Not yet classified";
-  const replacementHtml = replacementParts.length ? replacementParts.map(part => `${part.form} (${etymologyName(part.etymology)})`).join(" · ") : (entry.noAlternative ? "No replacement proposed" : "Not individually classified");
+  const sourceHtml = sourceParts.length ? sourceParts.map(part => `${part.form} (${etymologyName(part.etymology)})`).join(" · ") : "Unknown — this source word has not been individually reviewed";
+  const replacementHtml = replacementParts.length ? replacementParts.map(part => `${part.form} (${etymologyName(part.etymology)})`).join(" · ") : (entry.noAlternative ? "No replacement proposed" : "Unknown — replacement components have not been individually reviewed");
   rows.push(["Source-word etymology", sourceHtml]);
   rows.push(["Replacement breakdown", replacementHtml]);
   if (first.viability) rows.push(["Assessment", first.viability === "coinage" ? "Coinage — component origins shown above" : first.viability === "clean" ? "Proposed clean alternative" : first.viability === "scope_audit" ? "Outside Sanskrit-origin replacement scope" : "No viable native alternative"]);

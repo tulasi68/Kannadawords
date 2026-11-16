@@ -37,6 +37,16 @@ const votingEntries = wordEntries.map(entry => {
     editorialNote:item.note,
     noAlternative:true,
     alternatives:[{id:"no-alternative",word:"No viable native alternative",note:"Community position — vote to agree or propose a candidate",isNoAlternative:true,viability:"no_alternative",etymologyParts:[]}]
+  })))
+  .concat((typeof originAuditEntries === "undefined" ? [] : originAuditEntries).map(item => ({
+    id:"scope-" + item.id,
+    sanskrit:item.sourceForm,
+    meaning:item.meaning,
+    category:"Origin audit",
+    sourceEtymology:item.etymologyParts || [{form:item.sourceForm,etymology:item.etymology}],
+    editorialNote:item.note,
+    scopeAudit:true,
+    alternatives:[{id:"scope-audit",word:"Outside Sanskrit-origin scope",note:"This item should not be counted as a Sanskrit-derived target until its origin is confirmed.",isScopeAudit:true,viability:"scope_audit",etymologyParts:[]}]
   })));
 
 const etymologyName = code => (typeof etymologyLabels !== "undefined" && etymologyLabels[code]) || code || "Unknown";
@@ -67,7 +77,7 @@ function addSuggestion(entryId, word) {
   if (state.suggestions[entryId].some(s => s.word === word.trim())) {
     alert("This alternative is already listed."); return;
   }
-  state.suggestions[entryId].push({ id:"user_"+Date.now(), word:word.trim(), note:"User suggestion", proto:null, tamil:null, tulu:null });
+  state.suggestions[entryId].push({ id:"user_"+Date.now(), word:word.trim(), note:"User suggestion — etymology not reviewed", proto:null, tamil:null, tulu:null, etymologyParts:[{form:word.trim(),etymology:"unknown"}], viability:"proposed", unreviewed:true });
   saveState(state); filterAndRender();
 }
 function escapeHtml(value) {
@@ -91,7 +101,7 @@ function languageRows(entry, alts) {
   const replacementHtml = replacementParts.length ? replacementParts.map(part => `${part.form} (${etymologyName(part.etymology)})`).join(" · ") : (entry.noAlternative ? "No replacement proposed" : "Not individually classified");
   rows.push(["Source-word etymology", sourceHtml]);
   rows.push(["Replacement breakdown", replacementHtml]);
-  if (first.viability) rows.push(["Assessment", first.viability === "coinage" ? "Coinage — component origins shown above" : first.viability === "clean" ? "Proposed clean alternative" : "No viable native alternative"]);
+  if (first.viability) rows.push(["Assessment", first.viability === "coinage" ? "Coinage — component origins shown above" : first.viability === "clean" ? "Proposed clean alternative" : first.viability === "scope_audit" ? "Outside Sanskrit-origin replacement scope" : "No viable native alternative"]);
   if (replacementParts.length) rows.push(["Dravidian-only check", pure ? "Passes the proposed token audit" : "Does not pass — review required"]);
   return rows.map(([label,value]) => {
     const evidence = label === "Halegannada" ? entry.halegannadaEvidence : null;
@@ -125,7 +135,7 @@ function render(entries) {
     const rows = languageRows(entry, alts);
     const voteHtml = alts.map(alt => {
       const count = getVoteCount(entry.id,alt.id);
-      const label = alt.isNoAlternative ? "Agree: no viable native alternative" : alt.word;
+      const label = alt.isNoAlternative ? "Agree: no viable native alternative" : alt.isScopeAudit ? "Agree: outside Sanskrit-origin scope" : alt.unreviewed ? alt.word + " · etymology unknown" : alt.word;
       return `<button onclick="castVote('${entry.id}','${alt.id}')" class="text-xs border border-emerald-200 text-emerald-800 rounded-full px-2 py-1 hover:bg-emerald-50">${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
     }).join(" ");
     card.innerHTML = `
@@ -133,7 +143,7 @@ function render(entries) {
         <span class="text-xs font-medium uppercase tracking-wide text-amber-700 bg-amber-50 px-2 py-0.5 rounded">${escapeHtml(entry.category)}</span>
         ${totalVotes ? `<span class="text-xs text-stone-400">${totalVotes} votes</span>` : ""}
       </div>
-      ${entry.noAlternative ? '<div class="mb-3 rounded-lg border border-orange-200 bg-orange-50 px-3 py-2 text-sm text-orange-900"><strong>No viable native alternative</strong><p class="text-xs mt-1">This is an honest open category, not a failed card. Community proposals can still be added for review.</p></div>' : ''}
+      ${entry.noAlternative ? '<div class="mb-3 rounded-lg border border-orange-200 bg-orange-50 px-3 py-2 text-sm text-orange-900"><strong>No viable native alternative</strong><p class="text-xs mt-1">This is an honest open category, not a failed card. Community proposals can still be added for review.</p></div>' : entry.scopeAudit ? '<div class="mb-3 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2 text-sm text-sky-900"><strong>Origin audit — outside the Sanskrit-derived replacement set</strong><p class="text-xs mt-1">The proposed loanword origin needs independent verification.</p></div>' : ''}
       <div class="mb-3">
         <p class="text-xs text-stone-400 mb-0.5">Word used in Kannada</p>
         <p class="kn text-2xl font-medium text-stone-800">${escapeHtml(entry.sanskrit)}</p>

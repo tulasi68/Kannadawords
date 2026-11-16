@@ -68,23 +68,6 @@ function render(entries) {
     const totalVotes = alts.reduce((sum, alt) => sum + getVoteCount(entry.id,alt.id),0);
     const first = alts[0] || {};
     const rows = languageRows(entry, alts);
-    const sentence = sentenceExamples[entry.id];
-    const sentenceHtml = sentence ? `
-      <section class="mt-4 pt-4 border-t border-stone-200">
-        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Sentence comparison</h3>
-        <p class="text-xs text-stone-500 mb-3">Illustrative sample sentences, not historical quotations. Proto-Dravidian forms are reconstructed roots, not complete attested sentences.</p>
-        <div class="space-y-3">
-          <div><p class="text-xs text-stone-500 mb-1">Sample Kannada sentence using the Sanskrit-derived word</p><p class="kn text-base">${escapeHtml(sentence.source)}</p></div>
-          <div><p class="text-xs text-emerald-700 mb-1">Rewritten with a native Kannada equivalent</p><p class="kn text-base">${escapeHtml(sentence.kannada)}</p></div>
-          ${sentence.proto ? `<div><p class="text-xs text-violet-700 mb-1">Proto-Dravidian root (illustrative substitution)</p><p class="kn text-base">${escapeHtml(sentence.proto)}</p></div>` : ""}
-          ${sentence.hale ? `<div><p class="text-xs text-amber-700 mb-1">Halegannada wording</p><p class="kn text-base">${escapeHtml(sentence.hale)}</p></div>` : ""}
-        </div>
-        ${sentence.note ? `<p class="text-xs text-stone-500 mt-2">${escapeHtml(sentence.note)}</p>` : ""}
-      </section>` : `
-      <section class="mt-4 pt-4 border-t border-stone-200">
-        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Sentence comparison</h3>
-        <p class="text-xs text-stone-500">A reviewed sentence example has not yet been added for this entry.</p>
-      </section>`;
     const voteHtml = alts.map(alt => {
       const count = getVoteCount(entry.id,alt.id);
       return `<button onclick="castVote('${entry.id}','${alt.id}')" class="text-xs border border-emerald-200 text-emerald-800 rounded-full px-2 py-1 hover:bg-emerald-50">${escapeHtml(alt.word)} · ${count} vote${count===1?"":"s"}</button>`;
@@ -103,7 +86,6 @@ function render(entries) {
         <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Equivalent words across languages</h3>
         ${rows}
       </section>
-      ${sentenceHtml}
       <div class="mt-3 pt-3 border-t border-stone-100">
         <p class="text-xs text-stone-500 mb-2">Vote for a Kannada alternative</p>
         <div class="flex flex-wrap gap-2">${voteHtml}</div>

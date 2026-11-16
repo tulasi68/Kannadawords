@@ -64,13 +64,23 @@
         <h2 class="text-lg font-semibold text-stone-800">Sentence-level community review</h2>
         <p class="text-sm text-stone-600 mt-1">Compare the original with a <strong>proposed rendering</strong>. Proposed versions are constructed illustrations, not attested quotations or established usage. Bold text marks suggested swaps. Vote on the sentence in context.</p>
       </div>
+      <div class="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+        <p class="text-sm text-stone-600">Browse examples by source domain.</p>
+        <select id="source-domain-filter" onchange="filterContextualByDomain(this.value)" class="px-3 py-2 text-sm border border-stone-300 rounded-lg bg-white">
+          <option value="all">All source domains</option>
+          <option value="Government Departments">Government Departments</option>
+          <option value="News Broadcasts">News Broadcasts</option>
+          <option value="Legislative Council">Legislative Council</option>
+          <option value="Earlier examples">Earlier examples</option>
+        </select>
+      </div>
       <div id="contextual-grid" class="grid grid-cols-1 gap-4"></div>
       <div class="mt-8">
         <h3 class="text-base font-semibold mb-2">Replacement naturalness guide</h3>
         <p class="text-xs text-stone-500 mb-3">Initial editorial assessments; community feedback can challenge or refine them.</p>
         <div class="overflow-x-auto rounded-lg border border-stone-200 bg-white">
           <table class="w-full text-sm text-left">
-            <thead class="bg-stone-100 text-stone-600"><tr><th class="p-2">Sanskrit-derived word</th><th class="p-2">Suggested alternative</th><th class="p-2">Status</th><th class="p-2">Reason</th></tr></thead>
+            <thead class="bg-stone-100 text-stone-600"><tr><th class="p-2">Sanskrit-derived word</th><th class="p-2">Suggested alternative</th><th class="p-2">Status</th><th class="p-2">Source domain</th><th class="p-2">Notes</th></tr></thead>
             <tbody id="naturalness-body"></tbody>
           </table>
         </div>

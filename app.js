@@ -49,11 +49,22 @@ function languageRows(entry, alts) {
     ["Halegannada", entry.halegannada || "Not yet sourced"],
     ["Proto-Dravidian root", first.proto || "Not reconstructed / not yet sourced"]
   ];
-  return rows.map(([label,value]) => `
+  return rows.map(([label,value]) => {
+    const evidence = label === "Halegannada" ? entry.halegannadaEvidence : null;
+    const status = evidence?.status || (label === "Halegannada" && entry.halegannada ? "unverified" : null);
+    const statusLabel = status === "provisional" ? "Provisional evidence" : status === "verified" ? "Verified source" : status === "unverified" ? "Unverified — source needed" : "";
+    const statusClass = status === "verified" ? "text-emerald-700" : status === "provisional" ? "text-amber-700" : "text-stone-500";
+    const source = evidence?.sourceUrl && evidence?.sourceTitle
+      ? `<a class="block text-xs underline text-stone-600 mt-1" href="${escapeHtml(evidence.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(evidence.sourceTitle)}</a>`
+      : "";
+    const note = evidence?.note ? `<span class="block text-xs text-stone-500 mt-1">${escapeHtml(evidence.note)}</span>` : "";
+    const meta = status ? `<span class="block text-xs ${statusClass} mt-1">${statusLabel}</span>${source}${note}` : "";
+    return `
     <div class="grid grid-cols-[112px_1fr] gap-2 py-2 border-b border-stone-100 last:border-0">
       <span class="text-xs text-stone-500">${label}</span>
-      <span class="kn text-base text-stone-800">${escapeHtml(value)}</span>
-    </div>`).join("");
+      <span class="kn text-base text-stone-800">${escapeHtml(value)}${meta}</span>
+    </div>`;
+  }).join("");
 }
 function render(entries) {
   grid.innerHTML = "";

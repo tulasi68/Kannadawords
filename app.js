@@ -70,7 +70,8 @@ function render(entries) {
     const sentence = sentenceExamples[entry.id];
     const sentenceHtml = sentence ? `
       <section class="mt-4 pt-4 border-t border-stone-200">
-        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-2">Sentence comparison</h3>
+        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Sentence comparison</h3>
+        <p class="text-xs text-stone-500 mb-3">Illustrative sample sentences, not historical quotations. Proto-Dravidian forms are reconstructed roots, not complete attested sentences.</p>
         <div class="space-y-3">
           <div><p class="text-xs text-stone-500 mb-1">Sample Kannada sentence using the Sanskrit-derived word</p><p class="kn text-base">${escapeHtml(sentence.source)}</p></div>
           <div><p class="text-xs text-emerald-700 mb-1">Rewritten with a native Kannada equivalent</p><p class="kn text-base">${escapeHtml(sentence.kannada)}</p></div>

@@ -685,7 +685,7 @@ const wordEntries = [
   },
   // Sanskrit-first entries that connect to words in the curated Halegannada source list.
   {
-    id:"listen", sanskrit:"ಶ್ರವಣ / ಶ್ರವಣಿಸು", meaning:"Listening; to listen", category:"Abstract", halegannada:"ಆಲಿಸು", halegannadaEvidence:{status:"provisional",sourceTitle:"ಹಳಗನ್ನಡ ಕಾವ್ಯ ಸಂಗ್ರಹ — Jaimini Bharata, canto 17",sourceUrl:"https://knningaiah.blogspot.com/2025/10/17.html",evidenceType:"Secondary transcription and gloss",note:"The page glosses ಕೇಳು as ಆಲಿಸು. Useful lexical evidence, but not checked against a critical edition or manuscript."},
+    id:"listen", sanskrit:"ಶ್ರವಣ / ಶ್ರವಣಿಸು", meaning:"Listening; to listen", category:"Abstract", halegannada:"ಆಲಿಸು", halegannadaEvidence:{status:"unverified",sourceTitle:null,sourceUrl:null,evidenceType:null,note:"The earlier lead only supplied a modern gloss equating ಕೇಳು with ಆಲಿಸು; it did not establish an Old Kannada attestation. Keep as a candidate, not a sourced historical form."},
     alternatives:[{id:"kelu",word:"ಕೇಳು",note:"Native Kannada",proto:"*kēḷ",tamil:"கேள் (kēḷ)",tulu:null}]
   },
   {
@@ -693,7 +693,7 @@ const wordEntries = [
     alternatives:[{id:"angadi",word:"ಅಂಗಡಿ",note:"Common Kannada",proto:null,tamil:"கடை (kaṭai)",tulu:null}]
   },
   {
-    id:"cloud", sanskrit:"ಮೇಘ", meaning:"Cloud", category:"Nature", halegannada:"ಮುಗಿಲ್", halegannadaEvidence:{status:"unverified",sourceTitle:null,sourceUrl:null,evidenceType:null,note:"No traceable dictionary entry or primary-text occurrence identified in this audit. Do not treat this form as established until sourced."},
+    id:"cloud", sanskrit:"ಮೇಘ", meaning:"Cloud", category:"Nature", halegannada:"ಮುಗಿಲ್", halegannadaEvidence:{status:"provisional",sourceTitle:"Old Kannada grammatical discussion — Honalu; corroborating literary transcription: Sūkti Sudhārṇava",sourceUrl:"https://honalu.net/2013/05/29/%E0%B2%B6%E0%B2%AC%E0%B3%8D%E0%B2%A6%E0%B2%AE%E0%B2%A3%E0%B2%BF%E0%B2%A6%E0%B2%B0%E2%80%8D%E0%B3%8D%E0%B2%AA%E0%B2%A3%E0%B2%A6%E0%B2%B2%E0%B3%8D%E0%B2%B2%E0%B2%BF-%E0%B2%A4%E0%B2%B3%E0%B2%AE-3/ ",evidenceType:"Secondary grammatical discussion and historical literary transcription",note:"The grammatical article explicitly analyses ಬೆಳ್ + ಮುಗಿಲ್ as an Old Kannada phrase. A separate Sūkti Sudhārṇava transcription also contains ಮುಗಿಲ್. Confirm the poem's edition, date and headword sense before marking verified."},
     alternatives:[{id:"moda",word:"ಮೋಡ",note:"Common Kannada",proto:null,tamil:"மேகம் (mēkam)",tulu:null}]
   },
   {
@@ -701,11 +701,11 @@ const wordEntries = [
     alternatives:[{id:"parade",word:"ಪರದೆ",note:"Common Kannada",proto:null,tamil:"திரை (tirai)",tulu:null}]
   },
   {
-    id:"new", sanskrit:"ನವ / ನವೀನ", meaning:"New", category:"Abstract", halegannada:"ಪೊಸ", halegannadaEvidence:{status:"provisional",sourceTitle:"ಷಡಕ್ಷರಿದೇವ — ರಾಜಶಂಖರವಿಳಾಸ (transcribed verse)",sourceUrl:"https://knningaiah.blogspot.com/2017/07/blog-post_16.html",evidenceType:"Secondary transcription of literary text",note:"ಪೊಸ occurs in the transcribed verse. The page is not a critical edition; verify spelling, date and sense against a scholarly edition."},
+    id:"new", sanskrit:"ನವ / ನವೀನ", meaning:"New", category:"Abstract", halegannada:"ಪೊಸ", halegannadaEvidence:{status:"provisional",sourceTitle:"Old Kannada grammatical discussion — Honalu; P. V. Narayana, ಪದಚರಿತೆ",sourceUrl:"https://honalu.net/2013/05/29/%E0%B2%B6%E0%B2%AC%E0%B3%8D%E0%B2%A6%E0%B2%AE%E0%B2%A3%E0%B2%BF%E0%B2%A6%E0%B2%B0%E2%80%8D%E0%B3%8D%E0%B2%AA%E0%B2%A3%E0%B2%A6%E0%B2%B2%E0%B3%8D%E0%B2%B2%E0%B2%BF-%E0%B2%A4%E0%B2%B3%E0%B2%AE-3/",evidenceType:"Secondary grammatical discussion and literary evidence",note:"The article explicitly identifies ಪೊಸ as an Old Kannada adjectival base form. A literary transcription also contains ಪೊಸ. Verify against a scholarly edition and record the exact work/verse before marking verified."},
     alternatives:[{id:"hosa",word:"ಹೊಸ",note:"Native Kannada",proto:"*putu",tamil:"புது (putu)",tulu:null}]
   },
   {
-    id:"sugarcane", sanskrit:"ಇಕ್ಷು", meaning:"Sugarcane", category:"Nature", halegannada:"ಕರ್ಬು", halegannadaEvidence:{status:"provisional",sourceTitle:"Kannada First, Then Tamil — secondary article",sourceUrl:"https://kannada.asianetnews.com/amp/state/kannada-first-then-tamil-independent-researcher-ancient-history-and-epigraphy-vijay-mahantesh-papanala-column-rav/articleshow-rgiku8r",evidenceType:"Secondary linguistic claim",note:"The article mentions ಕರ್ವು / ಕರ್ಬು as a historical Kannada form corresponding to ಕಬ್ಬು. This is not primary evidence and needs dictionary or dated-text confirmation."},
+    id:"sugarcane", sanskrit:"ಇಕ್ಷು", meaning:"Sugarcane", category:"Nature", halegannada:"ಕರ್ಬು", halegannadaEvidence:{status:"provisional",sourceTitle:"Kannada Prabha — evidence article by Vijay Mahantesh Papanala",sourceUrl:"https://www.kannadaprabha.in/amp/special-news/evidence-of-the-antiquity-of-kannada-language/articleshow-gs6ee3m",evidenceType:"Secondary linguistic and epigraphic commentary",note:"The article lists ಕರ್ವು / ಕರ್ಬು as historical Kannada forms corresponding to ಕಬ್ಬು. It does not provide an exact dictionary page or inscription reference here; retain as provisional pending primary-source confirmation."},
     alternatives:[{id:"kabbu",word:"ಕಬ್ಬು",note:"Common Kannada",proto:null,tamil:"கரும்பு (karumpu)",tulu:null}]
   },
 ]; 

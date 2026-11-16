@@ -1,51 +1,43 @@
 # ಕನ್ನಡ ದೇಸಿ · Kannada Desi Words
 
-A simple, shareable web app that shows Sanskrit-origin words in Kannada alongside native Dravidian / desi alternatives.
+A community-driven Kannada vocabulary project exploring native Kannada alternatives, historical Halegannada forms and Dravidian linguistic connections.
 
-## Features
+## Current application
 
-- Clean card layout with Kannada script support
-- Search by word or meaning
-- Filter by category (Everyday, Nature, Body, Directions, Abstract)
-- 32 high-quality starter pairs from open / common-knowledge sources
-- Zero backend – pure static HTML + JS
-- Ready to host on Vercel, Netlify, or GitHub Pages
+- Static HTML, CSS and JavaScript frontend hosted at Vercel.
+- Cloudflare Worker API for shared community activity.
+- Cloudflare D1 database for shared votes and suggestions.
+- Existing 42? starter word pairs remain bundled in `data.js`; community data is fetched from the API.
+- Search and category filters run in the browser.
 
-## Sources
+## Shared community storage
 
-Only open and common-knowledge material was used:
+The API is deployed as `https://kannadawords-api.tulasianand6.workers.dev`.
 
-- Everyday spoken Kannada forms
-- Public comparative wordlists
-- DravLex (CC BY 4.0) for root verification where applicable
-- No copyrighted books (DEDR full text, commercial publications, etc.)
+- `GET /api/health` — service health check.
+- `GET /api/community` — aggregated votes and visible suggestions.
+- `POST /api/vote` — one vote per browser device ID, entry and alternative.
+- `POST /api/suggestions` — add a shared community suggestion.
 
-## How to run locally
+The browser stores a random device identifier in localStorage. This prevents accidental repeated votes from the same browser profile, but it is **not authentication** and can be reset or copied. Votes are community-wide; personal contribution history across devices requires a future sign-in feature.
 
-Just open `index.html` in a browser, or:
+## Cloudflare resources
 
-```bash
-npx serve .
-```
+- D1 database: `kannadawords-db`
+- Worker: `kannadawords-api`
+- D1 binding in the Worker: `DB`
+- Migration: `database/002_cloudflare_d1_community.sql`
 
-## How to deploy (free)
+## Deploy / operate
 
-### Vercel (recommended)
-1. Push this folder to a GitHub repo
-2. Import the repo at https://vercel.com
-3. Deploy – done
+The Worker code is in `worker/index.js`. Its D1 schema is in `database/002_cloudflare_d1_community.sql`. The deployed Worker is bound to the dedicated D1 database above.
 
-### Netlify / GitHub Pages
-Same – just point to the folder containing `index.html`.
+For local development, use Cloudflare's current Workers tooling and bind a local D1 database named `DB`. Apply the SQL migration before testing the Worker.
 
-## Next steps you can add
+## Data and licensing
 
-- Simple voting buttons (localStorage or Supabase)
-- Community submission form
-- More pairs from DravLex CLDF data
-- Tamil / Tulu cognate columns
+The original starter vocabulary remains in `data.js`. Halegannada lexical data is handled separately under the rights-aware staging policy documented in `docs/HALEGANNADA_DATASET_INTEGRATION.md`. Do not publish entries whose upstream rights and content review are incomplete.
 
 ## License
 
-The application code is free to use and share.  
-Please keep attribution for any data drawn from DravLex (CC BY 4.0).
+Application code is free to use and share. Retain the attribution for datasets under their respective licenses.

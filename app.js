@@ -133,8 +133,8 @@ function highlightSwaps(text, swaps, side) {
   let safe = escapeHtml(text);
   const terms = swaps.map(pair => pair[side]).filter(Boolean).sort((a,b)=>b.length-a.length);
   terms.forEach(term => {
-    const escaped = escapeHtml(term).replace(/[.*+?^${}()|[\]\\]/g, "\\function filterAndRender() {");
-    safe = safe.replace(new RegExp(escaped, "g"), match => "<strong class='font-bold text-amber-800'>" + match + "</strong>");
+    const literal = escapeHtml(term);
+    safe = safe.split(literal).join("<strong class=\"font-bold text-amber-800\">" + literal + "</strong>");
   });
   return safe;
 }

@@ -148,15 +148,18 @@ function voteContext(id, choice) {
 function renderContextual() {
   if (!contextualGrid || typeof contextualExamples === "undefined") return;
   const state = loadState();
-  contextualGrid.innerHTML = contextualExamples.map(item => {
+  const submitted = state.submittedContextualExamples || [];
+  const allExamples = [...contextualExamples, ...submitted];
+  contextualGrid.innerHTML = allExamples.map(item => {
     const votes = (state.contextualVotes && state.contextualVotes[item.id]) || {support:0,revise:0};
+    const swaps = item.swaps || [];
     return `<article class="bg-white border border-stone-200 rounded-xl p-4 shadow-sm">
-      <h3 class="font-semibold text-stone-800 mb-3">${escapeHtml(item.title)}</h3>
+      <div class="flex items-start justify-between gap-2 mb-3"><h3 class="font-semibold text-stone-800">${escapeHtml(item.title)}</h3>${item.submitted ? '<span class="text-xs rounded-full bg-sky-50 text-sky-800 px-2 py-1">Community submission</span>' : ''}</div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-        <div class="rounded-lg bg-stone-50 p-3"><p class="text-xs uppercase tracking-wide text-stone-500 mb-2">Original sentence</p><p class="kn leading-7">${highlightSwaps(item.original,item.swaps,0)}</p></div>
-        <div class="rounded-lg bg-amber-50 p-3"><p class="text-xs uppercase tracking-wide text-amber-800 mb-2">Proposed rendering</p><p class="kn leading-7">${highlightSwaps(item.proposed,item.swaps,1)}</p></div>
+        <div class="rounded-lg bg-stone-50 p-3"><p class="text-xs uppercase tracking-wide text-stone-500 mb-2">Original sentence</p><p class="kn leading-7">${highlightSwaps(item.original,swaps,0)}</p></div>
+        <div class="rounded-lg bg-amber-50 p-3"><p class="text-xs uppercase tracking-wide text-amber-800 mb-2">Proposed rendering</p><p class="kn leading-7">${highlightSwaps(item.proposed,swaps,1)}</p></div>
       </div>
-      <p class="text-xs text-stone-500 mt-3">${item.swaps.map(pair=>escapeHtml(pair[0])+" → "+escapeHtml(pair[1])).join(" · ")}</p>
+      <p class="text-xs text-stone-500 mt-3">${swaps.map(pair=>escapeHtml(pair[0])+" → "+escapeHtml(pair[1])).join(" · ")}</p>
       ${item.note ? `<p class="text-xs text-stone-500 mt-2">${escapeHtml(item.note)}</p>` : ""}
       <div class="flex flex-wrap items-center gap-2 mt-4">
         <button onclick="voteContext('${item.id}','support')" class="text-xs rounded-full border border-emerald-300 text-emerald-800 px-3 py-1.5 hover:bg-emerald-50">Works in context · ${votes.support||0}</button>
@@ -172,6 +175,48 @@ function renderContextual() {
   }
 }
 window.voteContext = voteContext;
+
+function showTab(tab) {
+  const words = tab === "words";
+  document.getElementById("words-panel").classList.toggle("hidden", !words);
+  document.getElementById("sentences-panel").classList.toggle("hidden", words);
+  document.getElementById("word-tab").className = words
+    ? "px-4 py-3 text-sm font-semibold border-b-2 border-amber-600 text-amber-800"
+    : "px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-stone-500";
+  document.getElementById("sentence-tab").className = !words
+    ? "px-4 py-3 text-sm font-semibold border-b-2 border-amber-600 text-amber-800"
+    : "px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-stone-500";
+  const controls = document.querySelector("header .flex.gap-2");
+  if (controls) controls.classList.toggle("hidden", !words);
+}
+function toggleSentenceForm() {
+  const form = document.getElementById("sentence-form");
+  form.classList.toggle("hidden");
+  if (!form.classList.contains("hidden")) document.getElementById("review-title").focus();
+}
+function submitSentenceReview(event) {
+  event.preventDefault();
+  const title = document.getElementById("review-title").value.trim();
+  const original = document.getElementById("review-original").value.trim();
+  const proposed = document.getElementById("review-proposed").value.trim();
+  const note = document.getElementById("review-note").value.trim();
+  if (!title || !original || !proposed) return;
+  const state = loadState();
+  if (!state.submittedContextualExamples) state.submittedContextualExamples = [];
+  state.submittedContextualExamples.unshift({
+    id: "community-" + Date.now(), title, original, proposed, note,
+    swaps: [], submitted: true
+  });
+  saveState(state);
+  document.getElementById("sentence-form").reset();
+  document.getElementById("sentence-form").classList.add("hidden");
+  renderContextual();
+  alert("Your sentence review has been added on this device.");
+}
+window.showTab = showTab;
+window.toggleSentenceForm = toggleSentenceForm;
+window.submitSentenceReview = submitSentenceReview;
+
 function filterAndRender() {
   const q=searchInput.value.trim().toLocaleLowerCase(), cat=categorySelect.value;
   const filtered=wordEntries.filter(e => {

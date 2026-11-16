@@ -684,3 +684,95 @@ const wordEntries = [
     ]
   }
 ];
+
+// Curated starter Halegannada word list.
+// Meanings are working glosses from the cited Halegannada–Hosakannada resource;
+// historical sense, spelling and usage should be checked by Kannada specialists.
+const halegannadaEntries = [
+  { id:"ambudaratha", word:"ಅಂಬುದರಥ", meaning:"Indra", note:"Literary / historical form" },
+  { id:"ambupayi", word:"ಅಂಬುಪಾಯಿ", meaning:"One who drinks water", note:"Compound form; literal gloss" },
+  { id:"amburuha", word:"ಅಂಬುರುಹ", meaning:"Lotus", note:"Literary / historical form" },
+  { id:"ambuvీಡು", word:"ಅಂಬುವೀಡು", meaning:"Range of an arrow", note:"Historical sense; verify context" },
+  { id:"alivelaga", word:"ಆಲಿವೆಳಗ", meaning:"Moon", note:"Literary / historical form" },
+  {
+    id:"aalisu", word:"ಆಲಿಸು", meaning:"Listen attentively; heed; expect",
+    modernKannada:"ಕೇಳು", sentence:{
+      source:"ಮಾತನ್ನು ಶ್ರವಣಿಸು.",
+      kannada:"ಮಾತನ್ನು ಕೇಳು.",
+      proto:"ಮಾತನ್ನು *kēḷ.",
+      hale:"ಮಾತನ್ನು ಆಲಿಸು.",
+      sanskritLabel:"ಶ್ರವಣಿಸು",
+      protoRoot:"*kēḷ — reconstructed Proto-Dravidian root; verify the exact reconstruction and semantic range.",
+      note:"The Proto-Dravidian line inserts a reconstructed root into a Kannada sentence frame; it is not claimed to be an attested Proto-Dravidian sentence."
+    }
+  },
+  { id:"alIdha", word:"ಆಲೀಢ", meaning:"Tasted / eaten", note:"Historical participial form; exact usage depends on context" },
+  { id:"avagam", word:"ಆವಗಂ", meaning:"Always; abundantly", note:"Historical adverbial form" },
+  {
+    id:"avana", word:"ಆವಣ", meaning:"Shop",
+    modernKannada:"ಅಂಗಡಿ",
+    sentence:{
+      source:"ನಾನು ಆಪಣಕ್ಕೆ ಹೋದೆ.",
+      kannada:"ನಾನು ಅಂಗಡಿಗೆ ಹೋದೆ.",
+      hale:"ನಾನು ಆವಣಕ್ಕೆ ಹೋದೆ.",
+      sanskritLabel:"ಆಪಣ",
+      note:"Illustrative sentence; confirm the historical form's case usage in a primary text."
+    }
+  },
+  { id:"avarisu", word:"ಆವರಿಸು", meaning:"Surround; pervade; enclose", note:"Historical verb; also has continuing Kannada usage" },
+  { id:"attatti", word:"ಅಟ್ಟಟ್ಟಿ", meaning:"Messenger / courier", note:"Historical occupational / role term" },
+  { id:"adakil", word:"ಅಡಕಿಲ್", meaning:"Heap / pile", note:"Historical noun; verify spelling variants" },
+  { id:"akkaja", word:"ಅಕ್ಕಜ", meaning:"Wonder / surprise", note:"Historical / literary form" },
+  { id:"agadu", word:"ಅಗಡು", meaning:"Mischief / valour", note:"Multiple senses; context is important" },
+  { id:"honta", word:"ಹೊಂತ", meaning:"Vow / pledge", note:"Historical form" },
+  { id:"hond(u)", word:"ಹೊಂದು", meaning:"To die", note:"Source spelling and sense require specialist verification" },
+  { id:"hogaru", word:"ಹೊಗರು", meaning:"Radiance / splendour", note:"Historical / literary form" },
+  {
+    id:"mugil", word:"ಮುಗಿಲ್", meaning:"Cloud",
+    modernKannada:"ಮೋಡ",
+    sentence:{
+      source:"ಮೇಘವು ಆಕಾಶದಲ್ಲಿ ತೇಲುತ್ತದೆ.",
+      kannada:"ಮೋಡವು ಆಗಸದಲ್ಲಿ ತೇಲುತ್ತದೆ.",
+      hale:"ಮುಗಿಲ್ ಆಗಸದಲ್ಲಿ ತೇಲುತ್ತದೆ.",
+      sanskritLabel:"ಮೇಘ",
+      note:"Sentence is illustrative; check agreement and attested Halegannada usage before treating it as a quotation."
+    }
+  },
+  {
+    id:"javanike", word:"ಜವನಿಕೆ", meaning:"Curtain / screen",
+    modernKannada:"ಪರದೆ",
+    sentence:{
+      source:"ಯವನಿಕೆಯನ್ನು ಸರಿಸು.",
+      kannada:"ಪರದೆಯನ್ನು ಸರಿಸು.",
+      hale:"ಜವನಿಕೆಯನ್ನು ಸರಿಸು.",
+      sanskritLabel:"ಯವನಿಕಾ",
+      note:"This is a historical lexical comparison, not a claim that the word has a Dravidian origin."
+    }
+  },
+  { id:"erde", word:"ಎರ್ದೆ", meaning:"Husband; to captivate", note:"Two senses reported; separate by context during scholarly review" },
+  {
+    id:"posa", word:"ಪೊಸ", meaning:"New",
+    modernKannada:"ಹೊಸ",
+    sentence:{
+      source:"ಇದು ನವ ಮನೆ.",
+      kannada:"ಇದು ಹೊಸ ಮನೆ.",
+      proto:"ಇದು *putu ಮನೆ.",
+      hale:"ಇದು ಪೊಸ ಮನೆ.",
+      sanskritLabel:"ನವ",
+      protoRoot:"*putu — reconstructed Proto-Dravidian ‘new’ root; reconstruction and sound correspondence should be checked against a specialist etymological source.",
+      note:"The Proto-Dravidian line inserts a reconstructed root into a Kannada sentence frame; it is illustrative, not an attested Proto-Dravidian sentence."
+    }
+  },
+  {
+    id:"karbu", word:"ಕರ್ಬು", meaning:"Sugarcane",
+    modernKannada:"ಕಬ್ಬು",
+    sentence:{
+      source:"ರೈತನು ಇಕ್ಷುವನ್ನು ಬೆಳೆದನು.",
+      kannada:"ರೈತನು ಕಬ್ಬನ್ನು ಬೆಳೆದನು.",
+      hale:"ರೈತನು ಕರ್ಬನ್ನು ಬೆಳೆದನು.",
+      sanskritLabel:"ಇಕ್ಷು",
+      note:"Sentence is illustrative; the Halegannada form and inflection need verification in a primary text."
+    }
+  },
+  { id:"olapokkal", word:"ಒಳಪೊಕ್ಕಳ್", meaning:"To enter", note:"Historical verbal form; verify inflection and dialect / period" }
+];

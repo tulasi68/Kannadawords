@@ -15,12 +15,12 @@ A word must not be labelled verified merely because it appears in an OCR, scrape
 
 | Kannada form | Current gloss | Audit status | Evidence / next action |
 |---|---|---|---|
-| ಆಲಿಸು | Listen; heed | Provisional | A Jaimini Bharata page glosses ಕೇಳು as ಆಲಿಸು. Check against a critical edition and determine whether the occurrence belongs to the historical text or its modern explanatory gloss. [Secondary transcription](https://knningaiah.blogspot.com/2025/10/17.html) |
+| ಆಲಿಸು | Listen; heed | Unverified | The earlier lead only equated ಕೇಳು with ಆಲಿಸು in a modern gloss; it did not establish an Old Kannada attestation. Retain only as a candidate until a dictionary entry or dated text is located. |
 | ಆವಣ | Shop | Unverified | No precise dictionary entry or primary-text citation identified. Locate in P. V. Narayana's *ಹಳಗನ್ನಡ ಪದಸಂಪದ*, *ಪಂಪನ ನುಡಿಗಣಿ* or another reliable lexicon before retaining as sourced. |
-| ಮುಗಿಲ್ | Cloud | Unverified | No precise dictionary entry or primary-text citation identified in this audit. Search lexical variants and verify historical sense before retaining as sourced. |
+| ಮುಗಿಲ್ | Cloud | Provisional | A grammatical discussion explicitly analyses ಬೆಳ್ + ಮುಗಿಲ್ as an Old Kannada phrase; a separate Sūkti Sudhārṇava transcription also contains ಮುಗಿಲ್. Confirm the scholarly edition, date and exact headword meaning. [Honalu discussion](https://honalu.net/2013/05/29/ಶಬ್ದಮಣಿದರ್ಪಣದಲ್ಲಿ-ತಳಮಟ್ಟದ-ತಪ್ಪುಗಳು-3/) · [Literary transcription](https://knningaiah.blogspot.com/2019/03/blog-post.html) |
 | ಜವನಿಕೆ | Curtain / screen | Provisional | Occurs in a secondary transcription of Harihara's *ಗಿರಿಜಾ ಕಲ್ಯಾಣ*. Verify the exact reading, context and date against a scholarly edition. [Transcribed text](https://knningaiah.blogspot.com/2017/09/blog-post.html) |
-| ಪೊಸ | New | Provisional | Occurs in a secondary transcription of Ṣaḍakṣaradeva's *ರಾಜಶಂಖರವಿಳಾಸ*. Verify against a scholarly edition and establish the text's date. [Transcribed text](https://knningaiah.blogspot.com/2017/07/blog-post_16.html) |
-| ಕರ್ಬು | Sugarcane | Provisional | A secondary article mentions ಕರ್ವು / ಕರ್ಬು as a historical Kannada form corresponding to ಕಬ್ಬು. This does not establish the Old Kannada spelling or period. Find a lexicon entry or dated occurrence. [Secondary article](https://kannada.asianetnews.com/amp/state/kannada-first-then-tamil-independent-researcher-ancient-history-and-epigraphy-vijay-mahantesh-papanala-column-rav/articleshow-rgiku8r) |
+| ಪೊಸ | New | Provisional | A grammatical discussion explicitly identifies ಪೊಸ as an Old Kannada adjectival base form; a literary transcription also contains it. Verify against a scholarly edition and record the exact work/verse. [Honalu discussion](https://honalu.net/2013/05/29/ಶಬ್ದಮಣಿದರ್ಪಣದಲ್ಲಿ-ತಳಮಟ್ಟದ-ತಪ್ಪುಗಳು-3/) · [Literary transcription](https://knningaiah.blogspot.com/2017/07/blog-post_16.html) |
+| ಕರ್ಬು | Sugarcane | Provisional | Kannada Prabha carries the same claim in an article by independent researcher Vijay Mahantesh Papanala. It does not give an exact dictionary page or inscription reference; retain as provisional. [Kannada Prabha article](https://www.kannadaprabha.in/amp/special-news/evidence-of-the-antiquity-of-kannada-language/articleshow-gs6ee3m) |
 
 ## Priority reference works and discovery collections
 
@@ -71,3 +71,20 @@ The candidate array's own comment has been corrected to make clear that it is no
 ## Important distinction
 
 A word appearing in a historical or literary Kannada work is not automatically an **Old Kannada** attestation. The work's date, linguistic period, exact reading and contextual meaning must also be established. In particular, the Jaimini Bharata and Rajashankara Vilasa web transcriptions cited above are discovery leads only; their presence on a page titled as a Halegannada collection does not independently establish the period of the work or prove Old Kannada status.
+
+## Second-pass findings (16 November 2026)
+
+The evidence classification has been refined after checking additional sources:
+
+- **ಮುಗಿಲ್** is now provisional rather than unverified. A Kannada grammatical article explicitly discusses ಬೆಳ್ + ಮುಗಿಲ್ as an Old Kannada phrase, and a separate literary transcription contains the form. This is meaningful historical-linguistic evidence, but the exact scholarly edition and dating still need to be checked.
+- **ಪೊಸ** has stronger secondary support: the grammatical article explicitly identifies ಪೊಸ as an Old Kannada base adjective. A literary transcription also contains it. It remains provisional until an edition and verse reference are confirmed.
+- **ಕರ್ಬು** remains provisional. Kannada Prabha's article by independent researcher Vijay Mahantesh Papanala lists ಕರ್ವು / ಕರ್ಬು for sugarcane, but gives no precise dictionary entry or inscription number in the article.
+- **ಆಲಿಸು** has been downgraded to unverified. The earlier source was only a modern gloss equating ಕೇಳು and ಆಲಿಸು; it did not demonstrate an Old Kannada occurrence.
+
+The official Bharatavani catalogue confirms that *ಹಳಗನ್ನಡ ಪದಸಂಪದ* (P. V. Narayana, 2007; Kannada Sahitya Parishattu as content partner), *ಪಂಪನ ನುಡಿಗಣಿ* (P. V. Narayana; Kamadhenu Pustaka Bhavana) and *ಚಂಪೂ ನುಡಿಗನ್ನಡಿ* (P. V. Narayana; Sapna Book House) are dictionary publications. The *ಹಳಗನ್ನಡ ಪದಸಂಪದ* PDF is listed as 138.95 MB and its reading page requires login. The other two catalogues list PDF editions. Catalogue metadata authenticates the bibliographic source, not any individual word claim.
+
+- [Bharatavani — ಹಳಗನ್ನಡ ಪದಸಂಪದ](https://bharatavani.in/home/book?id=ಹಳಗನ್ನಡ%20ಪದಸಂಪದ)
+- [Bharatavani — ಪಂಪನ ನುಡಿಗಣಿ](https://bharatavani.in/home/book?id=ಪಂಪನ%20ನುಡಿಗಣಿ)
+- [Bharatavani — ಚಂಪೂ ನುಡಿಗನ್ನಡಿ](https://bharatavani.in/english/book?id=ಚಂಪೂ%20ನುಡಿಗನ್ನಡಿ)
+
+The open Indic-dictionaries repository says its headwords were scraped from Bharatavani and flags alternative-form and OCR/corruption cleanup. Use it to locate candidate entries, not as the final authority. [Repository methodology and caveats](https://github.com/omshivaprakash/Indic-dictionaries).

@@ -35,7 +35,7 @@ const auditedCategoryById = {
   chief:"People", division:"Civic", constitution:"Civic", office:"Civic",
   punishment:"Civic", commission:"Civic", nutrition:"Body", department:"Civic",
   minister:"People", health:"Body", news:"Society", disability:"People",
-  doctor:"People", freedom:"Society", interview:"Society"
+  doctor:"People", freedom:"Society", interview:"Society", fruit:"Everyday", moon:"Nature", body:"Body", joy:"Abstract", sorrow:"Abstract", love:"Abstract", fear:"Abstract", desire:"Abstract", dream:"Abstract", woman:"People", man:"People", boy:"People", girl:"People", army:"Society", war:"Society", peace:"Society", authority:"Civic", education:"Education", mathematics:"Education", science:"Education", word:"Abstract", sound:"Abstract", problem:"Abstract", help:"Abstract", progress:"Society", development:"Society", system:"Civic", connection:"Abstract", newspaper:"Society"
 };
 const categoryForAudited = item => auditedCategoryById[item.id] || item.category || "Abstract";
 const votingEntries = wordEntries.map(entry => {

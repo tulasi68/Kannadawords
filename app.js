@@ -182,7 +182,10 @@ function render(entries) {
         <button onclick="toggleImproveForm('${entry.id}')" class="mt-3 text-sm font-medium text-amber-700 hover:text-amber-900">Improve / Suggest a Kannada alternative</button>
         <div id="improve-${entry.id}" class="hidden mt-3 p-3 bg-stone-50 rounded-lg border border-stone-200">
           <input id="newword-${entry.id}" type="text" placeholder="New Kannada word..." class="w-full px-3 py-2 text-sm border border-stone-300 rounded-lg kn"/>
-          <button onclick="submitSuggestion('${entry.id}')" class="mt-2 px-4 py-1.5 text-sm rounded-lg bg-amber-600 text-white">Add</button>
+          <div class="flex flex-wrap gap-2 mt-2">
+            <button onclick="submitSuggestion('${entry.id}')" class="px-4 py-1.5 text-sm rounded-lg bg-amber-600 text-white">Add</button>
+            <button onclick="cancelImproveForm('${entry.id}')" class="px-4 py-1.5 text-sm rounded-lg border border-stone-300 text-stone-700 hover:bg-stone-100">Cancel</button>
+          </div>
         </div>
       </div>`;
     grid.appendChild(card);
@@ -197,6 +200,11 @@ function submitSuggestion(id) {
   const input=document.getElementById("newword-"+id);
   if(!input.value.trim()){input.focus();return;}
   addSuggestion(id,input.value); input.value=""; document.getElementById("improve-"+id).classList.add("hidden");
+}
+function cancelImproveForm(id) {
+  const input = document.getElementById("newword-" + id);
+  input.value = "";
+  document.getElementById("improve-" + id).classList.add("hidden");
 }
 
 const contextualGrid = document.getElementById("contextual-grid");
@@ -310,7 +318,7 @@ function filterAndRender() {
   });
   render(filtered);
 }
-window.castVote=castVote; window.toggleImproveForm=toggleImproveForm; window.submitSuggestion=submitSuggestion;
+window.castVote=castVote; window.toggleImproveForm=toggleImproveForm; window.submitSuggestion=submitSuggestion; window.cancelImproveForm=cancelImproveForm;
 searchInput.addEventListener("input",filterAndRender);
 categorySelect.addEventListener("change",filterAndRender);
 filterAndRender();

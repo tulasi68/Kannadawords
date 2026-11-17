@@ -1443,4 +1443,730 @@ const originAuditEntries = [
     "proposedClassification": "Perso-Arabic loan",
     "note": "Supplied audit treats this as a loan, not Sanskrit."
   }
+,
+  {
+    "id": "fruit",
+    "sourceForm": "ಫಲ",
+    "sourceMeaning": "Fruit",
+    "category": "Everyday",
+    "sourceEtymology": {
+      "form": "ಫಲ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-fruit",
+        "word": "ಹಣ್ಣು",
+        "note": "A common native word for fruit.",
+        "etymologyParts": [
+          {
+            "form": "ಹಣ್ಣು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "moon",
+    "sourceForm": "ಚಂದ್ರ",
+    "sourceMeaning": "Moon",
+    "category": "Nature",
+    "sourceEtymology": {
+      "form": "ಚಂದ್ರ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-moon",
+        "word": "ತಿಂಗಳು",
+        "note": "ತಿಂಗಳು can mean both moon and month; this is a contextual/literary alternative, not a universal replacement.",
+        "etymologyParts": [
+          {
+            "form": "ತಿಂಗಳು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "contested"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "body",
+    "sourceForm": "ಶರೀರ",
+    "sourceMeaning": "Body",
+    "category": "Body",
+    "sourceEtymology": {
+      "form": "ಶರೀರ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-body",
+        "word": "ಮೈ",
+        "note": "Everyday native word for the body.",
+        "etymologyParts": [
+          {
+            "form": "ಮೈ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "joy",
+    "sourceForm": "ಸಂತೋಷ",
+    "sourceMeaning": "Joy / happiness",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಸಂತೋಷ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-joy",
+        "word": "ನಲಿವು",
+        "note": "Natural native word for joy or gladness.",
+        "etymologyParts": [
+          {
+            "form": "ನಲಿವು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "sorrow",
+    "sourceForm": "ದುಃಖ",
+    "sourceMeaning": "Sorrow / grief",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ದುಃಖ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-sorrow",
+        "word": "ಬೇಗುದಿ",
+        "note": "Literary/emotive term; verify register and exact sense before standardising.",
+        "etymologyParts": [
+          {
+            "form": "ಬೇಗುದಿ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "contested"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "love",
+    "sourceForm": "ಪ್ರೀತಿ",
+    "sourceMeaning": "Love / affection",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಪ್ರೀತಿ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-love",
+        "word": "ಒಲವು",
+        "note": "Native word for affection, inclination or fondness; context matters.",
+        "etymologyParts": [
+          {
+            "form": "ಒಲವು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "fear",
+    "sourceForm": "ಭಯ",
+    "sourceMeaning": "Fear",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಭಯ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-fear",
+        "word": "ಅಂಜಿಕೆ",
+        "note": "Common native word for fear or apprehension.",
+        "etymologyParts": [
+          {
+            "form": "ಅಂಜಿಕೆ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "desire",
+    "sourceForm": "ಆಸೆ",
+    "sourceMeaning": "Desire / wish",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಆಸೆ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-desire",
+        "word": "ಬಯಕೆ",
+        "note": "Native word for desire or wish.",
+        "etymologyParts": [
+          {
+            "form": "ಬಯಕೆ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "dream",
+    "sourceForm": "ಸ್ವಪ್ನ",
+    "sourceMeaning": "Dream",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಸ್ವಪ್ನ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-dream",
+        "word": "ಕನಸು",
+        "note": "Common native word for dream.",
+        "etymologyParts": [
+          {
+            "form": "ಕನಸು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "woman",
+    "sourceForm": "ಸ್ತ್ರೀ",
+    "sourceMeaning": "Woman",
+    "category": "People",
+    "sourceEtymology": {
+      "form": "ಸ್ತ್ರೀ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-woman",
+        "word": "ಹೆಣ್ಣು",
+        "note": "Native word for female/woman; context and register matter.",
+        "etymologyParts": [
+          {
+            "form": "ಹೆಣ್ಣು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "man",
+    "sourceForm": "ಪುರುಷ",
+    "sourceMeaning": "Man",
+    "category": "People",
+    "sourceEtymology": {
+      "form": "ಪುರುಷ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-man",
+        "word": "ಗಂಡು",
+        "note": "Native word for male/man; context and register matter.",
+        "etymologyParts": [
+          {
+            "form": "ಗಂಡು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "boy",
+    "sourceForm": "ಬಾಲಕ",
+    "sourceMeaning": "Boy",
+    "category": "People",
+    "sourceEtymology": {
+      "form": "ಬಾಲಕ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-boy",
+        "word": "ಹುಡುಗ",
+        "note": "Common native word for boy.",
+        "etymologyParts": [
+          {
+            "form": "ಹುಡುಗ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "girl",
+    "sourceForm": "ಬಾಲಕಿ",
+    "sourceMeaning": "Girl",
+    "category": "People",
+    "sourceEtymology": {
+      "form": "ಬಾಲಕಿ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-girl",
+        "word": "ಹುಡುಗಿ",
+        "note": "Common native word for girl.",
+        "etymologyParts": [
+          {
+            "form": "ಹುಡುಗಿ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "army",
+    "sourceForm": "ಸೈನ್ಯ",
+    "sourceMeaning": "Army",
+    "category": "Society",
+    "sourceEtymology": {
+      "form": "ಸೈನ್ಯ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-army",
+        "word": "ದಂಡು",
+        "note": "Native word for a troop or force; suitable in many army contexts.",
+        "etymologyParts": [
+          {
+            "form": "ದಂಡು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "war",
+    "sourceForm": "ಯುದ್ಧ",
+    "sourceMeaning": "War / battle",
+    "category": "Society",
+    "sourceEtymology": {
+      "form": "ಯುದ್ಧ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-war",
+        "word": "ಕಾಳಗ",
+        "note": "Native word for battle or armed conflict.",
+        "etymologyParts": [
+          {
+            "form": "ಕಾಳಗ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "peace",
+    "sourceForm": "ಶಾಂತಿ",
+    "sourceMeaning": "Peace",
+    "category": "Society",
+    "sourceEtymology": {
+      "form": "ಶಾಂತಿ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-peace",
+        "word": "ನೆಮ್ಮದಿ",
+        "note": "Means calm, ease or tranquillity; may not cover political or treaty peace.",
+        "etymologyParts": [
+          {
+            "form": "ನೆಮ್ಮದಿ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "contested"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "authority",
+    "sourceForm": "ಅಧಿಕಾರ",
+    "sourceMeaning": "Authority / power / right",
+    "category": "Civic",
+    "sourceEtymology": {
+      "form": "ಅಧಿಕಾರ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-authority",
+        "word": "ಆಳ್ವಿಕೆ",
+        "note": "Fits governing authority or rule; ಹಕ್ಕು is better for a legal right. Sense-dependent.",
+        "etymologyParts": [
+          {
+            "form": "ಆಳ್ವಿಕೆ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "contested"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "education",
+    "sourceForm": "ಶಿಕ್ಷಣ",
+    "sourceMeaning": "Education",
+    "category": "Education",
+    "sourceEtymology": {
+      "form": "ಶಿಕ್ಷಣ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-education",
+        "word": "ಕಲಿಕೆ",
+        "note": "Native word for learning; may not cover every institutional sense of education.",
+        "etymologyParts": [
+          {
+            "form": "ಕಲಿಕೆ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "mathematics",
+    "sourceForm": "ಗಣಿತ",
+    "sourceMeaning": "Mathematics",
+    "category": "Education",
+    "sourceEtymology": {
+      "form": "ಗಣಿತ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-mathematics",
+        "word": "ಎಣಿಕೆ",
+        "note": "Counting is narrower than mathematics; use only where the context is basic calculation.",
+        "etymologyParts": [
+          {
+            "form": "ಎಣಿಕೆ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "contested"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "science",
+    "sourceForm": "ವಿಜ್ಞಾನ",
+    "sourceMeaning": "Science",
+    "category": "Education",
+    "sourceEtymology": {
+      "form": "ವಿಜ್ಞಾನ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-science",
+        "word": "ಅರಿಮೆ",
+        "note": "Proposed native-root coinage; adoption and semantic precision need review.",
+        "etymologyParts": [
+          {
+            "form": "ಅರಿಮೆ",
+            "etymology": "coined"
+          }
+        ],
+        "viability": "coined"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "word",
+    "sourceForm": "ಪದ",
+    "sourceMeaning": "Word / term",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಪದ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-word",
+        "word": "ನುಡಿ",
+        "note": "ನುಡಿ can mean word or utterance, but is not an exact replacement in every grammatical context.",
+        "etymologyParts": [
+          {
+            "form": "ನುಡಿ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "contested"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "sound",
+    "sourceForm": "ಧ್ವನಿ / ಶಬ್ದ",
+    "sourceMeaning": "Sound / noise",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಧ್ವನಿ / ಶಬ್ದ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-sound",
+        "word": "ಉಲಿ",
+        "note": "ಉಲಿ is a native sound/voice term; ಸದ್ದು may fit noise or sound in everyday contexts.",
+        "etymologyParts": [
+          {
+            "form": "ಉಲಿ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "contested"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "problem",
+    "sourceForm": "ಸಮಸ್ಯೆ",
+    "sourceMeaning": "Problem / difficulty",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಸಮಸ್ಯೆ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-problem",
+        "word": "ತೊಂದರೆ",
+        "note": "Common native word for difficulty or trouble.",
+        "etymologyParts": [
+          {
+            "form": "ತೊಂದರೆ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "help",
+    "sourceForm": "ಸಹಾಯ",
+    "sourceMeaning": "Help / assistance",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಸಹಾಯ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-help",
+        "word": "ನೆರವು",
+        "note": "Common native word for help or support.",
+        "etymologyParts": [
+          {
+            "form": "ನೆರವು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "progress",
+    "sourceForm": "ಪ್ರಗತಿ",
+    "sourceMeaning": "Progress",
+    "category": "Society",
+    "sourceEtymology": {
+      "form": "ಪ್ರಗತಿ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-progress",
+        "word": "ಮುನ್ನಡೆ",
+        "note": "Native word for advancement or moving forward.",
+        "etymologyParts": [
+          {
+            "form": "ಮುನ್ನಡೆ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "development",
+    "sourceForm": "ಅಭಿವೃದ್ಧಿ",
+    "sourceMeaning": "Development / growth",
+    "category": "Society",
+    "sourceEtymology": {
+      "form": "ಅಭಿವೃದ್ಧಿ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-development",
+        "word": "ಬೆಳವಣಿಗೆ",
+        "note": "Native word for growth or development.",
+        "etymologyParts": [
+          {
+            "form": "ಬೆಳವಣಿಗೆ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "system",
+    "sourceForm": "ವ್ಯವಸ್ಥೆ",
+    "sourceMeaning": "System / arrangement",
+    "category": "Civic",
+    "sourceEtymology": {
+      "form": "ವ್ಯವಸ್ಥೆ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-system",
+        "word": "ಏರ್ಪಾಡು",
+        "note": "Native word for arrangement or organisation; technical senses may need a specialised term.",
+        "etymologyParts": [
+          {
+            "form": "ಏರ್ಪಾಡು",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "clean"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "connection",
+    "sourceForm": "ಸಂಪರ್ಕ",
+    "sourceMeaning": "Connection / contact",
+    "category": "Abstract",
+    "sourceEtymology": {
+      "form": "ಸಂಪರ್ಕ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-connection",
+        "word": "ಸೇರಿಕೆ",
+        "note": "Can mean joining or association; not a universal equivalent for communication/contact.",
+        "etymologyParts": [
+          {
+            "form": "ಸೇರಿಕೆ",
+            "etymology": "dravidian"
+          }
+        ],
+        "viability": "contested"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  },
+  {
+    "id": "newspaper",
+    "sourceForm": "ಪತ್ರಿಕೆ",
+    "sourceMeaning": "Newspaper / periodical",
+    "category": "Society",
+    "sourceEtymology": {
+      "form": "ಪತ್ರಿಕೆ",
+      "etymology": "sanskrit_tatsama"
+    },
+    "alternatives": [
+      {
+        "id": "native-newspaper",
+        "word": "ಸುದ್ದಿಹಾಳೆ",
+        "note": "Transparent proposed compound; established usage should be checked before standardising.",
+        "etymologyParts": [
+          {
+            "form": "ಸುದ್ದಿಹಾಳೆ",
+            "etymology": "coined"
+          }
+        ],
+        "viability": "coined"
+      }
+    ],
+    "editorialNote": "Contributor-supplied high-impact proposal; not independently certified. Confirm etymology, usage frequency and semantic fit before standardising."
+  }
 ];

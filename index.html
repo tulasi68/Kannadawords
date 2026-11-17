@@ -156,6 +156,15 @@
           <label class="text-xs text-stone-600">English meaning<input id="coin-gloss" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="e.g. Library"></label>
           <label class="text-xs text-stone-600">Proposed Kannada coinage<input id="coin-candidate" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm kn" placeholder="Enter a Kannada proposal"></label>
           <label class="text-xs text-stone-600">Literal gloss (maximum 3 words)<input id="coin-literal" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="e.g. book-house"></label>
+          <label class="text-xs text-stone-600">Coinage type<select id="coin-type" class="block w-full mt-1 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm"><option value="compound">Compound</option><option value="revival">Revival</option><option value="loan_translation">Loan translation</option><option value="phrase">Phrase</option></select></label>
+          <label class="text-xs text-stone-600 sm:col-span-2">Morphemes and origins · one per line: form | native / tadbhava / sanskrit / loan<textarea id="coin-morphemes" rows="2" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="ಹೊತ್ತಗೆ | native&#10;ಮನೆ | native"></textarea></label>
+          <label class="text-xs text-stone-600">Halegannada attestation<select id="coin-hale-status" class="block w-full mt-1 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm"><option value="none">None</option><option value="archaic">Archaic / uncertain</option><option value="attested">Attested</option></select></label>
+          <label class="text-xs text-stone-600">Source citation<input id="coin-citation" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="Dictionary, page, text and verse"></label>
+          <label class="text-xs text-stone-600">Proto-Dravidian root<input id="coin-pdr" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="Only if sourced"></label>
+          <label class="text-xs text-stone-600">DEDR reference<input id="coin-dedr" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="Entry number / citation"></label>
+          <label class="text-xs text-stone-600">Tamil parallel<input id="coin-tamil" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="Structural parallel only"></label>
+          <label class="text-xs text-stone-600">Tulu parallel<input id="coin-tulu" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="If available"></label>
+          <label class="text-xs text-stone-600">Submitted by<input id="coin-submitter" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="Name / reviewer"></label>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4" id="coin-score-inputs"></div>
         <div class="mt-4">

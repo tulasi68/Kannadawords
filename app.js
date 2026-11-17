@@ -6,7 +6,7 @@ const STORAGE_KEY = "kannada_desi_v3";
 const grid = document.getElementById("grid");
 const searchInput = document.getElementById("search");
 const categorySelect = document.getElementById("category");
-const MODERATION_API = "https://kannadawords-moderation.tulasianand6.workers.dev";
+const MODERATION_API = window.KANNADA_MODERATION_API || "https://kannadawords-moderation.tulasianand6.workers.dev";
 let approvedCommunitySuggestions = [];
 
 const stats = document.getElementById("stats");

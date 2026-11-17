@@ -1,0 +1,224 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kannadawords.vercel.app/schemas/coinage-test-scorecard-v1.schema.json",
+  "title": "Kannada Coinage Test Scorecard",
+  "description": "Editorial review record for proposed Kannada coinages. Tamil parallels are structural references only and do not authorize importing Tamil words.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "submitted_by",
+    "submitted_date",
+    "sanskrit_source_word",
+    "english_gloss",
+    "proposed_coinage",
+    "literal_gloss",
+    "type",
+    "morphemes",
+    "scores",
+    "collision_check",
+    "attestation",
+    "auto_fail",
+    "verdict",
+    "reviewer_notes",
+    "voting_status"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "1.0"
+    },
+    "submitted_by": {
+      "type": "string"
+    },
+    "submitted_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "sanskrit_source_word": {
+      "type": "string"
+    },
+    "english_gloss": {
+      "type": "string"
+    },
+    "proposed_coinage": {
+      "type": "string"
+    },
+    "literal_gloss": {
+      "type": "string",
+      "description": "At most three words."
+    },
+    "type": {
+      "enum": [
+        "revival",
+        "compound",
+        "loan_translation",
+        "phrase"
+      ]
+    },
+    "morphemes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "form",
+          "origin"
+        ],
+        "properties": {
+          "form": {
+            "type": "string"
+          },
+          "origin": {
+            "enum": [
+              "native",
+              "tadbhava",
+              "sanskrit",
+              "loan"
+            ]
+          }
+        }
+      }
+    },
+    "scores": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "short",
+        "sayable",
+        "transparent",
+        "slotted",
+        "total",
+        "total_max"
+      ],
+      "properties": {
+        "short": {
+          "enum": [
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        "sayable": {
+          "enum": [
+            1,
+            3,
+            5
+          ]
+        },
+        "transparent": {
+          "enum": [
+            1,
+            3,
+            5
+          ]
+        },
+        "slotted": {
+          "enum": [
+            1,
+            3,
+            5
+          ]
+        },
+        "total": {
+          "type": "integer",
+          "minimum": 4,
+          "maximum": 20
+        },
+        "total_max": {
+          "const": 20
+        }
+      }
+    },
+    "collision_check": {
+      "enum": [
+        "clear",
+        "ambiguous",
+        "blocked"
+      ]
+    },
+    "attestation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "halegannada",
+        "citation",
+        "proto_dravidian_root",
+        "dedr",
+        "tamil_parallel",
+        "tulu_parallel"
+      ],
+      "properties": {
+        "halegannada": {
+          "enum": [
+            "attested",
+            "archaic",
+            "none"
+          ]
+        },
+        "citation": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "proto_dravidian_root": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "dedr": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tamil_parallel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "tulu_parallel": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "auto_fail": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "Sanskrit morpheme",
+          "Perso-Arabic loan",
+          "English loan",
+          "Homophone collision with a common word",
+          "Explanation longer than three words"
+        ]
+      }
+    },
+    "verdict": {
+      "enum": [
+        "PASS",
+        "CONDITIONAL",
+        "FAIL"
+      ]
+    },
+    "reviewer_notes": {
+      "type": "string"
+    },
+    "voting_status": {
+      "enum": [
+        "not-submitted",
+        "pending",
+        "open",
+        "closed"
+      ]
+    }
+  }
+}

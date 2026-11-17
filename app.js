@@ -118,13 +118,19 @@ function render(entries) {
   entries.forEach(entry => {
     const card = document.createElement("article");
     card.className = "bg-white border border-stone-200 rounded-xl p-5 shadow-sm";
-    const alts = [...entry.alternatives, ...getSuggestions(entry.id)];
+    const nativeAlts = [...entry.alternatives, ...getSuggestions(entry.id)];
+    const originalOption = !entry.scopeAudit ? [{
+      id: "original-" + entry.id,
+      word: entry.sanskrit,
+      isOriginal: true
+    }] : [];
+    const alts = [...nativeAlts, ...originalOption];
     const totalVotes = alts.reduce((sum, alt) => sum + getVoteCount(entry.id,alt.id),0);
     const first = alts[0] || {};
     const rows = languageRows(entry, alts);
     const voteHtml = alts.map(alt => {
       const count = getVoteCount(entry.id,alt.id);
-      const label = alt.isNoAlternative ? "Agree: no viable native alternative" : alt.isScopeAudit ? "Agree: outside Sanskrit-origin scope" : alt.unreviewed ? alt.word + " · etymology unknown" : alt.word;
+      const label = alt.isOriginal ? "Keep original: " + alt.word : alt.isNoAlternative ? "Agree: no viable native alternative" : alt.isScopeAudit ? "Agree: outside Sanskrit-origin scope" : alt.unreviewed ? alt.word + " · etymology unknown" : alt.word;
       return `<button onclick="castVote('${entry.id}','${alt.id}')" class="text-xs border border-emerald-200 text-emerald-800 rounded-full px-2 py-1 hover:bg-emerald-50">${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
     }).join(" ");
     card.innerHTML = `
@@ -146,7 +152,7 @@ function render(entries) {
       ${entry.editorialNote ? `<p class="text-xs text-stone-600 mt-2">${escapeHtml(entry.editorialNote)}</p>` : ""}
       <div class="mt-3 pt-3 border-t border-stone-100">
         <p class="text-xs text-stone-500 mb-2">${entry.noAlternative || entry.scopeAudit ? "Vote on this classification" : "Vote for a Kannada alternative"}</p>
-        <div class="flex flex-wrap gap-2">${voteHtml}</div>
+        <div class="flex flex-wrap gap-2">${alts.length > 1 ? voteHtml : '<span class="text-xs text-stone-400">Voting will appear when another option is available.</span>'}</div>
         <button onclick="toggleImproveForm('${entry.id}')" class="mt-3 text-sm font-medium text-amber-700 hover:text-amber-900">Improve / Suggest a Kannada alternative</button>
         <div id="improve-${entry.id}" class="hidden mt-3 p-3 bg-stone-50 rounded-lg border border-stone-200">
           <input id="newword-${entry.id}" type="text" placeholder="New Kannada word..." class="w-full px-3 py-2 text-sm border border-stone-300 rounded-lg kn"/>

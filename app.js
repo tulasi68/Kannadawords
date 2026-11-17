@@ -435,12 +435,12 @@ const projectInfo = {
   yaake: {
     kicker: "Yaake · Why?",
     title: "ನಮ್ಮ ನುಡಿಯ ಆಯ್ಕೆ ನಮ್ಮ ಕೈಯಲ್ಲಿ",
-    copy: "ಕನ್ನಡದ ಸ್ವಂತ ಪದಸಂಪತ್ತನ್ನು ಅರಿತುಕೊಳ್ಳಲು, ಬೇರೆ ದ್ರಾವಿಡ ಭಾಷೆಗಳಲ್ಲಿರುವ ಹೋಲಿಕೆಗಳನ್ನು ಗಮನಿಸಲು ಮತ್ತು ಸಂದರ್ಭಕ್ಕೆ ತಕ್ಕ ಸಹಜ ಪದಗಳನ್ನು ಬೆಳೆಸಲು ಈ ವೇದಿಕೆ. ಇದು ಸಂಸ್ಕೃತ ಪದಗಳನ್ನು ಬಲವಂತವಾಗಿ ತೆಗೆದುಹಾಕುವ ಅಭಿಯಾನವಲ್ಲ; ಪದಗಳ ಮೂಲವನ್ನು ಪ್ರಾಮಾಣಿಕವಾಗಿ ಗುರುತಿಸಿ, ಅರ್ಥಕ್ಕೆ ಸರಿಹೊಂದುವ ಕನ್ನಡದ ಆಯ್ಕೆಗಳನ್ನು ಮುಕ್ತವಾಗಿ ಪರಿಶೀಲಿಸುವ ಪ್ರಯತ್ನ."
+    copy: "ಕನ್ನಡದ ಸ್ವಂತ ಪದಸಂಪತ್ತನ್ನು ಅರಿತುಕೊಳ್ಳಲು, ಬೇರೆ ದ್ರಾವಿಡ ಭಾಷೆಗಳಲ್ಲಿರುವ ಹೋಲಿಕೆಗಳನ್ನು ಗಮನಿಸಲು ಮತ್ತು ಸಂದರ್ಭಕ್ಕೆ ತಕ್ಕ ಸಹಜ ಪದಗಳನ್ನು ಬೆಳೆಸಲು ಈ ವೇದಿಕೆ. ಇದು ಸಂಸ್ಕೃತ ಪದಗಳನ್ನು ಬಲವಂತವಾಗಿ ತೆಗೆದುಹಾಕುವ ಅಭಿಯಾನವಲ್ಲ; ಪದಗಳ ಮೂಲವನ್ನು ಪ್ರಾಮಾಣಿಕವಾಗಿ ಗುರುತಿಸಿ, ಅರ್ಥಕ್ಕೆ ಸರಿಹೊಂದುವ ಕನ್ನಡದ ಆಯ್ಕೆಗಳನ್ನು ಮುಕ್ತವಾಗಿ ಪರಿಶೀಲಿಸುವ ಪ್ರಯತ್ನ.\n\nReplace the unnecessary tatsama layer where a clear, acceptable Dravidian alternative exists, and get those alternatives into actual use.\n\nStrengthening native word formation. Coining from Dravidian roots instead of importing Sanskrit compounds makes our vocabulary more transparent.\n\nSupport a Dravidian oriented standard. It gives writers, teachers, and media a larger native alternative lexicon."
   },
   mundenu: {
     kicker: "Mundenu · What next?",
     title: "ನಿಮ್ಮ ಪಾಲ್ಗೊಳ್ಳುವಿಕೆಯಿಂದ ಮುಂದಿನ ಹೆಜ್ಜೆ",
-    copy: "ಮೊದಲು ಪದಗಳ ಪಟ್ಟಿಯಲ್ಲಿ ನಿಮಗೆ ಸೂಕ್ತವೆನಿಸುವ ಪರ್ಯಾಯಕ್ಕೆ ಮತ ನೀಡಿ. ಹೊಸ ಕನ್ನಡ ಪದ ಗೊತ್ತಿದ್ದರೆ ಅದನ್ನು ಸೂಚಿಸಿ — ಪ್ರತಿ ಪದಕ್ಕೆ ಒಬ್ಬ ಬಳಕೆದಾರರಿಗೆ ಒಂದು ಸಲಹೆಯ ಅವಕಾಶವಿದೆ; ನಿರ್ವಾಹಕರ ಪರಿಶೀಲನೆಯ ನಂತರವೇ ಅದು ಸಾರ್ವಜನಿಕ ಮತಪಟ್ಟಿಗೆ ಸೇರುತ್ತದೆ. ನಂತರ ವಾಕ್ಯ ಪರಿಶೀಲನೆಗೆ ಹೋಗಿ, ಆ ಪದ ನಿಜವಾದ ಬಳಕೆಯಲ್ಲಿ ಸಹಜವಾಗಿದೆಯೇ ಎಂದು ಅಭಿಪ್ರಾಯ ಹಂಚಿಕೊಳ್ಳಿ."
+    copy: "ಮೊದಲು ಪದಗಳ ಪಟ್ಟಿಯಲ್ಲಿ ನಿಮಗೆ ಸೂಕ್ತವೆನಿಸುವ ಪರ್ಯಾಯಕ್ಕೆ ಮತ ನೀಡಿ. ಹೊಸ ಕನ್ನಡ ಪದ ಗೊತ್ತಿದ್ದರೆ ಅದನ್ನು ಸೂಚಿಸಿ — ಪ್ರತಿ ಪದಕ್ಕೆ ಒಬ್ಬ ಬಳಕೆದಾರರಿಗೆ ಒಂದು ಸಲಹೆಯ ಅವಕಾಶವಿದೆ; ನಿರ್ವಾಹಕರ ಪರಿಶೀಲನೆಯ ನಂತರವೇ ಅದು ಸಾರ್ವಜನಿಕ ಮತಪಟ್ಟಿಗೆ ಸೇರುತ್ತದೆ. ನಂತರ ವಾಕ್ಯ ಪರಿಶೀಲನೆಗೆ ಹೋಗಿ, ಆ ಪದ ನಿಜವಾದ ಬಳಕೆಯಲ್ಲಿ ಸಹಜವಾಗಿದೆಯೇ ಎಂದು ಅಭಿಪ್ರಾಯ ಹಂಚಿಕೊಳ್ಳಿ.\n\nA word list on a website doesn’t change a language. Replacement succeeds only if speakers, writers, schools, and media use the alternatives naturally.\n\nIt requires community consent, not a mechanical substitution."
   }
 };
 function showInfo(key) {

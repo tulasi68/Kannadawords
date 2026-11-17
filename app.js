@@ -14,13 +14,37 @@ const stats = document.getElementById("stats");
 // Merge the audited set into existing cards (rather than duplicating them),
 // then append new terms and the explicitly labelled no-alternative records.
 const auditedById = Object.fromEntries((typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries).map(item => [item.id, item]));
+
+// Keep the category taxonomy aligned with the subject of each audited word.
+// These IDs are from etymology-entries.js; matching original records retain
+// their established data.js category unless an explicit mapping is listed.
+const auditedCategoryById = {
+  house:"Everyday", village:"Society", city:"Society", nation:"Society",
+  government:"Civic", board:"Civic", law:"Civic", justice:"Civic", judgment:"Civic",
+  director:"People", assistant:"People", process:"Civic", democracy:"Civic",
+  election:"Civic", question:"Abstract", answer:"Abstract", north:"Directions",
+  south:"Directions", east:"Directions", west:"Directions", citizen:"Society",
+  public:"Society", responsibility:"Society", medicine:"Body", disease:"Body",
+  treatment:"Body", family:"People", welfare:"Society", women:"People",
+  accommodation:"Everyday", food:"Everyday", snack:"Everyday", student:"Education",
+  school:"Education", library:"Education", university:"Education", language:"Abstract",
+  grammar:"Education", culture:"Society", literature:"Education", music:"Society",
+  water:"Nature", electricity:"Technology", station:"Technology", forest:"Nature",
+  environment:"Nature", soil:"Nature", river:"Nature", sea:"Nature", mountain:"Nature",
+  bridge:"Technology", publicity:"Society", speech:"Abstract", officer:"People",
+  chief:"People", division:"Civic", constitution:"Civic", office:"Civic",
+  punishment:"Civic", commission:"Civic", nutrition:"Body", department:"Civic",
+  minister:"People", health:"Body", news:"Society", disability:"People",
+  doctor:"People", freedom:"Society", interview:"Society"
+};
+const categoryForAudited = item => auditedCategoryById[item.id] || item.category || "Abstract";
 const votingEntries = wordEntries.map(entry => {
   const audit = auditedById[entry.id];
   return audit ? {
     ...entry,
     sanskrit: audit.sourceForm,
     meaning: audit.sourceMeaning || entry.meaning,
-    category: audit.category || entry.category,
+    category: categoryForAudited(audit) || entry.category,
     sourceEtymology: audit.sourceEtymology,
     alternatives: (audit.alternatives || []).map(alt => {
       // The audited record owns the Kannada candidate and its etymology labels.
@@ -47,7 +71,7 @@ const votingEntries = wordEntries.map(entry => {
   } : entry;
 }).concat((typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries)
   .filter(item => !wordEntries.some(entry => entry.id === item.id))
-  .map(item => ({...item, sanskrit:item.sourceForm, meaning:item.sourceMeaning, category:item.category || "Audited proposals", rejectedAlternatives:item.rejectedAlternatives || []})))
+  .map(item => ({...item, sanskrit:item.sourceForm, meaning:item.sourceMeaning, category:categoryForAudited(item), rejectedAlternatives:item.rejectedAlternatives || []})))
   .concat((typeof noAlternativeEntries === "undefined" ? [] : noAlternativeEntries).map(item => ({
     id:"no-alt-" + item.id,
     sanskrit:item.sourceForm,

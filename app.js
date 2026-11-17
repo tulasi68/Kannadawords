@@ -296,13 +296,13 @@ function render(entries) {
         <p class="text-xs text-stone-500 mb-2">${entry.noAlternative || entry.scopeAudit ? "Vote on this classification" : "Choose one option for this word · you can change your vote"}</p>
         <div class="flex flex-col gap-2">${alts.length > 1 ? voteHtml : '<span class="text-xs text-stone-400">Voting will appear when another option is available.</span>'}</div>
         <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-3">
-          <button onclick="toggleImproveForm('${entry.id}')" class="text-sm font-medium text-amber-700 hover:text-amber-900">Improve / Suggest a Kannada alternative</button>
-          <button onclick="toggleThoughts('${entry.id}')" class="text-sm font-medium text-sky-700 hover:text-sky-900">your thoughts</button>
+          <button onclick="toggleImproveForm('${entry.id}')" class="text-sm font-medium text-amber-700 hover:text-amber-900">Improve</button>
+          <button onclick="toggleThoughts('${entry.id}')" class="text-sm font-medium text-sky-700 hover:text-sky-900">Your thoughts</button>
         </div>
         <div id="thoughts-${entry.id}" class="hidden mt-3 p-3 bg-sky-50 rounded-lg border border-sky-200">
           <p class="text-xs text-stone-600 mb-2">Share your opinion about this word or its proposed alternative. Comments are visible to everyone.</p>
           <div id="thought-list-${entry.id}" class="space-y-2 mb-3"><p class="text-xs text-stone-500">Open to load comments…</p></div>
-          <textarea id="thought-input-${entry.id}" maxlength="1200" rows="3" placeholder="Write your thoughts (up to 1,200 characters)…" class="w-full px-3 py-2 text-sm border border-stone-300 rounded-lg"></textarea>
+          <textarea id="thought-input-${entry.id}" maxlength="1200" rows="3" placeholder="Write Your thoughts (up to 1,200 characters)…" class="w-full px-3 py-2 text-sm border border-stone-300 rounded-lg"></textarea>
           <div class="flex flex-wrap items-center justify-between gap-2 mt-2">
             <span class="text-xs text-stone-500">No login required. Please keep comments respectful.</span>
             <button onclick="submitThought('${entry.id}')" class="px-4 py-1.5 text-sm rounded-lg bg-sky-700 text-white hover:bg-sky-800">Post comment</button>
@@ -341,7 +341,7 @@ function renderThoughts(id, comments) {
   const list = document.getElementById("thought-list-" + id);
   if (!list) return;
   if (!comments || !comments.length) {
-    list.innerHTML = '<p class="text-xs text-stone-500">No comments yet. Be the first to share your thoughts.</p>';
+    list.innerHTML = '<p class="text-xs text-stone-500">No comments yet. Be the first to share Your thoughts.</p>';
     return;
   }
   list.innerHTML = comments.map(item => {

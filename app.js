@@ -92,17 +92,7 @@ function languageRows(entry, alts) {
     ["Halegannada", entry.halegannada || "Not yet sourced"],
     ["Proto-Dravidian root", first.proto || "Not reconstructed / not yet sourced"]
   ];
-  const sourceParts = Array.isArray(entry.sourceEtymology) ? entry.sourceEtymology : (entry.sourceEtymology ? [entry.sourceEtymology] : []);
-  const replacementParts = first.etymologyParts || [];
-  const pure = replacementParts.length > 0 && replacementParts.every(part =>
-    part.etymology === "dravidian" || (part.etymology === "coinage" && part.builtFromDravidian === true)
-  );
-  const sourceHtml = sourceParts.length ? sourceParts.map(part => `${part.form} (${etymologyName(part.etymology)})`).join(" · ") : "Unknown — this source word has not been individually reviewed";
-  const replacementHtml = replacementParts.length ? replacementParts.map(part => `${part.form} (${etymologyName(part.etymology)})`).join(" · ") : (entry.noAlternative ? "No replacement proposed" : "Unknown — replacement components have not been individually reviewed");
-  rows.push(["Source-word etymology", sourceHtml]);
-  rows.push(["Replacement breakdown", replacementHtml]);
   if (first.viability) rows.push(["Assessment", first.viability === "coinage" ? "Coinage — component origins shown above" : first.viability === "clean" ? "Proposed clean alternative" : first.viability === "scope_audit" ? "Outside Sanskrit-origin replacement scope" : "No viable native alternative"]);
-  if (replacementParts.length) rows.push(["Dravidian-only check", pure ? "Passes the proposed token audit" : "Does not pass — review required"]);
   return rows.map(([label,value]) => {
     const evidence = label === "Halegannada" ? entry.halegannadaEvidence : null;
     const status = evidence?.status || (label === "Halegannada" && entry.halegannada ? "unverified" : null);
@@ -150,7 +140,7 @@ function render(entries) {
         <p class="text-sm text-stone-600 mt-1">${escapeHtml(entry.meaning)}</p>
       </div>
       <section class="rounded-lg bg-stone-50 border border-stone-200 px-3 py-2">
-        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Word-by-word etymology and equivalents</h3>
+        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Language equivalents</h3>
         ${rows}
       </section>
       ${entry.rejectedAlternatives && entry.rejectedAlternatives.length ? `<div class="mt-3 rounded-lg border border-red-100 bg-red-50 px-3 py-2"><p class="text-xs font-semibold text-red-800 mb-1">Rejected / non-native proposals</p>${entry.rejectedAlternatives.map(item => `<p class="text-xs text-red-900 mt-1"><span class="kn font-semibold">${escapeHtml(item.word)}</span> · ${(item.etymologyParts || [{form:item.word,etymology:item.etymology}]).map(part => escapeHtml(part.form) + " (" + escapeHtml(etymologyName(part.etymology)) + ")").join(" · ")} — ${escapeHtml(item.reason || "Not accepted as a Dravidian-only alternative.")}</p>`).join("")}</div>` : ""}

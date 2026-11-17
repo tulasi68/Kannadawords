@@ -3724,7 +3724,7 @@ const originAuditEntries = [
     "alternatives": [
       {
         "id": "alt-supp-city",
-        "word": "ಊರು / ಪೇಟೆ",
+        "word": "ಊರು",
         "note": "ಪೇಟೆ is a Marathi loan; do not label it native.",
         "tamil": "நகரம் (Skt.) / ஊர்",
         "tulu": "ಊರು",
@@ -4450,7 +4450,7 @@ const originAuditEntries = [
     "alternatives": [
       {
         "id": "alt-supp-desire",
-        "word": "ಬಯಕೆ / ಆಸೆ",
+        "word": "ಬಯಕೆ",
         "note": "ಆಸೆ is itself a Prakrit/Sanskrit loan; prefer ಬಯಕೆ.",
         "tamil": "விருப்பம் (viruppam)",
         "tulu": "ಬಯಕೆ",
@@ -4615,7 +4615,7 @@ const originAuditEntries = [
     "alternatives": [
       {
         "id": "alt-supp-strength",
-        "word": "ಹುರುಪು / ಬಲ",
+        "word": "ಹುರುಪು",
         "note": "ಬಲ is Sanskrit bala; prefer ಹುರುಪು or ಆಳ್.",
         "tamil": "வலி (vali)",
         "tulu": "ಹುರುಪು",
@@ -5275,7 +5275,7 @@ const originAuditEntries = [
     "alternatives": [
       {
         "id": "alt-supp-journey",
-        "word": "ಪಯಣ / ನಡೆ",
+        "word": "ನಡೆ",
         "note": "ಪಯಣ is a tadbhava of the same Sanskrit word, not a native replacement.",
         "tamil": "பயணம் (loan)",
         "tulu": "ಪಯಣ",
@@ -5539,7 +5539,7 @@ const originAuditEntries = [
     "alternatives": [
       {
         "id": "alt-supp-sound-noise",
-        "word": "ಸದ್ದು / ಸೊಲ್ಲು",
+        "word": "ಸೊಲ್ಲು",
         "note": "ಸದ್ದು is itself a tadbhava of ಶಬ್ದ; do not present it as native.",
         "tamil": "ஓசை (ōcai)",
         "tulu": "ಸದ್ದ್",
@@ -5721,7 +5721,7 @@ const originAuditEntries = [
     "alternatives": [
       {
         "id": "alt-supp-story",
-        "word": "ಕತೆ / ಸೊಲ್ಲು",
+        "word": "ಸೊಲ್ಲು",
         "note": "ಕತೆ is tadbhava of Sanskrit kathā; not native.",
         "tamil": "கதை (loan)",
         "tulu": "ಕತೆ",

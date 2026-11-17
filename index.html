@@ -10,24 +10,56 @@
   <style>
     body { font-family: 'Inter', system-ui, sans-serif; }
     .kn { font-family: 'Noto Sans Kannada', 'Noto Sans', sans-serif; }
+    .hero-banner { background: radial-gradient(circle at 12% 15%, rgba(255,220,90,.32), transparent 28%), radial-gradient(circle at 88% 85%, rgba(255,190,70,.24), transparent 30%), linear-gradient(125deg,#991b1b 0%,#c2410c 48%,#b45309 100%); }
+    .info-pill { display:inline-flex; align-items:center; gap:.45rem; border:1px solid rgba(255,245,190,.7); background:rgba(255,255,255,.13); color:#fff; padding:.65rem 1.05rem; border-radius:9999px; font-size:.875rem; font-weight:700; transition:background .18s, transform .18s; }
+    .info-pill:hover,.info-pill:focus-visible { background:rgba(255,255,255,.25); transform:translateY(-1px); outline:2px solid #fde68a; outline-offset:2px; }
+    .info-pill .kn { color:#fef3c7; font-weight:500; }
+    .main-choice { display:flex; align-items:center; gap:1rem; width:100%; text-align:left; border:1px solid #fcd34d; border-radius:1rem; padding:1rem 1.1rem; background:#fff; color:#7f1d1d; box-shadow:0 2px 8px rgba(120,53,15,.06); transition:all .18s; }
+    .main-choice:hover { border-color:#dc2626; transform:translateY(-1px); box-shadow:0 8px 18px rgba(120,53,15,.1); }
+    .main-choice-active { background:linear-gradient(110deg,#fff7cc,#ffedd5); border:2px solid #dc2626; box-shadow:0 5px 16px rgba(185,28,28,.12); }
+    .choice-number { display:grid; place-items:center; flex:0 0 2.5rem; height:2.5rem; border-radius:50%; background:#991b1b; color:#fff7cc; font-size:.8rem; font-weight:800; }
+    .main-choice strong { display:block; font-size:1rem; }
+    .main-choice small { display:block; margin-top:.25rem; color:#92400e; font-size:.8rem; }
+    .choice-arrow { margin-left:auto; color:#b91c1c; font-size:1.35rem; font-weight:700; }
   </style>
 </head>
 <body class="bg-stone-50 text-stone-800 min-h-screen">
 
-  <!-- Header -->
-  <header class="bg-white border-b border-stone-200 sticky top-0 z-10">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-      <div>
-        <h1 class="text-xl font-semibold tracking-tight">
-          <span class="kn text-2xl">ಕನ್ನಡ ದೇಸಿ</span>
-          <span class="text-stone-400 font-normal text-base ml-2">Vote & Improve</span>
-        </h1>
-        <p class="text-sm text-stone-500 mt-0.5">Explore Kannada, Tamil, Tulu and Halegannada equivalents</p>
+  <!-- Bright, welcoming Kannada-first banner -->
+  <header class="hero-banner text-center text-white">
+    <div class="max-w-5xl mx-auto px-4 py-9 sm:py-12">
+      <p class="text-xs sm:text-sm font-bold tracking-[0.28em] uppercase text-yellow-100 mb-3">ಕನ್ನಡ ದೇಸಿ · Community word project</p>
+      <h1 class="kn text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight drop-shadow-sm">ಅಚ್ಚ ಕನ್ನಡದ ಕಡೆಗೆ</h1>
+      <p class="mt-3 text-lg sm:text-xl font-semibold text-yellow-100">Achcha kannadada kadege</p>
+      <p class="mt-2 text-sm sm:text-base text-white/90">ನಮ್ಮ ನುಡಿ · ನಮ್ಮ ಆಯ್ಕೆ · ನಮ್ಮ ಮುಂದಿನ ಹೆಜ್ಜೆ</p>
+      <div class="mt-7 flex flex-wrap justify-center gap-2.5" aria-label="About this project">
+        <button type="button" onclick="showInfo('enidu')" class="info-pill">Enidu <span class="kn">ಏನಿದು?</span></button>
+        <button type="button" onclick="showInfo('yaake')" class="info-pill">Yaake <span class="kn">ಯಾಕೆ?</span></button>
+        <button type="button" onclick="showInfo('mundenu')" class="info-pill">Mundenu <span class="kn">ಮುಂದೇನು?</span></button>
       </div>
-      <div class="flex gap-2">
-        <input id="search" type="search" placeholder="Search word or meaning..." 
-               class="px-3 py-1.5 text-sm border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 w-48 sm:w-56" />
-        <select id="category" class="px-3 py-1.5 text-sm border border-stone-300 rounded-lg bg-white">
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-5xl mx-auto px-4 py-8">
+    <section id="project-info" class="hidden mb-6 rounded-2xl border border-amber-200 bg-white p-5 sm:p-6 shadow-sm" aria-live="polite">
+      <div class="flex items-start justify-between gap-3"><div><p id="project-info-kicker" class="text-xs font-bold uppercase tracking-widest text-red-700"></p><h2 id="project-info-title" class="kn text-xl font-bold text-stone-900 mt-1"></h2></div><button type="button" onclick="showInfo(null)" class="rounded-full bg-yellow-100 px-3 py-1.5 text-sm font-semibold text-red-800">Close ✕</button></div>
+      <p id="project-info-copy" class="mt-3 text-sm sm:text-base leading-7 text-stone-700"></p>
+    </section>
+    <nav class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7" aria-label="Community review sections">
+      <button id="word-tab" type="button" onclick="showTab('words')" class="main-choice main-choice-active">
+        <span class="choice-number">01</span><span><strong>Vote for your word</strong><small class="kn">ಪದಕ್ಕೆ ನಿಮ್ಮ ಮತ ನೀಡಿ</small></span><span class="choice-arrow">→</span>
+      </button>
+      <button id="sentence-tab" type="button" onclick="showTab('sentences')" class="main-choice">
+        <span class="choice-number">02</span><span><strong>Review the sentence</strong><small class="kn">ವಾಕ್ಯವನ್ನು ಪರಿಶೀಲಿಸಿ</small></span><span class="choice-arrow">→</span>
+      </button>
+    </nav>
+    <section id="words-panel">
+    <div class="mb-5 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
+      <div><h2 class="kn text-xl font-bold text-stone-900">ಪದ ಬದಲಾವಣೆಗೆ ಮತ</h2><p class="text-sm text-stone-600 mt-1">Choose the Kannada word you feel works best.</p></div>
+      <div class="flex flex-col sm:flex-row gap-2">
+        <input id="search" type="search" placeholder="Search word or meaning..." class="px-3 py-2.5 text-sm border border-yellow-300 rounded-xl bg-white focus:outline-none focus:ring-2 focus:ring-red-300 w-full sm:w-52" />
+        <select id="category" class="px-3 py-2.5 text-sm border border-yellow-300 rounded-xl bg-white w-full sm:w-auto">
           <option value="all">All categories</option>
           <option value="Everyday">Everyday</option>
           <option value="Nature">Nature</option>
@@ -45,16 +77,7 @@
         </select>
       </div>
     </div>
-  </header>
-
-  <!-- Main -->
-  <main class="max-w-5xl mx-auto px-4 py-8">
-    <nav class="flex gap-2 border-b border-stone-200 mb-6" aria-label="Community review sections">
-      <button id="word-tab" type="button" onclick="showTab('words')" class="px-4 py-3 text-sm font-semibold border-b-2 border-amber-600 text-amber-800">Word replacement voting</button>
-      <button id="sentence-tab" type="button" onclick="showTab('sentences')" class="px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-stone-500">Sentence-level community review</button>
-    </nav>
-    <section id="words-panel">
-    <div class="mb-6 text-sm text-stone-600 bg-amber-50 border border-amber-100 rounded-lg px-4 py-3">
+    <div class="mb-6 text-sm text-stone-700 bg-yellow-50 border-l-4 border-red-500 rounded-r-xl px-4 py-3 shadow-sm">
       <strong>How to use:</strong><br>
       • <strong>Click any native word</strong> → it counts as a vote and shows the number of clicks<br>
       • Click <strong>Improve / Suggest better alternative</strong> → type a new word and add it<br>

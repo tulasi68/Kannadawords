@@ -262,7 +262,19 @@ function render(entries) {
       <div class="mt-3 pt-3 border-t border-stone-100">
         <p class="text-xs text-stone-500 mb-2">${entry.noAlternative || entry.scopeAudit ? "Vote on this classification" : "Choose one option for this word · you can change your vote"}</p>
         <div class="flex flex-wrap gap-2">${alts.length > 1 ? voteHtml : '<span class="text-xs text-stone-400">Voting will appear when another option is available.</span>'}</div>
-        <button onclick="toggleImproveForm('${entry.id}')" class="mt-3 text-sm font-medium text-amber-700 hover:text-amber-900">Improve / Suggest a Kannada alternative</button>
+        <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-3">
+          <button onclick="toggleImproveForm('${entry.id}')" class="text-sm font-medium text-amber-700 hover:text-amber-900">Improve / Suggest a Kannada alternative</button>
+          <button onclick="toggleThoughts('${entry.id}')" class="text-sm font-medium text-sky-700 hover:text-sky-900">your thoughts</button>
+        </div>
+        <div id="thoughts-${entry.id}" class="hidden mt-3 p-3 bg-sky-50 rounded-lg border border-sky-200">
+          <p class="text-xs text-stone-600 mb-2">Share your opinion about this word or its proposed alternative. Comments are visible to everyone.</p>
+          <div id="thought-list-${entry.id}" class="space-y-2 mb-3"><p class="text-xs text-stone-500">Open to load comments…</p></div>
+          <textarea id="thought-input-${entry.id}" maxlength="1200" rows="3" placeholder="Write your thoughts (up to 1,200 characters)…" class="w-full px-3 py-2 text-sm border border-stone-300 rounded-lg"></textarea>
+          <div class="flex flex-wrap items-center justify-between gap-2 mt-2">
+            <span class="text-xs text-stone-500">No login required. Please keep comments respectful.</span>
+            <button onclick="submitThought('${entry.id}')" class="px-4 py-1.5 text-sm rounded-lg bg-sky-700 text-white hover:bg-sky-800">Post comment</button>
+          </div>
+        </div>
         <div id="improve-${entry.id}" class="hidden mt-3 p-3 bg-stone-50 rounded-lg border border-stone-200">
           <input id="newword-${entry.id}" type="text" placeholder="New Kannada word..." class="w-full px-3 py-2 text-sm border border-stone-300 rounded-lg kn"/>
           <div class="flex flex-wrap gap-2 mt-2">
@@ -289,6 +301,59 @@ function cancelImproveForm(id) {
   const input = document.getElementById("newword-" + id);
   input.value = "";
   document.getElementById("improve-" + id).classList.add("hidden");
+}
+
+function renderThoughts(id, comments) {
+  const list = document.getElementById("thought-list-" + id);
+  if (!list) return;
+  if (!comments || !comments.length) {
+    list.innerHTML = '<p class="text-xs text-stone-500">No comments yet. Be the first to share your thoughts.</p>';
+    return;
+  }
+  list.innerHTML = comments.map(item => {
+    const date = item.createdAt ? new Date(item.createdAt.replace(" ", "T") + (item.createdAt.endsWith("Z") ? "" : "Z")).toLocaleString() : "";
+    return '<article class="rounded-lg bg-white border border-sky-100 p-3"><p class="text-sm text-stone-800 whitespace-pre-wrap break-words">' + escapeHtml(item.comment) + '</p><p class="text-xs text-stone-400 mt-2">' + escapeHtml(date) + '</p></article>';
+  }).join("");
+}
+async function loadThoughts(id) {
+  const list = document.getElementById("thought-list-" + id);
+  if (list) list.innerHTML = '<p class="text-xs text-stone-500">Loading comments…</p>';
+  try {
+    const response = await fetch(MODERATION_API + "/api/comments?entryId=" + encodeURIComponent(id), {cache:"no-store"});
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Could not load comments.");
+    renderThoughts(id, data.comments || []);
+  } catch (error) {
+    if (list) list.innerHTML = '<p class="text-xs text-red-700">' + escapeHtml(error.message || "Comments are temporarily unavailable.") + '</p>';
+  }
+}
+function toggleThoughts(id) {
+  const panel = document.getElementById("thoughts-" + id);
+  panel.classList.toggle("hidden");
+  if (!panel.classList.contains("hidden")) loadThoughts(id);
+}
+async function submitThought(id) {
+  const input = document.getElementById("thought-input-" + id);
+  const comment = input.value.trim();
+  if (!comment) { input.focus(); return; }
+  const button = input.parentElement.querySelector("button");
+  button.disabled = true;
+  button.textContent = "Posting…";
+  try {
+    const response = await fetch(MODERATION_API + "/api/comments", {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({entryId:id,commenterId:voterId,comment})
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Your comment could not be posted.");
+    input.value = "";
+    await loadThoughts(id);
+  } catch (error) {
+    alert(error.message || "Comments are temporarily unavailable. Please try again.");
+  } finally {
+    button.disabled = false;
+    button.textContent = "Post comment";
+  }
 }
 
 const contextualGrid = document.getElementById("contextual-grid");

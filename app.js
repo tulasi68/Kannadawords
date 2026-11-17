@@ -92,7 +92,6 @@ function languageRows(entry, alts) {
     ["Halegannada", entry.halegannada || "Not yet sourced"],
     ["Proto-Dravidian root", first.proto || "Not reconstructed / not yet sourced"]
   ];
-  if (first.viability) rows.push(["Assessment", first.viability === "coinage" ? "Coinage — component origins shown above" : first.viability === "clean" ? "Proposed clean alternative" : first.viability === "scope_audit" ? "Outside Sanskrit-origin replacement scope" : "No viable native alternative"]);
   return rows.map(([label,value]) => {
     const evidence = label === "Halegannada" ? entry.halegannadaEvidence : null;
     const status = evidence?.status || (label === "Halegannada" && entry.halegannada ? "unverified" : null);

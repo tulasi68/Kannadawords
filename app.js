@@ -631,8 +631,8 @@ function coinageScoreControls() {
   const host = document.getElementById("coin-score-inputs");
   const dimensions = coinageReviewData.scorecard.dimensions;
   host.innerHTML = dimensions.map(d => {
-    const options = d.id === "short" ? [[5,"1–2 syllables · 5"],[4,"3 syllables · 4"],[3,"4 syllables · 3"],[2,"5 syllables · 2"],[1,"6+ syllables · 1"]] : [[5,"Strong · 5"],[3,"Partial · 3"],[1,"Weak · 1"]];
-    return '<label class="text-xs text-stone-600">' + escapeHtml(d.label) + ' <select data-coin-score="' + d.id + '" class="block w-full mt-1 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm">' + options.map(([v,l]) => '<option value="' + v + '"' + (v===3?' selected':'') + '>' + l + '</option>').join("") + '</select><span class="block text-xs text-stone-400 mt-1">' + escapeHtml(d.rubric) + '</span></label>';
+    const options = d.id === "short" ? [[0,"Not assessed · 0"],[5,"1–2 syllables · 5"],[4,"3 syllables · 4"],[3,"4 syllables · 3"],[2,"5 syllables · 2"],[1,"6+ syllables · 1"]] : [[0,"Not assessed · 0"],[5,"Strong · 5"],[3,"Partial · 3"],[1,"Weak · 1"]];
+    return '<label class="text-xs text-stone-600">' + escapeHtml(d.label) + ' <select data-coin-score="' + d.id + '" class="block w-full mt-1 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm">' + options.map(([v,l]) => '<option value="' + v + '"' + (v===0?' selected':'') + '>' + l + '</option>').join("") + '</select><span class="block text-xs text-stone-400 mt-1">' + escapeHtml(d.rubric) + '</span></label>';
   }).join("");
 }
 function coinageEvaluation() {
@@ -650,8 +650,9 @@ function coinageEvaluation() {
   if (origin === "loan" && !flags.length) flags.push("Unverified non-Dravidian loan element");
   if (meaningFit === "poor") flags.push("Meaning mismatch");
   let verdict = "CONDITIONAL";
-  if (flags.length || total < 11 || min === 1 || collision === "blocked" || meaningFit === "poor") verdict = "FAIL";
-  else if (origin === "native" && evidence === "attested" && meaningFit === "exact" && total >= 15 && min >= 3 && collision === "clear") verdict = "PASS";
+  const unassessed = Object.values(scores).some(score => score === 0);
+  if (flags.length || total < 11 && !unassessed || min === 1 || collision === "blocked" || meaningFit === "poor") verdict = "FAIL";
+  else if (!unassessed && origin === "native" && evidence === "attested" && meaningFit === "exact" && total >= 15 && min >= 3 && collision === "clear") verdict = "PASS";
   const originLabel = {unknown:"unknown",native:"native",tadbhava:"tadbhava",sanskrit:"sanskrit",loan:"loan"}[origin];
   return {
     schema_version: coinageReviewData.schemaVersion, submitted_by:"community-review", submitted_date:new Date().toISOString(),
@@ -669,6 +670,16 @@ function evaluateCoinage() {
   if (["coin-source","coin-gloss","coin-candidate"].some(id=>!document.getElementById(id).value.trim())) {
     output.className="text-sm font-semibold text-red-700"; output.textContent="Enter all three words before evaluating."; return null;
   }
+  const candidate=document.getElementById("coin-candidate").value.trim();
+  const letters=candidate.match(/\\p{L}/gu)||[];
+  const allKannada=letters.length>0 && letters.every(ch=>/[\\u0C80-\\u0CFF]/u.test(ch));
+  if (!allKannada) {
+    const out={verdict:"FAIL",scores:{total:0,total_max:20},auto_fail:["Candidate must be written entirely in Kannada script; Latin-script or non-Kannada text is rejected before scoring."]};
+    const output=document.getElementById("coin-result");
+    output.className="text-sm font-semibold text-red-700";
+    output.textContent="FAIL · 0/20 · Candidate is not written in Kannada script.";
+    window.lastCoinageEvaluation=out; return null;
+  }
   const result=coinageEvaluation(), tone=result.verdict==="PASS"?"text-emerald-700":result.verdict==="CONDITIONAL"?"text-amber-700":"text-red-700";
   output.className="text-sm font-semibold "+tone;
   output.textContent=result.verdict+" · "+result.scores.total+"/20"+(result.auto_fail.length?" · "+result.auto_fail.join(", "):result.verdict==="CONDITIONAL"?" · Evidence or checks incomplete":"");
@@ -682,7 +693,7 @@ function exportCoinageEvaluation() {
 function resetCoinageForm() {
   ["coin-source","coin-gloss","coin-candidate"].forEach(id=>document.getElementById(id).value="");
   ["coin-type","coin-origin","coin-hale-status","coin-meaning-fit","coin-collision","coin-autofail"].forEach(id=>document.getElementById(id).selectedIndex=0);
-  document.querySelectorAll("[data-coin-score]").forEach(el=>el.value="3");
+  document.querySelectorAll("[data-coin-score]").forEach(el=>el.value="0");
   const out=document.getElementById("coin-result"); out.textContent=""; out.className="text-sm font-semibold"; window.lastCoinageEvaluation=null;
 }
 function renderCoinageRecords() {

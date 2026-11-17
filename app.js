@@ -24,11 +24,14 @@ const votingEntries = wordEntries.map(entry => {
     sourceEtymology: audit.sourceEtymology,
     alternatives: (audit.alternatives || []).map(alt => {
       // The audited record owns the Kannada candidate and its etymology labels.
-      // Preserve Tamil/Tulu/Proto equivalents already curated in data.js when
-      // the audited copy has not supplied those language fields.
-      const base = (entry.alternatives || []).find(candidate =>
+      // Language equivalents describe the source concept, not necessarily the
+      // selected Kannada replacement. Match by candidate first; if the audit
+      // uses a different Kannada form, retain the original card's lead
+      // equivalent rather than rendering Tamil/Tulu as blank.
+      const baseAlternatives = entry.alternatives || [];
+      const base = baseAlternatives.find(candidate =>
         candidate.word === alt.word || candidate.id === alt.id
-      ) || {};
+      ) || baseAlternatives[0] || {};
       return {
         ...base,
         ...alt,

@@ -693,7 +693,7 @@ function evaluateCoinage() {
   const result = coinageEvaluation();
   const tone = result.verdict === "PASS" ? "text-emerald-700" : result.verdict === "CONDITIONAL" ? "text-amber-700" : "text-red-700";
   output.className = "text-sm font-semibold " + tone;
-  output.textContent = result.verdict + " · " + result.scores.total + "/20" + (result.autoFail.length ? " · Auto-fail: " + result.autoFail.join(", ") : "");
+  output.textContent = result.verdict + " · " + result.scores.total + "/20" + (result.auto_fail.length ? " · Auto-fail: " + result.auto_fail.join(", ") : "");
   window.lastCoinageEvaluation = result;
   return result;
 }

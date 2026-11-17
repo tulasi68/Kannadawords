@@ -423,15 +423,38 @@ function showTab(tab) {
   const words = tab === "words";
   document.getElementById("words-panel").classList.toggle("hidden", !words);
   document.getElementById("sentences-panel").classList.toggle("hidden", words);
-  document.getElementById("word-tab").className = words
-    ? "px-4 py-3 text-sm font-semibold border-b-2 border-amber-600 text-amber-800"
-    : "px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-stone-500";
-  document.getElementById("sentence-tab").className = !words
-    ? "px-4 py-3 text-sm font-semibold border-b-2 border-amber-600 text-amber-800"
-    : "px-4 py-3 text-sm font-semibold border-b-2 border-transparent text-stone-500";
-  const controls = document.querySelector("header .flex.gap-2");
-  if (controls) controls.classList.toggle("hidden", !words);
+  document.getElementById("word-tab").classList.toggle("main-choice-active", words);
+  document.getElementById("sentence-tab").classList.toggle("main-choice-active", !words);
 }
+const projectInfo = {
+  enidu: {
+    kicker: "Enidu · What is this?",
+    title: "ಅಚ್ಚ ಕನ್ನಡದ ಕಡೆಗೆ — ಏನಿದು?",
+    copy: "ಕನ್ನಡದಲ್ಲಿ ಬಳಕೆಯಲ್ಲಿರುವ ಸಂಸ್ಕೃತ ಮೂಲದ ಪದಗಳಿಗೆ ಅರ್ಥ ಮತ್ತು ಸಂದರ್ಭಕ್ಕೆ ತಕ್ಕ ಕನ್ನಡದ, ತಮಿಳಿನ, ತುಳುವಿನ ಹಾಗೂ ಹಳೆಗನ್ನಡದ ಸಮಾನಾರ್ಥಕ ಪದಗಳನ್ನು ಹುಡುಕಿ ಹೋಲಿಸುವ ಸಮುದಾಯದ ಪ್ರಯತ್ನ ಇದು. ಪದಗಳಿಗೆ ಮತ ನೀಡಿ; ವಾಕ್ಯಗಳಲ್ಲಿ ಅವು ಸಹಜವಾಗಿ ಹೊಂದುತ್ತವೆಯೇ ಎಂದು ಪರಿಶೀಲಿಸಿ. ಪ್ರತಿಯೊಂದು ಪರ್ಯಾಯವೂ ಈಗಾಗಲೇ ಸಾಬೀತಾದದ್ದು ಎಂದರ್ಥವಲ್ಲ — ಮೂಲ, ಬಳಕೆ ಮತ್ತು ಸಂದರ್ಭವನ್ನು ಗಮನದಲ್ಲಿಟ್ಟುಕೊಂಡು ಚರ್ಚಿಸೋಣ."
+  },
+  yaake: {
+    kicker: "Yaake · Why?",
+    title: "ನಮ್ಮ ನುಡಿಯ ಆಯ್ಕೆ ನಮ್ಮ ಕೈಯಲ್ಲಿ",
+    copy: "ಕನ್ನಡದ ಸ್ವಂತ ಪದಸಂಪತ್ತನ್ನು ಅರಿತುಕೊಳ್ಳಲು, ಬೇರೆ ದ್ರಾವಿಡ ಭಾಷೆಗಳಲ್ಲಿರುವ ಹೋಲಿಕೆಗಳನ್ನು ಗಮನಿಸಲು ಮತ್ತು ಸಂದರ್ಭಕ್ಕೆ ತಕ್ಕ ಸಹಜ ಪದಗಳನ್ನು ಬೆಳೆಸಲು ಈ ವೇದಿಕೆ. ಇದು ಸಂಸ್ಕೃತ ಪದಗಳನ್ನು ಬಲವಂತವಾಗಿ ತೆಗೆದುಹಾಕುವ ಅಭಿಯಾನವಲ್ಲ; ಪದಗಳ ಮೂಲವನ್ನು ಪ್ರಾಮಾಣಿಕವಾಗಿ ಗುರುತಿಸಿ, ಅರ್ಥಕ್ಕೆ ಸರಿಹೊಂದುವ ಕನ್ನಡದ ಆಯ್ಕೆಗಳನ್ನು ಮುಕ್ತವಾಗಿ ಪರಿಶೀಲಿಸುವ ಪ್ರಯತ್ನ."
+  },
+  mundenu: {
+    kicker: "Mundenu · What next?",
+    title: "ನಿಮ್ಮ ಪಾಲ್ಗೊಳ್ಳುವಿಕೆಯಿಂದ ಮುಂದಿನ ಹೆಜ್ಜೆ",
+    copy: "ಮೊದಲು ಪದಗಳ ಪಟ್ಟಿಯಲ್ಲಿ ನಿಮಗೆ ಸೂಕ್ತವೆನಿಸುವ ಪರ್ಯಾಯಕ್ಕೆ ಮತ ನೀಡಿ. ಹೊಸ ಕನ್ನಡ ಪದ ಗೊತ್ತಿದ್ದರೆ ಅದನ್ನು ಸೂಚಿಸಿ — ಪ್ರತಿ ಪದಕ್ಕೆ ಒಬ್ಬ ಬಳಕೆದಾರರಿಗೆ ಒಂದು ಸಲಹೆಯ ಅವಕಾಶವಿದೆ; ನಿರ್ವಾಹಕರ ಪರಿಶೀಲನೆಯ ನಂತರವೇ ಅದು ಸಾರ್ವಜನಿಕ ಮತಪಟ್ಟಿಗೆ ಸೇರುತ್ತದೆ. ನಂತರ ವಾಕ್ಯ ಪರಿಶೀಲನೆಗೆ ಹೋಗಿ, ಆ ಪದ ನಿಜವಾದ ಬಳಕೆಯಲ್ಲಿ ಸಹಜವಾಗಿದೆಯೇ ಎಂದು ಅಭಿಪ್ರಾಯ ಹಂಚಿಕೊಳ್ಳಿ."
+  }
+};
+function showInfo(key) {
+  const panel = document.getElementById("project-info");
+  if (!key) { panel.classList.add("hidden"); return; }
+  const info = projectInfo[key];
+  if (!info) return;
+  document.getElementById("project-info-kicker").textContent = info.kicker;
+  document.getElementById("project-info-title").textContent = info.title;
+  document.getElementById("project-info-copy").textContent = info.copy;
+  panel.classList.remove("hidden");
+  panel.scrollIntoView({behavior:"smooth",block:"nearest"});
+}
+window.showInfo = showInfo;
 function toggleSentenceForm() {
   const form = document.getElementById("sentence-form");
   form.classList.toggle("hidden");

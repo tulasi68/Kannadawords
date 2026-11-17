@@ -128,6 +128,14 @@ const wordEntries = [
         proto: "*vaṭṭi",
         tamil: "ஆடை / துணி",
         tulu: "ಬಟ್ಟೆ"
+      },
+      {
+        id: "udupu",
+        word: "ಉಡುಪು",
+        note: "Native Kannada; clothing or attire, often a good contextual alternative to ವಸ್ತ್ರ",
+        proto: null,
+        tamil: "உடை (uṭai)",
+        tulu: null
       }
     ]
   },
@@ -144,6 +152,14 @@ const wordEntries = [
         proto: "*ūṭu",
         tamil: "உணவு / சோறு",
         tulu: "ಊಟ"
+      },
+      {
+        id: "tindi",
+        word: "ತಿಂಡಿ",
+        note: "Native Kannada; food or something eaten, especially a snack or light meal",
+        proto: null,
+        tamil: "திண்டி (tiṇṭi)",
+        tulu: null
       }
     ]
   },
@@ -192,6 +208,14 @@ const wordEntries = [
         proto: "*vaḻi",
         tamil: "வழி (vaḻi)",
         tulu: "ದಾರಿ"
+      },
+      {
+        id: "haadi",
+        word: "ಹಾದಿ",
+        note: "Native Kannada synonym for path or way",
+        proto: null,
+        tamil: null,
+        tulu: null
       }
     ]
   },
@@ -242,6 +266,14 @@ const wordEntries = [
         proto: "*veṅkay",
         tamil: "நெருப்பு",
         tulu: "ಬೆಂಕಿ"
+      },
+      {
+        id: "kichchu",
+        word: "ಕಿಚ್ಚು",
+        note: "Native Kannada word for fire or flame; expressive / literary in some contexts",
+        proto: null,
+        tamil: "தீ (tī)",
+        tulu: null
       }
     ]
   },
@@ -258,6 +290,14 @@ const wordEntries = [
         proto: null,
         tamil: "வானம் (vāṉam)",
         tulu: "ಆಗಸ"
+      },
+      {
+        id: "baanu",
+        word: "ಬಾನು",
+        note: "Poetic / literary Kannada word for sky",
+        proto: null,
+        tamil: null,
+        tulu: null
       }
     ]
   },
@@ -274,6 +314,14 @@ const wordEntries = [
         proto: "*nilam",
         tamil: "நிலம் (nilam)",
         tulu: "ನೆಲ"
+      },
+      {
+        id: "mannu",
+        word: "ಮಣ್ಣು",
+        note: "Native word for soil or earth; context-specific rather than an exact synonym for the planet",
+        proto: null,
+        tamil: "மண் (maṇ)",
+        tulu: null
       }
     ]
   },
@@ -322,6 +370,14 @@ const wordEntries = [
         proto: "*veṭṭam",
         tamil: "மலை (malai)",
         tulu: "ಬೆಟ್ಟ"
+      },
+      {
+        id: "male",
+        word: "ಮಲೆ",
+        note: "Native / literary word for mountain or hill; usage varies by region and context",
+        proto: null,
+        tamil: "மலை (malai)",
+        tulu: null
       }
     ]
   },

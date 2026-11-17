@@ -13,7 +13,16 @@ const stats = document.getElementById("stats");
 
 // Merge the audited set into existing cards (rather than duplicating them),
 // then append new terms and the explicitly labelled no-alternative records.
-const auditedById = Object.fromEntries((typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries).map(item => [item.id, item]));
+const auditedById = (typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries).reduce((map, item) => {
+  const previous = map[item.id];
+  if (!previous) { map[item.id] = item; return map; }
+  map[item.id] = {
+    ...previous, ...item,
+    alternatives: [...(previous.alternatives || []), ...(item.alternatives || [])]
+      .filter((alt, index, all) => all.findIndex(candidate => candidate.word === alt.word) === index)
+  };
+  return map;
+}, {});
 
 // Keep the category taxonomy aligned with the subject of each audited word.
 // These IDs are from etymology-entries.js; matching original records retain

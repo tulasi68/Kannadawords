@@ -6,6 +6,8 @@ const STORAGE_KEY = "kannada_desi_v3";
 const grid = document.getElementById("grid");
 const searchInput = document.getElementById("search");
 const categorySelect = document.getElementById("category");
+const MODERATION_API = "https://kannadawords-moderation.tulasianand6.workers.dev";
+let approvedCommunitySuggestions = [];
 
 const stats = document.getElementById("stats");
 
@@ -93,17 +95,38 @@ function castVote(entryId, altId) {
   renderContextual();
 }
 function getSuggestions(entryId) {
-  const state = loadState(); return state.suggestions[entryId] || [];
+  return approvedCommunitySuggestions.filter(item => item.entryId === entryId).map(item => ({
+    id: "community-" + item.id, word: item.word,
+    note: "Community suggestion — approved by administrator",
+    proto: null, tamil: null, tulu: null,
+    etymologyParts: [{form:item.word,etymology:"unknown"}],
+    viability:"proposed", unreviewed:true
+  }));
 }
-function addSuggestion(entryId, word) {
+async function addSuggestion(entryId, word) {
   if (!word || !word.trim()) return;
-  const state = loadState();
-  if (!state.suggestions[entryId]) state.suggestions[entryId] = [];
-  if (state.suggestions[entryId].some(s => s.word === word.trim())) {
-    alert("This alternative is already listed."); return;
+  try {
+    const response = await fetch(MODERATION_API + "/api/suggestions", {
+      method:"POST", headers:{"Content-Type":"application/json"},
+      body:JSON.stringify({entryId,word:word.trim()})
+    });
+    const result = await response.json();
+    if (!response.ok) throw new Error(result.error || "Could not submit suggestion.");
+    alert("Thank you. Your suggestion has been sent for administrator review. It will appear in voting only if approved.");
+  } catch (error) {
+    alert(error.message || "Could not reach the suggestion service. Please try again later.");
   }
-  state.suggestions[entryId].push({ id:"user_"+Date.now(), word:word.trim(), note:"User suggestion — etymology not reviewed", proto:null, tamil:null, tulu:null, etymologyParts:[{form:word.trim(),etymology:"unknown"}], viability:"proposed", unreviewed:true });
-  saveState(state); filterAndRender();
+}
+async function loadApprovedSuggestions() {
+  try {
+    const response = await fetch(MODERATION_API + "/api/suggestions");
+    if (!response.ok) throw new Error("Could not load approved suggestions.");
+    const data = await response.json();
+    approvedCommunitySuggestions = Array.isArray(data.suggestions) ? data.suggestions : [];
+    filterAndRender();
+  } catch (error) {
+    console.warn("Community suggestions are temporarily unavailable.", error);
+  }
 }
 function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -199,7 +222,8 @@ function toggleImproveForm(id) {
 function submitSuggestion(id) {
   const input=document.getElementById("newword-"+id);
   if(!input.value.trim()){input.focus();return;}
-  addSuggestion(id,input.value); input.value=""; document.getElementById("improve-"+id).classList.add("hidden");
+  const word = input.value.trim(); input.value=""; document.getElementById("improve-"+id).classList.add("hidden");
+  addSuggestion(id,word);
 }
 function cancelImproveForm(id) {
   const input = document.getElementById("newword-" + id);
@@ -323,3 +347,73 @@ searchInput.addEventListener("input",filterAndRender);
 categorySelect.addEventListener("change",filterAndRender);
 filterAndRender();
 renderContextual();
+loadApprovedSuggestions();
+
+const adminPanel = document.getElementById("admin-panel");
+let adminToken = sessionStorage.getItem("kannadaAdminToken") || "";
+let titleTapCount = 0, titleTapTimer;
+async function openAdminGate() {
+  const pin = prompt("Administrator PIN");
+  if (pin === null) return;
+  try {
+    const response = await fetch(MODERATION_API + "/api/admin/login", {
+      method:"POST", headers:{"Content-Type":"application/json"}, body:JSON.stringify({pin})
+    });
+    const data = await response.json();
+    if (!response.ok) throw new Error(data.error || "Administrator verification failed.");
+    adminToken = data.token;
+    sessionStorage.setItem("kannadaAdminToken",adminToken);
+    adminPanel.classList.remove("hidden");
+    await loadPendingSuggestions();
+    adminPanel.scrollIntoView({behavior:"smooth",block:"start"});
+  } catch(error) { alert(error.message || "Administrator access failed."); }
+}
+async function adminRequest(path, options={}) {
+  const response = await fetch(MODERATION_API + path,{...options,headers:{...(options.headers||{}),Authorization:"Bearer "+adminToken}});
+  const data = await response.json();
+  if (response.status === 401) {
+    adminToken = ""; sessionStorage.removeItem("kannadaAdminToken");
+    adminPanel.classList.add("hidden");
+    throw new Error("Administrator session expired. Open Admin mode again.");
+  }
+  if (!response.ok) throw new Error(data.error || "Request failed.");
+  return data;
+}
+async function loadPendingSuggestions() {
+  const list=document.getElementById("admin-pending-list");
+  list.innerHTML='<p class="text-sm text-stone-500">Loading pending suggestions…</p>';
+  try {
+    const data=await adminRequest("/api/admin/pending");
+    if (!data.suggestions.length) { list.innerHTML='<p class="text-sm text-stone-500">No suggestions awaiting review.</p>'; return; }
+    list.innerHTML=data.suggestions.map(item=>`<article class="rounded-lg border border-stone-200 bg-white p-3" data-id="${escapeHtml(item.id)}">
+      <p class="text-xs text-stone-500 mb-1">Word card: <code>${escapeHtml(item.entryId)}</code></p>
+      <input class="admin-edit-word kn w-full rounded-lg border border-stone-300 px-3 py-2 text-base" maxlength="80" value="${escapeHtml(item.word)}" aria-label="Edit suggested Kannada word">
+      <div class="flex gap-2 mt-2">
+        <button type="button" onclick="reviewCommunitySuggestion(this,'approve')" class="rounded-lg bg-emerald-700 px-3 py-1.5 text-sm text-white">Approve</button>
+        <button type="button" onclick="reviewCommunitySuggestion(this,'reject')" class="rounded-lg border border-red-300 px-3 py-1.5 text-sm text-red-700">Reject</button>
+      </div></article>`).join("");
+  } catch(error) { list.innerHTML='<p class="text-sm text-red-700">'+escapeHtml(error.message)+'</p>'; }
+}
+async function reviewCommunitySuggestion(button,action) {
+  const card=button.closest("[data-id]"), word=card.querySelector(".admin-edit-word").value.trim();
+  try {
+    await adminRequest("/api/admin/review",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({id:card.dataset.id,action,word})});
+    card.remove();
+    if (!document.querySelector("#admin-pending-list [data-id]")) document.getElementById("admin-pending-list").innerHTML='<p class="text-sm text-stone-500">No suggestions awaiting review.</p>';
+    if(action==="approve") await loadApprovedSuggestions();
+  } catch(error) { alert(error.message); }
+}
+function closeAdminMode() {
+  adminToken=""; sessionStorage.removeItem("kannadaAdminToken"); adminPanel.classList.add("hidden");
+}
+const brandTitle=document.querySelector("header h1");
+if(brandTitle) brandTitle.addEventListener("click",()=>{
+  titleTapCount++;
+  clearTimeout(titleTapTimer);
+  titleTapTimer=setTimeout(()=>{titleTapCount=0;},1800);
+  if(titleTapCount>=7){titleTapCount=0;openAdminGate();}
+});
+window.reviewCommunitySuggestion=reviewCommunitySuggestion;
+window.closeAdminMode=closeAdminMode;
+window.loadPendingSuggestions=loadPendingSuggestions;
+

@@ -52,20 +52,45 @@ const votingEntries = wordEntries.map(entry => {
 const etymologyName = code => (typeof etymologyLabels !== "undefined" && etymologyLabels[code]) || code || "Unknown";
 
 function loadState() {
-  try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || { votes: {}, suggestions: {} }; }
-  catch { return { votes: {}, suggestions: {} }; }
+  try {
+    const state = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
+    state.votes = state.votes || {};
+    state.suggestions = state.suggestions || {};
+    state.voteSelections = state.voteSelections || {};
+    // Earlier builds allowed one browser to increment every option independently.
+    // Those counts cannot be reconciled into single-choice votes, so reset them once.
+    if (state.votingModelVersion !== 2) {
+      state.votes = {};
+      state.voteSelections = {};
+      state.votingModelVersion = 2;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    }
+    return state;
+  } catch {
+    return { votes: {}, suggestions: {}, voteSelections: {}, votingModelVersion: 2 };
+  }
 }
 function saveState(state) { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
 function getVoteCount(entryId, altId) {
   const state = loadState();
   return (state.votes[entryId] && state.votes[entryId][altId]) || 0;
 }
+function getSelectedVote(entryId) {
+  return loadState().voteSelections[entryId] || null;
+}
 function castVote(entryId, altId) {
   const state = loadState();
+  const previous = state.voteSelections[entryId];
+  if (previous === altId) return;
   if (!state.votes[entryId]) state.votes[entryId] = {};
+  if (previous && state.votes[entryId][previous]) {
+    state.votes[entryId][previous] = Math.max(0, state.votes[entryId][previous] - 1);
+  }
   state.votes[entryId][altId] = (state.votes[entryId][altId] || 0) + 1;
-  saveState(state); filterAndRender();
-renderContextual();
+  state.voteSelections[entryId] = altId;
+  saveState(state);
+  filterAndRender();
+  renderContextual();
 }
 function getSuggestions(entryId) {
   const state = loadState(); return state.suggestions[entryId] || [];
@@ -130,8 +155,9 @@ function render(entries) {
     const rows = languageRows(entry, alts);
     const voteHtml = alts.map(alt => {
       const count = getVoteCount(entry.id,alt.id);
+      const selected = getSelectedVote(entry.id) === alt.id;
       const label = alt.isOriginal ? "Keep original: " + alt.word : alt.isNoAlternative ? "Agree: no viable native alternative" : alt.isScopeAudit ? "Agree: outside Sanskrit-origin scope" : alt.unreviewed ? alt.word + " · etymology unknown" : alt.word;
-      return `<button onclick="castVote('${entry.id}','${alt.id}')" class="text-xs border border-emerald-200 text-emerald-800 rounded-full px-2 py-1 hover:bg-emerald-50">${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
+      return `<button onclick="castVote('${entry.id}','${alt.id}')" aria-pressed="${selected}" class="text-xs border ${selected ? "border-emerald-600 bg-emerald-100 font-semibold" : "border-emerald-200"} text-emerald-800 rounded-full px-2 py-1 hover:bg-emerald-50">${selected ? "✓ " : ""}${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
     }).join(" ");
     card.innerHTML = `
       <div class="flex items-start justify-between gap-2 mb-3">
@@ -151,7 +177,7 @@ function render(entries) {
       ${entry.rejectedAlternatives && entry.rejectedAlternatives.length ? `<div class="mt-3 rounded-lg border border-red-100 bg-red-50 px-3 py-2"><p class="text-xs font-semibold text-red-800 mb-1">Rejected / non-native proposals</p>${entry.rejectedAlternatives.map(item => `<p class="text-xs text-red-900 mt-1"><span class="kn font-semibold">${escapeHtml(item.word)}</span> · ${(item.etymologyParts || [{form:item.word,etymology:item.etymology}]).map(part => escapeHtml(part.form) + " (" + escapeHtml(etymologyName(part.etymology)) + ")").join(" · ")} — ${escapeHtml(item.reason || "Not accepted as a Dravidian-only alternative.")}</p>`).join("")}</div>` : ""}
       ${entry.editorialNote ? `<p class="text-xs text-stone-600 mt-2">${escapeHtml(entry.editorialNote)}</p>` : ""}
       <div class="mt-3 pt-3 border-t border-stone-100">
-        <p class="text-xs text-stone-500 mb-2">${entry.noAlternative || entry.scopeAudit ? "Vote on this classification" : "Vote for a Kannada alternative"}</p>
+        <p class="text-xs text-stone-500 mb-2">${entry.noAlternative || entry.scopeAudit ? "Vote on this classification" : "Choose one option for this word · you can change your vote"}</p>
         <div class="flex flex-wrap gap-2">${alts.length > 1 ? voteHtml : '<span class="text-xs text-stone-400">Voting will appear when another option is available.</span>'}</div>
         <button onclick="toggleImproveForm('${entry.id}')" class="mt-3 text-sm font-medium text-amber-700 hover:text-amber-900">Improve / Suggest a Kannada alternative</button>
         <div id="improve-${entry.id}" class="hidden mt-3 p-3 bg-stone-50 rounded-lg border border-stone-200">

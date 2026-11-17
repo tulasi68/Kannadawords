@@ -646,6 +646,8 @@ function coinageEvaluation() {
   const flags = [...document.querySelectorAll("[data-coin-autofail]:checked")].map(el => coinageReviewData.scorecard.autoFail[Number(el.dataset.coinAutofail)]);
   const literal = document.getElementById("coin-literal").value.trim();
   if (literal && literal.split(/\s+/).filter(Boolean).length > 3 && !flags.includes("Explanation longer than three words")) flags.push("Explanation longer than three words");
+  const morphemeLines = document.getElementById("coin-morphemes").value.split(/\n/).map(line=>line.trim()).filter(Boolean);
+  if (morphemeLines.some(line => (line.split("|")[1] || "").trim().toLowerCase() === "sanskrit") && !flags.includes("Sanskrit morpheme")) flags.push("Sanskrit morpheme");
   let verdict = "FAIL";
   if (flags.length || total < 11 || min === 1 || collision === "blocked") verdict = "FAIL";
   else if (total >= 15 && min >= 3 && collision === "clear") verdict = "PASS";
@@ -681,8 +683,14 @@ function coinageEvaluation() {
   };
 }
 function evaluateCoinage() {
-  const result = coinageEvaluation();
   const output = document.getElementById("coin-result");
+  const missing = ["coin-source","coin-gloss","coin-candidate","coin-literal"].filter(id=>!document.getElementById(id).value.trim());
+  if (missing.length) {
+    output.className = "text-sm font-semibold text-red-700";
+    output.textContent = "Complete the source word, meaning, proposed coinage and literal gloss first.";
+    return null;
+  }
+  const result = coinageEvaluation();
   const tone = result.verdict === "PASS" ? "text-emerald-700" : result.verdict === "CONDITIONAL" ? "text-amber-700" : "text-red-700";
   output.className = "text-sm font-semibold " + tone;
   output.textContent = result.verdict + " · " + result.scores.total + "/20" + (result.autoFail.length ? " · Auto-fail: " + result.autoFail.join(", ") : "");
@@ -691,6 +699,7 @@ function evaluateCoinage() {
 }
 function exportCoinageEvaluation() {
   const result = evaluateCoinage();
+  if (!result) return;
   const blob = new Blob([JSON.stringify(result,null,2)],{type:"application/json"});
   const url = URL.createObjectURL(blob);
   const a = document.createElement("a");

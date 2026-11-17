@@ -6,12 +6,9 @@ const auditedWordEntries = [
     "sourceForm": "ಗೃಹ",
     "sourceMeaning": "House",
     "category": "Audited 72-term list",
-    "sourceEtymology": {
     "halegannada": "ಮನೆ",
-    "halegannadaEvidence": {
-      "status": "provisional",
-      "note": "House: ಮನೆ is a Dravidian comparison form; no primary Old Kannada citation supplied."
-    },
+    "halegannadaEvidence": {"status":"provisional","note":"House comparison form; native Dravidian cognate proposed, but primary Old Kannada citation is still needed."},
+    "sourceEtymology": {
       "form": "ಗೃಹ",
       "etymology": "sanskrit_tatsama"
     },
@@ -36,12 +33,9 @@ const auditedWordEntries = [
     "sourceForm": "ಗ್ರಾಮ",
     "sourceMeaning": "Village",
     "category": "Audited 72-term list",
-    "sourceEtymology": {
     "halegannada": "ಊರು",
-    "halegannadaEvidence": {
-      "status": "provisional",
-      "note": "Village: ಊರು is the expected historical cognate; primary Old Kannada citation still needed."
-    },
+    "halegannadaEvidence": {"status":"provisional","note":"Expected historical cognate; primary Old Kannada citation is still needed."},
+    "sourceEtymology": {
       "form": "ಗ್ರಾಮ",
       "etymology": "sanskrit_tatsama"
     },
@@ -741,12 +735,9 @@ const auditedWordEntries = [
     "sourceForm": "ಆಹಾರ",
     "sourceMeaning": "Food",
     "category": "Audited 72-term list",
-    "sourceEtymology": {
     "halegannada": "ಊಟ",
-    "halegannadaEvidence": {
-      "status": "provisional",
-      "note": "Food: ಊಟ is a meal term, not a universal equivalent for every sense of ಆಹಾರ."
-    },
+    "halegannadaEvidence": {"status":"provisional","note":"Meal sense; not a universal equivalent for every sense of ಆಹಾರ. Primary Old Kannada citation is still needed."},
+    "sourceEtymology": {
       "form": "ಆಹಾರ",
       "etymology": "sanskrit_tatsama"
     },
@@ -1021,12 +1012,9 @@ const auditedWordEntries = [
     "sourceForm": "ಜಲ",
     "sourceMeaning": "Water",
     "category": "Audited 72-term list",
-    "sourceEtymology": {
     "halegannada": "ನೀರ್",
-    "halegannadaEvidence": {
-      "status": "provisional",
-      "note": "Water: ನೀರ್ is supplied as the expected historical form; primary Old Kannada citation still needed."
-    },
+    "halegannadaEvidence": {"status":"provisional","note":"Expected historical form; primary Old Kannada citation is still needed."},
+    "sourceEtymology": {
       "form": "ಜಲ",
       "etymology": "sanskrit_tatsama"
     },
@@ -1101,12 +1089,9 @@ const auditedWordEntries = [
     "sourceForm": "ಅರಣ್ಯ",
     "sourceMeaning": "Forest",
     "category": "Audited 72-term list",
-    "sourceEtymology": {
     "halegannada": "ಕಾಡು",
-    "halegannadaEvidence": {
-      "status": "provisional",
-      "note": "Forest: ಕಾಡು is supplied as the expected historical cognate; primary Old Kannada citation still needed."
-    },
+    "halegannadaEvidence": {"status":"provisional","note":"Expected historical cognate; primary Old Kannada citation is still needed."},
+    "sourceEtymology": {
       "form": "ಅರಣ್ಯ",
       "etymology": "sanskrit_tatsama"
     },
@@ -1231,12 +1216,9 @@ const auditedWordEntries = [
     "sourceForm": "ಪರ್ವತ",
     "sourceMeaning": "Mountain",
     "category": "Audited 72-term list",
-    "sourceEtymology": {
     "halegannada": "ಬೆಟ್ಟ",
-    "halegannadaEvidence": {
-      "status": "provisional",
-      "note": "Mountain: ಬೆಟ್ಟ is supplied as a historical comparison form; primary Old Kannada citation still needed."
-    },
+    "halegannadaEvidence": {"status":"provisional","note":"Historical comparison form; primary Old Kannada citation is still needed."},
+    "sourceEtymology": {
       "form": "ಪರ್ವತ",
       "etymology": "sanskrit_tatsama"
     },

@@ -671,8 +671,8 @@ function evaluateCoinage() {
     output.className="text-sm font-semibold text-red-700"; output.textContent="Enter all three words before evaluating."; return null;
   }
   const candidate=document.getElementById("coin-candidate").value.trim();
-  const letters=candidate.match(/\\p{L}/gu)||[];
-  const allKannada=letters.length>0 && letters.every(ch=>/[\\u0C80-\\u0CFF]/u.test(ch));
+  const letters=candidate.match(/\p{L}/gu)||[];
+  const allKannada=letters.length>0 && letters.every(ch=>/[\u0C80-\u0CFF]/u.test(ch));
   if (!allKannada) {
     const out={verdict:"FAIL",scores:{total:0,total_max:20},auto_fail:["Candidate must be written entirely in Kannada script; Latin-script or non-Kannada text is rejected before scoring."]};
     const output=document.getElementById("coin-result");

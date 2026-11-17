@@ -2172,7 +2172,7 @@ const originAuditEntries = [
 ,
 [
   {
-    "id": "supp-nose",
+    "id": "nose",
     "sourceForm": "ನಾಸಿಕ",
     "sourceMeaning": "Nose",
     "category": "Supplemental contributor list",
@@ -2301,7 +2301,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: high."
   },
   {
-    "id": "supp-hair",
+    "id": "hair",
     "sourceForm": "ಕೇಶ",
     "sourceMeaning": "Hair",
     "category": "Supplemental contributor list",
@@ -2334,7 +2334,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-head",
+    "id": "head",
     "sourceForm": "ಶಿರಸ್ಸು",
     "sourceMeaning": "Head",
     "category": "Supplemental contributor list",
@@ -2466,7 +2466,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: low. Kannada ಹೊಟ್ಟೆ, Tamil வயிறு and Tulu ಬಂಜಿ are different roots; do not force a Proto-Dravidian form."
   },
   {
-    "id": "supp-blood",
+    "id": "blood",
     "sourceForm": "ರಕ್ತ",
     "sourceMeaning": "Blood",
     "category": "Supplemental contributor list",
@@ -2565,7 +2565,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-body",
+    "id": "body",
     "sourceForm": "ದೇಹ / ಶರೀರ",
     "sourceMeaning": "Body",
     "category": "Supplemental contributor list",
@@ -2598,7 +2598,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-disease",
+    "id": "disease",
     "sourceForm": "ರೋಗ",
     "sourceMeaning": "Disease",
     "category": "Supplemental contributor list",
@@ -2664,7 +2664,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: low."
   },
   {
-    "id": "supp-cloud",
+    "id": "cloud",
     "sourceForm": "ಮೇಘ",
     "sourceMeaning": "Cloud",
     "category": "Supplemental contributor list",
@@ -2697,7 +2697,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: low. Tamil மேகம் is the Sanskrit loan; native Tamil is முகில்."
   },
   {
-    "id": "supp-river",
+    "id": "river",
     "sourceForm": "ನದಿ",
     "sourceMeaning": "River",
     "category": "Supplemental contributor list",
@@ -2730,7 +2730,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: low."
   },
   {
-    "id": "supp-forest",
+    "id": "forest",
     "sourceForm": "ಅರಣ್ಯ / ವನ",
     "sourceMeaning": "Forest",
     "category": "Supplemental contributor list",
@@ -2796,7 +2796,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-fruit",
+    "id": "fruit",
     "sourceForm": "ಫಲ",
     "sourceMeaning": "Fruit",
     "category": "Supplemental contributor list",
@@ -3391,7 +3391,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-friend",
+    "id": "friend",
     "sourceForm": "ಮಿತ್ರ",
     "sourceMeaning": "Friend",
     "category": "Supplemental contributor list",
@@ -3713,7 +3713,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: low. No settled native single-word equivalent; flag as a gap rather than coin."
   },
   {
-    "id": "supp-city",
+    "id": "city",
     "sourceForm": "ನಗರ",
     "sourceMeaning": "City",
     "category": "Supplemental contributor list",
@@ -4340,7 +4340,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-knowledge",
+    "id": "knowledge",
     "sourceForm": "ಜ್ಞಾನ",
     "sourceMeaning": "Knowledge",
     "category": "Supplemental contributor list",
@@ -4472,7 +4472,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium. ಆಸೆ is itself a Prakrit/Sanskrit loan; prefer ಬಯಕೆ."
   },
   {
-    "id": "supp-love",
+    "id": "love",
     "sourceForm": "ಪ್ರೀತಿ",
     "sourceMeaning": "Love",
     "category": "Supplemental contributor list",
@@ -4505,7 +4505,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-fear",
+    "id": "fear",
     "sourceForm": "ಭಯ",
     "sourceMeaning": "Fear",
     "category": "Supplemental contributor list",
@@ -4538,7 +4538,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-sorrow",
+    "id": "sorrow",
     "sourceForm": "ದುಃಖ",
     "sourceMeaning": "Sorrow",
     "category": "Supplemental contributor list",
@@ -4769,7 +4769,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: low."
   },
   {
-    "id": "supp-joy",
+    "id": "joy",
     "sourceForm": "ಹರ್ಷ",
     "sourceMeaning": "Joy",
     "category": "Supplemental contributor list",
@@ -5165,7 +5165,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-question",
+    "id": "question",
     "sourceForm": "ಪ್ರಶ್ನೆ",
     "sourceMeaning": "Question",
     "category": "Supplemental contributor list",
@@ -5495,7 +5495,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-word",
+    "id": "word",
     "sourceForm": "ಭಾಷೆ / ಪದ",
     "sourceMeaning": "Word",
     "category": "Supplemental contributor list",
@@ -5528,7 +5528,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: medium."
   },
   {
-    "id": "supp-sound-noise",
+    "id": "sound",
     "sourceForm": "ಶಬ್ದ",
     "sourceMeaning": "Sound / noise",
     "category": "Supplemental contributor list",
@@ -5561,7 +5561,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: low. ಸದ್ದು is itself a tadbhava of ಶಬ್ದ; do not present it as native."
   },
   {
-    "id": "supp-medicine",
+    "id": "medicine",
     "sourceForm": "ಔಷಧ",
     "sourceMeaning": "Medicine",
     "category": "Supplemental contributor list",
@@ -5619,7 +5619,7 @@ const originAuditEntries = [
     "editorialNote": "Contributor-supplied comparison; confidence: low. No settled native term; flag as a vocabulary gap, do not coin."
   },
   {
-    "id": "supp-war",
+    "id": "war",
     "sourceForm": "ಯುದ್ಧ",
     "sourceMeaning": "War",
     "category": "Supplemental contributor list",

@@ -4,7 +4,6 @@
 
 const STORAGE_KEY = "kannada_desi_v3";
 const grid = document.getElementById("grid");
-const searchInput = document.getElementById("search");
 const categorySelect = document.getElementById("category");
 const MODERATION_API = window.KANNADA_MODERATION_API || "https://kannadawords-moderation.tulasianand6.workers.dev";
 let approvedCommunitySuggestions = [];
@@ -484,18 +483,11 @@ window.toggleSentenceForm = toggleSentenceForm;
 window.submitSentenceReview = submitSentenceReview;
 
 function filterAndRender() {
-  const q=searchInput.value.trim().toLocaleLowerCase(), cat=categorySelect.value;
-  const filtered=votingEntries.filter(e => {
-    if(cat!=="all" && e.category!==cat) return false;
-    const sentence=(typeof sentenceExamples !== "undefined" && sentenceExamples[e.id]) || {};
-    const sourceParts = Array.isArray(e.sourceEtymology) ? e.sourceEtymology : (e.sourceEtymology ? [e.sourceEtymology] : []);
-    const terms=[e.sanskrit,e.meaning,e.halegannada,e.editorialNote,...sourceParts.map(p=>p.form),...(e.alternatives || []).flatMap(a=>[a.word,a.tamil,a.tulu,a.proto,...(a.etymologyParts||[]).map(p=>p.form)]),...(e.rejectedAlternatives||[]).map(a=>a.word),sentence.source,sentence.kannada,sentence.proto,sentence.hale].filter(Boolean);
-    return !q || terms.some(v=>String(v).toLocaleLowerCase().includes(q));
-  });
+  const cat=categorySelect.value;
+  const filtered=votingEntries.filter(e => cat==="all" || e.category===cat);
   render(filtered);
 }
 window.castVote=castVote; window.toggleImproveForm=toggleImproveForm; window.submitSuggestion=submitSuggestion; window.cancelImproveForm=cancelImproveForm;
-searchInput.addEventListener("input",filterAndRender);
 categorySelect.addEventListener("change",filterAndRender);
 filterAndRender();
 renderContextual();

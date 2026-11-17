@@ -17,7 +17,12 @@ const stats = document.getElementById("stats");
  // Flatten that nested array and merge those records into the same voting dataset as the original audited entries.
 const allAuditedWordEntries = [
   ...(typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries),
-  ...(typeof originAuditEntries === "undefined" ? [] : originAuditEntries).flatMap(item => Array.isArray(item) ? item : [])
+  ...(typeof originAuditEntries === "undefined" ? [] : originAuditEntries).flatMap(item => {
+    if (Array.isArray(item)) return item;
+    // The earlier 29 supplemental records are direct array members; the later
+    // 109 records are grouped in a nested array. Both use sourceMeaning + alternatives.
+    return item && item.sourceMeaning && Array.isArray(item.alternatives) ? [item] : [];
+  })
 ];
 const auditedById = allAuditedWordEntries.reduce((map, item) => {
   const previous = map[item.id];
@@ -99,7 +104,7 @@ const votingEntries = wordEntries.map(entry => {
     noAlternative:true,
     alternatives:[{id:"no-alternative",word:"No viable native alternative",note:"Community position — vote to agree or propose a candidate",isNoAlternative:true,viability:"no_alternative",etymologyParts:[]}]
   })))
-  .concat((typeof originAuditEntries === "undefined" ? [] : originAuditEntries).filter(item => !Array.isArray(item)).map(item => ({
+  .concat((typeof originAuditEntries === "undefined" ? [] : originAuditEntries).filter(item => !Array.isArray(item) && !(item && item.sourceMeaning && Array.isArray(item.alternatives))).map(item => ({
     id:"scope-" + item.id,
     sanskrit:item.sourceForm,
     meaning:item.meaning,

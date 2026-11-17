@@ -22,7 +22,23 @@ const votingEntries = wordEntries.map(entry => {
     meaning: audit.sourceMeaning || entry.meaning,
     category: audit.category || entry.category,
     sourceEtymology: audit.sourceEtymology,
-    alternatives: audit.alternatives,
+    alternatives: (audit.alternatives || []).map(alt => {
+      // The audited record owns the Kannada candidate and its etymology labels.
+      // Preserve Tamil/Tulu/Proto equivalents already curated in data.js when
+      // the audited copy has not supplied those language fields.
+      const base = (entry.alternatives || []).find(candidate =>
+        candidate.word === alt.word || candidate.id === alt.id
+      ) || {};
+      return {
+        ...base,
+        ...alt,
+        tamil: alt.tamil || base.tamil || null,
+        tulu: alt.tulu || base.tulu || null,
+        proto: alt.proto || base.proto || null
+      };
+    }),
+    halegannada: audit.halegannada || entry.halegannada,
+    halegannadaEvidence: audit.halegannadaEvidence || entry.halegannadaEvidence,
     rejectedAlternatives: audit.rejectedAlternatives || [],
     editorialNote: audit.editorialNote || ""
   } : entry;

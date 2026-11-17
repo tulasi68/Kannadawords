@@ -73,26 +73,42 @@ function loadState() {
   }
 }
 function saveState(state) { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
+const VOTER_KEY = "kannada_desi_voter_id";
+function makeVoterId() {
+  if (window.crypto && crypto.randomUUID) return crypto.randomUUID();
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g,c=>{const r=Math.random()*16|0;return (c==="x"?r:(r&3|8)).toString(16);});
+}
+let voterId = localStorage.getItem(VOTER_KEY);
+if (!voterId || !/^[0-9a-f-]{36}$/i.test(voterId)) { voterId=makeVoterId(); localStorage.setItem(VOTER_KEY,voterId); }
+let remoteVoteCounts = {}, remoteVoteSelections = {}, voteSyncError = false;
 function getVoteCount(entryId, altId) {
-  const state = loadState();
-  return (state.votes[entryId] && state.votes[entryId][altId]) || 0;
+  return remoteVoteCounts["word:"+entryId+":"+altId] || 0;
 }
 function getSelectedVote(entryId) {
-  return loadState().voteSelections[entryId] || null;
+  return remoteVoteSelections["word:"+entryId] || null;
 }
-function castVote(entryId, altId) {
-  const state = loadState();
-  const previous = state.voteSelections[entryId];
-  if (previous === altId) return;
-  if (!state.votes[entryId]) state.votes[entryId] = {};
-  if (previous && state.votes[entryId][previous]) {
-    state.votes[entryId][previous] = Math.max(0, state.votes[entryId][previous] - 1);
-  }
-  state.votes[entryId][altId] = (state.votes[entryId][altId] || 0) + 1;
-  state.voteSelections[entryId] = altId;
-  saveState(state);
-  filterAndRender();
-  renderContextual();
+async function loadRemoteVotes() {
+  try {
+    const response=await fetch(MODERATION_API+"/api/votes?voterId="+encodeURIComponent(voterId),{cache:"no-store"});
+    const data=await response.json();
+    if(!response.ok) throw new Error(data.error||"Could not load votes.");
+    remoteVoteCounts={}; remoteVoteSelections={};
+    (data.counts||[]).forEach(v=>{remoteVoteCounts[v.kind+":"+v.itemId+":"+v.choice]=Number(v.count)||0;});
+    (data.selections||[]).forEach(v=>{remoteVoteSelections[v.kind+":"+v.itemId]=v.choice;});
+    voteSyncError=false;
+    filterAndRender(); renderContextual();
+  } catch(error) { voteSyncError=true; console.warn("Central voting is temporarily unavailable.",error); }
+}
+async function submitRemoteVote(kind,itemId,choice) {
+  const response=await fetch(MODERATION_API+"/api/votes",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({voterId,kind,itemId,choice})});
+  const data=await response.json();
+  if(!response.ok) throw new Error(data.error||"Your vote could not be saved.");
+  await loadRemoteVotes();
+}
+async function castVote(entryId, altId) {
+  if(getSelectedVote(entryId)===altId) return;
+  try { await submitRemoteVote("word",entryId,altId); }
+  catch(error) { alert(error.message||"Voting service is unavailable. Please try again."); }
 }
 function getSuggestions(entryId) {
   return approvedCommunitySuggestions.filter(item => item.entryId === entryId).map(item => ({
@@ -242,12 +258,11 @@ function highlightSwaps(text, swaps, side) {
   });
   return safe;
 }
-function voteContext(id, choice) {
-  const state = loadState();
-  if (!state.contextualVotes) state.contextualVotes = {};
-  if (!state.contextualVotes[id]) state.contextualVotes[id] = { support:0, revise:0 };
-  state.contextualVotes[id][choice] = (state.contextualVotes[id][choice] || 0) + 1;
-  saveState(state); renderContextual();
+async function voteContext(id, choice) {
+  if(!["support","revise"].includes(choice)) return;
+  if(remoteVoteSelections["context:"+id]===choice) return;
+  try { await submitRemoteVote("context",id,choice); }
+  catch(error) { alert(error.message||"Voting service is unavailable. Please try again."); }
 }
 let activeContextualDomain = "all";
 function filterContextualByDomain(domain) {
@@ -265,7 +280,7 @@ function renderContextual() {
     return activeContextualDomain === "all" || domain === activeContextualDomain;
   });
   contextualGrid.innerHTML = visibleExamples.map(item => {
-    const votes = (state.contextualVotes && state.contextualVotes[item.id]) || {support:0,revise:0};
+    const votes = {support:remoteVoteCounts["context:"+item.id+":support"]||0,revise:remoteVoteCounts["context:"+item.id+":revise"]||0};
     const swaps = item.swaps || [];
     return `<article class="bg-white border border-stone-200 rounded-xl p-4 shadow-sm">
       <div class="flex items-start justify-between gap-2 mb-3"><div><h3 class="font-semibold text-stone-800">${escapeHtml(item.title)}</h3><p class="text-xs text-stone-500 mt-1">${escapeHtml(item.sourceDomain || (item.id === "gruha-mandali" ? "Legislative Council" : item.submitted ? "Community submissions" : "Earlier examples"))}</p></div>${item.submitted ? '<span class="text-xs rounded-full bg-sky-50 text-sky-800 px-2 py-1">Community submission</span>' : ''}</div>
@@ -347,6 +362,7 @@ searchInput.addEventListener("input",filterAndRender);
 categorySelect.addEventListener("change",filterAndRender);
 filterAndRender();
 renderContextual();
+loadRemoteVotes();
 loadApprovedSuggestions();
 
 const adminPanel = document.getElementById("admin-panel");

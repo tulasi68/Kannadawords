@@ -305,7 +305,10 @@ function render(entries) {
           <textarea id="thought-input-${entry.id}" maxlength="1200" rows="3" placeholder="Write Your thoughts (up to 1,200 characters)…" class="w-full px-3 py-2 text-sm border border-stone-300 rounded-lg"></textarea>
           <div class="flex flex-wrap items-center justify-between gap-2 mt-2">
             <span class="text-xs text-stone-500">No login required. Please keep comments respectful.</span>
-            <button onclick="submitThought('${entry.id}')" class="px-4 py-1.5 text-sm rounded-lg bg-sky-700 text-white hover:bg-sky-800">Post comment</button>
+            <div class="flex items-center gap-2">
+              <button onclick="submitThought('${entry.id}')" class="px-4 py-1.5 text-sm rounded-lg bg-sky-700 text-white hover:bg-sky-800">Post comment</button>
+              <button onclick="cancelThoughts('${entry.id}')" class="px-4 py-1.5 text-sm rounded-lg border border-stone-300 text-stone-700 hover:bg-stone-100">Cancel</button>
+            </div>
           </div>
         </div>
         <div id="improve-${entry.id}" class="hidden mt-3 p-3 bg-stone-50 rounded-lg border border-stone-200">
@@ -365,6 +368,11 @@ function toggleThoughts(id) {
   const panel = document.getElementById("thoughts-" + id);
   panel.classList.toggle("hidden");
   if (!panel.classList.contains("hidden")) loadThoughts(id);
+}
+function cancelThoughts(id) {
+  const input = document.getElementById("thought-input-" + id);
+  if (input) input.value = "";
+  document.getElementById("thoughts-" + id).classList.add("hidden");
 }
 async function submitThought(id) {
   const input = document.getElementById("thought-input-" + id);

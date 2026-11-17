@@ -107,6 +107,14 @@
         </form>
       </div>
     </section>
+    <section id="admin-panel" class="hidden mt-10 rounded-xl border-2 border-amber-300 bg-amber-50 p-5">
+      <div class="flex items-center justify-between gap-3 mb-4">
+        <div><h2 class="font-semibold text-stone-800">Administrator review</h2><p class="text-xs text-stone-600 mt-1">Only approved words become visible in public voting.</p></div>
+        <button type="button" onclick="closeAdminMode()" class="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm">Close</button>
+      </div>
+      <div id="admin-pending-list" class="space-y-3"></div>
+      <button type="button" onclick="loadPendingSuggestions()" class="mt-4 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm">Refresh queue</button>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -115,6 +123,7 @@
     <p class="mt-1">Share the link so more people can vote and improve the list.</p>
   </footer>
 
+  <script src="moderation-config.js"></script>
   <script src="data.js"></script>
   <script src="sentence-examples.js"></script>
   <script src="contextual-examples.js"></script>

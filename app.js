@@ -195,7 +195,8 @@ function render(entries) {
     const voteHtml = alts.map(alt => {
       const count = getVoteCount(entry.id,alt.id);
       const selected = getSelectedVote(entry.id) === alt.id;
-      const label = alt.isOriginal ? "Keep original: " + alt.word : alt.isNoAlternative ? "Agree: no viable native alternative" : alt.isScopeAudit ? "Agree: outside Sanskrit-origin scope" : alt.unreviewed ? alt.word + " · etymology unknown" : alt.word;
+      const viabilityLabel = ({clean:"Clean Dravidian",coined:"Proposed coinage",contested:"Contested",no_alternative:"No viable native alternative"})[alt.viability] || "";
+      const label = alt.isOriginal ? "Keep original: " + alt.word : alt.isNoAlternative || alt.viability==="no_alternative" ? "No viable native alternative" : alt.isScopeAudit ? "Outside Sanskrit-origin scope" : alt.unreviewed ? alt.word + " · etymology unknown" : alt.word + (viabilityLabel ? " · " + viabilityLabel : "");
       return `<button onclick="castVote('${entry.id}','${alt.id}')" aria-pressed="${selected}" class="text-xs border ${selected ? "border-emerald-600 bg-emerald-100 font-semibold" : "border-emerald-200"} text-emerald-800 rounded-full px-2 py-1 hover:bg-emerald-50">${selected ? "✓ " : ""}${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
     }).join(" ");
     card.innerHTML = `

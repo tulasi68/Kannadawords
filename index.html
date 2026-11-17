@@ -140,7 +140,7 @@
         <p class="text-sm text-stone-600 mt-1">A Tamil parallel may inspire a Kannada word pattern, but it never licenses importing a Tamil word. Every morpheme in a proposed coinage must stand on its own in Kannada.</p>
       </div>
       <div class="rounded-xl border border-amber-200 bg-amber-50 p-4 mb-6">
-        <h3 class="font-semibold text-stone-800 mb-2">The four-part scorecard · 20 points</h3>
+        <h3 class="font-semibold text-stone-800 mb-2">Four review dimensions · 20 points (no score until assessed)</h3>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-stone-700">
           <p><strong>1. Short:</strong> 1–2 syllables 5; 3 syllables 4; 4 syllables 3; 5 syllables 2; 6+ syllables 1.</p>
           <p><strong>2. Sayable:</strong> Natural Kannada sound pattern 5; slight strain 3; difficult 1.</p>
@@ -171,7 +171,7 @@
           <button type="button" onclick="resetCoinageForm()" class="rounded-lg border border-stone-300 px-4 py-2 text-sm">Reset</button>
           <span id="coin-result" class="text-sm font-semibold" aria-live="polite"></span>
         </div>
-        <p class="text-xs text-stone-500 mt-3">This is an editorial aid, not an automatic etymological authority. Record sources and have a Kannada linguist review every candidate.</p>
+        <p class="text-xs text-stone-500 mt-3">This tool is a screening checklist, not an automatic dictionary or etymology engine. Latin-script gibberish is rejected. Scores start at “Not assessed”; an unreviewed candidate cannot pass. Kannada-script gibberish still requires human linguistic review.</p>
       </div>
       <div class="mb-6">
         <div class="flex flex-wrap items-end justify-between gap-2 mb-3"><div><h3 class="font-semibold text-stone-800">Tamil-parallel candidates</h3><p class="text-xs text-stone-500">18 editorial records · A: structural parallel · B: attested revival · C: honest gap</p></div><select id="coin-tier-filter" class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm" onchange="renderCoinageRecords()"><option value="all">All tiers</option><option value="A">Tier A · structural</option><option value="B">Tier B · revival</option><option value="C">Tier C · gaps</option></select></div>

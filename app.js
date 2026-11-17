@@ -13,7 +13,13 @@ const stats = document.getElementById("stats");
 
 // Merge the audited set into existing cards (rather than duplicating them),
 // then append new terms and the explicitly labelled no-alternative records.
-const auditedById = (typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries).reduce((map, item) => {
+// The 109 supplemental records were appended as a nested array inside originAuditEntries.
+ // Flatten that nested array and merge those records into the same voting dataset as the original audited entries.
+const allAuditedWordEntries = [
+  ...(typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries),
+  ...(typeof originAuditEntries === "undefined" ? [] : originAuditEntries).flatMap(item => Array.isArray(item) ? item : [])
+];
+const auditedById = allAuditedWordEntries.reduce((map, item) => {
   const previous = map[item.id];
   if (!previous) { map[item.id] = item; return map; }
   map[item.id] = {
@@ -79,7 +85,7 @@ const votingEntries = wordEntries.map(entry => {
     rejectedAlternatives: audit.rejectedAlternatives || [],
     editorialNote: audit.editorialNote || ""
   } : entry;
-}).concat((typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries)
+}).concat(allAuditedWordEntries
   .filter(item => !wordEntries.some(entry => entry.id === item.id))
   .map(item => ({...item, sanskrit:item.sourceForm, meaning:item.sourceMeaning, category:categoryForAudited(item), rejectedAlternatives:item.rejectedAlternatives || []})))
   .concat((typeof noAlternativeEntries === "undefined" ? [] : noAlternativeEntries).map(item => ({
@@ -93,7 +99,7 @@ const votingEntries = wordEntries.map(entry => {
     noAlternative:true,
     alternatives:[{id:"no-alternative",word:"No viable native alternative",note:"Community position — vote to agree or propose a candidate",isNoAlternative:true,viability:"no_alternative",etymologyParts:[]}]
   })))
-  .concat((typeof originAuditEntries === "undefined" ? [] : originAuditEntries).map(item => ({
+  .concat((typeof originAuditEntries === "undefined" ? [] : originAuditEntries).filter(item => !Array.isArray(item)).map(item => ({
     id:"scope-" + item.id,
     sanskrit:item.sourceForm,
     meaning:item.meaning,

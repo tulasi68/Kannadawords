@@ -228,7 +228,7 @@ function render(entries) {
   }
   entries.forEach(entry => {
     const card = document.createElement("article");
-    card.className = "bg-white border border-stone-200 rounded-xl p-5 shadow-sm";
+    card.className = "bg-white border border-amber-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow";
     const nativeAlts = [...entry.alternatives, ...getSuggestions(entry.id)];
     const originalOption = !entry.scopeAudit ? [{
       id: "original-" + entry.id,
@@ -248,16 +248,16 @@ function render(entries) {
     }).join(" ");
     card.innerHTML = `
       <div class="flex items-start justify-between gap-2 mb-3">
-        <span class="text-xs font-medium uppercase tracking-wide text-amber-700 bg-amber-50 px-2 py-0.5 rounded">${escapeHtml(entry.category)}</span>
+        <span class="text-xs font-bold uppercase tracking-wide text-red-800 bg-yellow-100 px-2 py-1 rounded-full">${escapeHtml(entry.category)}</span>
         ${totalVotes ? `<span class="text-xs text-stone-400">${totalVotes} votes</span>` : ""}
       </div>
       ${entry.noAlternative ? '<div class="mb-3 rounded-lg border border-orange-200 bg-orange-50 px-3 py-2 text-sm text-orange-900"><strong>No viable native alternative</strong><p class="text-xs mt-1">This is an honest open category, not a failed card. Community proposals can still be added for review.</p></div>' : entry.scopeAudit ? '<div class="mb-3 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2 text-sm text-sky-900"><strong>Origin audit — outside the Sanskrit-derived replacement set</strong><p class="text-xs mt-1">The proposed loanword origin needs independent verification.</p></div>' : ''}
       <div class="mb-3">
-        <p class="text-xs text-stone-400 mb-0.5">Word used in Kannada</p>
-        <p class="kn text-2xl font-medium text-stone-800">${escapeHtml(entry.sanskrit)}</p>
+        <p class="text-xs font-semibold text-red-700 mb-0.5">Word used in Kannada</p>
+        <p class="kn text-2xl font-semibold text-red-900">${escapeHtml(entry.sanskrit)}</p>
         <p class="text-sm text-stone-600 mt-1">${escapeHtml(entry.meaning)}</p>
       </div>
-      <section class="rounded-lg bg-stone-50 border border-stone-200 px-3 py-2">
+      <section class="rounded-xl bg-yellow-50/70 border border-yellow-200 px-3 py-3">
         <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Language equivalents</h3>
         ${rows}
       </section>

@@ -624,3 +624,106 @@ window.reviewCommunitySuggestion=reviewCommunitySuggestion;
 window.closeAdminMode=closeAdminMode;
 window.loadPendingSuggestions=loadPendingSuggestions;
 
+
+
+// ---------------- Coinage review workspace (scorecard schema v1.0) ----------------
+function coinageScoreControls() {
+  const host = document.getElementById("coin-score-inputs");
+  const dimensions = coinageReviewData.scorecard.dimensions;
+  host.innerHTML = dimensions.map(d => {
+    const options = d.id === "short" ? [[5,"1–2 syllables · 5"],[4,"3 syllables · 4"],[3,"4 syllables · 3"],[2,"5 syllables · 2"],[1,"6+ syllables · 1"]] : [[5,"Strong · 5"],[3,"Partial · 3"],[1,"Weak · 1"]];
+    return '<label class="text-xs text-stone-600">' + escapeHtml(d.label) + ' <select data-coin-score="' + d.id + '" class="block w-full mt-1 rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm">' + options.map(([v,l]) => '<option value="' + v + '">' + l + '</option>').join("") + '</select><span class="block text-xs text-stone-400 mt-1">' + escapeHtml(d.rubric) + '</span></label>';
+  }).join("");
+  const auto = document.getElementById("coin-autofail-list");
+  auto.innerHTML = coinageReviewData.scorecard.autoFail.map((label,i) => '<label class="flex items-start gap-2"><input type="checkbox" data-coin-autofail="' + i + '" class="mt-0.5"><span>' + escapeHtml(label) + '</span></label>').join("");
+}
+function coinageEvaluation() {
+  const scores = {};
+  document.querySelectorAll("[data-coin-score]").forEach(el => scores[el.dataset.coinScore] = Number(el.value));
+  const total = Object.values(scores).reduce((a,b)=>a+b,0);
+  const min = Math.min(...Object.values(scores));
+  const collision = document.getElementById("coin-collision").value;
+  const flags = [...document.querySelectorAll("[data-coin-autofail]:checked")].map(el => coinageReviewData.scorecard.autoFail[Number(el.dataset.coinAutofail)]);
+  const literal = document.getElementById("coin-literal").value.trim();
+  if (literal && literal.split(/\s+/).filter(Boolean).length > 3 && !flags.includes("Explanation longer than three words")) flags.push("Explanation longer than three words");
+  let verdict = "FAIL";
+  if (!flags.length && total >= 15 && min >= 3 && collision === "clear") verdict = "PASS";
+  else if (!flags.length && total >= 11 && total <= 14 && min >= 3 && collision !== "blocked") verdict = "CONDITIONAL";
+  else if (!flags.length && total >= 11 && min === 2 && collision !== "blocked") verdict = "CONDITIONAL";
+  else if (!flags.length && total >= 11 && collision === "ambiguous" && min >= 3) verdict = "CONDITIONAL";
+  return {
+    schemaVersion: coinageReviewData.schemaVersion,
+    submittedAt: new Date().toISOString(),
+    submittedBy: "community-review",
+    sanskritSourceWord: document.getElementById("coin-source").value.trim(),
+    englishGloss: document.getElementById("coin-gloss").value.trim(),
+    proposedCoinage: document.getElementById("coin-candidate").value.trim(),
+    literalGloss: literal,
+    type: "compound",
+    morphemes: [],
+    scores: { ...scores, total, totalMax: 20 },
+    collisionCheck: collision,
+    attestation: { halegannada: "none", citation: null, protoDravidianRoot: null, dedr: null, tamilParallel: null, tuluParallel: null },
+    autoFail: flags,
+    verdict,
+    reviewerNotes: document.getElementById("coin-notes").value.trim(),
+    votingStatus: "not-submitted"
+  };
+}
+function evaluateCoinage() {
+  const result = coinageEvaluation();
+  const output = document.getElementById("coin-result");
+  const tone = result.verdict === "PASS" ? "text-emerald-700" : result.verdict === "CONDITIONAL" ? "text-amber-700" : "text-red-700";
+  output.className = "text-sm font-semibold " + tone;
+  output.textContent = result.verdict + " · " + result.scores.total + "/20" + (result.autoFail.length ? " · Auto-fail: " + result.autoFail.join(", ") : "");
+  window.lastCoinageEvaluation = result;
+  return result;
+}
+function exportCoinageEvaluation() {
+  const result = evaluateCoinage();
+  const blob = new Blob([JSON.stringify(result,null,2)],{type:"application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url; a.download = (result.proposedCoinage || "coinage-evaluation").replace(/[^\p{L}\p{N}-]+/gu,"-") + ".json";
+  document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+}
+function resetCoinageForm() {
+  ["coin-source","coin-gloss","coin-candidate","coin-literal","coin-notes"].forEach(id=>document.getElementById(id).value="");
+  document.getElementById("coin-collision").value="clear";
+  document.querySelectorAll("[data-coin-score]").forEach(el=>el.selectedIndex=0);
+  document.querySelectorAll("[data-coin-autofail]").forEach(el=>el.checked=false);
+  const out=document.getElementById("coin-result"); out.textContent=""; out.className="text-sm font-semibold";
+  window.lastCoinageEvaluation=null;
+}
+function renderCoinageRecords() {
+  const host=document.getElementById("coinage-records");
+  if (!host || typeof coinageReviewData === "undefined") return;
+  const tier=document.getElementById("coin-tier-filter")?.value || "all";
+  const records=coinageReviewData.tamilParallels.filter(r=>tier==="all"||r.tier===tier);
+  host.innerHTML=records.map(r=>{
+    const tierLabel=r.tier==="A"?"Structural parallel":r.tier==="B"?"Attested revival":"Honest gap";
+    const badge=r.tier==="A"?"bg-emerald-100 text-emerald-800":r.tier==="B"?"bg-sky-100 text-sky-800":"bg-stone-200 text-stone-700";
+    const candidate=r.candidate?'<p class="kn text-xl font-semibold text-stone-900 mt-1">'+escapeHtml(r.candidate)+'</p><p class="text-xs text-stone-500">'+escapeHtml(r.literal||"")+'</p>':'<p class="text-sm font-semibold text-stone-700 mt-2">No Kannada coinage proposed</p>';
+    const morphemes=r.morphemes.length?'<p class="text-xs text-stone-500 mt-2">Morphemes: '+r.morphemes.map(m=>escapeHtml(m.form)+' ('+escapeHtml(m.origin)+')').join(' + ')+'</p>':'';
+    return '<article class="rounded-xl border border-stone-200 bg-white p-4"><div class="flex flex-wrap items-center justify-between gap-2"><span class="text-xs rounded-full px-2 py-1 '+badge+'">Tier '+r.tier+' · '+tierLabel+'</span><span class="text-xs font-semibold text-stone-600">'+escapeHtml(r.verdict)+(r.score!==null?' · '+r.score+'/20':'')+'</span></div><p class="kn text-sm font-semibold text-red-800 mt-3">'+escapeHtml(r.source)+'</p><p class="text-xs text-stone-500">'+escapeHtml(r.gloss)+'</p>'+candidate+'<div class="mt-3 border-t border-stone-100 pt-2"><p class="text-xs text-stone-500">Tamil structural parallel</p><p class="text-base mt-1">'+escapeHtml(r.tamil)+'</p></div>'+morphemes+'<p class="text-xs text-stone-600 mt-3">'+escapeHtml(r.note)+'</p></article>';
+  }).join("");
+  const doNot=document.getElementById("coinage-do-not-attempt");
+  doNot.innerHTML=coinageReviewData.doNotAttempt.map(r=>'<div class="grid grid-cols-1 sm:grid-cols-[1fr_1fr_2fr] gap-1 border-b border-stone-100 pb-2 last:border-0"><span>'+escapeHtml(r.tamil)+'</span><span class="kn font-semibold">'+escapeHtml(r.kannada)+'</span><span class="text-xs text-stone-500">'+escapeHtml(r.reason)+'</span></div>').join("");
+}
+function showTab(tab) {
+  const words=tab==="words", sentences=tab==="sentences", coinages=tab==="coinages";
+  document.getElementById("words-panel").classList.toggle("hidden",!words);
+  document.getElementById("sentences-panel").classList.toggle("hidden",!sentences);
+  document.getElementById("coinages-panel").classList.toggle("hidden",!coinages);
+  document.getElementById("word-tab").classList.toggle("main-choice-active",words);
+  document.getElementById("sentence-tab").classList.toggle("main-choice-active",sentences);
+  document.getElementById("coinage-tab").classList.toggle("main-choice-active",coinages);
+  if(coinages) renderCoinageRecords();
+}
+window.showTab=showTab;
+window.evaluateCoinage=evaluateCoinage;
+window.exportCoinageEvaluation=exportCoinageEvaluation;
+window.resetCoinageForm=resetCoinageForm;
+window.renderCoinageRecords=renderCoinageRecords;
+coinageScoreControls();
+renderCoinageRecords();

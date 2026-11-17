@@ -44,12 +44,15 @@
       <div class="flex items-start justify-between gap-3"><div><p id="project-info-kicker" class="text-xs font-bold uppercase tracking-widest text-red-700"></p><h2 id="project-info-title" class="kn text-xl font-bold text-stone-900 mt-1"></h2></div><button type="button" onclick="showInfo(null)" class="rounded-full bg-yellow-100 px-3 py-1.5 text-sm font-semibold text-red-800">Close ✕</button></div>
       <p id="project-info-copy" class="mt-3 text-sm sm:text-base leading-7 text-stone-700"></p>
     </section>
-    <nav class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-7" aria-label="Community review sections">
+    <nav class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7" aria-label="Community review sections">
       <button id="word-tab" type="button" onclick="showTab('words')" class="main-choice main-choice-active">
         <span class="choice-number">01</span><span><strong>Vote for your word</strong><small class="kn">ಪದಕ್ಕೆ ನಿಮ್ಮ ಮತ ನೀಡಿ</small></span><span class="choice-arrow">→</span>
       </button>
       <button id="sentence-tab" type="button" onclick="showTab('sentences')" class="main-choice">
         <span class="choice-number">02</span><span><strong>Review the sentence</strong><small class="kn">ವಾಕ್ಯವನ್ನು ಪರಿಶೀಲಿಸಿ</small></span><span class="choice-arrow">→</span>
+      </button>
+      <button id="coinage-tab" type="button" onclick="showTab('coinages')" class="main-choice">
+        <span class="choice-number">03</span><span><strong>Test a coinage</strong><small class="kn">ಹೊಸ ಪದದ ಪರೀಕ್ಷೆ</small></span><span class="choice-arrow">→</span>
       </button>
     </nav>
     <section id="words-panel">
@@ -131,6 +134,57 @@
         </form>
       </div>
     </section>
+    <section id="coinages-panel" class="hidden">
+      <div class="mb-5">
+        <h2 class="kn text-xl font-bold text-stone-900">ಹೊಸ ಪದದ ಪರೀಕ್ಷೆ · Coinage test</h2>
+        <p class="text-sm text-stone-600 mt-1">A Tamil parallel may inspire a Kannada word pattern, but it never licenses importing a Tamil word. Every morpheme in a proposed coinage must stand on its own in Kannada.</p>
+      </div>
+      <div class="rounded-xl border border-amber-200 bg-amber-50 p-4 mb-6">
+        <h3 class="font-semibold text-stone-800 mb-2">The four-part scorecard · 20 points</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-stone-700">
+          <p><strong>1. Short:</strong> 1–2 syllables 5; 3 syllables 4; 4 syllables 3; 5 syllables 2; 6+ syllables 1.</p>
+          <p><strong>2. Sayable:</strong> Natural Kannada sound pattern 5; slight strain 3; difficult 1.</p>
+          <p><strong>3. Self-explaining:</strong> Transparent morphemes 5; partly clear 3; opaque 1.</p>
+          <p><strong>4. Slotted:</strong> Inflects and compounds naturally 5; partly 3; awkward 1.</p>
+        </div>
+        <p class="text-xs text-stone-600 mt-3">PASS: 15+ with every dimension at least 3, clear collision check and no auto-fail. CONDITIONAL: 11–14, a dimension scored 2, or ambiguous collision. FAIL: below 11, any dimension scored 1, blocked collision, or any auto-fail.</p>
+      </div>
+      <div class="bg-white border border-stone-200 rounded-xl p-4 mb-7">
+        <h3 class="font-semibold text-stone-800 mb-3">Try the scorecard</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <label class="text-xs text-stone-600">Sanskrit source word<input id="coin-source" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm kn" placeholder="e.g. ಗ್ರಂಥಾಲಯ"></label>
+          <label class="text-xs text-stone-600">English meaning<input id="coin-gloss" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="e.g. Library"></label>
+          <label class="text-xs text-stone-600">Proposed Kannada coinage<input id="coin-candidate" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm kn" placeholder="Enter a Kannada proposal"></label>
+          <label class="text-xs text-stone-600">Literal gloss (maximum 3 words)<input id="coin-literal" class="block w-full mt-1 rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="e.g. book-house"></label>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4" id="coin-score-inputs"></div>
+        <div class="mt-4">
+          <label class="block text-xs text-stone-600 mb-1" for="coin-collision">Homophone / common-word collision check</label>
+          <select id="coin-collision" class="w-full sm:w-64 rounded-lg border border-stone-300 px-3 py-2 text-sm"><option value="clear">Clear</option><option value="ambiguous">Ambiguous</option><option value="blocked">Blocked</option></select>
+        </div>
+        <div class="mt-4">
+          <p class="text-xs font-semibold text-stone-600 mb-2">Auto-fail checks — tick any that apply</p>
+          <div id="coin-autofail-list" class="grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm"></div>
+        </div>
+        <div class="mt-4"><label class="block text-xs text-stone-600 mb-1" for="coin-notes">Reviewer notes / evidence</label><textarea id="coin-notes" rows="2" class="w-full rounded-lg border border-stone-300 px-3 py-2 text-sm" placeholder="Morpheme sources, attestation, usage concerns…"></textarea></div>
+        <div class="flex flex-wrap items-center gap-3 mt-4">
+          <button type="button" onclick="evaluateCoinage()" class="rounded-lg bg-amber-700 text-white px-4 py-2 text-sm font-semibold">Evaluate coinage</button>
+          <button type="button" onclick="exportCoinageEvaluation()" class="rounded-lg border border-stone-300 px-4 py-2 text-sm">Export JSON</button>
+          <button type="button" onclick="resetCoinageForm()" class="rounded-lg border border-stone-300 px-4 py-2 text-sm">Reset</button>
+          <span id="coin-result" class="text-sm font-semibold" aria-live="polite"></span>
+        </div>
+        <p class="text-xs text-stone-500 mt-3">This is an editorial aid, not an automatic etymological authority. Record sources and have a Kannada linguist review every candidate.</p>
+      </div>
+      <div class="mb-6">
+        <div class="flex flex-wrap items-end justify-between gap-2 mb-3"><div><h3 class="font-semibold text-stone-800">Tamil-parallel candidates</h3><p class="text-xs text-stone-500">18 editorial records · A: structural parallel · B: attested revival · C: honest gap</p></div><select id="coin-tier-filter" class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm" onchange="renderCoinageRecords()"><option value="all">All tiers</option><option value="A">Tier A · structural</option><option value="B">Tier B · revival</option><option value="C">Tier C · gaps</option></select></div>
+        <div id="coinage-records" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+      </div>
+      <div class="rounded-xl border border-stone-200 bg-white p-4">
+        <h3 class="font-semibold text-stone-800 mb-2">Do not attempt these as coinages</h3>
+        <p class="text-xs text-stone-500 mb-3">Same meaning does not prove cognacy. Where the roots differ, retain the Kannada word and record the difference honestly.</p>
+        <div id="coinage-do-not-attempt" class="space-y-2"></div>
+      </div>
+    </section>
     <section id="admin-panel" class="hidden mt-10 rounded-xl border-2 border-amber-300 bg-amber-50 p-5">
       <div class="flex items-center justify-between gap-3 mb-4">
         <div><h2 class="font-semibold text-stone-800">Administrator review</h2><p class="text-xs text-stone-600 mt-1">Only approved words become visible in public voting.</p></div>
@@ -152,6 +206,7 @@
   <script src="sentence-examples.js"></script>
   <script src="contextual-examples.js"></script>
   <script src="etymology-entries.js"></script>
+  <script src="coinage-review.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

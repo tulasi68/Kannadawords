@@ -363,6 +363,9 @@ categorySelect.addEventListener("change",filterAndRender);
 filterAndRender();
 renderContextual();
 loadRemoteVotes();
+setInterval(() => { if (document.visibilityState === "visible") loadRemoteVotes(); }, 15000);
+document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") loadRemoteVotes(); });
+window.addEventListener("focus", loadRemoteVotes);
 loadApprovedSuggestions();
 
 const adminPanel = document.getElementById("admin-panel");

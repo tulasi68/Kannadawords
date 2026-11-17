@@ -742,23 +742,23 @@ const wordEntries = [
   // Sanskrit-first entries that connect to words in the curated Halegannada source list.
   {
     id:"listen", sanskrit:"ಶ್ರವಣ / ಶ್ರವಣಿಸು", meaning:"Listening; to listen", category:"Abstract", halegannada:"ಆಲಿಸು", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Champu Nudigannadi — digitised dictionary transcription",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/blob/main/%5BKA%5D%20Champu%20Nudigannadi/Raw%20Scraped%20Data/%E0%B2%86_champunudi.csv",evidenceType:"Scraped dictionary entry with literary citation",note:"The digitised entry glosses ಆಲಿಸು as ಗಮನವಿರಿಸಿ ಕೇಳು and cites ಪಂಪಭಾ 1.142 (ಧನುರ್ಲತಾಗುಣನಿನಾದಮಂ ಆಲಿಸಿ ಕೇಳಲುಳ). Confirm the reading and gloss against the printed dictionary and scholarly edition before marking verified."},
-    alternatives:[{id:"kelu",word:"ಕೇಳು",note:"Native Kannada",proto:"*kēḷ",tamil:"கேள் (kēḷ)",tulu:null}]
+    alternatives:[{id:"kelu",word:"ಕೇಳು",note:"Native Kannada",proto:"*kēḷ",tamil:"கேள் (kēḷ)",tulu:"ಕೇಳ್ (kēḷ)"}]
   },
   {
     id:"shop", sanskrit:"ಆಪಣ", meaning:"Shop / marketplace", category:"Everyday", halegannada:"ಆವಣ", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Champu Nudigannadi — digitised dictionary transcription",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/blob/main/%5BKA%5D%20Champu%20Nudigannadi/Raw%20Scraped%20Data/%E0%B2%86_champunudi.csv",evidenceType:"Scraped dictionary entry with literary citation",note:"The digitised entry glosses ಆವಣ as ಆಪಣ / ಅಂಗಡಿ and cites ಹರಿವಂಶ 1.24 (ಆವರದ ಎಡೆಯ ಆವಣಂಗಳೊಳ್ ಒಳವೆಂದುಂ). Confirm the original text reading and contextual sense before marking verified."},
-    alternatives:[{id:"angadi",word:"ಅಂಗಡಿ",note:"Common Kannada",proto:null,tamil:"கடை (kaṭai)",tulu:null}]
+    alternatives:[{id:"angadi",word:"ಅಂಗಡಿ",note:"Common Kannada",proto:null,tamil:"கடை (kaṭai)",tulu:"ಅಂಗಡಿ (aṅgaḍi)"}]
   },
   {
     id:"cloud", sanskrit:"ಮೇಘ", meaning:"Cloud", category:"Nature", halegannada:"ಮುಗಿಲ್", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Pampana Nudigani and Champu Nudigannadi — digitised dictionary transcriptions; corroborating Honalu discussion",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/blob/main/%5BKA%5D%20Pampana%20Nudigani/Raw%20Scraped%20Data/%E0%B2%AE_pampanudi.csv",evidenceType:"Scraped dictionary entries with literary citations; secondary grammatical discussion",note:"The digitised Pampana entry glosses ಮುಗಿಲ್ as ಮೋಡ and cites ಪಂಪಭಾ 7.23. The Champu entry gives ಮೋಡ (ವಡ್ಡಾರಾ, p.109, story 5) and ಆಕಾಶ (ಕಬ್ಬಿಗಕಾ 27v). Honalu also analyses ಬೆಳ್ + ಮುಗಿಲ್ as an Old Kannada phrase. Verify the cited editions and readings before marking verified."},
-    alternatives:[{id:"moda",word:"ಮೋಡ",note:"Common Kannada",proto:null,tamil:"மேகம் (mēkam)",tulu:null}]
+    alternatives:[{id:"moda",word:"ಮೋಡ",note:"Common Kannada",proto:null,tamil:"மேகம் (mēkam)",tulu:"ಮೋಡ (mōḍa)"}]
   },
   {
     id:"curtain", sanskrit:"ಯವನಿಕಾ", meaning:"Curtain / screen", category:"Everyday", halegannada:"ಜವನಿಕೆ", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Pampana Nudigani — digitised dictionary transcription",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/blob/main/%5BKA%5D%20Pampana%20Nudigani/Raw%20Scraped%20Data/%E0%B2%9C_pampanudi.csv",evidenceType:"Scraped dictionary entry with literary citation",note:"The digitised entry glosses ಜವನಿಕೆ as ತೆರೆ and gives the derivational gloss [ಯವನಿಕಾ]; it cites ಆದಿಪು 9.20 (ನಿಲ್ತು ಜವನಿಕೆಯ ಮಱೆಯೊಳ್ ...). Confirm the spelling, sense and verse against the printed dictionary and scholarly edition before marking verified."},
-    alternatives:[{id:"parade",word:"ಪರದೆ",note:"Common Kannada",proto:null,tamil:"திரை (tirai)",tulu:null}]
+    alternatives:[{id:"parade",word:"ಪರದೆ",note:"Common Kannada",proto:null,tamil:"திரை (tirai)",tulu:"ಪರದೆ (parade)"}]
   },
   {
     id:"new", sanskrit:"ನವ / ನವೀನ", meaning:"New", category:"Abstract", halegannada:"ಪೊಸ", halegannadaEvidence:{status:"provisional",sourceTitle:"Old Kannada grammatical discussion — Honalu; P. V. Narayana, ಪದಚರಿತೆ",sourceUrl:"https://honalu.net/2013/05/29/%E0%B2%B6%E0%B2%AC%E0%B3%8D%E0%B2%A6%E0%B2%AE%E0%B2%A3%E0%B2%BF%E0%B2%A6%E0%B2%B0%E2%80%8D%E0%B3%8D%E0%B2%AA%E0%B2%A3%E0%B2%A6%E0%B2%B2%E0%B3%8D%E0%B2%B2%E0%B2%BF-%E0%B2%A4%E0%B2%B3%E0%B2%AE-3/",evidenceType:"Secondary grammatical discussion and literary evidence",note:"The article explicitly identifies ಪೊಸ as an Old Kannada adjectival base form. A literary transcription also contains ಪೊಸ. Verify against a scholarly edition and record the exact work/verse before marking verified."},
-    alternatives:[{id:"hosa",word:"ಹೊಸ",note:"Native Kannada",proto:"*putu",tamil:"புது (putu)",tulu:null}]
+    alternatives:[{id:"hosa",word:"ಹೊಸ",note:"Native Kannada",proto:"*putu",tamil:"புது (putu)",tulu:"ಪೊಸ (posa)"}]
   },
   {
     id:"sugarcane", sanskrit:"ಇಕ್ಷು", meaning:"Sugarcane", category:"Nature", halegannada:"ಕರ್ವು", halegannadaEvidence:{status:"provisional",sourceTitle:"P. V. Narayana, Pampana Nudigani — digitised dictionary transcription; Kannada Prabha corroboration",sourceUrl:"https://github.com/omshivaprakash/Indic-dictionaries/blob/main/%5BKA%5D%20Pampana%20Nudigani/Raw%20Scraped%20Data/%E0%B2%95_pampanudi.csv",evidenceType:"Scraped dictionary entry with literary citation; secondary linguistic commentary",note:"The digitised entry exact headword is ಕರ್ವು, glossed ಕಬ್ಬು, with a citation to ಪಂಪಭಾ 4.37v. Kannada Prabha also mentions ಕರ್ವು / ಕರ್ಬು. Prefer the dictionary headword ಕರ್ವು in this card; confirm the original edition and verse before marking verified."},

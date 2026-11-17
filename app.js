@@ -219,7 +219,37 @@ function languageRows(entry, alts) {
     </div>`;
   }).join("");
 }
+const WORDS_PER_PAGE = 20;
+let currentWordPage = 0;
+const pagination = document.getElementById("word-pagination");
+const pageStatus = document.getElementById("word-page-status");
+const previousPageButton = document.getElementById("word-prev");
+const nextPageButton = document.getElementById("word-next");
+
+function updateWordPagination(total) {
+  const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
+  currentWordPage = Math.min(currentWordPage, pageCount - 1);
+  const start = total ? currentWordPage * WORDS_PER_PAGE + 1 : 0;
+  const end = Math.min((currentWordPage + 1) * WORDS_PER_PAGE, total);
+  if (pageStatus) pageStatus.textContent = total ? `Showing ${start}–${end} of ${total} words · Page ${currentWordPage + 1} of ${pageCount}` : "No words to display";
+  if (previousPageButton) previousPageButton.disabled = currentWordPage === 0;
+  if (nextPageButton) nextPageButton.disabled = currentWordPage >= pageCount - 1;
+  if (pagination) pagination.classList.toggle("hidden", total <= WORDS_PER_PAGE);
+}
+function changeWordPage(direction) {
+  const cat = categorySelect.value;
+  const total = votingEntries.filter(e => cat === "all" || e.category === cat).length;
+  const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
+  currentWordPage = Math.max(0, Math.min(pageCount - 1, currentWordPage + direction));
+  filterAndRender();
+  document.getElementById("words-panel").scrollIntoView({behavior:"smooth",block:"start"});
+}
+window.changeWordPage = changeWordPage;
+
 function render(entries) {
+  const totalEntries = entries.length;
+  entries = entries.slice(currentWordPage * WORDS_PER_PAGE, (currentWordPage + 1) * WORDS_PER_PAGE);
+  updateWordPagination(totalEntries);
   grid.innerHTML = "";
   if (!entries.length) {
     grid.innerHTML = '<p class="col-span-full text-center text-stone-500 py-12">No matching words found.</p>';
@@ -288,7 +318,7 @@ function render(entries) {
       </div>`;
     grid.appendChild(card);
   });
-  stats.textContent = `${entries.length} entr${entries.length===1?"y":"ies"} shown`;
+  stats.textContent = `${entries.length} entr${entries.length===1?"y":"ies"} shown on this page`;
 }
 function toggleImproveForm(id) {
   if (suggestionSubmittedEntries.has(id)) { alert("You have already used your one suggestion for this word."); return; }
@@ -488,7 +518,7 @@ function filterAndRender() {
   render(filtered);
 }
 window.castVote=castVote; window.toggleImproveForm=toggleImproveForm; window.submitSuggestion=submitSuggestion; window.cancelImproveForm=cancelImproveForm;
-categorySelect.addEventListener("change",filterAndRender);
+categorySelect.addEventListener("change",() => { currentWordPage = 0; filterAndRender(); });
 filterAndRender();
 renderContextual();
 loadRemoteVotes();

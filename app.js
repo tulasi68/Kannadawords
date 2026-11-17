@@ -8,6 +8,7 @@ const searchInput = document.getElementById("search");
 const categorySelect = document.getElementById("category");
 const MODERATION_API = window.KANNADA_MODERATION_API || "https://kannadawords-moderation.tulasianand6.workers.dev";
 let approvedCommunitySuggestions = [];
+let suggestionSubmittedEntries = new Set();
 
 const stats = document.getElementById("stats");
 
@@ -167,21 +168,24 @@ async function addSuggestion(entryId, word) {
   try {
     const response = await fetch(MODERATION_API + "/api/suggestions", {
       method:"POST", headers:{"Content-Type":"application/json"},
-      body:JSON.stringify({entryId,word:word.trim()})
+      body:JSON.stringify({entryId,word:word.trim(),voterId})
     });
     const result = await response.json();
     if (!response.ok) throw new Error(result.error || "Could not submit suggestion.");
-    alert("Thank you. Your suggestion has been sent for administrator review. It will appear in voting only if approved.");
+    suggestionSubmittedEntries.add(entryId);
+    filterAndRender();
+    alert("Thank you. Your one suggestion for this word has been sent for administrator review. It will appear in voting only if approved.");
   } catch (error) {
     alert(error.message || "Could not reach the suggestion service. Please try again later.");
   }
 }
 async function loadApprovedSuggestions() {
   try {
-    const response = await fetch(MODERATION_API + "/api/suggestions");
+    const response = await fetch(MODERATION_API + "/api/suggestions?voterId=" + encodeURIComponent(voterId), {cache:"no-store"});
     if (!response.ok) throw new Error("Could not load approved suggestions.");
     const data = await response.json();
     approvedCommunitySuggestions = Array.isArray(data.suggestions) ? data.suggestions : [];
+    suggestionSubmittedEntries = new Set(Array.isArray(data.submittedEntryIds) ? data.submittedEntryIds : []);
     filterAndRender();
   } catch (error) {
     console.warn("Community suggestions are temporarily unavailable.", error);
@@ -240,7 +244,7 @@ function render(entries) {
       const selected = getSelectedVote(entry.id) === alt.id;
       const viabilityLabel = ({clean:"Clean Dravidian",coined:"Proposed coinage",contested:"Contested",no_alternative:"No viable native alternative"})[alt.viability] || "";
       const label = alt.isOriginal ? "Keep original: " + alt.word : alt.isNoAlternative || alt.viability==="no_alternative" ? "No viable native alternative" : alt.isScopeAudit ? "Outside Sanskrit-origin scope" : alt.unreviewed ? alt.word + " · etymology unknown" : alt.word + (viabilityLabel ? " · " + viabilityLabel : "");
-      return `<button onclick="castVote('${entry.id}','${alt.id}')" aria-pressed="${selected}" class="text-xs border ${selected ? "border-emerald-600 bg-emerald-100 font-semibold" : "border-emerald-200"} text-emerald-800 rounded-full px-2 py-1 hover:bg-emerald-50">${selected ? "✓ " : ""}${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
+      return `<button onclick="castVote('${entry.id}','${alt.id}')" aria-pressed="${selected}" class="block w-full text-left text-sm border ${selected ? "border-emerald-600 bg-emerald-100 font-semibold" : "border-emerald-200 bg-white"} text-emerald-800 rounded-lg px-3 py-2 hover:bg-emerald-50">${selected ? "✓ " : ""}${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
     }).join(" ");
     card.innerHTML = `
       <div class="flex items-start justify-between gap-2 mb-3">
@@ -261,7 +265,7 @@ function render(entries) {
       ${entry.editorialNote ? `<p class="text-xs text-stone-600 mt-2">${escapeHtml(entry.editorialNote)}</p>` : ""}
       <div class="mt-3 pt-3 border-t border-stone-100">
         <p class="text-xs text-stone-500 mb-2">${entry.noAlternative || entry.scopeAudit ? "Vote on this classification" : "Choose one option for this word · you can change your vote"}</p>
-        <div class="flex flex-wrap gap-2">${alts.length > 1 ? voteHtml : '<span class="text-xs text-stone-400">Voting will appear when another option is available.</span>'}</div>
+        <div class="flex flex-col gap-2">${alts.length > 1 ? voteHtml : '<span class="text-xs text-stone-400">Voting will appear when another option is available.</span>'}</div>
         <div class="flex flex-wrap items-center gap-x-5 gap-y-2 mt-3">
           <button onclick="toggleImproveForm('${entry.id}')" class="text-sm font-medium text-amber-700 hover:text-amber-900">Improve / Suggest a Kannada alternative</button>
           <button onclick="toggleThoughts('${entry.id}')" class="text-sm font-medium text-sky-700 hover:text-sky-900">your thoughts</button>
@@ -288,6 +292,7 @@ function render(entries) {
   stats.textContent = `${entries.length} entr${entries.length===1?"y":"ies"} shown`;
 }
 function toggleImproveForm(id) {
+  if (suggestionSubmittedEntries.has(id)) { alert("You have already used your one suggestion for this word."); return; }
   const form=document.getElementById("improve-"+id); form.classList.toggle("hidden");
   if(!form.classList.contains("hidden")) document.getElementById("newword-"+id).focus();
 }

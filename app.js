@@ -647,27 +647,37 @@ function coinageEvaluation() {
   const literal = document.getElementById("coin-literal").value.trim();
   if (literal && literal.split(/\s+/).filter(Boolean).length > 3 && !flags.includes("Explanation longer than three words")) flags.push("Explanation longer than three words");
   let verdict = "FAIL";
-  if (!flags.length && total >= 15 && min >= 3 && collision === "clear") verdict = "PASS";
-  else if (!flags.length && total >= 11 && total <= 14 && min >= 3 && collision !== "blocked") verdict = "CONDITIONAL";
-  else if (!flags.length && total >= 11 && min === 2 && collision !== "blocked") verdict = "CONDITIONAL";
-  else if (!flags.length && total >= 11 && collision === "ambiguous" && min >= 3) verdict = "CONDITIONAL";
+  if (flags.length || total < 11 || min === 1 || collision === "blocked") verdict = "FAIL";
+  else if (total >= 15 && min >= 3 && collision === "clear") verdict = "PASS";
+  else if (total >= 11 && (total <= 14 || min === 2 || collision === "ambiguous")) verdict = "CONDITIONAL";
+  const morphemes = document.getElementById("coin-morphemes").value.split(/\n/).map(line=>line.trim()).filter(Boolean).map(line=>{
+    const parts=line.split("|").map(part=>part.trim());
+    return {form:parts[0],origin:["native","tadbhava","sanskrit","loan"].includes((parts[1]||"").toLowerCase())?(parts[1]||"").toLowerCase():"loan"};
+  });
   return {
-    schemaVersion: coinageReviewData.schemaVersion,
-    submittedAt: new Date().toISOString(),
-    submittedBy: "community-review",
-    sanskritSourceWord: document.getElementById("coin-source").value.trim(),
-    englishGloss: document.getElementById("coin-gloss").value.trim(),
-    proposedCoinage: document.getElementById("coin-candidate").value.trim(),
-    literalGloss: literal,
-    type: "compound",
-    morphemes: [],
-    scores: { ...scores, total, totalMax: 20 },
-    collisionCheck: collision,
-    attestation: { halegannada: "none", citation: null, protoDravidianRoot: null, dedr: null, tamilParallel: null, tuluParallel: null },
-    autoFail: flags,
+    schema_version: coinageReviewData.schemaVersion,
+    submitted_by: document.getElementById("coin-submitter").value.trim() || "community-review",
+    submitted_date: new Date().toISOString(),
+    sanskrit_source_word: document.getElementById("coin-source").value.trim(),
+    english_gloss: document.getElementById("coin-gloss").value.trim(),
+    proposed_coinage: document.getElementById("coin-candidate").value.trim(),
+    literal_gloss: literal,
+    type: document.getElementById("coin-type").value,
+    morphemes,
+    scores: { ...scores, total, total_max: 20 },
+    collision_check: collision,
+    attestation: {
+      halegannada: document.getElementById("coin-hale-status").value,
+      citation: document.getElementById("coin-citation").value.trim() || null,
+      proto_dravidian_root: document.getElementById("coin-pdr").value.trim() || null,
+      dedr: document.getElementById("coin-dedr").value.trim() || null,
+      tamil_parallel: document.getElementById("coin-tamil").value.trim() || null,
+      tulu_parallel: document.getElementById("coin-tulu").value.trim() || null
+    },
+    auto_fail: flags,
     verdict,
-    reviewerNotes: document.getElementById("coin-notes").value.trim(),
-    votingStatus: "not-submitted"
+    reviewer_notes: document.getElementById("coin-notes").value.trim(),
+    voting_status: "not-submitted"
   };
 }
 function evaluateCoinage() {
@@ -688,7 +698,9 @@ function exportCoinageEvaluation() {
   document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
 }
 function resetCoinageForm() {
-  ["coin-source","coin-gloss","coin-candidate","coin-literal","coin-notes"].forEach(id=>document.getElementById(id).value="");
+  ["coin-source","coin-gloss","coin-candidate","coin-literal","coin-notes","coin-morphemes","coin-citation","coin-pdr","coin-dedr","coin-tamil","coin-tulu","coin-submitter"].forEach(id=>document.getElementById(id).value="");
+  document.getElementById("coin-type").value="compound";
+  document.getElementById("coin-hale-status").value="none";
   document.getElementById("coin-collision").value="clear";
   document.querySelectorAll("[data-coin-score]").forEach(el=>el.selectedIndex=0);
   document.querySelectorAll("[data-coin-autofail]").forEach(el=>el.checked=false);

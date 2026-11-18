@@ -85,10 +85,12 @@ export default {
     }
 
     const length = Number(request.headers.get("content-length") || 0);
-    if (length > 24000) return reply({ error: "Request is too large." }, 413);
+    if (length > 100000) return reply({ error: "Request is too large. Please shorten the text and try again." }, 413);
 
+    // The website sends JSON as text/plain so the browser can make a CORS
+    // simple request without an OPTIONS preflight. Parse and validate it here.
     let body;
-    try { body = await request.json(); } catch { return reply({ error: "Please send valid JSON." }, 400); }
+    try { body = JSON.parse(await request.text()); } catch { return reply({ error: "Please send valid JSON." }, 400); }
     const text = typeof body.text === "string" ? body.text.trim() : "";
     if (!text || text.length > MAX_TEXT) return reply({ error: "Enter Kannada text of up to 4,000 characters." }, 400);
     if (!/[\u0C80-\u0CFF]/.test(text)) return reply({ error: "Please enter text containing Kannada script." }, 400);

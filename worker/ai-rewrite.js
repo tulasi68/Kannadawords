@@ -42,13 +42,61 @@ function reply(data, status = 200, origin = "") {
   });
 }
 
+// Some model responses contain a malformed backslash escape inside a JSON
+// string (for example, an incomplete \\u sequence). Preserve that text
+// literally rather than allowing JSON.parse to reject the whole Kannada reply.
+function escapeInvalidJsonEscapes(source) {
+  let output = "";
+  let inString = false;
+  for (let i = 0; i < source.length; i++) {
+    const ch = source[i];
+    if (!inString) {
+      output += ch;
+      if (ch === '"') inString = true;
+      continue;
+    }
+    if (ch === '"') {
+      output += ch;
+      let slashes = 0;
+      for (let j = i - 1; j >= 0 && source[j] === "\\\\"; j--) slashes++;
+      if (slashes % 2 === 0) inString = false;
+      continue;
+    }
+    if (ch === "\\\\") {
+      const next = source[i + 1] || "";
+      if ('"\\\\/bfnrt'.includes(next)) {
+        output += ch + next;
+        i++;
+        continue;
+      }
+      if (next === "u" && /^[0-9a-fA-F]{4}$/.test(source.slice(i + 2, i + 6))) {
+        output += source.slice(i, i + 6);
+        i += 5;
+        continue;
+      }
+      // Invalid escape: turn the backslash into a literal backslash.
+      output += "\\\\\\\\";
+      continue;
+    }
+    output += ch;
+  }
+  return output;
+}
+
 function parseModelOutput(raw) {
   let value = raw && Object.prototype.hasOwnProperty.call(raw, "response") ? raw.response : raw;
   if (typeof value === "string") {
     const cleaned = value.trim().replace(/^\x60\x60\x60(?:json)?\s*/i, "").replace(/\s*\x60\x60\x60$/, "");
-    value = JSON.parse(cleaned);
+    try {
+      value = JSON.parse(cleaned);
+    } catch (firstError) {
+      value = JSON.parse(escapeInvalidJsonEscapes(cleaned));
+    }
   }
-  if (value && typeof value.response === "string") value = JSON.parse(value.response);
+  if (value && typeof value.response === "string") {
+    try { value = JSON.parse(value.response); }
+    catch { value = JSON.parse(escapeInvalidJsonEscapes(value.response)); }
+  }
   return value;
 }
 
@@ -131,16 +179,26 @@ PROJECT LEXICON:
 ${JSON.stringify(lexicon)}`;
 
     try {
-      const raw = await env.AI.run(MODEL, {
+      const userInstruction = "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\n\n" + text;
+      const runModel = async (retry = false) => env.AI.run(MODEL, {
         messages: [
-          { role: "system", content: system },
-          { role: "user", content: "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\n\n" + text }
+          { role: "system", content: system + (retry ? "\\n\\nSTRICT OUTPUT RETRY: Return one complete valid JSON object only. Do not write literal backslash-u sequences, code fences, comments, or text outside the JSON. Put Kannada characters directly in JSON strings." : "") },
+          { role: "user", content: userInstruction }
         ],
         response_format: responseSchema,
-        temperature: 0.2,
+        temperature: retry ? 0 : 0.2,
         max_tokens: 1800
       });
-      const result = parseModelOutput(raw);
+      let raw = await runModel(false);
+      let result;
+      try {
+        result = parseModelOutput(raw);
+      } catch (parseError) {
+        // Retry once when the model emits malformed JSON. This avoids failing
+        // an otherwise useful Kannada rewrite because of one bad escape.
+        raw = await runModel(true);
+        result = parseModelOutput(raw);
+      }
       if (!result || typeof result.rewrittenKannada !== "string" || !Array.isArray(result.replacements)) {
         throw new Error("The language model returned an incomplete response.");
       }

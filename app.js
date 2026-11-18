@@ -549,7 +549,11 @@ function showAchchaResult(result,original){
   notes.append(p);
  });
  if((result.wordsNeedingReview||[]).length)addLine("ಮರುಪರಿಶೀಲಿಸಬೇಕಾದ ಪದಗಳು:",result.wordsNeedingReview.join(", "));
- if(!(result.replacements||[]).length && !(result.wordsNeedingReview||[]).length) {
+ if((result.lexiconMatches||[]).length) {
+  const findings = result.lexiconMatches.map(item => item.source + " → " + (item.candidates||[]).map(candidate => candidate.word).join(" / "));
+  addLine("ಪದಪಟ್ಟಿಯಲ್ಲಿ ಕಂಡ ಪದಗಳು ಮತ್ತು ಪರ್ಯಾಯಗಳು:",findings.join(" · "));
+ }
+ if(!(result.replacements||[]).length && !(result.wordsNeedingReview||[]).length && !(result.lexiconMatches||[]).length) {
   addLine("ಪದಗಳ ಪಟ್ಟಿ:","ಈ ಬಾರಿ ಎಂಜಿನ್ ಯಾವುದೇ ಪದಬದಲಾವಣೆ ಅಥವಾ ಮರುಪರಿಶೀಲನೆಗೆ ಪದವನ್ನು ದಾಖಲಿಸಿಲ್ಲ. ಇದನ್ನು ಪದಗಳ ಪರಿಶೀಲನೆ ಪೂರ್ಣವಾಗಿದೆ ಎಂದು ಅರ್ಥೈಸಬೇಡಿ.");
  }
  if(!result.changed)addLine("ಗಮನಿಸಿ:","ಮೂಲ ಪಠ್ಯದಲ್ಲೇ ಉಳಿಸಲಾಗಿದೆ; ನಂಬಿಕೆಯಿಂದ ಬದಲಾಯಿಸಬಹುದಾದ ಪದವನ್ನು ಎಂಜಿನ್ ಗುರುತಿಸಲಿಲ್ಲ.");
@@ -767,7 +771,7 @@ async function translateAchchaKannada() {
     }
     if (!response.ok) throw new Error(payload.error || "AI ಪರಿಶೀಲನೆ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ.");
     showAchchaResult(payload, original);
-    if (status) status.textContent = (payload.replacements || []).length || (payload.wordsNeedingReview || []).length
+    if (status) status.textContent = (payload.replacements || []).length || (payload.wordsNeedingReview || []).length || (payload.lexiconMatches || []).length
       ? "ಮರುಬರಹ ಸಿದ್ಧವಾಗಿದೆ. ಕೆಳಗಿನ ಪದಬದಲಾವಣೆ ಮತ್ತು ಮರುಪರಿಶೀಲನೆ ಸೂಚನೆಗಳನ್ನು ನೋಡಿ; ಪರಿಶೀಲಿಸದ ಪದಮೂಲ ಅಥವಾ ಪರ್ಯಾಯಗಳನ್ನು ದೃಢಪಟ್ಟ ಸಂಗತಿಯೆಂದು ಪರಿಗಣಿಸಬೇಡಿ."
       : "ಮರುಬರಹ ಸಿದ್ಧವಾಗಿದೆ; ಆದರೆ ಪದಬದಲಾವಣೆ ಅಥವಾ ಮರುಪರಿಶೀಲನೆಗೆ ಪದಗಳ ಪಟ್ಟಿ ಬಂದಿಲ್ಲ. ಇದನ್ನು ಪದಗಳ ಪರಿಶೀಲನೆ ಪೂರ್ಣವಾಗಿದೆ ಎಂದು ಪರಿಗಣಿಸಬೇಡಿ.";
   } catch (error) {

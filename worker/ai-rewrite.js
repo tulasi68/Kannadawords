@@ -115,9 +115,9 @@ Priority:
 2. For other words, you may use well-established everyday Kannada alternatives you know, but label them uncertain and list them for community review. Never claim their etymology is verified unless the target word appears in the supplied lexicon.
 3. Use natural Kannada idiom and restructure the entire sentence. Do not mechanically substitute words or preserve an unnatural grammatical construction.
 
-Examples of common alternatives (use only when context fits): ಸಂರಕ್ಷಣೆ → ಕಾಪಾಡು/ಉಳಿಸು; ಯೋಜನೆ → ಏರ್ಪಾಡು/ಹಮ್ಮಿಕೆ; ಸರ್ಕಾರ → ಆಳ್ವಿಕೆ/ಆಳುವ ಮಂದಿ; ವಿಶೇಷ → ಬೇರೆಯಾದ; ಸಮಸ್ಯೆ → ತೊಂದರೆ; ಸಹಾಯ → ನೆರವು; ಮಾಹಿತಿ → ತಿಳಿವು; ಸಂಪರ್ಕ → ನಂಟು; ಸಂವಹನ → ಮಾತುಕತೆ; ಶಿಕ್ಷಣ → ಕಲಿಕೆ; ಅಭಿವೃದ್ಧಿ → ಬೆಳೆವಣಿಗೆ; ಅಭಿಪ್ರಾಯ → ಅನಿಸಿಕೆ; ಪ್ರಶ್ನೆ → ಕೇಳಿಕೆ; ಅಂತ್ಯ → ಕೊನೆ; ಅಗತ್ಯ → ಬೇಕಾದ; ಕಾರ್ಯ → ಕೆಲಸ; ನಿರ್ವಹಣೆ → ನಡೆಸುವಿಕೆ.
+Examples of common alternatives (use only when context fits): ಸಂರಕ್ಷಣೆ → ಕಾಪಾಡು/ಉಳಿಸು; ಯೋಜನೆ → ಏರ್ಪಾಡು/ಹಮ್ಮಿಕೆ; ಸರ್ಕಾರ → ಆಳುವ ಮಂದಿ; ವಿಶೇಷ → ಹೊಸ ಬಗೆಯ; ಸಮಸ್ಯೆ → ತೊಂದರೆ; ಸಹಾಯ → ನೆರವು; ಮಾಹಿತಿ → ತಿಳಿವು; ಸಂಪರ್ಕ → ನಂಟು; ಸಂವಹನ → ಮಾತುಕತೆ; ಶಿಕ್ಷಣ → ಕಲಿಕೆ; ಅಭಿವೃದ್ಧಿ → ಬೆಳೆವಣಿಗೆ; ಅಭಿಪ್ರಾಯ → ಅನಿಸಿಕೆ; ಪ್ರಶ್ನೆ → ಕೇಳಿಕೆ; ಅಂತ್ಯ → ಕೊನೆ; ಅಗತ್ಯ → ಬೇಕಾದ; ಕಾರ್ಯ → ಕೆಲಸ; ನಿರ್ವಹಣೆ → ನಡೆಸುವಿಕೆ.
 
-Grammar example: "ಮರಗಳ ಸಂರಕ್ಷಣೆಗೆ ಯೋಜನೆಗಳನ್ನು ರೂಪಿಸಿದೆ" should become something idiomatic like "ಮರಗಳನ್ನು ಕಾಪಾಡಲು ಏರ್ಪಾಡುಗಳನ್ನು ಮಾಡಿದೆ", NOT "ಮರಗಳನ್ನು ಕಾಪಾಡುವಿಕೆಗೆ ಏರ್ಪಾಡುಗಳನ್ನು ರೂಪಿಸಿದೆ".
+Grammar example: "ಈ ಪ್ರದೇಶದಲ್ಲಿ ವೃಕ್ಷಗಳ ಸಂರಕ್ಷಣೆಗೆ ಸರ್ಕಾರವು ವಿಶೇಷ ಯೋಜನೆಗಳನ್ನು ರೂಪಿಸಿದೆ" should become something idiomatic like "ಈ ಪ್ರದೇಶದ ಮರಗಳನ್ನು ಕಾಪಾಡಲು ಆಳುವ ಮಂದಿ ಹೊಸ ಬಗೆಯ ಏರ್ಪಾಡುಗಳನ್ನು ಮಾಡಿದ್ದಾರೆ". Prefer "ಆಳುವ ಮಂದಿ" over the abstract "ಆಳ್ವಿಕೆ" when the sentence refers to the people in government.
 
 Rules:
 - Preserve meaning, tense, person, number, politeness, tone and details.

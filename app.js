@@ -492,16 +492,37 @@ function achchaAlternativeKind(alt) {
  return "uncertain";
 }
 function buildAchchaLexicon(){
- return (typeof votingEntries==="undefined"?[]:votingEntries)
-  .filter(entry=>!entry.noAlternative&&Array.isArray(entry.alternatives))
-  .map(entry=>({
-   sourceForms:[entry.sanskrit||entry.sourceForm||""].join(" / ").split(/[\\/,;|]/).map(s=>s.trim()).filter(Boolean),
-   meaning:entry.meaning||"",
-   candidates:entry.alternatives.filter(alt=>alt.word&&!alt.isNoAlternative).map(alt=>({
-    word:alt.word,origin:achchaAlternativeKind(alt),note:alt.note||"",
-    proto:alt.proto||"",tamil:alt.tamil||"",tulu:alt.tulu||""
-   }))
-  })).filter(entry=>entry.sourceForms.length&&entry.candidates.length).slice(0,120);
+ // Include the complete reviewed vocabulary. The former .slice(0,120) silently
+ // discarded later entries, so many Sanskrit-derived words could never match.
+ const bySourceForm = new Map();
+ const entries = typeof votingEntries === "undefined" ? [] : votingEntries;
+ const splitSourceForms = value => String(value || "")
+  .split(/\\s*(?:\\/|,|;|\\|| ಅಥವಾ )\\s*/u)
+  .map(form => form.trim())
+  .filter(form => form.length >= 2);
+
+ entries.filter(entry => !entry.noAlternative && Array.isArray(entry.alternatives))
+  .forEach(entry => {
+   const sourceForms = [
+    ...splitSourceForms(entry.sanskrit || entry.sourceForm),
+    ...splitSourceForms(entry.sourceEtymology && entry.sourceEtymology.form)
+   ];
+   const candidates = entry.alternatives.filter(alt => alt.word && !alt.isNoAlternative)
+    .map(alt => ({
+     word:alt.word,origin:achchaAlternativeKind(alt),note:alt.note||"",
+     proto:alt.proto||"",tamil:alt.tamil||"",tulu:alt.tulu||""
+    }));
+   sourceForms.forEach(form => {
+    const key = form.normalize("NFC");
+    const existing = bySourceForm.get(key) || {sourceForms:[form],meaning:entry.meaning||"",candidates:[]};
+    candidates.forEach(candidate => {
+     if (!existing.candidates.some(item => item.word === candidate.word)) existing.candidates.push(candidate);
+    });
+    if (!existing.meaning && entry.meaning) existing.meaning = entry.meaning;
+    bySourceForm.set(key, existing);
+   });
+  });
+ return [...bySourceForm.values()].filter(entry => entry.candidates.length);
 }
 function showAchchaResult(result,original){
  document.getElementById("achcha-original").textContent=original;
@@ -574,11 +595,14 @@ function findAchchaWords() {
   const forms = [];
   lexicon.forEach(entry => {
     (entry.sourceForms || []).forEach(sf => {
-      if (sf && sf.length >= 2) forms.push({ form: sf, entry });
+      if (sf && sf.length >= 2) forms.push({ form: sf.normalize("NFC"), entry });
     });
   });
   forms.sort((a, b) => b.form.length - a.form.length);
 
+  // Match complete Kannada words, not accidental substrings inside longer words.
+  // Unicode marks are included because Kannada vowel signs/viramas are combining marks.
+  const isWordCharacter = char => !!char && /[\\p{L}\\p{M}\\p{N}_]/u.test(char);
   const occupied = new Array(original.length).fill(false);
   const matches = [];
 
@@ -588,9 +612,11 @@ function findAchchaWords() {
       const idx = original.indexOf(form, from);
       if (idx < 0) break;
       const end = idx + form.length;
+      const leftBoundary = idx === 0 || !isWordCharacter(original[idx - 1]);
+      const rightBoundary = end === original.length || !isWordCharacter(original[end]);
       let overlap = false;
       for (let i = idx; i < end; i++) if (occupied[i]) { overlap = true; break; }
-      if (!overlap) {
+      if (leftBoundary && rightBoundary && !overlap) {
         for (let i = idx; i < end; i++) occupied[i] = true;
         const candidates = (entry.candidates || []).filter(c => c.word);
         if (candidates.length) {

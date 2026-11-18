@@ -247,8 +247,7 @@ const pagination = document.getElementById("word-pagination");
 const pageStatus = document.getElementById("word-page-status");
 const previousPageButton = document.getElementById("word-prev");
 const nextPageButton = document.getElementById("word-next");
-function updateWordPagination(total) {
-  const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
+function updateWordPagination(total) {  const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
   currentWordPage = Math.min(currentWordPage, pageCount - 1);
   const start = total ? currentWordPage * WORDS_PER_PAGE + 1 : 0;
   const end = Math.min((currentWordPage + 1) * WORDS_PER_PAGE, total);
@@ -496,9 +495,9 @@ function buildAchchaLexicon(text = ""){
  const bySourceForm = new Map();
  const entries = typeof votingEntries === "undefined" ? [] : votingEntries;
  const splitSourceForms = value => String(value || "")
-  .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)  .map(form => form.trim())
+  .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)
+  .map(form => form.trim())
   .filter(form => form.length >= 2);
-
  entries.filter(entry => !entry.noAlternative && !entry.scopeAudit && Array.isArray(entry.alternatives))
   .forEach(entry => {
    const sourceForms = [
@@ -747,8 +746,7 @@ async function translateAchchaKannada() {
   try {
     // Send only lexicon entries relevant to this passage. Sending the entire
     // vocabulary made the model prompt unnecessarily large and could leave the
-    // mobile UI appearing to wait indefinitely.
-    const timeoutId = setTimeout(() => controller.abort(), 75000);
+    // mobile UI appearing to wait indefinitely.    const timeoutId = setTimeout(() => controller.abort(), 75000);
     let response;
     let payload;
     try {
@@ -765,7 +763,9 @@ async function translateAchchaKannada() {
     }
     if (!response.ok) throw new Error(payload.error || "AI ಪರಿಶೀಲನೆ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ.");
     showAchchaResult(payload, original);
-    if (status) status.textContent = "ಮರುಬರಹ ಸಿದ್ಧವಾಗಿದೆ. ಪರಿಶೀಲಿಸದ ಪದಮೂಲ ಅಥವಾ ಪರ್ಯಾಯಗಳನ್ನು ದೃಢಪಟ್ಟ ಸಂಗತಿಯೆಂದು ಪರಿಗಣಿಸಬೇಡಿ.";
+    if (status) status.textContent = (payload.replacements || []).length || (payload.wordsNeedingReview || []).length
+      ? "ಮರುಬರಹ ಸಿದ್ಧವಾಗಿದೆ. ಕೆಳಗಿನ ಪದಬದಲಾವಣೆ ಮತ್ತು ಮರುಪರಿಶೀಲನೆ ಸೂಚನೆಗಳನ್ನು ನೋಡಿ; ಪರಿಶೀಲಿಸದ ಪದಮೂಲ ಅಥವಾ ಪರ್ಯಾಯಗಳನ್ನು ದೃಢಪಟ್ಟ ಸಂಗತಿಯೆಂದು ಪರಿಗಣಿಸಬೇಡಿ."
+      : "ಮರುಬರಹ ಸಿದ್ಧವಾಗಿದೆ; ಆದರೆ ಪದಬದಲಾವಣೆ ಅಥವಾ ಮರುಪರಿಶೀಲನೆಗೆ ಪದಗಳ ಪಟ್ಟಿ ಬಂದಿಲ್ಲ. ಇದನ್ನು ಪದಗಳ ಪರಿಶೀಲನೆ ಪೂರ್ಣವಾಗಿದೆ ಎಂದು ಪರಿಗಣಿಸಬೇಡಿ.";
   } catch (error) {
     if (runId !== achchaRewriteRun) return;
     if (status) status.textContent = error.name === "AbortError"

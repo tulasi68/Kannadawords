@@ -143,7 +143,7 @@
     <section id="coinages-panel" class="hidden">
       <div class="mb-5">
         <h2 class="kn text-xl font-bold text-stone-900">ಹೊಸ ನುಡಿ ಅಳವು</h2>
-        <p class="kn text-sm text-stone-600 mt-1">ಹೊಸ ಕನ್ನಡ ನುಡಿಯನ್ನು ರೂಪಿಸುವಾಗ ಅದರ ಪ್ರತಿಯೊಂದು ಪದಭಾಗವೂ ಕನ್ನಡದಲ್ಲೇ ಅರ್ಥಪೂರ್ಣವಾಗಿರಬೇಕು. ತಮಿಳಿನ ಹೋಲಿಕೆ ಪದರಚನೆಯ ಮಾದರಿಯನ್ನು ಸೂಚಿಸಬಹುದು; ತಮಿಳು ಪದವನ್ನೇ ತಂದು ಬಳಸಲು ಅದು ಆಧಾರವಲ್ಲ.</p>
+        <p class="text-sm text-stone-600 mt-1">A new Kannada coinage should be meaningful in every component and should be built from meaningful Kannada elements. Evaluate the proposed word on its own structure, meaning, pronunciation, and natural usage.</p>
       </div>
       <div class="rounded-xl border border-amber-200 bg-amber-50 p-4 mb-6">
         <h3 class="font-semibold text-stone-800 mb-2">Four review dimensions · 20 points (no score until assessed)</h3>
@@ -190,12 +190,12 @@
       </div>
     </section>
     <section id="translate-panel" class="hidden">
-      <div class="mb-5"><h2 class="kn text-xl font-bold text-stone-900">ಅಚ್ಚ ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ</h2><p class="kn text-sm text-stone-600 mt-1">ಕನ್ನಡದ ಪಠ್ಯವನ್ನು ಇಲ್ಲಿ ಅಂಟಿಸಿ. ನಮ್ಮ ಪದಪಟ್ಟಿಯಲ್ಲಿರುವ ದ್ರಾವಿಡ ಮೂಲದ ಪದಗಳನ್ನು ಮೊದಲು ಬಳಸಿ.</p></div>
-      <div class="rounded-xl border border-amber-200 bg-white p-4 sm:p-5"><label for="achcha-input" class="kn block text-sm font-semibold text-stone-700 mb-2">ಕನ್ನಡದ ಪಠ್ಯ</label>
-        <textarea id="achcha-input" rows="7" class="kn w-full rounded-xl border border-stone-300 px-3 py-3 text-base leading-8" placeholder="ಒಂದು ಅಥವಾ ಹಲವು ವಾಕ್ಯಗಳನ್ನು ಇಲ್ಲಿ ಬರೆಯಿರಿ ಅಥವಾ ಅಂಟಿಸಿ…"></textarea>
-        <div class="flex flex-wrap items-center justify-between gap-3 mt-3"><p class="text-xs text-stone-500">ಬಹು ವಾಕ್ಯಗಳನ್ನು ಒಂದೇ ಬಾರಿ ನೀಡಬಹುದು.</p><button type="button" onclick="translateAchchaKannada()" class="rounded-lg bg-amber-700 px-5 py-2.5 text-sm font-semibold text-white">ಅಚ್ಚ ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ</button></div></div>
-      <div id="achcha-output" class="hidden mt-5 rounded-xl border border-stone-200 bg-white p-4 sm:p-5" aria-live="polite"><div class="flex flex-wrap items-center justify-between gap-3"><h3 class="kn font-semibold text-stone-800">ಅನುವಾದದ ರೂಪ</h3><button id="achcha-next" type="button" onclick="nextAchchaVersion()" class="hidden rounded-lg border border-amber-400 px-4 py-2 text-sm font-semibold text-amber-900">ಮುಂದಿನ ರೂಪ →</button></div><p id="achcha-version-label" class="text-xs text-stone-500 mt-1"></p><div id="achcha-result" class="kn whitespace-pre-wrap text-base leading-8 text-stone-900 mt-3"></div><div id="achcha-notes" class="mt-4 border-t border-stone-100 pt-3 text-sm text-stone-600"></div></div>
-      <p class="text-xs text-stone-500 mt-4">ಈ ಮೊದಲ ಹಂತವು ಪದಪಟ್ಟಿಯಲ್ಲಿರುವ ನಿಖರ ಪದರೂಪಗಳನ್ನು ಬದಲಿಸುತ್ತದೆ. ವಿಭಕ್ತಿ, ವಾಕ್ಯವ್ಯಾಕರಣ ಅಥವಾ ಪಟ್ಟಿಯಲ್ಲಿಲ್ಲದ ಪದಗಳ ಅರ್ಥವನ್ನು ಮರುಬರೆಯುವುದಿಲ್ಲ. ಹೊಸ ನುಡಿಗಳನ್ನು ಸ್ಪಷ್ಟವಾಗಿ ಗುರುತಿಸಲಾಗುತ್ತದೆ.</p>
+      <div class="mb-5"><h2 class="kn text-xl font-bold text-stone-900">ಅಚ್ಚ ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ</h2><p class="text-sm text-stone-600 mt-1">Paste Kannada text here. The tool will first use Dravidian-origin alternatives from our word list.</p></div>
+      <div class="rounded-xl border border-amber-200 bg-white p-4 sm:p-5"><label for="achcha-input" class="block text-sm font-semibold text-stone-700 mb-2">Kannada text</label>
+        <textarea id="achcha-input" rows="7" class="kn w-full rounded-xl border border-stone-300 px-3 py-3 text-base leading-8" placeholder="Write or paste one or more sentences here…"></textarea>
+        <div class="flex flex-wrap items-center justify-between gap-3 mt-3"><p class="text-xs text-stone-500">You can enter multiple sentences at once.</p><button type="button" onclick="translateAchchaKannada()" class="rounded-lg bg-amber-700 px-5 py-2.5 text-sm font-semibold text-white">Translate to Achcha Kannada</button></div></div>
+      <div id="achcha-output" class="hidden mt-5 rounded-xl border border-stone-200 bg-white p-4 sm:p-5" aria-live="polite"><div class="flex flex-wrap items-center justify-between gap-3"><h3 class="font-semibold text-stone-800">Translation</h3><button id="achcha-next" type="button" onclick="nextAchchaVersion()" class="hidden rounded-lg border border-amber-400 px-4 py-2 text-sm font-semibold text-amber-900">Next version →</button></div><p id="achcha-version-label" class="text-xs text-stone-500 mt-1"></p><div id="achcha-result" class="kn whitespace-pre-wrap text-base leading-8 text-stone-900 mt-3"></div><div id="achcha-notes" class="mt-4 border-t border-stone-100 pt-3 text-sm text-stone-600"></div></div>
+      <p class="text-xs text-stone-500 mt-4">This first version replaces exact word forms found in the word list. It does not rewrite case endings, sentence grammar, or the meanings of words that are not in the list. New coinages are clearly identified.</p>
     </section>
     <section id="admin-panel" class="hidden mt-10 rounded-xl border-2 border-amber-300 bg-amber-50 p-5">
       <div class="flex items-center justify-between gap-3 mb-4">

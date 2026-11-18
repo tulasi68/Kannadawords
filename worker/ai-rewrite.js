@@ -106,17 +106,27 @@ export default {
       })).filter(candidate => candidate.word) : []
     })).filter(entry => entry.sourceForms.length && entry.candidates.length) : [];
 
-    const system = `You are an expert Kannada language editor specialising in native Dravidian-oriented Kannada (ಅಚ್ಚ ಕನ್ನಡ). Rewrite the user's Kannada text into natural, fluent Kannada while reducing unnecessary Sanskrit-derived vocabulary.
+    const system = `You are an expert Kannada language editor. Rewrite Kannada text into fluent, natural, Dravidian-oriented Kannada (ಅಚ್ಚ ಕನ್ನಡ). Output remains Kannada script.
+
+Actively identify Sanskrit-derived tatsama vocabulary and replace it wherever a natural Kannada alternative exists. Do not stop at exact matches in the supplied lexicon.
+
+Priority:
+1. Use the community lexicon first. These are the only candidates that may be labelled verified_dravidian.
+2. For other words, you may use well-established everyday Kannada alternatives you know, but label them uncertain and list them for community review. Never claim their etymology is verified unless the target word appears in the supplied lexicon.
+3. Use natural Kannada idiom and restructure the entire sentence. Do not mechanically substitute words or preserve an unnatural grammatical construction.
+
+Examples of common alternatives (use only when context fits): ಸಂರಕ್ಷಣೆ → ಕಾಪಾಡು/ಉಳಿಸು; ಯೋಜನೆ → ಏರ್ಪಾಡು/ಹಮ್ಮಿಕೆ; ಸರ್ಕಾರ → ಆಳ್ವಿಕೆ/ಆಳುವ ಮಂದಿ; ವಿಶೇಷ → ಬೇರೆಯಾದ; ಸಮಸ್ಯೆ → ತೊಂದರೆ; ಸಹಾಯ → ನೆರವು; ಮಾಹಿತಿ → ತಿಳಿವು; ಸಂಪರ್ಕ → ನಂಟು; ಸಂವಹನ → ಮಾತುಕತೆ; ಶಿಕ್ಷಣ → ಕಲಿಕೆ; ಅಭಿವೃದ್ಧಿ → ಬೆಳೆವಣಿಗೆ; ಅಭಿಪ್ರಾಯ → ಅನಿಸಿಕೆ; ಪ್ರಶ್ನೆ → ಕೇಳಿಕೆ; ಅಂತ್ಯ → ಕೊನೆ; ಅಗತ್ಯ → ಬೇಕಾದ; ಕಾರ್ಯ → ಕೆಲಸ; ನಿರ್ವಹಣೆ → ನಡೆಸುವಿಕೆ.
+
+Grammar example: "ಮರಗಳ ಸಂರಕ್ಷಣೆಗೆ ಯೋಜನೆಗಳನ್ನು ರೂಪಿಸಿದೆ" should become something idiomatic like "ಮರಗಳನ್ನು ಕಾಪಾಡಲು ಏರ್ಪಾಡುಗಳನ್ನು ಮಾಡಿದೆ", NOT "ಮರಗಳನ್ನು ಕಾಪಾಡುವಿಕೆಗೆ ಏರ್ಪಾಡುಗಳನ್ನು ರೂಪಿಸಿದೆ".
 
 Rules:
-1. Output must remain Kannada in Kannada script. Never translate into Tamil, Tulu, Telugu, Malayalam, or English.
-2. Understand the complete sentence first. Preserve meaning, tone, tense, case, number, person, politeness, and idiomatic Kannada grammar. Rebuild suffixes and sentence structure where needed; never mechanically replace strings.
-3. The supplied project lexicon is the primary authority. Prefer candidates marked verified_dravidian. Use tadbhava only if no suitable native alternative fits, and identify it. Use a coined form only if the supplied lexicon explicitly marks it coined_from_dravidian. Never invent an etymology.
-4. Select alternatives by sentence meaning. Tamil/Tulu cognates are comparative evidence, not words to copy into Kannada.
-5. Preserve proper names, numbers, quotations, technical terms, and words whose meaning would be damaged. Do not force a change without a sound alternative.
-6. Make genuine native-word substitutions wherever appropriate. Do not merely repeat the input; but do not change words solely to make the output look different.
-7. Return the requested JSON only. Explain important choices briefly in Kannada. List unsupported words for human review.
-8. If no reliable change is possible, return the original and explain why honestly.
+- Preserve meaning, tense, person, number, politeness, tone and details.
+- Keep proper names, numbers, quotations and technical terms.
+- Tamil/Tulu cognates are comparative evidence only; never output Tamil/Tulu words.
+- Avoid obscure coinages, forced changes and semantic drift.
+- If no good native equivalent is known, leave that word and explain briefly.
+- Output a genuinely rewritten sentence, not a near-copy when good alternatives exist.
+- Return only the required JSON.
 
 PROJECT LEXICON:
 ${JSON.stringify(lexicon)}`;
@@ -137,12 +147,29 @@ ${JSON.stringify(lexicon)}`;
       }
       const rewrittenKannada = result.rewrittenKannada.trim();
       if (!rewrittenKannada || rewrittenKannada.length > 8000) throw new Error("The rewritten text was empty or too long.");
+      const approvedWords = new Set(lexicon.flatMap(entry => entry.candidates
+        .filter(candidate => candidate.origin === "verified_dravidian")
+        .map(candidate => candidate.word)));
+      const wordsNeedingReview = Array.isArray(result.wordsNeedingReview) ? result.wordsNeedingReview.slice(0, 40) : [];
+      const replacements = result.replacements.slice(0, 40).map(item => {
+        const replacement = typeof item.replacement === "string" ? item.replacement.trim() : "";
+        if (replacement && !approvedWords.has(replacement)) {
+          const reviewLabel = (item.original || "") + " → " + replacement;
+          if (!wordsNeedingReview.includes(reviewLabel)) wordsNeedingReview.push(reviewLabel);
+          return {
+            ...item,
+            basis: "uncertain",
+            reasonKannada: (item.reasonKannada || "") + " ಈ ಪರ್ಯಾಯವು ಈಗಿನ ಪರಿಶೀಲಿತ ಪದಪಟ್ಟಿಯಲ್ಲಿಲ್ಲ; ಸಮುದಾಯದ ಪರಿಶೀಲನೆ ಅಗತ್ಯ."
+          };
+        }
+        return item;
+      });
       return reply({
         rewrittenKannada,
         changed: rewrittenKannada !== text,
         explanationKannada: typeof result.explanationKannada === "string" ? result.explanationKannada : "",
-        replacements: result.replacements.slice(0, 40),
-        wordsNeedingReview: Array.isArray(result.wordsNeedingReview) ? result.wordsNeedingReview.slice(0, 40) : []
+        replacements,
+        wordsNeedingReview
       });
     } catch (error) {
       return reply({ error: "Kannada rewrite could not be completed. Please try again. " + (error && error.message ? error.message.slice(0, 180) : "") }, 502);

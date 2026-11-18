@@ -519,7 +519,8 @@ function showAchchaResult(result,original){
  (result.replacements||[]).forEach(item=>{
   const p=document.createElement("p");p.className="mt-2";
   const strong=document.createElement("strong");strong.textContent=(item.original||"")+(item.replacement?" → "+item.replacement:"");
-  p.append(strong,document.createTextNode(" · "+(item.reasonKannada||item.basis||"")));
+  const basisLabels={verified_dravidian:"ಪದಪಟ್ಟಿಯಲ್ಲಿ ಪರಿಶೀಲಿತ",tadbhava:"ತದ್ಭವ",coined_from_dravidian:"ಹೊಸ ದ್ರಾವಿಡ ರೂಪ",uncertain:"ಸಮುದಾಯದ ಪರಿಶೀಲನೆ ಅಗತ್ಯ"};
+  p.append(strong,document.createTextNode(" · "+(basisLabels[item.basis]||"")+((item.reasonKannada)?" · "+item.reasonKannada:"")));
   notes.append(p);
  });
  if((result.wordsNeedingReview||[]).length)addLine("ಮರುಪರಿಶೀಲಿಸಬೇಕಾದ ಪದಗಳು:",result.wordsNeedingReview.join(", "));

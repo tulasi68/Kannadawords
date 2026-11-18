@@ -247,7 +247,6 @@ const pagination = document.getElementById("word-pagination");
 const pageStatus = document.getElementById("word-page-status");
 const previousPageButton = document.getElementById("word-prev");
 const nextPageButton = document.getElementById("word-next");
-
 function updateWordPagination(total) {
   const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
   currentWordPage = Math.min(currentWordPage, pageCount - 1);
@@ -497,8 +496,7 @@ function buildAchchaLexicon(text = ""){
  const bySourceForm = new Map();
  const entries = typeof votingEntries === "undefined" ? [] : votingEntries;
  const splitSourceForms = value => String(value || "")
-  .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)
-  .map(form => form.trim())
+  .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)  .map(form => form.trim())
   .filter(form => form.length >= 2);
 
  entries.filter(entry => !entry.noAlternative && !entry.scopeAudit && Array.isArray(entry.alternatives))
@@ -549,7 +547,10 @@ function showAchchaResult(result,original){
   notes.append(p);
  });
  if((result.wordsNeedingReview||[]).length)addLine("ಮರುಪರಿಶೀಲಿಸಬೇಕಾದ ಪದಗಳು:",result.wordsNeedingReview.join(", "));
- if(!result.changed)addLine("ಗಮನಿಸಿ:","ಈ ವಾಕ್ಯದಲ್ಲಿ ನಂಬಿಕೆಯಿಂದ ಬದಲಾಯಿಸಬಹುದಾದ ಪದವನ್ನು ಎಂಜಿನ್ ಗುರುತಿಸಲಿಲ್ಲ. ಪದಪಟ್ಟಿಯನ್ನು ವಿಸ್ತರಿಸಬೇಕು.");
+ if(!(result.replacements||[]).length && !(result.wordsNeedingReview||[]).length) {
+  addLine("ಪದಗಳ ಪಟ್ಟಿ:","ಈ ಬಾರಿ ಎಂಜಿನ್ ಯಾವುದೇ ಪದಬದಲಾವಣೆ ಅಥವಾ ಮರುಪರಿಶೀಲನೆಗೆ ಪದವನ್ನು ದಾಖಲಿಸಿಲ್ಲ. ಇದನ್ನು ಪದಗಳ ಪರಿಶೀಲನೆ ಪೂರ್ಣವಾಗಿದೆ ಎಂದು ಅರ್ಥೈಸಬೇಡಿ.");
+ }
+ if(!result.changed)addLine("ಗಮನಿಸಿ:","ಮೂಲ ಪಠ್ಯದಲ್ಲೇ ಉಳಿಸಲಾಗಿದೆ; ನಂಬಿಕೆಯಿಂದ ಬದಲಾಯಿಸಬಹುದಾದ ಪದವನ್ನು ಎಂಜಿನ್ ಗುರುತಿಸಲಿಲ್ಲ.");
 }
 // --- Word-by-word Achcha Kannada rewrite (lexicon-based) ---
 let achchaMatchState = [];
@@ -705,7 +706,37 @@ function completeAchchaRewrite() {
   output.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
+let achchaRewriteRun = 0;
+let achchaRewriteController = null;
+
+function clearAchchaInput() {
+  achchaRewriteRun++;
+  if (achchaRewriteController) achchaRewriteController.abort();
+  achchaRewriteController = null;
+  const input = document.getElementById("achcha-input");
+  if (input) input.value = "";
+  achchaMatchState = [];
+  ["achcha-word-list","achcha-output"].forEach(id => {
+    const element = document.getElementById(id);
+    if (element) element.classList.add("hidden");
+  });
+  const matches = document.getElementById("achcha-matches");
+  if (matches) matches.replaceChildren();
+  const notes = document.getElementById("achcha-notes");
+  if (notes) notes.replaceChildren();
+  const status = document.getElementById("achcha-ai-status");
+  if (status) status.textContent = "";
+  const findStatus = document.getElementById("achcha-find-status");
+  if (findStatus) findStatus.textContent = "";
+  const button = document.getElementById("achcha-ai-scan");
+  if (button) { button.disabled = false; button.textContent = "AI ಮೂಲಕ ಅಚ್ಚ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ"; }
+  if (input) input.focus();
+}
+
 async function translateAchchaKannada() {
+  const runId = ++achchaRewriteRun;
+  const controller = new AbortController();
+  achchaRewriteController = controller;
   const input = document.getElementById("achcha-input");
   const button = document.getElementById("achcha-ai-scan");
   const status = document.getElementById("achcha-ai-status");
@@ -717,7 +748,6 @@ async function translateAchchaKannada() {
     // Send only lexicon entries relevant to this passage. Sending the entire
     // vocabulary made the model prompt unnecessarily large and could leave the
     // mobile UI appearing to wait indefinitely.
-    const controller = new AbortController();
     const timeoutId = setTimeout(() => controller.abort(), 75000);
     let response;
     let payload;
@@ -737,18 +767,22 @@ async function translateAchchaKannada() {
     showAchchaResult(payload, original);
     if (status) status.textContent = "ಮರುಬರಹ ಸಿದ್ಧವಾಗಿದೆ. ಪರಿಶೀಲಿಸದ ಪದಮೂಲ ಅಥವಾ ಪರ್ಯಾಯಗಳನ್ನು ದೃಢಪಟ್ಟ ಸಂಗತಿಯೆಂದು ಪರಿಗಣಿಸಬೇಡಿ.";
   } catch (error) {
+    if (runId !== achchaRewriteRun) return;
     if (status) status.textContent = error.name === "AbortError"
       ? "AI ಉತ್ತರಕ್ಕೆ ಹೆಚ್ಚು ಸಮಯ ಹಿಡಿಯುತ್ತಿದೆ. ಪಠ್ಯವನ್ನು ಚಿಕ್ಕದಾಗಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
       : (error.message || "AI ಸೇವೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.");
   } finally {
-    if (button) { button.disabled = false; button.textContent = "AI ಮೂಲಕ ಅಚ್ಚ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ"; }
+    if (runId === achchaRewriteRun) {
+      achchaRewriteController = null;
+      if (button) { button.disabled = false; button.textContent = "AI ಮೂಲಕ ಅಚ್ಚ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ"; }
+    }
   }
 }
+window.clearAchchaInput = clearAchchaInput;
 window.findAchchaWords = findAchchaWords;
 window.resetAchchaSelections = resetAchchaSelections;
 window.completeAchchaRewrite = completeAchchaRewrite;
 window.translateAchchaKannada = translateAchchaKannada;
-
 function showTab(tab) {
  const tabs=["words","sentences","coinages","translate"];
  const panels=["words-panel","sentences-panel","coinages-panel","translate-panel"];

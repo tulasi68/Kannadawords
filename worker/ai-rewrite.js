@@ -58,13 +58,13 @@ function escapeInvalidJsonEscapes(source) {
     if (ch === '"') {
       output += ch;
       let slashes = 0;
-      for (let j = i - 1; j >= 0 && source[j] === "\\\\"; j--) slashes++;
+      for (let j = i - 1; j >= 0 && source[j] === "\\"; j--) slashes++;
       if (slashes % 2 === 0) inString = false;
       continue;
     }
-    if (ch === "\\\\") {
+    if (ch === "\\") {
       const next = source[i + 1] || "";
-      if ('"\\\\/bfnrt'.includes(next)) {
+      if ('"\\/bfnrt'.includes(next)) {
         output += ch + next;
         i++;
         continue;
@@ -74,8 +74,8 @@ function escapeInvalidJsonEscapes(source) {
         i += 5;
         continue;
       }
-      // Invalid escape: turn the backslash into a literal backslash.
-      output += "\\\\\\\\";
+      // Invalid escape: preserve the backslash as literal string content.
+      output += "\\\\";
       continue;
     }
     output += ch;

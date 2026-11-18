@@ -177,7 +177,7 @@ ${JSON.stringify(lexicon)}`;
         wordsNeedingReview
       });
     } catch (error) {
-      return reply({ error: "Kannada rewrite could not be completed. Please try again. " + (error && error.message ? error.message.slice(0, 180) : "") }, 502);
+      return reply({ error: "Kannada rewrite could not be completed. Please try again. " + (error && error.message ? error.message.slice(0, 180) : "") }, 502, origin);
     }
   }
 };

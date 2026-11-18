@@ -495,6 +495,19 @@ function achchaAlternativeKind(alt) {
  if(alt.proto||/native|dravidian|desi|core/i.test(alt.note||""))return "dravidian";
  return "uncertain";
 }
+// Known Kannada inflectional endings: preserve them when the dictionary root matches.
+// This is a cautious fallback, not a substitute for full sentence-level grammar.
+const achchaSuffixes=["ಗಳಿಂದಲೇ","ಗಳೊಂದಿಗೆ","ಗಳಿಗಾಗಿ","ಗಳಿಗೂ","ಗಳನ್ನು","ಗಳಲ್ಲಿ","ಗಳಿಂದ","ಗಳಿಗೆ","ಗಳಲ್ಲ","ಗಳ","ದಿಂದಲೇ","ವೊಂದಿಗೂ","ವನ್ನು","ದಲ್ಲಿ","ದಿಂದ","ವಾಗಿ","ಕ್ಕೆ","ವನ್ನು","ವು","ಗಳು","ದರಿಂದ","ದಕ್ಕೆ","ದಲಿ","ಯನ್ನು","ಯಿಂದ","ಯಲ್ಲಿ","ನಿಂದ","ನಲ್ಲಿ","ಕ್ಕೆ","ಗೆ","ಲಿ","ಯ","ದ","ನ"];
+function findAchchaMatch(token,lookup) {
+ if(lookup.has(token))return {source:token,suffix:""};
+ for(const suffix of achchaSuffixes){
+  if(token.endsWith(suffix)&&token.length>suffix.length){
+   const root=token.slice(0,-suffix.length);
+   if(lookup.has(root))return {source:root,suffix};
+  }
+ }
+ return null;
+}
 function buildAchchaCandidates(sourceText) {
  const entries=(typeof votingEntries==="undefined"?[]:votingEntries).filter(e=>!e.noAlternative&&Array.isArray(e.alternatives));
  const lookup=new Map();
@@ -506,27 +519,31 @@ function buildAchchaCandidates(sourceText) {
   const preferred=clean.length?clean:(tad.length?tad:coined);
   if(preferred.length)achchaSourceForms(entry).forEach(form=>{if(!lookup.has(form))lookup.set(form,{alternatives:preferred});});
  });
- if(typeof coinageReviewData!=="undefined")coinageReviewData.tamilParallels.forEach(r=>{
+ if(typeof coinageReviewData!=="undefined"&&Array.isArray(coinageReviewData.tamilParallels))coinageReviewData.tamilParallels.forEach(r=>{
   if(r.source&&r.candidate&&!lookup.has(r.source))lookup.set(r.source,{alternatives:[{word:r.candidate,viability:"coined",etymologyParts:(r.morphemes||[]).map(m=>({form:m.form,etymology:m.origin==="native"?"dravidian":"unknown"}))}]});
  });
  const tokens=sourceText.match(/[\u0C80-\u0CFF]+/g)||[];
- const matched=[...new Set(tokens.filter(t=>lookup.has(t)))];
- if(!matched.length)return {versions:[sourceText],notes:["ನಮ್ಮ ಈಗಿನ ಪದಪಟ್ಟಿಯಲ್ಲಿ ನೇರವಾಗಿ ಹೊಂದುವ ಪದ ಸಿಗಲಿಲ್ಲ. ಮೂಲ ಪಠ್ಯವನ್ನು ಬದಲಿಸದೆ ಉಳಿಸಿದ್ದೇವೆ."]};
- const choices=matched.map(token=>({token,items:lookup.get(token).alternatives.slice(0,3)}));
+ const matched=[];
+ tokens.forEach(token=>{const match=findAchchaMatch(token,lookup);if(match&&!matched.some(x=>x.token===token))matched.push({token,...match,items:lookup.get(match.source).alternatives.slice(0,3)});});
+ if(!matched.length)return {versions:[sourceText],notes:["ನಮ್ಮ ಪದಪಟ್ಟಿಯಲ್ಲಿ ಹೊಂದುವ ಪದ ಸಿಗಲಿಲ್ಲ. ಮೂಲ ವಾಕ್ಯವನ್ನು ಬದಲಿಸದೆ ಉಳಿಸಿದ್ದೇವೆ. ಇನ್ನಷ್ಟು ಪದಗಳು ಮತ್ತು ಸಂದರ್ಭಾಧಾರಿತ ನಿಯಮಗಳು ಬೇಕಾಗಿವೆ."]};
  const versions=[];
- for(let pass=0;pass<4;pass++){
+ for(let pass=0;pass<3;pass++){
   let output=sourceText;
-  choices.forEach(item=>{const alt=item.items[Math.min(pass,item.items.length-1)];output=output.replace(new RegExp(item.token,"g"),alt.word);});
+  matched.forEach(item=>{
+   const alt=item.items[Math.min(pass,item.items.length-1)];
+   output=output.replace(new RegExp(item.token,"g"),alt.word+item.suffix);
+  });
   if(!versions.includes(output))versions.push(output);
  }
- const notes=[];
- choices.forEach(item=>{
-  const kinds=[...new Set(item.items.map(achchaAlternativeKind))];
-  if(kinds.includes("coinage"))notes.push(item.token+": ಹೊಸದಾಗಿ ರೂಪಿಸಿದ ನುಡಿ — ಬಳಕೆ ಮತ್ತು ಮೂಲ ಪರಿಶೀಲನೆ ಅಗತ್ಯ.");
-  else if(kinds.includes("tadbhava"))notes.push(item.token+": ತದ್ಭವ ರೂಪ; ದ್ರಾವಿಡ ಮೂಲದ ಪದವೆಂದು ಗುರುತಿಸಿಲ್ಲ.");
-  else if(kinds.includes("uncertain"))notes.push(item.token+": ಪದದ ಮೂಲ ಇನ್ನೂ ಖಚಿತವಾಗಿಲ್ಲ.");
+ const notes=matched.map(item=>{
+  const kind=achchaAlternativeKind(item.items[0]);
+  if(kind==="coinage")return item.source+": ಹೊಸದಾಗಿ ರೂಪಿಸಿದ ನುಡಿ — ಬಳಕೆ ಮತ್ತು ಮೂಲ ಪರಿಶೀಲನೆ ಅಗತ್ಯ.";
+  if(kind==="tadbhava")return item.source+": ತದ್ಭವ ರೂಪ; ದ್ರಾವಿಡ ಮೂಲದ ಪದವೆಂದು ಗುರುತಿಸಿಲ್ಲ.";
+  if(kind==="uncertain")return item.source+": ಪದದ ಮೂಲ ಇನ್ನೂ ಖಚಿತವಾಗಿಲ್ಲ.";
+  if(item.suffix)return item.source+": ಪದದ ಮೂಲ ರೂಪಕ್ಕೆ '"+item.suffix+"' ಪ್ರತ್ಯಯವನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗಿದೆ.";
+  return item.source+" → "+item.items[0].word;
  });
- notes.push("ಹೊಂದದ ಪದಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗಿದೆ. ಸಂದರ್ಭ ಮತ್ತು ವ್ಯಾಕರಣವನ್ನು ಪರಿಶೀಲಿಸಿ.");
+ notes.push("ಇದು ಪದಪಟ್ಟಿ ಆಧಾರಿತ ಮರುಬರಹ: ಹೊಂದಿದ ಪದಗಳು ಮತ್ತು ಗುರುತಿಸಿದ ಕೆಲವು ವಿಭಕ್ತಿಗಳನ್ನು ಮಾತ್ರ ಬದಲಿಸುತ್ತದೆ. ಪೂರ್ಣ ವಾಕ್ಯಾರ್ಥ, ಕ್ರಿಯಾಪದ, ವಾಕ್ಯರಚನೆ ಅಥವಾ ಸಂದರ್ಭವನ್ನು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಅನುವಾದಿಸುವುದಿಲ್ಲ; ಫಲಿತಾಂಶವನ್ನು ಓದಿ ತಿದ್ದಿ.");
  return {versions,notes};
 }
 function renderAchchaVersion(){
@@ -550,11 +567,12 @@ window.translateAchchaKannada=translateAchchaKannada;
 window.nextAchchaVersion=nextAchchaVersion;
 
 function showTab(tab) {
-  const words = tab === "words";
-  document.getElementById("words-panel").classList.toggle("hidden", !words);
-  document.getElementById("sentences-panel").classList.toggle("hidden", words);
-  document.getElementById("word-tab").classList.toggle("main-choice-active", words);
-  document.getElementById("sentence-tab").classList.toggle("main-choice-active", !words);
+ const tabs=["words","sentences","coinages","translate"];
+ const panels=["words-panel","sentences-panel","coinages-panel","translate-panel"];
+ tabs.forEach((name,index)=>{
+  document.getElementById(panels[index]).classList.toggle("hidden",name!==tab);
+  document.getElementById(name==="words"?"word-tab":name==="sentences"?"sentence-tab":name==="coinages"?"coinage-tab":"translate-tab").classList.toggle("main-choice-active",name===tab);
+ });
 }
 const projectInfo = {
   enidu: {

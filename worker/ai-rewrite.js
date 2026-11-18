@@ -1,5 +1,7 @@
 const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
+const FALLBACK_MODEL = "@cf/meta/llama-3.1-8b-instruct-fast";
 const MAX_TEXT = 4000;
+const MODEL_TIMEOUT_MS = 25000;
 
 const responseSchema = {
   type: "json_schema",
@@ -27,6 +29,30 @@ const responseSchema = {
     required: ["rewrittenKannada", "changed", "explanationKannada", "replacements", "wordsNeedingReview"]
   }
 };
+
+function matchesWholeForm(text, form) {
+  const normalizedForm = String(form || "").normalize("NFC");
+  if (!normalizedForm) return false;
+  const isWordChar = (char) => !!char && /[\p{L}\p{M}\p{N}_]/u.test(char);
+  let index = text.indexOf(normalizedForm);
+  while (index !== -1) {
+    const before = index > 0 ? text[index - 1] : "";
+    const after = text[index + normalizedForm.length] || "";
+    if (!isWordChar(before) && !isWordChar(after)) return true;
+    index = text.indexOf(normalizedForm, index + 1);
+  }
+  return false;
+}
+
+function withTimeout(promise, timeoutMs) {
+  let timer;
+  return Promise.race([
+    promise,
+    new Promise((_, reject) => {
+      timer = setTimeout(() => reject(new Error("AI model response timed out")), timeoutMs);
+    })
+  ]).finally(() => clearTimeout(timer));
+}
 
 function reply(data, status = 200, origin = "") {
   return new Response(JSON.stringify(data), {
@@ -134,6 +160,7 @@ export default {
     if (!text || text.length > MAX_TEXT) return reply({ error: "Enter Kannada text of up to 4,000 characters." }, 400, origin);
     if (!/[\u0C80-\u0CFF]/.test(text)) return reply({ error: "Please enter text containing Kannada script." }, 400, origin);
 
+    const normalizedText = text.normalize("NFC");
     const lexicon = Array.isArray(body.lexicon) ? body.lexicon.slice(0, 400).map(entry => ({
       sourceForms: Array.isArray(entry.sourceForms) ? entry.sourceForms.slice(0, 5).filter(x => typeof x === "string").map(x => x.slice(0, 80)) : [],
       meaning: typeof entry.meaning === "string" ? entry.meaning.slice(0, 120) : "",
@@ -145,29 +172,43 @@ export default {
         tamil: typeof candidate.tamil === "string" ? candidate.tamil.slice(0, 80) : "",
         tulu: typeof candidate.tulu === "string" ? candidate.tulu.slice(0, 80) : ""
       })).filter(candidate => candidate.word) : []
-    })).filter(entry => entry.sourceForms.length && entry.candidates.length) : [];
+    })).filter(entry => entry.sourceForms.length && entry.candidates.length &&
+      entry.sourceForms.some(form => matchesWholeForm(normalizedText, form)))
+      .sort((a, b) => Math.max(...b.sourceForms.map(x => x.length)) - Math.max(...a.sourceForms.map(x => x.length)))
+      .slice(0, 40) : [];
 
     const system = `You are an expert Kannada language editor. Rewrite Kannada text into fluent, natural, Dravidian-oriented Kannada (ಅಚ್ಚ ಕನ್ನಡ). Output remains Kannada script.\n\nActively identify Sanskrit-derived tatsama vocabulary and replace it wherever a natural Kannada alternative exists. Do not stop at exact matches in the supplied lexicon. Detect inflected/suffixed surface forms (plural, case, postposition and adverbial forms), transparent compounds by meaningful components, and derived adjectives/adverbs. Also flag plausible Sanskrit-derived words absent from the lexicon when you have a sound linguistic basis. In replacements.original, report the exact surface form as it occurs in the input, not only its dictionary root. Keep the grammatical role and inflection in replacement. For compounds, prefer a natural full replacement; do not split proper names or guess uncertain roots. Never label an AI inference as verified.\n\nPriority:\n1. Use the community lexicon first. These are the only candidates that may be labelled verified_dravidian.\n2. For other words, you may use well-established everyday Kannada alternatives you know, but label them uncertain and list them for community review. Never claim their etymology is verified unless the target word appears in the supplied lexicon.\n3. Use natural Kannada idiom and restructure the entire sentence. Do not mechanically substitute words or preserve an unnatural grammatical construction.\n\nExamples of common alternatives (use only when context fits): ಸಂರಕ್ಷಣೆ → ಕಾಪಾಡು/ಉಳಿಸು; ಯೋಜನೆ → ಏರ್ಪಾಡು/ಹಮ್ಮಿಕೆ; ಸರ್ಕಾರ → ಆಳುವ ಮಂದಿ; ವಿಶೇಷ → ಹೊಸ ಬಗೆಯ; ಸಮಸ್ಯೆ → ತೊಂದರೆ; ಸಹಾಯ → ನೆರವು; ಮಾಹಿತಿ → ತಿಳಿವು; ಸಂಪರ್ಕ → ನಂಟು; ಸಂವಹನ → ಮಾತುಕತೆ; ಶಿಕ್ಷಣ → ಕಲಿಕೆ; ಅಭಿವೃದ್ಧಿ → ಬೆಳೆವಣಿಗೆ; ಅಭಿಪ್ರಾಯ → ಅನಿಸಿಕೆ; ಪ್ರಶ್ನೆ → ಕೇಳಿಕೆ; ಅಂತ್ಯ → ಕೊನೆ; ಅಗತ್ಯ → ಬೇಕಾದ; ಕಾರ್ಯ → ಕೆಲಸ; ನಿರ್ವಹಣೆ → ನಡೆಸುವಿಕೆ.\n\nGrammar example: "ಈ ಪ್ರದೇಶದಲ್ಲಿ ವೃಕ್ಷಗಳ ಸಂರಕ್ಷಣೆಗೆ ಸರ್ಕಾರವು ವಿಶೇಷ ಯೋಜನೆಗಳನ್ನು ರೂಪಿಸಿದೆ" should become something idiomatic like "ಈ ಪ್ರದೇಶದ ಮರಗಳನ್ನು ಕಾಪಾಡಲು ಆಳುವ ಮಂದಿ ಹೊಸ ಬಗೆಯ ಏರ್ಪಾಡುಗಳನ್ನು ಮಾಡಿದ್ದಾರೆ". Prefer "ಆಳುವ ಮಂದಿ" over the abstract "ಆಳ್ವಿಕೆ" when the sentence refers to the people in government.\n\nRules:\n- Preserve meaning, tense, person, number, politeness, tone and details.\n- Keep proper names, numbers, quotations and technical terms.\n- Tamil/Tulu cognates are comparative evidence only; never output Tamil/Tulu words.\n- Avoid obscure coinages, forced changes and semantic drift.\n- If no good native equivalent is known, leave that word and explain briefly.\n- Output a genuinely rewritten sentence, not a near-copy when good alternatives exist.\n- Return only the required JSON.\n\nPROJECT LEXICON:\n${JSON.stringify(lexicon)}`;
 
     try {
       const userInstruction = "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\n\n" + text;
-      const runModel = async (retry = false) => env.AI.run(MODEL, {
+      const runModel = (model, retry = false) => env.AI.run(model, {
         messages: [
           { role: "system", content: system + (retry ? "\\n\\nSTRICT OUTPUT RETRY: Return one complete valid JSON object only. Do not write literal backslash-u sequences, code fences, comments, or text outside the JSON. Put Kannada characters directly in JSON strings." : "") },
           { role: "user", content: userInstruction }
         ],
         response_format: responseSchema,
         temperature: retry ? 0 : 0.2,
-        max_tokens: 1800
+        max_tokens: retry ? 700 : 900
       });
-      let raw = await runModel(false);
+      const startedAt = Date.now();
+      console.log("Kannada rewrite started", { textLength: text.length, lexiconEntries: lexicon.length });
+      let raw;
       let result;
+      try {
+        raw = await withTimeout(runModel(MODEL, false), MODEL_TIMEOUT_MS);
+      } catch (primaryError) {
+        console.warn("Primary Kannada model unavailable; using fast fallback", {
+          message: primaryError && primaryError.message ? primaryError.message : "unknown"
+        });
+        raw = await withTimeout(runModel(FALLBACK_MODEL, false), MODEL_TIMEOUT_MS);
+      }
       try {
         result = parseModelOutput(raw);
       } catch (parseError) {
-        raw = await runModel(true);
+        raw = await withTimeout(runModel(FALLBACK_MODEL, true), MODEL_TIMEOUT_MS);
         result = parseModelOutput(raw);
       }
+      console.log("Kannada rewrite model completed", { durationMs: Date.now() - startedAt, model: raw && raw.model ? raw.model : "Workers AI" });
       if (!result || typeof result.rewrittenKannada !== "string" || !Array.isArray(result.replacements)) {
         throw new Error("The language model returned an incomplete response.");
       }

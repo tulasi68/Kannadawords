@@ -497,7 +497,7 @@ function buildAchchaLexicon(){
  const bySourceForm = new Map();
  const entries = typeof votingEntries === "undefined" ? [] : votingEntries;
  const splitSourceForms = value => String(value || "")
-  .split(/\\s*(?:\\/|,|;|\\|| ಅಥವಾ )\\s*/u)
+  .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)
   .map(form => form.trim())
   .filter(form => form.length >= 2);
 
@@ -602,7 +602,7 @@ function findAchchaWords() {
 
   // Match complete Kannada words, not accidental substrings inside longer words.
   // Unicode marks are included because Kannada vowel signs/viramas are combining marks.
-  const isWordCharacter = char => !!char && /[\\p{L}\\p{M}\\p{N}_]/u.test(char);
+  const isWordCharacter = char => !!char && /[\p{L}\p{M}\p{N}_]/u.test(char);
   const occupied = new Array(original.length).fill(false);
   const matches = [];
 

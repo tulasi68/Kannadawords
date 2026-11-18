@@ -5,7 +5,6 @@
 const WORKER_URL = "https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite";
 
 export default async function handler(req, res) {
-  // Always allow the site origin (same-origin in production).
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -20,11 +19,9 @@ export default async function handler(req, res) {
 
   try {
     let body = req.body;
-    // Vercel may already parse JSON; ensure we forward a string.
     if (typeof body === "object" && body !== null) {
       body = JSON.stringify(body);
     } else if (typeof body !== "string") {
-      // Read raw body if needed
       const chunks = [];
       for await (const chunk of req) chunks.push(chunk);
       body = Buffer.concat(chunks).toString("utf8");
@@ -38,7 +35,6 @@ export default async function handler(req, res) {
       method: "POST",
       headers: {
         "Content-Type": "text/plain;charset=UTF-8",
-        // Pass through a stable origin so the Worker can log if needed
         Origin: "https://kannadawords.vercel.app"
       },
       body
@@ -49,8 +45,6 @@ export default async function handler(req, res) {
     try {
       payload = JSON.parse(text);
     } catch {
-      // Cloudflare sometimes returns plain "error code: 1010" without CORS.
-      // Surface a clear message instead of letting the browser fail opaquely.
       return res.status(upstream.status || 502).json({
         error: "AI rewrite service is temporarily unavailable (upstream " + (upstream.status || "error") + "). Please try again in a minute."
       });

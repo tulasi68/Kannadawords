@@ -247,9 +247,9 @@ const pagination = document.getElementById("word-pagination");
 const pageStatus = document.getElementById("word-page-status");
 const previousPageButton = document.getElementById("word-prev");
 const nextPageButton = document.getElementById("word-next");
-
 function updateWordPagination(total) {
-  const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));  currentWordPage = Math.min(currentWordPage, pageCount - 1);
+  const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
+  currentWordPage = Math.min(currentWordPage, pageCount - 1);
   const start = total ? currentWordPage * WORDS_PER_PAGE + 1 : 0;
   const end = Math.min((currentWordPage + 1) * WORDS_PER_PAGE, total);
   if (pageStatus) pageStatus.textContent = total ? `Showing ${start}–${end} of ${total} words · Page ${currentWordPage + 1} of ${pageCount}` : "No words to display";
@@ -497,8 +497,9 @@ function buildAchchaLexicon(text = ""){
  const entries = typeof votingEntries === "undefined" ? [] : votingEntries;
  const splitSourceForms = value => String(value || "")
   .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)
-  .map(form => form.trim())
-  .filter(form => form.length >= 2); entries.filter(entry => !entry.noAlternative && !entry.scopeAudit && Array.isArray(entry.alternatives))
+  .map(form => form.trim())  .filter(form => form.length >= 2);
+
+ entries.filter(entry => !entry.noAlternative && !entry.scopeAudit && Array.isArray(entry.alternatives))
   .forEach(entry => {
    const sourceForms = [
     ...splitSourceForms(entry.sanskrit || entry.sourceForm),
@@ -747,8 +748,8 @@ async function translateAchchaKannada() {
     // Send only lexicon entries relevant to this passage. Sending the entire
     // vocabulary made the model prompt unnecessarily large and could leave the
     // mobile UI appearing to wait indefinitely.
-    const timeoutId = setTimeout(() => controller.abort(), 75000);
-    let response;    let payload;
+    const timeoutId = setTimeout(() => controller.abort(), 75000);    let response;
+    let payload;
     try {
       response = await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite", {
         method: "POST",

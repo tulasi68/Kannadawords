@@ -284,12 +284,19 @@ ${JSON.stringify(lexicon)}`;
         }
         return item;
       });
+      const lexiconMatches = lexicon.flatMap(entry => entry.sourceForms
+        .filter(form => matchesWholeForm(normalizedText, form))
+        .map(form => ({
+          source: form,
+          candidates: entry.candidates.map(candidate => ({ word: candidate.word, origin: candidate.origin }))
+        }))).slice(0, 40);
       return reply({
         rewrittenKannada,
         changed: rewrittenKannada !== text,
         explanationKannada: typeof result.explanationKannada === "string" ? result.explanationKannada : "",
         replacements,
-        wordsNeedingReview
+        wordsNeedingReview,
+        lexiconMatches
       });
     } catch (error) {
       return reply({ error: "Kannada rewrite could not be completed. Please try again. " + (error && error.message ? error.message.slice(0, 180) : "") }, 502, origin);

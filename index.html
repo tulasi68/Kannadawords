@@ -44,7 +44,7 @@
       <div class="flex items-start justify-between gap-3"><div><p id="project-info-kicker" class="text-xs font-bold uppercase tracking-widest text-red-700"></p><h2 id="project-info-title" class="kn text-xl font-bold text-stone-900 mt-1"></h2></div><button type="button" onclick="showInfo(null)" class="rounded-full bg-yellow-100 px-3 py-1.5 text-sm font-semibold text-red-800">Close ✕</button></div>
       <p id="project-info-copy" class="mt-3 text-sm sm:text-base leading-7 text-stone-700"></p>
     </section>
-    <nav class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-7" aria-label="Community review sections">
+    <nav class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mb-7" aria-label="Community review sections">
       <button id="word-tab" type="button" onclick="showTab('words')" class="main-choice main-choice-active">
         <span class="choice-number">01</span><span><strong class="kn">ನಿಮಗೆ ಹಿಡಿಸಿದ ನುಡಿಯನ್ನು ಆರಿಸಿ</strong><small>Choose your preferred word</small></span><span class="choice-arrow">→</span>
       </button>
@@ -53,6 +53,9 @@
       </button>
       <button id="coinage-tab" type="button" onclick="showTab('coinages')" class="main-choice">
         <span class="choice-number">03</span><span><strong class="kn">ಹೊಸ ನುಡಿ ಅಳವು</strong><small>Evaluate a new coinage</small></span><span class="choice-arrow">→</span>
+      </button>
+      <button id="translate-tab" type="button" onclick="showTab('translate')" class="main-choice">
+        <span class="choice-number">04</span><span><strong class="kn">ಅಚ್ಚ ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ</strong><small>Translate to Achcha Kannada</small></span><span class="choice-arrow">→</span>
       </button>
     </nav>
     <section id="words-panel">
@@ -182,6 +185,14 @@
         <p class="text-xs text-stone-500 mb-3">Same meaning does not prove cognacy. Where the roots differ, retain the Kannada word and record the difference honestly.</p>
         <div id="coinage-do-not-attempt" class="space-y-2"></div>
       </div>
+    </section>
+    <section id="translate-panel" class="hidden">
+      <div class="mb-5"><h2 class="kn text-xl font-bold text-stone-900">ಅಚ್ಚ ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ</h2><p class="kn text-sm text-stone-600 mt-1">ಕನ್ನಡದ ಪಠ್ಯವನ್ನು ಇಲ್ಲಿ ಅಂಟಿಸಿ. ನಮ್ಮ ಪದಪಟ್ಟಿಯಲ್ಲಿರುವ ದ್ರಾವಿಡ ಮೂಲದ ಪದಗಳನ್ನು ಮೊದಲು ಬಳಸಿ.</p></div>
+      <div class="rounded-xl border border-amber-200 bg-white p-4 sm:p-5"><label for="achcha-input" class="kn block text-sm font-semibold text-stone-700 mb-2">ಕನ್ನಡದ ಪಠ್ಯ</label>
+        <textarea id="achcha-input" rows="7" class="kn w-full rounded-xl border border-stone-300 px-3 py-3 text-base leading-8" placeholder="ಒಂದು ಅಥವಾ ಹಲವು ವಾಕ್ಯಗಳನ್ನು ಇಲ್ಲಿ ಬರೆಯಿರಿ ಅಥವಾ ಅಂಟಿಸಿ…"></textarea>
+        <div class="flex flex-wrap items-center justify-between gap-3 mt-3"><p class="text-xs text-stone-500">ಬಹು ವಾಕ್ಯಗಳನ್ನು ಒಂದೇ ಬಾರಿ ನೀಡಬಹುದು.</p><button type="button" onclick="translateAchchaKannada()" class="rounded-lg bg-amber-700 px-5 py-2.5 text-sm font-semibold text-white">ಅಚ್ಚ ಕನ್ನಡಕ್ಕೆ ಅನುವಾದಿಸಿ</button></div></div>
+      <div id="achcha-output" class="hidden mt-5 rounded-xl border border-stone-200 bg-white p-4 sm:p-5" aria-live="polite"><div class="flex flex-wrap items-center justify-between gap-3"><h3 class="kn font-semibold text-stone-800">ಅನುವಾದದ ರೂಪ</h3><button id="achcha-next" type="button" onclick="nextAchchaVersion()" class="hidden rounded-lg border border-amber-400 px-4 py-2 text-sm font-semibold text-amber-900">ಮುಂದಿನ ರೂಪ →</button></div><p id="achcha-version-label" class="text-xs text-stone-500 mt-1"></p><div id="achcha-result" class="kn whitespace-pre-wrap text-base leading-8 text-stone-900 mt-3"></div><div id="achcha-notes" class="mt-4 border-t border-stone-100 pt-3 text-sm text-stone-600"></div></div>
+      <p class="text-xs text-stone-500 mt-4">ಈ ಮೊದಲ ಹಂತವು ಪದಪಟ್ಟಿಯಲ್ಲಿರುವ ನಿಖರ ಪದರೂಪಗಳನ್ನು ಬದಲಿಸುತ್ತದೆ. ವಿಭಕ್ತಿ, ವಾಕ್ಯವ್ಯಾಕರಣ ಅಥವಾ ಪಟ್ಟಿಯಲ್ಲಿಲ್ಲದ ಪದಗಳ ಅರ್ಥವನ್ನು ಮರುಬರೆಯುವುದಿಲ್ಲ. ಹೊಸ ನುಡಿಗಳನ್ನು ಸ್ಪಷ್ಟವಾಗಿ ಗುರುತಿಸಲಾಗುತ್ತದೆ.</p>
     </section>
     <section id="admin-panel" class="hidden mt-10 rounded-xl border-2 border-amber-300 bg-amber-50 p-5">
       <div class="flex items-center justify-between gap-3 mb-4">

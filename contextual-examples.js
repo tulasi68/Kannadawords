@@ -1,8 +1,8 @@
 // User-contributed contextual examples. "Proposed rendering" is intentional:
 // these are constructed suggestions, not attested or standard Kannada quotations.
 const contextualExamples = [
-{"id":"dept-kannada-culture","title":"ಕನ್ನಡ ಮತ್ತು ಸಂಸ್ಕೃತಿ ಇಲಾಖೆ · Government department","sourceDomain":"Government Departments","original":"ಕನ್ನಡ ಮತ್ತು ಸಂಸ್ಕೃತಿ ಇಲಾಖೆ","proposed":"ಕನ್ನಡ ಮತ್ತು ನುಡಿಬಳಕೆ ಇಲಾಖೆ","swaps":[["ಸಂಸ್ಕೃತಿ","ನುಡಿಬಳಕೆ"]],"note":"ನುಡಿಬಳಕೆ is a debated coinage proposed for culture; it more literally suggests linguistic practice."},
-{"id":"dept-health-family-welfare","title":"ಆರೋಗ್ಯ ಮತ್ತು ಕುಟುಂಬ ಕಲ್ಯಾಣ ಇಲಾಖೆ · Government department","sourceDomain":"Government Departments","original":"ಆರೋಗ್ಯ ಮತ್ತು ಕುಟುಂಬ ಕಲ್ಯಾಣ ಇಲಾಖೆ","proposed":"ಆರೋಗ್ಯ ಮತ್ತು ಸಂಸಾರ ಹಿತ ಇಲಾಖೆ","swaps":[["ಕುಟುಂಬ","ಸಂಸಾರ"],["ಕಲ್ಯಾಣ","ಹಿತ"]],"note":"Contributor-proposed rendering. Important conflict with the earlier audit: ಸಂಸಾರ was previously identified as Sanskrit-derived, with ಮನೆತನ preferred for ಕುಟುಂಬ; ಹಿತ was also identified as Sanskrit-derived. Keep this example as contested, not an approved native replacement."},
+
+
 {"id":"dept-rural-panchayat","title":"ಗ್ರಾಮೀಣಾಭಿವೃದ್ಧಿ ಮತ್ತು ಪಂಚಾಯತ್ ರಾಜ್ ಇಲಾಖೆ · Government department","sourceDomain":"Government Departments","original":"ಗ್ರಾಮೀಣ ಅಭಿವೃದ್ಧಿ ಮತ್ತು ಪಂಚಾಯತ್ ರಾಜ್ ಇಲಾಖೆ","proposed":"ಹಳ್ಳಿ ಬೆಳವಣಿಗೆ ಮತ್ತು ಊರಾಳ್ವಿಕೆ ಇಲಾಖೆ","swaps":[["ಗ್ರಾಮೀಣ","ಹಳ್ಳಿ"],["ಅಭಿವೃದ್ಧಿ","ಬೆಳವಣಿಗೆ"],["ಪಂಚಾಯತ್ ರಾಜ್","ಊರಾಳ್ವಿಕೆ"]],"note":"ಊರಾಳ್ವಿಕೆ is a proposed coinage from ಊರು + ಆಳ್ವಿಕೆ."},
 {"id":"dept-women-child","title":"ಮಹಿಳಾ ಮತ್ತು ಮಕ್ಕಳ ಅಭಿವೃದ್ಧಿ ಇಲಾಖೆ · Government department","sourceDomain":"Government Departments","original":"ಮಹಿಳಾ ಮತ್ತು ಮಕ್ಕಳ ಅಭಿವೃದ್ಧಿ ಇಲಾಖೆ","proposed":"ಹೆಂಗಸರ ಮತ್ತು ಮಕ್ಕಳ ಬೆಳವಣಿಗೆ ಇಲಾಖೆ","swaps":[["ಮಹಿಳಾ","ಹೆಂಗಸರು"],["ಅಭಿವೃದ್ಧಿ","ಬೆಳವಣಿಗೆ"]],"note":"Everyday native rendering; grammatical form adjusted to ಹೆಂಗಸರ in the phrase."},
 {"id":"dept-forest-environment","title":"ಅರಣ್ಯ ಮತ್ತು ಪರಿಸರ ಜೀವಿ ಶಾಸ್ತ್ರ ಇಲಾಖೆ · Government department","sourceDomain":"Government Departments","original":"ಅರಣ್ಯ ಮತ್ತು ಪರಿಸರ ಜೀವಿ ಶಾಸ್ತ್ರ ಇಲಾಖೆ","proposed":"ಕಾಡು ಮತ್ತು ಸುತ್ತುಮುತ್ತಲ ಜೀವ ಅರಿಮೆ ಇಲಾಖೆ","swaps":[["ಅರಣ್ಯ","ಕಾಡು"],["ಪರಿಸರ","ಸುತ್ತುಮುತ್ತಲ"],["ಶಾಸ್ತ್ರ","ಅರಿಮೆ"]],"note":"ಅರಿಮೆ is a revived/proposed native term; the phrase-level rendering is not a certified official name."},
@@ -46,7 +46,6 @@ const replacementNaturalness = [
 {word:"ಸತ್ಯ (satya)",alternative:"ನಿಜ (nija)",status:"natural",sourceDomain:"News",why:"Zero friction"},
 {word:"ಪ್ರಜಾಪ್ರಭುತ್ವ (prajāprabhutva)",alternative:"ಜನರ ಆಳ್ವಿಕೆ",status:"coined",sourceDomain:"News",why:"Phrase, not single word"},
 {word:"ವಿಜ್ಞಾನ (vijñāna)",alternative:"ಅರಿಮೆ (arime)",status:"coined",sourceDomain:"Dept",why:"Used in pure-Kannada circles"},
-{word:"ಕಲ್ಯಾಣ (kalyāṇa)",alternative:"ಹಿತ (hita)",status:"coined",sourceDomain:"Dept",why:"ಹಿತ = welfare; acceptable"},
 {word:"ಸಬಲೀಕರಣ (sabalīkaraṇa)",alternative:"ಬಲಪಡಿಸುವಿಕೆ",status:"coined",sourceDomain:"Dept",why:"Literal native construction"},
 {word:"ವರ್ಷ (varṣa)",alternative:"ಏಡು (ēḍu)",status:"archaic",sourceDomain:"Dept",why:"Halegannada, obscure today"},
 {word:"ಶೀಘ್ರದಲ್ಲಿ (śīghradalli)",alternative:"ಬೇಗನೆ (bēgane)",status:"natural",sourceDomain:"News",why:"Common in speech"}

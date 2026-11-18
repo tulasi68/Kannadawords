@@ -541,7 +541,7 @@ async function translateAchchaKannada(){
  button.disabled=true;button.textContent="ಮರುಬರಹವಾಗುತ್ತಿದೆ…";
  try{
   const response=await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite",{
-   method:"POST",headers:{"Content-Type":"application/json"},
+   method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},
    body:JSON.stringify({text:original,lexicon:buildAchchaLexicon()})
   });
   const payload=await response.json();

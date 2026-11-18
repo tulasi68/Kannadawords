@@ -486,7 +486,8 @@ function achchaAlternativeKind(alt) {
  const origins=(alt.etymologyParts||[]).map(p=>p.etymology);
  if(alt.viability==="coined"||origins.includes("coinage"))return "coinage";
  if(origins.includes("tadbhava"))return "tadbhava";
- if(origins.includes("dravidian")||origins.includes("native"))return "dravidian";
+ if(origins.includes("dravidian")||origins.includes("native")||alt.viability==="clean")return "dravidian";
+ if(alt.proto||/native|dravidian|desi|core/i.test(alt.note||""))return "dravidian";
  return "uncertain";
 }
 function buildAchchaCandidates(sourceText) {

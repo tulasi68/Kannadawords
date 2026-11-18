@@ -49,10 +49,10 @@
     </section>
     <nav class="grid grid-cols-2 gap-2 mb-4" aria-label="Community review sections">
       <button id="word-tab" type="button" onclick="showTab('words')" class="main-choice main-choice-active">
-        <span><strong class="kn">ನಿಮಗೆ ಹಿಡಿಸಿದ ನುಡಿಯನ್ನು ಆರಿಸಿ</strong><small>Choose your preferred word</small></span><span class="choice-arrow">→</span>
+        <span><strong>Choose your preferred word</strong><small>Choose your preferred word</small></span><span class="choice-arrow">→</span>
       </button>
       <button id="sentence-tab" type="button" onclick="showTab('sentences')" class="main-choice">
-        <span><strong class="kn">ಈ ನುಡಿಯನ್ನು ಒರೆಹಚ್ಚಿ</strong><small>Review the sentence</small></span><span class="choice-arrow">→</span>
+        <span><strong>Review the sentence</strong><small>Review the sentence</small></span><span class="choice-arrow">→</span>
       </button>
       <button id="coinage-tab" type="button" onclick="showTab('coinages')" class="main-choice">
         <span><strong class="kn">ಹೊಸ ನುಡಿ ಅಳವು</strong><small>Evaluate a new coinage</small></span><span class="choice-arrow">→</span>
@@ -63,7 +63,7 @@
     </nav>
     <section id="words-panel">
     <div class="mb-5 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-      <div><h2 class="kn text-xl font-bold text-stone-900">ನುಡಿ ಆಯ್ಕೆ</h2><p class="kn text-sm text-stone-600 mt-1">ನಿಮಗೆ ಸೂಕ್ತವೆನಿಸುವ ಕನ್ನಡದ ನುಡಿಯನ್ನು ಆರಿಸಿ.</p></div>
+      <div><h2 class="text-xl font-bold text-stone-900">Choose a word</h2><p class="text-sm text-stone-600 mt-1">Select the Kannada alternative that you find most suitable.</p></div>
       <div class="flex flex-col sm:flex-row gap-2">
         <select id="category" class="px-3 py-2.5 text-sm border border-yellow-300 rounded-xl bg-white w-full sm:w-auto">
           <option value="all">All categories</option>
@@ -102,8 +102,8 @@
 
     <section id="sentences-panel" class="hidden">
       <div class="mb-5">
-        <h2 class="kn text-lg font-semibold text-stone-800">ನುಡಿಯನ್ನು ಒರೆಹಚ್ಚಿ</h2>
-        <p class="kn text-sm text-stone-600 mt-1">ಮೂಲ ವಾಕ್ಯವನ್ನು ಸೂಚಿಸಿದ ಕನ್ನಡ ರೂಪದೊಂದಿಗೆ ಹೋಲಿಸಿ; ಆ ನುಡಿ ವಾಕ್ಯದಲ್ಲಿ ಸಹಜವಾಗಿ ಹೊಂದುತ್ತದೆಯೇ ಎಂದು ನೋಡಿ.</p>
+        <h2 class="text-lg font-semibold text-stone-800">Review the sentence</h2>
+        <p class="text-sm text-stone-600 mt-1">Compare the original sentence with the suggested Kannada rendering and assess whether the alternative fits naturally in context.</p>
       </div>
       <div class="mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
         <p class="text-sm text-stone-600">Browse examples by source domain.</p>

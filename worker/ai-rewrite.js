@@ -56,6 +56,10 @@ function parseModelOutput(raw) {
 export default {
   async fetch(request, env) {
     const origin = request.headers.get("Origin") || "";
+    const url = new URL(request.url);
+    if (request.method === "GET" && url.pathname === "/health" && !origin) {
+      return new Response(JSON.stringify({ok:true,service:"Kannada Desi AI rewrite"}), {headers:{"content-type":"application/json","cache-control":"no-store"}});
+    }
     if (origin !== ALLOWED_ORIGIN) return new Response("Origin not allowed", { status: 403 });
 
     if (request.method === "OPTIONS") {
@@ -71,7 +75,6 @@ export default {
       });
     }
 
-    const url = new URL(request.url);
     if (url.pathname === "/health" && request.method === "GET") return reply({ ok: true, service: "Kannada Desi AI rewrite" });
     if (url.pathname !== "/api/rewrite" || request.method !== "POST") return reply({ error: "Not found" }, 404);
 

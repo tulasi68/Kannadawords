@@ -712,7 +712,7 @@ async function translateAchchaKannada() {
   const original = (input && input.value || "").trim();
   if (!original) { input && input.focus(); return; }
   if (button) { button.disabled = true; button.textContent = "ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…"; }
-  if (status) status.textContent = "ಪದಗಳ ಮೂಲ, ಸಂಯುಕ್ತ ರೂಪ ಮತ್ತು ವ್ಯಾಕರಣದ ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…";
+  if (status) status.textContent = "ಪಠ್ಯದ ಅರ್ಥ, ಪದಗಳ ಬಳಕೆ, ವ್ಯಾಕರಣ ಮತ್ತು ಸಹಜ ಕನ್ನಡ ರೂಪವನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…";
   try {
     // Send only lexicon entries relevant to this passage. Sending the entire
     // vocabulary made the model prompt unnecessarily large and could leave the
@@ -735,13 +735,13 @@ async function translateAchchaKannada() {
     }
     if (!response.ok) throw new Error(payload.error || "AI ಪರಿಶೀಲನೆ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ.");
     showAchchaResult(payload, original);
-    if (status) status.textContent = "AI ಸೂಚನೆಗಳು ಸಿದ್ಧವಾಗಿವೆ. ಪರಿಶೀಲಿಸದ ಮೂಲ/ಪರ್ಯಾಯಗಳನ್ನು ದೃಢಪಟ್ಟ ಪದಗಳೆಂದು ಪರಿಗಣಿಸಬೇಡಿ.";
+    if (status) status.textContent = "ಮರುಬರಹ ಸಿದ್ಧವಾಗಿದೆ. ಪರಿಶೀಲಿಸದ ಪದಮೂಲ ಅಥವಾ ಪರ್ಯಾಯಗಳನ್ನು ದೃಢಪಟ್ಟ ಸಂಗತಿಯೆಂದು ಪರಿಗಣಿಸಬೇಡಿ.";
   } catch (error) {
     if (status) status.textContent = error.name === "AbortError"
       ? "AI ಉತ್ತರಕ್ಕೆ ಹೆಚ್ಚು ಸಮಯ ಹಿಡಿಯುತ್ತಿದೆ. ಪಠ್ಯವನ್ನು ಚಿಕ್ಕದಾಗಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
       : (error.message || "AI ಸೇವೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.");
   } finally {
-    if (button) { button.disabled = false; button.textContent = "AI ಸಹಾಯದಿಂದ ಪದಗಳನ್ನು ಗುರುತಿಸಿ"; }
+    if (button) { button.disabled = false; button.textContent = "AI ಮೂಲಕ ಅಚ್ಚ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ"; }
   }
 }
 window.findAchchaWords = findAchchaWords;

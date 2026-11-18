@@ -8,10 +8,10 @@ A simple, shareable web app that shows Sanskrit-origin words in Kannada alongsid
 - Search by word or meaning
 - Filter by category (Everyday, Nature, Body, Directions, Abstract)
 - 32 high-quality starter pairs from open / common-knowledge sources
-- Zero backend – pure static HTML + JS
+- Static GitHub Pages frontend with a separate Cloudflare Workers AI rewrite API
 - Ready to host on Vercel, Netlify, or GitHub Pages
 
-## Sources
+## AI-powered native Kannada rewrite\n\nThe rewrite tab calls a separate Cloudflare Worker (`worker/ai-rewrite.js`) using the Workers AI Llama 3.3 70B instruct model. The browser sends the submitted Kannada text and the current reviewed word lexicon; the Worker returns a context-aware Kannada rewrite and an explanation of proposed word choices. The AI binding is server-side, so no provider key is exposed in the browser. The Worker restricts browser origins to the GitHub Pages site, limits input to 4,000 characters, and applies an approximate per-IP request limit.\n\nDeploy the API Worker separately with `worker/ai-wrangler.toml` as the Wrangler configuration. Workers AI inference is usage-billed by Cloudflare. The existing moderation Worker remains separate and unchanged.\n\nAI suggestions are editorial aids, not authoritative etymological rulings; community review remains necessary.\n\n## Sources
 
 Only open and common-knowledge material was used:
 

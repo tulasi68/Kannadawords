@@ -1,7 +1,3 @@
-const ALLOWED_ORIGINS = new Set([
-  "https://tulasi68.github.io",
-  "https://kannadawords.vercel.app"
-]);
 const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 const MAX_TEXT = 4000;
 
@@ -37,7 +33,7 @@ function reply(data, status = 200, origin = "") {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "access-control-allow-origin": origin,
+      "access-control-allow-origin": "*",
       "access-control-allow-methods": "POST, OPTIONS",
       "access-control-allow-headers": "Content-Type",
       "vary": "Origin",
@@ -63,13 +59,11 @@ export default {
     if (request.method === "GET" && url.pathname === "/health" && !origin) {
       return new Response(JSON.stringify({ok:true,service:"Kannada Desi AI rewrite"}), {headers:{"content-type":"application/json","cache-control":"no-store"}});
     }
-    if (!ALLOWED_ORIGINS.has(origin)) return new Response("Origin not allowed", { status: 403 });
-
     if (request.method === "OPTIONS") {
       return new Response(null, {
         status: 204,
         headers: {
-          "access-control-allow-origin": origin,
+          "access-control-allow-origin": "*",
           "access-control-allow-methods": "POST, OPTIONS",
           "access-control-allow-headers": "Content-Type",
           "access-control-max-age": "86400",

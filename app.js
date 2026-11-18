@@ -248,7 +248,8 @@ const pageStatus = document.getElementById("word-page-status");
 const previousPageButton = document.getElementById("word-prev");
 const nextPageButton = document.getElementById("word-next");
 
-function updateWordPagination(total) {  const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
+function updateWordPagination(total) {
+  const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
   currentWordPage = Math.min(currentWordPage, pageCount - 1);
   const start = total ? currentWordPage * WORDS_PER_PAGE + 1 : 0;
   const end = Math.min((currentWordPage + 1) * WORDS_PER_PAGE, total);
@@ -499,6 +500,7 @@ function buildAchchaLexicon(text = ""){
   .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)
   .map(form => form.trim())
   .filter(form => form.length >= 2);
+
  entries.filter(entry => !entry.noAlternative && !entry.scopeAudit && Array.isArray(entry.alternatives))
   .forEach(entry => {
    const sourceForms = [
@@ -747,7 +749,8 @@ async function translateAchchaKannada() {
   try {
     // Send only lexicon entries relevant to this passage. Sending the entire
     // vocabulary made the model prompt unnecessarily large and could leave the
-    // mobile UI appearing to wait indefinitely.    const timeoutId = setTimeout(() => controller.abort(), 75000);
+    // mobile UI appearing to wait indefinitely.
+    const timeoutId = setTimeout(() => controller.abort(), 75000);
     let response;
     let payload;
     try {

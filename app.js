@@ -477,6 +477,72 @@ function renderContextual() {
 }
 window.voteContext = voteContext;
 
+let achchaVersions = [];
+let achchaVersionIndex = 0;
+function achchaSourceForms(entry) {
+ return [entry.sanskrit,entry.sourceForm].filter(Boolean).join(" / ").split(/[\/,;|]/).map(s=>s.trim()).filter(Boolean);
+}
+function achchaAlternativeKind(alt) {
+ const origins=(alt.etymologyParts||[]).map(p=>p.etymology);
+ if(alt.viability==="coined"||origins.includes("coinage"))return "coinage";
+ if(origins.includes("tadbhava"))return "tadbhava";
+ if(origins.includes("dravidian")||origins.includes("native"))return "dravidian";
+ return "uncertain";
+}
+function buildAchchaCandidates(sourceText) {
+ const entries=(typeof votingEntries==="undefined"?[]:votingEntries).filter(e=>!e.noAlternative&&Array.isArray(e.alternatives));
+ const lookup=new Map();
+ entries.forEach(entry=>{
+  const alts=entry.alternatives.filter(a=>a.word&&!a.isNoAlternative);
+  const clean=alts.filter(a=>achchaAlternativeKind(a)==="dravidian");
+  const tad=alts.filter(a=>achchaAlternativeKind(a)==="tadbhava");
+  const coined=alts.filter(a=>achchaAlternativeKind(a)==="coinage"||a.viability==="coined");
+  const preferred=clean.length?clean:(tad.length?tad:coined);
+  if(preferred.length)achchaSourceForms(entry).forEach(form=>{if(!lookup.has(form))lookup.set(form,{alternatives:preferred});});
+ });
+ if(typeof coinageReviewData!=="undefined")coinageReviewData.tamilParallels.forEach(r=>{
+  if(r.source&&r.candidate&&!lookup.has(r.source))lookup.set(r.source,{alternatives:[{word:r.candidate,viability:"coined",etymologyParts:(r.morphemes||[]).map(m=>({form:m.form,etymology:m.origin==="native"?"dravidian":"unknown"}))}]});
+ });
+ const tokens=sourceText.match(/[\u0C80-\u0CFF]+/g)||[];
+ const matched=[...new Set(tokens.filter(t=>lookup.has(t)))];
+ if(!matched.length)return {versions:[sourceText],notes:["ನಮ್ಮ ಈಗಿನ ಪದಪಟ್ಟಿಯಲ್ಲಿ ನೇರವಾಗಿ ಹೊಂದುವ ಪದ ಸಿಗಲಿಲ್ಲ. ಮೂಲ ಪಠ್ಯವನ್ನು ಬದಲಿಸದೆ ಉಳಿಸಿದ್ದೇವೆ."]};
+ const choices=matched.map(token=>({token,items:lookup.get(token).alternatives.slice(0,3)}));
+ const versions=[];
+ for(let pass=0;pass<4;pass++){
+  let output=sourceText;
+  choices.forEach(item=>{const alt=item.items[Math.min(pass,item.items.length-1)];output=output.replace(new RegExp(item.token,"g"),alt.word);});
+  if(!versions.includes(output))versions.push(output);
+ }
+ const notes=[];
+ choices.forEach(item=>{
+  const kinds=[...new Set(item.items.map(achchaAlternativeKind))];
+  if(kinds.includes("coinage"))notes.push(item.token+": ಹೊಸದಾಗಿ ರೂಪಿಸಿದ ನುಡಿ — ಬಳಕೆ ಮತ್ತು ಮೂಲ ಪರಿಶೀಲನೆ ಅಗತ್ಯ.");
+  else if(kinds.includes("tadbhava"))notes.push(item.token+": ತದ್ಭವ ರೂಪ; ದ್ರಾವಿಡ ಮೂಲದ ಪದವೆಂದು ಗುರುತಿಸಿಲ್ಲ.");
+  else if(kinds.includes("uncertain"))notes.push(item.token+": ಪದದ ಮೂಲ ಇನ್ನೂ ಖಚಿತವಾಗಿಲ್ಲ.");
+ });
+ notes.push("ಹೊಂದದ ಪದಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಲಾಗಿದೆ. ಸಂದರ್ಭ ಮತ್ತು ವ್ಯಾಕರಣವನ್ನು ಪರಿಶೀಲಿಸಿ.");
+ return {versions,notes};
+}
+function renderAchchaVersion(){
+ if(!achchaVersions.length)return;
+ document.getElementById("achcha-result").textContent=achchaVersions[achchaVersionIndex];
+ document.getElementById("achcha-version-label").textContent="ರೂಪ "+(achchaVersionIndex+1)+" / "+achchaVersions.length;
+ const next=document.getElementById("achcha-next");
+ next.classList.toggle("hidden",achchaVersions.length<2);
+ next.textContent=achchaVersionIndex===achchaVersions.length-1?"ಮೊದಲ ರೂಪಕ್ಕೆ ಮರಳಿ ↶":"ಮುಂದಿನ ರೂಪ →";
+ document.getElementById("achcha-notes").innerHTML=(window.achchaNotes||[]).map(n=>"<p class='mt-1'>"+escapeHtml(n)+"</p>").join("");
+}
+function translateAchchaKannada(){
+ const input=document.getElementById("achcha-input"),output=document.getElementById("achcha-output");
+ if(!input.value.trim()){output.classList.add("hidden");input.focus();return;}
+ const result=buildAchchaCandidates(input.value.trim());
+ achchaVersions=result.versions;achchaVersionIndex=0;window.achchaNotes=result.notes||[];
+ output.classList.remove("hidden");renderAchchaVersion();
+}
+function nextAchchaVersion(){if(!achchaVersions.length)return;achchaVersionIndex=(achchaVersionIndex+1)%achchaVersions.length;renderAchchaVersion();}
+window.translateAchchaKannada=translateAchchaKannada;
+window.nextAchchaVersion=nextAchchaVersion;
+
 function showTab(tab) {
   const words = tab === "words";
   document.getElementById("words-panel").classList.toggle("hidden", !words);
@@ -712,13 +778,15 @@ function renderCoinageRecords() {
   doNot.innerHTML=coinageReviewData.doNotAttempt.map(r=>'<div class="grid grid-cols-1 sm:grid-cols-[1fr_1fr_2fr] gap-1 border-b border-stone-100 pb-2 last:border-0"><span>'+escapeHtml(r.tamil)+'</span><span class="kn font-semibold">'+escapeHtml(r.kannada)+'</span><span class="text-xs text-stone-500">'+escapeHtml(r.reason)+'</span></div>').join("");
 }
 function showTab(tab) {
-  const words=tab==="words", sentences=tab==="sentences", coinages=tab==="coinages";
+  const words=tab==="words", sentences=tab==="sentences", coinages=tab==="coinages", translate=tab==="translate";
   document.getElementById("words-panel").classList.toggle("hidden",!words);
   document.getElementById("sentences-panel").classList.toggle("hidden",!sentences);
   document.getElementById("coinages-panel").classList.toggle("hidden",!coinages);
+  document.getElementById("translate-panel").classList.toggle("hidden",!translate);
   document.getElementById("word-tab").classList.toggle("main-choice-active",words);
   document.getElementById("sentence-tab").classList.toggle("main-choice-active",sentences);
   document.getElementById("coinage-tab").classList.toggle("main-choice-active",coinages);
+  document.getElementById("translate-tab").classList.toggle("main-choice-active",translate);
   if(coinages) renderCoinageRecords();
 }
 window.showTab=showTab;

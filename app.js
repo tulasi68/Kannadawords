@@ -540,7 +540,7 @@ async function translateAchchaKannada(){
  status.textContent="AI ಭಾಷಾ ಎಂಜಿನ್ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆ…";
  button.disabled=true;button.textContent="ಮರುಬರಹವಾಗುತ್ತಿದೆ…";
  try{
-  const response=await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite",{
+  const response=await fetch((typeof location!=="undefined"&&location.origin&&!location.origin.startsWith("file:")?(location.origin+"/api/rewrite"):"https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite"),{
    method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},
    body:JSON.stringify({text:original,lexicon:buildAchchaLexicon()})
   });

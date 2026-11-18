@@ -1,4 +1,7 @@
-const ALLOWED_ORIGIN = "https://tulasi68.github.io";
+const ALLOWED_ORIGINS = new Set([
+  "https://tulasi68.github.io",
+  "https://kannadawords.vercel.app"
+]);
 const MODEL = "@cf/meta/llama-3.3-70b-instruct-fp8-fast";
 const MAX_TEXT = 4000;
 
@@ -29,12 +32,12 @@ const responseSchema = {
   }
 };
 
-function reply(data, status = 200) {
+function reply(data, status = 200, origin = "") {
   return new Response(JSON.stringify(data), {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "access-control-allow-origin": ALLOWED_ORIGIN,
+      "access-control-allow-origin": origin,
       "access-control-allow-methods": "POST, OPTIONS",
       "access-control-allow-headers": "Content-Type",
       "vary": "Origin",
@@ -60,13 +63,13 @@ export default {
     if (request.method === "GET" && url.pathname === "/health" && !origin) {
       return new Response(JSON.stringify({ok:true,service:"Kannada Desi AI rewrite"}), {headers:{"content-type":"application/json","cache-control":"no-store"}});
     }
-    if (origin !== ALLOWED_ORIGIN) return new Response("Origin not allowed", { status: 403 });
+    if (!ALLOWED_ORIGINS.has(origin)) return new Response("Origin not allowed", { status: 403 });
 
     if (request.method === "OPTIONS") {
       return new Response(null, {
         status: 204,
         headers: {
-          "access-control-allow-origin": ALLOWED_ORIGIN,
+          "access-control-allow-origin": origin,
           "access-control-allow-methods": "POST, OPTIONS",
           "access-control-allow-headers": "Content-Type",
           "access-control-max-age": "86400",
@@ -75,25 +78,25 @@ export default {
       });
     }
 
-    if (url.pathname === "/health" && request.method === "GET") return reply({ ok: true, service: "Kannada Desi AI rewrite" });
-    if (url.pathname !== "/api/rewrite" || request.method !== "POST") return reply({ error: "Not found" }, 404);
+    if (url.pathname === "/health" && request.method === "GET") return reply({ ok: true, service: "Kannada Desi AI rewrite" }, 200, origin);
+    if (url.pathname !== "/api/rewrite" || request.method !== "POST") return reply({ error: "Not found" }, 404, origin);
 
     const ip = request.headers.get("CF-Connecting-IP") || "unknown";
     if (env.TRANSLATE_LIMITER) {
       const { success } = await env.TRANSLATE_LIMITER.limit({ key: ip });
-      if (!success) return reply({ error: "Too many rewrites. Please wait one minute and try again." }, 429);
+      if (!success) return reply({ error: "Too many rewrites. Please wait one minute and try again." }, 429, origin);
     }
 
     const length = Number(request.headers.get("content-length") || 0);
-    if (length > 100000) return reply({ error: "Request is too large. Please shorten the text and try again." }, 413);
+    if (length > 100000) return reply({ error: "Request is too large. Please shorten the text and try again." }, 413, origin);
 
     // The website sends JSON as text/plain so the browser can make a CORS
     // simple request without an OPTIONS preflight. Parse and validate it here.
     let body;
-    try { body = JSON.parse(await request.text()); } catch { return reply({ error: "Please send valid JSON." }, 400); }
+    try { body = JSON.parse(await request.text()); } catch { return reply({ error: "Please send valid JSON." }, 400, origin); }
     const text = typeof body.text === "string" ? body.text.trim() : "";
-    if (!text || text.length > MAX_TEXT) return reply({ error: "Enter Kannada text of up to 4,000 characters." }, 400);
-    if (!/[\u0C80-\u0CFF]/.test(text)) return reply({ error: "Please enter text containing Kannada script." }, 400);
+    if (!text || text.length > MAX_TEXT) return reply({ error: "Enter Kannada text of up to 4,000 characters." }, 400, origin);
+    if (!/[\u0C80-\u0CFF]/.test(text)) return reply({ error: "Please enter text containing Kannada script." }, 400, origin);
 
     const lexicon = Array.isArray(body.lexicon) ? body.lexicon.slice(0, 120).map(entry => ({
       sourceForms: Array.isArray(entry.sourceForms) ? entry.sourceForms.slice(0, 5).filter(x => typeof x === "string").map(x => x.slice(0, 80)) : [],

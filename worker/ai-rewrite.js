@@ -207,7 +207,7 @@ export default {
 ಪ್ರತಿಕ್ರಿಯೆಯ JSON ನಲ್ಲಿ ಈ schema ಯ ಎಲ್ಲಾ ಕ್ಷೇತ್ರಗಳನ್ನು ತುಂಬಿ. replacements ನಲ್ಲಿ ಮೂಲ ಪಠ್ಯದಲ್ಲಿರುವ ನಿಖರ ಪದ/ಪದಗುಚ್ಛವನ್ನು original ಆಗಿ ನೀಡಿ. ಪದಮೂಲದ ಬದಲಾವಣೆ ಮತ್ತು ಕೇವಲ ವ್ಯಾಕರಣ/ಲಿಪಿ ತಿದ್ದುಪಡಿಯ ನಡುವಿನ ವ್ಯತ್ಯಾಸವನ್ನು reasonKannada ಯಲ್ಲಿ ಸ್ಪಷ್ಟಪಡಿಸಿ.
 
 PROJECT LEXICON:
-${JSON.stringify(lexicon)}`
+${JSON.stringify(lexicon)}`;
 
     try {
       const userInstruction = "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\n\n" + text;

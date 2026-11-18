@@ -733,7 +733,30 @@ function completeAchchaRewrite() {
   output.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
 
-function translateAchchaKannada() { findAchchaWords(); }
+async function translateAchchaKannada() {
+  const input = document.getElementById("achcha-input");
+  const button = document.getElementById("achcha-ai-scan");
+  const status = document.getElementById("achcha-ai-status");
+  const original = (input && input.value || "").trim();
+  if (!original) { input && input.focus(); return; }
+  if (button) { button.disabled = true; button.textContent = "ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…"; }
+  if (status) status.textContent = "ಪದಗಳ ಮೂಲ, ಸಂಯುಕ್ತ ರೂಪ ಮತ್ತು ವ್ಯಾಕರಣದ ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…";
+  try {
+    const response = await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite", {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=UTF-8" },
+      body: JSON.stringify({ text: original, lexicon: buildAchchaLexicon() })
+    });
+    const payload = await response.json();
+    if (!response.ok) throw new Error(payload.error || "AI ಪರಿಶೀಲನೆ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ.");
+    showAchchaResult(payload, original);
+    if (status) status.textContent = "AI ಸೂಚನೆಗಳು ಸಿದ್ಧವಾಗಿವೆ. ಪರಿಶೀಲಿಸದ ಮೂಲ/ಪರ್ಯಾಯಗಳನ್ನು ದೃಢಪಟ್ಟ ಪದಗಳೆಂದು ಪರಿಗಣಿಸಬೇಡಿ.";
+  } catch (error) {
+    if (status) status.textContent = error.message || "AI ಸೇವೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.";
+  } finally {
+    if (button) { button.disabled = false; button.textContent = "AI ಸಹಾಯದಿಂದ ಪದಗಳನ್ನು ಗುರುತಿಸಿ"; }
+  }
+}
 window.findAchchaWords = findAchchaWords;
 window.resetAchchaSelections = resetAchchaSelections;
 window.completeAchchaRewrite = completeAchchaRewrite;

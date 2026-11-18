@@ -558,6 +558,36 @@ async function translateAchchaKannada(){
 }
 window.translateAchchaKannada=translateAchchaKannada;
 
+function addAchchaClearButton(){
+ const input=document.getElementById("achcha-input");
+ if(!input || document.getElementById("achcha-clear-input")) return;
+ const clear=document.createElement("button");
+ clear.type="button";
+ clear.id="achcha-clear-input";
+ clear.textContent="Clear";
+ clear.className="mt-2 inline-flex items-center rounded-lg border border-stone-300 bg-white px-4 py-2 text-sm font-medium text-stone-700 hover:bg-stone-100 focus:outline-none focus:ring-2 focus:ring-amber-500";
+ clear.setAttribute("aria-label","Clear pasted text");
+ clear.addEventListener("click",()=>{
+  input.value="";
+  input.dispatchEvent(new Event("input",{bubbles:true}));
+  const output=document.getElementById("achcha-output");
+  if(output) output.classList.add("hidden");
+  const original=document.getElementById("achcha-original");
+  const result=document.getElementById("achcha-result");
+  const notes=document.getElementById("achcha-notes");
+  const status=document.getElementById("achcha-version-label");
+  if(original) original.textContent="";
+  if(result) result.textContent="";
+  if(notes) notes.replaceChildren();
+  if(status) status.textContent="";
+  input.focus();
+ });
+ input.insertAdjacentElement("afterend",clear);
+}
+if(document.readyState==="loading") document.addEventListener("DOMContentLoaded",addAchchaClearButton,{once:true});
+else addAchchaClearButton();
+
+
 function showTab(tab) {
  const tabs=["words","sentences","coinages","translate"];
  const panels=["words-panel","sentences-panel","coinages-panel","translate-panel"];

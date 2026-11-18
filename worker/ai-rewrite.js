@@ -106,7 +106,22 @@ function escapeInvalidJsonEscapes(source) {
 }
 
 function parseModelOutput(raw) {
-  let value = raw && Object.prototype.hasOwnProperty.call(raw, "response") ? raw.response : raw;
+  // Workers AI chat models can return either a direct { response: ... } payload
+  // or an OpenAI-compatible { choices: [{ message: { content } }] } payload.
+  // Unwrap both shapes before parsing the model's JSON text.
+  let value = raw;
+  if (value && Object.prototype.hasOwnProperty.call(value, "response")) {
+    value = value.response;
+  }
+  if (value && Array.isArray(value.choices) && value.choices[0]) {
+    const message = value.choices[0].message || {};
+    value = message.content;
+    if (Array.isArray(value)) {
+      value = value.map(part => typeof part === "string" ? part : (part && typeof part.text === "string" ? part.text : "")).join("");
+    }
+  } else if (value && value.message && typeof value.message.content === "string") {
+    value = value.message.content;
+  }
   if (typeof value === "string") {
     const cleaned = value.trim().replace(/^\x60\x60\x60(?:json)?\s*/i, "").replace(/\s*\x60\x60\x60$/, "");
     try {

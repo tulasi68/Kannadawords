@@ -491,7 +491,7 @@ function achchaAlternativeKind(alt) {
  if(alt.proto||/native|dravidian|desi|core/i.test(alt.note||""))return "verified_dravidian";
  return "uncertain";
 }
-function buildAchchaLexicon(){
+function buildAchchaLexicon(text = ""){
  // Include the complete reviewed vocabulary. The former .slice(0,120) silently
  // discarded later entries, so many Sanskrit-derived words could never match.
  const bySourceForm = new Map();
@@ -522,7 +522,10 @@ function buildAchchaLexicon(){
     bySourceForm.set(key, existing);
    });
   });
- return [...bySourceForm.values()].filter(entry => entry.candidates.length);
+ const relevantText = String(text || "").normalize("NFC");
+ return [...bySourceForm.values()].filter(entry =>
+  entry.candidates.length && (!relevantText || entry.sourceForms.some(form => relevantText.includes(form.normalize("NFC"))))
+ ).slice(0, 100);
 }
 function showAchchaResult(result,original){
  document.getElementById("achcha-original").textContent=original;
@@ -548,37 +551,6 @@ function showAchchaResult(result,original){
  if((result.wordsNeedingReview||[]).length)addLine("ಮರುಪರಿಶೀಲಿಸಬೇಕಾದ ಪದಗಳು:",result.wordsNeedingReview.join(", "));
  if(!result.changed)addLine("ಗಮನಿಸಿ:","ಈ ವಾಕ್ಯದಲ್ಲಿ ನಂಬಿಕೆಯಿಂದ ಬದಲಾಯಿಸಬಹುದಾದ ಪದವನ್ನು ಎಂಜಿನ್ ಗುರುತಿಸಲಿಲ್ಲ. ಪದಪಟ್ಟಿಯನ್ನು ವಿಸ್ತರಿಸಬೇಕು.");
 }
-async function translateAchchaKannada(){
- const input=document.getElementById("achcha-input");
- const output=document.getElementById("achcha-output");
- const button=document.getElementById("achcha-submit");
- const status=document.getElementById("achcha-version-label");
- const original=input.value.trim();
- if(!original){input.focus();return;}
- output.classList.remove("hidden");
- document.getElementById("achcha-original").textContent=original;
- document.getElementById("achcha-result").textContent="ನಿಮ್ಮ ವಾಕ್ಯವನ್ನು ಪರಿಶೀಲಿಸಿ ಮರುಬರೆಯಲಾಗುತ್ತಿದೆ…";
- document.getElementById("achcha-notes").replaceChildren();
- status.textContent="AI ಭಾಷಾ ಎಂಜಿನ್ ಕಾರ್ಯನಿರ್ವಹಿಸುತ್ತಿದೆ…";
- button.disabled=true;button.textContent="ಮರುಬರಹವಾಗುತ್ತಿದೆ…";
- try{
-  const response=await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite",{
-   method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},
-   body:JSON.stringify({text:original,lexicon:buildAchchaLexicon()})
-  });
-  const payload=await response.json();
-  if(!response.ok)throw new Error(payload.error||"AI service returned an error.");
-  showAchchaResult(payload,original);
- }catch(error){
-  document.getElementById("achcha-result").textContent=original;
-  status.textContent="ಮರುಬರಹ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ";
-  const p=document.createElement("p");p.textContent=error.message||"AI ಸೇವೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಲಿಲ್ಲ. ಸ್ವಲ್ಪ ಸಮಯದ ನಂತರ ಪ್ರಯತ್ನಿಸಿ.";
-  document.getElementById("achcha-notes").append(p);
- }finally{
-  button.disabled=false;button.textContent="ಅಚ್ಚ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ";
- }
-}
-
 // --- Word-by-word Achcha Kannada rewrite (lexicon-based) ---
 let achchaMatchState = [];
 
@@ -742,17 +714,32 @@ async function translateAchchaKannada() {
   if (button) { button.disabled = true; button.textContent = "ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…"; }
   if (status) status.textContent = "ಪದಗಳ ಮೂಲ, ಸಂಯುಕ್ತ ರೂಪ ಮತ್ತು ವ್ಯಾಕರಣದ ಬದಲಾವಣೆಗಳನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…";
   try {
-    const response = await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite", {
-      method: "POST",
-      headers: { "Content-Type": "text/plain;charset=UTF-8" },
-      body: JSON.stringify({ text: original, lexicon: buildAchchaLexicon() })
-    });
-    const payload = await response.json();
+    // Send only lexicon entries relevant to this passage. Sending the entire
+    // vocabulary made the model prompt unnecessarily large and could leave the
+    // mobile UI appearing to wait indefinitely.
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 75000);
+    let response;
+    let payload;
+    try {
+      response = await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite", {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=UTF-8" },
+        body: JSON.stringify({ text: original, lexicon: buildAchchaLexicon(original) }),
+        signal: controller.signal,
+        cache: "no-store"
+      });
+      payload = await response.json();
+    } finally {
+      clearTimeout(timeoutId);
+    }
     if (!response.ok) throw new Error(payload.error || "AI ಪರಿಶೀಲನೆ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ.");
     showAchchaResult(payload, original);
     if (status) status.textContent = "AI ಸೂಚನೆಗಳು ಸಿದ್ಧವಾಗಿವೆ. ಪರಿಶೀಲಿಸದ ಮೂಲ/ಪರ್ಯಾಯಗಳನ್ನು ದೃಢಪಟ್ಟ ಪದಗಳೆಂದು ಪರಿಗಣಿಸಬೇಡಿ.";
   } catch (error) {
-    if (status) status.textContent = error.message || "AI ಸೇವೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.";
+    if (status) status.textContent = error.name === "AbortError"
+      ? "AI ಉತ್ತರಕ್ಕೆ ಹೆಚ್ಚು ಸಮಯ ಹಿಡಿಯುತ್ತಿದೆ. ಪಠ್ಯವನ್ನು ಚಿಕ್ಕದಾಗಿಸಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+      : (error.message || "AI ಸೇವೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಲಿಲ್ಲ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.");
   } finally {
     if (button) { button.disabled = false; button.textContent = "AI ಸಹಾಯದಿಂದ ಪದಗಳನ್ನು ಗುರುತಿಸಿ"; }
   }

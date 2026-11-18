@@ -447,15 +447,20 @@ function renderContextual() {
   const state = loadState();
   const submitted = state.submittedContextualExamples || [];
   const allExamples = [...contextualExamples, ...submitted];
+  const seenSentences = new Set();
   const visibleExamples = allExamples.filter(item => {
     const domain = item.sourceDomain || (item.id === "gruha-mandali" ? "Legislative Council" : item.submitted ? "Community submissions" : "Earlier examples");
-    return activeContextualDomain === "all" || domain === activeContextualDomain;
+    if (activeContextualDomain !== "all" && domain !== activeContextualDomain) return false;
+    const sentenceKey = [item.original, item.proposed].map(value => String(value || "").replace(/\\s+/g, " ").trim()).join("|||");
+    if (seenSentences.has(sentenceKey)) return false;
+    seenSentences.add(sentenceKey);
+    return true;
   });
   contextualGrid.innerHTML = visibleExamples.map(item => {
     const votes = {support:remoteVoteCounts["context:"+item.id+":support"]||0,revise:remoteVoteCounts["context:"+item.id+":revise"]||0};
     const swaps = item.swaps || [];
     return `<article class="bg-white border border-stone-200 rounded-xl p-4 shadow-sm">
-      <div class="flex items-start justify-between gap-2 mb-3"><div><h3 class="font-semibold text-stone-800">${escapeHtml(item.title)}</h3><p class="text-xs text-stone-500 mt-1">${escapeHtml(item.sourceDomain === "Government Departments" ? "" : (item.sourceDomain || (item.id === "gruha-mandali" ? "Legislative Council" : item.submitted ? "Community submissions" : "Earlier examples")) )}</p></div>${item.submitted ? '<span class="text-xs rounded-full bg-sky-50 text-sky-800 px-2 py-1">Community submission</span>' : ''}</div>
+      <div class="flex items-start justify-between gap-2 mb-3"><div><h3 class="font-semibold text-stone-800">${escapeHtml((item.title || "").replace(/ · Government department$/, ""))}</h3><p class="text-xs text-stone-500 mt-1">${escapeHtml(item.sourceDomain === "Government Departments" ? "" : (item.sourceDomain || (item.id === "gruha-mandali" ? "Legislative Council" : item.submitted ? "Community submissions" : "Earlier examples")) )}</p></div>${item.submitted ? '<span class="text-xs rounded-full bg-sky-50 text-sky-800 px-2 py-1">Community submission</span>' : ''}</div>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
         <div class="rounded-lg bg-stone-50 p-3"><p class="text-xs uppercase tracking-wide text-stone-500 mb-2">Original sentence</p><p class="kn leading-7">${highlightSwaps(item.original,swaps,0)}</p></div>
         <div class="rounded-lg bg-amber-50 p-3"><p class="text-xs uppercase tracking-wide text-amber-800 mb-2">Proposed rendering</p><p class="kn leading-7">${highlightSwaps(item.proposed,swaps,1)}</p></div>

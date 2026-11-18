@@ -33,8 +33,15 @@ const responseSchema = {
 function matchesWholeForm(text, form) {
   const normalizedForm = String(form || "").normalize("NFC");
   if (!normalizedForm) return false;
-  const escaped = normalizedForm.replace(/[.*+?^${}()|[\]\\]/g, "\\function reply(data, status = 200, origin = "") {");
-  return new RegExp(`(^|[^\\p{L}\\p{M}\\p{N}_])${escaped}(?=$|[^\\p{L}\\p{M}\\p{N}_])`, "u").test(text);
+  const isWordChar = (char) => !!char && /[\p{L}\p{M}\p{N}_]/u.test(char);
+  let index = text.indexOf(normalizedForm);
+  while (index !== -1) {
+    const before = index > 0 ? text[index - 1] : "";
+    const after = text[index + normalizedForm.length] || "";
+    if (!isWordChar(before) && !isWordChar(after)) return true;
+    index = text.indexOf(normalizedForm, index + 1);
+  }
+  return false;
 }
 
 function withTimeout(promise, timeoutMs) {

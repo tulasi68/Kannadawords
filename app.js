@@ -501,13 +501,13 @@ function buildAchchaLexicon(){
   .map(form => form.trim())
   .filter(form => form.length >= 2);
 
- entries.filter(entry => !entry.noAlternative && Array.isArray(entry.alternatives))
+ entries.filter(entry => !entry.noAlternative && !entry.scopeAudit && Array.isArray(entry.alternatives))
   .forEach(entry => {
    const sourceForms = [
     ...splitSourceForms(entry.sanskrit || entry.sourceForm),
     ...splitSourceForms(entry.sourceEtymology && entry.sourceEtymology.form)
    ];
-   const candidates = entry.alternatives.filter(alt => alt.word && !alt.isNoAlternative)
+   const candidates = entry.alternatives.filter(alt => alt.word && !alt.isNoAlternative && !alt.isScopeAudit)
     .map(alt => ({
      word:alt.word,origin:achchaAlternativeKind(alt),note:alt.note||"",
      proto:alt.proto||"",tamil:alt.tamil||"",tulu:alt.tulu||""

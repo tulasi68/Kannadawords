@@ -36,6 +36,18 @@ async function translateAchchaKannada(){
   button.disabled=false;button.textContent="ಅಚ್ಚ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ";
  }
 }
+function clearAchchaKannada(){
+ const input=document.getElementById("achcha-input");
+ const output=document.getElementById("achcha-output");
+ input.value="";
+ output.classList.add("hidden");
+ document.getElementById("achcha-version-label").textContent="";
+ document.getElementById("achcha-original").textContent="";
+ document.getElementById("achcha-result").textContent="";
+ document.getElementById("achcha-notes").replaceChildren();
+ input.focus();
+}
+window.clearAchchaKannada=clearAchchaKannada;
 window.translateAchchaKannada=translateAchchaKannada;
 function showTab(tab) {
  const tabs=["words","sentences","coinages","translate"];

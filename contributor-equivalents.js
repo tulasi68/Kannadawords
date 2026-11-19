@@ -298,12 +298,14 @@ const contributorWordEntries = [
       {
         "id": "contrib-008-1",
         "word": "ಬಗೆ",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 5202 records Kannada bage ‘kind, portion, section, sort’, Tamil vakai ‘kind, manner, method’ and Tulu bagè ‘kind, manner, way’. No Proto-Dravidian reconstruction is supplied in this entry.",
+        "tamil": "வகை (vakai; kind, manner, method; DEDR 5202)",
+        "tulu": "bagè (kind, manner, way; DEDR 5202)",
+        "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಬಗೆ",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       },

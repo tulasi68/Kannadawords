@@ -7,7 +7,7 @@ if (validation.errors.length) {
   console.error(validation.errors.join("\n"));
   process.exit(1);
 }
-const built = buildArtifacts({entries,config});
+const built = buildArtifacts({entries,config,references:validateSource().references});
 const check = process.argv.includes("--check");
 let stale = false;
 for (const [relative, content] of built.artifacts) {

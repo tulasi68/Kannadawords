@@ -4325,7 +4325,7 @@ const contributorWordEntries = [
       }
     ],
     "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
-  }
+  },
   ...[
     {
       "id": "contrib-101",

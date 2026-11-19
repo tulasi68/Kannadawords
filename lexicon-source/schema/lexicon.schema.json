@@ -296,6 +296,7 @@
         "sourceEtymology": {
           "type": [
             "object",
+            "string",
             "null"
           ]
         },

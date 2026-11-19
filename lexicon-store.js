@@ -26,15 +26,28 @@
     initPromise = (async () => {
       const manifestUrl = new URL("manifest.json", base);
       manifest = await getJson(manifestUrl, "no-cache");
-      if (manifest.schemaVersion !== 2 || !manifest.buildId || !Array.isArray(manifest.entryOrder)) {
+      if (manifest.schemaVersion !== 2 || !manifest.buildId || manifest.checksumAlgorithm !== "fnv1a-64-utf16" ||
+          !Array.isArray(manifest.entryOrder) || !Array.isArray(manifest.shards) ||
+          !manifest.entryToShard || !manifest.categoryIds || !Array.isArray(manifest.references)) {
         throw new Error("Unsupported or incomplete lexicon manifest.");
+      }
+      if (manifest.entryOrder.length !== manifest.entryCount ||
+          new Set(manifest.entryOrder).size !== manifest.entryCount ||
+          Object.keys(manifest.entryToShard).length !== manifest.entryCount ||
+          manifest.shards.reduce((total, shard) => total + shard.count, 0) !== manifest.entryCount) {
+        throw new Error("Lexicon manifest identity or shard counts are inconsistent.");
+      }
+      for (const id of manifest.entryOrder) {
+        if (!manifest.entryToShard[id]) throw new Error("Manifest has no shard for entry " + id);
+      }
+      for (const ids of Object.values(manifest.categoryIds)) {
+        if (!Array.isArray(ids) || ids.some(id => !manifest.entryToShard[id])) throw new Error("Invalid category index in lexicon manifest.");
       }
       const indexUrl = new URL(manifest.writingIndex + "?v=" + encodeURIComponent(manifest.buildId), base);
       writingIndex = await getJson(indexUrl);
       if (writingIndex.schemaVersion !== manifest.schemaVersion || writingIndex.buildId !== manifest.buildId || !Array.isArray(writingIndex.entries)) {
         throw new Error("Writing index and lexicon manifest versions do not match.");
       }
-      if (manifest.entryOrder.length !== manifest.entryCount) throw new Error("Manifest entry count does not match its order index.");
       return manifest;
     })().catch(error => { initPromise = null; throw error; });
     return initPromise;
@@ -95,5 +108,6 @@
     ).slice(0, 100);
   }
   function getLabels() { return manifest?.etymologyLabels || {}; }
-  window.KannadaLexiconStore = { ready: initialize, loadPage, getCategories, getCategoryCount, searchAchchaLexicon, getLabels };
+  function getReference(id) { return manifest?.references?.find(reference => reference.id === id) || null; }
+  window.KannadaLexiconStore = { ready: initialize, loadPage, getCategories, getCategoryCount, searchAchchaLexicon, getLabels, getReference };
 })();

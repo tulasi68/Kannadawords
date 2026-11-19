@@ -17,10 +17,11 @@ const stats = document.getElementById("stats");
 // The 109 supplemental records were appended as a nested array inside originAuditEntries.
  // Flatten that nested array and merge those records into the same voting dataset as the original audited entries.
 const existingOriginRecords = [
-  ...(typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries),
+  ...(typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries.map(item => ({...item, sourceDataset:"etymology-entries.js:audited"}))),
   ...(typeof originAuditEntries === "undefined" ? [] : originAuditEntries).flatMap(item => {
-    if (Array.isArray(item)) return item;
-    return item && item.sourceMeaning && Array.isArray(item.alternatives) ? [item] : [];
+    if (Array.isArray(item)) return item.map(record => ({...record, sourceDataset:"etymology-entries.js:origin-audit"}));
+    return item && item.sourceMeaning && Array.isArray(item.alternatives)
+      ? [{...item, sourceDataset:"etymology-entries.js:origin-audit"}] : [];
   })
 ];
 const lexicalFormKey = value => String(value || "").normalize("NFC").replace(/\s+/g, "");
@@ -45,7 +46,8 @@ const contributorEntriesForMerge = (typeof contributorWordEntries === "undefined
       (existingBase && existingBase.meaning ? existingBase.meaning : item.sourceMeaning),
     sourceEtymology: existingAudit && existingAudit.sourceEtymology ? existingAudit.sourceEtymology :
       (existingBase && existingBase.sourceEtymology ? existingBase.sourceEtymology : item.sourceEtymology),
-    contributorSupplied: true
+    contributorSupplied: true,
+    sourceDataset: "contributor-equivalents.js"
   };
 });
 const allAuditedWordEntries = [
@@ -99,7 +101,10 @@ const votingEntries = wordEntries.map(entry => {
     category: categoryForAudited(audit) || entry.category,
     sourceEtymology: audit.sourceEtymology,
     alternatives: (typeof lexiconMergeCandidateRecords === "function"
-      ? lexiconMergeCandidateRecords([...(entry.alternatives || []), ...(audit.alternatives || [])])
+      ? lexiconMergeCandidateRecords([
+          ...(entry.alternatives || []).map(candidate => ({...candidate, sourceDataset:"data.js"})),
+          ...(audit.alternatives || []).map(candidate => ({...candidate, sourceDataset:audit.sourceDataset || "etymology-entries.js"}))
+        ])
       : [...(entry.alternatives || []), ...(audit.alternatives || [])]
           .filter((alt, index, all) => all.findIndex(candidate => candidate.word === alt.word) === index))
       .map(alt => {

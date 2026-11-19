@@ -73,6 +73,11 @@ test("canonical-to-display adapter preserves all existing user-visible vocabular
     assert.equal(display.category,old.category);
     assert.deepEqual(JSON.parse(JSON.stringify(display.sourceEtymology ?? null)),old.sourceEtymology ?? null);
     assert.equal(display.halegannada || null,old.halegannada || null);
+    assert.deepEqual(JSON.parse(JSON.stringify(display.halegannadaEvidence || null)),old.halegannadaEvidence || null);
+    assert.deepEqual(JSON.parse(JSON.stringify(display.halegannadaVariants || [])),old.halegannadaVariants || []);
+    assert.equal(display.scopeNote || "",old.scopeNote || "");
+    assert.equal(display.sourceDataset || null,old.sourceDataset || null);
+    assert.deepEqual(JSON.parse(JSON.stringify(display.sources || [])),old.sources || []);
     assert.equal(!!display.noAlternative,!!old.noAlternative);
     assert.equal(!!display.scopeAudit,!!old.scopeAudit);
     assert.deepEqual(JSON.parse(JSON.stringify(display.rejectedAlternatives || [])),old.rejectedAlternatives || []);
@@ -90,6 +95,8 @@ test("canonical-to-display adapter preserves all existing user-visible vocabular
       assert.equal(!!b.isNoAlternative,!!a.isNoAlternative);
       assert.equal(!!b.isScopeAudit,!!a.isScopeAudit);
       assert.equal(b.editorialNote || "",a.editorialNote || "");
+      assert.equal(b.sourceDataset || null,a.sourceDataset || null);
+      assert.deepEqual(JSON.parse(JSON.stringify(b.sources || [])),a.sources || []);
     }
   }
 });
@@ -147,7 +154,7 @@ test("lazy browser store loads one page, category totals and writing suggestions
   vm.runInNewContext(read("lexicon-store.js"),sandbox);
   const store = sandbox.window.KannadaLexiconStore;
   const manifest = await store.ready();
-  assert.equal(manifest.entryCount,450);
+  assert.equal(manifest.entryCount,loaded.entries.length);
   assert.ok(store.getCategoryCount("Abstract") > 0);
   const page = await store.loadPage("all",0,20);
   assert.equal(page.entries.length,20);

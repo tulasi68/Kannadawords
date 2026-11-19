@@ -3890,12 +3890,15 @@ const contributorWordEntries = [
       {
         "id": "contrib-091-1",
         "word": "ಕೂಳು",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 1911 identifies Kannada kūḻ (ಕೂಳು) ‘boiled rice, food’ as part of Proto-Dravidian *kūḻ ‘porridge’. Tamil kūḻ means thick gruel/porridge; Tulu kūru/kūlu/kūḷu means boiled rice. This is a genuine cognate set, but the meanings range from porridge to boiled rice and food; it should not be treated as an exact synonym for every use of ‘food’.",
+        "proto": "*kūḻ (porridge; DEDR 1911)",
+      "tamil": "கூழ் (kūḻ; thick gruel, porridge)",
+      "tulu": "kūru / kūlu / kūḷu (boiled rice)",
+      "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಕೂಳು",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       },
@@ -5882,12 +5885,15 @@ const contributorWordEntries = [
         {
           "id": "contrib-135-2",
           "word": "ಕೂಳು",
-          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-          "viability": "proposed",
+          "note": "DEDR 1911 identifies Kannada kūḻ (ಕೂಳು) ‘boiled rice, food’ as part of Proto-Dravidian *kūḻ ‘porridge’. Tamil kūḻ means thick gruel/porridge; Tulu kūru/kūlu/kūḷu means boiled rice. This is a genuine cognate set, but the meanings range from porridge to boiled rice and food; it should not be treated as an exact synonym for every use of ‘food’.",
+          "proto": "*kūḻ (porridge; DEDR 1911)",
+      "tamil": "கூழ் (kūḻ; thick gruel, porridge)",
+      "tulu": "kūru / kūlu / kūḷu (boiled rice)",
+      "viability": "clean",
           "etymologyParts": [
             {
               "form": "ಕೂಳು",
-              "etymology": "unknown"
+              "etymology": "dravidian"
             }
           ]
         },
@@ -12168,12 +12174,15 @@ const contributorWordEntries = [
         {
           "id": "contrib-278-1",
           "word": "ಕೂಳು",
-          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-          "viability": "proposed",
+          "note": "DEDR 1911 identifies Kannada kūḻ (ಕೂಳು) ‘boiled rice, food’ as part of Proto-Dravidian *kūḻ ‘porridge’. Tamil kūḻ means thick gruel/porridge; Tulu kūru/kūlu/kūḷu means boiled rice. This is a genuine cognate set, but the meanings range from porridge to boiled rice and food; it should not be treated as an exact synonym for every use of ‘food’.",
+          "proto": "*kūḻ (porridge; DEDR 1911)",
+      "tamil": "கூழ் (kūḻ; thick gruel, porridge)",
+      "tulu": "kūru / kūlu / kūḷu (boiled rice)",
+      "viability": "clean",
           "etymologyParts": [
             {
               "form": "ಕೂಳು",
-              "etymology": "unknown"
+              "etymology": "dravidian"
             }
           ]
         },

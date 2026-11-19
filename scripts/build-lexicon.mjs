@@ -4,7 +4,7 @@ import { DIST_DIR, buildArtifacts, validateSource } from "./lexicon-lib.mjs";
 
 const { entries, config, validation } = validateSource();
 if (validation.errors.length) {
-  console.error(validation.errors.join("\\n"));
+  console.error(validation.errors.join("\n"));
   process.exit(1);
 }
 const built = buildArtifacts({entries,config});
@@ -19,7 +19,7 @@ for (const [relative, content] of built.artifacts) {
     }
   } else {
     fs.mkdirSync(path.dirname(target),{recursive:true});
-    fs.writeFileSync(target,content+"\\n");
+    fs.writeFileSync(target,content);
   }
 }
 if (check) {

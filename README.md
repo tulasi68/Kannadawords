@@ -1,51 +1,246 @@
-# ಕನ್ನಡ ದೇಸಿ · Kannada Desi Words
+# KannadaWords — ಕನ್ನಡ ದೇಸಿ
 
-A simple, shareable web app that shows Sanskrit-origin words in Kannada alongside native Dravidian / desi alternatives.
+KannadaWords is a Kannada vocabulary and writing-support project. It helps writers recognise Sanskrit-derived vocabulary in Kannada and discover suitable native Kannada / Dravidian alternatives, with attention to meaning, context, historical evidence and editorial confidence.
 
-## Features
+The project has two connected experiences:
 
-- Clean card layout with Kannada script support
-- Search by word or meaning
-- Filter by category (Everyday, Nature, Body, Directions, Abstract)
-- 32 high-quality starter pairs from open / common-knowledge sources
-- Static GitHub Pages frontend with a separate Cloudflare Workers AI rewrite API
-- Ready to host on Vercel, Netlify, or GitHub Pages
+1. **KannadaWords vocabulary studio** — explore words, meanings, alternatives and comparative evidence.
+2. **KannadaWords Writing Assistant** — a Grammarly-like browser writing assistant that identifies Sanskrit-derived words while a person writes Kannada, underlines them, and offers contextual native-Kannada replacements.
 
-## AI-powered native Kannada rewrite\n\nThe rewrite tab calls the deployed Cloudflare Worker at `https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite` using the Workers AI Llama 3.3 70B instruct model. The browser sends the submitted Kannada text and the current reviewed word lexicon; the Worker returns a context-aware Kannada rewrite and an explanation of proposed word choices. The AI binding is server-side, so no provider key is exposed in the browser. The Worker restricts browser origins to the GitHub Pages site, limits input to 4,000 characters, and applies an approximate limit of 6 requests per minute per IP.\n\nThe Worker source and Wrangler configuration are in `worker/ai-rewrite.js` and `worker/ai-wrangler.toml`. Workers AI inference is usage-billed by Cloudflare. The existing moderation Worker remains separate and unchanged. AI-generated alternatives outside the reviewed lexicon are labelled for community review rather than presented as verified etymologies.\n\nAI suggestions are editorial aids, not authoritative etymological rulings; community review remains necessary.\n\n## Sources
+The Writing Assistant is an extension of KannadaWords, not a replacement for the existing website.
 
-Only open and common-knowledge material was used:
+## Product vision: Grammarly for Kannada vocabulary
 
-- Everyday spoken Kannada forms
-- Public comparative wordlists
-- DravLex (CC BY 4.0) for root verification where applicable
-- No copyrighted books (DEDR full text, commercial publications, etc.)
+The central interaction is inline vocabulary assistance, not automatic paragraph rewriting.
 
-## How to run locally
+A writer types normally in a supported web editor. KannadaWords identifies words in the text that are listed as Sanskrit-derived or otherwise marked for editorial review. It places a subtle underline beneath those words. When the writer points to or clicks an underlined word, a small suggestion panel appears with appropriate Kannada alternatives. The writer chooses whether to replace the word.
 
-Just open `index.html` in a browser, or:
+Example (illustrative):
+
+- Written word: **ಸಮಸ್ಯೆ**
+- Possible alternatives: **ತೊಡಕು**, **ಇಕ್ಕಟ್ಟು**
+- The writer chooses the alternative that best preserves the intended meaning and tone.
+
+The extension must never replace text automatically. A suggestion is only applied after the writer explicitly chooses it. The original sentence and surrounding text should remain unchanged.
+
+### Intended user experience
+
+1. **Write:** The user types Kannada normally in a supported editor.
+2. **Identify:** KannadaWords recognises Sanskrit-derived words and relevant inflected forms.
+3. **Underline:** Recognised words receive a subtle, non-disruptive underline, similar to a writing assistant's spelling or grammar marks.
+4. **Inspect:** Hovering over or clicking an underline opens a suggestion popover anchored to that word.
+5. **Choose:** The popover shows one or more alternatives, with short context notes or confidence labels where useful.
+6. **Replace:** Clicking an alternative replaces only that word or inflected form, preserving the rest of the text.
+7. **Dismiss:** The user can ignore or dismiss a suggestion without changing the text.
+
+The interface should be keyboard-accessible as well as mouse-accessible. Hover must not be the only way to open suggestions; click and keyboard focus should also work.
+
+### Word recognition and inflection
+
+Matching only the exact dictionary headword is insufficient. The assistant should recognise common Kannada inflections, for example:
+
+- ಸಮಸ್ಯೆ
+- ಸಮಸ್ಯೆಯನ್ನು
+- ಸಮಸ್ಯೆಗಳು
+- ಸಮಸ್ಯೆಯಿಂದ
+- ಸಮಸ್ಯೆಗಳಿಗೆ
+
+A replacement must fit the grammatical role and inflection of the original word. The system should not blindly substitute a headword into a sentence. Where a safe inflected equivalent cannot be determined, it should show the base alternative with an uncertainty note or ask the context service for help.
+
+Word boundaries, punctuation, Kannada combining marks, spacing and mixed Kannada/English text must be handled carefully. The assistant should avoid false matches inside unrelated words.
+
+## Relationship with the existing KannadaWords website
+
+The current vocabulary studio and its existing tabs remain in place.
+
+- The existing **Tab 4 — “ಅಚ್ಚ ಕನ್ನಡದಲ್ಲಿ ಮರುಹೇಳಿ” / “Rewrite in Native Kannada”** remains the full-sentence and full-paragraph rewriting experience.
+- The browser extension provides inline, word-level suggestions while the user writes in other web editors.
+- Both experiences should ultimately use the same vocabulary data, matching rules, editorial status and AI service contract.
+- The extension must not become a separate dictionary with a second, inconsistent copy of the word list.
+
+Tab 4 and the extension serve complementary purposes: Tab 4 rewrites a passage; the extension helps the writer make individual vocabulary choices in place.
+
+## Vocabulary, evidence and editorial standards
+
+The vocabulary data is the foundation of the product. Preserve the existing data pipeline and its merged entries. Do not remove, replace, or silently reduce existing vocabulary records when developing the extension.
+
+Where available, entries may include:
+
+- Kannada source word and meaning
+- Native Kannada alternatives
+- Tamil and Tulu cognates
+- Halegannada forms and historical evidence
+- Proto-Dravidian reconstructions
+- Source references, notes and editorial status
+- Context, usage and grammatical information
+
+These fields do not all have the same evidential status. The interface and engine must distinguish:
+
+- **Attested / verified:** supported by reliable evidence and reviewed.
+- **Provisional:** plausible, but further source verification is needed.
+- **Contributor proposal:** submitted or suggested by a contributor and awaiting editorial review.
+- **AI suggestion:** generated for a particular context and not independently verified.
+
+A proposed alternative must not be described as an established historical form merely because it appears in the vocabulary data. A Proto-Dravidian reconstruction is not an attested Kannada word. Tamil or Tulu similarity alone does not prove a Kannada etymology.
+
+When several alternatives are available, rank them for sentence meaning and natural usage, not simply by historical origin. Keep explanatory notes concise and do not overwhelm the writer.
+
+## Technical direction
+
+### Browser extension
+
+The first target is **Chrome using Manifest V3**.
+
+The extension should:
+
+- Work on ordinary HTML text inputs, textareas and supported `contenteditable` editors.
+- Detect relevant Kannada words as the user edits, without sending every keystroke to a server.
+- Render underlines and suggestion popovers without corrupting the editor's document model, cursor, selection, undo history or formatting.
+- Replace only the selected word when the user chooses an alternative.
+- Support keyboard navigation, accessible labels and clear dismiss behaviour.
+- Avoid running on browser-internal pages or sites where extensions are prohibited.
+- Use editor-specific adapters for complex editors where ordinary DOM selection and replacement are not reliable.
+
+Google Docs and other canvas/custom-editor experiences require dedicated compatibility work; support must not be claimed until tested. The extension does not automatically work inside native desktop applications or Android apps.
+
+### Shared Kannada language engine
+
+The long-term design is one shared engine used by both the website and extension:
+
+- **Vocabulary data:** a versioned, read-only data source generated from the existing curated and merged KannadaWords records.
+- **Matcher:** finds dictionary terms and inflected forms, respecting Kannada script boundaries.
+- **Morphology:** analyses common suffixes and applies compatible inflections to alternatives.
+- **Context ranking:** ranks alternatives according to meaning, usage, sentence context and editorial status.
+- **Suggestion output:** returns the matched span, alternatives, confidence, evidence status and replacement text.
+
+The engine should be testable independently of the website UI and extension UI. A vocabulary update should become available to both clients without requiring a new extension release for every word-list change.
+
+### AI service
+
+The existing Cloudflare Worker endpoint is:
+
+`https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite`
+
+The existing Tab 4 experience builds a passage-specific lexicon from the live merged vocabulary before calling the Worker. Preserve its current request and response behaviour unless a tested migration is planned.
+
+AI should be used selectively, for example when sentence context or inflection makes a local dictionary suggestion uncertain. It should not be called for every keystroke or every matched word. AI-generated suggestions must remain clearly distinguishable from reviewed dictionary alternatives.
+
+Do not put provider secrets or model credentials in extension code. Keep inference and secrets on the server side.
+
+### Privacy
+
+- Analyse text locally wherever practical.
+- Do not upload an entire document or page in the background.
+- Send only the smallest necessary text span or sentence, and only after an explicit user action or a clearly explained opt-in contextual request.
+- Never transmit text simply because the user is typing.
+- Explain when text is sent to the Cloudflare AI service.
+- Do not store users' writing unless a separate, explicit feature and consent are introduced.
+
+## Current implementation status
+
+The repository contains an early Chrome extension preview under `extension/`.
+
+Preview 0.1 currently provides a floating **ಅಚ್ಚ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ** action for selected Kannada text in supported fields. It sends the selected passage to the existing Cloudflare Worker and lets the user review, copy or explicitly replace the selection.
+
+**This preview is not yet the intended Grammarly-like inline assistant.** It does not yet underline individual Sanskrit-derived words or show a word-level suggestion popover. It also currently sends an empty lexicon array, so it does not yet have the same reviewed vocabulary assistance as Tab 4.
+
+The next implementation should focus on the inline word-level experience described above. Do not treat the preview's floating rewrite button as the final product design.
+
+## Development roadmap
+
+### Phase 1 — Product and data contract
+
+- Document the inline suggestion interaction and supported editor behaviour.
+- Inspect and preserve the existing vocabulary merge pipeline and current Tab 4 behaviour.
+- Define a versioned vocabulary payload and a shared matching/suggestion contract.
+- Define editorial status and evidence labels consistently.
+
+### Phase 2 — Local word matching
+
+- Build a browser-side matcher using the shared vocabulary.
+- Recognise headwords and common inflected forms.
+- Add Kannada word-boundary, punctuation and Unicode test cases.
+- Produce underlines only for confident matches; avoid noisy or speculative highlighting.
+
+### Phase 3 — Inline suggestions
+
+- Show a suggestion popover on hover, click and keyboard focus.
+- Display contextually ranked native Kannada alternatives.
+- Show concise confidence or editorial notes where needed.
+- Allow explicit single-word replacement, undo and dismissal.
+
+### Phase 4 — Editor compatibility
+
+- Test textareas, text inputs and common contenteditable editors.
+- Add dedicated adapters for complex editors only after verifying their editing model.
+- Test cursor position, selection, formatting, undo/redo and composition/IME input.
+
+### Phase 5 — Context-aware assistance
+
+- Use the Cloudflare Worker only when local matching is insufficient.
+- Share the same language-engine contract with Tab 4.
+- Compare results between Tab 4 and the extension using a Kannada regression corpus.
+
+### Phase 6 — Release and expansion
+
+- Package and publish the Chrome extension after compatibility and privacy testing.
+- Consider Edge and Firefox after the Chrome experience is stable.
+- Evaluate other writing environments separately; native apps and mobile keyboards require different integration approaches.
+
+## Acceptance criteria for the intended assistant
+
+A release should not be considered complete until:
+
+1. A known Sanskrit-derived word is underlined in a supported editor without changing the user's text.
+2. Hover, click and keyboard focus can open its suggestion panel.
+3. The panel offers relevant Kannada alternatives from the KannadaWords vocabulary.
+4. The user can choose an alternative and only the intended word is replaced.
+5. Common inflected forms are recognised and replacements preserve grammatical fit.
+6. Contributor proposals, provisional entries and AI suggestions are not presented as verified facts.
+7. Typing alone does not transmit document text to the AI service.
+8. Cursor, selection, formatting and undo behaviour remain usable after a replacement.
+9. Existing Tab 4 rewriting and the vocabulary studio continue to work.
+10. Regression tests cover false matches, mixed-script text, punctuation and Unicode edge cases.
+
+## Repository layout
+
+Relevant existing application files remain at the repository root. The extension preview is in:
+
+```text
+extension/
+  manifest.json
+  background.js
+  content.js
+  styles.css
+  popup.html
+  README.md
+  TESTING.md
+```
+
+The Cloudflare Worker source and Wrangler configuration are in `worker/ai-rewrite.js` and `worker/ai-wrangler.toml`.
+
+## Local development
+
+Open `index.html` in a browser or serve the repository root with a local static server:
 
 ```bash
 npx serve .
 ```
 
-## How to deploy (free)
+To load the extension preview in Chrome:
 
-### Vercel (recommended)
-1. Push this folder to a GitHub repo
-2. Import the repo at https://vercel.com
-3. Deploy – done
+1. Clone this repository and check out the branch containing the extension.
+2. Open `chrome://extensions`.
+3. Enable **Developer mode**.
+4. Select **Load unpacked**.
+5. Choose the repository's `extension` directory.
 
-### Netlify / GitHub Pages
-Same – just point to the folder containing `index.html`.
+See [extension/README.md](extension/README.md) and [extension/TESTING.md](extension/TESTING.md) for preview-specific instructions.
 
-## Next steps you can add
+## Sources and attribution
 
-- Simple voting buttons (localStorage or Supabase)
-- Community submission form
-- More pairs from DravLex CLDF data
-- Tamil / Tulu cognate columns
+The project may use open comparative resources and contributor-supplied references, including DravLex (CC BY 4.0) where applicable. Retain required attribution and record source details with the relevant data. Do not reproduce copyrighted dictionary or book content without permission.
 
-## License
+## Licence
 
-The application code is free to use and share.  
-Please keep attribution for any data drawn from DravLex (CC BY 4.0).
+The application code is free to use and share. Data may have separate source and attribution conditions; check the relevant record and source licence before redistributing it.

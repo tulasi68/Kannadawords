@@ -438,7 +438,13 @@ function escapeHtmlAchcha(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 }
 
-function findAchchaWords() {
+async function findAchchaWords() {
+  const status = document.getElementById("achcha-find-status");
+  try { await window.KannadaLexiconStore.ready(); }
+  catch (error) {
+    if (status) status.textContent = "Vocabulary could not load: " + (error.message || "Please retry.");
+    return;
+  }
   const input = document.getElementById("achcha-input");
   const original = (input && input.value || "").trim();
   if (!original) { input && input.focus(); return; }
@@ -540,11 +546,11 @@ function resetAchchaSelections() {
   if (out) out.classList.add("hidden");
 }
 
-function completeAchchaRewrite() {
+async function completeAchchaRewrite() {
   const input = document.getElementById("achcha-input");
   const original = (input && input.value || "").trim();
   if (!original || !achchaMatchState.length) {
-    findAchchaWords();
+    await findAchchaWords();
     if (!achchaMatchState.length) return;
   }
 
@@ -624,6 +630,7 @@ async function translateAchchaKannada() {
   if (button) { button.disabled = true; button.textContent = "ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…"; }
   if (status) status.textContent = "ಪಠ್ಯದ ಅರ್ಥ, ಪದಗಳ ಬಳಕೆ, ವ್ಯಾಕರಣ ಮತ್ತು ಸಹಜ ಕನ್ನಡ ರೂಪವನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ…";
   try {
+    await window.KannadaLexiconStore.ready();
     // Send only lexicon entries relevant to this passage. Sending the entire
     // vocabulary made the model prompt unnecessarily large and could leave the
     // mobile UI appearing to wait indefinitely.

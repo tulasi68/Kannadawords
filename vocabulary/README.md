@@ -79,3 +79,8 @@ The first successful CI build replayed the current merge pipeline and produced:
 - 954 distinct candidate alternatives across the normalized headword records.
 
 These are legacy-eligibility counts, not a claim that all entries or alternatives have been independently linguistically verified. The builder labels generated records `legacy_unreviewed` and preserves legacy record IDs. The regression checks require `ಸಮಸ್ಯೆ` to have a candidate and prevent `ಹೊಸ` from entering the source lookup index.
+
+
+## Current website behaviour
+
+The mobile inline assistant continues to use the existing `buildAchchaLexicon(current.word)` path in `app.js`; this PR does not switch the live website to generated JSON. That function filters the full merged vocabulary for the word under the cursor, so it is not limited to the first 100 dictionary entries when the assistant checks one current word. The generated index is a parity/build foundation and will become the shared delivery layer only after explicit runtime comparison tests.

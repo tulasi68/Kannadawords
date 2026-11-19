@@ -15,7 +15,8 @@
       tamil: comparativeForm(candidate, "ta"),
       tulu: comparativeForm(candidate, "tcy"),
       proto: comparativeForm(candidate, "proto-dravidian"),
-      evidenceVariants: candidate.evidenceVariants || {}
+      evidenceVariants: candidate.evidenceVariants || {},
+      comparativeEvidence: candidate.comparativeEvidence || []
     };
     if (candidate.flags?.noAlternative) result.isNoAlternative = true;
     if (candidate.flags?.outsideTargetOrigin) result.isScopeAudit = true;
@@ -34,6 +35,13 @@
     };
     if (entry.historicalEvidence?.form) result.halegannada = entry.historicalEvidence.form;
     if (entry.historicalEvidence?.legacyEvidence) result.halegannadaEvidence = entry.historicalEvidence.legacyEvidence;
+    else if (entry.historicalEvidence?.form || entry.historicalEvidence?.note || entry.historicalEvidence?.sourceRefs?.length) {
+      result.halegannadaEvidence = {
+        status:entry.historicalEvidence.status,
+        note:entry.historicalEvidence.note || "",
+        sourceRefs:entry.historicalEvidence.sourceRefs || []
+      };
+    }
     if (entry.historicalEvidence?.legacyVariants?.length) result.halegannadaVariants = entry.historicalEvidence.legacyVariants;
     if (entry.scope?.noAlternative) result.noAlternative = true;
     if (entry.scope?.outsideTargetOrigin) result.scopeAudit = true;

@@ -8649,14 +8649,40 @@ const contributorWordEntries = [
         {
           "id": "contrib-197-1",
           "word": "ಕಲ್ಲು",
-          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-          "viability": "proposed",
+          "note": "DEDR 1298 lists Proto-Dravidian *kal ‘stone’, Tamil kal, Kannada kal/kallu and Tulu kallů. This is a well-supported cognate set.",
+          "viability": "clean",
           "etymologyParts": [
             {
               "form": "ಕಲ್ಲು",
-              "etymology": "unknown"
+              "etymology": "dravidian"
             }
-          ]
+          ],
+          "linguisticEvidence": {
+            "protoDravidian": {
+              "status": "attested",
+              "form": "*kal",
+              "meaning": "stone",
+              "reference": "DEDR 1298"
+            },
+            "tamil": {
+              "status": "attested",
+              "form": "kal",
+              "meaning": "stone, pebble, boulder",
+              "reference": "DEDR 1298"
+            },
+            "kannada": {
+              "status": "attested",
+              "form": "kallu",
+              "meaning": "stone",
+              "reference": "DEDR 1298"
+            },
+            "tulu": {
+              "status": "attested",
+              "form": "kallů",
+              "meaning": "stone",
+              "reference": "DEDR 1298"
+            }
+          }
         },
         {
           "id": "contrib-197-2",

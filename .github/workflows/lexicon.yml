@@ -9,6 +9,14 @@ on:
       - "scripts/**"
       - "tests/**"
       - "package.json"
+      - "app.js"
+      - "index.html"
+      - "lexicon-store.js"
+      - "lexicon-display-adapter.js"
+      - "mobile-assistant.js"
+      - "README.md"
+      - "docs/**"
+      - "migration/**"
       - ".github/workflows/lexicon.yml"
   pull_request:
     paths:
@@ -17,6 +25,14 @@ on:
       - "scripts/**"
       - "tests/**"
       - "package.json"
+      - "app.js"
+      - "index.html"
+      - "lexicon-store.js"
+      - "lexicon-display-adapter.js"
+      - "mobile-assistant.js"
+      - "README.md"
+      - "docs/**"
+      - "migration/**"
       - ".github/workflows/lexicon.yml"
 
 permissions:

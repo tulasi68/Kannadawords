@@ -20,7 +20,14 @@
   function currentWord() {
     const text = input.value;
     const caret = input.selectionStart ?? text.length;
-    let start = caret, end = caret;
+    let pivot = caret;
+    // When the caret follows a space or punctuation, inspect the preceding word.
+    if (pivot > 0 && !/[\u0C80-\u0CFF]/u.test(text[pivot - 1])) {
+      let previous = pivot - 1;
+      while (previous >= 0 && /[\s.,!?;:()[\]{}"']/u.test(text[previous])) previous--;
+      if (previous >= 0 && /[\u0C80-\u0CFF]/u.test(text[previous])) pivot = previous + 1;
+    }
+    let start = pivot, end = pivot;
     while (start > 0 && /[\u0C80-\u0CFF]/u.test(text[start - 1])) start--;
     while (end < text.length && /[\u0C80-\u0CFF]/u.test(text[end])) end++;
     const word = text.slice(start, end).normalize("NFC");

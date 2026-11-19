@@ -35,8 +35,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -64,8 +65,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -93,8 +95,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -166,8 +169,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -195,8 +199,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -268,8 +273,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -297,8 +303,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -326,8 +333,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -399,8 +407,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -428,8 +437,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -457,8 +467,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -530,8 +541,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -559,8 +571,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -588,8 +601,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -661,8 +675,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -690,8 +705,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -719,8 +735,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -792,8 +809,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -821,8 +839,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -894,8 +913,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -923,8 +943,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -952,8 +973,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1025,8 +1047,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1054,8 +1077,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1083,8 +1107,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1156,8 +1181,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1185,8 +1211,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1214,8 +1241,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1287,8 +1315,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1316,8 +1345,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1345,8 +1375,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1418,8 +1449,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1447,8 +1479,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1476,8 +1509,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1549,8 +1583,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1578,8 +1613,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1607,8 +1643,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1680,8 +1717,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1709,8 +1747,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1738,8 +1777,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1811,8 +1851,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1840,8 +1881,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1869,8 +1911,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1942,8 +1985,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -1971,8 +2015,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2000,8 +2045,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2073,8 +2119,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2102,8 +2149,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2131,8 +2179,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2204,8 +2253,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2233,8 +2283,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2262,8 +2313,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2335,8 +2387,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2364,8 +2417,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2393,8 +2447,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2466,8 +2521,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2495,8 +2551,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2524,8 +2581,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2597,8 +2655,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2626,8 +2685,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2655,8 +2715,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2728,8 +2789,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2757,8 +2819,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2786,8 +2849,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2859,8 +2923,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2888,8 +2953,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2917,8 +2983,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2990,8 +3057,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3019,8 +3087,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3048,8 +3117,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3121,8 +3191,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3150,8 +3221,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3179,8 +3251,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3252,8 +3325,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3281,8 +3355,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3310,8 +3385,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3383,8 +3459,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3412,8 +3489,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3441,8 +3519,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3514,8 +3593,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3543,8 +3623,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3572,8 +3653,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3645,8 +3727,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3674,8 +3757,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3703,8 +3787,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3776,8 +3861,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3805,8 +3891,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3834,8 +3921,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3863,8 +3951,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3936,8 +4025,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3965,8 +4055,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4038,8 +4129,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4067,8 +4159,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4096,8 +4189,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4169,8 +4263,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4198,8 +4293,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4271,8 +4367,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4300,8 +4397,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4373,8 +4471,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4402,8 +4501,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4431,8 +4531,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4504,8 +4605,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4533,8 +4635,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4562,8 +4665,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4635,8 +4739,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4708,8 +4813,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4781,8 +4887,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4810,8 +4917,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4883,8 +4991,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4912,8 +5021,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4941,8 +5051,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5014,8 +5125,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5043,8 +5155,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5116,8 +5229,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5189,8 +5303,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5218,8 +5333,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5247,8 +5363,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5320,8 +5437,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5349,8 +5467,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5378,8 +5497,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5451,8 +5571,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5480,8 +5601,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5553,8 +5675,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5582,8 +5705,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5655,8 +5779,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5684,8 +5809,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5713,8 +5839,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5786,8 +5913,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5815,8 +5943,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5888,8 +6017,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5917,8 +6047,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5946,8 +6077,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -6019,8 +6151,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -6048,8 +6181,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -6077,8 +6211,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }

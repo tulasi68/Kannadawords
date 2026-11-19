@@ -35,7 +35,7 @@ function readEntries() {
   return entries;
 }
 function validate(entries) {
-  const errors = [], ids = new Map(), sources = new Map(), lookup = new Map();
+  const errors = [], ids = new Map(), sources = new Map(), lookup = new Map(), headwords = new Set();
   const add = (msg) => errors.push(msg);
   for (const [i, e] of entries.entries()) {
     const where = `record ${i + 1}`;
@@ -43,13 +43,15 @@ function validate(entries) {
     if (!e.id || typeof e.id !== "string") add(`${where}: missing string id`);
     else if (ids.has(e.id)) add(`${where}: duplicate id "${e.id}" (also record ${ids.get(e.id)})`);
     else ids.set(e.id, i + 1);
-    if (!norm(e.source)) add(`${where}: missing source`);
+    const canonical = norm(e.source);
+    if (!canonical) add(`${where}: missing source`);
+    else headwords.add(canonical);
     if (!Array.isArray(e.sourceForms) || !e.sourceForms.length) add(`${where}: sourceForms must be a non-empty array`);
     if (typeof e.meaning !== "string") add(`${where}: meaning must be a string`);
     if (!Array.isArray(e.alternatives)) add(`${where}: alternatives must be an array`);
     if (!VALID_RECOGNITION.has(e.recognitionStatus)) add(`${where}: invalid recognitionStatus`);
     if (!VALID_EDITORIAL.has(e.editorialStatus)) add(`${where}: invalid editorialStatus`);
-    const forms = [e.source, ...(Array.isArray(e.sourceForms) ? e.sourceForms : [])].map(norm).filter(Boolean);
+    const forms = [canonical, ...(Array.isArray(e.sourceForms) ? e.sourceForms : [])].map(norm).filter(Boolean);
     for (const f of new Set(forms)) {
       if (sources.has(f) && sources.get(f) !== e.id) add(`${where}: duplicate source headword/form "${f}" also belongs to ${sources.get(f)}`);
       else sources.set(f, e.id);
@@ -63,8 +65,7 @@ function validate(entries) {
       if (alt?.status && !["verified", "provisional", "proposal"].includes(alt.status)) add(`${where}: alternative ${j + 1} has invalid status`);
     }
   }
-  // A replacement is not allowed to become a lookup key just because it appears as an alternative.
-  return { errors, uniqueHeadwords: sources.size, verifiedLookupForms: lookup.size, ids: ids.size };
+  return { errors, uniqueHeadwords: headwords.size, uniqueSourceForms: sources.size, verifiedLookupForms: lookup.size, ids: ids.size };
 }
 function hash(text) { return crypto.createHash("sha256").update(text).digest("hex"); }
 function shardFor(id) { return parseInt(hash(id).slice(0, 8), 16) % SHARD_COUNT; }

@@ -115,11 +115,12 @@
       range.setStart(active.node, active.start);
       range.setEnd(active.node, active.end);
       range.deleteContents();
-      range.insertNode(document.createTextNode(replacement));
+      const inserted = document.createTextNode(replacement);
+      range.insertNode(inserted);
       const selection = window.getSelection();
       selection.removeAllRanges();
       const caret = document.createRange();
-      caret.setStartAfter(range.endContainer);
+      caret.setStartAfter(inserted);
       caret.collapse(true);
       selection.addRange(caret);
       active.node.parentElement?.dispatchEvent(new InputEvent("input", { bubbles: true, inputType: "insertReplacementText", data: replacement }));
@@ -159,7 +160,7 @@
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode(node) {
         const parent = node.parentElement;
-        if (!parent || parent.closest("#kw-inline-host,script,style,noscript,textarea,input,select,option,[contenteditable='true'],[contenteditable=''],[aria-hidden='true']")) return NodeFilter.FILTER_REJECT;
+        if (!parent || parent.closest("#kw-inline-host,script,style,noscript,textarea,input,select,option,[aria-hidden='true']")) return NodeFilter.FILTER_REJECT;
         return KANNADA.test(node.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_REJECT;
       }
     });

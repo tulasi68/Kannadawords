@@ -23,6 +23,10 @@ Test each form in page text and a textarea:
 
 Unsupported forms should not be underlined or offered as a guessed replacement.
 
+## False-positive check
+
+For the sentence `ನಮ್ಮ ಸಮಸ್ಯೆ ಪರಿಹಾರಕ್ಕೆ ಹೊಸ ಕಾರ್ಯಕ್ರಮ ರೂಪಿಸಬೇಕು.`, only `ಸಮಸ್ಯೆ` should receive the extension's amber background plus wavy underline. `ನಮ್ಮ`, `ಪರಿಹಾರಕ್ಕೆ`, `ಹೊಸ`, `ಕಾರ್ಯಕ್ರಮ`, and `ರೂಪಿಸಬೇಕು` must remain unmarked by this extension. The editor may independently show its own spellcheck underline; that underline does not have the extension's amber background.
+
 ## Editor checks
 
 - Try a plain `contenteditable` editor and a textarea.

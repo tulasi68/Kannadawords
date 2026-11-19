@@ -7,7 +7,7 @@ const auditedWordEntries = [
     "sourceMeaning": "House",
     "category": "Audited 72-term list",
     "halegannada": "ಮನೆ",
-    "halegannadaEvidence": {"status":"provisional","note":"House comparison form; native Dravidian cognate proposed, but primary Old Kannada citation is still needed."},
+    "halegannadaEvidence": {"status":"not_yet_verified","note":"The modern Kannada form is well established, but a primary Old Kannada inscription or dated literary citation has not yet been attached. Do not display this as a verified Halegannada attestation."},
     "sourceEtymology": {
       "form": "ಗೃಹ",
       "etymology": "sanskrit_tatsama"
@@ -16,7 +16,10 @@ const auditedWordEntries = [
       {
         "id": "audited-house",
         "word": "ಮನೆ",
-        "note": "DEDR 4776; contributor-supplied",
+        "note": "Comparative evidence: Proto-Dravidian *man-ay ‘house’; Tamil maṉai (மனை) ‘house, dwelling’; Kannada mane ‘habitation, abode, house’; Kodava mane; Malayalam mana; Tulu manetana ‘household / household life’ are recorded under DEDR 4776. Tulu illu ‘house/home’ is a separate Dravidian house-word (DEDR 494), not the Tulu cognate of *man-ay. The exact modern Tulu lexical equivalence and the historical Old Kannada spelling still need primary dictionary/corpus confirmation.",
+        "proto": "*man-ay (house; DEDR 4776)",
+        "tamil": "மனை (maṉai; house, dwelling; DEDR 4776)",
+        "tulu": "manetana (household, household life; DEDR 4776); illu (house/home; separate root, DEDR 494)",
         "etymologyParts": [
           {
             "form": "ಮನೆ",

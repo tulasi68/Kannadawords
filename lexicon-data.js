@@ -137,7 +137,7 @@ const votingEntries = wordEntries.map(entry => {
     noAlternative:true,
     alternatives:[{id:"no-alternative",word:"No viable native alternative",note:"Community position — vote to agree or propose a candidate",isNoAlternative:true,viability:"no_alternative",etymologyParts:[]}]
   })))
-  .concat((typeof originAuditEntries === "undefined" ? [] : originAuditEntries).filter(item => !Array.isArray(item) && !(item && item.sourceMeaning && Array.isArray(item.alternatives))).map(item => ({
+  .concat((typeof originAuditEntries === "undefined" ? [] : originAuditEntries).filter(item => !Array.isArray(item) && item && item.id && item.sourceForm && !(item.sourceMeaning && Array.isArray(item.alternatives))).map(item => ({
     id:"scope-" + item.id,
     sanskrit:item.sourceForm,
     meaning:item.meaning,

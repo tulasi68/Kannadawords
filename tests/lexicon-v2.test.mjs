@@ -97,7 +97,7 @@ test("canonical-to-display adapter preserves all existing user-visible vocabular
 test("writing-assistant index preserves the previous source-form grouping behavior", () => {
   const legacy = readJson("migration/legacy-v1-snapshot.json");
   const bySourceForm = new Map();
-  const split = value => String(value||"").split(/\\s*(?:\\/|,|;|\\|| ಅಥವಾ )\\s*/u).map(form=>form.trim()).filter(form=>form.length>=2);
+  const split = value => String(value||"").split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u).map(form=>form.trim()).filter(form=>form.length>=2);
   const kind = alt => {
     const origins=(alt.etymologyParts||[]).map(part=>part.etymology);
     if(alt.viability==="coined"||origins.includes("coinage"))return "coined_from_dravidian";

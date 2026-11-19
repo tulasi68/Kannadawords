@@ -1901,12 +1901,15 @@ const contributorWordEntries = [
       {
         "id": "contrib-046-1",
         "word": "ಹಲ್ಲು",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 3986 reconstructs Proto-Dravidian *pal ‘tooth’ and records Tamil pal and Tulu paru ‘animal’s tooth’. Kannada’s modern hallu continues Old Kannada pal, with the regular historical change of word-initial p to h in Kannada; this is a genuine cognate, not a resemblance based only on meaning.",
+        "proto": "*pal (tooth; DEDR 3986)",
+      "tamil": "பல் (pal; tooth)",
+      "tulu": "paru (animal's tooth)",
+      "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಹಲ್ಲು",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       }
@@ -18266,12 +18269,15 @@ const contributorWordEntries = [
       {
         "id": "contrib-374-1",
         "word": "ಎರಡು",
-        "note": "Contributor-supplied candidate; semantic fit, naturalness and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 474 and comparative Dravidian sources connect Kannada eraḍu ‘two’ with Proto-Dravidian *ir- / *īr-, Tamil iraṇṭu and Tulu raḍḍů. The exact numeral forms differ across the languages, but this is a well-established inherited Dravidian numeral family.",
+        "proto": "*ir- / *īr- (two; DEDR 474)",
+      "tamil": "இரண்டு (iraṇṭu; two)",
+      "tulu": "raḍḍů (two things)",
+      "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಎರಡು",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ],
         "linguisticEvidence": {

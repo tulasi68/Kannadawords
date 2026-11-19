@@ -2,7 +2,6 @@
   "name": "kannadawords",
   "private": true,
   "version": "2.0.0",
-  "type": "module",
   "scripts": {
     "lexicon:validate": "node scripts/validate-lexicon.mjs",
     "lexicon:build": "node scripts/build-lexicon.mjs",

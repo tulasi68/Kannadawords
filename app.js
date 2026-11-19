@@ -252,13 +252,13 @@ function escapeHtml(value) {
 function languageRows(entry, alts) {
   const first = alts[0] || {};
   const rows = [
-    ["Native Kannada", first.word || "—"],
-    ["Tamil", first.tamil || "—"],
-    ["Tulu", first.tulu || "—"],
-    ["Halegannada", entry.halegannada || "Not yet sourced"],
-    ["Proto-Dravidian root", first.proto || "Not reconstructed / not yet sourced"]
+    ["Native Kannada", first.word || "—", null],
+    ["Tamil", first.tamil || "—", first.evidenceVariants?.tamil],
+    ["Tulu", first.tulu || "—", first.evidenceVariants?.tulu],
+    ["Halegannada", entry.halegannada || "Not yet sourced", entry.halegannadaVariants],
+    ["Proto-Dravidian root", first.proto || "Not reconstructed / not yet sourced", first.evidenceVariants?.proto]
   ];
-  return rows.map(([label,value]) => {
+  return rows.map(([label,value,conflicts]) => {
     const evidence = label === "Halegannada" ? entry.halegannadaEvidence : null;
     const status = evidence?.status || (label === "Halegannada" && entry.halegannada ? "unverified" : null);
     const statusLabel = status === "provisional" ? "Secondary evidence — primary check needed" : status === "verified" ? "Verified source" : status === "unverified" ? "Unverified — source needed" : "";
@@ -267,7 +267,10 @@ function languageRows(entry, alts) {
       ? `<a class="block text-xs underline text-stone-600 mt-1" href="${escapeHtml(evidence.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(evidence.sourceTitle)}</a>`
       : "";
     const note = evidence?.note ? `<span class="block text-xs text-stone-500 mt-1">${escapeHtml(evidence.note)}</span>` : "";
-    const meta = status ? `<span class="block text-xs ${statusClass} mt-1">${statusLabel}</span>${source}${note}` : "";
+    const conflict = conflicts?.length
+      ? `<span class="block text-xs text-orange-700 mt-1">Conflicting source values: ${conflicts.map(escapeHtml).join(" · ")}</span>`
+      : "";
+    const meta = (status ? `<span class="block text-xs ${statusClass} mt-1">${statusLabel}</span>${source}${note}` : "") + conflict;
     return `
     <div class="grid grid-cols-[112px_1fr] gap-2 py-2 border-b border-stone-100 last:border-0">
       <span class="text-xs text-stone-500">${label}</span>

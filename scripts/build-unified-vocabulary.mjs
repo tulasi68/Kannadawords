@@ -20,7 +20,7 @@ const mergeEnd=app.indexOf("\nfunction loadState()");
 if(mergeEnd<0) throw new Error("Could not identify app.js merge boundary; refusing to guess.");
 vm.runInContext(app.slice(0,mergeEnd),sandbox,{filename:"app.js merge section",timeout:10000});
 
-const raw=vm.runInContext(\`(() => {
+const raw=vm.runInContext(`(() => {
  const split=value=>String(value||"").normalize("NFC").split(/\\s*(?:\\/|,|;|\\|| ಅಥವಾ )\\s*/u).map(v=>v.trim()).filter(v=>v.length>=2);
  const byForm=new Map(); const entries=votingEntries||[];
  for(const entry of entries){
@@ -37,7 +37,7 @@ const raw=vm.runInContext(\`(() => {
   }
  }
  return {votingRecords:entries.length,eligibleRecords:entries.filter(e=>!e.noAlternative&&!e.scopeAudit&&Array.isArray(e.alternatives)&&e.alternatives.some(a=>a.word&&!a.isNoAlternative&&!a.isScopeAudit)).length,noAlternativeRecords:entries.filter(e=>e.noAlternative).length,scopeAuditRecords:entries.filter(e=>e.scopeAudit).length,records:[...byForm.values()].sort((a,b)=>a.source.localeCompare(b.source,"kn"))};
-})()\`,sandbox);
+})()`,sandbox);
 
 const sha=value=>crypto.createHash("sha256").update(value).digest("hex");
 const shardCount=32, shards=Array.from({length:shardCount},()=>[]), lookup={}, search=[];

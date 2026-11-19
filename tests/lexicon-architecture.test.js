@@ -44,6 +44,6 @@ test("canonical candidate retains merged comparative evidence", () => {
   const medicine = lexicon.entries.find(entry => entry.id === "medicine");
   const madda = medicine.alternatives.find(candidate => candidate.word === "ಮದ್ದು");
   assert.equal(madda.tamil, "மருந்து (maruntu)");
-  assert.equal(madda.tulu, "ಮர್ದ್".replace("ம", "ಮ")); // retain the stored Tulu form exactly
+  assert.equal(madda.tulu, "ಮರ್ದ್");
   assert.equal(madda.proto, "*maruntu");
 });

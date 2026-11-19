@@ -8651,6 +8651,9 @@ const contributorWordEntries = [
           "word": "ಕಲ್ಲು",
           "note": "DEDR 1298 lists Proto-Dravidian *kal ‘stone’, Tamil kal, Kannada kal/kallu and Tulu kallů. This is a well-supported cognate set.",
           "viability": "clean",
+          "proto": "*kal (stone; DEDR 1298)",
+          "tamil": "கல் (kal; stone; DEDR 1298)",
+          "tulu": "kallů (stone; DEDR 1298)",
           "etymologyParts": [
             {
               "form": "ಕಲ್ಲು",

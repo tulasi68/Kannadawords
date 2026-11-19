@@ -239,7 +239,7 @@
           "$ref": "#/$defs/provenance"
         },
         "editorial": {
-          "$ref": "#/$defs/editorial"
+          "$ref": "#/$defs/candidateEditorial"
         },
         "legacyFields": {
           "type": "object"
@@ -380,6 +380,30 @@
         "senseKey": {
           "type": "string",
           "minLength": 1
+        }
+      }
+    },
+    "candidateEditorial": {
+      "type": "object",
+      "required": [
+        "note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "reviewedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
         }
       }
     }

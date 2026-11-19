@@ -29,11 +29,13 @@ const lexicalFormParts = value => String(value || "")
   .map(lexicalFormKey).filter(Boolean);
 const contributorEntriesForMerge = (typeof contributorWordEntries === "undefined" ? [] : contributorWordEntries).map(item => {
   const key = lexicalFormKey(item.sourceForm);
-  const existingAudit = existingOriginRecords.find(entry =>
+  const existingBase = wordEntries.find(entry => lexicalFormParts(entry.sanskrit).includes(key));
+  const matchingAudits = existingOriginRecords.filter(entry =>
     lexicalFormParts(entry.sourceForm).includes(key) ||
     lexicalFormParts(entry.sourceEtymology && entry.sourceEtymology.form).includes(key)
   );
-  const existingBase = wordEntries.find(entry => lexicalFormParts(entry.sanskrit).includes(key));
+  const existingAudit = matchingAudits.find(entry => existingBase && entry.id === existingBase.id) ||
+    (!existingBase ? matchingAudits[0] : null);
   const existing = existingAudit || existingBase;
   return {
     ...item,

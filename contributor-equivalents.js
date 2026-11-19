@@ -15724,14 +15724,29 @@ const contributorWordEntries = [
           }
         ],
         "linguisticEvidence": {
+          "protoDravidian": {
+            "status": "attested",
+            "form": "*mīn",
+            "meaning": "fish",
+            "reference": "DEDR 4885"
+          },
           "tamil": {
-            "status": "not_yet_verified"
+            "status": "attested",
+            "form": "mīṉ",
+            "meaning": "fish",
+            "reference": "DEDR 4885"
           },
           "tulu": {
-            "status": "not_yet_verified"
+            "status": "attested",
+            "form": "mīnu",
+            "meaning": "fish",
+            "reference": "DEDR 4885"
           },
-          "protoDravidian": {
-            "status": "not_yet_verified"
+          "kannada": {
+            "status": "attested",
+            "form": "mīn",
+            "meaning": "fish",
+            "reference": "DEDR 4885"
           },
           "halegannada": {
             "status": "not_yet_verified"
@@ -16586,14 +16601,29 @@ const contributorWordEntries = [
           }
         ],
         "linguisticEvidence": {
+          "protoDravidian": {
+            "status": "attested",
+            "form": "*kār / *kar-V",
+            "meaning": "dark, black",
+            "reference": "DEDR 1278"
+          },
           "tamil": {
-            "status": "not_yet_verified"
+            "status": "attested",
+            "form": "karu",
+            "meaning": "black",
+            "reference": "DEDR 1278"
           },
           "tulu": {
-            "status": "not_yet_verified"
+            "status": "attested",
+            "form": "kariya",
+            "meaning": "black",
+            "reference": "DEDR 1278"
           },
-          "protoDravidian": {
-            "status": "not_yet_verified"
+          "kannada": {
+            "status": "related_form",
+            "form": "kari / karidu",
+            "meaning": "blackness; black",
+            "reference": "DEDR 1278"
           },
           "halegannada": {
             "status": "not_yet_verified"
@@ -16626,14 +16656,29 @@ const contributorWordEntries = [
           }
         ],
         "linguisticEvidence": {
+          "protoDravidian": {
+            "status": "attested",
+            "form": "*kem",
+            "meaning": "red",
+            "reference": "DEDR 1931"
+          },
           "tamil": {
-            "status": "not_yet_verified"
+            "status": "attested",
+            "form": "cem-/ceyya",
+            "meaning": "red / redness",
+            "reference": "DEDR 1931"
           },
           "tulu": {
-            "status": "not_yet_verified"
+            "status": "attested",
+            "form": "kempu",
+            "meaning": "redness / ruby",
+            "reference": "DEDR 1931"
           },
-          "protoDravidian": {
-            "status": "not_yet_verified"
+          "kannada": {
+            "status": "attested",
+            "form": "kempu",
+            "meaning": "redness / ruby",
+            "reference": "DEDR 1931"
           },
           "halegannada": {
             "status": "not_yet_verified"
@@ -17166,14 +17211,23 @@ const contributorWordEntries = [
           }
         ],
         "linguisticEvidence": {
+          "protoDravidian": {
+            "status": "not_listed_in_cited_entry"
+          },
           "tamil": {
-            "status": "not_yet_verified"
+            "status": "not_listed_in_cited_entry"
           },
           "tulu": {
-            "status": "not_yet_verified"
+            "status": "attested",
+            "form": "duṇḍu",
+            "meaning": "round, globular",
+            "reference": "DEDR 3309"
           },
-          "protoDravidian": {
-            "status": "not_yet_verified"
+          "kannada": {
+            "status": "attested",
+            "form": "duṇḍu",
+            "meaning": "round, roundness",
+            "reference": "DEDR 3309"
           },
           "halegannada": {
             "status": "not_yet_verified"
@@ -27444,14 +27498,29 @@ const contributorWordEntries = [
           }
         ],
         "linguisticEvidence": {
+          "protoDravidian": {
+            "status": "attested",
+            "form": "*nil-",
+            "meaning": "to stand",
+            "reference": "DEDR 3675"
+          },
           "tamil": {
-            "status": "not_yet_verified"
+            "status": "attested",
+            "form": "nilai",
+            "meaning": "standing, firmness, permanence",
+            "reference": "DEDR 3675"
           },
           "tulu": {
-            "status": "not_yet_verified"
+            "status": "attested",
+            "form": "nilè / nelè",
+            "meaning": "firm, fast, abiding, still",
+            "reference": "DEDR 3675"
           },
-          "protoDravidian": {
-            "status": "not_yet_verified"
+          "kannada": {
+            "status": "attested",
+            "form": "nele",
+            "meaning": "standing place, basis, firmness",
+            "reference": "DEDR 3675"
           },
           "halegannada": {
             "status": "not_yet_verified"

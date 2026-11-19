@@ -64,7 +64,7 @@ function lexiconMergeEntryRecords(previous, incoming) {
   if (!previous) return { ...incoming };
   const next = { ...previous, ...incoming, id: previous.id || incoming.id };
   next.alternatives = lexiconMergeCandidateRecords([...(previous.alternatives || []), ...(incoming.alternatives || [])]);
-  ["halegannada", "sourceEtymology", "sourceMeaning", "meaning"].forEach(field => {
+  ["halegannada", "halegannadaEvidence", "sourceEtymology", "sourceMeaning", "meaning"].forEach(field => {
     if (!incoming[field] && previous[field]) next[field] = previous[field];
   });
   if (previous.halegannada && incoming.halegannada &&
@@ -75,4 +75,13 @@ function lexiconMergeEntryRecords(previous, incoming) {
   next.editorialNote = lexiconUniqueStrings([previous.editorialNote, incoming.editorialNote]).join(" ");
   next.sources = lexiconUniqueStrings([...(previous.sources || []), ...(incoming.sources || []), incoming.sourceDataset || "legacy-source"]);
   return next;
+}
+
+if (typeof module !== "undefined" && module.exports) {
+  module.exports = {
+    KANNADA_LEXICON_SCHEMA_VERSION,
+    lexiconNormalizeForm,
+    lexiconMergeCandidateRecords,
+    lexiconMergeEntryRecords
+  };
 }

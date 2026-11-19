@@ -10443,12 +10443,15 @@ const contributorWordEntries = [
         {
           "id": "contrib-234-2",
           "word": "ಊರು",
-          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-          "viability": "proposed",
+          "note": "DEDR 752 records Proto-Dravidian *ūr ‘habitation, village, town’, with Tamil ūr, Kannada ūr and Tulu ūru. A direct cognate set for the settlement sense.",
+          "viability": "clean",
+          "proto": "*ūr (habitation, village, town; DEDR 752)",
+          "tamil": "ஊர் (ūr; village, town; DEDR 752)",
+          "tulu": "ūru (village, town; DEDR 752)",
           "etymologyParts": [
             {
               "form": "ಊರು",
-              "etymology": "unknown"
+              "etymology": "dravidian"
             }
           ]
         },

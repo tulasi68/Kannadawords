@@ -47,7 +47,7 @@ vm.runInContext(app.slice(0, mergeEnd), sandbox, {
 
 const snapshot = vm.runInContext("(() => {" +
   "const split = value => String(value || '').normalize('NFC')" +
-    ".split(/\\\\s*(?:\\\\/|,|;|\\\\|| ಅಥವಾ )\\\\s*/u).map(v => v.trim()).filter(Boolean);" +
+    ".split(/[,;|]/u).flatMap(v => v.split(String.fromCharCode(47))).flatMap(v => v.split(' ಅಥವಾ ')).map(v => v.trim()).filter(Boolean);" +
   "const unique = values => [...new Set(values)];" +
   "const sourceForms = entry => unique([" +
     "...split(entry.sanskrit || entry.sourceForm)," +

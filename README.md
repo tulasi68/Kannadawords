@@ -248,7 +248,7 @@ The application code is free to use and share. Data may have separate source and
 
 ## Canonical vocabulary data model (schema v1)
 
-The vocabulary is growing toward 7,000+ entries. The source files remain readable editorial inputs, while the browser applies a shared compatibility model in `lexicon-model.js` before rendering.
+The vocabulary is growing toward 7,000+ entries. The current legacy source files remain editorial inputs. Their compatibility merge and display projection are defined in `lexicon-data.js`; the UI in `app.js` consumes only the resulting `votingEntries` collection. This makes the exact dataset presented to users inspectable in one place, even while the underlying source files are being migrated.
 
 ### Identity rules
 
@@ -264,6 +264,43 @@ The vocabulary is growing toward 7,000+ entries. The source files remain readabl
 - A merge must not upgrade confidence. Where source records disagree on viability, the more cautious status wins.
 - Entry-level Halegannada forms are retained; conflicting forms are preserved in `halegannadaVariants`.
 - Comparative equivalents belong to a candidate, not merely to the source headword. Evidence for one alternative must not be shown beside another.
+
+
+
+### Display-data architecture (transition stage)
+
+The runtime data path is deliberately explicit:
+
+```text
+Legacy editorial inputs
+  data.js
+  etymology-entries.js
+  contributor-equivalents.js
+  research batches / no-alternative records
+          |
+          v
+lexicon-model.js  (normalization and loss-aware merge helpers)
+          |
+          v
+lexicon-data.js   (the one display-dataset assembly boundary)
+          |
+          v
+votingEntries     (shared dataset consumed by all vocabulary UI panels)
+          |
+          v
+app.js            (rendering, filtering, voting and interaction only)
+```
+
+Rules for this transition:
+
+1. `lexicon-data.js` is the only place allowed to assemble the vocabulary shown in the UI.
+2. `app.js` must not independently merge source files, rebuild categories, or create a second vocabulary list.
+3. Every vocabulary panel and search/filter view must derive from the same `votingEntries` collection.
+4. Legacy files are inputs during migration, not independent UI data sources. A later migration will replace them with versioned canonical records and a reproducible build/export step.
+5. Do not silently discard duplicate candidates, source provenance, votes, senses or conflicting evidence during that migration.
+6. Content/etymology corrections are a separate editorial phase; this architecture work must preserve current content rather than silently “correct” it.
+
+This is an intentional intermediate step, not yet the final 7,000-entry storage design. The next stage is a versioned canonical record format, validation, migration tooling and a generated static dataset (with optional shards/indexes for efficient loading). The generated dataset—not a second runtime merge—will then become the direct UI input.
 
 ### Evidence fields (gradual migration)
 

@@ -2,11 +2,11 @@ import fs from "node:fs";
 import path from "node:path";
 
 function stableHash(value) {
-  // FNV-1a 64-bit checksum: deterministic in Node and browsers, used for
+  // FNV-1a 64-bit UTF-16 code-unit checksum: deterministic in Node and browsers, used for
   // cache versioning and accidental-corruption detection (not authentication).
   let hash = 0xcbf29ce484222325n;
-  for (const byte of new TextEncoder().encode(value)) {
-    hash ^= BigInt(byte);
+  for (let index = 0; index < value.length; index++) {
+    hash ^= BigInt(value.charCodeAt(index));
     hash = BigInt.asUintN(64, hash * 0x100000001b3n);
   }
   return hash.toString(16).padStart(16, "0");
@@ -140,7 +140,7 @@ export function buildArtifacts({ entries, config }) {
   const searchContent = JSON.stringify(writingIndex);
   artifacts.set("lexicon-dist/writing-index.json",searchContent);
   const manifest = {
-    schemaVersion:2,buildId,checksumAlgorithm:"fnv1a-64",entryCount:entries.length,candidateCount:entries.reduce((n,e)=>n+e.candidates.length,0),
+    schemaVersion:2,buildId,checksumAlgorithm:"fnv1a-64-utf16",entryCount:entries.length,candidateCount:entries.reduce((n,e)=>n+e.candidates.length,0),
     categoryIds,entryToShard,shards,writingIndex:"writing-index.json",
     etymologyLabels:config.etymologyLabels||{}
   };

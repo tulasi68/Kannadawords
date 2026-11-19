@@ -636,10 +636,10 @@ const wordEntries = [
       { 
         id: "nudi", 
         word: "ನುಡಿ", 
-        note: "Strong desi form",
-        proto: "*nuṭi / *moḻi",
-        tamil: "மொழி (moḻi)",
-        tulu: "ನುಡಿ"
+        note: "Kannada nuḍi and Tulu nuḍi are listed under DEDR 3784, with Proto-Dravidian *noṭ-V- ‘to say’. Tamil moḻi is a semantic equivalent, not the same cognate form.",
+        proto: "*noṭ-V- (to say; DEDR 3784)",
+        tamil: "மொழி (moḻi; semantic equivalent, not the same cognate)",
+        tulu: "nuḍi (word, speech, saying; DEDR 3784)"
       }
     ]
   },

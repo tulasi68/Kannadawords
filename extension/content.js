@@ -89,6 +89,8 @@
     trigger.hidden = true;
   }
 
+  trigger.addEventListener("mousedown", event => event.preventDefault());
+
   trigger.addEventListener("click", async () => {
     const selection = savedSelection || currentSelection();
     if (!selection?.text?.trim()) {

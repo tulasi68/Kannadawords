@@ -119,26 +119,55 @@ function escapeHtml(value) {
 }
 function languageRows(entry, alts) {
   const first = alts[0] || {};
+  const evidenceFor = language => (first.comparativeEvidence || []).filter(item => item.language === language);
   const rows = [
-    ["Native Kannada", first.word || "—", null],
-    ["Tamil", first.tamil || "—", first.evidenceVariants?.tamil],
-    ["Tulu", first.tulu || "—", first.evidenceVariants?.tulu],
-    ["Halegannada", entry.halegannada || "Not yet sourced", entry.halegannadaVariants],
-    ["Proto-Dravidian root", first.proto || "Not reconstructed / not yet sourced", first.evidenceVariants?.proto]
+    ["Native Kannada", first.word || "—", null, []],
+    ["Tamil", evidenceFor("ta").map(item=>item.form).join(" · ") || first.tamil || "—", first.evidenceVariants?.tamil, evidenceFor("ta")],
+    ["Tulu", evidenceFor("tcy").map(item=>item.form).join(" · ") || first.tulu || "—", first.evidenceVariants?.tulu, evidenceFor("tcy")],
+    ["Halegannada", entry.halegannada || "Not yet sourced", entry.halegannadaVariants, entry.halegannadaEvidence ? [entry.halegannadaEvidence] : []],
+    ["Proto-Dravidian root", evidenceFor("proto-dravidian").map(item=>item.form).join(" · ") || first.proto || "Not reconstructed / not yet sourced", first.evidenceVariants?.proto, evidenceFor("proto-dravidian")]
   ];
-  return rows.map(([label,value,conflicts]) => {
-    const evidence = label === "Halegannada" ? entry.halegannadaEvidence : null;
-    const status = evidence?.status || (label === "Halegannada" && entry.halegannada ? "unverified" : null);
-    const statusLabel = status === "provisional" ? "Secondary evidence — primary check needed" : status === "verified" ? "Verified source" : status === "unverified" ? "Unverified — source needed" : "";
-    const statusClass = status === "verified" ? "text-emerald-700" : status === "provisional" ? "text-amber-700" : "text-stone-500";
-    const source = evidence?.sourceUrl && evidence?.sourceTitle
-      ? `<a class="block text-xs underline text-stone-600 mt-1" href="${escapeHtml(evidence.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHtml(evidence.sourceTitle)}</a>`
+  const statusLabels = {
+    not_assessed:"Not yet reviewed",
+    provisional:"Provisional evidence — primary check needed",
+    verified:"Verified source",
+    contested:"Contested evidence",
+    rejected:"Rejected evidence",
+    unverified:"Unverified — source needed"
+  };
+  const relationshipLabels = {
+    cognate:"Cognate",
+    semantic_equivalent:"Semantic equivalent",
+    loan:"Loan",
+    reconstruction:"Reconstruction",
+    attested_form:"Attested form",
+    proposed_coinage:"Proposed coinage"
+  };
+  return rows.map(([label,value,conflicts,evidenceRecords]) => {
+    const statuses = [...new Set(evidenceRecords.map(item=>item.status).filter(Boolean))];
+    const relationships = [...new Set(evidenceRecords.map(item=>relationshipLabels[item.relationship]).filter(Boolean))];
+    const status = statuses.includes("verified") ? "verified" : statuses[0] || null;
+    const statusLabel = statuses.map(item=>statusLabels[item]).filter(Boolean).join(" · ");
+    const statusClass = status==="verified" ? "text-emerald-700" : status==="provisional" ? "text-amber-700" : status==="contested" ? "text-orange-700" : status==="rejected" ? "text-red-700" : "text-stone-500";
+    const sourceIds = [...new Set(evidenceRecords.flatMap(item=>item.sourceRefs || []))];
+    const sourceLinks = sourceIds.map(id => {
+      const source = window.KannadaLexiconStore.getReference(id);
+      if (!source) return '<span class="block text-xs text-stone-500 mt-1">Source reference unavailable: '+escapeHtml(id)+'</span>';
+      const title = source.title + (source.locator ? " · "+source.locator : "");
+      return source.url
+        ? '<a class="block text-xs underline text-stone-600 mt-1" href="'+escapeHtml(source.url)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(title)+'</a>'
+        : '<span class="block text-xs text-stone-600 mt-1">'+escapeHtml(title)+'</span>';
+    }).join("");
+    const legacySource = evidenceRecords[0]?.sourceUrl && evidenceRecords[0]?.sourceTitle
+      ? '<a class="block text-xs underline text-stone-600 mt-1" href="'+escapeHtml(evidenceRecords[0].sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(evidenceRecords[0].sourceTitle)+'</a>'
       : "";
-    const note = evidence?.note ? `<span class="block text-xs text-stone-500 mt-1">${escapeHtml(evidence.note)}</span>` : "";
+    const notes = [...new Set(evidenceRecords.map(item=>item.note).filter(Boolean))];
+    const note = notes.length ? '<span class="block text-xs text-stone-500 mt-1">'+notes.map(escapeHtml).join(" · ")+'</span>' : "";
+    const relationship = relationships.length ? '<span class="block text-xs text-stone-500 mt-1">'+relationships.join(" · ")+'</span>' : "";
     const conflict = conflicts?.length
-      ? `<span class="block text-xs text-orange-700 mt-1">Conflicting source values: ${conflicts.map(escapeHtml).join(" · ")}</span>`
+      ? '<span class="block text-xs text-orange-700 mt-1">Conflicting source values: '+conflicts.map(escapeHtml).join(" · ")+'</span>'
       : "";
-    const meta = (status ? `<span class="block text-xs ${statusClass} mt-1">${statusLabel}</span>${source}${note}` : "") + conflict;
+    const meta = (statusLabel ? '<span class="block text-xs '+statusClass+' mt-1">'+escapeHtml(statusLabel)+'</span>' : "") + relationship + sourceLinks + legacySource + note + conflict;
     return `
     <div class="grid grid-cols-[112px_1fr] gap-2 py-2 border-b border-stone-100 last:border-0">
       <span class="text-xs text-stone-500">${label}</span>

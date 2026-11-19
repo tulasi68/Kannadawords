@@ -244,3 +244,8 @@ The project may use open comparative resources and contributor-supplied referenc
 ## Licence
 
 The application code is free to use and share. Data may have separate source and attribution conditions; check the relevant record and source licence before redistributing it.
+
+
+## Scalable vocabulary storage (architecture v1)
+
+The proposed canonical vocabulary format, record schema, validation/build tools and lossless migration plan are documented in [vocabulary/README.md](vocabulary/README.md) and [vocabulary/MIGRATION-PLAN.md](vocabulary/MIGRATION-PLAN.md). This is a non-destructive foundation: the existing website data files and runtime merge pipeline remain unchanged until the canonical export passes parity and regression checks. The target is 5,000–10,000+ unique source headwords using Git-versioned JSONL plus generated static lookup indexes and lazy-loaded detail shards; no database is required at this scale.

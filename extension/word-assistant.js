@@ -9,7 +9,17 @@
   const bySource = new Map(entries.map(item => [item.source.normalize("NFC"), item]));
   const KANNADA = /[\u0C80-\u0CFF]/u;
   const TOKEN = /[\u0C80-\u0CFF]+/gu;
-  const suffixes = ["ಗಳಿಗಾಗಿ", "ಗಳಿಂದ", "ಗಳಿಗೆ", "ಗಳನ್ನು", "ಗಳಲ್ಲಿ", "ಯನ್ನು", "ಯಿಂದ", "ಯಲ್ಲಿ", "ಗಳು", "ವನ್ನು", "ವನ್ನು", "ಕ್ಕೆ", "ದಿಂದ", "ದಲ್ಲಿ", "ಗೆ", "ಇಂದ", "ನ್ನು", "ಯ", "ಅನ್ನು"];
+  const suffixes = ["", "ಯನ್ನು", "ಗಳು", "ಯಿಂದ", "ಗಳಿಗೆ"];
+  function matchSurface(raw) {
+    const surface = raw.normalize("NFC");
+    for (const [base, entry] of bySource) {
+      const allowed = Array.isArray(entry.sourceForms) ? entry.sourceForms : [""];
+      for (const suffix of allowed) {
+        if (surface === base + suffix) return { entry, base, suffix, surface };
+      }
+    }
+    return null;
+  }
 
   const host = document.createElement("div");
   host.id = "kw-inline-host";
@@ -38,20 +48,8 @@
       const end = match.index + match[0].length;
       if (offset >= match.index && offset <= end) {
         const surface = match[0].normalize("NFC");
-        for (const base of bySource.keys()) {
-          if (surface === base) return { node, start: match.index, end, surface, entry: bySource.get(base), suffix: "" };
-          if (surface.startsWith(base)) {
-            const suffix = surface.slice(base.length);
-            if (suffixes.includes(suffix)) return { node, start: match.index, end, surface, entry: bySource.get(base), suffix };
-          }
-          for (const suffix of suffixes) {
-            if (surface.endsWith(suffix)) {
-              const stem = surface.slice(0, -suffix.length);
-              if (stem === base) return { node, start: match.index, end, surface, entry: bySource.get(base), suffix };
-            }
-          }
-        }
-      }
+        const found = matchSurface(surface);
+      if (found) return { node, start: match.index, end, surface, entry: found.entry, suffix: found.suffix };
     }
     return null;
   }
@@ -76,12 +74,8 @@
       const tail = value.slice(pos).match(/^[\u0C80-\u0CFF]+/u);
       if (start >= 0 && tail) {
         const surface = (value.slice(start, pos) + tail[0]).normalize("NFC");
-        for (const base of bySource.keys()) {
-          if (surface === base) return { kind: "input", element: el, start, end: pos + tail[0].length, surface, entry: bySource.get(base), suffix: "" };
-          for (const suffix of suffixes) if (surface === base + suffix)
-            return { kind: "input", element: el, start, end: pos + tail[0].length, surface, entry: bySource.get(base), suffix };
-        }
-      }
+        const found = matchSurface(surface);
+        if (found) return { kind: "input", element: el, start, end: pos + tail[0].length, surface, entry: found.entry, suffix: found.suffix };
     }
     return null;
   }
@@ -169,14 +163,8 @@
       TOKEN.lastIndex = 0;
       let match;
       while ((match = TOKEN.exec(node.nodeValue))) {
-        const surface = match[0].normalize("NFC");
-        let entry = bySource.get(surface);
-        if (!entry) {
-          for (const base of bySource.keys()) {
-            const suffix = surface.startsWith(base) ? surface.slice(base.length) : "";
-            if (suffixes.includes(suffix)) { entry = bySource.get(base); break; }
-          }
-        }
+        const found = matchSurface(match[0]);
+        const entry = found && found.entry;
         if (entry) {
           const range = document.createRange();
           range.setStart(node, match.index);

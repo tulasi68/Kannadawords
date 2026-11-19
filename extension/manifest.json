@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "KannadaWords Writing Assistant",
-  "version": "0.1.0",
-  "description": "Rewrite selected Kannada text in natural, native-oriented Kannada using the KannadaWords AI service.",
+  "version": "0.2.0",
+  "description": "Local word-level Kannada suggestions plus optional selected-passage rewriting.",
   "permissions": [],
   "host_permissions": [
     "https://kannadawords-ai.tulasianand6.workers.dev/*"

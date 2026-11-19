@@ -53,17 +53,16 @@ const allAuditedWordEntries = [
   ...contributorEntriesForMerge
 ];
 const auditedById = allAuditedWordEntries.reduce((map, item) => {
-  const previous = map[item.id];
-  if (!previous) { map[item.id] = item; return map; }
-  map[item.id] = {
-    ...previous, ...item,
-    sourceEtymology: item.contributorSupplied ? (previous.sourceEtymology || item.sourceEtymology) : (item.sourceEtymology || previous.sourceEtymology),
-    editorialNote: item.contributorSupplied
-      ? [previous.editorialNote, item.editorialNote].filter(Boolean).join(" ")
-      : (item.editorialNote || previous.editorialNote || ""),
-    alternatives: [...(previous.alternatives || []), ...(item.alternatives || [])]
-      .filter((alt, index, all) => all.findIndex(candidate => candidate.word === alt.word) === index)
-  };
+  map[item.id] = typeof lexiconMergeEntryRecords === "function"
+    ? lexiconMergeEntryRecords(map[item.id], item)
+    : (map[item.id] ? { ...map[item.id], ...item,
+        alternatives: [...(map[item.id].alternatives || []), ...(item.alternatives || [])]
+          .filter((alt, index, all) => all.findIndex(candidate => candidate.word === alt.word) === index)
+      } : item);
+  // Preserve the original source-etymology precedence for contributor overlays.
+  if (item.contributorSupplied && map[item.id]) {
+    map[item.id].sourceEtymology = map[item.id].sourceEtymology || item.sourceEtymology;
+  }
   return map;
 }, {});
 
@@ -99,17 +98,18 @@ const votingEntries = wordEntries.map(entry => {
     meaning: audit.sourceMeaning || entry.meaning,
     category: categoryForAudited(audit) || entry.category,
     sourceEtymology: audit.sourceEtymology,
-    alternatives: [...(entry.alternatives || []), ...(audit.alternatives || [])]
-      .filter((alt, index, all) => all.findIndex(candidate => candidate.word === alt.word) === index)
+    alternatives: (typeof lexiconMergeCandidateRecords === "function"
+      ? lexiconMergeCandidateRecords([...(entry.alternatives || []), ...(audit.alternatives || [])])
+      : [...(entry.alternatives || []), ...(audit.alternatives || [])]
+          .filter((alt, index, all) => all.findIndex(candidate => candidate.word === alt.word) === index))
       .map(alt => {
-        // Preserve original card metadata while adding audited and contributor-supplied candidates.
-        const baseAlternatives = entry.alternatives || [];
-        const base = baseAlternatives.find(candidate =>
+        // Candidate-level merge fills missing comparative fields without losing votes/IDs.
+        const base = (entry.alternatives || []).find(candidate =>
           candidate.word === alt.word || candidate.id === alt.id
         ) || {};
         return {
-          ...base,
-          ...alt,
+          ...base, ...alt,
+          id: base.id || alt.id,
           tamil: alt.tamil || base.tamil || null,
           tulu: alt.tulu || base.tulu || null,
           proto: alt.proto || base.proto || null

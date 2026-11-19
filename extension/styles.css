@@ -42,7 +42,7 @@
   #kw-result-panel { width: 100%; }
 }
 /* Inline word-level suggestions */
-::highlight(kw-native-word) { text-decoration: underline wavy #b45309 1.5px; text-underline-offset: 3px; }
+::highlight(kw-native-word) { background-color: rgba(245, 158, 11, .22); text-decoration: underline wavy #b45309 2px; text-underline-offset: 3px; }
 #kw-inline-host { all: initial; position: fixed; inset: 0; z-index: 2147483646; pointer-events: none; font-family: system-ui, sans-serif; }
 #kw-inline-card { position: fixed; width: min(320px, calc(100vw - 24px)); max-height: min(55vh, 360px); overflow: auto; padding: 12px; border: 1px solid #e7c9a9; border-radius: 12px; background: #fffdf8; color: #292524; box-shadow: 0 8px 30px #0003; pointer-events: auto; }
 #kw-inline-card[hidden] { display: none !important; }

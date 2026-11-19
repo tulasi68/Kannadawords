@@ -106,7 +106,7 @@ const votingEntries = wordEntries.map(entry => {
         const baseAlternatives = entry.alternatives || [];
         const base = baseAlternatives.find(candidate =>
           candidate.word === alt.word || candidate.id === alt.id
-        ) || baseAlternatives[0] || {};
+        ) || {};
         return {
           ...base,
           ...alt,

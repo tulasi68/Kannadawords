@@ -244,3 +244,12 @@ The project may use open comparative resources and contributor-supplied referenc
 ## Licence
 
 The application code is free to use and share. Data may have separate source and attribution conditions; check the relevant record and source licence before redistributing it.
+
+
+## Scalable vocabulary storage (architecture v1)
+
+The selected architecture is **Option B: preserve the existing vocabulary source collections and build one unified search/retrieval layer from them**. Existing files remain the editorial sources; a deterministic adapter will normalize and index their merged output. No bulk export or database migration is required.
+
+See [vocabulary/README.md](vocabulary/README.md) and [vocabulary/MIGRATION-PLAN.md](vocabulary/MIGRATION-PLAN.md) for the storage, build, retrieval and safe-cutover design. The read-only inventory tool is `scripts/audit-legacy-vocabulary.mjs`.
+
+The website's current runtime pipeline remains in place until the generated index has passed parity and regression tests. The architecture does not introduce an empty second dictionary or require moving existing records.

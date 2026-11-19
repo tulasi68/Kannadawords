@@ -1,0 +1,44 @@
+name: Vocabulary architecture checks
+
+on:
+  pull_request:
+    paths:
+      - "data.js"
+      - "sentence-examples.js"
+      - "contextual-examples.js"
+      - "etymology-entries.js"
+      - "contributor-equivalents.js"
+      - "coinage-review.js"
+      - "app.js"
+      - "vocabulary/**"
+      - "scripts/**"
+      - ".github/workflows/vocabulary-architecture.yml"
+  push:
+    branches:
+      - main
+      - "architecture/vocabulary-store-v1"
+
+permissions:
+  contents: read
+
+jobs:
+  legacy-inventory:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Audit existing vocabulary merge pipeline
+        run: node scripts/audit-legacy-vocabulary.mjs
+      - name: Build unified vocabulary index from existing sources
+        run: node scripts/build-unified-vocabulary.mjs
+      - name: Upload generated index for inspection
+        uses: actions/upload-artifact@v4
+        with:
+          name: kannadawords-unified-vocabulary
+          path: generated/vocabulary/
+          if-no-files-found: error
+          retention-days: 14

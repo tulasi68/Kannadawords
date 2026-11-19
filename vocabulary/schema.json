@@ -1,0 +1,105 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kannadawords.example/schema/vocabulary-entry-v1.json",
+  "title": "KannadaWords canonical vocabulary entry",
+  "type": "object",
+  "additionalProperties": true,
+  "required": [
+    "id",
+    "source",
+    "sourceForms",
+    "meaning",
+    "alternatives",
+    "recognitionStatus",
+    "editorialStatus"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]*$"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceForms": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "meaning": {
+      "type": "string"
+    },
+    "category": {
+      "type": "string"
+    },
+    "alternatives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "word"
+        ],
+        "properties": {
+          "word": {
+            "type": "string",
+            "minLength": 1
+          },
+          "note": {
+            "type": "string"
+          },
+          "status": {
+            "enum": [
+              "verified",
+              "provisional",
+              "proposal"
+            ]
+          },
+          "grammar": {
+            "type": "object"
+          },
+          "evidence": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "morphology": {
+      "type": "object",
+      "description": "Reviewed inflection and suffix rules; do not duplicate each inflection as a headword."
+    },
+    "evidence": {
+      "type": "object",
+      "description": "Comparative and historical evidence with citations; preserve the source and its licence."
+    },
+    "recognitionStatus": {
+      "enum": [
+        "verified",
+        "provisional",
+        "proposal",
+        "rejected"
+      ]
+    },
+    "editorialStatus": {
+      "enum": [
+        "reviewed",
+        "needs_review",
+        "legacy_unreviewed"
+      ]
+    },
+    "provenance": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

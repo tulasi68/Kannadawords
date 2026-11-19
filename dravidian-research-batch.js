@@ -12,6 +12,9 @@ contributorWordEntries.push(
       {
         id: "contrib-501-1",
         word: "ಕುಳಿ",
+        tamil: "kuḻi (குழி; DEDR 1818)",
+        tulu: "guri / guḷi (DEDR 1818)",
+        proto: "*kuḻ-V (DEDR 1818)",
         note: "Comparative evidence: DEDR 1818 lists Tamil kuḻi ‘pit, hole, hollow, cavity, depression, excavation’; Kannada kuḻi ‘hollow, hole, pit, grave’; Tulu guri / guḷi ‘hole, pit’. The dictionary reconstructs Proto-Dravidian *kuḻ-V ‘pit, hollow’. This supports the Dravidian comparison; exact fit for every sense of ಕಂದಕ should still be judged in context.",
         viability: "clean",
         etymologyParts: [{ form: "ಕುಳಿ", etymology: "dravidian" }],
@@ -36,6 +39,7 @@ contributorWordEntries.push(
       {
         id: "contrib-502-1",
         word: "ಇಳಿಜಾರು",
+        tulu: "iḷijārů (a slope, slipperiness; DEDR 503, 2482)",
         note: "Tulu iḷijārů is recorded with the meanings ‘a slope, slipperiness’; it is analysed in the DEDR entry with iḷi- ‘slip out or down, slide’ (DEDR 503) and jār- ‘slip, slide down’ (DEDR 2482). This is a direct Tulu lexical comparison, not evidence for a Proto-Dravidian compound or a verified Tamil cognate.",
         viability: "clean",
         etymologyParts: [{ form: "ಇಳಿಜಾರು", etymology: "dravidian" }],

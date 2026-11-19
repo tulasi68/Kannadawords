@@ -125,8 +125,8 @@ function candidateOrigin(candidate) {
   if (candidate.comparativeEvidence.some(item => item.language === "proto-dravidian") || /native|dravidian|desi|core/i.test(candidate.note || "")) return "verified_dravidian";
   return "uncertain";
 }
-export function buildArtifacts({ entries, config }) {
-  const buildId = stableHash(JSON.stringify({entries,config}));
+export function buildArtifacts({ entries, config, references = [] }) {
+  const buildId = stableHash(JSON.stringify({entries,config,references}));
   const shardSize = 50;
   const entryToShard = {};
   const shards = [];
@@ -168,7 +168,12 @@ export function buildArtifacts({ entries, config }) {
   const manifest = {
     schemaVersion:2,buildId,checksumAlgorithm:"fnv1a-64-utf16",entryCount:entries.length,candidateCount:entries.reduce((n,e)=>n+e.candidates.length,0),
     categoryIds,entryOrder:entries.map(entry=>entry.id),entryToShard,shards,writingIndex:"writing-index.json",
-    etymologyLabels:config.etymologyLabels||{}
+    etymologyLabels:config.etymologyLabels||{},
+    references:references.map(reference => ({
+      id:reference.id,type:reference.type,title:reference.title,
+      author:reference.author||"",year:reference.year||"",publisher:reference.publisher||"",
+      url:reference.url||"",locator:reference.locator||"",note:reference.note||""
+    }))
   };
   artifacts.set("lexicon-dist/manifest.json",JSON.stringify(manifest));
   return {buildId,manifest,artifacts};

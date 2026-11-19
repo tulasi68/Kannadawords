@@ -59,8 +59,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "etymology-entries.js:origin-audit",
@@ -95,8 +96,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -131,8 +133,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -237,8 +240,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -336,8 +340,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "etymology-entries.js:origin-audit",
@@ -372,8 +377,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -408,8 +414,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -507,8 +514,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -604,8 +612,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -708,8 +717,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -746,8 +756,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -852,8 +863,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -949,8 +961,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1039,8 +1052,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -1138,8 +1152,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "etymology-entries.js:origin-audit",
@@ -1174,8 +1189,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1210,8 +1226,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1306,8 +1323,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "etymology-entries.js:origin-audit",
@@ -1342,8 +1360,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1378,8 +1397,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1484,8 +1504,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1522,8 +1543,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1558,8 +1580,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1654,8 +1677,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "etymology-entries.js:origin-audit",
@@ -1690,8 +1714,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1726,8 +1751,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1762,8 +1788,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1860,8 +1887,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "etymology-entries.js:origin-audit",
@@ -1896,8 +1924,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1932,8 +1961,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -1968,8 +1998,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {
             "sourceDataset": "contributor-equivalents.js",
@@ -2052,8 +2083,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2081,8 +2113,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2154,8 +2187,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2183,8 +2217,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2212,8 +2247,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2300,8 +2336,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2329,8 +2366,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2358,8 +2396,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2431,8 +2470,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2460,8 +2500,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2489,8 +2530,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2562,8 +2604,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2591,8 +2634,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2620,8 +2664,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2693,8 +2738,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2722,8 +2768,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2751,8 +2798,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2824,8 +2872,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2853,8 +2902,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2882,8 +2932,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -2955,8 +3006,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -2984,8 +3036,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3013,8 +3066,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3086,8 +3140,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3115,8 +3170,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3188,8 +3244,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3217,8 +3274,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3246,8 +3304,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3319,8 +3378,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3348,8 +3408,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3377,8 +3438,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3450,8 +3512,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3479,8 +3542,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3552,8 +3616,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3581,8 +3646,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3654,8 +3720,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3683,8 +3750,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3712,8 +3780,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3785,8 +3854,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3814,8 +3884,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3843,8 +3914,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -3916,8 +3988,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3945,8 +4018,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -3974,8 +4048,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4047,8 +4122,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4076,8 +4152,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4149,8 +4226,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4178,8 +4256,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4251,8 +4330,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4280,8 +4360,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4353,8 +4434,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4382,8 +4464,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4455,8 +4538,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4484,8 +4568,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4513,8 +4598,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4586,8 +4672,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4615,8 +4702,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4644,8 +4732,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4717,8 +4806,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4746,8 +4836,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4819,8 +4910,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4848,8 +4940,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -4921,8 +5014,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4950,8 +5044,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -4979,8 +5074,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5052,8 +5148,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5081,8 +5178,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5110,8 +5208,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5183,8 +5282,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5212,8 +5312,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5285,8 +5386,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5314,8 +5416,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5343,8 +5446,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5416,8 +5520,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5445,8 +5550,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5474,8 +5580,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5547,8 +5654,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5576,8 +5684,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5605,8 +5714,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5678,8 +5788,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5707,8 +5818,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5736,8 +5848,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5809,8 +5922,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5838,8 +5952,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5867,8 +5982,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -5940,8 +6056,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5969,8 +6086,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -5998,8 +6116,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -6071,8 +6190,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -6100,8 +6220,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -6129,8 +6250,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -6202,8 +6324,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -6231,8 +6354,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }
@@ -6304,8 +6428,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -6333,8 +6458,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         },
@@ -6362,8 +6488,9 @@
             "sourceRefs": []
           },
           "editorial": {
-            "reviewStatus": "needs_review",
-            "note": ""
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
           },
           "legacyFields": {}
         }

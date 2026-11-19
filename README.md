@@ -246,28 +246,7 @@ The project may use open comparative resources and contributor-supplied referenc
 The application code is free to use and share. Data may have separate source and attribution conditions; check the relevant record and source licence before redistributing it.
 
 
-## Canonical vocabulary data model (schema v1)
-
-The vocabulary is growing toward 7,000+ entries. The current legacy source files remain editorial inputs. Their compatibility merge and display projection are defined in `lexicon-data.js`; the UI in `app.js` consumes only the resulting `votingEntries` collection. This makes the exact dataset presented to users inspectable in one place, even while the underlying source files are being migrated.
-
-### Identity rules
-
-- A lexical entry keeps its stable entry `id`; this is also the identity used by existing voting records.
-- A candidate is identified by its NFC-normalized Kannada `word` plus optional `senseKey`. Identical spellings in genuinely different senses must use different `senseKey` values.
-- Candidate IDs are preserved. When duplicate source records describe the same candidate, their comparative fields are merged rather than silently discarded.
-
-### Evidence merge rules
-
-- Missing Tamil, Tulu and Proto-Dravidian fields are filled from another record for the same candidate.
-- Conflicting non-empty values are not silently overwritten: the first displayed value is retained and the alternatives are recorded in `evidenceVariants` for editorial resolution.
-- Notes, etymology parts and source labels are combined without duplicating identical values.
-- A merge must not upgrade confidence. Where source records disagree on viability, the more cautious status wins.
-- Entry-level Halegannada forms are retained; conflicting forms are preserved in `halegannadaVariants`.
-- Comparative equivalents belong to a candidate, not merely to the source headword. Evidence for one alternative must not be shown beside another.
-
-
-
-### Canonical lexicon architecture (v2)
+## Canonical lexicon architecture (v2)
 
 The canonical editable vocabulary lives in `lexicon-source/entries/*.json`. The browser never merges the legacy vocabulary files. A deterministic build produces the versioned runtime data under `lexicon-dist/`.
 
@@ -310,6 +289,8 @@ npm run lexicon:schema         # JSON Schema Draft 2020-12 validation
 npm test                      # model, migration, adapter and lazy-store tests
 npm run lexicon:build          # regenerate lexicon-dist/
 npm run lexicon:check          # fail if generated output is stale
+npm run lexicon:find -- "ಮದ್ದು" # locate an entry/candidate and its source shard
+npm run lexicon:migration-check # verify the frozen initial import
 ```
 
 When adding or changing records:

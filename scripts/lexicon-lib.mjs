@@ -141,7 +141,7 @@ export function buildArtifacts({ entries, config }) {
   artifacts.set("lexicon-dist/writing-index.json",searchContent);
   const manifest = {
     schemaVersion:2,buildId,checksumAlgorithm:"fnv1a-64-utf16",entryCount:entries.length,candidateCount:entries.reduce((n,e)=>n+e.candidates.length,0),
-    categoryIds,entryToShard,shards,writingIndex:"writing-index.json",
+    categoryIds,entryOrder:entries.map(entry=>entry.id),entryToShard,shards,writingIndex:"writing-index.json",
     etymologyLabels:config.etymologyLabels||{}
   };
   artifacts.set("lexicon-dist/manifest.json",JSON.stringify(manifest));

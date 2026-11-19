@@ -7,6 +7,7 @@
     "lexicon:validate": "node scripts/validate-lexicon.mjs",
     "lexicon:build": "node scripts/build-lexicon.mjs",
     "lexicon:check": "node scripts/build-lexicon.mjs --check",
-    "test": "node --test"
+    "test": "node --test",
+    "lexicon:schema": "npx --yes ajv-cli@5.0.0 validate -s lexicon-source/schema/lexicon.schema.json -d 'lexicon-source/entries/*.json' --spec=draft2020"
   }
 }

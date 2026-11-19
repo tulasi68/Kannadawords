@@ -267,36 +267,70 @@ The vocabulary is growing toward 7,000+ entries. The current legacy source files
 
 
 
-### Canonical display-data architecture
+### Canonical lexicon architecture (v2)
 
-The runtime vocabulary now has one source of truth: `lexicon-data.js`.
+The canonical editable vocabulary lives in `lexicon-source/entries/*.json`. The browser never merges the legacy vocabulary files. A deterministic build produces the versioned runtime data under `lexicon-dist/`.
 
 ```text
-lexicon-data.js
-  KANNADA_LEXICON (schemaVersion 1)
-    entries[]
-    etymologyLabels
+lexicon-source/
+  schema/lexicon.schema.json
+  schema/references.schema.json
+  config.json
+  references.json
+  entries/part-NNN.json       (50 records per source shard)
+          |
+          | validate + deterministic build
+          v
+lexicon-dist/
+  manifest.json
+  writing-index.json
+  shards/NNNN.json            (50 records per runtime shard)
           |
           v
-     votingEntries
+lexicon-display-adapter.js    (canonical record -> stable UI view model)
           |
           v
-       app.js
-  (rendering, filtering, voting and interaction)
+lexicon-store.js              (manifest, checksums, lazy page loading)
+          |
+          v
+app.js                        (rendering, filtering, voting and interaction)
 ```
 
-The UI loads `lexicon-data.js` directly. It does not load or merge `data.js`, `etymology-entries.js`, `contributor-equivalents.js`, the research batches, or `lexicon-model.js` at runtime. Those legacy files remain in the repository as migration/history material; changing them alone will not change the live vocabulary. **For current UI vocabulary edits, update `lexicon-data.js`.**
+**Source of truth:** edit `lexicon-source/entries/*.json`, not `lexicon-dist/` and not the old `data.js`, `etymology-entries.js`, `contributor-equivalents.js`, research batches or retired `lexicon-data.js`. The generated files are committed so static hosting can serve them directly; CI checks that they match the source.
 
-Integrity rules:
+The store loads the manifest and compact writing-assistant index at startup, then fetches only the runtime shard(s) needed for the selected 20-word page. It caches fetched shards in memory, deduplicates concurrent requests, checks each shard checksum and build version, and fails visibly rather than displaying a partial page. Category names and counts come from the manifest, so the category filter cannot silently omit newly added categories.
 
-1. `lexicon-data.js` is the authoritative vocabulary content displayed to users.
-2. `app.js` consumes `votingEntries`; it must not independently rebuild or merge vocabulary.
-3. There is exactly one display entry per stable entry ID. Different IDs are not merged merely because their forms look alike.
-4. Every display entry has a non-empty stable ID.
-5. Candidate IDs, source provenance, votes, senses and conflicting evidence must be preserved during future migrations.
-6. Content and etymology corrections are a separate editorial phase. Architecture changes must not silently “correct” linguistic content.
+### Editing and validation
 
-The current canonical snapshot contains 450 entries and is approximately 466 KB. This is a clean direct-source foundation, but it is not the final 7,000-entry delivery strategy. Before large-scale expansion, the canonical records should be moved into validated, category/alphabetically sharded JSON with a small manifest and search index. A deterministic build/validation step should generate the browser payload; the generated payload must remain the exact content consumed by the UI.
+Run these commands from the repository root:
+
+```sh
+npm run lexicon:validate       # IDs, references, review states and evidence rules
+npm run lexicon:schema         # JSON Schema Draft 2020-12 validation
+npm test                      # model, migration, adapter and lazy-store tests
+npm run lexicon:build          # regenerate lexicon-dist/
+npm run lexicon:check          # fail if generated output is stale
+```
+
+When adding or changing records:
+
+1. Assign a permanent lowercase entry ID. Never recycle an ID after publication because votes and comments refer to it.
+2. Use a `senseKey` when the same spelling has distinct meanings. Do not merge records or candidates solely because their visible forms match.
+3. Give every candidate a stable ID within its entry. Preserve that ID when editing its spelling or evidence.
+4. Add Tamil (`ta`), Tulu (`tcy`), Old Kannada (`okn`) or Proto-Dravidian evidence as separate records under `comparativeEvidence`.
+5. Set the evidence relationship and status explicitly. Imported strings begin as `unclassified` / `not_assessed`; they are not automatically cognates or verified equivalents.
+6. Add a source record to `lexicon-source/references.json` and cite its ID in `sourceRefs` before marking evidence verified. A verified candidate or entry without source references fails validation.
+7. Run validation, tests and build; commit source and generated output together.
+
+`provenance.sourceDatasets` records where a contribution came from; it is not a scholarly citation. `sourceRefs` points to the reusable reference registry. These concepts must never be conflated.
+
+### Migration and historical material
+
+`migration/legacy-v1-snapshot.json` preserves the former 450-entry display snapshot. `migration/v2-import-snapshot.json` records its deterministic v2 conversion. `scripts/migrate-legacy-v1.mjs` reproduces that initial import; this baseline is immutable and does not constrain future editorial changes to the canonical source.
+
+Legacy source files remain in the repository for traceability but are not loaded by the website. The migration deliberately leaves imported candidates in `needs_review` and their comparative forms in `not_assessed`; it does not make linguistic corrections or certify contributor claims.
+
+The initial migration contains 450 entries and 962 candidates. Runtime shards contain at most 50 entries each. This layout is designed to grow to 7,000–10,000 entries without loading the entire vocabulary into the page. The writing-assistant index is separate and intentionally compact; the full comparative record is loaded only when its vocabulary page is requested.
 
 ### Evidence fields (gradual migration)
 

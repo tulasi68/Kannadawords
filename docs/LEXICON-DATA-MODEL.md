@@ -56,7 +56,7 @@ A candidate belongs to one entry and has its own stable ID. Candidate IDs are un
 | `comparativeEvidence[]` | Independent language evidence records. |
 | `evidenceVariants` | Conflicting imported values retained for editorial resolution. |
 | `provenance` | Dataset lineage and bibliography references. |
-| `editorial` | Candidate-specific editorial note and review state. |
+| `editorial` | Candidate-specific note, reviewer and review time. The status lives only in `reviewStatus`. |
 | `flags` | No-alternative and out-of-scope markers. |
 | `legacyFields` | Unmapped historical candidate fields. |
 

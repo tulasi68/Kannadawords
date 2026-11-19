@@ -70,7 +70,12 @@ export function validateLexicon({ entries, references }) {
     if (!Array.isArray(entry.candidates)) { fail(at, "candidates must be an array"); continue; }
     if (!entry.editorial || !allowedReviewStatuses.has(entry.editorial.reviewStatus)) fail(at, "invalid editorial.reviewStatus");
     if (!entry.provenance || !Array.isArray(entry.provenance.sourceRefs)) fail(at, "provenance.sourceRefs must be an array");
-    if (entry.editorial?.reviewStatus === "verified" && !(entry.provenance?.sourceRefs || []).length && !entry.candidates.some(candidate => (candidate.comparativeEvidence || []).some(e => e.status === "verified" && e.sourceRefs.length))) fail(at, "verified entry requires source references");
+    if (!entry.provenance || !Array.isArray(entry.provenance.sourceDatasets)) fail(at, "provenance.sourceDatasets must be an array");
+    if (!entry.scope || typeof entry.scope.noAlternative !== "boolean" || typeof entry.scope.outsideTargetOrigin !== "boolean") fail(at, "scope flags are required booleans");
+    if (!entry.historicalEvidence || !["not_assessed","provisional","verified","contested","not_found","not_applicable"].includes(entry.historicalEvidence.status)) fail(at, "invalid historical evidence status");
+    if (entry.historicalEvidence?.status === "verified" && !(entry.historicalEvidence.sourceRefs || []).length) fail(at, "verified historical evidence requires source references");
+    for (const ref of entry.historicalEvidence?.sourceRefs || []) if (!referenceIds.has(ref)) fail(at, "unknown historical evidence source reference: " + ref);
+    if (entry.editorial?.reviewStatus === "verified" && !(entry.provenance?.sourceRefs || []).length && !entry.candidates.some(candidate => (candidate.comparativeEvidence || []).some(e => e.status === "verified" && (e.sourceRefs || []).length))) fail(at, "verified entry requires source references");
     for (const ref of entry.provenance?.sourceRefs || []) if (!referenceIds.has(ref)) fail(at, `unknown source reference '${ref}'`);
     const candidateIds = new Set();
     for (const [j, candidate] of entry.candidates.entries()) {
@@ -81,6 +86,9 @@ export function validateLexicon({ entries, references }) {
       else candidateIds.add(candidate.id);
       if (!isText(candidate.form)) fail(ca, "form is required");
       if (!allowedReviewStatuses.has(candidate.reviewStatus)) fail(ca, "invalid reviewStatus");
+      if (!["unclassified","attested","native","semantic_equivalent","loan","coinage","reconstruction"].includes(candidate.candidateKind)) fail(ca, "invalid candidateKind");
+      if (!candidate.editorial || typeof candidate.editorial.note !== "string") fail(ca, "candidate editorial note is required");
+      if (!candidate.provenance || !Array.isArray(candidate.provenance.sourceRefs) || !Array.isArray(candidate.provenance.sourceDatasets)) fail(ca, "candidate provenance arrays are required");
       if (!Array.isArray(candidate.comparativeEvidence)) fail(ca, "comparativeEvidence must be an array");
       for (const [k, evidence] of (candidate.comparativeEvidence || []).entries()) {
         const ea = `${ca}.comparativeEvidence[${k}]`;

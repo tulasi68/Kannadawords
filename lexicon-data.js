@@ -120,7 +120,10 @@ const votingEntries = wordEntries.map(entry => {
     rejectedAlternatives: audit.rejectedAlternatives || [],
     editorialNote: audit.editorialNote || ""
   } : entry;
-}).concat(allAuditedWordEntries
+}).concat(Object.values(auditedById)
+  // auditedById is already the merged, one-record-per-stable-ID view.
+  // Appending the raw source rows here duplicated entries whenever multiple
+  // contributor/research rows resolved to the same existing ID.
   .filter(item => !wordEntries.some(entry => entry.id === item.id))
   .map(item => ({...item, sanskrit:item.sourceForm, meaning:item.sourceMeaning, category:categoryForAudited(item), rejectedAlternatives:item.rejectedAlternatives || []})))
   .concat((typeof noAlternativeEntries === "undefined" ? [] : noAlternativeEntries).map(item => ({

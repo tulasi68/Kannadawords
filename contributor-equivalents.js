@@ -936,12 +936,14 @@ const contributorWordEntries = [
       {
         "id": "contrib-021-2",
         "word": "ಮಣ್ಣು",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 4666 records Tamil maṇ, Kannada maṇ/maṇṇu and Tulu maṇṇů for earth, soil and ground. The entry supplies no Proto-Dravidian reconstruction, so none is asserted here.",
+        "tamil": "மண் (maṇ; earth, soil, land; DEDR 4666)",
+        "tulu": "maṇṇů (earth, clay, soil; DEDR 4666)",
+        "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಮಣ್ಣು",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       },
@@ -1084,12 +1086,15 @@ const contributorWordEntries = [
       {
         "id": "contrib-025-1",
         "word": "ಮರ",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 4711 records Proto-Dravidian *mar-am / *mar-an ‘tree’, with Tamil maram, Kannada mara and Tulu mara. These are direct cognates.",
+        "proto": "*mar-am / *mar-an (tree; DEDR 4711)",
+        "tamil": "மரம் (maram; tree, wood, timber; DEDR 4711)",
+        "tulu": "mara (tree; DEDR 4711)",
+        "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಮರ",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       },
@@ -1835,12 +1840,15 @@ const contributorWordEntries = [
       {
         "id": "contrib-044-1",
         "word": "ಕಿವಿ",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 1977 records Proto-Dravidian *kew-i ‘ear’, with Tamil cevi, Kannada kivi and Tulu kebi. These are direct cognates.",
+        "proto": "*kew-i (ear; DEDR 1977)",
+        "tamil": "செவி (cevi; ear; DEDR 1977)",
+        "tulu": "kebi (ear; DEDR 1977)",
+        "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಕಿವಿ",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       }
@@ -3898,12 +3906,15 @@ const contributorWordEntries = [
       {
         "id": "contrib-091-3",
         "word": "ತಿಂಡಿ",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 3263 records Proto-Dravidian *tiHn- ‘to eat’; Tamil tiṇṭi ‘eatables’, Kannada tiṇḍi ‘food’ and Tulu tīnů/tīni ‘food, meal’. The cognate family is clear, though the nominal meanings are not identical in every language.",
+        "proto": "*tiHn- (to eat; DEDR 3263)",
+        "tamil": "திண்டி (tiṇṭi; eatables; DEDR 3263)",
+        "tulu": "tīnů / tīni (food, meal; DEDR 3263)",
+        "viability": "clean",
         "etymologyParts": [
           {
             "form": "ತಿಂಡಿ",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       }
@@ -21019,12 +21030,14 @@ const contributorWordEntries = [
       {
         "id": "contrib-415-1",
         "word": "ಮಣ್ಣು",
-        "note": "Contributor-supplied candidate; semantic fit, naturalness and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 4666 records Tamil maṇ, Kannada maṇ/maṇṇu and Tulu maṇṇů for earth, clay and soil. The entry supplies no Proto-Dravidian reconstruction, so none is asserted here.",
+        "tamil": "மண் (maṇ; earth, soil; DEDR 4666)",
+        "tulu": "maṇṇů (earth, clay, soil; DEDR 4666)",
+        "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಮಣ್ಣು",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ],
         "linguisticEvidence": {

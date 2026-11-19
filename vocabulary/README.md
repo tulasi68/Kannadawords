@@ -1,71 +1,69 @@
-# Canonical vocabulary store (v1)
+# Unified vocabulary layer (Option B)
 
-## Purpose
+## Decision
 
-This directory defines the future single source of truth for KannadaWords vocabulary. The current website still uses the legacy files and merge pipeline. **Do not remove or bypass those files until the migration has been reconciled and regression-tested.**
+The existing vocabulary datasets remain the authoritative editorial sources for now. We will not bulk-export or move all records into a new canonical file simply to make the architecture look tidy.
 
-## Canonical format
+The website's existing data files and merge rules remain intact. A deterministic build adapter will read those sources in the same order as the live application, apply the same merge rules, and produce one unified, read-optimized vocabulary index.
 
-- `entries.jsonl`: one UTF-8 JSON object per unique source headword.
-- `schema.json`: record contract.
-- Stable `id` values; never reuse an ID.
-- `source` is the canonical Sanskrit-derived Kannada headword.
-- `sourceForms` contains genuine spelling/orthographic variants of that source word only.
-- Replacement words live only under `alternatives`; they are never lookup keys.
-- Inflections belong under `morphology`, not as duplicate headwords.
-- Evidence and editorial confidence are separate from whether an entry is allowed in automatic highlighting.
+## Source collections
 
-## Editorial and recognition states
+Current collections include:
 
-`recognitionStatus`:
-- `verified`: source-word classification is reviewed and safe for local recognition.
-- `provisional`: needs linguistic/editorial review; excluded from default highlighting.
-- `proposal`: contributor proposal; excluded from default highlighting.
-- `rejected`: retained for audit, excluded from all production indexes.
+- `data.js` — original base word cards.
+- `etymology-entries.js` — audited vocabulary and comparative notes.
+- `contributor-equivalents.js` — contributor suggestions and candidate alternatives.
+- `coinage-review.js` — coinage evaluation and review data.
+- `sentence-examples.js` and `contextual-examples.js` — examples and contextual material.
+- `app.js` — current merge, deduplication, eligibility and lexicon construction rules.
 
-`editorialStatus`:
-- `reviewed`, `needs_review`, or `legacy_unreviewed`.
+These collections are not interchangeable. Their provenance, confidence, meaning and review status must be preserved. The builder must reproduce the current merge order and rules rather than guessing from record IDs.
 
-Alternative-level `status` values:
-- `verified`, `provisional`, `proposal`.
+## Unified build output
 
-A verified source does not automatically make every replacement historically attested. Keep alternative evidence attached to the alternative itself.
+The build adapter will generate disposable static assets:
 
-## Build and validation
+- `manifest.json` — version, counts, source fingerprints and shard list.
+- `lookup-index.json` — NFC-normalised verified source forms mapped to record IDs.
+- `search-index.json` — compact searchable headwords, meanings and alternatives.
+- `shards/*.json` — detailed merged records, split deterministically by stable ID hash.
 
-Run from repository root:
+The browser loads the compact lookup index first and fetches detailed records only when needed. Alternatives must never become lookup keys merely because they are replacements. A replacement can be a lookup key only if it independently exists as a reviewed source entry.
 
-```sh
-node scripts/vocabulary-store.mjs validate
-node scripts/vocabulary-store.mjs count
-node scripts/vocabulary-store.mjs build
-```
+## Editing and extension
 
-The build creates disposable artifacts under `generated/vocabulary/`:
-- `manifest.json`: version, counts and shard list.
-- `lookup-index.json`: NFC-normalised source forms to entry IDs, for local matching.
-- `search-index.json`: compact searchable source, meaning and alternative text.
-- `shards/*.json`: detailed records split by stable hash of ID.
+For now, contributors add or edit words in the appropriate existing source collection. Each source collection retains its own schema and provenance. The build adapter normalises them into a shared internal record shape.
 
-Only entries with `recognitionStatus: "verified"` enter the default lookup index. Provisional/proposal records remain searchable in the editorial search index but cannot trigger automatic highlights. No replacement word is ever inserted into the source lookup index.
+New data formats should not be introduced casually. When a new source collection is needed, document its schema and add it explicitly to the adapter and validation suite.
 
-The build is deterministic: the same canonical input produces the same logical output. Generated artifacts must never be edited by hand.
+Over time, an editor-facing contribution format may be introduced. It should feed the same adapter; it does not require rewriting or relocating historical data.
 
-## Scaling strategy
+## Recognition and evidence
 
-10,000 records do not require a database or a paid service. Keep the canonical JSONL in Git for review, history and easy bulk editing. Generate compact static JSON indexes at build time and serve them through the existing static host/CDN. The assistant loads the small lookup index first and fetches a detail shard only when a user opens a word. Cache immutable, versioned artifacts in the browser. If future community editing needs concurrent writes, moderation workflows or accounts, introduce a database then; do not add one merely to store 10,000 curated records.
+The unified internal record keeps these concepts separate:
 
-## Safe migration from legacy files
+- recognition eligibility: whether the source form may trigger a local suggestion;
+- editorial confidence: reviewed, needs review, or legacy/unreviewed;
+- alternative confidence: evidence for each proposed replacement;
+- etymological evidence: citations and comparative claims.
 
-The existing `data.js`, `etymology-entries.js`, `contributor-equivalents.js`, `coinage-review.js` and `app.js` merge logic remain authoritative for the live site until migration is complete.
+Only entries approved by the current editorial policy enter the default automatic lookup index. Provisional proposals remain available for editorial search but cannot trigger highlighting.
 
-Migration must:
-1. Snapshot and count each legacy source independently.
-2. Reproduce the existing merge rules in a migration adapter; do not infer a merge from IDs alone.
-3. Preserve every original record and its provenance in a migration archive.
-4. Deduplicate source headwords using NFC-normalised Kannada strings, while retaining aliases and provenance.
-5. Keep contributor alternatives and historical claims provisional unless independently reviewed.
-6. Compare old and new outputs, including alternatives, statuses and the live assistant's lookup set.
-7. Switch the website to generated indexes only after all parity tests pass.
+## Performance and scale
 
-Do not claim a unique-headword total until the migration adapter has counted the merged, normalised source headwords. Alternative words, inflections, coinages and evidence records are not additional source headwords.
+10,000 headwords do not require a database. Keep curated source data in Git, build compact static JSON, serve through the existing static host/CDN, and cache versioned artifacts in the browser. Hash-based shards make detailed retrieval selective and deterministic.
+
+A database is only justified if the project later needs concurrent web editing, accounts, moderation queues or live multi-user updates.
+
+## Migration safety
+
+No source files are deleted or rewritten as part of this architecture phase. The generated index is not a new editorial source of truth. The live website continues using its current runtime pipeline until the generated output is proven equivalent.
+
+Before cutover, tests must compare:
+1. merged records and source provenance;
+2. unique NFC-normalised source headwords;
+3. source forms eligible for highlighting;
+4. alternatives, meanings and review statuses;
+5. regression examples, including `ಸಮಸ್ಯೆ` being recognised and `ಹೊಸ` not being falsely highlighted.
+
+The JSON Schema in this directory describes the future shared internal record shape, not a requirement to move every legacy record into one file.

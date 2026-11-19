@@ -1,6 +1,16 @@
 import fs from "node:fs";
 import path from "node:path";
-import { createHash } from "node:crypto";
+
+function stableHash(value) {
+  // FNV-1a 64-bit checksum: deterministic in Node and browsers, used for
+  // cache versioning and accidental-corruption detection (not authentication).
+  let hash = 0xcbf29ce484222325n;
+  for (const byte of new TextEncoder().encode(value)) {
+    hash ^= BigInt(byte);
+    hash = BigInt.asUintN(64, hash * 0x100000001b3n);
+  }
+  return hash.toString(16).padStart(16, "0");
+}
 
 export const ROOT = process.cwd();
 export const SOURCE_DIR = path.join(ROOT, "lexicon-source");
@@ -98,7 +108,7 @@ function candidateOrigin(candidate) {
   return "uncertain";
 }
 export function buildArtifacts({ entries, config }) {
-  const buildId = createHash("sha256").update(JSON.stringify({entries,config})).digest("hex").slice(0,16);
+  const buildId = stableHash(JSON.stringify({entries,config}));
   const shardSize = 50;
   const entryToShard = {};
   const shards = [];
@@ -109,9 +119,9 @@ export function buildArtifacts({ entries, config }) {
     const records = entries.slice(i,i+shardSize);
     records.forEach(entry => { entryToShard[entry.id] = shardId; });
     const content = JSON.stringify({schemaVersion:2,buildId,entries:records});
-    const sha256 = createHash("sha256").update(content).digest("hex");
+    const sha256 = stableHash(content);
     artifacts.set(`lexicon-dist/${file}`, content);
-    shards.push({id:shardId,file,count:records.length,sha256});
+    shards.push({id:shardId,file,count:records.length,checksum:sha256});
   }
   const categoryIds = {};
   for (const entry of entries) (categoryIds[entry.category] ||= []).push(entry.id);
@@ -130,7 +140,7 @@ export function buildArtifacts({ entries, config }) {
   const searchContent = JSON.stringify(writingIndex);
   artifacts.set("lexicon-dist/writing-index.json",searchContent);
   const manifest = {
-    schemaVersion:2,buildId,entryCount:entries.length,candidateCount:entries.reduce((n,e)=>n+e.candidates.length,0),
+    schemaVersion:2,buildId,checksumAlgorithm:"fnv1a-64",entryCount:entries.length,candidateCount:entries.reduce((n,e)=>n+e.candidates.length,0),
     categoryIds,entryToShard,shards,writingIndex:"writing-index.json",
     etymologyLabels:config.etymologyLabels||{}
   };

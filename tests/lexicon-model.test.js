@@ -55,3 +55,12 @@ test("null incoming entry evidence does not erase an existing value", () => {
   assert.equal(merged.halegannada, "ಮರ್ದ್");
   assert.deepEqual(merged.halegannadaEvidence, { status: "provisional" });
 });
+
+
+test("parent source datasets are attached to merged candidates", () => {
+  const merged = lexiconMergeEntryRecords(
+    { id: "medicine", sourceDataset: "data.js", alternatives: [{ word: "ಮದ್ದು" }] },
+    { id: "medicine", sourceDataset: "etymology-entries.js", alternatives: [{ word: "ಮದ್ದು", tamil: "மருந்து" }] }
+  );
+  assert.deepEqual(merged.alternatives[0].sources, ["data.js", "etymology-entries.js"]);
+});

@@ -11,6 +11,7 @@
         source: "ಸಮಸ್ಯೆ",
         meaning: "Problem",
         sourceStatus: "needs-review",
+        sourceForms: ["", "ಯನ್ನು", "ಗಳು", "ಯಿಂದ", "ಗಳಿಗೆ"],
         sourceNote: "ಮೂಲದ ವರ್ಗೀಕರಣ ಇನ್ನೂ ಪರಿಶೀಲನೆಯಲ್ಲಿದೆ.",
         alternatives: [
           {

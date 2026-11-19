@@ -488,10 +488,10 @@ const wordEntries = [
       { 
         id: "kivi", 
         word: "ಕಿವಿ", 
-        note: "Native form",
-        proto: "*kevi",
-        tamil: "காது (kātu)",
-        tulu: "ಕೆಮಿ / ಕಿವಿ"
+        note: "DEDR 1977 lists Proto-Dravidian *kew-i ‘ear’, Tamil cevi, Kannada kivi and Tulu kebi. Tamil kātu is a semantic equivalent but not the cognate form.",
+        proto: "*kew-i (ear; DEDR 1977)",
+        tamil: "செவி (cevi; ear; DEDR 1977)",
+        tulu: "kebi (ear; DEDR 1977)"
       }
     ]
   },

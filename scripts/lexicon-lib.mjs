@@ -154,7 +154,7 @@ export function buildArtifacts({ entries, config }) {
       bySourceForm.set(key,existing);
     });
   });
-  const writingIndex = { schemaVersion:2,buildId,entries:[...bySourceForm.values()] };
+  const writingIndex = { schemaVersion:2,buildId,entries:[...bySourceForm.values()].filter(entry => entry.candidates.length) };
   const searchContent = JSON.stringify(writingIndex);
   artifacts.set("lexicon-dist/writing-index.json",searchContent);
   const manifest = {

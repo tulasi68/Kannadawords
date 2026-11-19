@@ -1128,12 +1128,15 @@ const contributorWordEntries = [
       {
         "id": "contrib-026-1",
         "word": "ಹೂವು",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 4348 gives the Dravidian flower set: Proto-Dravidian *puy/*pūi (< *puH); Tamil pū; Kannada pū/pūvu; Tulu pū. ಹೂವು is the Kannada form in this native cognate family.",
+        "proto": "*puy / *pūi (< *puH; flower, blossom; DEDR 4348)",
+        "tamil": "பூ (pū; flower, blossom; DEDR 4348)",
+        "tulu": "pū (flower; DEDR 4348)",
+        "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಹೂವು",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       },
@@ -14246,12 +14249,15 @@ const contributorWordEntries = [
       {
         "id": "contrib-313-1",
         "word": "ಹೂವು",
-        "note": "Contributor-supplied candidate; semantic fit, naturalness and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 4348 gives the Dravidian flower set: Proto-Dravidian *puy/*pūi (< *puH); Tamil pū; Kannada pū/pūvu; Tulu pū. ಹೂವು is the Kannada form in this native cognate family.",
+        "proto": "*puy / *pūi (< *puH; flower, blossom; DEDR 4348)",
+        "tamil": "பூ (pū; flower, blossom; DEDR 4348)",
+        "tulu": "pū (flower; DEDR 4348)",
+        "viability": "clean",
         "etymologyParts": [
           {
             "form": "ಹೂವು",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ],
         "linguisticEvidence": {

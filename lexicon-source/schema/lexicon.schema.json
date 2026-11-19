@@ -36,12 +36,13 @@
             "ta",
             "tcy",
             "okn",
-            "proto-dravidian"
+            "proto-dravidian",
+            "kn"
           ]
         },
         "form": {
           "type": "string",
-          "minLength": 1
+          "minLength": 0
         },
         "relationship": {
           "enum": [
@@ -60,7 +61,8 @@
             "provisional",
             "verified",
             "contested",
-            "rejected"
+            "rejected",
+            "not_found"
           ]
         },
         "sourceRefs": {
@@ -74,7 +76,37 @@
         "note": {
           "type": "string"
         }
-      }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "status": {
+                "const": "not_found"
+              }
+            },
+            "required": [
+              "status"
+            ]
+          },
+          "then": {
+            "properties": {
+              "form": {
+                "type": "string",
+                "minLength": 0
+              }
+            }
+          },
+          "else": {
+            "properties": {
+              "form": {
+                "type": "string",
+                "minLength": 1
+              }
+            }
+          }
+        }
+      ]
     },
     "provenance": {
       "type": "object",

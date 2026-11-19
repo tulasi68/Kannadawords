@@ -49,5 +49,6 @@ jobs:
       - run: npm test
       - run: npm run lexicon:validate
       - run: npm run lexicon:migration-check
+      - run: npm run lexicon:coverage
       - run: npm run lexicon:schema
       - run: npm run lexicon:check

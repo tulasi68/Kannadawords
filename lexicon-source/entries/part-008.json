@@ -133,7 +133,8 @@
         "sourceMeaning": "Snow / frost",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-194"
     },
     {
       "id": "contrib-195",
@@ -237,7 +238,8 @@
         "sourceMeaning": "Mirage",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-195"
     },
     {
       "id": "contrib-196",
@@ -371,7 +373,8 @@
         "sourceMeaning": "Dust",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-196"
     },
     {
       "id": "contrib-198",
@@ -505,7 +508,8 @@
         "sourceMeaning": "Metal",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-198"
     },
     {
       "id": "contrib-199",
@@ -639,7 +643,8 @@
         "sourceMeaning": "Gold",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-199"
     },
     {
       "id": "contrib-201",
@@ -773,7 +778,8 @@
         "sourceMeaning": "Business / trade",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-201"
     },
     {
       "id": "contrib-203",
@@ -877,7 +883,8 @@
         "sourceMeaning": "Sale / selling",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-203"
     },
     {
       "id": "contrib-204",
@@ -1011,7 +1018,8 @@
         "sourceMeaning": "Value / price",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-204"
     },
     {
       "id": "contrib-205",
@@ -1145,7 +1153,8 @@
         "sourceMeaning": "Profit",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-205"
     },
     {
       "id": "contrib-206",
@@ -1279,7 +1288,8 @@
         "sourceMeaning": "Loss",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-206"
     },
     {
       "id": "contrib-208",
@@ -1413,7 +1423,8 @@
         "sourceMeaning": "Salary / wage",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-208"
     },
     {
       "id": "contrib-209",
@@ -1547,7 +1558,8 @@
         "sourceMeaning": "Tax",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-209"
     },
     {
       "id": "contrib-210",
@@ -1681,7 +1693,8 @@
         "sourceMeaning": "Wealth / property",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-210"
     },
     {
       "id": "contrib-211",
@@ -1815,7 +1828,8 @@
         "sourceMeaning": "Poverty",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-211"
     },
     {
       "id": "contrib-212",
@@ -1949,7 +1963,8 @@
         "sourceMeaning": "Treasury / granary",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-212"
     },
     {
       "id": "contrib-213",
@@ -2083,7 +2098,8 @@
         "sourceMeaning": "Quantity / measurement",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-213"
     },
     {
       "id": "contrib-215",
@@ -2217,7 +2233,8 @@
         "sourceMeaning": "Distance",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-215"
     },
     {
       "id": "contrib-216",
@@ -2351,7 +2368,8 @@
         "sourceMeaning": "Near / close",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-216"
     },
     {
       "id": "contrib-217",
@@ -2485,7 +2503,8 @@
         "sourceMeaning": "Area / expanse",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-217"
     },
     {
       "id": "contrib-218",
@@ -2619,7 +2638,8 @@
         "sourceMeaning": "Deep / dense",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-218"
     },
     {
       "id": "contrib-219",
@@ -2753,7 +2773,8 @@
         "sourceMeaning": "High / tall",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-219"
     },
     {
       "id": "contrib-220",
@@ -2887,7 +2908,8 @@
         "sourceMeaning": "Minimum / least",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-220"
     },
     {
       "id": "contrib-221",
@@ -3021,7 +3043,8 @@
         "sourceMeaning": "Festival / celebration",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-221"
     },
     {
       "id": "contrib-225",
@@ -3155,7 +3178,8 @@
         "sourceMeaning": "Tradition",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-225"
     },
     {
       "id": "contrib-228",
@@ -3289,7 +3313,8 @@
         "sourceMeaning": "Donation / charity",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-228"
     },
     {
       "id": "contrib-229",
@@ -3423,7 +3448,8 @@
         "sourceMeaning": "Worship",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-229"
     },
     {
       "id": "contrib-230",
@@ -3557,7 +3583,8 @@
         "sourceMeaning": "Temple / house",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-230"
     },
     {
       "id": "contrib-231",
@@ -3691,7 +3718,8 @@
         "sourceMeaning": "Idol / statue",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-231"
     },
     {
       "id": "contrib-232",
@@ -3825,7 +3853,8 @@
         "sourceMeaning": "Journey / pilgrimage",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-232"
     },
     {
       "id": "contrib-233",
@@ -3989,7 +4018,8 @@
         "sourceMeaning": "Residence",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-233"
     },
     {
       "id": "contrib-235",
@@ -4093,7 +4123,8 @@
         "sourceMeaning": "Capital city",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-235"
     },
     {
       "id": "contrib-237",
@@ -4227,7 +4258,8 @@
         "sourceMeaning": "Border / boundary",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-237"
     },
     {
       "id": "contrib-239",
@@ -4331,7 +4363,8 @@
         "sourceMeaning": "Victory",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-239"
     },
     {
       "id": "contrib-240",
@@ -4435,7 +4468,8 @@
         "sourceMeaning": "Defeat",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-240"
     },
     {
       "id": "contrib-241",
@@ -4569,7 +4603,8 @@
         "sourceMeaning": "Weapon / tool",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-241"
     },
     {
       "id": "contrib-242",
@@ -4703,7 +4738,8 @@
         "sourceMeaning": "Vessel / utensil",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-242"
     },
     {
       "id": "contrib-243",
@@ -4777,7 +4813,8 @@
         "sourceMeaning": "Mirror",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-243"
     },
     {
       "id": "contrib-244",
@@ -4851,7 +4888,8 @@
         "sourceMeaning": "Umbrella",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-244"
     },
     {
       "id": "contrib-245",
@@ -4955,7 +4993,8 @@
         "sourceMeaning": "Footwear",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-245"
     },
     {
       "id": "contrib-246",
@@ -5089,7 +5128,8 @@
         "sourceMeaning": "Seat",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-246"
     },
     {
       "id": "contrib-247",
@@ -5193,7 +5233,8 @@
         "sourceMeaning": "Pillar",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-247"
     },
     {
       "id": "contrib-248",
@@ -5267,7 +5308,8 @@
         "sourceMeaning": "Wall",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-248"
     },
     {
       "id": "contrib-249",
@@ -5401,7 +5443,8 @@
         "sourceMeaning": "Roof",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-249"
     },
     {
       "id": "contrib-250",
@@ -5535,7 +5578,8 @@
         "sourceMeaning": "Courtyard",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-250"
     },
     {
       "id": "contrib-251",
@@ -5639,7 +5683,8 @@
         "sourceMeaning": "Well",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-251"
     },
     {
       "id": "contrib-252",
@@ -5743,7 +5788,8 @@
         "sourceMeaning": "Tank / pond",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-252"
     },
     {
       "id": "contrib-254",
@@ -5877,7 +5923,8 @@
         "sourceMeaning": "Boat / ship",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-254"
     },
     {
       "id": "contrib-255",
@@ -5981,7 +6028,8 @@
         "sourceMeaning": "Chariot / cart",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-255"
     },
     {
       "id": "contrib-256",
@@ -6115,7 +6163,8 @@
         "sourceMeaning": "Wheel",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-256"
     },
     {
       "id": "contrib-257",
@@ -6249,7 +6298,8 @@
         "sourceMeaning": "Rope",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-257"
     }
   ]
 }

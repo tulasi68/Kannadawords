@@ -133,7 +133,8 @@
         "sourceMeaning": "Exam / test",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-074"
     },
     {
       "id": "contrib-077",
@@ -267,7 +268,8 @@
         "sourceMeaning": "Sentence",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-077"
     },
     {
       "id": "contrib-078",
@@ -401,7 +403,8 @@
         "sourceMeaning": "Meaning",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-078"
     },
     {
       "id": "contrib-080",
@@ -535,7 +538,8 @@
         "sourceMeaning": "Poem",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-080"
     },
     {
       "id": "contrib-081",
@@ -669,7 +673,8 @@
         "sourceMeaning": "Machine",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-081"
     },
     {
       "id": "contrib-082",
@@ -773,7 +778,8 @@
         "sourceMeaning": "Technology",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-082"
     },
     {
       "id": "contrib-083",
@@ -877,7 +883,8 @@
         "sourceMeaning": "Experiment",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-083"
     },
     {
       "id": "contrib-084",
@@ -981,7 +988,8 @@
         "sourceMeaning": "Research",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-084"
     },
     {
       "id": "contrib-086",
@@ -1115,7 +1123,8 @@
         "sourceMeaning": "Speed",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-086"
     },
     {
       "id": "contrib-089",
@@ -1249,7 +1258,8 @@
         "sourceMeaning": "Heat",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-089"
     },
     {
       "id": "contrib-090",
@@ -1353,7 +1363,8 @@
         "sourceMeaning": "Cold",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-090"
     },
     {
       "id": "contrib-092",
@@ -1457,7 +1468,8 @@
         "sourceMeaning": "Beverage",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-092"
     },
     {
       "id": "contrib-098",
@@ -1561,7 +1573,8 @@
         "sourceMeaning": "Window / shutter",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-098"
     },
     {
       "id": "contrib-099",
@@ -1665,7 +1678,8 @@
         "sourceMeaning": "Bed",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-099"
     },
     {
       "id": "contrib-101",
@@ -1799,7 +1813,8 @@
         "sourceMeaning": "Thought / thinking",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-101"
     },
     {
       "id": "contrib-103",
@@ -1933,7 +1948,8 @@
         "sourceMeaning": "Ignorance",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-103"
     },
     {
       "id": "contrib-105",
@@ -2037,7 +2053,8 @@
         "sourceMeaning": "Forgetfulness",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-105"
     },
     {
       "id": "contrib-107",
@@ -2171,7 +2188,8 @@
         "sourceMeaning": "Fool",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-107"
     },
     {
       "id": "contrib-108",
@@ -2305,7 +2323,8 @@
         "sourceMeaning": "Decision",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-108"
     },
     {
       "id": "contrib-109",
@@ -2439,7 +2458,8 @@
         "sourceMeaning": "Doubt / suspicion",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-109"
     },
     {
       "id": "contrib-110",
@@ -2573,7 +2593,8 @@
         "sourceMeaning": "Imagination",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-110"
     },
     {
       "id": "contrib-111",
@@ -2707,7 +2728,8 @@
         "sourceMeaning": "Logic / argument",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-111"
     },
     {
       "id": "contrib-112",
@@ -2841,7 +2863,8 @@
         "sourceMeaning": "Truth",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-112"
     },
     {
       "id": "contrib-113",
@@ -2975,7 +2998,8 @@
         "sourceMeaning": "Lie / falsehood",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-113"
     },
     {
       "id": "contrib-114",
@@ -3109,7 +3133,8 @@
         "sourceMeaning": "Secret",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-114"
     },
     {
       "id": "contrib-115",
@@ -3243,7 +3268,8 @@
         "sourceMeaning": "Consciousness / awareness",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-115"
     },
     {
       "id": "contrib-116",
@@ -3347,7 +3373,8 @@
         "sourceMeaning": "Meditation / focus",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-116"
     },
     {
       "id": "contrib-117",
@@ -3481,7 +3508,8 @@
         "sourceMeaning": "Intention / aim",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-117"
     },
     {
       "id": "contrib-118",
@@ -3615,7 +3643,8 @@
         "sourceMeaning": "Purpose / objective",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-118"
     },
     {
       "id": "contrib-119",
@@ -3719,7 +3748,8 @@
         "sourceMeaning": "Consent / agreement",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-119"
     },
     {
       "id": "contrib-120",
@@ -3853,7 +3883,8 @@
         "sourceMeaning": "Opposition",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-120"
     },
     {
       "id": "contrib-121",
@@ -3987,7 +4018,8 @@
         "sourceMeaning": "Movement / attention",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-121"
     },
     {
       "id": "contrib-122",
@@ -4091,7 +4123,8 @@
         "sourceMeaning": "Arrival",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-122"
     },
     {
       "id": "contrib-123",
@@ -4195,7 +4228,8 @@
         "sourceMeaning": "Departure",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-123"
     },
     {
       "id": "contrib-124",
@@ -4299,7 +4333,8 @@
         "sourceMeaning": "Entry",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-124"
     },
     {
       "id": "contrib-125",
@@ -4403,7 +4438,8 @@
         "sourceMeaning": "Fall",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-125"
     },
     {
       "id": "contrib-126",
@@ -4507,7 +4543,8 @@
         "sourceMeaning": "Rise / upliftment",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-126"
     },
     {
       "id": "contrib-127",
@@ -4611,7 +4648,8 @@
         "sourceMeaning": "Rotation / wandering",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-127"
     },
     {
       "id": "contrib-128",
@@ -4715,7 +4753,8 @@
         "sourceMeaning": "Running",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-128"
     },
     {
       "id": "contrib-129",
@@ -4849,7 +4888,8 @@
         "sourceMeaning": "Rest",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-129"
     },
     {
       "id": "contrib-130",
@@ -4983,7 +5023,8 @@
         "sourceMeaning": "Sleep",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-130"
     },
     {
       "id": "contrib-131",
@@ -5087,7 +5128,8 @@
         "sourceMeaning": "Wakefulness",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-131"
     },
     {
       "id": "contrib-132",
@@ -5221,7 +5263,8 @@
         "sourceMeaning": "Touch",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-132"
     },
     {
       "id": "contrib-136",
@@ -5325,7 +5368,8 @@
         "sourceMeaning": "Drinking",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-136"
     },
     {
       "id": "contrib-137",
@@ -5429,7 +5473,8 @@
         "sourceMeaning": "Bath",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-137"
     },
     {
       "id": "contrib-138",
@@ -5533,7 +5578,8 @@
         "sourceMeaning": "Behavior",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-138"
     },
     {
       "id": "contrib-139",
@@ -5667,7 +5713,8 @@
         "sourceMeaning": "Hard work",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-139"
     },
     {
       "id": "contrib-140",
@@ -5771,7 +5818,8 @@
         "sourceMeaning": "Collection",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-140"
     },
     {
       "id": "contrib-141",
@@ -5905,7 +5953,8 @@
         "sourceMeaning": "Conversation",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-141"
     },
     {
       "id": "contrib-142",
@@ -6009,7 +6058,8 @@
         "sourceMeaning": "Explanation",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-142"
     }
   ]
 }

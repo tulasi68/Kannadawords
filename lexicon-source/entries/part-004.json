@@ -97,7 +97,12 @@
         "sourceForm": "ದಿಗ್ವಲಯ / ದಿಕ್ಕು",
         "sourceMeaning": "Direction",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-direction",
+      "sourceAliases": [
+        "ದಿಗ್ವಲಯ",
+        "ದಿಕ್ಕು"
+      ]
     },
     {
       "id": "supp-man-male",
@@ -188,7 +193,8 @@
         "sourceForm": "ಪುರುಷ",
         "sourceMeaning": "Man (male)",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-man-male"
     },
     {
       "id": "supp-boy-child",
@@ -286,7 +292,8 @@
         "sourceForm": "ಬಾಲಕ",
         "sourceMeaning": "Boy / child",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-boy-child"
     },
     {
       "id": "supp-old-person",
@@ -384,7 +391,8 @@
         "sourceForm": "ವೃದ್ಧ",
         "sourceMeaning": "Old person",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-old-person"
     },
     {
       "id": "supp-enemy",
@@ -482,7 +490,8 @@
         "sourceForm": "ಶತ್ರು",
         "sourceMeaning": "Enemy",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-enemy"
     },
     {
       "id": "supp-people",
@@ -580,7 +589,8 @@
         "sourceForm": "ಜನ",
         "sourceMeaning": "People",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-people"
     },
     {
       "id": "supp-subject-citizen",
@@ -766,7 +776,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-subject-citizen"
     },
     {
       "id": "supp-infant",
@@ -864,7 +875,8 @@
         "sourceForm": "ಶಿಶು",
         "sourceMeaning": "Infant",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-infant"
     },
     {
       "id": "supp-wife",
@@ -962,7 +974,8 @@
         "sourceForm": "ಭಾರ್ಯೆ",
         "sourceMeaning": "Wife",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-wife"
     },
     {
       "id": "supp-husband",
@@ -1111,7 +1124,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-husband"
     },
     {
       "id": "supp-brother",
@@ -1202,7 +1216,8 @@
         "sourceForm": "ಸಹೋದರ",
         "sourceMeaning": "Brother",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-brother"
     },
     {
       "id": "supp-relative",
@@ -1300,7 +1315,8 @@
         "sourceForm": "ಬಂಧು",
         "sourceMeaning": "Relative",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-relative"
     },
     {
       "id": "supp-teacher",
@@ -1383,7 +1399,8 @@
         "sourceForm": "ಗುರು",
         "sourceMeaning": "Teacher",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-teacher"
     },
     {
       "id": "supp-door",
@@ -1532,7 +1549,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-door"
     },
     {
       "id": "supp-bed",
@@ -1630,7 +1648,8 @@
         "sourceForm": "ಶಯನ",
         "sourceMeaning": "Bed",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-bed"
     },
     {
       "id": "supp-ornament",
@@ -1809,7 +1828,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-ornament"
     },
     {
       "id": "supp-sandal-footwear",
@@ -1907,7 +1927,8 @@
         "sourceForm": "ಪಾದುಕೆ",
         "sourceMeaning": "Sandal / footwear",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-sandal-footwear"
     },
     {
       "id": "supp-marriage",
@@ -2093,7 +2114,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-marriage"
     },
     {
       "id": "supp-property",
@@ -2191,7 +2213,8 @@
         "sourceForm": "ಆಸ್ತಿ",
         "sourceMeaning": "Property",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-property"
     },
     {
       "id": "supp-debt",
@@ -2370,7 +2393,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-debt"
     },
     {
       "id": "supp-price",
@@ -2553,7 +2577,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-price"
     },
     {
       "id": "supp-pot",
@@ -2651,7 +2676,8 @@
         "sourceForm": "ಕುಂಭ",
         "sourceMeaning": "Pot",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-pot"
     },
     {
       "id": "supp-wealth-money",
@@ -2908,7 +2934,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-wealth-money"
     },
     {
       "id": "supp-dam-bund",
@@ -3006,7 +3033,8 @@
         "sourceForm": "ಸೇತು",
         "sourceMeaning": "Dam / bund",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-dam-bund"
     },
     {
       "id": "supp-honey",
@@ -3159,7 +3187,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-honey"
     },
     {
       "id": "supp-ghee",
@@ -3275,7 +3304,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-ghee"
     },
     {
       "id": "supp-salt",
@@ -3391,7 +3421,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-salt"
     },
     {
       "id": "supp-cooked-rice",
@@ -3596,7 +3627,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-cooked-rice"
     },
     {
       "id": "supp-meal",
@@ -3694,7 +3726,8 @@
         "sourceForm": "ಭೋಜನ",
         "sourceMeaning": "Meal",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-meal"
     },
     {
       "id": "supp-lake-tank",
@@ -3792,7 +3825,8 @@
         "sourceForm": "ಜಲಾಶಯ",
         "sourceMeaning": "Lake / tank",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-lake-tank"
     },
     {
       "id": "supp-hunger",
@@ -3904,7 +3938,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-hunger"
     },
     {
       "id": "supp-memory",
@@ -4053,7 +4088,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-memory"
     },
     {
       "id": "supp-sight-view",
@@ -4273,7 +4309,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-sight-view"
     },
     {
       "id": "supp-desire",
@@ -4371,7 +4408,8 @@
         "sourceForm": "ಇಚ್ಛೆ",
         "sourceMeaning": "Desire",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-desire"
     },
     {
       "id": "supp-comfort-ease",
@@ -4462,7 +4500,8 @@
         "sourceForm": "ಸುಖ",
         "sourceMeaning": "Comfort / ease",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-comfort-ease"
     },
     {
       "id": "supp-strength",
@@ -4682,7 +4721,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-strength"
     },
     {
       "id": "supp-intellect",
@@ -4902,7 +4942,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-intellect"
     },
     {
       "id": "supp-mind",
@@ -5000,7 +5041,8 @@
         "sourceForm": "ಮನಸ್ಸು",
         "sourceMeaning": "Mind",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-mind"
     },
     {
       "id": "supp-life-breath-self",
@@ -5098,7 +5140,12 @@
         "sourceForm": "ಪ್ರಾಣ / ಆತ್ಮ",
         "sourceMeaning": "Life-breath / self",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-life-breath-self",
+      "sourceAliases": [
+        "ಪ್ರಾಣ",
+        "ಆತ್ಮ"
+      ]
     },
     {
       "id": "supp-anger",
@@ -5189,7 +5236,8 @@
         "sourceForm": "ಕ್ರೋಧ",
         "sourceMeaning": "Anger",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-anger"
     },
     {
       "id": "supp-time",
@@ -5287,7 +5335,8 @@
         "sourceForm": "ಕಾಲ",
         "sourceMeaning": "Time",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-time"
     },
     {
       "id": "supp-day",
@@ -5500,7 +5549,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-day"
     },
     {
       "id": "supp-daytime",
@@ -5598,7 +5648,8 @@
         "sourceForm": "ದಿವಸ",
         "sourceMeaning": "Daytime",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-daytime"
     },
     {
       "id": "supp-month",
@@ -5714,7 +5765,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-month"
     },
     {
       "id": "supp-evening-dusk",
@@ -5805,7 +5857,8 @@
         "sourceForm": "ಸಂಧ್ಯಾ",
         "sourceMeaning": "Evening / dusk",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-evening-dusk"
     },
     {
       "id": "supp-morning",
@@ -5903,7 +5956,8 @@
         "sourceForm": "ಪ್ರಾತಃ",
         "sourceMeaning": "Morning",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-morning"
     },
     {
       "id": "supp-noon",
@@ -6001,7 +6055,8 @@
         "sourceForm": "ಮಧ್ಯಾಹ್ನ",
         "sourceMeaning": "Noon",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-noon"
     },
     {
       "id": "supp-beginning",
@@ -6099,7 +6154,8 @@
         "sourceForm": "ಆದಿ",
         "sourceMeaning": "Beginning",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-beginning"
     },
     {
       "id": "supp-end",
@@ -6319,7 +6375,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-end"
     },
     {
       "id": "supp-half",
@@ -6417,7 +6474,8 @@
         "sourceForm": "ಅರ್ಧ",
         "sourceMeaning": "Half",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-half"
     }
   ]
 }

@@ -39,9 +39,10 @@ export function loadSource() {
   return { config, references: referenceFile.references || [], entries };
 }
 const isText = value => typeof value === "string" && value.trim().length > 0;
-const allowedLanguages = new Set(["ta", "tcy", "okn", "proto-dravidian"]);
+export const GENERATOR_VERSION = "2.1.0";
+const allowedLanguages = new Set(["kn", "ta", "tcy", "okn", "proto-dravidian"]);
 const allowedRelationships = new Set(["unclassified", "cognate", "semantic_equivalent", "loan", "reconstruction", "attested_form", "proposed_coinage"]);
-const allowedEvidenceStatuses = new Set(["not_assessed", "provisional", "verified", "contested", "rejected"]);
+const allowedEvidenceStatuses = new Set(["not_assessed", "provisional", "verified", "contested", "rejected", "not_found"]);
 const allowedReviewStatuses = new Set(["needs_review", "in_review", "verified", "contested", "rejected", "proposed"]);
 const allowedOriginClassifications = new Set(["verified_dravidian", "tadbhava", "coined_from_dravidian", "uncertain"]);
 
@@ -100,7 +101,7 @@ export function validateLexicon({ entries, references }) {
       for (const [k, evidence] of (candidate.comparativeEvidence || []).entries()) {
         const ea = `${ca}.comparativeEvidence[${k}]`;
         if (!allowedLanguages.has(evidence.language)) fail(ea, "unsupported language code");
-        if (!isText(evidence.form)) fail(ea, "evidence form is required");
+        if (evidence.status !== "not_found" && !isText(evidence.form)) fail(ea, "evidence form is required unless status is not_found");
         if (!allowedRelationships.has(evidence.relationship)) fail(ea, "invalid evidence relationship");
         if (!allowedEvidenceStatuses.has(evidence.status)) fail(ea, "invalid evidence status");
         if (!Array.isArray(evidence.sourceRefs)) fail(ea, "sourceRefs must be an array");
@@ -131,7 +132,7 @@ function candidateOrigin(candidate) {
   return allowedOriginClassifications.has(candidate.originClassification) ? candidate.originClassification : "uncertain";
 }
 export function buildArtifacts({ entries, config, references = [] }) {
-  const buildId = stableHash(JSON.stringify({entries,config,references}));
+  const buildId = stableHash(JSON.stringify({schemaVersion:2,generatorVersion:GENERATOR_VERSION,entries,config,references}));
   const shardSize = 50;
   const entryToShard = {};
   const shards = [];
@@ -141,14 +142,14 @@ export function buildArtifacts({ entries, config, references = [] }) {
     const file = `shards/${shardId}.json`;
     const records = entries.slice(i,i+shardSize);
     records.forEach(entry => { entryToShard[entry.id] = shardId; });
-    const content = JSON.stringify({schemaVersion:2,buildId,entries:records});
+    const content = JSON.stringify({schemaVersion:2,generatorVersion:GENERATOR_VERSION,buildId,entries:records});
     const sha256 = stableHash(content);
     artifacts.set(`lexicon-dist/${file}`, content);
     shards.push({id:shardId,file,count:records.length,checksum:sha256});
   }
   const categoryIds = {};
   for (const entry of entries) (categoryIds[entry.category] ||= []).push(entry.id);
-  const bySourceForm = new Map();
+  const writingRows = [];
   entries.filter(entry => !entry.scope.noAlternative && !entry.scope.outsideTargetOrigin).forEach(entry => {
     const candidates = entry.candidates.filter(candidate => candidate.form && !candidate.flags.noAlternative && !candidate.flags.outsideTargetOrigin)
       .map(candidate => ({
@@ -157,21 +158,14 @@ export function buildArtifacts({ entries, config, references = [] }) {
         tamil:candidate.comparativeEvidence.find(item=>item.language==="ta")?.form||"",
         tulu:candidate.comparativeEvidence.find(item=>item.language==="tcy")?.form||""
       }));
-    sourceForms(entry).forEach(form => {
-      const key = form.normalize("NFC");
-      const existing = bySourceForm.get(key) || {sourceForms:[form],meaning:entry.sourceMeaning||"",candidates:[]};
-      candidates.forEach(candidate => {
-        if (!existing.candidates.some(item=>item.word===candidate.word)) existing.candidates.push(candidate);
-      });
-      if (!existing.meaning && entry.sourceMeaning) existing.meaning=entry.sourceMeaning;
-      bySourceForm.set(key,existing);
-    });
+    if (!candidates.length) return;
+    writingRows.push({entryId:entry.id,senseKey:entry.senseKey || entry.id,sourceForms:sourceForms(entry),meaning:entry.sourceMeaning||"",candidates});
   });
-  const writingIndex = { schemaVersion:2,buildId,entries:[...bySourceForm.values()].filter(entry => entry.candidates.length) };
+  const writingIndex = { schemaVersion:2,generatorVersion:GENERATOR_VERSION,buildId,entries:writingRows };
   const searchContent = JSON.stringify(writingIndex);
   artifacts.set("lexicon-dist/writing-index.json",searchContent);
   const manifest = {
-    schemaVersion:2,buildId,checksumAlgorithm:"fnv1a-64-utf16",entryCount:entries.length,candidateCount:entries.reduce((n,e)=>n+e.candidates.length,0),
+    schemaVersion:2,generatorVersion:GENERATOR_VERSION,buildId,checksumAlgorithm:"fnv1a-64-utf16",entryCount:entries.length,candidateCount:entries.reduce((n,e)=>n+e.candidates.length,0),
     categoryIds,entryOrder:entries.map(entry=>entry.id),entryToShard,shards,writingIndex:"writing-index.json",
     etymologyLabels:config.etymologyLabels||{},
     references:references.map(reference => ({

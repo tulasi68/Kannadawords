@@ -103,7 +103,8 @@
         "sourceMeaning": "Needle",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-258"
     },
     {
       "id": "contrib-259",
@@ -237,7 +238,8 @@
         "sourceMeaning": "Lock / key / peg",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-259"
     },
     {
       "id": "contrib-260",
@@ -341,7 +343,8 @@
         "sourceMeaning": "Chain",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-260"
     },
     {
       "id": "contrib-263",
@@ -475,7 +478,8 @@
         "sourceMeaning": "Health",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-263"
     },
     {
       "id": "contrib-264",
@@ -609,7 +613,8 @@
         "sourceMeaning": "Wound / sore",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-264"
     },
     {
       "id": "contrib-265",
@@ -743,7 +748,8 @@
         "sourceMeaning": "Pain",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-265"
     },
     {
       "id": "contrib-267",
@@ -847,7 +853,8 @@
         "sourceMeaning": "Thirst",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-267"
     },
     {
       "id": "contrib-268",
@@ -951,7 +958,8 @@
         "sourceMeaning": "Taste",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-268"
     },
     {
       "id": "contrib-269",
@@ -1085,7 +1093,8 @@
         "sourceMeaning": "Smell / fragrance",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-269"
     },
     {
       "id": "contrib-270",
@@ -1189,7 +1198,8 @@
         "sourceMeaning": "Bad smell",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-270"
     },
     {
       "id": "contrib-272",
@@ -1263,7 +1273,8 @@
         "sourceMeaning": "Curd",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-272"
     },
     {
       "id": "contrib-274",
@@ -1337,7 +1348,8 @@
         "sourceMeaning": "Oil",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-274"
     },
     {
       "id": "contrib-277",
@@ -1411,7 +1423,8 @@
         "sourceMeaning": "Rice",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-277"
     },
     {
       "id": "contrib-279",
@@ -1515,7 +1528,8 @@
         "sourceMeaning": "Vegetable",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-279"
     },
     {
       "id": "contrib-281",
@@ -1649,7 +1663,8 @@
         "sourceMeaning": "Duration / deadline",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-281"
     },
     {
       "id": "contrib-282",
@@ -1783,7 +1798,8 @@
         "sourceMeaning": "Order / sequence",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-282"
     },
     {
       "id": "contrib-283",
@@ -1917,7 +1933,8 @@
         "sourceMeaning": "Procedure / method",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-283"
     },
     {
       "id": "contrib-284",
@@ -2051,7 +2068,8 @@
         "sourceMeaning": "Support / base",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-284"
     },
     {
       "id": "contrib-285",
@@ -2155,7 +2173,8 @@
         "sourceMeaning": "Result / effect",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-285"
     },
     {
       "id": "contrib-286",
@@ -2259,7 +2278,8 @@
         "sourceMeaning": "Influence / impact",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-286"
     },
     {
       "id": "contrib-287",
@@ -2393,7 +2413,8 @@
         "sourceMeaning": "Capability / strength",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-287"
     },
     {
       "id": "contrib-288",
@@ -2527,7 +2548,8 @@
         "sourceMeaning": "Benefit / usefulness",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-288"
     },
     {
       "id": "contrib-289",
@@ -2661,7 +2683,8 @@
         "sourceMeaning": "Unnecessary",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-289"
     },
     {
       "id": "contrib-290",
@@ -2795,7 +2818,8 @@
         "sourceMeaning": "Danger",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-290"
     },
     {
       "id": "contrib-291",
@@ -2929,7 +2953,8 @@
         "sourceMeaning": "Safe / secure",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-291"
     },
     {
       "id": "contrib-292",
@@ -3063,7 +3088,8 @@
         "sourceMeaning": "Clean / clear",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-292"
     },
     {
       "id": "contrib-294",
@@ -3197,7 +3223,8 @@
         "sourceMeaning": "Statue / image",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-294"
     },
     {
       "id": "contrib-295",
@@ -3331,7 +3358,8 @@
         "sourceMeaning": "Picture / drawing",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-295"
     },
     {
       "id": "contrib-297",
@@ -3465,7 +3493,8 @@
         "sourceMeaning": "Dance",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-297"
     },
     {
       "id": "contrib-298",
@@ -3569,7 +3598,8 @@
         "sourceMeaning": "Sport / game",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-298"
     },
     {
       "id": "contrib-299",
@@ -3703,7 +3733,8 @@
         "sourceMeaning": "Competition",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-299"
     },
     {
       "id": "contrib-501",
@@ -3829,7 +3860,8 @@
         "sourceMeaning": "Ditch / pit / hollow",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-501"
     },
     {
       "id": "contrib-502",
@@ -3929,7 +3961,8 @@
         "sourceMeaning": "Slope / descent",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-502"
     },
     {
       "id": "contrib-503",
@@ -4028,7 +4061,8 @@
         "sourceMeaning": "Three",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-503"
     },
     {
       "id": "no-alt-department",
@@ -4092,7 +4126,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-department"
     },
     {
       "id": "no-alt-minister",
@@ -4156,7 +4191,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-minister"
     },
     {
       "id": "no-alt-health",
@@ -4220,7 +4256,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-health"
     },
     {
       "id": "no-alt-news",
@@ -4284,7 +4321,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-news"
     },
     {
       "id": "no-alt-society",
@@ -4348,7 +4386,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-society"
     },
     {
       "id": "no-alt-disability",
@@ -4412,7 +4451,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-disability"
     },
     {
       "id": "no-alt-doctor",
@@ -4476,7 +4516,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-doctor"
     },
     {
       "id": "no-alt-freedom",
@@ -4540,7 +4581,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-freedom"
     },
     {
       "id": "no-alt-punishment",
@@ -4604,7 +4646,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-punishment"
     },
     {
       "id": "no-alt-commission",
@@ -4668,7 +4711,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-commission"
     },
     {
       "id": "no-alt-nutrition",
@@ -4732,7 +4776,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-nutrition"
     },
     {
       "id": "no-alt-interview",
@@ -4796,7 +4841,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "no-alt-interview"
     },
     {
       "id": "scope-kaceri-origin",
@@ -4860,7 +4906,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "scope-kaceri-origin"
     },
     {
       "id": "scope-varadi-origin",
@@ -4924,7 +4971,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "scope-varadi-origin"
     },
     {
       "id": "scope-sarkara-origin",
@@ -4988,7 +5036,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "scope-sarkara-origin"
     },
     {
       "id": "scope-javabdari-origin",
@@ -5052,7 +5101,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "scope-javabdari-origin"
     }
   ]
 }

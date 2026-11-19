@@ -133,7 +133,8 @@
         "sourceMeaning": "Message",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-143"
     },
     {
       "id": "contrib-144",
@@ -267,7 +268,8 @@
         "sourceMeaning": "Announcement / slogan",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-144"
     },
     {
       "id": "contrib-145",
@@ -371,7 +373,8 @@
         "sourceMeaning": "Praise",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-145"
     },
     {
       "id": "contrib-146",
@@ -505,7 +508,8 @@
         "sourceMeaning": "Blame / criticism",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-146"
     },
     {
       "id": "contrib-147",
@@ -639,7 +643,8 @@
         "sourceMeaning": "Forgiveness",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-147"
     },
     {
       "id": "contrib-148",
@@ -773,7 +778,8 @@
         "sourceMeaning": "Prayer / request",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-148"
     },
     {
       "id": "contrib-149",
@@ -907,7 +913,8 @@
         "sourceMeaning": "Invitation",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-149"
     },
     {
       "id": "contrib-150",
@@ -1011,7 +1018,8 @@
         "sourceMeaning": "Welcome",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-150"
     },
     {
       "id": "contrib-151",
@@ -1115,7 +1123,8 @@
         "sourceMeaning": "Farewell",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-151"
     },
     {
       "id": "contrib-152",
@@ -1219,7 +1228,8 @@
         "sourceMeaning": "Discussion",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-152"
     },
     {
       "id": "contrib-153",
@@ -1353,7 +1363,8 @@
         "sourceMeaning": "Argument",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-153"
     },
     {
       "id": "contrib-154",
@@ -1457,7 +1468,8 @@
         "sourceMeaning": "Silence",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-154"
     },
     {
       "id": "contrib-155",
@@ -1591,7 +1603,8 @@
         "sourceMeaning": "Oath / vow",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-155"
     },
     {
       "id": "contrib-156",
@@ -1725,7 +1738,8 @@
         "sourceMeaning": "Promise / word",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-156"
     },
     {
       "id": "contrib-157",
@@ -1859,7 +1873,8 @@
         "sourceMeaning": "Instruction / hint",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-157"
     },
     {
       "id": "contrib-158",
@@ -1963,7 +1978,8 @@
         "sourceMeaning": "Permission",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-158"
     },
     {
       "id": "contrib-159",
@@ -2067,7 +2083,8 @@
         "sourceMeaning": "Rejection",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-159"
     },
     {
       "id": "contrib-160",
@@ -2171,7 +2188,8 @@
         "sourceMeaning": "Publication / notice",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-160"
     },
     {
       "id": "contrib-161",
@@ -2305,7 +2323,8 @@
         "sourceMeaning": "Beautiful",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-161"
     },
     {
       "id": "contrib-162",
@@ -2439,7 +2458,8 @@
         "sourceMeaning": "Ugly",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-162"
     },
     {
       "id": "contrib-163",
@@ -2543,7 +2563,8 @@
         "sourceMeaning": "New",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-163"
     },
     {
       "id": "contrib-164",
@@ -2647,7 +2668,8 @@
         "sourceMeaning": "Old / ancient",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-164"
     },
     {
       "id": "contrib-165",
@@ -2781,7 +2803,8 @@
         "sourceMeaning": "Huge / large",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-165"
     },
     {
       "id": "contrib-166",
@@ -2915,7 +2938,8 @@
         "sourceMeaning": "Small / subtle",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-166"
     },
     {
       "id": "contrib-167",
@@ -3049,7 +3073,8 @@
         "sourceMeaning": "Hard / difficult",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-167"
     },
     {
       "id": "contrib-168",
@@ -3183,7 +3208,8 @@
         "sourceMeaning": "Soft",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-168"
     },
     {
       "id": "contrib-169",
@@ -3317,7 +3343,8 @@
         "sourceMeaning": "Sharp / intense",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-169"
     },
     {
       "id": "contrib-170",
@@ -3451,7 +3478,8 @@
         "sourceMeaning": "Slow / dull",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-170"
     },
     {
       "id": "contrib-171",
@@ -3585,7 +3613,8 @@
         "sourceMeaning": "Sacred / pure",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-171"
     },
     {
       "id": "contrib-172",
@@ -3719,7 +3748,8 @@
         "sourceMeaning": "Dirty / impure",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-172"
     },
     {
       "id": "contrib-173",
@@ -3853,7 +3883,8 @@
         "sourceMeaning": "Full / complete",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-173"
     },
     {
       "id": "contrib-174",
@@ -3987,7 +4018,8 @@
         "sourceMeaning": "Empty",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-174"
     },
     {
       "id": "contrib-175",
@@ -4121,7 +4153,8 @@
         "sourceMeaning": "Equal / same",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-175"
     },
     {
       "id": "contrib-176",
@@ -4255,7 +4288,8 @@
         "sourceMeaning": "Different",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-176"
     },
     {
       "id": "contrib-177",
@@ -4389,7 +4423,8 @@
         "sourceMeaning": "Important / main",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-177"
     },
     {
       "id": "contrib-178",
@@ -4523,7 +4558,8 @@
         "sourceMeaning": "Common / ordinary",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-178"
     },
     {
       "id": "contrib-179",
@@ -4657,7 +4693,8 @@
         "sourceMeaning": "Special",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-179"
     },
     {
       "id": "contrib-180",
@@ -4791,7 +4828,8 @@
         "sourceMeaning": "Best / superior",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-180"
     },
     {
       "id": "contrib-181",
@@ -4925,7 +4963,8 @@
         "sourceMeaning": "Peak / summit",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-181"
     },
     {
       "id": "contrib-182",
@@ -5062,7 +5101,8 @@
         "sourceMeaning": "Valley",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-182"
     },
     {
       "id": "contrib-183",
@@ -5196,7 +5236,8 @@
         "sourceMeaning": "Abyss / cliff",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-183"
     },
     {
       "id": "contrib-184",
@@ -5300,7 +5341,8 @@
         "sourceMeaning": "Island",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-184"
     },
     {
       "id": "contrib-185",
@@ -5434,7 +5476,8 @@
         "sourceMeaning": "Shore / bank",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-185"
     },
     {
       "id": "contrib-186",
@@ -5538,7 +5581,8 @@
         "sourceMeaning": "Desert",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-186"
     },
     {
       "id": "contrib-187",
@@ -5672,7 +5716,8 @@
         "sourceMeaning": "Lake / pond",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-187"
     },
     {
       "id": "contrib-188",
@@ -5806,7 +5851,8 @@
         "sourceMeaning": "Stream / spring",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-188"
     },
     {
       "id": "contrib-189",
@@ -5940,7 +5986,8 @@
         "sourceMeaning": "Waterfall",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-189"
     },
     {
       "id": "contrib-190",
@@ -6044,7 +6091,8 @@
         "sourceMeaning": "Earthquake",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-190"
     },
     {
       "id": "contrib-191",
@@ -6148,7 +6196,8 @@
         "sourceMeaning": "Cyclone / storm",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-191"
     },
     {
       "id": "contrib-193",
@@ -6282,7 +6331,8 @@
         "sourceMeaning": "Thunder / roar",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-193"
     }
   ]
 }

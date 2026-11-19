@@ -26,7 +26,7 @@
     initPromise = (async () => {
       const manifestUrl = new URL("manifest.json", base);
       manifest = await getJson(manifestUrl, "no-cache");
-      if (manifest.schemaVersion !== 2 || !manifest.buildId || manifest.checksumAlgorithm !== "fnv1a-64-utf16" ||
+      if (manifest.schemaVersion !== 2 || manifest.generatorVersion !== "2.1.0" || !manifest.buildId || manifest.checksumAlgorithm !== "fnv1a-64-utf16" ||
           !Array.isArray(manifest.entryOrder) || !Array.isArray(manifest.shards) ||
           !manifest.entryToShard || !manifest.categoryIds || !Array.isArray(manifest.references)) {
         throw new Error("Unsupported or incomplete lexicon manifest.");
@@ -45,7 +45,7 @@
       }
       const indexUrl = new URL(manifest.writingIndex + "?v=" + encodeURIComponent(manifest.buildId), base);
       writingIndex = await getJson(indexUrl);
-      if (writingIndex.schemaVersion !== manifest.schemaVersion || writingIndex.buildId !== manifest.buildId || !Array.isArray(writingIndex.entries)) {
+      if (writingIndex.schemaVersion !== manifest.schemaVersion || writingIndex.generatorVersion !== manifest.generatorVersion || writingIndex.buildId !== manifest.buildId || !Array.isArray(writingIndex.entries)) {
         throw new Error("Writing index and lexicon manifest versions do not match.");
       }
       return manifest;
@@ -63,7 +63,7 @@
       const raw = await response.text();
       if (checksum(raw) !== info.checksum) throw new Error("Lexicon shard checksum mismatch: " + shardId);
       const data = JSON.parse(raw);
-      if (data.schemaVersion !== manifest.schemaVersion || data.buildId !== manifest.buildId || !Array.isArray(data.entries) || data.entries.length !== info.count) {
+      if (data.schemaVersion !== manifest.schemaVersion || data.generatorVersion !== manifest.generatorVersion || data.buildId !== manifest.buildId || !Array.isArray(data.entries) || data.entries.length !== info.count) {
         throw new Error("Lexicon shard metadata mismatch: " + shardId);
       }
       const map = new Map();

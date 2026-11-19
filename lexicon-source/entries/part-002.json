@@ -72,7 +72,8 @@
         "sourceForm": "ಸರ್ಕಾರ",
         "sourceMeaning": "Government",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "government"
     },
     {
       "id": "board",
@@ -145,7 +146,8 @@
         "sourceForm": "ಮಂಡಳಿ",
         "sourceMeaning": "Board",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "board"
     },
     {
       "id": "law",
@@ -218,7 +220,8 @@
         "sourceForm": "ಕಾನೂನು",
         "sourceMeaning": "Law",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "law"
     },
     {
       "id": "justice",
@@ -413,7 +416,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "justice"
     },
     {
       "id": "judgment",
@@ -486,7 +490,8 @@
         "sourceForm": "ತೀರ್ಪು",
         "sourceMeaning": "Judgment",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "judgment"
     },
     {
       "id": "director",
@@ -559,7 +564,8 @@
         "sourceForm": "ನಿರ್ದೇಶಕ",
         "sourceMeaning": "Director",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "director"
     },
     {
       "id": "assistant",
@@ -632,7 +638,8 @@
         "sourceForm": "ಸಹಾಯಕ",
         "sourceMeaning": "Assistant",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "assistant"
     },
     {
       "id": "process",
@@ -705,7 +712,8 @@
         "sourceForm": "ಪ್ರಕ್ರಿಯೆ",
         "sourceMeaning": "Process",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "process"
     },
     {
       "id": "democracy",
@@ -778,7 +786,8 @@
         "sourceForm": "ಪ್ರಜಾಪ್ರಭುತ್ವ",
         "sourceMeaning": "Democracy",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "democracy"
     },
     {
       "id": "election",
@@ -851,7 +860,8 @@
         "sourceForm": "ಚುನಾವಣೆ",
         "sourceMeaning": "Election",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "election"
     },
     {
       "id": "question",
@@ -996,7 +1006,8 @@
         "sources": [
           "etymology-entries.js:origin-audit"
         ]
-      }
+      },
+      "senseKey": "question"
     },
     {
       "id": "answer",
@@ -1069,7 +1080,8 @@
         "sourceForm": "ಉತ್ತರ",
         "sourceMeaning": "Answer",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "answer"
     },
     {
       "id": "citizen",
@@ -1142,7 +1154,8 @@
         "sourceForm": "ನಾಗರಿಕ",
         "sourceMeaning": "Citizen",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "citizen"
     },
     {
       "id": "public",
@@ -1215,7 +1228,8 @@
         "sourceForm": "ಸಾರ್ವಜನಿಕ",
         "sourceMeaning": "Public",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "public"
     },
     {
       "id": "responsibility",
@@ -1288,7 +1302,8 @@
         "sourceForm": "ಜವಾಬ್ದಾರಿ",
         "sourceMeaning": "Responsibility",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "responsibility"
     },
     {
       "id": "medicine",
@@ -1445,7 +1460,8 @@
           "contributor-equivalents.js"
         ],
         "contributorSupplied": true
-      }
+      },
+      "senseKey": "medicine"
     },
     {
       "id": "disease",
@@ -1632,7 +1648,8 @@
           "contributor-equivalents.js"
         ],
         "contributorSupplied": true
-      }
+      },
+      "senseKey": "disease"
     },
     {
       "id": "treatment",
@@ -1705,7 +1722,8 @@
         "sourceForm": "ಚಿಕಿತ್ಸೆ",
         "sourceMeaning": "Treatment",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "treatment"
     },
     {
       "id": "family",
@@ -1778,7 +1796,8 @@
         "sourceForm": "ಕುಟುಂಬ",
         "sourceMeaning": "Family",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "family"
     },
     {
       "id": "welfare",
@@ -1851,7 +1870,8 @@
         "sourceForm": "ಕಲ್ಯಾಣ",
         "sourceMeaning": "Welfare",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "welfare"
     },
     {
       "id": "women",
@@ -1924,7 +1944,8 @@
         "sourceForm": "ಮಹಿಳಾ",
         "sourceMeaning": "Women",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "women"
     },
     {
       "id": "accommodation",
@@ -1997,7 +2018,8 @@
         "sourceForm": "ವಸತಿ",
         "sourceMeaning": "Accommodation",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "accommodation"
     },
     {
       "id": "snack",
@@ -2070,7 +2092,8 @@
         "sourceForm": "ಆಹಾರ",
         "sourceMeaning": "Food / snack",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "snack"
     },
     {
       "id": "student",
@@ -2228,7 +2251,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "student"
     },
     {
       "id": "school",
@@ -2301,7 +2325,8 @@
         "sourceForm": "ಶಾಲೆ",
         "sourceMeaning": "School",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "school"
     },
     {
       "id": "library",
@@ -2374,7 +2399,8 @@
         "sourceForm": "ಗ್ರಂಥಾಲಯ",
         "sourceMeaning": "Library",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "library"
     },
     {
       "id": "university",
@@ -2447,7 +2473,8 @@
         "sourceForm": "ವಿಶ್ವವಿದ್ಯಾಲಯ",
         "sourceMeaning": "University",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "university"
     },
     {
       "id": "grammar",
@@ -2520,7 +2547,8 @@
         "sourceForm": "ವ್ಯಾಕರಣ",
         "sourceMeaning": "Grammar",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "grammar"
     },
     {
       "id": "culture",
@@ -2715,7 +2743,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "culture"
     },
     {
       "id": "literature",
@@ -2788,7 +2817,8 @@
         "sourceForm": "ಸಾಹಿತ್ಯ",
         "sourceMeaning": "Literature",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "literature"
     },
     {
       "id": "music",
@@ -2983,7 +3013,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "music"
     },
     {
       "id": "electricity",
@@ -3148,7 +3179,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "electricity"
     },
     {
       "id": "station",
@@ -3221,7 +3253,8 @@
         "sourceForm": "ಸ್ಥಾವರ",
         "sourceMeaning": "Station / facility",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "station"
     },
     {
       "id": "environment",
@@ -3294,7 +3327,8 @@
         "sourceForm": "ಪರಿಸರ",
         "sourceMeaning": "Environment",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "environment"
     },
     {
       "id": "soil",
@@ -3367,7 +3401,8 @@
         "sourceForm": "ಮಣ್ಣು",
         "sourceMeaning": "Soil",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "soil"
     },
     {
       "id": "river",
@@ -3475,7 +3510,8 @@
         "sources": [
           "etymology-entries.js:origin-audit"
         ]
-      }
+      },
+      "senseKey": "river"
     },
     {
       "id": "sea",
@@ -3603,7 +3639,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "sea"
     },
     {
       "id": "bridge",
@@ -3761,7 +3798,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "bridge"
     },
     {
       "id": "publicity",
@@ -3834,7 +3872,8 @@
         "sourceForm": "ಪ್ರಚಾರ",
         "sourceMeaning": "Publicity / propaganda",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "publicity"
     },
     {
       "id": "speech",
@@ -3907,7 +3946,8 @@
         "sourceForm": "ಭಾಷಣ",
         "sourceMeaning": "Speech",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "speech"
     },
     {
       "id": "officer",
@@ -3984,7 +4024,8 @@
         "sourceForm": "ಅಧಿಕಾರಿ",
         "sourceMeaning": "Officer",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "officer"
     },
     {
       "id": "chief",
@@ -4052,7 +4093,8 @@
         "sourceForm": "ಪ್ರಧಾನ",
         "sourceMeaning": "Chief / principal",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "chief"
     },
     {
       "id": "division",
@@ -4120,7 +4162,8 @@
         "sourceForm": "ವಿಭಾಗ",
         "sourceMeaning": "Division",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "division"
     },
     {
       "id": "constitution",
@@ -4197,7 +4240,8 @@
         "sourceForm": "ಸಂವಿಧಾನ",
         "sourceMeaning": "Constitution",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "constitution"
     },
     {
       "id": "office",
@@ -4265,7 +4309,8 @@
         "sourceForm": "ಕಚೇರಿ",
         "sourceMeaning": "Office",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "office"
     },
     {
       "id": "punishment",
@@ -4455,7 +4500,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "punishment"
     },
     {
       "id": "commission",
@@ -4523,7 +4569,8 @@
         "sourceForm": "ಆಯೋಗ",
         "sourceMeaning": "Commission",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "commission"
     },
     {
       "id": "nutrition",
@@ -4591,7 +4638,8 @@
         "sourceForm": "ಪೋಷಣೆ",
         "sourceMeaning": "Nutrition",
         "sourceDataset": "etymology-entries.js:audited"
-      }
+      },
+      "senseKey": "nutrition"
     },
     {
       "id": "fruit",
@@ -4746,7 +4794,8 @@
           "contributor-equivalents.js"
         ],
         "contributorSupplied": true
-      }
+      },
+      "senseKey": "fruit"
     },
     {
       "id": "moon",
@@ -4819,7 +4868,8 @@
         "sourceForm": "ಚಂದ್ರ",
         "sourceMeaning": "Moon",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "moon"
     }
   ]
 }

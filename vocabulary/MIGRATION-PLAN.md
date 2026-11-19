@@ -1,71 +1,24 @@
-# Legacy vocabulary migration plan
+# Unified vocabulary build plan — Option B
 
-## Current live sources (preserve during migration)
+## Decision
 
-The website currently assembles its voting and rewrite data from multiple JavaScript datasets, including:
+Keep the current vocabulary source collections in place. Do not export or migrate all entries into one canonical file. Build a deterministic adapter that reads the existing sources and emits one unified search/retrieval layer.
 
-- `data.js` — original base word cards.
-- `etymology-entries.js` — contributor-supplied audited vocabulary and comparative notes.
-- `contributor-equivalents.js` — a large proposal set; candidates are not automatically certified.
-- `coinage-review.js` — review rubric and coinage evaluation data.
-- `app.js` — runtime merge, deduplication, category handling and `buildAchchaLexicon()`.
+## Current sources to preserve
 
-There may be additional datasets (for example the origin audit data) loaded by the HTML page. The exact script order and all data declarations must be inventoried before migration.
+- `data.js`
+- `etymology-entries.js`
+- `contributor-equivalents.js`
+- `coinage-review.js`
+- `sentence-examples.js`
+- `contextual-examples.js`
+- `app.js` (merge and eligibility rules)
 
-## Non-negotiable compatibility rules
+The precise load order in `index.html` and the runtime merge behaviour in `app.js` are part of the compatibility contract.
 
-1. Keep every original record and its source provenance.
-2. Reproduce the current merge order and conflict-resolution behaviour before changing it.
-3. Do not use an ID match as the only proof that two headwords are identical.
-4. Deduplicate by NFC-normalised source forms, but preserve aliases and alternate source spellings.
-5. Do not merge alternatives from different meanings without a semantic review.
-6. Keep proposals and provisional comparisons searchable for editors, but out of the production highlighter by default.
-7. Source headwords, replacement candidates, inflections and comparative cognates are different entity types.
-8. Preserve Tab 4's current paragraph rewrite request/response contract.
+## Phases
 
-## Migration phases
-
-### A. Inventory and baseline
-- Enumerate every script included by `index.html`.
-- Record raw record counts for each data source.
-- Execute the current merge pipeline in a browser-compatible harness and export the merged records.
-- Record unique canonical source headwords, source aliases, alternatives and no-alternative/scope-audit records separately.
-- Capture a golden test corpus from current Tab 4 and mobile assistant behaviour.
-
-### B. Lossless export
-- Export the merged records into canonical JSONL.
-- Attach provenance to every record (legacy file, original ID, original record ID).
-- Preserve original raw records in a versioned migration archive.
-- Mark uncertain records `legacy_unreviewed` and `provisional`; never infer verification from a contributor note.
-
-### C. Reconciliation
-- Compare each canonical entry to its legacy origin.
-- Report duplicate IDs, duplicate source forms, ambiguous multi-source cards, missing alternatives and conflicting meanings.
-- Resolve collisions explicitly; do not silently discard a record.
-- Confirm that the count of unique canonical source headwords is stable and explain every difference.
-
-### D. Generated index validation
-- Build the compact lookup index and deterministic detail shards.
-- Assert that only `recognitionStatus: verified` source forms enter the default lookup index.
-- Assert that alternative words never become lookup keys unless independently represented as a verified source headword in their own right.
-- Test Kannada NFC normalization, combining marks, punctuation and mixed-script boundaries.
-- Verify shard references and checksums.
-
-### E. Application cutover
-- Add a small vocabulary loader used by the website and mobile assistant.
-- Keep the old runtime merge available behind a temporary fallback.
-- Run old and new lookup engines side by side in tests; compare matches and suggestions.
-- Switch the production client only after parity and false-positive tests pass.
-- Remove legacy runtime dependencies only in a later, separately reviewed change.
-
-## Porting decision
-
-No database port is required for the 5,000–10,000 word target. Git-backed JSONL is the editorial source of truth; generated static JSON is the read-optimized delivery format. This fits the existing static website and Cloudflare/CDN hosting, avoids a paid database dependency, supports offline/local matching after cache warm-up, and gives clear history and review through Git.
-
-A database should be considered only if the project later needs concurrent web-based editing, contributor accounts, moderation queues, or live multi-user updates. Even then, the canonical export should remain versioned and reproducible.
-
-
-## Implemented read-only audit tool
+### 1. Reproducible inventory — implemented as a read-only tool
 
 Run:
 
@@ -74,6 +27,38 @@ node scripts/audit-legacy-vocabulary.mjs
 node scripts/audit-legacy-vocabulary.mjs --json
 ```
 
-The audit replays the data scripts loaded by index.html in their current order, then evaluates the data/merge section of app.js in an isolated Node VM. It reports raw per-file record counts, merged voting-record count, unique NFC-normalised source forms, source forms with viable alternatives, no-alternative/scope-audit counts and alternative-candidate count. It does not modify source files or export a canonical store.
+The tool replays the data scripts in the current HTML load order and evaluates the data/merge section of `app.js` in an isolated Node VM. It reports raw collection counts and distinct merged source forms. It does not modify the legacy datasets.
 
-The GitHub Actions workflow runs this audit and validates/builds the canonical store on relevant pull requests. Its log is the reproducible baseline for the next migration step. A separate export adapter must still preserve each source record and its provenance before any canonical JSONL population or runtime cutover.
+The audit is a first inventory step, not yet a fully validated linguistic headword census. The exact count must be reconciled against the runtime `buildAchchaLexicon()` output and the meaning of a unique headword before publication.
+
+### 2. Shared internal record contract
+
+Use `schema.json` as the target shape for normalized build records. Keep legacy records in their current source files. Preserve source file, original ID, record IDs and review provenance in the normalized output.
+
+### 3. Deterministic build adapter
+
+Implement an adapter that:
+- loads every current source in the exact live order;
+- reuses the actual merge and eligibility logic, rather than maintaining a second hand-written approximation;
+- emits normalized records and source fingerprints;
+- rejects ID collisions and unresolved source-form collisions;
+- keeps replacement words separate from source lookup keys;
+- keeps proposals and unreviewed material out of automatic highlighting.
+
+### 4. Compact search and retrieval
+
+Generate a manifest, lookup index, compact search index and deterministic detail shards. Load the lookup index locally; retrieve details only when a user requests a suggestion or opens a word. Cache versioned outputs.
+
+### 5. Parity and cutover
+
+Compare generated output with the existing website's live merged vocabulary and assistant lookup behaviour. Add regression coverage for Unicode normalization, punctuation, inflections, false positives, and the `ಸಮಸ್ಯೆ` / `ಹೊಸ` case.
+
+Do not change the website's runtime data path until parity tests pass. The existing Tab 4 and mobile assistant remain functional throughout this work.
+
+## Storage and hosting
+
+No database port is required for 5,000–10,000 curated entries. Git remains the source-control and review system; existing vocabulary files remain editorial sources; generated static JSON is the read-optimized delivery format. A database can be reconsidered if concurrent editing, accounts or moderation workflows become real requirements.
+
+## Implemented audit tooling
+
+The read-only audit script is `scripts/audit-legacy-vocabulary.mjs`. It is intentionally separate from the future builder: inventory must be measured before generating a new index. The architecture workflow currently runs this audit; it must not publish or substitute an empty generated dictionary.

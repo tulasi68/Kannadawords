@@ -63,7 +63,10 @@ function lexiconMergeCandidateRecords(records) {
 function lexiconMergeEntryRecords(previous, incoming) {
   if (!previous) return { ...incoming };
   const next = { ...previous, ...incoming, id: previous.id || incoming.id };
-  next.alternatives = lexiconMergeCandidateRecords([...(previous.alternatives || []), ...(incoming.alternatives || [])]);
+  next.alternatives = lexiconMergeCandidateRecords([
+    ...(previous.alternatives || []).map(candidate => ({...candidate, sourceDataset:candidate.sourceDataset || previous.sourceDataset})),
+    ...(incoming.alternatives || []).map(candidate => ({...candidate, sourceDataset:candidate.sourceDataset || incoming.sourceDataset}))
+  ]);
   ["halegannada", "halegannadaEvidence", "sourceEtymology", "sourceMeaning", "meaning"].forEach(field => {
     if (!incoming[field] && previous[field]) next[field] = previous[field];
   });

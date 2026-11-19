@@ -18,7 +18,7 @@ function migrateCandidate(candidate) {
     evidenceVariants:candidate.evidenceVariants||{},
     flags:{noAlternative:!!candidate.isNoAlternative,outsideTargetOrigin:!!candidate.isScopeAudit},
     provenance:{sourceDatasets:unique([candidate.sourceDataset,...(candidate.sources||[])]),sourceRefs:[]},
-    editorial:{reviewStatus:"needs_review",note:candidate.editorialNote||""},
+    editorial:{note:candidate.editorialNote||"",reviewedBy:null,reviewedAt:null},
     legacyFields:extras(candidate,candidateMapped)
   };
 }

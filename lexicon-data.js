@@ -23,7 +23,9 @@ const lexicalFormKey = value => String(value || "").normalize("NFC").replace(/\s
 const lexicalFormParts = value => String(value || "")
   .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)
   .map(lexicalFormKey).filter(Boolean);
-const contributorEntriesForMerge = (typeof contributorWordEntries === "undefined" ? [] : contributorWordEntries).map(item => {
+const contributorEntriesForMerge = (typeof contributorWordEntries === "undefined" ? [] : contributorWordEntries)
+  .filter(item => item && item.id && item.sourceForm)
+  .map(item => {
   const key = lexicalFormKey(item.sourceForm);
   const existingBase = wordEntries.find(entry => lexicalFormParts(entry.sanskrit).includes(key));
   const matchingAudits = existingOriginRecords.filter(entry =>

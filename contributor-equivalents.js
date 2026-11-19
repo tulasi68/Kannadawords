@@ -4326,4 +4326,8834 @@ const contributorWordEntries = [
     ],
     "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
   }
+  ...[
+    {
+      "id": "contrib-101",
+      "sourceForm": "ಚಿಂತನೆ",
+      "sourceMeaning": "Thought / thinking",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಚಿಂತನೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-101-1",
+          "word": "ಆಲೋಚನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಲೋಚನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-101-2",
+          "word": "ಎಣಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಣಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-101-3",
+          "word": "ಯೋಚನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಯೋಚನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-102",
+      "sourceForm": "ಜ್ಞಾನ",
+      "sourceMeaning": "Knowledge",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಜ್ಞಾನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-102-1",
+          "word": "ಅರಿವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅರಿವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-102-2",
+          "word": "ತಿಳಿವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-102-3",
+          "word": "ಎಚ್ಚರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಚ್ಚರ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-103",
+      "sourceForm": "ಅಜ್ಞಾನ",
+      "sourceMeaning": "Ignorance",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಅಜ್ಞಾನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-103-1",
+          "word": "ಅರಿಯಮೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅರಿಯಮೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-103-2",
+          "word": "ತಿಳಿಗೇಡಿತನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿಗೇಡಿತನ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-103-3",
+          "word": "ಮಬ್ಬು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಬ್ಬು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-104",
+      "sourceForm": "ಸ್ಮರಣೆ",
+      "sourceMeaning": "Memory / remembrance",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಸ್ಮರಣೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-104-1",
+          "word": "ನೆನಪು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೆನಪು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-104-2",
+          "word": "ಎಚ್ಚರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಚ್ಚರ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-105",
+      "sourceForm": "ವಿಸ್ಮರಣೆ",
+      "sourceMeaning": "Forgetfulness",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ವಿಸ್ಮರಣೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-105-1",
+          "word": "ಮರೆವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮರೆವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-105-2",
+          "word": "ಮರೆಗುಳಿತನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮರೆಗುಳಿತನ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-106",
+      "sourceForm": "ಬುದ್ಧಿ",
+      "sourceMeaning": "Intelligence / wisdom",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಬುದ್ಧಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-106-1",
+          "word": "ಜಾಣ್ಮೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಜಾಣ್ಮೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-106-2",
+          "word": "ಮತಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮತಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-106-3",
+          "word": "ತಿಳಿವಳಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿವಳಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-107",
+      "sourceForm": "ಮೂರ್ಖ",
+      "sourceMeaning": "Fool",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಮೂರ್ಖ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-107-1",
+          "word": "ದಡ್ಡ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದಡ್ಡ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-107-2",
+          "word": "ಹೆಡ್ಡ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೆಡ್ಡ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-107-3",
+          "word": "ತಿಳಿಗೇಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿಗೇಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-108",
+      "sourceForm": "ನಿರ್ಧಾರ",
+      "sourceMeaning": "Decision",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ನಿರ್ಧಾರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-108-1",
+          "word": "ತೀರ್ಮಾನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೀರ್ಮಾನ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-108-2",
+          "word": "ಗೊತ್ತುಪಡಿಸುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗೊತ್ತುಪಡಿಸುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-108-3",
+          "word": "ನಿಶ್ಚಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಿಶ್ಚಯ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-109",
+      "sourceForm": "ಸಂದೇಹ",
+      "sourceMeaning": "Doubt / suspicion",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಸಂದೇಹ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-109-1",
+          "word": "ಅಳಕು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಳಕು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-109-2",
+          "word": "ಅನುಮಾನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅನುಮಾನ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-109-3",
+          "word": "ಕಸಿವಿಸಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಸಿವಿಸಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-110",
+      "sourceForm": "ಕಲ್ಪನೆ",
+      "sourceMeaning": "Imagination",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಕಲ್ಪನೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-110-1",
+          "word": "ಊಹೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಊಹೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-110-2",
+          "word": "ಕಟ್ಟಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಟ್ಟಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-110-3",
+          "word": "ಕನಸುಗಾರಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕನಸುಗಾರಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-111",
+      "sourceForm": "ತರ್ಕ",
+      "sourceMeaning": "Logic / argument",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ತರ್ಕ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-111-1",
+          "word": "ವಾದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ವಾದ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-111-2",
+          "word": "ಎಣಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಣಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-111-3",
+          "word": "ಒರೆಹಚ್ಚುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒರೆಹಚ್ಚುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-112",
+      "sourceForm": "ಸತ್ಯ",
+      "sourceMeaning": "Truth",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಸತ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-112-1",
+          "word": "ನಿಜ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಿಜ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-112-2",
+          "word": "ದಿಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದಿಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-112-3",
+          "word": "ಒಪ್ಪ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಪ್ಪ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-113",
+      "sourceForm": "ಅಸತ್ಯ",
+      "sourceMeaning": "Lie / falsehood",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಅಸತ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-113-1",
+          "word": "ಸುಳ್ಳು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುಳ್ಳು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-113-2",
+          "word": "ಹುಸಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹುಸಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-113-3",
+          "word": "ಬೊಗಳೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೊಗಳೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-114",
+      "sourceForm": "ರಹಸ್ಯ",
+      "sourceMeaning": "Secret",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ರಹಸ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-114-1",
+          "word": "ಗುಟ್ಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗುಟ್ಟು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-114-2",
+          "word": "ಮರ್ಮ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮರ್ಮ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-114-3",
+          "word": "ಒಳಗುಟ್ಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಳಗುಟ್ಟು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-115",
+      "sourceForm": "ಪ್ರಜ್ಞೆ",
+      "sourceMeaning": "Consciousness / awareness",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಪ್ರಜ್ಞೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-115-1",
+          "word": "ಎಚ್ಚರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಚ್ಚರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-115-2",
+          "word": "ಅರಿವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅರಿವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-115-3",
+          "word": "ತಿಳಿವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿವು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-116",
+      "sourceForm": "ಧ್ಯಾನ",
+      "sourceMeaning": "Meditation / focus",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಧ್ಯಾನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-116-1",
+          "word": "ಏಕಾಗ್ರತೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಏಕಾಗ್ರತೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-116-2",
+          "word": "ಮನಸ್ಸು ನೆಡುವುದು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮನಸ್ಸು ನೆಡುವುದು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-117",
+      "sourceForm": "ಆಶಯ",
+      "sourceMeaning": "Intention / aim",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಆಶಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-117-1",
+          "word": "ಇಂಗಿತ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಇಂಗಿತ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-117-2",
+          "word": "ಬಯಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಯಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-117-3",
+          "word": "ಒಳನೋಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಳನೋಟ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-118",
+      "sourceForm": "ಉದ್ದೇಶ",
+      "sourceMeaning": "Purpose / objective",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಉದ್ದೇಶ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-118-1",
+          "word": "ಗುರಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗುರಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-118-2",
+          "word": "ಕಾರಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಾರಣ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-118-3",
+          "word": "ಎಣಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಣಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-119",
+      "sourceForm": "ಸಮ್ಮತಿ",
+      "sourceMeaning": "Consent / agreement",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ಸಮ್ಮತಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-119-1",
+          "word": "ಒಪ್ಪಿಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಪ್ಪಿಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-119-2",
+          "word": "ಹೌದೆನ್ನುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೌದೆನ್ನುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-120",
+      "sourceForm": "ವಿರೋಧ",
+      "sourceMeaning": "Opposition",
+      "category": "Mind",
+      "sourceEtymology": {
+        "form": "ವಿರೋಧ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-120-1",
+          "word": "ಎದುರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎದುರು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-120-2",
+          "word": "ಅಡ್ಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಡ್ಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-120-3",
+          "word": "ತಡೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಡೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-121",
+      "sourceForm": "ಗಮನ",
+      "sourceMeaning": "Movement / attention",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಗಮನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-121-1",
+          "word": "ನಡಿಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಡಿಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-121-2",
+          "word": "ಹೋಗುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೋಗುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-121-3",
+          "word": "ಗಮನಿಸುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಮನಿಸುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-122",
+      "sourceForm": "ಆಗಮನ",
+      "sourceMeaning": "Arrival",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಆಗಮನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-122-1",
+          "word": "ಬರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-122-2",
+          "word": "ಬರೋಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬರೋಣ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-123",
+      "sourceForm": "ನಿರ್ಗಮನ",
+      "sourceMeaning": "Departure",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ನಿರ್ಗಮನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-123-1",
+          "word": "ಹೊರಡುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊರಡುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-123-2",
+          "word": "ಹೋಗುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೋಗುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-124",
+      "sourceForm": "ಪ್ರವೇಶ",
+      "sourceMeaning": "Entry",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಪ್ರವೇಶ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-124-1",
+          "word": "ಒಳಬರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಳಬರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-124-2",
+          "word": "ಹೊಗುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊಗುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-125",
+      "sourceForm": "ಪತನ",
+      "sourceMeaning": "Fall",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಪತನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-125-1",
+          "word": "ಬೀಳುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೀಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-125-2",
+          "word": "ಕುಸಿತ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕುಸಿತ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-126",
+      "sourceForm": "ಉತ್ಥಾನ",
+      "sourceMeaning": "Rise / upliftment",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಉತ್ಥಾನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-126-1",
+          "word": "ಏಳಿಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಏಳಿಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-126-2",
+          "word": "ಮೇಲೇಳುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೇಲೇಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-127",
+      "sourceForm": "ಭ್ರಮಣೆ",
+      "sourceMeaning": "Rotation / wandering",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಭ್ರಮಣೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-127-1",
+          "word": "ತಿರುಗುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿರುಗುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-127-2",
+          "word": "ಸುತ್ತುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುತ್ತುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-128",
+      "sourceForm": "ಧಾವನ",
+      "sourceMeaning": "Running",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಧಾವನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-128-1",
+          "word": "ಓಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಓಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-128-2",
+          "word": "ನಾಗಾಲೋಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಾಗಾಲೋಟ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-129",
+      "sourceForm": "ವಿಶ್ರಾಂತಿ",
+      "sourceMeaning": "Rest",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ವಿಶ್ರಾಂತಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-129-1",
+          "word": "ದಣಿವಾರಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದಣಿವಾರಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-129-2",
+          "word": "ತಂಗುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಂಗುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-129-3",
+          "word": "ಬಿಡುವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಿಡುವು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-130",
+      "sourceForm": "ನಿದ್ರೆ",
+      "sourceMeaning": "Sleep",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ನಿದ್ರೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-130-1",
+          "word": "ನಿದ್ದೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಿದ್ದೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-130-2",
+          "word": "ತೂಕಡಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೂಕಡಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-130-3",
+          "word": "ಒರಗು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒರಗು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-131",
+      "sourceForm": "ಜಾಗರಣೆ",
+      "sourceMeaning": "Wakefulness",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಜಾಗರಣೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-131-1",
+          "word": "ಎಚ್ಚರವಿರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಚ್ಚರವಿರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-131-2",
+          "word": "ನಿದ್ದೆಗೆಡುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಿದ್ದೆಗೆಡುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-132",
+      "sourceForm": "ಸ್ಪರ್ಶ",
+      "sourceMeaning": "Touch",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಸ್ಪರ್ಶ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-132-1",
+          "word": "ಮುಟ್ಟುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮುಟ್ಟುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-132-2",
+          "word": "ಸೋಂಕು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸೋಂಕು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-132-3",
+          "word": "ತಾಕುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಾಕುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-133",
+      "sourceForm": "ದರ್ಶನ",
+      "sourceMeaning": "Sight / vision",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ದರ್ಶನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-133-1",
+          "word": "ನೋಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೋಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-133-2",
+          "word": "ಕಾಣ್ಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಾಣ್ಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-133-3",
+          "word": "ಕಣ್ಣಾರೆ ಕಾಣುವುದು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಣ್ಣಾರೆ ಕಾಣುವುದು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-134",
+      "sourceForm": "ಶ್ರವಣ",
+      "sourceMeaning": "Hearing / listening",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಶ್ರವಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-134-1",
+          "word": "ಕೇಳುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೇಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-134-2",
+          "word": "ಆಲಿಸುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಲಿಸುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-135",
+      "sourceForm": "ಭೋಜನ",
+      "sourceMeaning": "Meal",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಭೋಜನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-135-1",
+          "word": "ಊಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಊಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-135-2",
+          "word": "ಕೂಳು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೂಳು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-135-3",
+          "word": "ತಿನಿಸು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿನಿಸು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-136",
+      "sourceForm": "ಪಾನ",
+      "sourceMeaning": "Drinking",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಪಾನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-136-1",
+          "word": "ಕುಡಿಯುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕುಡಿಯುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-136-2",
+          "word": "ಹೀರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೀರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-137",
+      "sourceForm": "ಸ್ನಾನ",
+      "sourceMeaning": "Bath",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಸ್ನಾನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-137-1",
+          "word": "ಮೀಯುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೀಯುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-137-2",
+          "word": "ಜಳಕ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಜಳಕ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-138",
+      "sourceForm": "ವರ್ತನ",
+      "sourceMeaning": "Behavior",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ವರ್ತನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-138-1",
+          "word": "ನಡೆವಳಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಡೆವಳಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-138-2",
+          "word": "ನಡತೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಡತೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-139",
+      "sourceForm": "ಪರಿಶ್ರಮ",
+      "sourceMeaning": "Hard work",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಪರಿಶ್ರಮ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-139-1",
+          "word": "ದುಡಿಮೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದುಡಿಮೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-139-2",
+          "word": "ಬೆವರು ಸುರಿಸುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೆವರು ಸುರಿಸುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-139-3",
+          "word": "ಶ್ರಮ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಶ್ರಮ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-140",
+      "sourceForm": "ಸಂಗ್ರಹ",
+      "sourceMeaning": "Collection",
+      "category": "Action",
+      "sourceEtymology": {
+        "form": "ಸಂಗ್ರಹ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-140-1",
+          "word": "ಕೂಡಿಡುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೂಡಿಡುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-140-2",
+          "word": "ಒಟ್ಟುಗೂಡಿಸುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಟ್ಟುಗೂಡಿಸುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-141",
+      "sourceForm": "ಸಂಭಾಷಣೆ",
+      "sourceMeaning": "Conversation",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಸಂಭಾಷಣೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-141-1",
+          "word": "ಮಾತುಕತೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾತುಕತೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-141-2",
+          "word": "ನುಡಿಗಟ್ಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನುಡಿಗಟ್ಟು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-141-3",
+          "word": "ಹರಟೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹರಟೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-142",
+      "sourceForm": "ವಿವರಣೆ",
+      "sourceMeaning": "Explanation",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ವಿವರಣೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-142-1",
+          "word": "ಬಿಡಿಸಿ ಹೇಳುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಿಡಿಸಿ ಹೇಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-142-2",
+          "word": "ತಿಳಿಸುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿಸುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-143",
+      "sourceForm": "ಸಂದೇಶ",
+      "sourceMeaning": "Message",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಸಂದೇಶ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-143-1",
+          "word": "ಸುದ್ದಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುದ್ದಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-143-2",
+          "word": "ಹೇಳಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೇಳಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-143-3",
+          "word": "ವರ್ತಮಾನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ವರ್ತಮಾನ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-144",
+      "sourceForm": "ಘೋಷಣೆ",
+      "sourceMeaning": "Announcement / slogan",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಘೋಷಣೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-144-1",
+          "word": "ಕೂಗು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೂಗು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-144-2",
+          "word": "ಸಾರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಾರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-144-3",
+          "word": "ಡಂಗುರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಡಂಗುರ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-145",
+      "sourceForm": "ಪ್ರಶಂಸೆ",
+      "sourceMeaning": "Praise",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಪ್ರಶಂಸೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-145-1",
+          "word": "ಹೊಗಳಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊಗಳಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-145-2",
+          "word": "ಮೆಚ್ಚುಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೆಚ್ಚುಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-146",
+      "sourceForm": "ನಿಂದೆ",
+      "sourceMeaning": "Blame / criticism",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ನಿಂದೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-146-1",
+          "word": "ತೆಗಳಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೆಗಳಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-146-2",
+          "word": "ಹೀಯಾಳಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೀಯಾಳಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-146-3",
+          "word": "ದೂರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದೂರು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-147",
+      "sourceForm": "ಕ್ಷಮೆ",
+      "sourceMeaning": "Forgiveness",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಕ್ಷಮೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-147-1",
+          "word": "ಮನ್ನಣೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮನ್ನಣೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-147-2",
+          "word": "ತಾಳ್ಮೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಾಳ್ಮೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-147-3",
+          "word": "ಬಿಟ್ಟುಬಿಡುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಿಟ್ಟುಬಿಡುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-148",
+      "sourceForm": "ಪ್ರಾರ್ಥನೆ",
+      "sourceMeaning": "Prayer / request",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಪ್ರಾರ್ಥನೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-148-1",
+          "word": "ಬೇಡಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೇಡಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-148-2",
+          "word": "ಮೊರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೊರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-148-3",
+          "word": "ಅರಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅರಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-149",
+      "sourceForm": "ಆಮಂತ್ರಣ",
+      "sourceMeaning": "Invitation",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಆಮಂತ್ರಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-149-1",
+          "word": "ಕರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-149-2",
+          "word": "ಕರೆಯೋಲೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕರೆಯೋಲೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-149-3",
+          "word": "ಆಹ್ವಾನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಹ್ವಾನ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-150",
+      "sourceForm": "ಸ್ವಾಗತ",
+      "sourceMeaning": "Welcome",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಸ್ವಾಗತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-150-1",
+          "word": "ಬರಮಾಡಿಕೊಳ್ಳುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬರಮಾಡಿಕೊಳ್ಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-150-2",
+          "word": "ಎದುರುಗೊಳ್ಳುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎದುರುಗೊಳ್ಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-151",
+      "sourceForm": "ವಿದಾಯ",
+      "sourceMeaning": "Farewell",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ವಿದಾಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-151-1",
+          "word": "ಬೀಳ್ಕೊಡುಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೀಳ್ಕೊಡುಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-151-2",
+          "word": "ಕಳಿಸಿಕೊಡುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಳಿಸಿಕೊಡುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-152",
+      "sourceForm": "ಚರ್ಚೆ",
+      "sourceMeaning": "Discussion",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಚರ್ಚೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-152-1",
+          "word": "ಮಾತುಕತೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾತುಕತೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-152-2",
+          "word": "ವಿಚಾರ ವಿನಿಮಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ವಿಚಾರ ವಿನಿಮಯ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-153",
+      "sourceForm": "ವಾದ",
+      "sourceMeaning": "Argument",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ವಾದ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-153-1",
+          "word": "ಜಗಳ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಜಗಳ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-153-2",
+          "word": "ಮಾತು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾತು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-153-3",
+          "word": "ವಾದಿಸುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ವಾದಿಸುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-154",
+      "sourceForm": "ಮೌನ",
+      "sourceMeaning": "Silence",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಮೌನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-154-1",
+          "word": "ಸುಮ್ಮನಿರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುಮ್ಮನಿರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-154-2",
+          "word": "ಮಾತಿಲ್ಲದಿರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾತಿಲ್ಲದಿರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-155",
+      "sourceForm": "ಶಪಥ",
+      "sourceMeaning": "Oath / vow",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಶಪಥ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-155-1",
+          "word": "ಆಣೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಣೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-155-2",
+          "word": "ಪ್ರಮಾಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪ್ರಮಾಣ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-155-3",
+          "word": "ಪಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪಣ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-156",
+      "sourceForm": "ವಚನ",
+      "sourceMeaning": "Promise / word",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ವಚನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-156-1",
+          "word": "ಮಾತು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾತು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-156-2",
+          "word": "ನುಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನುಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-156-3",
+          "word": "ಭಾಷೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಭಾಷೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-157",
+      "sourceForm": "ಸೂಚನೆ",
+      "sourceMeaning": "Instruction / hint",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಸೂಚನೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-157-1",
+          "word": "ತಿಳಿವಳಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿವಳಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-157-2",
+          "word": "ಎಚ್ಚರಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಚ್ಚರಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-157-3",
+          "word": "ಸುಳಿವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುಳಿವು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-158",
+      "sourceForm": "ಅನುಮತಿ",
+      "sourceMeaning": "Permission",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಅನುಮತಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-158-1",
+          "word": "ಒಪ್ಪಿಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಪ್ಪಿಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-158-2",
+          "word": "ಅಪ್ಪಣೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಪ್ಪಣೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-159",
+      "sourceForm": "ನಿರಾಕರಣೆ",
+      "sourceMeaning": "Rejection",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ನಿರಾಕರಣೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-159-1",
+          "word": "ತಿರಸ್ಕಾರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿರಸ್ಕಾರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-159-2",
+          "word": "ಬೇಡವೆನ್ನುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೇಡವೆನ್ನುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-160",
+      "sourceForm": "ಪ್ರಕಟಣೆ",
+      "sourceMeaning": "Publication / notice",
+      "category": "Communication",
+      "sourceEtymology": {
+        "form": "ಪ್ರಕಟಣೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-160-1",
+          "word": "ಹೊರಡಿಸುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊರಡಿಸುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-160-2",
+          "word": "ಸಾರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಾರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-161",
+      "sourceForm": "ಸುಂದರ",
+      "sourceMeaning": "Beautiful",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಸುಂದರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-161-1",
+          "word": "ಚೆಲುವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಚೆಲುವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-161-2",
+          "word": "ಅಂದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಂದ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-161-3",
+          "word": "ಸೊಗಸು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸೊಗಸು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-162",
+      "sourceForm": "ಕುರೂಪ",
+      "sourceMeaning": "Ugly",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಕುರೂಪ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-162-1",
+          "word": "ವಿಕಾರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ವಿಕಾರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-162-2",
+          "word": "ಅಂದಗೆಟ್ಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಂದಗೆಟ್ಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-162-3",
+          "word": "ಕುಂದು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕುಂದು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-163",
+      "sourceForm": "ನೂತನ",
+      "sourceMeaning": "New",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ನೂತನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-163-1",
+          "word": "ಹೊಸ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊಸ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-163-2",
+          "word": "ತಾಜಾ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಾಜಾ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-164",
+      "sourceForm": "ಪುರಾತನ",
+      "sourceMeaning": "Old / ancient",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಪುರಾತನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-164-1",
+          "word": "ಹಳೆಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಳೆಯ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-164-2",
+          "word": "ಹಳತು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಳತು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-165",
+      "sourceForm": "ಬೃಹತ್",
+      "sourceMeaning": "Huge / large",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಬೃಹತ್",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-165-1",
+          "word": "ದೊಡ್ಡ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದೊಡ್ಡ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-165-2",
+          "word": "ಹಿರಿದಾದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಿರಿದಾದ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-165-3",
+          "word": "ಹೆಬ್ಬ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೆಬ್ಬ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-166",
+      "sourceForm": "ಸೂಕ್ಷ್ಮ",
+      "sourceMeaning": "Small / subtle",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಸೂಕ್ಷ್ಮ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-166-1",
+          "word": "ಸಣ್ಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಣ್ಣ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-166-2",
+          "word": "ನುಣ್ಣನೆಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನುಣ್ಣನೆಯ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-166-3",
+          "word": "ಕಿರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಿರು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-167",
+      "sourceForm": "ಕಠಿಣ",
+      "sourceMeaning": "Hard / difficult",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಕಠಿಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-167-1",
+          "word": "ಗಟ್ಟಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಟ್ಟಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-167-2",
+          "word": "ಕಷ್ಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಷ್ಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-167-3",
+          "word": "ಬಿಗಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಿಗಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-168",
+      "sourceForm": "ಮೃದು",
+      "sourceMeaning": "Soft",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಮೃದು",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-168-1",
+          "word": "ಮೆದು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೆದು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-168-2",
+          "word": "ನಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಯ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-168-3",
+          "word": "ನುಣುಪು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನುಣುಪು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-169",
+      "sourceForm": "ತೀಕ್ಷ್ಣ",
+      "sourceMeaning": "Sharp / intense",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ತೀಕ್ಷ್ಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-169-1",
+          "word": "ಹರಿತ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹರಿತ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-169-2",
+          "word": "ಚೂಪು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಚೂಪು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-169-3",
+          "word": "ಖಾರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಖಾರ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-170",
+      "sourceForm": "ಮಂದ",
+      "sourceMeaning": "Slow / dull",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಮಂದ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-170-1",
+          "word": "ನಿಧಾನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಿಧಾನ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-170-2",
+          "word": "ಮಬ್ಬು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಬ್ಬು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-170-3",
+          "word": "ಮೆಲ್ಲಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೆಲ್ಲಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-171",
+      "sourceForm": "ಪವಿತ್ರ",
+      "sourceMeaning": "Sacred / pure",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಪವಿತ್ರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-171-1",
+          "word": "ಮಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-171-2",
+          "word": "ಶುಚಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಶುಚಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-171-3",
+          "word": "ತಿಳಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-172",
+      "sourceForm": "ಮಲಿನ",
+      "sourceMeaning": "Dirty / impure",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಮಲಿನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-172-1",
+          "word": "ಕೊಳೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊಳೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-172-2",
+          "word": "ಕಸ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಸ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-172-3",
+          "word": "ಮೈಲಿಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೈಲಿಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-173",
+      "sourceForm": "ಪೂರ್ಣ",
+      "sourceMeaning": "Full / complete",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಪೂರ್ಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-173-1",
+          "word": "ತುಂಬಿದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತುಂಬಿದ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-173-2",
+          "word": "ಇಡೀ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಇಡೀ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-173-3",
+          "word": "ಮುಗಿದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮುಗಿದ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-174",
+      "sourceForm": "ರಿಕ್ತ",
+      "sourceMeaning": "Empty",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ರಿಕ್ತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-174-1",
+          "word": "ಬರಿದು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬರಿದು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-174-2",
+          "word": "ಖಾಲಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಖಾಲಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-174-3",
+          "word": "ಬರಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬರಡು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-175",
+      "sourceForm": "ಸಮಾನ",
+      "sourceMeaning": "Equal / same",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಸಮಾನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-175-1",
+          "word": "ಒಂದೇ ತರಹ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಂದೇ ತರಹ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-175-2",
+          "word": "ಸರಿಸಮ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸರಿಸಮ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-175-3",
+          "word": "ಹೋಲಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೋಲಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-176",
+      "sourceForm": "ಭಿನ್ನ",
+      "sourceMeaning": "Different",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಭಿನ್ನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-176-1",
+          "word": "ಬೇರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೇರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-176-2",
+          "word": "ವಿಭಿನ್ನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ವಿಭಿನ್ನ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-176-3",
+          "word": "ಒಡೆದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಡೆದ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-177",
+      "sourceForm": "ಪ್ರಮುಖ",
+      "sourceMeaning": "Important / main",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಪ್ರಮುಖ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-177-1",
+          "word": "ಮುಖ್ಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮುಖ್ಯ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-177-2",
+          "word": "ಮೊದಲ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೊದಲ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-177-3",
+          "word": "ಹಿರಿಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಿರಿಯ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-178",
+      "sourceForm": "ಸಾಮಾನ್ಯ",
+      "sourceMeaning": "Common / ordinary",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಸಾಮಾನ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-178-1",
+          "word": "ಸಾಧಾರಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಾಧಾರಣ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-178-2",
+          "word": "ಮಾಮೂಲಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾಮೂಲಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-178-3",
+          "word": "ಎಲ್ಲರಂಥ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಲ್ಲರಂಥ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-179",
+      "sourceForm": "ವಿಶೇಷ",
+      "sourceMeaning": "Special",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ವಿಶೇಷ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-179-1",
+          "word": "ಬೇರೆಯದೇ ಆದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೇರೆಯದೇ ಆದ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-179-2",
+          "word": "ಹಿರಿದಾದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಿರಿದಾದ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-179-3",
+          "word": "ಅಪರೂಪದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಪರೂಪದ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-180",
+      "sourceForm": "ಶ್ರೇಷ್ಠ",
+      "sourceMeaning": "Best / superior",
+      "category": "Attributes",
+      "sourceEtymology": {
+        "form": "ಶ್ರೇಷ್ಠ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-180-1",
+          "word": "ಉತ್ತಮ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಉತ್ತಮ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-180-2",
+          "word": "ಮೇಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೇಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-180-3",
+          "word": "ಹಿರಿದು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಿರಿದು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-181",
+      "sourceForm": "ಶಿಖರ",
+      "sourceMeaning": "Peak / summit",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಶಿಖರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-181-1",
+          "word": "ತುದಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತುದಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-181-2",
+          "word": "ನೆತ್ತಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೆತ್ತಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-181-3",
+          "word": "ಕೋಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೋಡು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-182",
+      "sourceForm": "ಕಣಿವೆ",
+      "sourceMeaning": "Valley",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಕಣಿವೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-182-1",
+          "word": "ಕಂದಕ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಂದಕ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-182-2",
+          "word": "ಇಳಿಜಾರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಇಳಿಜಾರು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-182-3",
+          "word": "ತಗ್ಗು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಗ್ಗು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-183",
+      "sourceForm": "ಪ್ರಪಾತ",
+      "sourceMeaning": "Abyss / cliff",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಪ್ರಪಾತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-183-1",
+          "word": "ಕಂದಕ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಂದಕ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-183-2",
+          "word": "ಪ್ರಪಾತ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪ್ರಪಾತ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-183-3",
+          "word": "ಆಳವಾದ ಗುಂಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಳವಾದ ಗುಂಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-184",
+      "sourceForm": "ದ್ವೀಪ",
+      "sourceMeaning": "Island",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ದ್ವೀಪ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-184-1",
+          "word": "ನಡುಗಡ್ಡೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಡುಗಡ್ಡೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-184-2",
+          "word": "ಕುದುರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕುದುರು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-185",
+      "sourceForm": "ತೀರ",
+      "sourceMeaning": "Shore / bank",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ತೀರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-185-1",
+          "word": "ದಡ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದಡ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-185-2",
+          "word": "ಕಿನಾರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಿನಾರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-185-3",
+          "word": "ಅಂಚು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಂಚು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-186",
+      "sourceForm": "ಮರುಭೂಮಿ",
+      "sourceMeaning": "Desert",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಮರುಭೂಮಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-186-1",
+          "word": "ಬರಡು ನೆಲ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬರಡು ನೆಲ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-186-2",
+          "word": "ಮರಳುಗಾಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮರಳುಗಾಡು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-187",
+      "sourceForm": "ಸರೋವರ",
+      "sourceMeaning": "Lake / pond",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಸರೋವರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-187-1",
+          "word": "ಕೆರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೆರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-187-2",
+          "word": "ಕೊಳ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊಳ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-187-3",
+          "word": "ಮಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಡು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-188",
+      "sourceForm": "ನಿರ್ಝರ",
+      "sourceMeaning": "Stream / spring",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ನಿರ್ಝರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-188-1",
+          "word": "ಝರಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಝರಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-188-2",
+          "word": "ತೊರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೊರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-188-3",
+          "word": "ಚಿಲುಮೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಚಿಲುಮೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-189",
+      "sourceForm": "ಜಲಪಾತ",
+      "sourceMeaning": "Waterfall",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಜಲಪಾತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-189-1",
+          "word": "ಅಬ್ಬಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಬ್ಬಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-189-2",
+          "word": "ದುಮುಕು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದುಮುಕು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-189-3",
+          "word": "ಹೊಳೆಬೀಳು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊಳೆಬೀಳು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-190",
+      "sourceForm": "ಭೂಕಂಪ",
+      "sourceMeaning": "Earthquake",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಭೂಕಂಪ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-190-1",
+          "word": "ನೆಲನಡುಕ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೆಲನಡುಕ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-190-2",
+          "word": "ನೆಲಕಂಪನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೆಲಕಂಪನ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-191",
+      "sourceForm": "ಚಂಡಮಾರುತ",
+      "sourceMeaning": "Cyclone / storm",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಚಂಡಮಾರುತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-191-1",
+          "word": "ಬಿರುಗಾಳಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಿರುಗಾಳಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-191-2",
+          "word": "ಸುಳಿಗಾಳಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುಳಿಗಾಳಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-192",
+      "sourceForm": "ವಿದ್ಯುತ್",
+      "sourceMeaning": "Lightning / electricity",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ವಿದ್ಯುತ್",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-192-1",
+          "word": "ಮಿಂಚು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಿಂಚು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-192-2",
+          "word": "ಸಿಡಿಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಿಡಿಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-192-3",
+          "word": "ಕಿಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಿಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-193",
+      "sourceForm": "ಗರ್ಜನೆ",
+      "sourceMeaning": "Thunder / roar",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಗರ್ಜನೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-193-1",
+          "word": "ಗುಡುಗು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗುಡುಗು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-193-2",
+          "word": "ಆರ್ಭಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆರ್ಭಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-193-3",
+          "word": "ಕೂಗು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೂಗು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-194",
+      "sourceForm": "ಹಿಮ",
+      "sourceMeaning": "Snow / frost",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಹಿಮ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-194-1",
+          "word": "ಮಂಜು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಂಜು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-194-2",
+          "word": "ಇಬ್ಬನಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಇಬ್ಬನಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-194-3",
+          "word": "ತಂಪು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಂಪು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-195",
+      "sourceForm": "ಮರೀಚಿಕೆ",
+      "sourceMeaning": "Mirage",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಮರೀಚಿಕೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-195-1",
+          "word": "ಬಿಸಿಲ್ಗುದುರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಿಸಿಲ್ಗುದುರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-195-2",
+          "word": "ಮೋಸದ ನೋಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೋಸದ ನೋಟ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-196",
+      "sourceForm": "ಧೂಳಿ",
+      "sourceMeaning": "Dust",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಧೂಳಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-196-1",
+          "word": "ದೂಳು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದೂಳು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-196-2",
+          "word": "ಮಣ್ಣು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಣ್ಣು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-196-3",
+          "word": "ಬೂದಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೂದಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-197",
+      "sourceForm": "ಶಿಲೆ",
+      "sourceMeaning": "Stone / rock",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಶಿಲೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-197-1",
+          "word": "ಕಲ್ಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಲ್ಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-197-2",
+          "word": "ಬಂಡೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಂಡೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-198",
+      "sourceForm": "ಲೋಹ",
+      "sourceMeaning": "Metal",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಲೋಹ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-198-1",
+          "word": "ಕಬ್ಬಿಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಬ್ಬಿಣ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-198-2",
+          "word": "ತಗಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಗಡು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-198-3",
+          "word": "ಅದಿರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅದಿರು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-199",
+      "sourceForm": "ಸುವರ್ಣ",
+      "sourceMeaning": "Gold",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ಸುವರ್ಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-199-1",
+          "word": "ಚಿನ್ನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಚಿನ್ನ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-199-2",
+          "word": "ಬಂಗಾರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಂಗಾರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-199-3",
+          "word": "ಹೊನ್ನು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊನ್ನು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-200",
+      "sourceForm": "ರಜತ",
+      "sourceMeaning": "Silver",
+      "category": "Geography",
+      "sourceEtymology": {
+        "form": "ರಜತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-200-1",
+          "word": "ಬೆಳ್ಳಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೆಳ್ಳಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-201",
+      "sourceForm": "ವ್ಯಾಪಾರ",
+      "sourceMeaning": "Business / trade",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ವ್ಯಾಪಾರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-201-1",
+          "word": "ಮಾರಾಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾರಾಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-201-2",
+          "word": "ವಹಿವಾಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ವಹಿವಾಟು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-201-3",
+          "word": "ಕೊಳ್ಳು-ಕೊಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊಳ್ಳು-ಕೊಡು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-202",
+      "sourceForm": "ಕ್ರಯ",
+      "sourceMeaning": "Purchase / buying",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಕ್ರಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-202-1",
+          "word": "ಕೊಳ್ಳುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊಳ್ಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-202-2",
+          "word": "ಖರೀದಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಖರೀದಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-203",
+      "sourceForm": "ವಿಕ್ರಯ",
+      "sourceMeaning": "Sale / selling",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ವಿಕ್ರಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-203-1",
+          "word": "ಮಾರಾಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾರಾಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-203-2",
+          "word": "ಮಾರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-204",
+      "sourceForm": "ಮೌಲ್ಯ",
+      "sourceMeaning": "Value / price",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಮೌಲ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-204-1",
+          "word": "ಬೆಲೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೆಲೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-204-2",
+          "word": "ಕಿಮ್ಮತ್ತು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಿಮ್ಮತ್ತು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-204-3",
+          "word": "ಯೋಗ್ಯತೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಯೋಗ್ಯತೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-205",
+      "sourceForm": "ಲಾಭ",
+      "sourceMeaning": "Profit",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಲಾಭ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-205-1",
+          "word": "ಹುಟ್ಟುವಳಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹುಟ್ಟುವಳಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-205-2",
+          "word": "ಉಳಿತಾಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಉಳಿತಾಯ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-205-3",
+          "word": "ಏಳಿಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಏಳಿಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-206",
+      "sourceForm": "ನಷ್ಟ",
+      "sourceMeaning": "Loss",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ನಷ್ಟ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-206-1",
+          "word": "ಕೇಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೇಡು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-206-2",
+          "word": "ಹಾನಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಾನಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-206-3",
+          "word": "ಕಳೆದುಕೊಳ್ಳುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಳೆದುಕೊಳ್ಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-207",
+      "sourceForm": "ಋಣ",
+      "sourceMeaning": "Debt / loan",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಋಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-207-1",
+          "word": "ಸಾಲ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಾಲ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-207-2",
+          "word": "ಹೊಣೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊಣೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-207-3",
+          "word": "ಬಾಕಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಾಕಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-208",
+      "sourceForm": "ವೇತನ",
+      "sourceMeaning": "Salary / wage",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ವೇತನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-208-1",
+          "word": "ಸಂಬಳ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಂಬಳ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-208-2",
+          "word": "ಕೂಲಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೂಲಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-208-3",
+          "word": "ಪಗಾರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪಗಾರ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-209",
+      "sourceForm": "ಕರ",
+      "sourceMeaning": "Tax",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಕರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-209-1",
+          "word": "ಸುಂಕ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುಂಕ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-209-2",
+          "word": "ಕಂದಾಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಂದಾಯ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-209-3",
+          "word": "ತೆರಿಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೆರಿಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-210",
+      "sourceForm": "ಸಂಪತ್ತು",
+      "sourceMeaning": "Wealth / property",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಸಂಪತ್ತು",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-210-1",
+          "word": "ಸಿರಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಿರಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-210-2",
+          "word": "ಒಡವೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಡವೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-210-3",
+          "word": "ಆಸ್ತಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಸ್ತಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-211",
+      "sourceForm": "ದಾರಿದ್ರ್ಯ",
+      "sourceMeaning": "Poverty",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ದಾರಿದ್ರ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-211-1",
+          "word": "ಬಡತನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಡತನ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-211-2",
+          "word": "ಕೊರತೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊರತೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-211-3",
+          "word": "ಇಲ್ಲದಿರುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಇಲ್ಲದಿರುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-212",
+      "sourceForm": "ಭಂಡಾರ",
+      "sourceMeaning": "Treasury / granary",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಭಂಡಾರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-212-1",
+          "word": "ಕಣಜ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಣಜ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-212-2",
+          "word": "ಬೊಕ್ಕಸ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೊಕ್ಕಸ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-212-3",
+          "word": "ಉಗ್ರಾಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಉಗ್ರಾಣ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-213",
+      "sourceForm": "ಪರಿಮಾಣ",
+      "sourceMeaning": "Quantity / measurement",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಪರಿಮಾಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-213-1",
+          "word": "ಅಳತೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಳತೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-213-2",
+          "word": "ತೂಕ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೂಕ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-213-3",
+          "word": "ಗಾತ್ರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಾತ್ರ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-214",
+      "sourceForm": "ಭಾರ",
+      "sourceMeaning": "Weight / load",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಭಾರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-214-1",
+          "word": "ತೂಕ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೂಕ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-214-2",
+          "word": "ಹೊರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-214-3",
+          "word": "ಬರುವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬರುವು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-215",
+      "sourceForm": "ದೂರ",
+      "sourceMeaning": "Distance",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ದೂರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-215-1",
+          "word": "ಅಂತರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಂತರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-215-2",
+          "word": "ಎಡೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಡೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-215-3",
+          "word": "ದೂರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದೂರ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-216",
+      "sourceForm": "ಸಮೀಪ",
+      "sourceMeaning": "Near / close",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಸಮೀಪ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-216-1",
+          "word": "ಹತ್ತಿರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹತ್ತಿರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-216-2",
+          "word": "ಪಕ್ಕ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪಕ್ಕ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-216-3",
+          "word": "ಸನಿಹ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸನಿಹ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-217",
+      "sourceForm": "ವಿಸ್ತಾರ",
+      "sourceMeaning": "Area / expanse",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ವಿಸ್ತಾರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-217-1",
+          "word": "ಅಗಲ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಗಲ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-217-2",
+          "word": "ಹರವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹರವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-217-3",
+          "word": "ಹಬ್ಬುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಬ್ಬುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-218",
+      "sourceForm": "ಗಾಢ",
+      "sourceMeaning": "Deep / dense",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಗಾಢ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-218-1",
+          "word": "ಆಳ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಳ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-218-2",
+          "word": "ದಟ್ಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದಟ್ಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-218-3",
+          "word": "ಗಟ್ಟಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಟ್ಟಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-219",
+      "sourceForm": "ಉನ್ನತ",
+      "sourceMeaning": "High / tall",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಉನ್ನತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-219-1",
+          "word": "ಎತ್ತರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎತ್ತರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-219-2",
+          "word": "ಮೇಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೇಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-219-3",
+          "word": "ನಿಡಿದು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಿಡಿದು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-220",
+      "sourceForm": "ಕನಿಷ್ಠ",
+      "sourceMeaning": "Minimum / least",
+      "category": "Finance",
+      "sourceEtymology": {
+        "form": "ಕನಿಷ್ಠ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-220-1",
+          "word": "ಕಡಿಮೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಡಿಮೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-220-2",
+          "word": "ಕಿರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಿರು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-220-3",
+          "word": "ಕೊನೆಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊನೆಯ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-221",
+      "sourceForm": "ಉತ್ಸವ",
+      "sourceMeaning": "Festival / celebration",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಉತ್ಸವ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-221-1",
+          "word": "ಹಬ್ಬ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಬ್ಬ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-221-2",
+          "word": "ಜಾತ್ರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಜಾತ್ರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-221-3",
+          "word": "ಸಂಭ್ರಮ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಂಭ್ರಮ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-222",
+      "sourceForm": "ವಿವಾಹ",
+      "sourceMeaning": "Marriage",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ವಿವಾಹ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-222-1",
+          "word": "ಮದುವೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮದುವೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-222-2",
+          "word": "ಕಲ್ಯಾಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಲ್ಯಾಣ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-222-3",
+          "word": "ನಂಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಂಟು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-223",
+      "sourceForm": "ಜನನ",
+      "sourceMeaning": "Birth",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಜನನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-223-1",
+          "word": "ಹುಟ್ಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹುಟ್ಟು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-223-2",
+          "word": "ಪುಟ್ಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪುಟ್ಟು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-224",
+      "sourceForm": "ಮರಣ",
+      "sourceMeaning": "Death",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಮರಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-224-1",
+          "word": "ಸಾವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಾವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-224-2",
+          "word": "ಅಳಿವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಳಿವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-224-3",
+          "word": "ತೀರಿಕೊಳ್ಳುವಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೀರಿಕೊಳ್ಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-225",
+      "sourceForm": "ಪರಂಪರೆ",
+      "sourceMeaning": "Tradition",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಪರಂಪರೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-225-1",
+          "word": "ನಡೆವಳಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಡೆವಳಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-225-2",
+          "word": "ಬಳುವಳಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಳುವಳಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-225-3",
+          "word": "ಹಿಂದಿನಿಂದ ಬಂದದ್ದು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಿಂದಿನಿಂದ ಬಂದದ್ದು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-226",
+      "sourceForm": "ಸಂಸ್ಕೃತಿ",
+      "sourceMeaning": "Culture",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಸಂಸ್ಕೃತಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-226-1",
+          "word": "ನಾಗರಿಕತೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಾಗರಿಕತೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-226-2",
+          "word": "ನಡೆನುಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಡೆನುಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-226-3",
+          "word": "ಬದುಕು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬದುಕು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-227",
+      "sourceForm": "ಸೇವೆ",
+      "sourceMeaning": "Service",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಸೇವೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-227-1",
+          "word": "ದುಡಿಮೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದುಡಿಮೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-227-2",
+          "word": "ನೆರವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೆರವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-227-3",
+          "word": "ಊಳಿಗ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಊಳಿಗ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-228",
+      "sourceForm": "ದಾನ",
+      "sourceMeaning": "Donation / charity",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ದಾನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-228-1",
+          "word": "ಕೊಡುಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊಡುಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-228-2",
+          "word": "ನೀಡಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೀಡಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-228-3",
+          "word": "ಧರ್ಮ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಧರ್ಮ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-229",
+      "sourceForm": "ಪೂಜೆ",
+      "sourceMeaning": "Worship",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಪೂಜೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-229-1",
+          "word": "ಆರಾಧನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆರಾಧನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-229-2",
+          "word": "ನಮನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಮನ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-229-3",
+          "word": "ಸೇವೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸೇವೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-230",
+      "sourceForm": "ಮಂದಿರ",
+      "sourceMeaning": "Temple / house",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಮಂದಿರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-230-1",
+          "word": "ಗುಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗುಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-230-2",
+          "word": "ದೇಗುಲ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದೇಗುಲ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-230-3",
+          "word": "ಮನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-231",
+      "sourceForm": "ಮೂರ್ತಿ",
+      "sourceMeaning": "Idol / statue",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಮೂರ್ತಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-231-1",
+          "word": "ಗೊಂಬೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗೊಂಬೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-231-2",
+          "word": "ಕಲ್ಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಲ್ಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-231-3",
+          "word": "ರೂಪ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ರೂಪ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-232",
+      "sourceForm": "ಯಾತ್ರೆ",
+      "sourceMeaning": "Journey / pilgrimage",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಯಾತ್ರೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-232-1",
+          "word": "ಪಯಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪಯಣ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-232-2",
+          "word": "ತಿರುಗಾಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿರುಗಾಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-232-3",
+          "word": "ಜಾತ್ರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಜಾತ್ರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-233",
+      "sourceForm": "ನಿವಾಸ",
+      "sourceMeaning": "Residence",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ನಿವಾಸ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-233-1",
+          "word": "ಮನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-233-2",
+          "word": "ಬೀಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೀಡು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-233-3",
+          "word": "ತಾಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಾಣ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-233-4",
+          "word": "ನೆಲೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೆಲೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-234",
+      "sourceForm": "ನಗರ",
+      "sourceMeaning": "City",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ನಗರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-234-1",
+          "word": "ಪಟ್ಟಣ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪಟ್ಟಣ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-234-2",
+          "word": "ಊರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಊರು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-234-3",
+          "word": "ಬೀಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೀಡು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-235",
+      "sourceForm": "ರಾಜಧಾನಿ",
+      "sourceMeaning": "Capital city",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ರಾಜಧಾನಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-235-1",
+          "word": "ರಾಜಬೀಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ರಾಜಬೀಡು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-235-2",
+          "word": "ನಾಡಿನ ನಡುಮನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಾಡಿನ ನಡುಮನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-236",
+      "sourceForm": "ರಾಷ್ಟ್ರ",
+      "sourceMeaning": "Nation / country",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ರಾಷ್ಟ್ರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-236-1",
+          "word": "ನಾಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಾಡು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-236-2",
+          "word": "ದೇಶ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದೇಶ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-236-3",
+          "word": "ಸೀಮೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸೀಮೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-237",
+      "sourceForm": "ಸೀಮೆ",
+      "sourceMeaning": "Border / boundary",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಸೀಮೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-237-1",
+          "word": "ಗಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-237-2",
+          "word": "ಅಂಚು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಂಚು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-237-3",
+          "word": "ಎಲ್ಲೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಲ್ಲೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-238",
+      "sourceForm": "ಯುದ್ಧ",
+      "sourceMeaning": "War / battle",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಯುದ್ಧ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-238-1",
+          "word": "ಕಾಳಗ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಾಳಗ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-238-2",
+          "word": "ಕದನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕದನ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-238-3",
+          "word": "ಹೋರಾಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೋರಾಟ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-239",
+      "sourceForm": "ವಿಜಯ",
+      "sourceMeaning": "Victory",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ವಿಜಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-239-1",
+          "word": "ಗೆಲುವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗೆಲುವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-239-2",
+          "word": "ಜಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಜಯ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-240",
+      "sourceForm": "ಪರಾಜಯ",
+      "sourceMeaning": "Defeat",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಪರಾಜಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-240-1",
+          "word": "ಸೋಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸೋಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-240-2",
+          "word": "ಹಿನ್ನಡೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಿನ್ನಡೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-241",
+      "sourceForm": "ಆಯುಧ",
+      "sourceMeaning": "Weapon / tool",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಆಯುಧ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-241-1",
+          "word": "ಹತ್ಯಾರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹತ್ಯಾರು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-241-2",
+          "word": "ಸಲಕರಣೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಲಕರಣೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-241-3",
+          "word": "ಕತ್ತಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕತ್ತಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-242",
+      "sourceForm": "ಪಾತ್ರೆ",
+      "sourceMeaning": "Vessel / utensil",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಪಾತ್ರೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-242-1",
+          "word": "ಬಟ್ಟಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಟ್ಟಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-242-2",
+          "word": "ಮಡಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಡಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-242-3",
+          "word": "ಕುಡಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕುಡಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-243",
+      "sourceForm": "ದರ್ಪಣ",
+      "sourceMeaning": "Mirror",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ದರ್ಪಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-243-1",
+          "word": "ಕನ್ನಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕನ್ನಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-244",
+      "sourceForm": "ಛತ್ರಿ",
+      "sourceMeaning": "Umbrella",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಛತ್ರಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-244-1",
+          "word": "ಕೊಡೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊಡೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-245",
+      "sourceForm": "ಪಾದರಕ್ಷೆ",
+      "sourceMeaning": "Footwear",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಪಾದರಕ್ಷೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-245-1",
+          "word": "ಚಪ್ಪಲಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಚಪ್ಪಲಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-245-2",
+          "word": "ಮೆಟ್ಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೆಟ್ಟು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-246",
+      "sourceForm": "ಆಸನ",
+      "sourceMeaning": "Seat",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಆಸನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-246-1",
+          "word": "ಪೀಠ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪೀಠ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-246-2",
+          "word": "ಮಣೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಣೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-246-3",
+          "word": "ಕೂರುವ ಜಾಗ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೂರುವ ಜಾಗ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-247",
+      "sourceForm": "ಸ್ತಂಭ",
+      "sourceMeaning": "Pillar",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಸ್ತಂಭ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-247-1",
+          "word": "ಕಂಬ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಂಬ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-247-2",
+          "word": "ಆಧಾರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಧಾರ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-248",
+      "sourceForm": "ಭಿತ್ತಿ",
+      "sourceMeaning": "Wall",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಭಿತ್ತಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-248-1",
+          "word": "ಗೋಡೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗೋಡೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-249",
+      "sourceForm": "ಛಾವಣಿ",
+      "sourceMeaning": "Roof",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಛಾವಣಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-249-1",
+          "word": "ಮಾಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾಡು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-249-2",
+          "word": "ಸೂರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸೂರು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-249-3",
+          "word": "ಮೇಲ್ಛಾವಣಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೇಲ್ಛಾವಣಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-250",
+      "sourceForm": "ಅಂಗಣ",
+      "sourceMeaning": "Courtyard",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಅಂಗಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-250-1",
+          "word": "ಅಂಗಳ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಂಗಳ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-250-2",
+          "word": "ಬಯಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಯಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-250-3",
+          "word": "ಹಿತ್ತಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಿತ್ತಲು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-251",
+      "sourceForm": "ಕೂಪ",
+      "sourceMeaning": "Well",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಕೂಪ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-251-1",
+          "word": "ಬಾವಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಾವಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-251-2",
+          "word": "ಗುಂಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗುಂಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-252",
+      "sourceForm": "ತಟಾಕ",
+      "sourceMeaning": "Tank / pond",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ತಟಾಕ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-252-1",
+          "word": "ಕೆರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೆರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-252-2",
+          "word": "ಕಟ್ಟೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಟ್ಟೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-253",
+      "sourceForm": "ಸೇತುವೆ",
+      "sourceMeaning": "Bridge",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಸೇತುವೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-253-1",
+          "word": "ಕಟ್ಟೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಟ್ಟೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-253-2",
+          "word": "ಹೊಳೆದಾಟುವ ದಾರಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊಳೆದಾಟುವ ದಾರಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-254",
+      "sourceForm": "ನೌಕೆ",
+      "sourceMeaning": "Boat / ship",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ನೌಕೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-254-1",
+          "word": "ದೋಣಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದೋಣಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-254-2",
+          "word": "ಹಡಗು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಡಗು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-254-3",
+          "word": "ತೆಪ್ಪ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೆಪ್ಪ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-255",
+      "sourceForm": "ರಥ",
+      "sourceMeaning": "Chariot / cart",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ರಥ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-255-1",
+          "word": "ತೇರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೇರು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-255-2",
+          "word": "ಬಂಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಂಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-256",
+      "sourceForm": "ಚಕ್ರ",
+      "sourceMeaning": "Wheel",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಚಕ್ರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-256-1",
+          "word": "ಗಾಲಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಾಲಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-256-2",
+          "word": "ಬಂಡಿಗಾಲಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಂಡಿಗಾಲಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-256-3",
+          "word": "ಸುತ್ತು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುತ್ತು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-257",
+      "sourceForm": "ರಜ್ಜು",
+      "sourceMeaning": "Rope",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ರಜ್ಜು",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-257-1",
+          "word": "ಹಗ್ಗ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಗ್ಗ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-257-2",
+          "word": "ನಾರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಾರು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-257-3",
+          "word": "ದಾರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ದಾರ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-258",
+      "sourceForm": "ಸೂಚಿ",
+      "sourceMeaning": "Needle",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಸೂಚಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-258-1",
+          "word": "ಸೂಜಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸೂಜಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-258-2",
+          "word": "ಮುಳ್ಳು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮುಳ್ಳು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-259",
+      "sourceForm": "ಕೀಲಕ",
+      "sourceMeaning": "Lock / key / peg",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಕೀಲಕ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-259-1",
+          "word": "ಬೀಗ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೀಗ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-259-2",
+          "word": "ಚಿಲಕ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಚಿಲಕ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-259-3",
+          "word": "ಗೂಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗೂಟ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-260",
+      "sourceForm": "ಶೃಂಖಲೆ",
+      "sourceMeaning": "Chain",
+      "category": "Household",
+      "sourceEtymology": {
+        "form": "ಶೃಂಖಲೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-260-1",
+          "word": "ಸರಪಳಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸರಪಳಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-260-2",
+          "word": "ಕೊಂಡಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊಂಡಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-261",
+      "sourceForm": "ಔಷಧ",
+      "sourceMeaning": "Medicine",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಔಷಧ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-261-1",
+          "word": "ಮದ್ದು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮದ್ದು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-261-2",
+          "word": "ಗಿಡಮೂಲಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಿಡಮೂಲಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-262",
+      "sourceForm": "ವೈದ್ಯ",
+      "sourceMeaning": "Doctor / healer",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ವೈದ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-262-1",
+          "word": "ಮದ್ದುಗಾರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮದ್ದುಗಾರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-262-2",
+          "word": "ನಾಟಿ ವೈದ್ಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಾಟಿ ವೈದ್ಯ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-263",
+      "sourceForm": "ಆರೋಗ್ಯ",
+      "sourceMeaning": "Health",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಆರೋಗ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-263-1",
+          "word": "ನಲವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಲವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-263-2",
+          "word": "ಮೈಕಟ್ಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೈಕಟ್ಟು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-263-3",
+          "word": "ಒಳ್ಳೆಯ ಸ್ಥಿತಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಒಳ್ಳೆಯ ಸ್ಥಿತಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-264",
+      "sourceForm": "ವ್ರಣ",
+      "sourceMeaning": "Wound / sore",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ವ್ರಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-264-1",
+          "word": "ಗಾಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಾಯ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-264-2",
+          "word": "ಹುಣ್ಣು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹುಣ್ಣು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-264-3",
+          "word": "ಪೆಟ್ಟು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪೆಟ್ಟು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-265",
+      "sourceForm": "ವೇದನೆ",
+      "sourceMeaning": "Pain",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ವೇದನೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-265-1",
+          "word": "ನೋವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೋವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-265-2",
+          "word": "ಸಂಕಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಂಕಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-265-3",
+          "word": "ಬೇನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೇನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-266",
+      "sourceForm": "ಕ್ಷುಧೆ",
+      "sourceMeaning": "Hunger",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಕ್ಷುಧೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-266-1",
+          "word": "ಹಸಿವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಸಿವು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-267",
+      "sourceForm": "ತೃಷೆ",
+      "sourceMeaning": "Thirst",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ತೃಷೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-267-1",
+          "word": "ಬಾಯಾರಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಾಯಾರಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-267-2",
+          "word": "ನೀರಡಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೀರಡಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-268",
+      "sourceForm": "ಸ್ವಾದ",
+      "sourceMeaning": "Taste",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಸ್ವಾದ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-268-1",
+          "word": "ರುಚಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ರುಚಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-268-2",
+          "word": "ಸವಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸವಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-269",
+      "sourceForm": "ಗಂಧ",
+      "sourceMeaning": "Smell / fragrance",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಗಂಧ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-269-1",
+          "word": "ವಾಸನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ವಾಸನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-269-2",
+          "word": "ಕಂಪು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಂಪು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-269-3",
+          "word": "ಸುವಾಸನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುವಾಸನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-270",
+      "sourceForm": "ದುರ್ಗಂಧ",
+      "sourceMeaning": "Bad smell",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ದುರ್ಗಂಧ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-270-1",
+          "word": "ನಾತ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಾತ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-270-2",
+          "word": "ಕೊಳೆವಾಸನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೊಳೆವಾಸನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-271",
+      "sourceForm": "ಕ್ಷೀರ",
+      "sourceMeaning": "Milk",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಕ್ಷೀರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-271-1",
+          "word": "ಹಾಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಾಲು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-272",
+      "sourceForm": "ದಧಿ",
+      "sourceMeaning": "Curd",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ದಧಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-272-1",
+          "word": "ಮೊಸರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೊಸರು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-273",
+      "sourceForm": "ಘೃತ",
+      "sourceMeaning": "Ghee",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಘೃತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-273-1",
+          "word": "ತುಪ್ಪ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತುಪ್ಪ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-274",
+      "sourceForm": "ತೈಲ",
+      "sourceMeaning": "Oil",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ತೈಲ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-274-1",
+          "word": "ಎಣ್ಣೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಎಣ್ಣೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-275",
+      "sourceForm": "ಲವಣ",
+      "sourceMeaning": "Salt",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಲವಣ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-275-1",
+          "word": "ಉಪ್ಪು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಉಪ್ಪು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-276",
+      "sourceForm": "ಮಧು",
+      "sourceMeaning": "Honey / sweet",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಮಧು",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-276-1",
+          "word": "ಜೇನು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಜೇನು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-276-2",
+          "word": "ಸಿಹಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಿಹಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-277",
+      "sourceForm": "ತಂಡುಲ",
+      "sourceMeaning": "Rice",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ತಂಡುಲ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-277-1",
+          "word": "ಅಕ್ಕಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಕ್ಕಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-278",
+      "sourceForm": "ಅನ್ನ",
+      "sourceMeaning": "Cooked rice / food",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಅನ್ನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-278-1",
+          "word": "ಕೂಳು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೂಳು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-278-2",
+          "word": "ಬೋನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೋನ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-279",
+      "sourceForm": "ಶಾಕ",
+      "sourceMeaning": "Vegetable",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಶಾಕ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-279-1",
+          "word": "ತರಕಾರಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತರಕಾರಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-279-2",
+          "word": "ಸೊಪ್ಪು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸೊಪ್ಪು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-280",
+      "sourceForm": "ಬೀಜ",
+      "sourceMeaning": "Seed",
+      "category": "Health",
+      "sourceEtymology": {
+        "form": "ಬೀಜ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-280-1",
+          "word": "ಬಿತ್ತು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಿತ್ತು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-280-2",
+          "word": "ಕಾಳು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಾಳು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-281",
+      "sourceForm": "ಅವಧಿ",
+      "sourceMeaning": "Duration / deadline",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಅವಧಿ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-281-1",
+          "word": "ಗಡುವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಡುವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-281-2",
+          "word": "ಕಾಲಮಿತಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಾಲಮಿತಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-281-3",
+          "word": "ಹೊತ್ತು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೊತ್ತು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-282",
+      "sourceForm": "ಕ್ರಮ",
+      "sourceMeaning": "Order / sequence",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಕ್ರಮ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-282-1",
+          "word": "ಸಾಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸಾಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-282-2",
+          "word": "ಏರ್ಪಾಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಏರ್ಪಾಡು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-282-3",
+          "word": "ರೀತಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ರೀತಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-283",
+      "sourceForm": "ವಿಧಾನ",
+      "sourceMeaning": "Procedure / method",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ವಿಧಾನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-283-1",
+          "word": "ಬಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-283-2",
+          "word": "ರೀತಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ರೀತಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-283-3",
+          "word": "ಮಾಡುವ ಬಗೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮಾಡುವ ಬಗೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-284",
+      "sourceForm": "ಆಧಾರ",
+      "sourceMeaning": "Support / base",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಆಧಾರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-284-1",
+          "word": "ಆಸರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಸರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-284-2",
+          "word": "ಊರುಗೋಲು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಊರುಗೋಲು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-284-3",
+          "word": "ಬುನಾದಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬುನಾದಿ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-285",
+      "sourceForm": "ಪರಿಣಾಮ",
+      "sourceMeaning": "Result / effect",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಪರಿಣಾಮ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-285-1",
+          "word": "ಫಲಿತಾಂಶ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಫಲಿತಾಂಶ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-285-2",
+          "word": "ಬದಲಾವಣೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬದಲಾವಣೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-286",
+      "sourceForm": "ಪ್ರಭಾವ",
+      "sourceMeaning": "Influence / impact",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಪ್ರಭಾವ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-286-1",
+          "word": "ಹಿಡಿತ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಿಡಿತ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-286-2",
+          "word": "ಸೆಳೆತ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸೆಳೆತ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-287",
+      "sourceForm": "ಸಾಮರ್ಥ್ಯ",
+      "sourceMeaning": "Capability / strength",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಸಾಮರ್ಥ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-287-1",
+          "word": "ಅಳವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅಳವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-287-2",
+          "word": "ಕಸುವು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಸುವು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-287-3",
+          "word": "ತಾಕತ್ತು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಾಕತ್ತು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-288",
+      "sourceForm": "ಪ್ರಯೋಜನ",
+      "sourceMeaning": "Benefit / usefulness",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಪ್ರಯೋಜನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-288-1",
+          "word": "ಲಾಭ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಲಾಭ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-288-2",
+          "word": "ಬಳಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಳಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-288-3",
+          "word": "ಹುರುಳು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹುರುಳು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-289",
+      "sourceForm": "ಅನಾವಶ್ಯಕ",
+      "sourceMeaning": "Unnecessary",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಅನಾವಶ್ಯಕ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-289-1",
+          "word": "ಬೇಡದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬೇಡದ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-289-2",
+          "word": "ಸುಮ್ಮನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಸುಮ್ಮನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-289-3",
+          "word": "ವ್ಯರ್ಥ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ವ್ಯರ್ಥ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-290",
+      "sourceForm": "ಅಪಾಯ",
+      "sourceMeaning": "Danger",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಅಪಾಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-290-1",
+          "word": "ಕೇಡು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕೇಡು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-290-2",
+          "word": "ಗಂಡಾಂತರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗಂಡಾಂತರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-290-3",
+          "word": "ತೊಂದರೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತೊಂದರೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-291",
+      "sourceForm": "ಸುರಕ್ಷಿತ",
+      "sourceMeaning": "Safe / secure",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಸುರಕ್ಷಿತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-291-1",
+          "word": "ಭದ್ರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಭದ್ರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-291-2",
+          "word": "ನೆಮ್ಮದಿಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೆಮ್ಮದಿಯ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-291-3",
+          "word": "ಕಾವಲಿನ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಾವಲಿನ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-292",
+      "sourceForm": "ಸ್ವಚ್ಛ",
+      "sourceMeaning": "Clean / clear",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಸ್ವಚ್ಛ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-292-1",
+          "word": "ತಿಳಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-292-2",
+          "word": "ಶುಚಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಶುಚಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-292-3",
+          "word": "ಚೊಕ್ಕಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಚೊಕ್ಕಟ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-293",
+      "sourceForm": "ಭವನ",
+      "sourceMeaning": "Building / mansion",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಭವನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-293-1",
+          "word": "ಮನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-293-2",
+          "word": "ಕಟ್ಟಡ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಟ್ಟಡ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-293-3",
+          "word": "ಅರಮನೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಅರಮನೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-294",
+      "sourceForm": "ಪ್ರತಿಮೆ",
+      "sourceMeaning": "Statue / image",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಪ್ರತಿಮೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-294-1",
+          "word": "ಗೊಂಬೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗೊಂಬೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-294-2",
+          "word": "ಕಲ್ಲುಗೊಂಬೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕಲ್ಲುಗೊಂಬೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-294-3",
+          "word": "ರೂಪ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ರೂಪ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-295",
+      "sourceForm": "ಚಿತ್ರ",
+      "sourceMeaning": "Picture / drawing",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಚಿತ್ರ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-295-1",
+          "word": "ಬಣ್ಣದ ಬರಹ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಣ್ಣದ ಬರಹ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-295-2",
+          "word": "ಗೆರೆಚಿತ್ರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಗೆರೆಚಿತ್ರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-295-3",
+          "word": "ನೋಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನೋಟ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-296",
+      "sourceForm": "ಸಂಗೀತ",
+      "sourceMeaning": "Music",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಸಂಗೀತ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-296-1",
+          "word": "ಹಾಡುಗಾರಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹಾಡುಗಾರಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-296-2",
+          "word": "ಇಂಚರ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಇಂಚರ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-296-3",
+          "word": "ನಾದ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ನಾದ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-297",
+      "sourceForm": "ನೃತ್ಯ",
+      "sourceMeaning": "Dance",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ನೃತ್ಯ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-297-1",
+          "word": "ಕುಣಿತ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಕುಣಿತ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-297-2",
+          "word": "ಆಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-297-3",
+          "word": "ಹೆಜ್ಜೆಗಾರಿಕೆ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಹೆಜ್ಜೆಗಾರಿಕೆ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-298",
+      "sourceForm": "ಕ್ರೀಡೆ",
+      "sourceMeaning": "Sport / game",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಕ್ರೀಡೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-298-1",
+          "word": "ಆಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಆಟ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-298-2",
+          "word": "ಪಂದ್ಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪಂದ್ಯ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-299",
+      "sourceForm": "ಸ್ಪರ್ಧೆ",
+      "sourceMeaning": "Competition",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಸ್ಪರ್ಧೆ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-299-1",
+          "word": "ಪೈಪೋಟಿ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪೈಪೋಟಿ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-299-2",
+          "word": "ಪಂದ್ಯ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಪಂದ್ಯ",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-299-3",
+          "word": "ಮೇಲಾಟ",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಮೇಲಾಟ",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    },
+    {
+      "id": "contrib-300",
+      "sourceForm": "ಜೀವನ",
+      "sourceMeaning": "Life",
+      "category": "Other",
+      "sourceEtymology": {
+        "form": "ಜೀವನ",
+        "etymology": "unknown"
+      },
+      "alternatives": [
+        {
+          "id": "contrib-300-1",
+          "word": "ಬದುಕು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬದುಕು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-300-2",
+          "word": "ಬಾಳು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಬಾಳು",
+              "etymology": "unknown"
+            }
+          ]
+        },
+        {
+          "id": "contrib-300-3",
+          "word": "ಉಸಿರು",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "viability": "proposed",
+          "etymologyParts": [
+            {
+              "form": "ಉಸಿರು",
+              "etymology": "unknown"
+            }
+          ]
+        }
+      ],
+      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+    }
+  ]
 ];

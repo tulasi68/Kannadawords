@@ -497,7 +497,6 @@ async function findAchchaWords() {
 
   const list = document.getElementById("achcha-word-list");
   const container = document.getElementById("achcha-matches");
-  const status = document.getElementById("achcha-find-status");
   const output = document.getElementById("achcha-output");
   if (output) output.classList.add("hidden");
 

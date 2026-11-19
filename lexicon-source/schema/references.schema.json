@@ -54,15 +54,13 @@
             "type": "string"
           },
           "url": {
-            "type": "string",
-            "format": "uri"
+            "type": "string"
           },
           "locator": {
             "type": "string"
           },
           "accessedAt": {
-            "type": "string",
-            "format": "date"
+            "type": "string"
           },
           "note": {
             "type": "string"

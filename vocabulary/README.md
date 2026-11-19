@@ -67,3 +67,15 @@ Before cutover, tests must compare:
 5. regression examples, including `ಸಮಸ್ಯೆ` being recognised and `ಹೊಸ` not being falsely highlighted.
 
 The JSON Schema in this directory describes the future shared internal record shape, not a requirement to move every legacy record into one file.
+
+
+## First reproducible inventory (19 Nov 2026)
+
+The first successful CI build replayed the current merge pipeline and produced:
+
+- 520 merged voting records (not 520 unique headwords).
+- 496 records eligible under the existing legacy assistant rules.
+- 432 distinct NFC-normalised source headwords with at least one candidate alternative.
+- 954 distinct candidate alternatives across the normalized headword records.
+
+These are legacy-eligibility counts, not a claim that all entries or alternatives have been independently linguistically verified. The builder labels generated records `legacy_unreviewed` and preserves legacy record IDs. The regression checks require `ಸಮಸ್ಯೆ` to have a candidate and prevent `ಹೊಸ` from entering the source lookup index.

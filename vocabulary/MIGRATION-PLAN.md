@@ -62,3 +62,12 @@ No database port is required for 5,000–10,000 curated entries. Git remains the
 ## Implemented audit tooling
 
 The read-only audit script is `scripts/audit-legacy-vocabulary.mjs`. It is intentionally separate from the future builder: inventory must be measured before generating a new index. The architecture workflow currently runs this audit; it must not publish or substitute an empty generated dictionary.
+
+
+## First measured baseline (19 Nov 2026)
+
+The first successful CI run reports 520 merged voting records, 496 records eligible under the existing assistant rules, 432 distinct source headwords with alternatives, and 954 candidate alternatives after normalization and per-headword deduplication.
+
+The 520 figure is a record count, not a unique-headword count. To reach the next 520-unique-headword milestone, the project needs at least 88 additional distinct, reviewed source words with suitable alternatives, assuming the current 432 baseline remains unchanged. Do not fill the gap with duplicate aliases, inflections, unverified proposals or alternatives counted as source words.
+
+The build now checks two regression cases: `ಸಮಸ್ಯೆ` must have a replacement candidate; `ಹೊಸ` must not be indexed as a Sanskrit-derived source word.

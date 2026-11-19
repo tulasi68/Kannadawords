@@ -7962,54 +7962,57 @@ const contributorWordEntries = [
       "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
     },
     {
-      "id": "contrib-182",
-      "sourceForm": "ಕಣಿವೆ",
-      "sourceMeaning": "Valley",
-      "category": "Geography",
-      "sourceEtymology": {
-        "form": "ಕಣಿವೆ",
-        "etymology": "unknown"
-      },
-      "alternatives": [
+  "id": "contrib-182",
+  "sourceForm": "ಕಣಿವೆ",
+  "sourceMeaning": "Valley",
+  "category": "Geography",
+  "sourceEtymology": {
+    "form": "ಕಣಿವೆ",
+    "etymology": "dravidian",
+    "tamil": "கணவாய் (kaṇavāy; mountain pass, ravine; DEDR 1163)",
+    "tulu": "kaṇime (defile or pass; DEDR 1163)",
+    "note": "DEDR 1163 lists Kannada kaṇame/kaṇave/kaṇime/kaṇive for a narrow pass or gap between mountains, Tamil kaṇavāy for a mountain pass or ravine, and Tulu kaṇime for a defile or pass. No Proto-Dravidian reconstruction is supplied in this entry. The modern Kannada gloss ‘valley’ is broader; use the pass/ravine sense where precision matters."
+  },
+  "alternatives": [
+    {
+      "id": "contrib-182-1",
+      "word": "ಕಂದಕ",
+      "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+      "viability": "proposed",
+      "etymologyParts": [
         {
-          "id": "contrib-182-1",
-          "word": "ಕಂದಕ",
-          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-          "viability": "proposed",
-          "etymologyParts": [
-            {
-              "form": "ಕಂದಕ",
-              "etymology": "unknown"
-            }
-          ]
-        },
-        {
-          "id": "contrib-182-2",
-          "word": "ಇಳಿಜಾರು",
-          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-          "viability": "proposed",
-          "etymologyParts": [
-            {
-              "form": "ಇಳಿಜಾರು",
-              "etymology": "unknown"
-            }
-          ]
-        },
-        {
-          "id": "contrib-182-3",
-          "word": "ತಗ್ಗು",
-          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-          "viability": "proposed",
-          "etymologyParts": [
-            {
-              "form": "ತಗ್ಗು",
-              "etymology": "unknown"
-            }
-          ]
+          "form": "ಕಂದಕ",
+          "etymology": "unknown"
         }
-      ],
-      "editorialNote": "Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology."
+      ]
     },
+    {
+      "id": "contrib-182-2",
+      "word": "ಇಳಿಜಾರು",
+      "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+      "viability": "proposed",
+      "etymologyParts": [
+        {
+          "form": "ಇಳಿಜಾರು",
+          "etymology": "unknown"
+        }
+      ]
+    },
+    {
+      "id": "contrib-182-3",
+      "word": "ತಗ್ಗು",
+      "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+      "viability": "proposed",
+      "etymologyParts": [
+        {
+          "form": "ತಗ್ಗು",
+          "etymology": "unknown"
+        }
+      ]
+    }
+  ],
+  "editorialNote": "The Kannada form ಕಣಿವೆ is historically attested in the Dravidian comparative record (DEDR 1163). Its older attested sense is a narrow mountain pass/gap or ravine; the broader modern ‘valley’ gloss should not be treated as identical in every context. Tamil and Tulu comparanda are recorded; no Proto-Dravidian reconstruction is supplied by this entry. Contributor-supplied alternatives remain subject to separate semantic review."
+},
     {
       "id": "contrib-183",
       "sourceForm": "ಪ್ರಪಾತ",

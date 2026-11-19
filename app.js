@@ -55,6 +55,10 @@ const auditedById = allAuditedWordEntries.reduce((map, item) => {
   if (!previous) { map[item.id] = item; return map; }
   map[item.id] = {
     ...previous, ...item,
+    sourceEtymology: item.contributorSupplied ? (previous.sourceEtymology || item.sourceEtymology) : (item.sourceEtymology || previous.sourceEtymology),
+    editorialNote: item.contributorSupplied
+      ? [previous.editorialNote, item.editorialNote].filter(Boolean).join(" ")
+      : (item.editorialNote || previous.editorialNote || ""),
     alternatives: [...(previous.alternatives || []), ...(item.alternatives || [])]
       .filter((alt, index, all) => all.findIndex(candidate => candidate.word === alt.word) === index)
   };

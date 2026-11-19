@@ -1771,12 +1771,15 @@ const contributorWordEntries = [
       {
         "id": "contrib-042-1",
         "word": "ತಲೆ",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 3103 records Proto-Dravidian *tal-ay ‘head, hair, top’: Tamil talai, Kannada tale and Tulu tarè. The proposed Kannada word ತಲೆ is directly supported by this cognate set.",
+        "proto": "*tal-ay (head, hair, top; DEDR 3103)",
+        "tamil": "தலை (talai; head, top; DEDR 3103)",
+        "tulu": "tarè (head, top, hair of head; DEDR 3103)",
+        "viability": "clean",
         "etymologyParts": [
           {
             "form": "ತಲೆ",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       },

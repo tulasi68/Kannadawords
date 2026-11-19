@@ -267,42 +267,36 @@ The vocabulary is growing toward 7,000+ entries. The current legacy source files
 
 
 
-### Display-data architecture (transition stage)
+### Canonical display-data architecture
 
-The runtime data path is deliberately explicit:
+The runtime vocabulary now has one source of truth: `lexicon-data.js`.
 
 ```text
-Legacy editorial inputs
-  data.js
-  etymology-entries.js
-  contributor-equivalents.js
-  research batches / no-alternative records
+lexicon-data.js
+  KANNADA_LEXICON (schemaVersion 1)
+    entries[]
+    etymologyLabels
           |
           v
-lexicon-model.js  (normalization and loss-aware merge helpers)
+     votingEntries
           |
           v
-lexicon-data.js   (the one display-dataset assembly boundary)
-          |
-          v
-votingEntries     (shared dataset consumed by all vocabulary UI panels)
-          |
-          v
-app.js            (rendering, filtering, voting and interaction only)
+       app.js
+  (rendering, filtering, voting and interaction)
 ```
 
-Rules for this transition:
+The UI loads `lexicon-data.js` directly. It does not load or merge `data.js`, `etymology-entries.js`, `contributor-equivalents.js`, the research batches, or `lexicon-model.js` at runtime. Those legacy files remain in the repository as migration/history material; changing them alone will not change the live vocabulary. **For current UI vocabulary edits, update `lexicon-data.js`.**
 
-1. `lexicon-data.js` is the only place allowed to assemble the vocabulary shown in the UI.
-2. `app.js` must not independently merge source files, rebuild categories, or create a second vocabulary list.
-3. Every vocabulary panel and search/filter view must derive from the same `votingEntries` collection.
-4. The display collection must contain exactly one entry per stable entry ID. Duplicate source rows are merged into that entry; different IDs are not merged merely because their forms look alike.
-5. Every displayed entry must have a non-empty stable ID. Invalid container records must not become phantom vocabulary entries.
-6. Legacy files are inputs during migration, not independent UI data sources. A later migration will replace them with versioned canonical records and a reproducible build/export step.
-7. Do not silently discard candidate IDs, source provenance, votes, senses or conflicting evidence during that migration.
-8. Content/etymology corrections are a separate editorial phase; this architecture work must preserve current content rather than silently “correct” it.
+Integrity rules:
 
-This is an intentional intermediate step, not yet the final 7,000-entry storage design. The next stage is a versioned canonical record format, validation, migration tooling and a generated static dataset (with optional shards/indexes for efficient loading). The generated dataset—not a second runtime merge—will then become the direct UI input.
+1. `lexicon-data.js` is the authoritative vocabulary content displayed to users.
+2. `app.js` consumes `votingEntries`; it must not independently rebuild or merge vocabulary.
+3. There is exactly one display entry per stable entry ID. Different IDs are not merged merely because their forms look alike.
+4. Every display entry has a non-empty stable ID.
+5. Candidate IDs, source provenance, votes, senses and conflicting evidence must be preserved during future migrations.
+6. Content and etymology corrections are a separate editorial phase. Architecture changes must not silently “correct” linguistic content.
+
+The current canonical snapshot contains 450 entries and is approximately 466 KB. This is a clean direct-source foundation, but it is not the final 7,000-entry delivery strategy. Before large-scale expansion, the canonical records should be moved into validated, category/alphabetically sharded JSON with a small manifest and search index. A deterministic build/validation step should generate the browser payload; the generated payload must remain the exact content consumed by the UI.
 
 ### Evidence fields (gradual migration)
 

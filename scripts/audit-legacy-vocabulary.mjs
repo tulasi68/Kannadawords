@@ -74,8 +74,8 @@ const snapshot = vm.runInContext("(() => {" +
       "scopeAuditRecords: all.filter(e => e.scopeAudit).length," +
       "alternativeCandidateRecords: all.reduce((n,e) => n + (e.alternatives || []).filter(a => a.word && !a.isNoAlternative && !a.isScopeAudit).length, 0)" +
     "}," +
-    "sourceForms: allForms.sort((a,b) => a.localeCompare(b, 'kn')),
-    scopeAuditForms: scopeAuditForms.sort((a,b) => a.localeCompare(b, 'kn'))" +
+    "sourceForms: allForms.sort((a,b) => a.localeCompare(b, 'kn'))," +
+    "scopeAuditForms: unique(all.filter(e => e.scopeAudit).flatMap(sourceForms)).sort((a,b) => a.localeCompare(b, 'kn'))" +
   "};" +
 "})()", sandbox);
 

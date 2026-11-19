@@ -1,0 +1,62 @@
+{
+  "id": "replace-with-stable-entry-id",
+  "sourceForm": "",
+  "sourceMeaning": "",
+  "category": "",
+  "sourceEtymology": null,
+  "senseKey": "",
+  "candidates": [
+    {
+      "id": "replace-with-stable-candidate-id",
+      "form": "",
+      "senseKey": "",
+      "candidateKind": "unclassified",
+      "reviewStatus": "needs_review",
+      "note": "",
+      "etymologyParts": [],
+      "viability": null,
+      "comparativeEvidence": [],
+      "evidenceVariants": {},
+      "flags": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false
+      },
+      "provenance": {
+        "sourceDatasets": [],
+        "sourceRefs": []
+      },
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "legacyFields": {}
+    }
+  ],
+  "historicalEvidence": {
+    "form": null,
+    "status": "not_assessed",
+    "sourceRefs": [],
+    "note": "",
+    "legacyEvidence": null,
+    "legacyVariants": []
+  },
+  "scope": {
+    "noAlternative": false,
+    "outsideTargetOrigin": false,
+    "note": ""
+  },
+  "rejectedCandidates": [],
+  "editorial": {
+    "reviewStatus": "needs_review",
+    "note": "",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "provenance": {
+    "sourceDatasets": [],
+    "sourceRefs": []
+  },
+  "legacyFields": {}
+}

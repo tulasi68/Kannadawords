@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://kannadawords.example/schema/lexicon-v2.json",
+  "$id": "https://github.com/tulasi68/kannadawords/blob/main/lexicon-source/schema/lexicon.schema.json",
   "title": "KannadaWords canonical lexicon v2",
   "type": "object",
   "required": [
@@ -244,6 +244,10 @@
         },
         "legacyFields": {
           "type": "object"
+        },
+        "senseKey": {
+          "type": "string",
+          "minLength": 1
         }
       }
     },
@@ -373,6 +377,10 @@
         },
         "legacyFields": {
           "type": "object"
+        },
+        "senseKey": {
+          "type": "string",
+          "minLength": 1
         }
       }
     }

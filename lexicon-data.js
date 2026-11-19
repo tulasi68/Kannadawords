@@ -14,7 +14,7 @@
 const existingOriginRecords = [
   ...(typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries.map(item => ({...item, sourceDataset:"etymology-entries.js:audited"}))),
   ...(typeof originAuditEntries === "undefined" ? [] : originAuditEntries).flatMap(item => {
-    if (Array.isArray(item)) return item.map(record => ({...record, sourceDataset:"etymology-entries.js:origin-audit"}));
+    if (Array.isArray(item)) return item.filter(record => record && record.id && record.sourceForm).map(record => ({...record, sourceDataset:"etymology-entries.js:origin-audit"}));
     return item && item.id && item.sourceForm && item.sourceMeaning && Array.isArray(item.alternatives)
       ? [{...item, sourceDataset:"etymology-entries.js:origin-audit"}] : [];
   })

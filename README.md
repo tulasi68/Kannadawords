@@ -324,6 +324,6 @@ A candidate's comparative evidence is an array of independent records:
 - `sourceRefs`: IDs from the source registry; a verified record must have at least one.
 - `note`: optional explanation of semantic fit, sound correspondence or uncertainty.
 
-Entry-level Old Kannada evidence is modelled separately in `historicalEvidence`. A candidate's `candidateKind` and `reviewStatus` are distinct from its old `viability) display field. Imported records are marked `needs_review`; their comparative strings are `not_assessed` until a human editor reviews the evidence.
+Entry-level Old Kannada evidence is modelled separately in `historicalEvidence`. A candidate's `candidateKind` and `reviewStatus` are distinct from its old `viability` display field. Imported records are marked `needs_review`; their comparative strings are `not_assessed` until a human editor reviews the evidence.
 
 `provenance.sourceDatasets` records contributor or import lineage. It does not establish truth. `provenance.sourceRefs` contains bibliographic source IDs. `legacyFields` preserves fields that have not yet been formally modelled, so future schema work does not silently discard historical data. The `senseKey` field is optional but should be supplied when one spelling represents multiple meanings.

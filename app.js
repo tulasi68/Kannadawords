@@ -416,12 +416,9 @@ function renderContextual() {
 window.voteContext = voteContext;
 
 function achchaAlternativeKind(alt) {
- const origins=(alt.etymologyParts||[]).map(p=>p.etymology);
- if(alt.viability==="coined"||origins.includes("coinage"))return "coined_from_dravidian";
- if(origins.includes("tadbhava"))return "tadbhava";
- if(origins.includes("dravidian")||origins.includes("native")||alt.viability==="clean")return "verified_dravidian";
- if(alt.proto||/native|dravidian|desi|core/i.test(alt.note||""))return "verified_dravidian";
- return "uncertain";
+ if (alt.reviewStatus !== "verified") return "uncertain";
+ const classification = alt.originClassification;
+ return ["verified_dravidian","tadbhava","coined_from_dravidian","uncertain"].includes(classification) ? classification : "uncertain";
 }
 function buildAchchaLexicon(text = "") {
   return window.KannadaLexiconStore

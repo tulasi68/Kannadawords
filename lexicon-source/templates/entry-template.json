@@ -28,7 +28,8 @@
         "reviewedBy": null,
         "reviewedAt": null
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "originClassification": "uncertain"
     }
   ],
   "historicalEvidence": {
@@ -55,5 +56,6 @@
     "sourceDatasets": [],
     "sourceRefs": []
   },
-  "legacyFields": {}
+  "legacyFields": {},
+  "sourceAliases": []
 }

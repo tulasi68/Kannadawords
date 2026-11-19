@@ -247,6 +247,15 @@
         "senseKey": {
           "type": "string",
           "minLength": 1
+        },
+        "originClassification": {
+          "enum": [
+            "verified_dravidian",
+            "tadbhava",
+            "coined_from_dravidian",
+            "uncertain"
+          ],
+          "description": "Explicit editorial classification; non-uncertain values require verified candidate review."
         }
       }
     },
@@ -380,6 +389,15 @@
         "senseKey": {
           "type": "string",
           "minLength": 1
+        },
+        "sourceAliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "description": "Curated alternate source forms; punctuation in sourceForm is never split automatically."
         }
       }
     },

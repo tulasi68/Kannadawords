@@ -9,6 +9,8 @@
       ...(candidate.legacyFields || {}),
       id: candidate.id,
       word: candidate.form,
+      reviewStatus: candidate.reviewStatus || "needs_review",
+      originClassification: candidate.originClassification || "uncertain",
       note: candidate.note || "",
       etymologyParts: candidate.etymologyParts || [],
       viability: candidate.viability || undefined,

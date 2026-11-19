@@ -30,6 +30,8 @@ test("schema declares JSON Schema 2020-12 and the canonical required fields", ()
   assert.ok(schema.$defs.entry.required.includes("sourceForm"));
   assert.ok(schema.$defs.entry.required.includes("candidates"));
   assert.ok(schema.$defs.candidate.required.includes("comparativeEvidence"));
+  assert.ok(schema.$defs.candidate.properties.originClassification.enum.includes("verified_dravidian"));
+  assert.ok(schema.$defs.entry.properties.sourceAliases);
 });
 
 test("verified comparative evidence cannot be accepted without a source reference", () => {
@@ -117,33 +119,28 @@ test("canonical-to-display adapter preserves all existing user-visible vocabular
   }
 });
 
-test("writing-assistant index preserves the previous source-form grouping behavior", () => {
-  const legacy = readJson("migration/legacy-v1-snapshot.json");
-  const bySourceForm = new Map();
-  const split = value => String(value||"").split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u).map(form=>form.trim()).filter(form=>form.length>=2);
-  const kind = alt => {
-    const origins=(alt.etymologyParts||[]).map(part=>part.etymology);
-    if(alt.viability==="coined"||origins.includes("coinage"))return "coined_from_dravidian";
-    if(origins.includes("tadbhava"))return "tadbhava";
-    if(origins.includes("dravidian")||origins.includes("native")||alt.viability==="clean")return "verified_dravidian";
-    if(alt.proto||/native|dravidian|desi|core/i.test(alt.note||""))return "verified_dravidian";
-    return "uncertain";
-  };
-  legacy.entries.filter(entry=>!entry.noAlternative&&!entry.scopeAudit&&Array.isArray(entry.alternatives)).forEach(entry=>{
-    const forms=[...split(entry.sanskrit||entry.sourceForm),...split(entry.sourceEtymology&&entry.sourceEtymology.form)];
-    const candidates=entry.alternatives.filter(alt=>alt.word&&!alt.isNoAlternative&&!alt.isScopeAudit).map(alt=>({
-      word:alt.word,origin:kind(alt),note:alt.note||"",proto:alt.proto||"",tamil:alt.tamil||"",tulu:alt.tulu||""
-    }));
-    forms.forEach(form=>{
-      const key=form.normalize("NFC");
-      const existing=bySourceForm.get(key)||{sourceForms:[form],meaning:entry.meaning||"",candidates:[]};
-      candidates.forEach(candidate=>{if(!existing.candidates.some(item=>item.word===candidate.word))existing.candidates.push(candidate);});
-      if(!existing.meaning&&entry.meaning)existing.meaning=entry.meaning;
-      bySourceForm.set(key,existing);
-    });
-  });
-  const generated=readJson("lexicon-dist/writing-index.json");
-  assert.deepEqual(generated.entries,[...bySourceForm.values()]);
+test("writing index keeps unreviewed candidates uncertain and honours explicit aliases", () => {
+  const loaded = loadSource();
+  const entry = structuredClone(loaded.entries[0]);
+  entry.sourceForm = "form-one / form-two";
+  entry.sourceAliases = ["curated-alias"];
+  const candidate = entry.candidates[0];
+  candidate.reviewStatus = "needs_review";
+  candidate.note = "Native Dravidian core";
+  candidate.viability = "clean";
+  candidate.etymologyParts = [{form:candidate.form,etymology:"dravidian"}];
+  candidate.comparativeEvidence = [{language:"proto-dravidian",form:"*test",relationship:"unclassified",status:"not_assessed",sourceRefs:[]}];
+  let built = buildArtifacts({entries:[entry],config:loaded.config,references:loaded.references});
+  let index = JSON.parse(built.artifacts.get("lexicon-dist/writing-index.json"));
+  assert.ok(index.entries.some(row=>row.sourceForms.includes("form-one / form-two")));
+  assert.ok(index.entries.some(row=>row.sourceForms.includes("curated-alias")));
+  assert.ok(!index.entries.some(row=>row.sourceForms.includes("form-one")));
+  assert.equal(index.entries.find(row=>row.sourceForms.includes("form-one / form-two")).candidates[0].origin,"uncertain");
+  candidate.reviewStatus = "verified";
+  candidate.originClassification = "verified_dravidian";
+  built = buildArtifacts({entries:[entry],config:loaded.config,references:loaded.references});
+  index = JSON.parse(built.artifacts.get("lexicon-dist/writing-index.json"));
+  assert.equal(index.entries.find(row=>row.sourceForms.includes("form-one / form-two")).candidates[0].origin,"verified_dravidian");
 });
 
 test("lazy browser store loads one page, category totals and writing suggestions", async () => {

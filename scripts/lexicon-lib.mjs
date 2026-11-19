@@ -43,6 +43,7 @@ const allowedLanguages = new Set(["ta", "tcy", "okn", "proto-dravidian"]);
 const allowedRelationships = new Set(["unclassified", "cognate", "semantic_equivalent", "loan", "reconstruction", "attested_form", "proposed_coinage"]);
 const allowedEvidenceStatuses = new Set(["not_assessed", "provisional", "verified", "contested", "rejected"]);
 const allowedReviewStatuses = new Set(["needs_review", "in_review", "verified", "contested", "rejected", "proposed"]);
+const allowedOriginClassifications = new Set(["verified_dravidian", "tadbhava", "coined_from_dravidian", "uncertain"]);
 
 export function validateLexicon({ entries, references }) {
   const errors = [];
@@ -67,6 +68,10 @@ export function validateLexicon({ entries, references }) {
     else if (entryIds.has(entry.id)) fail(at, `duplicate entry id '${entry.id}'`);
     else entryIds.add(entry.id);
     for (const key of ["sourceForm","sourceMeaning","category"]) if (!isText(entry[key])) fail(at, `${key} is required`);
+    if (entry.sourceAliases !== undefined) {
+      if (!Array.isArray(entry.sourceAliases) || entry.sourceAliases.some(alias => !isText(alias))) fail(at, "sourceAliases must be an array of non-empty strings");
+      else if (new Set(entry.sourceAliases.map(alias => alias.normalize("NFC").trim())).size !== entry.sourceAliases.length) fail(at, "sourceAliases must not contain duplicates");
+    }
     if (!Array.isArray(entry.candidates)) { fail(at, "candidates must be an array"); continue; }
     if (!entry.editorial || !allowedReviewStatuses.has(entry.editorial.reviewStatus)) fail(at, "invalid editorial.reviewStatus");
     if (!entry.provenance || !Array.isArray(entry.provenance.sourceRefs)) fail(at, "provenance.sourceRefs must be an array");
@@ -87,6 +92,8 @@ export function validateLexicon({ entries, references }) {
       if (!isText(candidate.form)) fail(ca, "form is required");
       if (!allowedReviewStatuses.has(candidate.reviewStatus)) fail(ca, "invalid reviewStatus");
       if (!["unclassified","attested","native","semantic_equivalent","loan","coinage","reconstruction"].includes(candidate.candidateKind)) fail(ca, "invalid candidateKind");
+      if (candidate.originClassification !== undefined && !allowedOriginClassifications.has(candidate.originClassification)) fail(ca, "invalid originClassification");
+      if (candidate.originClassification && candidate.originClassification !== "uncertain" && candidate.reviewStatus !== "verified") fail(ca, "non-uncertain originClassification requires verified candidate review");
       if (!candidate.editorial || typeof candidate.editorial.note !== "string") fail(ca, "candidate editorial note is required");
       if (!candidate.provenance || !Array.isArray(candidate.provenance.sourceRefs) || !Array.isArray(candidate.provenance.sourceDatasets)) fail(ca, "candidate provenance arrays are required");
       if (!Array.isArray(candidate.comparativeEvidence)) fail(ca, "comparativeEvidence must be an array");
@@ -112,18 +119,13 @@ export function validateLexicon({ entries, references }) {
   return { errors, warnings, entryCount:entries.length, candidateCount:entries.reduce((n,e)=>n+e.candidates.length,0) };
 }
 function sourceForms(entry) {
-  const values = [entry.sourceForm, entry.sourceEtymology?.form]
-    .filter(isText)
-    .flatMap(value => String(value).split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u));
-  return [...new Set(values.map(value => value.trim()).filter(value => value.length >= 2))];
+  const aliases = Array.isArray(entry.sourceAliases) ? entry.sourceAliases : [];
+  const values = [...aliases, entry.sourceForm, entry.sourceEtymology?.form].filter(isText);
+  return [...new Set(values.map(value => value.normalize("NFC").trim()).filter(value => value.length >= 2))];
 }
 function candidateOrigin(candidate) {
-  const origins = (candidate.etymologyParts || []).map(part => part.etymology);
-  if (candidate.viability === "coined" || origins.includes("coinage")) return "coined_from_dravidian";
-  if (origins.includes("tadbhava")) return "tadbhava";
-  if (origins.includes("dravidian") || origins.includes("native") || candidate.viability === "clean") return "verified_dravidian";
-  if (candidate.comparativeEvidence.some(item => item.language === "proto-dravidian") || /native|dravidian|desi|core/i.test(candidate.note || "")) return "verified_dravidian";
-  return "uncertain";
+  if (candidate.reviewStatus !== "verified") return "uncertain";
+  return allowedOriginClassifications.has(candidate.originClassification) ? candidate.originClassification : "uncertain";
 }
 export function buildArtifacts({ entries, config, references = [] }) {
   const buildId = stableHash(JSON.stringify({entries,config,references}));

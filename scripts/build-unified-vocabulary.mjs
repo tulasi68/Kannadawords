@@ -33,7 +33,7 @@ const raw=vm.runInContext(`(() => {
    if(!record){record={source:form,sourceForms:[form],meaning:entry.meaning||"",candidates:[],legacyRecordIds:[]};byForm.set(key,record);}
    if(entry.id&&!record.legacyRecordIds.includes(String(entry.id)))record.legacyRecordIds.push(String(entry.id));
    if(!record.meaning&&entry.meaning)record.meaning=entry.meaning;
-   for(const alt of candidates)if(!record.candidates.some(c=>c.word===alt.word))record.candidates.push({word:alt.word,note:alt.note||"",viability:alt.viability||"",origin:alt.origin||"",proto:alt.proto||"",tamil:alt.tamil||"",tulu:alt.tulu||"",etymologyParts:alt.etymologyParts||[]});
+   for(const alt of candidates)if(!record.candidates.some(c=>c.word===alt.word))record.candidates.push({word:alt.word,note:alt.note||"",viability:alt.viability||"",origin:achchaAlternativeKind(alt),proto:alt.proto||"",tamil:alt.tamil||"",tulu:alt.tulu||"",etymologyParts:alt.etymologyParts||[]});
   }
  }
  return {votingRecords:entries.length,eligibleRecords:entries.filter(e=>!e.noAlternative&&!e.scopeAudit&&Array.isArray(e.alternatives)&&e.alternatives.some(a=>a.word&&!a.isNoAlternative&&!a.isScopeAudit)).length,noAlternativeRecords:entries.filter(e=>e.noAlternative).length,scopeAuditRecords:entries.filter(e=>e.scopeAudit).length,records:[...byForm.values()].sort((a,b)=>a.source.localeCompare(b.source,"kn"))};
@@ -73,4 +73,8 @@ console.log("  Voting records: "+raw.votingRecords);
 console.log("  Eligible legacy records: "+raw.eligibleRecords);
 console.log("  Unique source headwords: "+raw.records.length);
 console.log("  Candidate alternatives: "+raw.records.reduce((n,r)=>n+r.candidates.length,0));
+const problem = raw.records.find(r => r.source.normalize("NFC") === "ಸಮಸ್ಯೆ");
+if (!problem || !problem.candidates.length) throw new Error("Regression failed: ಸಮಸ್ಯೆ must have at least one replacement candidate.");
+if (raw.records.some(r => r.source.normalize("NFC") === "ಹೊಸ")) throw new Error("Regression failed: ordinary Kannada word ಹೊಸ must not enter the source lookup index.");
+console.log("  Regression: ಸಮಸ್ಯೆ has alternatives; ಹೊಸ is not indexed."); 
 console.log("  Output: "+path.relative(ROOT,OUT));

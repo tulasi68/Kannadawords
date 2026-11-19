@@ -44,10 +44,10 @@ const wordEntries = [
       { 
         id: "mara", 
         word: "ಮರ", 
-        note: "Core Dravidian",
-        proto: "*maram",
-        tamil: "மரம் (maram)",
-        tulu: "ಮರ (mara)"
+        note: "DEDR 4711 records Proto-Dravidian *mar-am / *mar-an ‘tree’, with Tamil maram, Kannada mara and Tulu mara.",
+        proto: "*mar-am / *mar-an (tree; DEDR 4711)",
+        tamil: "மரம் (maram; tree, wood, timber; DEDR 4711)",
+        tulu: "mara (tree; DEDR 4711)"
       }
     ]
   },

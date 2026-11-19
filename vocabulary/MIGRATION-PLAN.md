@@ -63,3 +63,17 @@ There may be additional datasets (for example the origin audit data) loaded by t
 No database port is required for the 5,000–10,000 word target. Git-backed JSONL is the editorial source of truth; generated static JSON is the read-optimized delivery format. This fits the existing static website and Cloudflare/CDN hosting, avoids a paid database dependency, supports offline/local matching after cache warm-up, and gives clear history and review through Git.
 
 A database should be considered only if the project later needs concurrent web-based editing, contributor accounts, moderation queues, or live multi-user updates. Even then, the canonical export should remain versioned and reproducible.
+
+
+## Implemented read-only audit tool
+
+Run:
+
+```sh
+node scripts/audit-legacy-vocabulary.mjs
+node scripts/audit-legacy-vocabulary.mjs --json
+```
+
+The audit replays the data scripts loaded by index.html in their current order, then evaluates the data/merge section of app.js in an isolated Node VM. It reports raw per-file record counts, merged voting-record count, unique NFC-normalised source forms, source forms with viable alternatives, no-alternative/scope-audit counts and alternative-candidate count. It does not modify source files or export a canonical store.
+
+The GitHub Actions workflow runs this audit and validates/builds the canonical store on relevant pull requests. Its log is the reproducible baseline for the next migration step. A separate export adapter must still preserve each source record and its provenance before any canonical JSONL population or runtime cutover.

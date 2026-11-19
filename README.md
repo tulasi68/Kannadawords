@@ -244,3 +244,35 @@ The project may use open comparative resources and contributor-supplied referenc
 ## Licence
 
 The application code is free to use and share. Data may have separate source and attribution conditions; check the relevant record and source licence before redistributing it.
+
+
+## Canonical vocabulary data model (schema v1)
+
+The vocabulary is growing toward 7,000+ entries. The source files remain readable editorial inputs, while the browser applies a shared compatibility model in `lexicon-model.js` before rendering.
+
+### Identity rules
+
+- A lexical entry keeps its stable entry `id`; this is also the identity used by existing voting records.
+- A candidate is identified by its NFC-normalized Kannada `word` plus optional `senseKey`. Identical spellings in genuinely different senses must use different `senseKey` values.
+- Candidate IDs are preserved. When duplicate source records describe the same candidate, their comparative fields are merged rather than silently discarded.
+
+### Evidence merge rules
+
+- Missing Tamil, Tulu and Proto-Dravidian fields are filled from another record for the same candidate.
+- Conflicting non-empty values are not silently overwritten: the first displayed value is retained and the alternatives are recorded in `evidenceVariants` for editorial resolution.
+- Notes, etymology parts and source labels are combined without duplicating identical values.
+- A merge must not upgrade confidence. Where source records disagree on viability, the more cautious status wins.
+- Entry-level Halegannada forms are retained; conflicting forms are preserved in `halegannadaVariants`.
+- Comparative equivalents belong to a candidate, not merely to the source headword. Evidence for one alternative must not be shown beside another.
+
+### Evidence fields (gradual migration)
+
+New or migrated candidate records should use:
+
+- `senseKey`: stable sense identifier where spelling alone is ambiguous.
+- `etymologyParts`: analysis of the Kannada candidate.
+- `tamil`, `tulu`, `proto`: comparative forms, with explicit source/citation and evidence status to be added during the next migration stage.
+- `sources`: source dataset identifiers; contributor provenance is not independent verification.
+- `evidenceVariants`: automatically populated when duplicate records disagree.
+
+Legacy fields remain supported so the existing vocabulary, voting IDs and current pages continue to work during migration. Do not bulk-rewrite source files or regenerate IDs while adding vocabulary. New entries should use the canonical schema and be reviewed before being labelled verified.

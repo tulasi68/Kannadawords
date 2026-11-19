@@ -86,7 +86,7 @@ export function validateLexicon({ entries, references }) {
 function sourceForms(entry) {
   const values = [entry.sourceForm, entry.sourceEtymology?.form]
     .filter(isText)
-    .flatMap(value => String(value).split(/\\s*(?:\\/|,|;|\\|| ಅಥವಾ )\\s*/u));
+    .flatMap(value => String(value).split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u));
   return [...new Set(values.map(value => value.trim()).filter(value => value.length >= 2))];
 }
 function candidateOrigin(candidate) {

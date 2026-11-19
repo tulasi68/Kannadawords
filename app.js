@@ -122,6 +122,7 @@ function languageRows(entry, alts) {
   const evidenceFor = language => (first.comparativeEvidence || []).filter(item => item.language === language);
   const rows = [
     ["Native Kannada", first.word || "—", null, []],
+    ["Kannada comparative form", evidenceFor("kn").map(item=>item.form).join(" · ") || "—", null, evidenceFor("kn")],
     ["Tamil", evidenceFor("ta").map(item=>item.form).join(" · ") || first.tamil || "—", first.evidenceVariants?.tamil, evidenceFor("ta")],
     ["Tulu", evidenceFor("tcy").map(item=>item.form).join(" · ") || first.tulu || "—", first.evidenceVariants?.tulu, evidenceFor("tcy")],
     ["Halegannada", entry.halegannada || "Not yet sourced", entry.halegannadaVariants, entry.halegannadaEvidence ? [entry.halegannadaEvidence] : []],

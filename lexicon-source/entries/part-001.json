@@ -111,7 +111,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "milk"
     },
     {
       "id": "snake",
@@ -192,7 +193,12 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "snake",
+      "sourceAliases": [
+        "ಸರ್ಪ",
+        "ನಾಗ"
+      ]
     },
     {
       "id": "tree",
@@ -328,7 +334,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "tree"
     },
     {
       "id": "house",
@@ -523,7 +530,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "house"
     },
     {
       "id": "water",
@@ -625,7 +633,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "water"
     },
     {
       "id": "flower",
@@ -811,7 +820,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "flower"
     },
     {
       "id": "bird",
@@ -947,7 +957,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "bird"
     },
     {
       "id": "cloth",
@@ -1160,7 +1171,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "cloth"
     },
     {
       "id": "food",
@@ -1432,7 +1444,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "food"
     },
     {
       "id": "village",
@@ -1534,7 +1547,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "village"
     },
     {
       "id": "lamp",
@@ -1736,7 +1750,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "lamp"
     },
     {
       "id": "path",
@@ -1949,7 +1964,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "path"
     },
     {
       "id": "sun",
@@ -2030,7 +2046,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "sun"
     },
     {
       "id": "night",
@@ -2166,7 +2183,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "night"
     },
     {
       "id": "fire",
@@ -2280,7 +2298,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "fire"
     },
     {
       "id": "sky",
@@ -2379,7 +2398,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "sky"
     },
     {
       "id": "earth",
@@ -2579,7 +2599,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "earth"
     },
     {
       "id": "wind",
@@ -2660,7 +2681,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "wind"
     },
     {
       "id": "rain",
@@ -2796,7 +2818,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "rain"
     },
     {
       "id": "mountain",
@@ -2938,7 +2961,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "mountain"
     },
     {
       "id": "forest",
@@ -3047,7 +3071,12 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "forest",
+      "sourceAliases": [
+        "ಅರಣ್ಯ",
+        "ವನ"
+      ]
     },
     {
       "id": "hand",
@@ -3128,7 +3157,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "hand"
     },
     {
       "id": "eye",
@@ -3209,7 +3239,13 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "eye",
+      "sourceAliases": [
+        "ನಯನ",
+        "ನೇತ್ರ",
+        "ಅಕ್ಷಿ"
+      ]
     },
     {
       "id": "head",
@@ -3365,7 +3401,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "head"
     },
     {
       "id": "tooth",
@@ -3477,7 +3514,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "tooth"
     },
     {
       "id": "leg",
@@ -3558,7 +3596,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "leg"
     },
     {
       "id": "ear",
@@ -3657,7 +3696,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "ear"
     },
     {
       "id": "nose",
@@ -3767,7 +3807,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "nose"
     },
     {
       "id": "mouth",
@@ -3848,7 +3889,12 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "mouth",
+      "sourceAliases": [
+        "ಮುಖ",
+        "ಆಸ್ಯ"
+      ]
     },
     {
       "id": "blood",
@@ -3965,7 +4011,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "blood"
     },
     {
       "id": "hair",
@@ -4119,7 +4166,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "hair"
     },
     {
       "id": "north",
@@ -4200,7 +4248,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "north"
     },
     {
       "id": "south",
@@ -4299,7 +4348,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "south"
     },
     {
       "id": "east",
@@ -4398,7 +4448,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "east"
     },
     {
       "id": "west",
@@ -4497,7 +4548,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "west"
     },
     {
       "id": "language",
@@ -4596,7 +4648,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "language"
     },
     {
       "id": "friend",
@@ -4707,7 +4760,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "friend"
     },
     {
       "id": "name",
@@ -4788,7 +4842,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "name"
     },
     {
       "id": "life",
@@ -4961,7 +5016,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "life"
     },
     {
       "id": "death",
@@ -5134,7 +5190,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "death"
     },
     {
       "id": "king",
@@ -5215,7 +5272,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "king"
     },
     {
       "id": "knowledge",
@@ -5527,7 +5585,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "knowledge"
     },
     {
       "id": "listen",
@@ -5698,7 +5757,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "listen"
     },
     {
       "id": "shop",
@@ -5778,7 +5838,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "shop"
     },
     {
       "id": "cloud",
@@ -5921,7 +5982,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "cloud"
     },
     {
       "id": "curtain",
@@ -6001,7 +6063,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "curtain"
     },
     {
       "id": "new",
@@ -6088,7 +6151,12 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "new",
+      "sourceAliases": [
+        "ನವ",
+        "ನವೀನ"
+      ]
     },
     {
       "id": "sugarcane",
@@ -6161,7 +6229,8 @@
         "sourceDatasets": [],
         "sourceRefs": []
       },
-      "legacyFields": {}
+      "legacyFields": {},
+      "senseKey": "sugarcane"
     },
     {
       "id": "city",
@@ -6403,7 +6472,8 @@
           "contributor-equivalents.js"
         ],
         "contributorSupplied": true
-      }
+      },
+      "senseKey": "city"
     },
     {
       "id": "nation",
@@ -6568,7 +6638,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "nation"
     }
   ]
 }

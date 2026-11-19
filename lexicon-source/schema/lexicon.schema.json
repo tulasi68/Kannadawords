@@ -36,7 +36,8 @@
             "ta",
             "tcy",
             "okn",
-            "proto-dravidian"
+            "proto-dravidian",
+            "kn"
           ]
         },
         "form": {
@@ -60,7 +61,8 @@
             "provisional",
             "verified",
             "contested",
-            "rejected"
+            "rejected",
+            "not_found"
           ]
         },
         "sourceRefs": {

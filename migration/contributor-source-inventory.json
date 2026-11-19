@@ -1,0 +1,5517 @@
+{
+  "schemaVersion": 1,
+  "sourceDataset": "contributor-equivalents.js",
+  "sourceRecordCount": 500,
+  "records": [
+    {
+      "sourceId": "contrib-001",
+      "sourceForm": "ಕಾರ್ಯ",
+      "sourceMeaning": "Work",
+      "category": "Everyday",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-work"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-002",
+      "sourceForm": "ಸಮಸ್ಯೆ",
+      "sourceMeaning": "Problem",
+      "category": "Abstract",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "problem"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-003",
+      "sourceForm": "ಪರಿಹಾರ",
+      "sourceMeaning": "Solution",
+      "category": "Abstract",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-003"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-004",
+      "sourceForm": "ಆರಂಭ",
+      "sourceMeaning": "Beginning",
+      "category": "Abstract",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-beginning-act"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-005",
+      "sourceForm": "ಅಂತ್ಯ",
+      "sourceMeaning": "End",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-end"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-006",
+      "sourceForm": "ಸಹಾಯ",
+      "sourceMeaning": "Help",
+      "category": "Abstract",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "help",
+        "supp-help"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-007",
+      "sourceForm": "ಅವಕಾಶ",
+      "sourceMeaning": "Opportunity / space",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-007"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-008",
+      "sourceForm": "ಪದ್ಧತಿ",
+      "sourceMeaning": "Method / custom",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-008"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-009",
+      "sourceForm": "ವ್ಯತ್ಯಾಸ",
+      "sourceMeaning": "Difference",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-009"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-010",
+      "sourceForm": "ಅನುಭವ",
+      "sourceMeaning": "Experience",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-010"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-011",
+      "sourceForm": "ಕೋಪ",
+      "sourceMeaning": "Anger",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-011"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-012",
+      "sourceForm": "ಭಯ",
+      "sourceMeaning": "Fear",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "fear"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-013",
+      "sourceForm": "ಪ್ರೀತಿ",
+      "sourceMeaning": "Love / affection",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "love"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-014",
+      "sourceForm": "ದ್ವೇಷ",
+      "sourceMeaning": "Hatred",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-014"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-015",
+      "sourceForm": "ಧೈರ್ಯ",
+      "sourceMeaning": "Courage",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-015"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-016",
+      "sourceForm": "ಆಸೆ",
+      "sourceMeaning": "Desire",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "desire"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-017",
+      "sourceForm": "ನಂಬಿಕೆ",
+      "sourceMeaning": "Trust / belief",
+      "category": "Abstract",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-017"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-018",
+      "sourceForm": "ಅಹಂಕಾರ",
+      "sourceMeaning": "Arrogance",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-018"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-019",
+      "sourceForm": "ಕರುಣೆ",
+      "sourceMeaning": "Compassion",
+      "category": "Abstract",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-019"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-020",
+      "sourceForm": "ಶಾಂತಿ",
+      "sourceMeaning": "Peace",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "peace"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-021",
+      "sourceForm": "ಭೂಮಿ",
+      "sourceMeaning": "Earth / land",
+      "category": "Nature",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "earth"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-022",
+      "sourceForm": "ಸಮುದ್ರ",
+      "sourceMeaning": "Sea / ocean",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "sea"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-023",
+      "sourceForm": "ಮೇಘ",
+      "sourceMeaning": "Cloud",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "cloud"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-024",
+      "sourceForm": "ವರ್ಷ",
+      "sourceMeaning": "Rain",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "rain"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-025",
+      "sourceForm": "ವೃಕ್ಷ",
+      "sourceMeaning": "Tree",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "tree"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-026",
+      "sourceForm": "ಪುಷ್ಪ",
+      "sourceMeaning": "Flower",
+      "category": "Nature",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "flower"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-027",
+      "sourceForm": "ಫಲ",
+      "sourceMeaning": "Fruit",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "fruit"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-028",
+      "sourceForm": "ಪತ್ರ",
+      "sourceMeaning": "Leaf",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-028"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-029",
+      "sourceForm": "ಪಕ್ಷಿ",
+      "sourceMeaning": "Bird",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "bird"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-030",
+      "sourceForm": "ಮೃಗ",
+      "sourceMeaning": "Animal / beast",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-030"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-031",
+      "sourceForm": "ಸಮಯ",
+      "sourceMeaning": "Time",
+      "category": "Everyday",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-031"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-032",
+      "sourceForm": "ದಿನ",
+      "sourceMeaning": "Day",
+      "category": "Everyday",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-day"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-033",
+      "sourceForm": "ರಾತ್ರಿ",
+      "sourceMeaning": "Night",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "night"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-034",
+      "sourceForm": "ಪ್ರಾತಃಕಾಲ",
+      "sourceMeaning": "Morning",
+      "category": "Everyday",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-034"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-035",
+      "sourceForm": "ಸಾಯಂಕಾಲ",
+      "sourceMeaning": "Evening",
+      "category": "Everyday",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-035"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-036",
+      "sourceForm": "ಮಾಸ",
+      "sourceMeaning": "Month",
+      "category": "Everyday",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "supp-month"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-037",
+      "sourceForm": "ಸಂವತ್ಸರ",
+      "sourceMeaning": "Year",
+      "category": "Everyday",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-037"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-038",
+      "sourceForm": "ಭವಿಷ್ಯ",
+      "sourceMeaning": "Future",
+      "category": "Abstract",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-038"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-039",
+      "sourceForm": "ಭೂತಕಾಲ",
+      "sourceMeaning": "Past",
+      "category": "Abstract",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-039"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-040",
+      "sourceForm": "ಮಧ್ಯ",
+      "sourceMeaning": "Middle / centre",
+      "category": "Abstract",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-040"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-041",
+      "sourceForm": "ಶರೀರ",
+      "sourceMeaning": "Body",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "body"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-042",
+      "sourceForm": "ಶಿರ",
+      "sourceMeaning": "Head",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "head"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-043",
+      "sourceForm": "ಕೇಶ",
+      "sourceMeaning": "Hair",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "hair"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-044",
+      "sourceForm": "ಕರ್ಣ",
+      "sourceMeaning": "Ear",
+      "category": "Body",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "ear"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-045",
+      "sourceForm": "ನಾಸಿಕ",
+      "sourceMeaning": "Nose",
+      "category": "Body",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "nose"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-046",
+      "sourceForm": "ದಂತ",
+      "sourceMeaning": "Tooth",
+      "category": "Body",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "tooth"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-047",
+      "sourceForm": "ಜಿಹ್ವೆ",
+      "sourceMeaning": "Tongue",
+      "category": "Body",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "supp-tongue"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-048",
+      "sourceForm": "ಹೃದಯ",
+      "sourceMeaning": "Heart",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-heart"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-049",
+      "sourceForm": "ರಕ್ತ",
+      "sourceMeaning": "Blood",
+      "category": "Body",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "blood"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-050",
+      "sourceForm": "ರೋಗ",
+      "sourceMeaning": "Disease",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "disease"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-051",
+      "sourceForm": "ಮಾತಾ",
+      "sourceMeaning": "Mother",
+      "category": "People",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-051"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-052",
+      "sourceForm": "ಪಿತಾ",
+      "sourceMeaning": "Father",
+      "category": "People",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-052"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-053",
+      "sourceForm": "ಪುತ್ರ",
+      "sourceMeaning": "Son",
+      "category": "People",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-053"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-054",
+      "sourceForm": "ಪುತ್ರಿ",
+      "sourceMeaning": "Daughter",
+      "category": "People",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-054"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-055",
+      "sourceForm": "ಭ್ರಾತೃ",
+      "sourceMeaning": "Brother",
+      "category": "People",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-055"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-056",
+      "sourceForm": "ಭಗಿನಿ",
+      "sourceMeaning": "Sister",
+      "category": "People",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-056"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-057",
+      "sourceForm": "ಪತಿ",
+      "sourceMeaning": "Husband",
+      "category": "People",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-husband"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-058",
+      "sourceForm": "ಪತ್ನಿ",
+      "sourceMeaning": "Wife",
+      "category": "People",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-058"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-059",
+      "sourceForm": "ಅತಿಥಿ",
+      "sourceMeaning": "Guest",
+      "category": "People",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-059"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-060",
+      "sourceForm": "ಸಮಾಜ",
+      "sourceMeaning": "Society",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-060",
+        "no-alt-society"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-061",
+      "sourceForm": "ಅಧಿಕಾರ",
+      "sourceMeaning": "Authority / power",
+      "category": "Civic",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "authority"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-062",
+      "sourceForm": "ಆಜ್ಞೆ",
+      "sourceMeaning": "Order / command",
+      "category": "Civic",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-062"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-063",
+      "sourceForm": "ನಿಯಮ",
+      "sourceMeaning": "Rule",
+      "category": "Civic",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-063"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-064",
+      "sourceForm": "ನ್ಯಾಯ",
+      "sourceMeaning": "Justice",
+      "category": "Civic",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "justice"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-065",
+      "sourceForm": "ಅನ್ಯಾಯ",
+      "sourceMeaning": "Injustice",
+      "category": "Civic",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-065"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-066",
+      "sourceForm": "ಶಿಕ್ಷೆ",
+      "sourceMeaning": "Punishment",
+      "category": "Civic",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "no-alt-punishment",
+        "punishment"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-067",
+      "sourceForm": "ಅಪರಾಧ",
+      "sourceMeaning": "Crime / offence",
+      "category": "Civic",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-067"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-068",
+      "sourceForm": "ಸಭೆ",
+      "sourceMeaning": "Meeting / assembly",
+      "category": "Civic",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-068"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-069",
+      "sourceForm": "ಪ್ರಜೆ",
+      "sourceMeaning": "Citizen / subject",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-subject-citizen"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-070",
+      "sourceForm": "ಸ್ವಾತಂತ್ರ್ಯ",
+      "sourceMeaning": "Freedom",
+      "category": "Society",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-070",
+        "no-alt-freedom"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-071",
+      "sourceForm": "ವಿದ್ಯೆ",
+      "sourceMeaning": "Education / knowledge",
+      "category": "Education",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-071"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-072",
+      "sourceForm": "ಶಿಕ್ಷಕ",
+      "sourceMeaning": "Teacher",
+      "category": "Education",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-072"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-073",
+      "sourceForm": "ವಿದ್ಯಾರ್ಥಿ",
+      "sourceMeaning": "Student",
+      "category": "Education",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "student"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-074",
+      "sourceForm": "ಪರೀಕ್ಷೆ",
+      "sourceMeaning": "Exam / test",
+      "category": "Education",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-074"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-075",
+      "sourceForm": "ಅಕ್ಷರ",
+      "sourceMeaning": "Letter / alphabet",
+      "category": "Education",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-letter-script"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-076",
+      "sourceForm": "ಶಬ್ದ",
+      "sourceMeaning": "Sound / word",
+      "category": "Education",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "sound"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-077",
+      "sourceForm": "ವಾಕ್ಯ",
+      "sourceMeaning": "Sentence",
+      "category": "Education",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-077"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-078",
+      "sourceForm": "ಅರ್ಥ",
+      "sourceMeaning": "Meaning",
+      "category": "Education",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-078"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-079",
+      "sourceForm": "ಕಥೆ",
+      "sourceMeaning": "Story",
+      "category": "Education",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-story"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-080",
+      "sourceForm": "ಕವಿತೆ",
+      "sourceMeaning": "Poem",
+      "category": "Education",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-080"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-081",
+      "sourceForm": "ಯಂತ್ರ",
+      "sourceMeaning": "Machine",
+      "category": "Technology",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-081"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-082",
+      "sourceForm": "ತಂತ್ರಜ್ಞಾನ",
+      "sourceMeaning": "Technology",
+      "category": "Technology",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-082"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-083",
+      "sourceForm": "ಪ್ರಯೋಗ",
+      "sourceMeaning": "Experiment",
+      "category": "Technology",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-083"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-084",
+      "sourceForm": "ಸಂಶೋಧನೆ",
+      "sourceMeaning": "Research",
+      "category": "Technology",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-084"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-085",
+      "sourceForm": "ಶಕ್ತಿ",
+      "sourceMeaning": "Energy / strength",
+      "category": "Technology",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-strength"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-086",
+      "sourceForm": "ವೇಗ",
+      "sourceMeaning": "Speed",
+      "category": "Technology",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-086"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-087",
+      "sourceForm": "ಪ್ರಕಾಶ",
+      "sourceMeaning": "Light",
+      "category": "Nature",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-light-brightness"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-088",
+      "sourceForm": "ಅಂಧಕಾರ",
+      "sourceMeaning": "Darkness",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-darkness"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-089",
+      "sourceForm": "ಉಷ್ಣ",
+      "sourceMeaning": "Heat",
+      "category": "Nature",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-089"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-090",
+      "sourceForm": "ಶೀತ",
+      "sourceMeaning": "Cold",
+      "category": "Nature",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-090"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-091",
+      "sourceForm": "ಆಹಾರ",
+      "sourceMeaning": "Food",
+      "category": "Everyday",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "snack"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-092",
+      "sourceForm": "ಪಾನೀಯ",
+      "sourceMeaning": "Beverage",
+      "category": "Everyday",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-092"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-093",
+      "sourceForm": "ವಸ್ತ್ರ",
+      "sourceMeaning": "Cloth / garment",
+      "category": "Everyday",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "cloth"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-094",
+      "sourceForm": "ಆಭರಣ",
+      "sourceMeaning": "Ornament / jewellery",
+      "category": "Everyday",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-ornament"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-095",
+      "sourceForm": "ಧನ",
+      "sourceMeaning": "Wealth / money",
+      "category": "Everyday",
+      "candidateCount": 4,
+      "targetEntryIds": [
+        "supp-wealth-money"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-096",
+      "sourceForm": "ಮಾರ್ಗ",
+      "sourceMeaning": "Way / path / road",
+      "category": "Everyday",
+      "candidateCount": 4,
+      "targetEntryIds": [
+        "path"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-097",
+      "sourceForm": "ದ್ವಾರ",
+      "sourceMeaning": "Door / gate",
+      "category": "Everyday",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-door"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-098",
+      "sourceForm": "ಕವಾಟ",
+      "sourceMeaning": "Window / shutter",
+      "category": "Everyday",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-098"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-099",
+      "sourceForm": "ಶಯ್ಯೆ",
+      "sourceMeaning": "Bed",
+      "category": "Everyday",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-099"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-100",
+      "sourceForm": "ದೀಪ",
+      "sourceMeaning": "Lamp",
+      "category": "Everyday",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "lamp"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-101",
+      "sourceForm": "ಚಿಂತನೆ",
+      "sourceMeaning": "Thought / thinking",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-101"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-102",
+      "sourceForm": "ಜ್ಞಾನ",
+      "sourceMeaning": "Knowledge",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "knowledge"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-103",
+      "sourceForm": "ಅಜ್ಞಾನ",
+      "sourceMeaning": "Ignorance",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-103"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-104",
+      "sourceForm": "ಸ್ಮರಣೆ",
+      "sourceMeaning": "Memory / remembrance",
+      "category": "Mind",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-memory"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-105",
+      "sourceForm": "ವಿಸ್ಮರಣೆ",
+      "sourceMeaning": "Forgetfulness",
+      "category": "Mind",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-105"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-106",
+      "sourceForm": "ಬುದ್ಧಿ",
+      "sourceMeaning": "Intelligence / wisdom",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-intellect"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-107",
+      "sourceForm": "ಮೂರ್ಖ",
+      "sourceMeaning": "Fool",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-107"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-108",
+      "sourceForm": "ನಿರ್ಧಾರ",
+      "sourceMeaning": "Decision",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-108"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-109",
+      "sourceForm": "ಸಂದೇಹ",
+      "sourceMeaning": "Doubt / suspicion",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-109"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-110",
+      "sourceForm": "ಕಲ್ಪನೆ",
+      "sourceMeaning": "Imagination",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-110"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-111",
+      "sourceForm": "ತರ್ಕ",
+      "sourceMeaning": "Logic / argument",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-111"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-112",
+      "sourceForm": "ಸತ್ಯ",
+      "sourceMeaning": "Truth",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-112"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-113",
+      "sourceForm": "ಅಸತ್ಯ",
+      "sourceMeaning": "Lie / falsehood",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-113"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-114",
+      "sourceForm": "ರಹಸ್ಯ",
+      "sourceMeaning": "Secret",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-114"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-115",
+      "sourceForm": "ಪ್ರಜ್ಞೆ",
+      "sourceMeaning": "Consciousness / awareness",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-115"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-116",
+      "sourceForm": "ಧ್ಯಾನ",
+      "sourceMeaning": "Meditation / focus",
+      "category": "Mind",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-116"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-117",
+      "sourceForm": "ಆಶಯ",
+      "sourceMeaning": "Intention / aim",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-117"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-118",
+      "sourceForm": "ಉದ್ದೇಶ",
+      "sourceMeaning": "Purpose / objective",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-118"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-119",
+      "sourceForm": "ಸಮ್ಮತಿ",
+      "sourceMeaning": "Consent / agreement",
+      "category": "Mind",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-119"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-120",
+      "sourceForm": "ವಿರೋಧ",
+      "sourceMeaning": "Opposition",
+      "category": "Mind",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-120"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-121",
+      "sourceForm": "ಗಮನ",
+      "sourceMeaning": "Movement / attention",
+      "category": "Action",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-121"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-122",
+      "sourceForm": "ಆಗಮನ",
+      "sourceMeaning": "Arrival",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-122"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-123",
+      "sourceForm": "ನಿರ್ಗಮನ",
+      "sourceMeaning": "Departure",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-123"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-124",
+      "sourceForm": "ಪ್ರವೇಶ",
+      "sourceMeaning": "Entry",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-124"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-125",
+      "sourceForm": "ಪತನ",
+      "sourceMeaning": "Fall",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-125"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-126",
+      "sourceForm": "ಉತ್ಥಾನ",
+      "sourceMeaning": "Rise / upliftment",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-126"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-127",
+      "sourceForm": "ಭ್ರಮಣೆ",
+      "sourceMeaning": "Rotation / wandering",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-127"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-128",
+      "sourceForm": "ಧಾವನ",
+      "sourceMeaning": "Running",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-128"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-129",
+      "sourceForm": "ವಿಶ್ರಾಂತಿ",
+      "sourceMeaning": "Rest",
+      "category": "Action",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-129"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-130",
+      "sourceForm": "ನಿದ್ರೆ",
+      "sourceMeaning": "Sleep",
+      "category": "Action",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-130"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-131",
+      "sourceForm": "ಜಾಗರಣೆ",
+      "sourceMeaning": "Wakefulness",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-131"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-132",
+      "sourceForm": "ಸ್ಪರ್ಶ",
+      "sourceMeaning": "Touch",
+      "category": "Action",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-132"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-133",
+      "sourceForm": "ದರ್ಶನ",
+      "sourceMeaning": "Sight / vision",
+      "category": "Action",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-sight-view"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-134",
+      "sourceForm": "ಶ್ರವಣ",
+      "sourceMeaning": "Hearing / listening",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "listen"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-135",
+      "sourceForm": "ಭೋಜನ",
+      "sourceMeaning": "Meal",
+      "category": "Action",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "food",
+        "supp-meal"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-136",
+      "sourceForm": "ಪಾನ",
+      "sourceMeaning": "Drinking",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-136"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-137",
+      "sourceForm": "ಸ್ನಾನ",
+      "sourceMeaning": "Bath",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-137"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-138",
+      "sourceForm": "ವರ್ತನ",
+      "sourceMeaning": "Behavior",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-138"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-139",
+      "sourceForm": "ಪರಿಶ್ರಮ",
+      "sourceMeaning": "Hard work",
+      "category": "Action",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-139"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-140",
+      "sourceForm": "ಸಂಗ್ರಹ",
+      "sourceMeaning": "Collection",
+      "category": "Action",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-140"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-141",
+      "sourceForm": "ಸಂಭಾಷಣೆ",
+      "sourceMeaning": "Conversation",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-141"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-142",
+      "sourceForm": "ವಿವರಣೆ",
+      "sourceMeaning": "Explanation",
+      "category": "Communication",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-142"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-143",
+      "sourceForm": "ಸಂದೇಶ",
+      "sourceMeaning": "Message",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-143"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-144",
+      "sourceForm": "ಘೋಷಣೆ",
+      "sourceMeaning": "Announcement / slogan",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-144"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-145",
+      "sourceForm": "ಪ್ರಶಂಸೆ",
+      "sourceMeaning": "Praise",
+      "category": "Communication",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-145"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-146",
+      "sourceForm": "ನಿಂದೆ",
+      "sourceMeaning": "Blame / criticism",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-146"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-147",
+      "sourceForm": "ಕ್ಷಮೆ",
+      "sourceMeaning": "Forgiveness",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-147"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-148",
+      "sourceForm": "ಪ್ರಾರ್ಥನೆ",
+      "sourceMeaning": "Prayer / request",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-148"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-149",
+      "sourceForm": "ಆಮಂತ್ರಣ",
+      "sourceMeaning": "Invitation",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-149"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-150",
+      "sourceForm": "ಸ್ವಾಗತ",
+      "sourceMeaning": "Welcome",
+      "category": "Communication",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-150"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-151",
+      "sourceForm": "ವಿದಾಯ",
+      "sourceMeaning": "Farewell",
+      "category": "Communication",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-151"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-152",
+      "sourceForm": "ಚರ್ಚೆ",
+      "sourceMeaning": "Discussion",
+      "category": "Communication",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-152"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-153",
+      "sourceForm": "ವಾದ",
+      "sourceMeaning": "Argument",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-153"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-154",
+      "sourceForm": "ಮೌನ",
+      "sourceMeaning": "Silence",
+      "category": "Communication",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-154"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-155",
+      "sourceForm": "ಶಪಥ",
+      "sourceMeaning": "Oath / vow",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-155"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-156",
+      "sourceForm": "ವಚನ",
+      "sourceMeaning": "Promise / word",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-156"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-157",
+      "sourceForm": "ಸೂಚನೆ",
+      "sourceMeaning": "Instruction / hint",
+      "category": "Communication",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-157"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-158",
+      "sourceForm": "ಅನುಮತಿ",
+      "sourceMeaning": "Permission",
+      "category": "Communication",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-158"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-159",
+      "sourceForm": "ನಿರಾಕರಣೆ",
+      "sourceMeaning": "Rejection",
+      "category": "Communication",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-159"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-160",
+      "sourceForm": "ಪ್ರಕಟಣೆ",
+      "sourceMeaning": "Publication / notice",
+      "category": "Communication",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-160"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-161",
+      "sourceForm": "ಸುಂದರ",
+      "sourceMeaning": "Beautiful",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-161"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-162",
+      "sourceForm": "ಕುರೂಪ",
+      "sourceMeaning": "Ugly",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-162"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-163",
+      "sourceForm": "ನೂತನ",
+      "sourceMeaning": "New",
+      "category": "Attributes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-163"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-164",
+      "sourceForm": "ಪುರಾತನ",
+      "sourceMeaning": "Old / ancient",
+      "category": "Attributes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-164"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-165",
+      "sourceForm": "ಬೃಹತ್",
+      "sourceMeaning": "Huge / large",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-165"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-166",
+      "sourceForm": "ಸೂಕ್ಷ್ಮ",
+      "sourceMeaning": "Small / subtle",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-166"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-167",
+      "sourceForm": "ಕಠಿಣ",
+      "sourceMeaning": "Hard / difficult",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-167"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-168",
+      "sourceForm": "ಮೃದು",
+      "sourceMeaning": "Soft",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-168"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-169",
+      "sourceForm": "ತೀಕ್ಷ್ಣ",
+      "sourceMeaning": "Sharp / intense",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-169"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-170",
+      "sourceForm": "ಮಂದ",
+      "sourceMeaning": "Slow / dull",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-170"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-171",
+      "sourceForm": "ಪವಿತ್ರ",
+      "sourceMeaning": "Sacred / pure",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-171"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-172",
+      "sourceForm": "ಮಲಿನ",
+      "sourceMeaning": "Dirty / impure",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-172"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-173",
+      "sourceForm": "ಪೂರ್ಣ",
+      "sourceMeaning": "Full / complete",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-173"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-174",
+      "sourceForm": "ರಿಕ್ತ",
+      "sourceMeaning": "Empty",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-174"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-175",
+      "sourceForm": "ಸಮಾನ",
+      "sourceMeaning": "Equal / same",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-175"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-176",
+      "sourceForm": "ಭಿನ್ನ",
+      "sourceMeaning": "Different",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-176"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-177",
+      "sourceForm": "ಪ್ರಮುಖ",
+      "sourceMeaning": "Important / main",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-177"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-178",
+      "sourceForm": "ಸಾಮಾನ್ಯ",
+      "sourceMeaning": "Common / ordinary",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-178"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-179",
+      "sourceForm": "ವಿಶೇಷ",
+      "sourceMeaning": "Special",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-179"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-180",
+      "sourceForm": "ಶ್ರೇಷ್ಠ",
+      "sourceMeaning": "Best / superior",
+      "category": "Attributes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-180"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-181",
+      "sourceForm": "ಶಿಖರ",
+      "sourceMeaning": "Peak / summit",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-181"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-182",
+      "sourceForm": "ಕಣಿವೆ",
+      "sourceMeaning": "Valley",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-182"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-183",
+      "sourceForm": "ಪ್ರಪಾತ",
+      "sourceMeaning": "Abyss / cliff",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-183"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-184",
+      "sourceForm": "ದ್ವೀಪ",
+      "sourceMeaning": "Island",
+      "category": "Geography",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-184"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-185",
+      "sourceForm": "ತೀರ",
+      "sourceMeaning": "Shore / bank",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-185"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-186",
+      "sourceForm": "ಮರುಭೂಮಿ",
+      "sourceMeaning": "Desert",
+      "category": "Geography",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-186"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-187",
+      "sourceForm": "ಸರೋವರ",
+      "sourceMeaning": "Lake / pond",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-187"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-188",
+      "sourceForm": "ನಿರ್ಝರ",
+      "sourceMeaning": "Stream / spring",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-188"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-189",
+      "sourceForm": "ಜಲಪಾತ",
+      "sourceMeaning": "Waterfall",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-189"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-190",
+      "sourceForm": "ಭೂಕಂಪ",
+      "sourceMeaning": "Earthquake",
+      "category": "Geography",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-190"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-191",
+      "sourceForm": "ಚಂಡಮಾರುತ",
+      "sourceMeaning": "Cyclone / storm",
+      "category": "Geography",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-191"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-192",
+      "sourceForm": "ವಿದ್ಯುತ್",
+      "sourceMeaning": "Lightning / electricity",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "electricity"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-193",
+      "sourceForm": "ಗರ್ಜನೆ",
+      "sourceMeaning": "Thunder / roar",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-193"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-194",
+      "sourceForm": "ಹಿಮ",
+      "sourceMeaning": "Snow / frost",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-194"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-195",
+      "sourceForm": "ಮರೀಚಿಕೆ",
+      "sourceMeaning": "Mirage",
+      "category": "Geography",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-195"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-196",
+      "sourceForm": "ಧೂಳಿ",
+      "sourceMeaning": "Dust",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-196"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-197",
+      "sourceForm": "ಶಿಲೆ",
+      "sourceMeaning": "Stone / rock",
+      "category": "Geography",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-rock-boulder"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-198",
+      "sourceForm": "ಲೋಹ",
+      "sourceMeaning": "Metal",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-198"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-199",
+      "sourceForm": "ಸುವರ್ಣ",
+      "sourceMeaning": "Gold",
+      "category": "Geography",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-199"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-200",
+      "sourceForm": "ರಜತ",
+      "sourceMeaning": "Silver",
+      "category": "Geography",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "supp-silver"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-201",
+      "sourceForm": "ವ್ಯಾಪಾರ",
+      "sourceMeaning": "Business / trade",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-201"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-202",
+      "sourceForm": "ಕ್ರಯ",
+      "sourceMeaning": "Purchase / buying",
+      "category": "Finance",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-price"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-203",
+      "sourceForm": "ವಿಕ್ರಯ",
+      "sourceMeaning": "Sale / selling",
+      "category": "Finance",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-203"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-204",
+      "sourceForm": "ಮೌಲ್ಯ",
+      "sourceMeaning": "Value / price",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-204"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-205",
+      "sourceForm": "ಲಾಭ",
+      "sourceMeaning": "Profit",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-205"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-206",
+      "sourceForm": "ನಷ್ಟ",
+      "sourceMeaning": "Loss",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-206"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-207",
+      "sourceForm": "ಋಣ",
+      "sourceMeaning": "Debt / loan",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-debt"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-208",
+      "sourceForm": "ವೇತನ",
+      "sourceMeaning": "Salary / wage",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-208"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-209",
+      "sourceForm": "ಕರ",
+      "sourceMeaning": "Tax",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-209"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-210",
+      "sourceForm": "ಸಂಪತ್ತು",
+      "sourceMeaning": "Wealth / property",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-210"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-211",
+      "sourceForm": "ದಾರಿದ್ರ್ಯ",
+      "sourceMeaning": "Poverty",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-211"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-212",
+      "sourceForm": "ಭಂಡಾರ",
+      "sourceMeaning": "Treasury / granary",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-212"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-213",
+      "sourceForm": "ಪರಿಮಾಣ",
+      "sourceMeaning": "Quantity / measurement",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-213"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-214",
+      "sourceForm": "ಭಾರ",
+      "sourceMeaning": "Weight / load",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-load-weight"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-215",
+      "sourceForm": "ದೂರ",
+      "sourceMeaning": "Distance",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-215"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-216",
+      "sourceForm": "ಸಮೀಪ",
+      "sourceMeaning": "Near / close",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-216"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-217",
+      "sourceForm": "ವಿಸ್ತಾರ",
+      "sourceMeaning": "Area / expanse",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-217"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-218",
+      "sourceForm": "ಗಾಢ",
+      "sourceMeaning": "Deep / dense",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-218"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-219",
+      "sourceForm": "ಉನ್ನತ",
+      "sourceMeaning": "High / tall",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-219"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-220",
+      "sourceForm": "ಕನಿಷ್ಠ",
+      "sourceMeaning": "Minimum / least",
+      "category": "Finance",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-220"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-221",
+      "sourceForm": "ಉತ್ಸವ",
+      "sourceMeaning": "Festival / celebration",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-221"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-222",
+      "sourceForm": "ವಿವಾಹ",
+      "sourceMeaning": "Marriage",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-marriage"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-223",
+      "sourceForm": "ಜನನ",
+      "sourceMeaning": "Birth",
+      "category": "Society",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-birth"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-224",
+      "sourceForm": "ಮರಣ",
+      "sourceMeaning": "Death",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "death",
+        "supp-death"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-225",
+      "sourceForm": "ಪರಂಪರೆ",
+      "sourceMeaning": "Tradition",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-225"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-226",
+      "sourceForm": "ಸಂಸ್ಕೃತಿ",
+      "sourceMeaning": "Culture",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "culture"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-227",
+      "sourceForm": "ಸೇವೆ",
+      "sourceMeaning": "Service",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-service"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-228",
+      "sourceForm": "ದಾನ",
+      "sourceMeaning": "Donation / charity",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-228"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-229",
+      "sourceForm": "ಪೂಜೆ",
+      "sourceMeaning": "Worship",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-229"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-230",
+      "sourceForm": "ಮಂದಿರ",
+      "sourceMeaning": "Temple / house",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-230"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-231",
+      "sourceForm": "ಮೂರ್ತಿ",
+      "sourceMeaning": "Idol / statue",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-231"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-232",
+      "sourceForm": "ಯಾತ್ರೆ",
+      "sourceMeaning": "Journey / pilgrimage",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-232"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-233",
+      "sourceForm": "ನಿವಾಸ",
+      "sourceMeaning": "Residence",
+      "category": "Society",
+      "candidateCount": 4,
+      "targetEntryIds": [
+        "contrib-233"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-234",
+      "sourceForm": "ನಗರ",
+      "sourceMeaning": "City",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "city"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-235",
+      "sourceForm": "ರಾಜಧಾನಿ",
+      "sourceMeaning": "Capital city",
+      "category": "Society",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-235"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-236",
+      "sourceForm": "ರಾಷ್ಟ್ರ",
+      "sourceMeaning": "Nation / country",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "nation"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-237",
+      "sourceForm": "ಸೀಮೆ",
+      "sourceMeaning": "Border / boundary",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-237"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-238",
+      "sourceForm": "ಯುದ್ಧ",
+      "sourceMeaning": "War / battle",
+      "category": "Society",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "war"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-239",
+      "sourceForm": "ವಿಜಯ",
+      "sourceMeaning": "Victory",
+      "category": "Society",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-239"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-240",
+      "sourceForm": "ಪರಾಜಯ",
+      "sourceMeaning": "Defeat",
+      "category": "Society",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-240"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-241",
+      "sourceForm": "ಆಯುಧ",
+      "sourceMeaning": "Weapon / tool",
+      "category": "Household",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-241"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-242",
+      "sourceForm": "ಪಾತ್ರೆ",
+      "sourceMeaning": "Vessel / utensil",
+      "category": "Household",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-242"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-243",
+      "sourceForm": "ದರ್ಪಣ",
+      "sourceMeaning": "Mirror",
+      "category": "Household",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-243"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-244",
+      "sourceForm": "ಛತ್ರಿ",
+      "sourceMeaning": "Umbrella",
+      "category": "Household",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-244"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-245",
+      "sourceForm": "ಪಾದರಕ್ಷೆ",
+      "sourceMeaning": "Footwear",
+      "category": "Household",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-245"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-246",
+      "sourceForm": "ಆಸನ",
+      "sourceMeaning": "Seat",
+      "category": "Household",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-246"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-247",
+      "sourceForm": "ಸ್ತಂಭ",
+      "sourceMeaning": "Pillar",
+      "category": "Household",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-247"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-248",
+      "sourceForm": "ಭಿತ್ತಿ",
+      "sourceMeaning": "Wall",
+      "category": "Household",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-248"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-249",
+      "sourceForm": "ಛಾವಣಿ",
+      "sourceMeaning": "Roof",
+      "category": "Household",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-249"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-250",
+      "sourceForm": "ಅಂಗಣ",
+      "sourceMeaning": "Courtyard",
+      "category": "Household",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-250"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-251",
+      "sourceForm": "ಕೂಪ",
+      "sourceMeaning": "Well",
+      "category": "Household",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-251"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-252",
+      "sourceForm": "ತಟಾಕ",
+      "sourceMeaning": "Tank / pond",
+      "category": "Household",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-252"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-253",
+      "sourceForm": "ಸೇತುವೆ",
+      "sourceMeaning": "Bridge",
+      "category": "Household",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "bridge"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-254",
+      "sourceForm": "ನೌಕೆ",
+      "sourceMeaning": "Boat / ship",
+      "category": "Household",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-254"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-255",
+      "sourceForm": "ರಥ",
+      "sourceMeaning": "Chariot / cart",
+      "category": "Household",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-255"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-256",
+      "sourceForm": "ಚಕ್ರ",
+      "sourceMeaning": "Wheel",
+      "category": "Household",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-256"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-257",
+      "sourceForm": "ರಜ್ಜು",
+      "sourceMeaning": "Rope",
+      "category": "Household",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-257"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-258",
+      "sourceForm": "ಸೂಚಿ",
+      "sourceMeaning": "Needle",
+      "category": "Household",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-258"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-259",
+      "sourceForm": "ಕೀಲಕ",
+      "sourceMeaning": "Lock / key / peg",
+      "category": "Household",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-259"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-260",
+      "sourceForm": "ಶೃಂಖಲೆ",
+      "sourceMeaning": "Chain",
+      "category": "Household",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-260"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-261",
+      "sourceForm": "ಔಷಧ",
+      "sourceMeaning": "Medicine",
+      "category": "Health",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "medicine"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-262",
+      "sourceForm": "ವೈದ್ಯ",
+      "sourceMeaning": "Doctor / healer",
+      "category": "Health",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "no-alt-doctor",
+        "supp-doctor"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-263",
+      "sourceForm": "ಆರೋಗ್ಯ",
+      "sourceMeaning": "Health",
+      "category": "Health",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-263",
+        "no-alt-health"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-264",
+      "sourceForm": "ವ್ರಣ",
+      "sourceMeaning": "Wound / sore",
+      "category": "Health",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-264"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-265",
+      "sourceForm": "ವೇದನೆ",
+      "sourceMeaning": "Pain",
+      "category": "Health",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-265"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-266",
+      "sourceForm": "ಕ್ಷುಧೆ",
+      "sourceMeaning": "Hunger",
+      "category": "Health",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "supp-hunger"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-267",
+      "sourceForm": "ತೃಷೆ",
+      "sourceMeaning": "Thirst",
+      "category": "Health",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-267"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-268",
+      "sourceForm": "ಸ್ವಾದ",
+      "sourceMeaning": "Taste",
+      "category": "Health",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-268"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-269",
+      "sourceForm": "ಗಂಧ",
+      "sourceMeaning": "Smell / fragrance",
+      "category": "Health",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-269"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-270",
+      "sourceForm": "ದುರ್ಗಂಧ",
+      "sourceMeaning": "Bad smell",
+      "category": "Health",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-270"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-271",
+      "sourceForm": "ಕ್ಷೀರ",
+      "sourceMeaning": "Milk",
+      "category": "Health",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "milk"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-272",
+      "sourceForm": "ದಧಿ",
+      "sourceMeaning": "Curd",
+      "category": "Health",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-272"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-273",
+      "sourceForm": "ಘೃತ",
+      "sourceMeaning": "Ghee",
+      "category": "Health",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "supp-ghee"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-274",
+      "sourceForm": "ತೈಲ",
+      "sourceMeaning": "Oil",
+      "category": "Health",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-274"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-275",
+      "sourceForm": "ಲವಣ",
+      "sourceMeaning": "Salt",
+      "category": "Health",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "supp-salt"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-276",
+      "sourceForm": "ಮಧು",
+      "sourceMeaning": "Honey / sweet",
+      "category": "Health",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-honey"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-277",
+      "sourceForm": "ತಂಡುಲ",
+      "sourceMeaning": "Rice",
+      "category": "Health",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-277"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-278",
+      "sourceForm": "ಅನ್ನ",
+      "sourceMeaning": "Cooked rice / food",
+      "category": "Health",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-cooked-rice"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-279",
+      "sourceForm": "ಶಾಕ",
+      "sourceMeaning": "Vegetable",
+      "category": "Health",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-279"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-280",
+      "sourceForm": "ಬೀಜ",
+      "sourceMeaning": "Seed",
+      "category": "Health",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-seed"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-281",
+      "sourceForm": "ಅವಧಿ",
+      "sourceMeaning": "Duration / deadline",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-281"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-282",
+      "sourceForm": "ಕ್ರಮ",
+      "sourceMeaning": "Order / sequence",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-282"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-283",
+      "sourceForm": "ವಿಧಾನ",
+      "sourceMeaning": "Procedure / method",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-283"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-284",
+      "sourceForm": "ಆಧಾರ",
+      "sourceMeaning": "Support / base",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-284"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-285",
+      "sourceForm": "ಪರಿಣಾಮ",
+      "sourceMeaning": "Result / effect",
+      "category": "Other",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-285"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-286",
+      "sourceForm": "ಪ್ರಭಾವ",
+      "sourceMeaning": "Influence / impact",
+      "category": "Other",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-286"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-287",
+      "sourceForm": "ಸಾಮರ್ಥ್ಯ",
+      "sourceMeaning": "Capability / strength",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-287"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-288",
+      "sourceForm": "ಪ್ರಯೋಜನ",
+      "sourceMeaning": "Benefit / usefulness",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-288"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-289",
+      "sourceForm": "ಅನಾವಶ್ಯಕ",
+      "sourceMeaning": "Unnecessary",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-289"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-290",
+      "sourceForm": "ಅಪಾಯ",
+      "sourceMeaning": "Danger",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-290"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-291",
+      "sourceForm": "ಸುರಕ್ಷಿತ",
+      "sourceMeaning": "Safe / secure",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-291"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-292",
+      "sourceForm": "ಸ್ವಚ್ಛ",
+      "sourceMeaning": "Clean / clear",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-292"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-293",
+      "sourceForm": "ಭವನ",
+      "sourceMeaning": "Building / mansion",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "house"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-294",
+      "sourceForm": "ಪ್ರತಿಮೆ",
+      "sourceMeaning": "Statue / image",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-294"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-295",
+      "sourceForm": "ಚಿತ್ರ",
+      "sourceMeaning": "Picture / drawing",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-295"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-296",
+      "sourceForm": "ಸಂಗೀತ",
+      "sourceMeaning": "Music",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "music"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-297",
+      "sourceForm": "ನೃತ್ಯ",
+      "sourceMeaning": "Dance",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-297"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-298",
+      "sourceForm": "ಕ್ರೀಡೆ",
+      "sourceMeaning": "Sport / game",
+      "category": "Other",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-298"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-299",
+      "sourceForm": "ಸ್ಪರ್ಧೆ",
+      "sourceMeaning": "Competition",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-299"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-300",
+      "sourceForm": "ಜೀವನ",
+      "sourceMeaning": "Life",
+      "category": "Other",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "life"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-301",
+      "sourceForm": "ಕೃಷಿ",
+      "sourceMeaning": "Agriculture / farming",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-301"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-302",
+      "sourceForm": "ಕೃಷಿಕ",
+      "sourceMeaning": "Farmer",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-302"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-303",
+      "sourceForm": "ಕ್ಷೇತ್ರ",
+      "sourceMeaning": "Field / farm / domain",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-303"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-304",
+      "sourceForm": "ಸಸ್ಯ",
+      "sourceMeaning": "Plant / crop",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-304"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-305",
+      "sourceForm": "ಧಾನ್ಯ",
+      "sourceMeaning": "Grain / cereal",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-305"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-306",
+      "sourceForm": "ತೃಣ",
+      "sourceMeaning": "Grass",
+      "category": "Agriculture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-grass"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-307",
+      "sourceForm": "ಕಂಟಕ",
+      "sourceMeaning": "Thorn / obstacle",
+      "category": "Agriculture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-307"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-308",
+      "sourceForm": "ಲತೆ",
+      "sourceMeaning": "Creeper / vine",
+      "category": "Agriculture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-308"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-309",
+      "sourceForm": "ಶಾಖೆ",
+      "sourceMeaning": "Branch",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-309"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-310",
+      "sourceForm": "ಮೂಲ",
+      "sourceMeaning": "Root / origin",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-root"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-311",
+      "sourceForm": "ತ್ವಚೆ / ವಲ್ಕಲ",
+      "sourceMeaning": "Bark / peel",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-311"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-312",
+      "sourceForm": "ಪಲ್ಲವ",
+      "sourceMeaning": "Sprout / tender leaf",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-312"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-313",
+      "sourceForm": "ಕುಸುಮ",
+      "sourceMeaning": "Blossom / flower",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-313"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-314",
+      "sourceForm": "ಮಕರಂದ",
+      "sourceMeaning": "Nectar",
+      "category": "Agriculture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-314"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-315",
+      "sourceForm": "ಪರಾಗ",
+      "sourceMeaning": "Pollen",
+      "category": "Agriculture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-315"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-316",
+      "sourceForm": "ಕಾನನ",
+      "sourceMeaning": "Woods / forest",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-316"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-317",
+      "sourceForm": "ಉದ್ಯಾನ",
+      "sourceMeaning": "Garden / park",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-317"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-318",
+      "sourceForm": "ವನಸ್ಪತಿ",
+      "sourceMeaning": "Herb / large tree",
+      "category": "Agriculture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-318"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-319",
+      "sourceForm": "ಕಂದ",
+      "sourceMeaning": "Tuber / bulb",
+      "category": "Agriculture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-319"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-320",
+      "sourceForm": "ಶುಷ್ಕ",
+      "sourceMeaning": "Dry / withered",
+      "category": "Agriculture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-320"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-321",
+      "sourceForm": "ಗಜ",
+      "sourceMeaning": "Elephant",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-321"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-322",
+      "sourceForm": "ಅಶ್ವ",
+      "sourceMeaning": "Horse",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-322"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-323",
+      "sourceForm": "ವೃಷಭ",
+      "sourceMeaning": "Bull / ox",
+      "category": "Animals",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-323"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-324",
+      "sourceForm": "ಧೇನು",
+      "sourceMeaning": "Cow",
+      "category": "Animals",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-324"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-325",
+      "sourceForm": "ಮಹಿಷ",
+      "sourceMeaning": "Buffalo",
+      "category": "Animals",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-325"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-326",
+      "sourceForm": "ಅಜ",
+      "sourceMeaning": "Goat",
+      "category": "Animals",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-326"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-327",
+      "sourceForm": "ಮೇಷ",
+      "sourceMeaning": "Sheep / ram",
+      "category": "Animals",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-327"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-328",
+      "sourceForm": "ಶ್ವಾನ",
+      "sourceMeaning": "Dog",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-328"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-329",
+      "sourceForm": "ಮಾರ್ಜಾಲ",
+      "sourceMeaning": "Cat",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-329"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-330",
+      "sourceForm": "ಮೂಷಕ",
+      "sourceMeaning": "Mouse / rat",
+      "category": "Animals",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-330"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-331",
+      "sourceForm": "ವಾನರ",
+      "sourceMeaning": "Monkey",
+      "category": "Animals",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-331"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-332",
+      "sourceForm": "ವ್ಯಾಘ್ರ",
+      "sourceMeaning": "Tiger",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-332"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-333",
+      "sourceForm": "ಭಲ್ಲೂಕ",
+      "sourceMeaning": "Bear",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-333"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-334",
+      "sourceForm": "ಶಶ",
+      "sourceMeaning": "Hare / rabbit",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-334"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-335",
+      "sourceForm": "ಸರ್ಪ",
+      "sourceMeaning": "Snake",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "snake"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-336",
+      "sourceForm": "ಮತ್ಸ್ಯ",
+      "sourceMeaning": "Fish",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-336"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-337",
+      "sourceForm": "ಕೂರ್ಮ",
+      "sourceMeaning": "Tortoise / turtle",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-337"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-338",
+      "sourceForm": "ಮಂಡೂಕ",
+      "sourceMeaning": "Frog",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-338"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-339",
+      "sourceForm": "ಮಯೂರ",
+      "sourceMeaning": "Peacock",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-339"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-340",
+      "sourceForm": "ಕಾಕ",
+      "sourceMeaning": "Crow",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-340"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-341",
+      "sourceForm": "ಕೋಕಿಲ",
+      "sourceMeaning": "Cuckoo",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-341"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-342",
+      "sourceForm": "ಶುಕ",
+      "sourceMeaning": "Parrot",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-342"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-343",
+      "sourceForm": "ಹಂಸ",
+      "sourceMeaning": "Swan",
+      "category": "Animals",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-343"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-344",
+      "sourceForm": "ಗರುಡ",
+      "sourceMeaning": "Eagle / hawk",
+      "category": "Animals",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-344"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-345",
+      "sourceForm": "ಉಲೂಕ",
+      "sourceMeaning": "Owl",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-345"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-346",
+      "sourceForm": "ಮಕ್ಷಿಕೆ",
+      "sourceMeaning": "Fly",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-346"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-347",
+      "sourceForm": "ಮಶಕ",
+      "sourceMeaning": "Mosquito",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-347"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-348",
+      "sourceForm": "ಪಿಪೀಲಿಕೆ",
+      "sourceMeaning": "Ant",
+      "category": "Animals",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-348"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-349",
+      "sourceForm": "ಭ್ರಮರ",
+      "sourceMeaning": "Bee / beetle",
+      "category": "Animals",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-349"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-350",
+      "sourceForm": "ಕೀಟ",
+      "sourceMeaning": "Insect / worm",
+      "category": "Animals",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-350"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-351",
+      "sourceForm": "ವರ್ಣ",
+      "sourceMeaning": "Colour",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-351"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-352",
+      "sourceForm": "ಶ್ವೇತ",
+      "sourceMeaning": "White",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-352"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-353",
+      "sourceForm": "ಕೃಷ್ಣ / ಶ್ಯಾಮ",
+      "sourceMeaning": "Black",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-353"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-354",
+      "sourceForm": "ರಕ್ತವರ್ಣ",
+      "sourceMeaning": "Red",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-354"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-355",
+      "sourceForm": "ಪೀತ",
+      "sourceMeaning": "Yellow",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-355"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-356",
+      "sourceForm": "ಹರಿತ",
+      "sourceMeaning": "Green",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-356"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-357",
+      "sourceForm": "ನೀಲ",
+      "sourceMeaning": "Blue",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-357"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-358",
+      "sourceForm": "ಧೂಮ್ರ",
+      "sourceMeaning": "Grey",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-358"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-359",
+      "sourceForm": "ಕಪಿಲ",
+      "sourceMeaning": "Brown",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-359"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-360",
+      "sourceForm": "ಆಕಾರ",
+      "sourceMeaning": "Shape / form",
+      "category": "Colors and shapes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-360"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-361",
+      "sourceForm": "ವೃತ್ತ",
+      "sourceMeaning": "Circle",
+      "category": "Colors and shapes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-361"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-362",
+      "sourceForm": "ಚತುರಸ್ರ",
+      "sourceMeaning": "Square",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-362"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-363",
+      "sourceForm": "ತ್ರಿಕೋನ",
+      "sourceMeaning": "Triangle",
+      "category": "Colors and shapes",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-363"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-364",
+      "sourceForm": "ರೇಖೆ",
+      "sourceMeaning": "Line",
+      "category": "Colors and shapes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-364"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-365",
+      "sourceForm": "ಬಿಂದು",
+      "sourceMeaning": "Dot / drop",
+      "category": "Colors and shapes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-365"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-366",
+      "sourceForm": "ಕೋನ",
+      "sourceMeaning": "Corner / angle",
+      "category": "Colors and shapes",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-366"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-367",
+      "sourceForm": "ವಕ್ರ",
+      "sourceMeaning": "Crooked / curved",
+      "category": "Colors and shapes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-367"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-368",
+      "sourceForm": "ಸರಳ",
+      "sourceMeaning": "Straight / simple",
+      "category": "Colors and shapes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-368"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-369",
+      "sourceForm": "ಸಮತಲ",
+      "sourceMeaning": "Flat / level",
+      "category": "Colors and shapes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-369"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-370",
+      "sourceForm": "ಸ್ಥೂಲ",
+      "sourceMeaning": "Thick / fat / large",
+      "category": "Colors and shapes",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-370"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-371",
+      "sourceForm": "ಸಂಖ್ಯೆ",
+      "sourceMeaning": "Number",
+      "category": "Numbers and time",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-number"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-372",
+      "sourceForm": "ಶೂನ್ಯ",
+      "sourceMeaning": "Zero / empty",
+      "category": "Numbers and time",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-372"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-373",
+      "sourceForm": "ಏಕ",
+      "sourceMeaning": "One / single",
+      "category": "Numbers and time",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-373"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-374",
+      "sourceForm": "ದ್ವಿ",
+      "sourceMeaning": "Two / pair",
+      "category": "Numbers and time",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-374"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-375",
+      "sourceForm": "ತ್ರಿ",
+      "sourceMeaning": "Three",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-503"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-376",
+      "sourceForm": "ಚತುರ್",
+      "sourceMeaning": "Four",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-376"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-377",
+      "sourceForm": "ಪಂಚ",
+      "sourceMeaning": "Five",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-377"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-378",
+      "sourceForm": "ಷಟ್",
+      "sourceMeaning": "Six",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-378"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-379",
+      "sourceForm": "ಸಪ್ತ",
+      "sourceMeaning": "Seven",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-379"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-380",
+      "sourceForm": "ಅಷ್ಟ",
+      "sourceMeaning": "Eight",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-380"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-381",
+      "sourceForm": "ನವ",
+      "sourceMeaning": "Nine",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "new"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-382",
+      "sourceForm": "ದಶ",
+      "sourceMeaning": "Ten",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-382"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-383",
+      "sourceForm": "ಶತ",
+      "sourceMeaning": "Hundred",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-383"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-384",
+      "sourceForm": "ಸಹಸ್ರ",
+      "sourceMeaning": "Thousand",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-384"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-385",
+      "sourceForm": "ಅರ್ಧ",
+      "sourceMeaning": "Half",
+      "category": "Numbers and time",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-half"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-386",
+      "sourceForm": "ಪಾದ",
+      "sourceMeaning": "Quarter",
+      "category": "Numbers and time",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "leg"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-387",
+      "sourceForm": "ಅಧಿಕ",
+      "sourceMeaning": "More / excess",
+      "category": "Numbers and time",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-387"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-388",
+      "sourceForm": "ಅಲ್ಪ",
+      "sourceMeaning": "Little / few",
+      "category": "Numbers and time",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-388"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-389",
+      "sourceForm": "ಕ್ಷಣ",
+      "sourceMeaning": "Moment",
+      "category": "Numbers and time",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-389"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-390",
+      "sourceForm": "ಯುಗ",
+      "sourceMeaning": "Era / age",
+      "category": "Numbers and time",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-390"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-391",
+      "sourceForm": "ಕಲೆ",
+      "sourceMeaning": "Art / skill",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-391"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-392",
+      "sourceForm": "ಕಲಾವಿದ",
+      "sourceMeaning": "Artist",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-392"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-393",
+      "sourceForm": "ಶಿಲ್ಪ",
+      "sourceMeaning": "Sculpture",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-393"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-394",
+      "sourceForm": "ಶಿಲ್ಪಿ",
+      "sourceMeaning": "Sculptor",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-394"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-395",
+      "sourceForm": "ನಾಟಕ",
+      "sourceMeaning": "Drama / play",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-395"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-396",
+      "sourceForm": "ಪಾತ್ರ",
+      "sourceMeaning": "Role / character",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-396"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-397",
+      "sourceForm": "ರಂಗಭೂಮಿ",
+      "sourceMeaning": "Stage / theatre",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-397"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-398",
+      "sourceForm": "ಗಾಯನ",
+      "sourceMeaning": "Singing",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-398"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-399",
+      "sourceForm": "ವಾದ್ಯ",
+      "sourceMeaning": "Musical instrument",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-399"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-400",
+      "sourceForm": "ತಾಳ",
+      "sourceMeaning": "Rhythm / beat",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-400"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-401",
+      "sourceForm": "ಗ್ರಂಥ",
+      "sourceMeaning": "Book / treatise",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-401"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-402",
+      "sourceForm": "ಅಧ್ಯಾಯ",
+      "sourceMeaning": "Chapter",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-402"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-403",
+      "sourceForm": "ಪುಟ",
+      "sourceMeaning": "Page",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-403"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-404",
+      "sourceForm": "ಶೀರ್ಷಿಕೆ",
+      "sourceMeaning": "Title / heading",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-404"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-405",
+      "sourceForm": "ಪೀಠಿಕೆ",
+      "sourceMeaning": "Preface / introduction",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-405"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-406",
+      "sourceForm": "ಉಪಸಂಹಾರ",
+      "sourceMeaning": "Conclusion",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-406"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-407",
+      "sourceForm": "ಅನುವಾದ",
+      "sourceMeaning": "Translation",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-407"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-408",
+      "sourceForm": "ವಿಮರ್ಶೆ",
+      "sourceMeaning": "Criticism / review",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-408"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-409",
+      "sourceForm": "ಉಪಮೆ",
+      "sourceMeaning": "Simile / comparison",
+      "category": "Arts",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-409"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-410",
+      "sourceForm": "ವ್ಯಂಗ್ಯ",
+      "sourceMeaning": "Satire / sarcasm",
+      "category": "Arts",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-410"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-411",
+      "sourceForm": "ನಿರ್ಮಾಣ",
+      "sourceMeaning": "Construction / building",
+      "category": "Architecture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-411"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-412",
+      "sourceForm": "ವಾಸ್ತು",
+      "sourceMeaning": "Architecture",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-412"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-413",
+      "sourceForm": "ಪಾಯ",
+      "sourceMeaning": "Foundation",
+      "category": "Architecture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-413"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-414",
+      "sourceForm": "ಇಷ್ಟಿಕೆ",
+      "sourceMeaning": "Brick",
+      "category": "Architecture",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-414"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-415",
+      "sourceForm": "ಮೃತ್ತಿಕೆ",
+      "sourceMeaning": "Clay / soil",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-415"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-416",
+      "sourceForm": "ಚೂರ್ಣ",
+      "sourceMeaning": "Powder / lime",
+      "category": "Architecture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-416"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-417",
+      "sourceForm": "ಕಾಷ್ಠ",
+      "sourceMeaning": "Wood / timber",
+      "category": "Architecture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-417"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-418",
+      "sourceForm": "ಸೋಪಾನ",
+      "sourceMeaning": "Stairs / steps",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-418"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-419",
+      "sourceForm": "ಪ್ರಾಕಾರ",
+      "sourceMeaning": "Compound wall / rampart",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-419"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-420",
+      "sourceForm": "ದುರ್ಗ",
+      "sourceMeaning": "Fort",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-420"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-421",
+      "sourceForm": "ಗೋಪುರ",
+      "sourceMeaning": "Tower / spire",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-421"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-422",
+      "sourceForm": "ಗವಾಕ್ಷಿ",
+      "sourceMeaning": "Window / skylight",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-422"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-423",
+      "sourceForm": "ಚಾವಡಿ",
+      "sourceMeaning": "Hall / verandah",
+      "category": "Architecture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-423"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-424",
+      "sourceForm": "ಪಾಕಶಾಲೆ",
+      "sourceMeaning": "Kitchen",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-424"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-425",
+      "sourceForm": "ಶಯನಗೃಹ",
+      "sourceMeaning": "Bedroom",
+      "category": "Architecture",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-425"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-426",
+      "sourceForm": "ಕೋಷ್ಠ",
+      "sourceMeaning": "Room / cell",
+      "category": "Architecture",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-426"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-427",
+      "sourceForm": "ಮಾರ್ಗಸೂಚಿ",
+      "sourceMeaning": "Signpost",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-427"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-428",
+      "sourceForm": "ಕೂಡಲಿ / ಕುಠಾರ",
+      "sourceMeaning": "Axe",
+      "category": "Architecture",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-428"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-429",
+      "sourceForm": "ಖನಿತ್ರ",
+      "sourceMeaning": "Spade / pickaxe",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-429"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-430",
+      "sourceForm": "ಧ್ವಂಸ",
+      "sourceMeaning": "Demolition / destruction",
+      "category": "Architecture",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-430"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-431",
+      "sourceForm": "ಬಾಲಕ",
+      "sourceMeaning": "Boy / child",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "boy",
+        "supp-boy-child"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-432",
+      "sourceForm": "ಬಾಲಿಕೆ",
+      "sourceMeaning": "Girl",
+      "category": "People and relations",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-432"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-433",
+      "sourceForm": "ಯುವಕ",
+      "sourceMeaning": "Young man",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-433"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-434",
+      "sourceForm": "ಯುವತಿ",
+      "sourceMeaning": "Young woman",
+      "category": "People and relations",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-434"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-435",
+      "sourceForm": "ವೃದ್ಧ",
+      "sourceMeaning": "Old man / elderly person",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-old-person"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-436",
+      "sourceForm": "ವೃದ್ಧೆ",
+      "sourceMeaning": "Old woman / elderly woman",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-436"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-437",
+      "sourceForm": "ಶಿಶು",
+      "sourceMeaning": "Infant / baby",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-infant"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-438",
+      "sourceForm": "ಸ್ವಾಮಿ",
+      "sourceMeaning": "Master / owner",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-438"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-439",
+      "sourceForm": "ಸೇವಕ",
+      "sourceMeaning": "Servant / worker",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-439"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-440",
+      "sourceForm": "ಪರಿವಾರ",
+      "sourceMeaning": "Family",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-440"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-441",
+      "sourceForm": "ಬಂಧು",
+      "sourceMeaning": "Relative",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "supp-relative"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-442",
+      "sourceForm": "ಪರಿಚಯ",
+      "sourceMeaning": "Acquaintance / familiarity",
+      "category": "People and relations",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-442"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-443",
+      "sourceForm": "ಅಪರಿಚಿತ",
+      "sourceMeaning": "Stranger",
+      "category": "People and relations",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-443"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-444",
+      "sourceForm": "ಸಜ್ಜನ",
+      "sourceMeaning": "Good person",
+      "category": "People and relations",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-444"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-445",
+      "sourceForm": "ದುರ್ಜನ",
+      "sourceMeaning": "Wicked person",
+      "category": "People and relations",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-445"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-446",
+      "sourceForm": "ಚೋರ",
+      "sourceMeaning": "Thief",
+      "category": "People and relations",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-446"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-447",
+      "sourceForm": "ಭಿಕ್ಷುಕ",
+      "sourceMeaning": "Beggar",
+      "category": "People and relations",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-447"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-448",
+      "sourceForm": "ವಣಿಕ",
+      "sourceMeaning": "Merchant",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-448"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-449",
+      "sourceForm": "ನಾಯಕ",
+      "sourceMeaning": "Leader",
+      "category": "People and relations",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-449"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-450",
+      "sourceForm": "ಅನುಯಾಯಿ",
+      "sourceMeaning": "Follower",
+      "category": "People and relations",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-450"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-451",
+      "sourceForm": "ಧರ್ಮ",
+      "sourceMeaning": "Righteousness / duty",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-451"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-452",
+      "sourceForm": "ಪಾಪ",
+      "sourceMeaning": "Sin / wrongdoing",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-452"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-453",
+      "sourceForm": "ಪುಣ್ಯ",
+      "sourceMeaning": "Virtue / merit",
+      "category": "Ethics",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-453"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-454",
+      "sourceForm": "ಕೀರ್ತಿ",
+      "sourceMeaning": "Fame / glory",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-454"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-455",
+      "sourceForm": "ಅಪಕೀರ್ತಿ",
+      "sourceMeaning": "Infamy / disgrace",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-455"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-456",
+      "sourceForm": "ಗೌರವ",
+      "sourceMeaning": "Respect / honour",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-456"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-457",
+      "sourceForm": "ಅವಮಾನ",
+      "sourceMeaning": "Insult / humiliation",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-457"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-458",
+      "sourceForm": "ವಿನಯ",
+      "sourceMeaning": "Humility / politeness",
+      "category": "Ethics",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-458"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-459",
+      "sourceForm": "ಔದಾರ್ಯ",
+      "sourceMeaning": "Generosity",
+      "category": "Ethics",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-459"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-460",
+      "sourceForm": "ಕೃಪಣತನ",
+      "sourceMeaning": "Miserliness",
+      "category": "Ethics",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-460"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-461",
+      "sourceForm": "ದ್ರೋಹ",
+      "sourceMeaning": "Betrayal / treachery",
+      "category": "Ethics",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-461"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-462",
+      "sourceForm": "ವಂಚನೆ",
+      "sourceMeaning": "Cheating / fraud",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-462"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-463",
+      "sourceForm": "ತ್ಯಾಗ",
+      "sourceMeaning": "Sacrifice / renunciation",
+      "category": "Ethics",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-463"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-464",
+      "sourceForm": "ಸಹನೆ",
+      "sourceMeaning": "Patience / tolerance",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-464"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-465",
+      "sourceForm": "ಉತ್ಸಾಹ",
+      "sourceMeaning": "Enthusiasm",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-465"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-466",
+      "sourceForm": "ಆಲಸ್ಯ",
+      "sourceMeaning": "Laziness",
+      "category": "Ethics",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-466"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-467",
+      "sourceForm": "ಶ್ರದ್ಧೆ",
+      "sourceMeaning": "Dedication / sincerity",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-467"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-468",
+      "sourceForm": "ನಿರ್ಲಕ್ಷ್ಯ",
+      "sourceMeaning": "Negligence",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-468"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-469",
+      "sourceForm": "ಅಸೂಯೆ",
+      "sourceMeaning": "Jealousy / envy",
+      "category": "Ethics",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-469"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-470",
+      "sourceForm": "ತೃಪ್ತಿ",
+      "sourceMeaning": "Satisfaction / contentment",
+      "category": "Ethics",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-470"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-471",
+      "sourceForm": "ಶ್ವಾಸ",
+      "sourceMeaning": "Breath",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "supp-breath"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-472",
+      "sourceForm": "ನಿಶ್ವಾಸ",
+      "sourceMeaning": "Exhale / sigh",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-472"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-473",
+      "sourceForm": "ಸ್ವೇದ",
+      "sourceMeaning": "Sweat",
+      "category": "Body",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-473"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-474",
+      "sourceForm": "ಅಶ್ರು",
+      "sourceMeaning": "Tears",
+      "category": "Body",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-474"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-475",
+      "sourceForm": "ಹಾಸ್ಯ",
+      "sourceMeaning": "Laughter / humour",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-475"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-476",
+      "sourceForm": "ರೋದನ",
+      "sourceMeaning": "Crying / weeping",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-476"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-477",
+      "sourceForm": "ಕಂಪನ",
+      "sourceMeaning": "Shivering / vibration",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-477"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-478",
+      "sourceForm": "ಮೂರ್ಛೆ",
+      "sourceMeaning": "Fainting",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-478"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-479",
+      "sourceForm": "ಜ್ವರ",
+      "sourceMeaning": "Fever",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-479"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-480",
+      "sourceForm": "ಕಾಸ",
+      "sourceMeaning": "Cough",
+      "category": "Body",
+      "candidateCount": 1,
+      "targetEntryIds": [
+        "contrib-480"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-481",
+      "sourceForm": "ಶ್ರಮ",
+      "sourceMeaning": "Fatigue / tiredness",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-481"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-482",
+      "sourceForm": "ಬಲ",
+      "sourceMeaning": "Strength",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-482"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-483",
+      "sourceForm": "ದುರ್ಬಲ",
+      "sourceMeaning": "Weak",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-483"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-484",
+      "sourceForm": "ಪುಷ್ಟ",
+      "sourceMeaning": "Healthy / well-built",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-484"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-485",
+      "sourceForm": "ಕೃಶ",
+      "sourceMeaning": "Thin / lean",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-485"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-486",
+      "sourceForm": "ಅಂಧ",
+      "sourceMeaning": "Blind",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-486"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-487",
+      "sourceForm": "ಬಧಿರ",
+      "sourceMeaning": "Deaf",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-487"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-488",
+      "sourceForm": "ಮೂಕ",
+      "sourceMeaning": "Mute / unable to speak",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-488"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-489",
+      "sourceForm": "ಪಂಗು",
+      "sourceMeaning": "Lame / disabled",
+      "category": "Body",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-489"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-490",
+      "sourceForm": "ಗರ್ಭ",
+      "sourceMeaning": "Womb / pregnancy",
+      "category": "Body",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-490"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-491",
+      "sourceForm": "ರಕ್ಷಣೆ",
+      "sourceMeaning": "Protection",
+      "category": "Actions",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-491"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-492",
+      "sourceForm": "ಭಕ್ಷಣೆ",
+      "sourceMeaning": "Eating",
+      "category": "Actions",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-492"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-493",
+      "sourceForm": "ಶೋಧನೆ",
+      "sourceMeaning": "Search / cleansing",
+      "category": "Actions",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-493"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-494",
+      "sourceForm": "ಪಾಲನೆ",
+      "sourceMeaning": "Nurturing / following",
+      "category": "Actions",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-494"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-495",
+      "sourceForm": "ಪೋಷಣೆ",
+      "sourceMeaning": "Nourishment",
+      "category": "Actions",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "no-alt-nutrition",
+        "nutrition"
+      ],
+      "mappingStatus": "represented"
+    },
+    {
+      "sourceId": "contrib-496",
+      "sourceForm": "ವಿಭಜನೆ",
+      "sourceMeaning": "Division",
+      "category": "Actions",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-496"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-497",
+      "sourceForm": "ಸಂಯೋಜನೆ",
+      "sourceMeaning": "Combination / joining",
+      "category": "Actions",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-497"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-498",
+      "sourceForm": "ಪರಿವರ್ತನೆ",
+      "sourceMeaning": "Change / transformation",
+      "category": "Actions",
+      "candidateCount": 2,
+      "targetEntryIds": [
+        "contrib-498"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-499",
+      "sourceForm": "ಸ್ಥಿರ",
+      "sourceMeaning": "Stable / steady",
+      "category": "Actions",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-499"
+      ],
+      "mappingStatus": "imported"
+    },
+    {
+      "sourceId": "contrib-500",
+      "sourceForm": "ಚಂಚಲ",
+      "sourceMeaning": "Unstable / restless",
+      "category": "Actions",
+      "candidateCount": 3,
+      "targetEntryIds": [
+        "contrib-500"
+      ],
+      "mappingStatus": "imported"
+    }
+  ]
+}

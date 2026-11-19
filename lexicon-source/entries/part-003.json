@@ -228,7 +228,8 @@
           "contributor-equivalents.js"
         ],
         "contributorSupplied": true
-      }
+      },
+      "senseKey": "body"
     },
     {
       "id": "joy",
@@ -373,7 +374,8 @@
         "sources": [
           "etymology-entries.js:origin-audit"
         ]
-      }
+      },
+      "senseKey": "joy"
     },
     {
       "id": "sorrow",
@@ -511,7 +513,8 @@
         "sources": [
           "etymology-entries.js:origin-audit"
         ]
-      }
+      },
+      "senseKey": "sorrow"
     },
     {
       "id": "love",
@@ -744,7 +747,8 @@
           "contributor-equivalents.js"
         ],
         "contributorSupplied": true
-      }
+      },
+      "senseKey": "love"
     },
     {
       "id": "fear",
@@ -973,7 +977,8 @@
           "contributor-equivalents.js"
         ],
         "contributorSupplied": true
-      }
+      },
+      "senseKey": "fear"
     },
     {
       "id": "desire",
@@ -1138,7 +1143,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "desire"
     },
     {
       "id": "dream",
@@ -1211,7 +1217,8 @@
         "sourceForm": "ಸ್ವಪ್ನ",
         "sourceMeaning": "Dream",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "dream"
     },
     {
       "id": "woman",
@@ -1284,7 +1291,8 @@
         "sourceForm": "ಸ್ತ್ರೀ",
         "sourceMeaning": "Woman",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "woman"
     },
     {
       "id": "man",
@@ -1357,7 +1365,8 @@
         "sourceForm": "ಪುರುಷ",
         "sourceMeaning": "Man",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "man"
     },
     {
       "id": "boy",
@@ -1430,7 +1439,8 @@
         "sourceForm": "ಬಾಲಕ",
         "sourceMeaning": "Boy",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "boy"
     },
     {
       "id": "girl",
@@ -1503,7 +1513,8 @@
         "sourceForm": "ಬಾಲಕಿ",
         "sourceMeaning": "Girl",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "girl"
     },
     {
       "id": "army",
@@ -1576,7 +1587,8 @@
         "sourceForm": "ಸೈನ್ಯ",
         "sourceMeaning": "Army",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "army"
     },
     {
       "id": "war",
@@ -1805,7 +1817,8 @@
           "contributor-equivalents.js"
         ],
         "contributorSupplied": true
-      }
+      },
+      "senseKey": "war"
     },
     {
       "id": "peace",
@@ -1970,7 +1983,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "peace"
     },
     {
       "id": "authority",
@@ -2135,7 +2149,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "authority"
     },
     {
       "id": "education",
@@ -2208,7 +2223,8 @@
         "sourceForm": "ಶಿಕ್ಷಣ",
         "sourceMeaning": "Education",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "education"
     },
     {
       "id": "mathematics",
@@ -2281,7 +2297,8 @@
         "sourceForm": "ಗಣಿತ",
         "sourceMeaning": "Mathematics",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "mathematics"
     },
     {
       "id": "science",
@@ -2354,7 +2371,8 @@
         "sourceForm": "ವಿಜ್ಞಾನ",
         "sourceMeaning": "Science",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "science"
     },
     {
       "id": "word",
@@ -2499,7 +2517,12 @@
         "sources": [
           "etymology-entries.js:origin-audit"
         ]
-      }
+      },
+      "senseKey": "word",
+      "sourceAliases": [
+        "ಭಾಷೆ",
+        "ಪದ"
+      ]
     },
     {
       "id": "sound",
@@ -2751,7 +2774,12 @@
           "contributor-equivalents.js"
         ],
         "contributorSupplied": true
-      }
+      },
+      "senseKey": "sound",
+      "sourceAliases": [
+        "ಧ್ವನಿ",
+        "ಶಬ್ದ"
+      ]
     },
     {
       "id": "problem",
@@ -2909,7 +2937,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "problem"
     },
     {
       "id": "help",
@@ -3037,7 +3066,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "help"
     },
     {
       "id": "progress",
@@ -3110,7 +3140,8 @@
         "sourceForm": "ಪ್ರಗತಿ",
         "sourceMeaning": "Progress",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "progress"
     },
     {
       "id": "development",
@@ -3183,7 +3214,8 @@
         "sourceForm": "ಅಭಿವೃದ್ಧಿ",
         "sourceMeaning": "Development / growth",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "development"
     },
     {
       "id": "system",
@@ -3256,7 +3288,8 @@
         "sourceForm": "ವ್ಯವಸ್ಥೆ",
         "sourceMeaning": "System / arrangement",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "system"
     },
     {
       "id": "connection",
@@ -3329,7 +3362,8 @@
         "sourceForm": "ಸಂಪರ್ಕ",
         "sourceMeaning": "Connection / contact",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "connection"
     },
     {
       "id": "newspaper",
@@ -3402,7 +3436,8 @@
         "sourceForm": "ಪತ್ರಿಕೆ",
         "sourceMeaning": "Newspaper / periodical",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "newspaper"
     },
     {
       "id": "supp-tongue",
@@ -3548,7 +3583,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-tongue"
     },
     {
       "id": "supp-finger",
@@ -3646,7 +3682,8 @@
         "sourceForm": "ಅಂಗುಲಿ",
         "sourceMeaning": "Finger",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-finger"
     },
     {
       "id": "supp-nail-finger",
@@ -3744,7 +3781,8 @@
         "sourceForm": "ನಖ",
         "sourceMeaning": "Nail (finger)",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-nail-finger"
     },
     {
       "id": "supp-face",
@@ -3842,7 +3880,8 @@
         "sourceForm": "ಮುಖ",
         "sourceMeaning": "Face",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-face"
     },
     {
       "id": "supp-heart",
@@ -4062,7 +4101,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-heart"
     },
     {
       "id": "supp-stomach",
@@ -4153,7 +4193,8 @@
         "sourceForm": "ಉದರ",
         "sourceMeaning": "Stomach",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-stomach"
     },
     {
       "id": "supp-bone",
@@ -4244,7 +4285,8 @@
         "sourceForm": "ಅಸ್ಥಿ",
         "sourceMeaning": "Bone",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-bone"
     },
     {
       "id": "supp-breath",
@@ -4342,7 +4384,8 @@
         "sourceForm": "ಶ್ವಾಸ",
         "sourceMeaning": "Breath",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-breath"
     },
     {
       "id": "supp-star",
@@ -4433,7 +4476,8 @@
         "sourceForm": "ನಕ್ಷತ್ರ",
         "sourceMeaning": "Star",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-star"
     },
     {
       "id": "supp-leaf",
@@ -4531,7 +4575,8 @@
         "sourceForm": "ಪರ್ಣ",
         "sourceMeaning": "Leaf",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-leaf"
     },
     {
       "id": "supp-seed",
@@ -4680,7 +4725,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-seed"
     },
     {
       "id": "supp-root",
@@ -4778,7 +4824,8 @@
         "sourceForm": "ಮೂಲ",
         "sourceMeaning": "Root",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-root"
     },
     {
       "id": "supp-grass",
@@ -4876,7 +4923,8 @@
         "sourceForm": "ತೃಣ",
         "sourceMeaning": "Grass",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-grass"
     },
     {
       "id": "supp-rock-boulder",
@@ -5066,7 +5114,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-rock-boulder"
     },
     {
       "id": "supp-stone",
@@ -5164,7 +5213,12 @@
         "sourceForm": "ಪಾಷಾಣ / ಕಲ್ಲು",
         "sourceMeaning": "Stone",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-stone",
+      "sourceAliases": [
+        "ಪಾಷಾಣ",
+        "ಕಲ್ಲು"
+      ]
     },
     {
       "id": "supp-silver",
@@ -5276,7 +5330,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-silver"
     },
     {
       "id": "supp-poison",
@@ -5374,7 +5429,8 @@
         "sourceForm": "ವಿಷ",
         "sourceMeaning": "Poison",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-poison"
     },
     {
       "id": "supp-light-brightness",
@@ -5560,7 +5616,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-light-brightness"
     },
     {
       "id": "supp-darkness",
@@ -5743,7 +5800,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-darkness"
     },
     {
       "id": "supp-cold",
@@ -5841,7 +5899,8 @@
         "sourceForm": "ಶೈತ್ಯ",
         "sourceMeaning": "Cold",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-cold"
     },
     {
       "id": "supp-smoke",
@@ -5939,7 +5998,8 @@
         "sourceForm": "ಧೂಮ",
         "sourceMeaning": "Smoke",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-smoke"
     },
     {
       "id": "supp-flame",
@@ -6037,7 +6097,8 @@
         "sourceForm": "ಜ್ವಾಲೆ",
         "sourceMeaning": "Flame",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-flame"
     },
     {
       "id": "supp-sand",
@@ -6135,7 +6196,8 @@
         "sourceForm": "ಮರಳು",
         "sourceMeaning": "Sand",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-sand"
     }
   ]
 }

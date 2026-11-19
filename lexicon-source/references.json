@@ -1,4 +1,55 @@
 {
   "schemaVersion": 1,
-  "references": []
+  "references": [
+    {
+      "id": "dedr-1278",
+      "type": "dictionary",
+      "title": "Dravidian Etymological Dictionary (DEDR), entry 1278",
+      "author": "T. Burrow and M. B. Emeneau",
+      "year": 1984,
+      "publisher": "Clarendon Press",
+      "locator": "DEDR 1278",
+      "note": "Bibliographic locator retained from contributor-supplied comparative evidence. Claim remains provisional pending editorial review."
+    },
+    {
+      "id": "dedr-1931",
+      "type": "dictionary",
+      "title": "Dravidian Etymological Dictionary (DEDR), entry 1931",
+      "author": "T. Burrow and M. B. Emeneau",
+      "year": 1984,
+      "publisher": "Clarendon Press",
+      "locator": "DEDR 1931",
+      "note": "Bibliographic locator retained from contributor-supplied comparative evidence. Claim remains provisional pending editorial review."
+    },
+    {
+      "id": "dedr-3309",
+      "type": "dictionary",
+      "title": "Dravidian Etymological Dictionary (DEDR), entry 3309",
+      "author": "T. Burrow and M. B. Emeneau",
+      "year": 1984,
+      "publisher": "Clarendon Press",
+      "locator": "DEDR 3309",
+      "note": "Bibliographic locator retained from contributor-supplied comparative evidence. Claim remains provisional pending editorial review."
+    },
+    {
+      "id": "dedr-3675",
+      "type": "dictionary",
+      "title": "Dravidian Etymological Dictionary (DEDR), entry 3675",
+      "author": "T. Burrow and M. B. Emeneau",
+      "year": 1984,
+      "publisher": "Clarendon Press",
+      "locator": "DEDR 3675",
+      "note": "Bibliographic locator retained from contributor-supplied comparative evidence. Claim remains provisional pending editorial review."
+    },
+    {
+      "id": "dedr-4885",
+      "type": "dictionary",
+      "title": "Dravidian Etymological Dictionary (DEDR), entry 4885",
+      "author": "T. Burrow and M. B. Emeneau",
+      "year": 1984,
+      "publisher": "Clarendon Press",
+      "locator": "DEDR 4885",
+      "note": "Bibliographic locator retained from contributor-supplied comparative evidence. Claim remains provisional pending editorial review."
+    }
+  ]
 }

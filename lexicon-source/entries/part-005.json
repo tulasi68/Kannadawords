@@ -182,7 +182,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-work"
     },
     {
       "id": "supp-help",
@@ -280,7 +281,8 @@
         "sourceForm": "ಸಹಾಯ",
         "sourceMeaning": "Help",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-help"
     },
     {
       "id": "supp-beginning-act",
@@ -463,7 +465,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-beginning-act"
     },
     {
       "id": "supp-journey",
@@ -554,7 +557,8 @@
         "sourceForm": "ಪ್ರಯಾಣ",
         "sourceMeaning": "Journey",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-journey"
     },
     {
       "id": "supp-number",
@@ -652,7 +656,8 @@
         "sourceForm": "ಸಂಖ್ಯೆ",
         "sourceMeaning": "Number",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-number"
     },
     {
       "id": "supp-birth",
@@ -805,7 +810,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-birth"
     },
     {
       "id": "supp-death",
@@ -903,7 +909,8 @@
         "sourceForm": "ಮರಣ",
         "sourceMeaning": "Death",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-death"
     },
     {
       "id": "supp-learning",
@@ -1001,7 +1008,8 @@
         "sourceForm": "ವಿದ್ಯಾ",
         "sourceMeaning": "Learning",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-learning"
     },
     {
       "id": "supp-book",
@@ -1092,7 +1100,8 @@
         "sourceForm": "ಪುಸ್ತಕ",
         "sourceMeaning": "Book",
         "sourceDataset": "etymology-entries.js:origin-audit"
-      }
+      },
+      "senseKey": "supp-book"
     },
     {
       "id": "supp-letter-script",
@@ -1275,7 +1284,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-letter-script"
     },
     {
       "id": "supp-doctor",
@@ -1443,7 +1453,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-doctor"
     },
     {
       "id": "supp-load-weight",
@@ -1629,7 +1640,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-load-weight"
     },
     {
       "id": "supp-service",
@@ -1834,7 +1846,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-service"
     },
     {
       "id": "supp-story",
@@ -2047,7 +2060,8 @@
         "sources": [
           "contributor-equivalents.js"
         ]
-      }
+      },
+      "senseKey": "supp-story"
     },
     {
       "id": "contrib-003",
@@ -2151,7 +2165,8 @@
         "sourceMeaning": "Solution",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-003"
     },
     {
       "id": "contrib-007",
@@ -2285,7 +2300,8 @@
         "sourceMeaning": "Opportunity / space",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-007"
     },
     {
       "id": "contrib-008",
@@ -2434,7 +2450,8 @@
         "sourceMeaning": "Method / custom",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-008"
     },
     {
       "id": "contrib-009",
@@ -2568,7 +2585,8 @@
         "sourceMeaning": "Difference",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-009"
     },
     {
       "id": "contrib-010",
@@ -2702,7 +2720,8 @@
         "sourceMeaning": "Experience",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-010"
     },
     {
       "id": "contrib-011",
@@ -2836,7 +2855,8 @@
         "sourceMeaning": "Anger",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-011"
     },
     {
       "id": "contrib-014",
@@ -2970,7 +2990,8 @@
         "sourceMeaning": "Hatred",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-014"
     },
     {
       "id": "contrib-015",
@@ -3104,7 +3125,8 @@
         "sourceMeaning": "Courage",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-015"
     },
     {
       "id": "contrib-017",
@@ -3208,7 +3230,8 @@
         "sourceMeaning": "Trust / belief",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-017"
     },
     {
       "id": "contrib-018",
@@ -3342,7 +3365,8 @@
         "sourceMeaning": "Arrogance",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-018"
     },
     {
       "id": "contrib-019",
@@ -3476,7 +3500,8 @@
         "sourceMeaning": "Compassion",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-019"
     },
     {
       "id": "contrib-028",
@@ -3580,7 +3605,8 @@
         "sourceMeaning": "Leaf",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-028"
     },
     {
       "id": "contrib-030",
@@ -3684,7 +3710,8 @@
         "sourceMeaning": "Animal / beast",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-030"
     },
     {
       "id": "contrib-031",
@@ -3818,7 +3845,8 @@
         "sourceMeaning": "Time",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-031"
     },
     {
       "id": "contrib-034",
@@ -3952,7 +3980,8 @@
         "sourceMeaning": "Morning",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-034"
     },
     {
       "id": "contrib-035",
@@ -4086,7 +4115,8 @@
         "sourceMeaning": "Evening",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-035"
     },
     {
       "id": "contrib-037",
@@ -4190,7 +4220,8 @@
         "sourceMeaning": "Year",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-037"
     },
     {
       "id": "contrib-038",
@@ -4294,7 +4325,8 @@
         "sourceMeaning": "Future",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-038"
     },
     {
       "id": "contrib-039",
@@ -4398,7 +4430,8 @@
         "sourceMeaning": "Past",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-039"
     },
     {
       "id": "contrib-040",
@@ -4502,7 +4535,8 @@
         "sourceMeaning": "Middle / centre",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-040"
     },
     {
       "id": "contrib-051",
@@ -4636,7 +4670,8 @@
         "sourceMeaning": "Mother",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-051"
     },
     {
       "id": "contrib-052",
@@ -4770,7 +4805,8 @@
         "sourceMeaning": "Father",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-052"
     },
     {
       "id": "contrib-053",
@@ -4874,7 +4910,8 @@
         "sourceMeaning": "Son",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-053"
     },
     {
       "id": "contrib-054",
@@ -4978,7 +5015,8 @@
         "sourceMeaning": "Daughter",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-054"
     },
     {
       "id": "contrib-055",
@@ -5112,7 +5150,8 @@
         "sourceMeaning": "Brother",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-055"
     },
     {
       "id": "contrib-056",
@@ -5246,7 +5285,8 @@
         "sourceMeaning": "Sister",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-056"
     },
     {
       "id": "contrib-058",
@@ -5350,7 +5390,8 @@
         "sourceMeaning": "Wife",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-058"
     },
     {
       "id": "contrib-059",
@@ -5484,7 +5525,8 @@
         "sourceMeaning": "Guest",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-059"
     },
     {
       "id": "contrib-060",
@@ -5618,7 +5660,8 @@
         "sourceMeaning": "Society",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-060"
     },
     {
       "id": "contrib-062",
@@ -5752,7 +5795,8 @@
         "sourceMeaning": "Order / command",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-062"
     },
     {
       "id": "contrib-063",
@@ -5886,7 +5930,8 @@
         "sourceMeaning": "Rule",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-063"
     },
     {
       "id": "contrib-065",
@@ -6020,7 +6065,8 @@
         "sourceMeaning": "Injustice",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-065"
     },
     {
       "id": "contrib-067",
@@ -6154,7 +6200,8 @@
         "sourceMeaning": "Crime / offence",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-067"
     },
     {
       "id": "contrib-068",
@@ -6288,7 +6335,8 @@
         "sourceMeaning": "Meeting / assembly",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-068"
     },
     {
       "id": "contrib-070",
@@ -6392,7 +6440,8 @@
         "sourceMeaning": "Freedom",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-070"
     },
     {
       "id": "contrib-072",
@@ -6526,7 +6575,8 @@
         "sourceMeaning": "Teacher",
         "contributorSupplied": true,
         "sourceDataset": "contributor-equivalents.js"
-      }
+      },
+      "senseKey": "contrib-072"
     }
   ]
 }

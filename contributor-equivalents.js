@@ -543,12 +543,13 @@ const contributorWordEntries = [
       {
         "id": "contrib-013-1",
         "word": "ಒಲವು",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "DEDR 1006 records Kannada olavu/olume and Tulu olame/olume for pleasure, affection, love and kindness. Tamil direct equivalent and Proto-Dravidian reconstruction are not established by this entry.",
+        "viability": "clean",
+        "tulu": "olame / olume (affection, love, kindness; DEDR 1006)",
         "etymologyParts": [
           {
             "form": "ಒಲವು",
-            "etymology": "unknown"
+            "etymology": "dravidian"
           }
         ]
       },

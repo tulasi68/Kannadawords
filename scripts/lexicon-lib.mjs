@@ -135,18 +135,26 @@ export function buildArtifacts({ entries, config }) {
   }
   const categoryIds = {};
   for (const entry of entries) (categoryIds[entry.category] ||= []).push(entry.id);
-  const writingIndex = {
-    schemaVersion:2,buildId,
-    entries:entries.filter(entry => !entry.scope.noAlternative && !entry.scope.outsideTargetOrigin).map(entry => ({
-      id:entry.id,sourceForms:sourceForms(entry),meaning:entry.sourceMeaning,
-      candidates:entry.candidates.filter(c => c.form && !c.flags.noAlternative && !c.flags.outsideTargetOrigin).map(c => ({
-        word:c.form,origin:candidateOrigin(c),note:c.note||"",
-        proto:c.comparativeEvidence.find(e=>e.language==="proto-dravidian")?.form||"",
-        tamil:c.comparativeEvidence.find(e=>e.language==="ta")?.form||"",
-        tulu:c.comparativeEvidence.find(e=>e.language==="tcy")?.form||""
-      }))
-    }))
-  };
+  const bySourceForm = new Map();
+  entries.filter(entry => !entry.scope.noAlternative && !entry.scope.outsideTargetOrigin).forEach(entry => {
+    const candidates = entry.candidates.filter(candidate => candidate.form && !candidate.flags.noAlternative && !candidate.flags.outsideTargetOrigin)
+      .map(candidate => ({
+        word:candidate.form,origin:candidateOrigin(candidate),note:candidate.note||"",
+        proto:candidate.comparativeEvidence.find(item=>item.language==="proto-dravidian")?.form||"",
+        tamil:candidate.comparativeEvidence.find(item=>item.language==="ta")?.form||"",
+        tulu:candidate.comparativeEvidence.find(item=>item.language==="tcy")?.form||""
+      }));
+    sourceForms(entry).forEach(form => {
+      const key = form.normalize("NFC");
+      const existing = bySourceForm.get(key) || {sourceForms:[form],meaning:entry.sourceMeaning||"",candidates:[]};
+      candidates.forEach(candidate => {
+        if (!existing.candidates.some(item=>item.word===candidate.word)) existing.candidates.push(candidate);
+      });
+      if (!existing.meaning && entry.sourceMeaning) existing.meaning=entry.sourceMeaning;
+      bySourceForm.set(key,existing);
+    });
+  });
+  const writingIndex = { schemaVersion:2,buildId,entries:[...bySourceForm.values()] };
   const searchContent = JSON.stringify(writingIndex);
   artifacts.set("lexicon-dist/writing-index.json",searchContent);
   const manifest = {

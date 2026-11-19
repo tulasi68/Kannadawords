@@ -156,10 +156,10 @@ const wordEntries = [
       {
         id: "tindi",
         word: "ತಿಂಡಿ",
-        note: "Native Kannada; food or something eaten, especially a snack or light meal",
-        proto: null,
-        tamil: "திண்டி (tiṇṭi)",
-        tulu: null
+        note: "DEDR 3263: Kannada tiṇḍi, Tamil tiṇṭi and Tulu tīnů/tīni belong to the Dravidian eat/food word-family; the listed Proto-Dravidian form is the verbal root.",
+        proto: "*tiHn- (to eat; DEDR 3263)",
+        tamil: "திண்டி (tiṇṭi; eatables)",
+        tulu: "tīnů / tīni (food, meal; DEDR 3263)"
       }
     ]
   },
@@ -318,10 +318,10 @@ const wordEntries = [
       {
         id: "mannu",
         word: "ಮಣ್ಣು",
-        note: "Native word for soil or earth; context-specific rather than an exact synonym for the planet",
+        note: "DEDR 4666 records Kannada maṇ/maṇṇu, Tamil maṇ and Tulu maṇṇů for earth, soil or clay; use for ground/soil rather than the planet as a whole.",
         proto: null,
-        tamil: "மண் (maṇ)",
-        tulu: null
+        tamil: "மண் (maṇ; soil, earth; DEDR 4666)",
+        tulu: "maṇṇů (soil, earth, clay; DEDR 4666)"
       }
     ]
   },

@@ -48,9 +48,18 @@ export function validateLexicon({ entries, references }) {
   const errors = [];
   const warnings = [];
   const entryIds = new Set();
-  const referenceIds = new Set(references.map(ref => ref.id));
-  const fail = (where, message) => errors.push(`${where}: ${message}`);
+  const referenceIds = new Set();
+  const fail = (where, message) => errors.push(where + ": " + message);
   if (!Array.isArray(entries)) return { errors:["entries must be an array"], warnings };
+  if (!Array.isArray(references)) return { errors:["references must be an array"], warnings };
+  for (const [i, reference] of references.entries()) {
+    const at = "references[" + i + "]";
+    if (!reference || !/^[a-z0-9][a-z0-9-]*$/.test(reference.id || "")) fail(at, "reference needs a stable lowercase ID");
+    else if (referenceIds.has(reference.id)) fail(at, "duplicate reference ID '" + reference.id + "'");
+    else referenceIds.add(reference.id);
+    if (!isText(reference.title)) fail(at, "title is required");
+    if (!["dictionary","corpus","inscription","publication","website","contributor","other"].includes(reference.type)) fail(at, "invalid reference type");
+  }
   for (const [i, entry] of entries.entries()) {
     const at = `entries[${i}]`;
     if (!entry || typeof entry !== "object") { fail(at, "must be an object"); continue; }

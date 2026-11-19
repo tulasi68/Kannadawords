@@ -21,47 +21,6 @@
     if (!response.ok) throw new Error("Lexicon request failed (" + response.status + "): " + url);
     return response.json();
   }
-  function comparativeForm(candidate, language) {
-    return (candidate.comparativeEvidence || []).find(item => item.language === language)?.form || "";
-  }
-  function toDisplayCandidate(candidate) {
-    const result = {
-      ...(candidate.legacyFields || {}),
-      id: candidate.id,
-      word: candidate.form,
-      note: candidate.note || "",
-      etymologyParts: candidate.etymologyParts || [],
-      viability: candidate.viability || undefined,
-      tamil: comparativeForm(candidate, "ta") || null,
-      tulu: comparativeForm(candidate, "tcy") || null,
-      proto: comparativeForm(candidate, "proto-dravidian") || null,
-      evidenceVariants: candidate.evidenceVariants || {}
-    };
-    if (candidate.flags?.noAlternative) result.isNoAlternative = true;
-    if (candidate.flags?.outsideTargetOrigin) result.isScopeAudit = true;
-    if (candidate.editorial?.note) result.editorialNote = candidate.editorial.note;
-    return result;
-  }
-  function toDisplayEntry(entry) {
-    const result = {
-      ...(entry.legacyFields || {}),
-      id: entry.id,
-      sanskrit: entry.sourceForm,
-      meaning: entry.sourceMeaning,
-      category: entry.category,
-      sourceEtymology: entry.sourceEtymology || undefined,
-      alternatives: entry.candidates.map(toDisplayCandidate)
-    };
-    if (entry.historicalEvidence?.form) result.halegannada = entry.historicalEvidence.form;
-    if (entry.historicalEvidence?.legacyEvidence) result.halegannadaEvidence = entry.historicalEvidence.legacyEvidence;
-    if (entry.historicalEvidence?.legacyVariants?.length) result.halegannadaVariants = entry.historicalEvidence.legacyVariants;
-    if (entry.scope?.noAlternative) result.noAlternative = true;
-    if (entry.scope?.outsideTargetOrigin) result.scopeAudit = true;
-    if (entry.scope?.note) result.scopeNote = entry.scope.note;
-    if (entry.rejectedCandidates?.length) result.rejectedAlternatives = entry.rejectedCandidates;
-    if (entry.editorial?.note) result.editorialNote = entry.editorial.note;
-    return result;
-  }
   async function initialize() {
     if (initPromise) return initPromise;
     initPromise = (async () => {
@@ -119,7 +78,7 @@
     maps.forEach(map => map.forEach((value,key) => records.set(key,value)));
     const missing = pageIds.filter(id => !records.has(id));
     if (missing.length) throw new Error("Lexicon page is incomplete; missing IDs: " + missing.join(", "));
-    return { entries: pageIds.map(id => toDisplayEntry(records.get(id))), total, page, pageSize };
+    return { entries: pageIds.map(id => window.KannadaLexiconDisplayAdapter.toDisplayEntry(records.get(id))), total, page, pageSize };
   }
   function getCategories() {
     return manifest ? Object.keys(manifest.categoryIds) : [];

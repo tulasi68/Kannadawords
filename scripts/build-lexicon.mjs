@@ -2,12 +2,12 @@ import fs from "node:fs";
 import path from "node:path";
 import { DIST_DIR, buildArtifacts, validateSource } from "./lexicon-lib.mjs";
 
-const { entries, config, validation } = validateSource();
+const { entries, config, references, validation } = validateSource();
 if (validation.errors.length) {
   console.error(validation.errors.join("\n"));
   process.exit(1);
 }
-const built = buildArtifacts({entries,config,references:validateSource().references});
+const built = buildArtifacts({entries,config,references});
 const check = process.argv.includes("--check");
 let stale = false;
 for (const [relative, content] of built.artifacts) {

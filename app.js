@@ -16,14 +16,39 @@ const stats = document.getElementById("stats");
 // then append new terms and the explicitly labelled no-alternative records.
 // The 109 supplemental records were appended as a nested array inside originAuditEntries.
  // Flatten that nested array and merge those records into the same voting dataset as the original audited entries.
-const allAuditedWordEntries = [
+const existingOriginRecords = [
   ...(typeof auditedWordEntries === "undefined" ? [] : auditedWordEntries),
   ...(typeof originAuditEntries === "undefined" ? [] : originAuditEntries).flatMap(item => {
     if (Array.isArray(item)) return item;
-    // The earlier 29 supplemental records are direct array members; the later
-    // 109 records are grouped in a nested array. Both use sourceMeaning + alternatives.
     return item && item.sourceMeaning && Array.isArray(item.alternatives) ? [item] : [];
   })
+];
+const lexicalFormKey = value => String(value || "").normalize("NFC").replace(/\s+/g, "");
+const lexicalFormParts = value => String(value || "")
+  .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)
+  .map(lexicalFormKey).filter(Boolean);
+const contributorEntriesForMerge = (typeof contributorWordEntries === "undefined" ? [] : contributorWordEntries).map(item => {
+  const key = lexicalFormKey(item.sourceForm);
+  const existingAudit = existingOriginRecords.find(entry =>
+    lexicalFormParts(entry.sourceForm).includes(key) ||
+    lexicalFormParts(entry.sourceEtymology && entry.sourceEtymology.form).includes(key)
+  );
+  const existingBase = wordEntries.find(entry => lexicalFormParts(entry.sanskrit).includes(key));
+  const existing = existingAudit || existingBase;
+  return {
+    ...item,
+    id: existing && existing.id ? existing.id : item.id,
+    sourceForm: existingAudit && existingAudit.sourceForm ? existingAudit.sourceForm : item.sourceForm,
+    sourceMeaning: existingAudit && existingAudit.sourceMeaning ? existingAudit.sourceMeaning :
+      (existingBase && existingBase.meaning ? existingBase.meaning : item.sourceMeaning),
+    sourceEtymology: existingAudit && existingAudit.sourceEtymology ? existingAudit.sourceEtymology :
+      (existingBase && existingBase.sourceEtymology ? existingBase.sourceEtymology : item.sourceEtymology),
+    contributorSupplied: true
+  };
+});
+const allAuditedWordEntries = [
+  ...existingOriginRecords,
+  ...contributorEntriesForMerge
 ];
 const auditedById = allAuditedWordEntries.reduce((map, item) => {
   const previous = map[item.id];
@@ -68,24 +93,22 @@ const votingEntries = wordEntries.map(entry => {
     meaning: audit.sourceMeaning || entry.meaning,
     category: categoryForAudited(audit) || entry.category,
     sourceEtymology: audit.sourceEtymology,
-    alternatives: (audit.alternatives || []).map(alt => {
-      // The audited record owns the Kannada candidate and its etymology labels.
-      // Language equivalents describe the source concept, not necessarily the
-      // selected Kannada replacement. Match by candidate first; if the audit
-      // uses a different Kannada form, retain the original card's lead
-      // equivalent rather than rendering Tamil/Tulu as blank.
-      const baseAlternatives = entry.alternatives || [];
-      const base = baseAlternatives.find(candidate =>
-        candidate.word === alt.word || candidate.id === alt.id
-      ) || baseAlternatives[0] || {};
-      return {
-        ...base,
-        ...alt,
-        tamil: alt.tamil || base.tamil || null,
-        tulu: alt.tulu || base.tulu || null,
-        proto: alt.proto || base.proto || null
-      };
-    }),
+    alternatives: [...(entry.alternatives || []), ...(audit.alternatives || [])]
+      .filter((alt, index, all) => all.findIndex(candidate => candidate.word === alt.word) === index)
+      .map(alt => {
+        // Preserve original card metadata while adding audited and contributor-supplied candidates.
+        const baseAlternatives = entry.alternatives || [];
+        const base = baseAlternatives.find(candidate =>
+          candidate.word === alt.word || candidate.id === alt.id
+        ) || baseAlternatives[0] || {};
+        return {
+          ...base,
+          ...alt,
+          tamil: alt.tamil || base.tamil || null,
+          tulu: alt.tulu || base.tulu || null,
+          proto: alt.proto || base.proto || null
+        };
+      }),
     halegannada: audit.halegannada || entry.halegannada,
     halegannadaEvidence: audit.halegannadaEvidence || entry.halegannadaEvidence,
     rejectedAlternatives: audit.rejectedAlternatives || [],

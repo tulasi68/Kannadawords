@@ -101,7 +101,7 @@ export function validateLexicon({ entries, references }) {
       for (const [k, evidence] of (candidate.comparativeEvidence || []).entries()) {
         const ea = `${ca}.comparativeEvidence[${k}]`;
         if (!allowedLanguages.has(evidence.language)) fail(ea, "unsupported language code");
-        if (evidence.status !== "not_found" && !isText(evidence.form)) fail(ea, "evidence form is required unless status is not_found");
+        if (!isText(evidence.form)) fail(ea, "evidence form is required");
         if (!allowedRelationships.has(evidence.relationship)) fail(ea, "invalid evidence relationship");
         if (!allowedEvidenceStatuses.has(evidence.status)) fail(ea, "invalid evidence status");
         if (!Array.isArray(evidence.sourceRefs)) fail(ea, "sourceRefs must be an array");

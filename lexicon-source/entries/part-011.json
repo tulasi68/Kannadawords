@@ -193,9 +193,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-354",
@@ -385,9 +383,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-355",
@@ -521,9 +517,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-356",
@@ -657,9 +651,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-357",
@@ -793,9 +785,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-358",
@@ -929,9 +919,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-359",
@@ -1065,9 +1053,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-360",
@@ -1248,9 +1234,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-361",
@@ -1372,14 +1356,6 @@
           "viability": "proposed",
           "comparativeEvidence": [
             {
-              "language": "ta",
-              "form": "",
-              "relationship": "unclassified",
-              "status": "not_found",
-              "sourceRefs": [],
-              "note": "Cited entry did not list a form; retained as a negative search result."
-            },
-            {
               "language": "tcy",
               "form": "duṇḍu",
               "relationship": "attested_form",
@@ -1388,14 +1364,6 @@
                 "dedr-3309"
               ],
               "note": "Gloss: round, globular Legacy citation: DEDR 3309 Contributor reports this as attested/related; retained as provisional pending editorial review."
-            },
-            {
-              "language": "proto-dravidian",
-              "form": "",
-              "relationship": "unclassified",
-              "status": "not_found",
-              "sourceRefs": [],
-              "note": "Cited entry did not list a form; retained as a negative search result."
             },
             {
               "language": "kn",
@@ -1477,9 +1445,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-362",
@@ -1613,9 +1579,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-363",
@@ -1702,9 +1666,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-364",
@@ -1885,9 +1847,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-365",
@@ -2068,9 +2028,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-366",
@@ -2204,9 +2162,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-367",
@@ -2387,9 +2343,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-368",
@@ -2570,9 +2524,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-369",
@@ -2753,9 +2705,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-370",
@@ -2936,9 +2886,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-372",
@@ -3072,9 +3020,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-373",
@@ -3208,9 +3154,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-374",
@@ -3369,9 +3313,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-376",
@@ -3458,9 +3400,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-377",
@@ -3547,9 +3487,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-378",
@@ -3636,9 +3574,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-379",
@@ -3725,9 +3661,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-380",
@@ -3814,9 +3748,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-382",
@@ -3903,9 +3835,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-383",
@@ -3992,9 +3922,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-384",
@@ -4081,9 +4009,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-387",
@@ -4217,9 +4143,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-388",
@@ -4400,9 +4324,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-389",
@@ -4583,9 +4505,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-390",
@@ -4719,9 +4639,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-391",
@@ -4902,9 +4820,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-392",
@@ -5038,9 +4954,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-393",
@@ -5174,9 +5088,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-394",
@@ -5310,9 +5222,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-395",
@@ -5493,9 +5403,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-396",
@@ -5676,9 +5584,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-397",
@@ -5812,9 +5718,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-398",
@@ -5948,9 +5852,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-399",
@@ -6131,9 +6033,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-400",
@@ -6314,9 +6214,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-401",
@@ -6497,9 +6395,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-402",
@@ -6680,9 +6576,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-403",
@@ -6863,9 +6757,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-404",
@@ -6999,9 +6891,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-405",
@@ -7135,9 +7025,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-406",
@@ -7271,9 +7159,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     },
     {
       "id": "contrib-407",
@@ -7454,9 +7340,7 @@
         ],
         "sourceRefs": []
       },
-      "legacyFields": {
-        "sourceClassification": "Contributor-supplied Sanskrit tatsama candidate; source etymology pending independent verification."
-      }
+      "legacyFields": {}
     }
   ]
 }

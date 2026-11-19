@@ -42,7 +42,7 @@
         },
         "form": {
           "type": "string",
-          "minLength": 0
+          "minLength": 1
         },
         "relationship": {
           "enum": [
@@ -76,37 +76,7 @@
         "note": {
           "type": "string"
         }
-      },
-      "allOf": [
-        {
-          "if": {
-            "properties": {
-              "status": {
-                "const": "not_found"
-              }
-            },
-            "required": [
-              "status"
-            ]
-          },
-          "then": {
-            "properties": {
-              "form": {
-                "type": "string",
-                "minLength": 0
-              }
-            }
-          },
-          "else": {
-            "properties": {
-              "form": {
-                "type": "string",
-                "minLength": 1
-              }
-            }
-          }
-        }
-      ]
+      }
     },
     "provenance": {
       "type": "object",

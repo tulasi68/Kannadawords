@@ -32,6 +32,7 @@ test("schema declares JSON Schema 2020-12 and the canonical required fields", ()
   assert.ok(schema.$defs.candidate.required.includes("comparativeEvidence"));
   assert.ok(schema.$defs.candidate.properties.originClassification.enum.includes("verified_dravidian"));
   assert.ok(schema.$defs.entry.properties.sourceAliases);
+  assert.equal(schema.$defs.entry.properties.sourceEtymology.oneOf.some(item=>item.type==="array"),true);
 });
 
 test("verified comparative evidence cannot be accepted without a source reference", () => {
@@ -134,6 +135,10 @@ test("writing index keeps unreviewed candidates uncertain and honours explicit a
   let index = JSON.parse(built.artifacts.get("lexicon-dist/writing-index.json"));
   assert.ok(index.entries.some(row=>row.sourceForms.includes("form-one / form-two")));
   assert.ok(index.entries.some(row=>row.sourceForms.includes("curated-alias")));
+  entry.sourceEtymology = [{form:"historic-form",etymology:"unknown"}];
+  built = buildArtifacts({entries:[entry],config:loaded.config,references:loaded.references});
+  index = JSON.parse(built.artifacts.get("lexicon-dist/writing-index.json"));
+  assert.ok(index.entries.some(row=>row.sourceForms.includes("historic-form")));
   assert.ok(!index.entries.some(row=>row.sourceForms.includes("form-one")));
   assert.equal(index.entries.find(row=>row.sourceForms.includes("form-one / form-two")).candidates[0].origin,"uncertain");
   candidate.reviewStatus = "verified";

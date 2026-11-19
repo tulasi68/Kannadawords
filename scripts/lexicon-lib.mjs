@@ -120,7 +120,10 @@ export function validateLexicon({ entries, references }) {
 }
 function sourceForms(entry) {
   const aliases = Array.isArray(entry.sourceAliases) ? entry.sourceAliases : [];
-  const values = [...aliases, entry.sourceForm, entry.sourceEtymology?.form].filter(isText);
+  const etymologyForms = Array.isArray(entry.sourceEtymology)
+    ? entry.sourceEtymology.map(item => item?.form)
+    : [typeof entry.sourceEtymology === "string" ? entry.sourceEtymology : entry.sourceEtymology?.form];
+  const values = [...aliases, entry.sourceForm, ...etymologyForms].filter(isText);
   return [...new Set(values.map(value => value.normalize("NFC").trim()).filter(value => value.length >= 2))];
 }
 function candidateOrigin(candidate) {

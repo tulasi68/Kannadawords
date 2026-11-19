@@ -296,9 +296,11 @@ Rules for this transition:
 1. `lexicon-data.js` is the only place allowed to assemble the vocabulary shown in the UI.
 2. `app.js` must not independently merge source files, rebuild categories, or create a second vocabulary list.
 3. Every vocabulary panel and search/filter view must derive from the same `votingEntries` collection.
-4. Legacy files are inputs during migration, not independent UI data sources. A later migration will replace them with versioned canonical records and a reproducible build/export step.
-5. Do not silently discard duplicate candidates, source provenance, votes, senses or conflicting evidence during that migration.
-6. Content/etymology corrections are a separate editorial phase; this architecture work must preserve current content rather than silently “correct” it.
+4. The display collection must contain exactly one entry per stable entry ID. Duplicate source rows are merged into that entry; different IDs are not merged merely because their forms look alike.
+5. Every displayed entry must have a non-empty stable ID. Invalid container records must not become phantom vocabulary entries.
+6. Legacy files are inputs during migration, not independent UI data sources. A later migration will replace them with versioned canonical records and a reproducible build/export step.
+7. Do not silently discard candidate IDs, source provenance, votes, senses or conflicting evidence during that migration.
+8. Content/etymology corrections are a separate editorial phase; this architecture work must preserve current content rather than silently “correct” it.
 
 This is an intentional intermediate step, not yet the final 7,000-entry storage design. The next stage is a versioned canonical record format, validation, migration tooling and a generated static dataset (with optional shards/indexes for efficient loading). The generated dataset—not a second runtime merge—will then become the direct UI input.
 

@@ -70,6 +70,7 @@ export function validateLexicon({ entries, references }) {
     if (!Array.isArray(entry.candidates)) { fail(at, "candidates must be an array"); continue; }
     if (!entry.editorial || !allowedReviewStatuses.has(entry.editorial.reviewStatus)) fail(at, "invalid editorial.reviewStatus");
     if (!entry.provenance || !Array.isArray(entry.provenance.sourceRefs)) fail(at, "provenance.sourceRefs must be an array");
+    if (entry.editorial?.reviewStatus === "verified" && !(entry.provenance?.sourceRefs || []).length && !entry.candidates.some(candidate => (candidate.comparativeEvidence || []).some(e => e.status === "verified" && e.sourceRefs.length))) fail(at, "verified entry requires source references");
     for (const ref of entry.provenance?.sourceRefs || []) if (!referenceIds.has(ref)) fail(at, `unknown source reference '${ref}'`);
     const candidateIds = new Set();
     for (const [j, candidate] of entry.candidates.entries()) {

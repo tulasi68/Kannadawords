@@ -12,9 +12,13 @@ let suggestionSubmittedEntries = new Set();
 
 const stats = document.getElementById("stats");
 
-// The display dataset is assembled once in lexicon-data.js.
-// All vocabulary UI panels consume the shared votingEntries collection.
-const etymologyName = code => (typeof etymologyLabels !== "undefined" && etymologyLabels[code]) || code || "Unknown";
+// The browser store is the only vocabulary provider. votingEntries contains the
+// current page only; the complete dataset is never assembled in app.js.
+let votingEntries = [];
+const etymologyLabels = {};
+let lexiconPageRequest = 0;
+let lexiconInitialized = false;
+const etymologyName = code => etymologyLabels[code] || code || "Unknown";
 
 function loadState() {
   try {
@@ -159,19 +163,17 @@ function updateWordPagination(total) {
   if (nextPageButton) nextPageButton.disabled = currentWordPage >= pageCount - 1;
   if (pagination) pagination.classList.toggle("hidden", total <= WORDS_PER_PAGE);
 }
-function changeWordPage(direction) {
-  const cat = categorySelect.value;
-  const total = votingEntries.filter(e => cat === "all" || e.category === cat).length;
+async function changeWordPage(direction) {
+  await window.KannadaLexiconStore.ready();
+  const total = window.KannadaLexiconStore.getCategoryCount(categorySelect.value);
   const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
   currentWordPage = Math.max(0, Math.min(pageCount - 1, currentWordPage + direction));
-  filterAndRender();
+  await filterAndRender();
   document.getElementById("words-panel").scrollIntoView({behavior:"smooth",block:"start"});
 }
 window.changeWordPage = changeWordPage;
 
-function render(entries) {
-  const totalEntries = entries.length;
-  entries = entries.slice(currentWordPage * WORDS_PER_PAGE, (currentWordPage + 1) * WORDS_PER_PAGE);
+function render(entries, totalEntries = entries.length) {
   updateWordPagination(totalEntries);
   grid.innerHTML = "";
   if (!entries.length) {
@@ -392,42 +394,12 @@ function achchaAlternativeKind(alt) {
  if(alt.proto||/native|dravidian|desi|core/i.test(alt.note||""))return "verified_dravidian";
  return "uncertain";
 }
-function buildAchchaLexicon(text = ""){
- // Include the complete reviewed vocabulary. The former .slice(0,120) silently
- // discarded later entries, so many Sanskrit-derived words could never match.
- const bySourceForm = new Map();
- const entries = typeof votingEntries === "undefined" ? [] : votingEntries;
- const splitSourceForms = value => String(value || "")
-  .split(/\s*(?:\/|,|;|\|| ಅಥವಾ )\s*/u)
-  .map(form => form.trim())
-  .filter(form => form.length >= 2);
-
- entries.filter(entry => !entry.noAlternative && !entry.scopeAudit && Array.isArray(entry.alternatives))
-  .forEach(entry => {
-   const sourceForms = [
-    ...splitSourceForms(entry.sanskrit || entry.sourceForm),
-    ...splitSourceForms(entry.sourceEtymology && entry.sourceEtymology.form)
-   ];
-   const candidates = entry.alternatives.filter(alt => alt.word && !alt.isNoAlternative && !alt.isScopeAudit)
-    .map(alt => ({
-     word:alt.word,origin:achchaAlternativeKind(alt),note:alt.note||"",
-     proto:alt.proto||"",tamil:alt.tamil||"",tulu:alt.tulu||""
-    }));
-   sourceForms.forEach(form => {
-    const key = form.normalize("NFC");
-    const existing = bySourceForm.get(key) || {sourceForms:[form],meaning:entry.meaning||"",candidates:[]};
-    candidates.forEach(candidate => {
-     if (!existing.candidates.some(item => item.word === candidate.word)) existing.candidates.push(candidate);
-    });
-    if (!existing.meaning && entry.meaning) existing.meaning = entry.meaning;
-    bySourceForm.set(key, existing);
-   });
-  });
- const relevantText = String(text || "").normalize("NFC");
- return [...bySourceForm.values()].filter(entry =>
-  entry.candidates.length && (!relevantText || entry.sourceForms.some(form => relevantText.includes(form.normalize("NFC"))))
- ).slice(0, 100);
+function buildAchchaLexicon(text = "") {
+  return window.KannadaLexiconStore
+    ? window.KannadaLexiconStore.searchAchchaLexicon(text)
+    : [];
 }
+window.buildAchchaLexicon = buildAchchaLexicon;
 function showAchchaResult(result,original){
  document.getElementById("achcha-original").textContent=original;
  document.getElementById("achcha-result").textContent=result.rewrittenKannada||original;
@@ -758,10 +730,40 @@ window.showTab = showTab;
 window.toggleSentenceForm = toggleSentenceForm;
 window.submitSentenceReview = submitSentenceReview;
 
-function filterAndRender() {
-  const cat=categorySelect.value;
-  const filtered=votingEntries.filter(e => cat==="all" || e.category===cat);
-  render(filtered);
+function populateCategoryOptions() {
+  const selected = categorySelect.value || "all";
+  const labels = {
+    "Civic":"Civic & Government",
+    "Origin audit":"Origin audit (non-Sanskrit loans)",
+    "No viable native alternative":"No viable native alternative"
+  };
+  categorySelect.replaceChildren(new Option("All categories","all"));
+  window.KannadaLexiconStore.getCategories().forEach(category => {
+    categorySelect.add(new Option(labels[category] || category, category));
+  });
+  categorySelect.value = window.KannadaLexiconStore.getCategories().includes(selected) ? selected : "all";
+}
+async function filterAndRender() {
+  const request = ++lexiconPageRequest;
+  try {
+    await window.KannadaLexiconStore.ready();
+    if (!lexiconInitialized) {
+      Object.assign(etymologyLabels, window.KannadaLexiconStore.getLabels());
+      populateCategoryOptions();
+      lexiconInitialized = true;
+    }
+    const page = await window.KannadaLexiconStore.loadPage(categorySelect.value, currentWordPage, WORDS_PER_PAGE);
+    if (request !== lexiconPageRequest) return;
+    votingEntries = page.entries;
+    render(page.entries, page.total);
+  } catch (error) {
+    if (request !== lexiconPageRequest) return;
+    votingEntries = [];
+    grid.innerHTML = '<div class="col-span-full rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800"><strong>Vocabulary could not be loaded.</strong><p class="mt-1">' + escapeHtml(error.message || "Please check your connection.") + '</p><button type="button" class="mt-3 rounded-lg border border-red-300 bg-white px-3 py-2" onclick="filterAndRender()">Retry</button></div>';
+    stats.textContent = "Lexicon unavailable";
+    updateWordPagination(0);
+    console.error("KannadaWords lexicon load failed:", error);
+  }
 }
 window.castVote=castVote; window.toggleImproveForm=toggleImproveForm; window.submitSuggestion=submitSuggestion; window.cancelImproveForm=cancelImproveForm;
 categorySelect.addEventListener("change",() => { currentWordPage = 0; filterAndRender(); });

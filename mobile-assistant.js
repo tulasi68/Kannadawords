@@ -2,6 +2,8 @@
    Local-only matching: no text is sent to a server while typing. */
 (() => {
   "use strict";
+  async function start() {
+  await window.KannadaLexiconStore.ready();
   const input = document.getElementById("achcha-input");
   if (!input || typeof window.buildAchchaLexicon !== "function") return;
 
@@ -107,4 +109,6 @@
   });
   panel.addEventListener("mousedown", event => event.preventDefault());
   panel.addEventListener("touchstart", () => {}, { passive: true });
+  }
+  start().catch(error => console.warn("KannadaWords lexicon is not ready for mobile suggestions:", error));
 })();

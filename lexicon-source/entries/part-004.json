@@ -1,0 +1,6423 @@
+{
+  "schemaVersion": 2,
+  "entries": [
+    {
+      "id": "supp-direction",
+      "sourceForm": "ದಿಗ್ವಲಯ / ದಿಕ್ಕು",
+      "sourceMeaning": "Direction",
+      "category": "Nature",
+      "sourceEtymology": {
+        "form": "ದಿಗ್ವಲಯ / ದಿಕ್ಕು",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-direction",
+          "form": "ದೆಸೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ದೆಸೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "திசை (Skt.)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ದಿಕ್ಕ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*tecai",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ದೆಸೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ದಿಗ್ವಲಯ / ದಿಕ್ಕು",
+        "sourceMeaning": "Direction",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-man-male",
+      "sourceForm": "ಪುರುಷ",
+      "sourceMeaning": "Man (male)",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಪುರುಷ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-man-male",
+          "form": "ಗಂಡು / ಗಂಡಸು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: low.",
+          "etymologyParts": [
+            {
+              "form": "ಗಂಡು / ಗಂಡಸು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "ஆண் (āṇ)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಗಂಡು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಗಂಡ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: low.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಪುರುಷ",
+        "sourceMeaning": "Man (male)",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-boy-child",
+      "sourceForm": "ಬಾಲಕ",
+      "sourceMeaning": "Boy / child",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಬಾಲಕ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-boy-child",
+          "form": "ಹುಡುಗ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಹುಡುಗ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பையன் (paiyaṉ)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಹುಡುಗ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*puṭu- (uncertain)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಪುಡುಗ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಬಾಲಕ",
+        "sourceMeaning": "Boy / child",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-old-person",
+      "sourceForm": "ವೃದ್ಧ",
+      "sourceMeaning": "Old person",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ವೃದ್ಧ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-old-person",
+          "form": "ಮುದುಕ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಮುದುಕ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "முதியவர் (mutiyavar)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಮುದುಕ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*mut-",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಮುದುಕ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ವೃದ್ಧ",
+        "sourceMeaning": "Old person",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-enemy",
+      "sourceForm": "ಶತ್ರು",
+      "sourceMeaning": "Enemy",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಶತ್ರು",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-enemy",
+          "form": "ಹಗೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high.",
+          "etymologyParts": [
+            {
+              "form": "ಹಗೆ",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பகை (pakai)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಹಗೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*pakai",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಹಗೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಶತ್ರು",
+        "sourceMeaning": "Enemy",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-people",
+      "sourceForm": "ಜನ",
+      "sourceMeaning": "People",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಜನ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-people",
+          "form": "ಮಂದಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಮಂದಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "மக்கள் (makkaḷ)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಮಂದಿ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*makkaḷ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಮಂದಿ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಜನ",
+        "sourceMeaning": "People",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-subject-citizen",
+      "sourceForm": "ಪ್ರಜೆ",
+      "sourceMeaning": "Subject / citizen",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಪ್ರಜೆ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-subject-citizen",
+          "form": "ಒಕ್ಕಲು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಒಕ್ಕಲು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "குடி (kuṭi)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಒಕ್ಕಲ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*okkal",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        },
+        {
+          "id": "contrib-069-2",
+          "form": "ಮಂದಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಮಂದಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-069-3",
+          "form": "ನಾಡವರು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ನಾಡವರು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಒಕ್ಕಲ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಪ್ರಜೆ",
+        "sourceMeaning": "Subject / citizen",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-infant",
+      "sourceForm": "ಶಿಶು",
+      "sourceMeaning": "Infant",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಶಿಶು",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-infant",
+          "form": "ಕೂಸು / ಮಗು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಕೂಸು / ಮಗು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "குழந்தை (kuḻantai)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಕೂಸು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*kuḻantai",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಕೂಸು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಶಿಶು",
+        "sourceMeaning": "Infant",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-wife",
+      "sourceForm": "ಭಾರ್ಯೆ",
+      "sourceMeaning": "Wife",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಭಾರ್ಯೆ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-wife",
+          "form": "ಹೆಂಡತಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಹೆಂಡತಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "மனைவி (Skt.) / பெண்டாட்டி",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಪೊಂಜಲ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*peṇ-",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಪೆಂಡತಿ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಭಾರ್ಯೆ",
+        "sourceMeaning": "Wife",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-husband",
+      "sourceForm": "ಪತಿ",
+      "sourceMeaning": "Husband",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಪತಿ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-husband",
+          "form": "ಗಂಡ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಗಂಡ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "கணவன் (Skt.)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಗಂಡ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*gaṇḍ- (uncertain)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        },
+        {
+          "id": "contrib-057-2",
+          "form": "ಒಡೆಯ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಒಡೆಯ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಗಂಡ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಪತಿ",
+        "sourceMeaning": "Husband",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-brother",
+      "sourceForm": "ಸಹೋದರ",
+      "sourceMeaning": "Brother",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಸಹೋದರ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-brother",
+          "form": "ಸೋದರ / ಅಣ್ಣ-ತಮ್ಮ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "ಸೋದರ is the native Kannada form; Sanskritic ಸಹೋದರ is the formal register.",
+          "etymologyParts": [
+            {
+              "form": "ಸೋದರ / ಅಣ್ಣ-ತಮ್ಮ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "சகோதரன் (Skt.)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಸೋದರೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಸೋದರ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. ಸೋದರ is the native Kannada form; Sanskritic ಸಹೋದರ is the formal register.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಸಹೋದರ",
+        "sourceMeaning": "Brother",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-relative",
+      "sourceForm": "ಬಂಧು",
+      "sourceMeaning": "Relative",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಬಂಧು",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-relative",
+          "form": "ನಂಟ / ಬಳಗ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ನಂಟ / ಬಳಗ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "உறவினர் (uṟaviṉar)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಬಳಗ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*naṭpu (uncertain)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ನಂಟ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಬಂಧು",
+        "sourceMeaning": "Relative",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-teacher",
+      "sourceForm": "ಗುರು",
+      "sourceMeaning": "Teacher",
+      "category": "People",
+      "sourceEtymology": {
+        "form": "ಗುರು",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-teacher",
+          "form": "No settled native equivalent",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "No settled native single-word equivalent; flag as a gap rather than coin.",
+          "etymologyParts": [],
+          "viability": "no_alternative",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "ஆசிரியர் (Skt.)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಗುರು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": null,
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "",
+        "legacyEvidence": null,
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: low. No settled native single-word equivalent; flag as a gap rather than coin.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಗುರು",
+        "sourceMeaning": "Teacher",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-door",
+      "sourceForm": "ದ್ವಾರ",
+      "sourceMeaning": "Door",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ದ್ವಾರ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-door",
+          "form": "ಬಾಗಿಲು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಬಾಗಿಲು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "கதவு (kathavu)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಬಾಕಿಲ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*wāyil",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        },
+        {
+          "id": "contrib-097-2",
+          "form": "ಹೆಬ್ಬಾಗಿಲು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಹೆಬ್ಬಾಗಿಲು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಬಾಗಿಲ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ದ್ವಾರ",
+        "sourceMeaning": "Door",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-bed",
+      "sourceForm": "ಶಯನ",
+      "sourceMeaning": "Bed",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಶಯನ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-bed",
+          "form": "ಹಾಸಿಗೆ / ಮಂಚ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: low.",
+          "etymologyParts": [
+            {
+              "form": "ಹಾಸಿಗೆ / ಮಂಚ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "படுக்கை (paṭukkai)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಹಾಸಿಗೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*pāṭ- (uncertain)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಹಾಸಿಗೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: low.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಶಯನ",
+        "sourceMeaning": "Bed",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-ornament",
+      "sourceForm": "ಆಭರಣ",
+      "sourceMeaning": "Ornament",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಆಭರಣ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-ornament",
+          "form": "ಒಡವೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: low. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಒಡವೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "அணிகலன் (aṇikalaṉ)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಒಡವೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        },
+        {
+          "id": "contrib-094-2",
+          "form": "ತೊಡಿಗೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ತೊಡಿಗೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-094-3",
+          "form": "ಸಿಂಗಾರ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಸಿಂಗಾರ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಒಡವೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: low. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಆಭರಣ",
+        "sourceMeaning": "Ornament",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-sandal-footwear",
+      "sourceForm": "ಪಾದುಕೆ",
+      "sourceMeaning": "Sandal / footwear",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಪಾದುಕೆ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-sandal-footwear",
+          "form": "ಮೆಟ್ಟು / ಚಪ್ಪಲಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: low.",
+          "etymologyParts": [
+            {
+              "form": "ಮೆಟ್ಟು / ಚಪ್ಪಲಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "செருப்பு (ceruppu)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಮೆಟ್ಟ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*ceṟuppu",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಮೆಟ್ಟು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: low.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಪಾದುಕೆ",
+        "sourceMeaning": "Sandal / footwear",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-marriage",
+      "sourceForm": "ವಿವಾಹ",
+      "sourceMeaning": "Marriage",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ವಿವಾಹ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-marriage",
+          "form": "ಮದುವೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಮದುವೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "திருமணம் (Skt.)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಮದಿಮೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*matu- (uncertain)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        },
+        {
+          "id": "contrib-222-2",
+          "form": "ಕಲ್ಯಾಣ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಕಲ್ಯಾಣ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-222-3",
+          "form": "ನಂಟು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ನಂಟು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಮದುವೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ವಿವಾಹ",
+        "sourceMeaning": "Marriage",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-property",
+      "sourceForm": "ಆಸ್ತಿ",
+      "sourceMeaning": "Property",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಆಸ್ತಿ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-property",
+          "form": "ಸೊತ್ತು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high.",
+          "etymologyParts": [
+            {
+              "form": "ಸೊತ್ತು",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "சொத்து (cottu)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಸೊತ್ತು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*cotta",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಸೊತ್ತು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಆಸ್ತಿ",
+        "sourceMeaning": "Property",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-debt",
+      "sourceForm": "ಋಣ",
+      "sourceMeaning": "Debt",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಋಣ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-debt",
+          "form": "ಸಾಲ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: low. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಸಾಲ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "கடன் (kaṭaṉ)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಸಾಲ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        },
+        {
+          "id": "contrib-207-2",
+          "form": "ಹೊಣೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಹೊಣೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-207-3",
+          "form": "ಬಾಕಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಬಾಕಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಸಾಲ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: low. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಋಣ",
+        "sourceMeaning": "Debt",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-price",
+      "sourceForm": "ಕ್ರಯ",
+      "sourceMeaning": "Price",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಕ್ರಯ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-price",
+          "form": "ಬೆಲೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high.",
+          "etymologyParts": [
+            {
+              "form": "ಬೆಲೆ",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "விலை (vilai)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಬೆಲೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*wilai",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "etymology-entries.js:origin-audit",
+            "sources": [
+              "etymology-entries.js:origin-audit"
+            ]
+          }
+        },
+        {
+          "id": "contrib-202-1",
+          "form": "ಕೊಳ್ಳುವಿಕೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಕೊಳ್ಳುವಿಕೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-202-2",
+          "form": "ಖರೀದಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಖರೀದಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಬೆಲೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಕ್ರಯ",
+        "sourceMeaning": "Price",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-pot",
+      "sourceForm": "ಕುಂಭ",
+      "sourceMeaning": "Pot",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಕುಂಭ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-pot",
+          "form": "ಮಡಕೆ / ಕೊಡ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಮಡಕೆ / ಕೊಡ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "குடம் (kuṭam)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಮಡಕೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*kuṭam",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಮಡಕೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಕುಂಭ",
+        "sourceMeaning": "Pot",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-wealth-money",
+      "sourceForm": "ಧನ",
+      "sourceMeaning": "Wealth / money",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಧನ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-wealth-money",
+          "form": "ಹಣ / ಸೊಮ್ಮು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಹಣ / ಸೊಮ್ಮು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பொன் / பணம் (loan)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಹಣ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*paṇ-",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "etymology-entries.js:origin-audit",
+            "sources": [
+              "etymology-entries.js:origin-audit"
+            ]
+          }
+        },
+        {
+          "id": "contrib-095-1",
+          "form": "ಹಣ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಹಣ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-095-2",
+          "form": "ದುಡ್ಡು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ದುಡ್ಡು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-095-3",
+          "form": "ಸಂಪತ್ತು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಸಂಪತ್ತು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-095-4",
+          "form": "ಒಡವೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಒಡವೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಪಣ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಧನ",
+        "sourceMeaning": "Wealth / money",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-dam-bund",
+      "sourceForm": "ಸೇತು",
+      "sourceMeaning": "Dam / bund",
+      "category": "Society",
+      "sourceEtymology": {
+        "form": "ಸೇತು",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-dam-bund",
+          "form": "ಅಣೆ / ಕಟ್ಟೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high.",
+          "etymologyParts": [
+            {
+              "form": "ಅಣೆ / ಕಟ್ಟೆ",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "அணை (aṇai)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಅಣೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*aṇai",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಅಣೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಸೇತು",
+        "sourceMeaning": "Dam / bund",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-honey",
+      "sourceForm": "ಮಧು",
+      "sourceMeaning": "Honey",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಮಧು",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-honey",
+          "form": "ಜೇನು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಜೇನು",
+              "etymology": "dravidian"
+            },
+            {
+              "form": "ಜೇನು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "தேன் (tēn)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಜೇನ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*tēn",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        },
+        {
+          "id": "contrib-276-2",
+          "form": "ಸಿಹಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಸಿಹಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಜೇನ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಮಧು",
+        "sourceMeaning": "Honey",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-ghee",
+      "sourceForm": "ಘೃತ",
+      "sourceMeaning": "Ghee",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಘೃತ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-ghee",
+          "form": "ತುಪ್ಪ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ತುಪ್ಪ",
+              "etymology": "dravidian"
+            },
+            {
+              "form": "ತುಪ್ಪ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "நெய் (ney)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ತುಪ್ಪ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*ney",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ತುಪ್ಪ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಘೃತ",
+        "sourceMeaning": "Ghee",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-salt",
+      "sourceForm": "ಲವಣ",
+      "sourceMeaning": "Salt",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಲವಣ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-salt",
+          "form": "ಉಪ್ಪು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಉಪ್ಪು",
+              "etymology": "dravidian"
+            },
+            {
+              "form": "ಉಪ್ಪು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "உப்பு (uppu)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಉಪ್ಪು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*uppu",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಉಪ್ಪು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಲವಣ",
+        "sourceMeaning": "Salt",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-cooked-rice",
+      "sourceForm": "ಅನ್ನ",
+      "sourceMeaning": "Cooked rice",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಅನ್ನ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-cooked-rice",
+          "form": "ಕೂಳು / ಅನ್ನ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "ಕೂಳು is native but lower-register in modern usage; flag this honestly.",
+          "etymologyParts": [
+            {
+              "form": "ಕೂಳು / ಅನ್ನ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "சோறு (cōṟu)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಕೂಳು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*cōṟu",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "etymology-entries.js:origin-audit",
+            "sources": [
+              "etymology-entries.js:origin-audit"
+            ]
+          }
+        },
+        {
+          "id": "contrib-278-1",
+          "form": "ಕೂಳು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "DEDR 1911 identifies Kannada kūḻ (ಕೂಳು) ‘boiled rice, food’ as part of Proto-Dravidian *kūḻ ‘porridge’. Tamil kūḻ means thick gruel/porridge; Tulu kūru/kūlu/kūḷu means boiled rice. This is a genuine cognate set, but the meanings range from porridge to boiled rice and food; it should not be treated as an exact synonym for every use of ‘food’.",
+          "etymologyParts": [
+            {
+              "form": "ಕೂಳು",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "கூழ் (kūḻ; thick gruel, porridge)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "kūru / kūlu / kūḷu (boiled rice)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*kūḻ (porridge; DEDR 1911)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-278-2",
+          "form": "ಬೋನ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಬೋನ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಕೂಳ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. ಕೂಳು is native but lower-register in modern usage; flag this honestly. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಅನ್ನ",
+        "sourceMeaning": "Cooked rice",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-meal",
+      "sourceForm": "ಭೋಜನ",
+      "sourceMeaning": "Meal",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಭೋಜನ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-meal",
+          "form": "ಊಟ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಊಟ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "உணவு (uṇavu)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಊಟ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*ūṭu",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಊಟ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಭೋಜನ",
+        "sourceMeaning": "Meal",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-lake-tank",
+      "sourceForm": "ಜಲಾಶಯ",
+      "sourceMeaning": "Lake / tank",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಜಲಾಶಯ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-lake-tank",
+          "form": "ಕೆರೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಕೆರೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "ஏரி (ēri)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಕೆರೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*kerey",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಕೆರೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಜಲಾಶಯ",
+        "sourceMeaning": "Lake / tank",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-hunger",
+      "sourceForm": "ಕ್ಷುಧೆ",
+      "sourceMeaning": "Hunger",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಕ್ಷುಧೆ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-hunger",
+          "form": "ಹಸಿವು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಹಸಿವು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பசி (paci)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಪಸಿ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*pacai",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಪಸಿ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಕ್ಷುಧೆ",
+        "sourceMeaning": "Hunger",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-memory",
+      "sourceForm": "ಸ್ಮರಣೆ",
+      "sourceMeaning": "Memory",
+      "category": "Abstract",
+      "sourceEtymology": {
+        "form": "ಸ್ಮರಣೆ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-memory",
+          "form": "ನೆನಪು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ನೆನಪು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "நினைவு (niṉaivu)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ನೆನೆಪು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*niney",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        },
+        {
+          "id": "contrib-104-2",
+          "form": "ಎಚ್ಚರ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಎಚ್ಚರ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ನೆನೆಪು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಸ್ಮರಣೆ",
+        "sourceMeaning": "Memory",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-sight-view",
+      "sourceForm": "ದರ್ಶನ",
+      "sourceMeaning": "Sight / view",
+      "category": "Abstract",
+      "sourceEtymology": {
+        "form": "ದರ್ಶನ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-sight-view",
+          "form": "ನೋಟ / ಕಾಣ್ಕೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ನೋಟ / ಕಾಣ್ಕೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "காட்சி (kāṭci)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ನೋಟ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*kāṇ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "etymology-entries.js:origin-audit",
+            "sources": [
+              "etymology-entries.js:origin-audit"
+            ]
+          }
+        },
+        {
+          "id": "contrib-133-1",
+          "form": "ನೋಟ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ನೋಟ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-133-2",
+          "form": "ಕಾಣ್ಕೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಕಾಣ್ಕೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-133-3",
+          "form": "ಕಣ್ಣಾರೆ ಕಾಣುವುದು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಕಣ್ಣಾರೆ ಕಾಣುವುದು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ನೋಟ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ದರ್ಶನ",
+        "sourceMeaning": "Sight / view",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-desire",
+      "sourceForm": "ಇಚ್ಛೆ",
+      "sourceMeaning": "Desire",
+      "category": "Abstract",
+      "sourceEtymology": {
+        "form": "ಇಚ್ಛೆ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-desire",
+          "form": "ಬಯಕೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "ಆಸೆ is itself a Prakrit/Sanskrit loan; prefer ಬಯಕೆ.",
+          "etymologyParts": [
+            {
+              "form": "ಬಯಕೆ / ಆಸೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "விருப்பம் (viruppam)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಬಯಕೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*bayakku",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಬಯಕೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. ಆಸೆ is itself a Prakrit/Sanskrit loan; prefer ಬಯಕೆ.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಇಚ್ಛೆ",
+        "sourceMeaning": "Desire",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-comfort-ease",
+      "sourceForm": "ಸುಖ",
+      "sourceMeaning": "Comfort / ease",
+      "category": "Abstract",
+      "sourceEtymology": {
+        "form": "ಸುಖ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-comfort-ease",
+          "form": "ನೆಮ್ಮದಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ನೆಮ್ಮದಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "இன்பம் (iṉpam)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ನೆಮ್ಮದಿ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ನೆಮ್ಮದಿ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಸುಖ",
+        "sourceMeaning": "Comfort / ease",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-strength",
+      "sourceForm": "ಶಕ್ತಿ",
+      "sourceMeaning": "Strength",
+      "category": "Abstract",
+      "sourceEtymology": {
+        "form": "ಶಕ್ತಿ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-strength",
+          "form": "ಹುರುಪು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "ಬಲ is Sanskrit bala; prefer ಹುರುಪು or ಆಳ್.",
+          "etymologyParts": [
+            {
+              "form": "ಹುರುಪು / ಬಲ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "வலி (vali)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಹುರುಪು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*val",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "etymology-entries.js:origin-audit",
+            "sources": [
+              "etymology-entries.js:origin-audit"
+            ]
+          }
+        },
+        {
+          "id": "contrib-085-1",
+          "form": "ಕಸುವು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಕಸುವು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-085-2",
+          "form": "ಬಲ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಬಲ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-085-3",
+          "form": "ತಾಕತ್ತು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ತಾಕತ್ತು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಪೊರುಪು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. ಬಲ is Sanskrit bala; prefer ಹುರುಪು or ಆಳ್. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಶಕ್ತಿ",
+        "sourceMeaning": "Strength",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-intellect",
+      "sourceForm": "ಬುದ್ಧಿ",
+      "sourceMeaning": "Intellect",
+      "category": "Abstract",
+      "sourceEtymology": {
+        "form": "ಬುದ್ಧಿ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-intellect",
+          "form": "ತಿಳಿವು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿವು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "அறிவு (aṟிவு)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ತೆರಿವು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*tel-",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "etymology-entries.js:origin-audit",
+            "sources": [
+              "etymology-entries.js:origin-audit"
+            ]
+          }
+        },
+        {
+          "id": "contrib-106-1",
+          "form": "ಜಾಣ್ಮೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಜಾಣ್ಮೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-106-2",
+          "form": "ಮತಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಮತಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-106-3",
+          "form": "ತಿಳಿವಳಿಕೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ತಿಳಿವಳಿಕೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ತಿಳಿವು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಬುದ್ಧಿ",
+        "sourceMeaning": "Intellect",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-mind",
+      "sourceForm": "ಮನಸ್ಸು",
+      "sourceMeaning": "Mind",
+      "category": "Abstract",
+      "sourceEtymology": {
+        "form": "ಮನಸ್ಸು",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-mind",
+          "form": "ನೆಂಜು / ಒಳಗು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "ಮನ is Sanskrit manas; do not offer it as native.",
+          "etymologyParts": [
+            {
+              "form": "ನೆಂಜು / ಒಳಗು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "மனம் (Skt.) / நெஞ்சு",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ನೆಂಜ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*neñcu",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ನೆಂಜು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. ಮನ is Sanskrit manas; do not offer it as native.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಮನಸ್ಸು",
+        "sourceMeaning": "Mind",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-life-breath-self",
+      "sourceForm": "ಪ್ರಾಣ / ಆತ್ಮ",
+      "sourceMeaning": "Life-breath / self",
+      "category": "Abstract",
+      "sourceEtymology": {
+        "form": "ಪ್ರಾಣ / ಆತ್ಮ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-life-breath-self",
+          "form": "ಉಸಿರು / ಉಯಿರ್",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high.",
+          "etymologyParts": [
+            {
+              "form": "ಉಸಿರು / ಉಯಿರ್",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "உயிர் (uyir)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಉಸಿರ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*uyir",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಉಯಿರ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಪ್ರಾಣ / ಆತ್ಮ",
+        "sourceMeaning": "Life-breath / self",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-anger",
+      "sourceForm": "ಕ್ರೋಧ",
+      "sourceMeaning": "Anger",
+      "category": "Abstract",
+      "sourceEtymology": {
+        "form": "ಕ್ರೋಧ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-anger",
+          "form": "ಸಿಟ್ಟು / ಮುನಿಸು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: low.",
+          "etymologyParts": [
+            {
+              "form": "ಸಿಟ್ಟು / ಮುನಿಸು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "கோபம் (Skt.) / சினம்",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಸಿಟ್ಟ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಸಿಟ್ಟು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: low.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಕ್ರೋಧ",
+        "sourceMeaning": "Anger",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-time",
+      "sourceForm": "ಕಾಲ",
+      "sourceMeaning": "Time",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಕಾಲ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-time",
+          "form": "ಹೊತ್ತು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high.",
+          "etymologyParts": [
+            {
+              "form": "ಹೊತ್ತು",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பொழுது (poḻutu)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಪೊರ್ತು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*poḻutu",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಪೊರ್ತು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಕಾಲ",
+        "sourceMeaning": "Time",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-day",
+      "sourceForm": "ದಿನ",
+      "sourceMeaning": "Day",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ದಿನ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-day",
+          "form": "ನಾಳ್ / ಹಗಲು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "ನಾಳ್ survives in ನಾಳೆ and compounds; archaic as a free word.",
+          "etymologyParts": [
+            {
+              "form": "ನಾಳ್ / ಹಗಲು",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "நாள் (nāḷ)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ನಾಳ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*nāḷ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "etymology-entries.js:origin-audit",
+            "sources": [
+              "etymology-entries.js:origin-audit"
+            ]
+          }
+        },
+        {
+          "id": "contrib-032-1",
+          "form": "ಹಗಲು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review. Comparative evidence: Proto-Dravidian *pakal ‘daylight’; Tamil பகல் (pakal); Telugu పగలు (pagalu); Malayalam പകൽ (pakal); Kannada ಹಗಲು (hagalu), from Old Kannada ಪಗಲ್ (pagal). Tulu shows the p-initial form pagal/pagalu; historical comparative discussion explicitly treats Kannada hagalu as a Kannada h- form and Tulu pagal as the native p- counterpart, rather than treating Tulu hagalu as an inherited cognate. Sources: DEDR 3151; Tamil Lexicon (University of Madras, 1924–1936); historical discussion in Indian Antiquary, vol. 62; comparative Dravidian references.",
+          "etymologyParts": [
+            {
+              "form": "ಹಗಲು",
+              "etymology": "unknown"
+            },
+            {
+              "form": "ಹಗಲು",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பகல் (pakal; DEDR 3151)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "pagal / pagalu (p-initial Tulu form; DEDR 3151)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*pakal (daylight; DEDR 3151)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        },
+        {
+          "id": "contrib-032-2",
+          "form": "ನಾಳ್",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ನಾಳ್",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ನಾಳ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Old Kannada form reported in historical comparative discussion; primary inscription or dated text citation is still pending.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Old Kannada form reported in historical comparative discussion; primary inscription or dated text citation is still pending."
+        },
+        "legacyVariants": [
+          "ನಾಳ್",
+          "ಪಗಲ್"
+        ]
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high. ನಾಳ್ survives in ನಾಳೆ and compounds; archaic as a free word. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology. Comparative set includes a valuable historical sound correspondence: Old Kannada ಪಗಲ್ > modern Kannada ಹಗಲು, while Tulu retains p-initial pagal. Halegannada form is reported as ಪಗಲ್; a primary corpus citation should be added before marking it fully verified.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ದಿನ",
+        "sourceMeaning": "Day",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-daytime",
+      "sourceForm": "ದಿವಸ",
+      "sourceMeaning": "Daytime",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ದಿವಸ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-daytime",
+          "form": "ಹಗಲು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high.",
+          "etymologyParts": [
+            {
+              "form": "ಹಗಲು",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பகல் (pakal)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಪಗಲ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*pakal",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಪಗಲ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ದಿವಸ",
+        "sourceMeaning": "Daytime",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-month",
+      "sourceForm": "ಮಾಸ",
+      "sourceMeaning": "Month",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಮಾಸ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-month",
+          "form": "ತಿಂಗಳು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high. Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ತಿಂಗಳು",
+              "etymology": "dravidian"
+            },
+            {
+              "form": "ತಿಂಗಳು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "மாதம் (Skt.) / திங்கள்",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ತಿಂಗೊಲು",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*tiṅkaḷ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js",
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "etymology-entries.js:origin-audit",
+              "contributor-equivalents.js"
+            ],
+            "editorialNote": ""
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ತಿಂಗಳ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high. DEDR 3213 supplied; not independently verified. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಮಾಸ",
+        "sourceMeaning": "Month",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-evening-dusk",
+      "sourceForm": "ಸಂಧ್ಯಾ",
+      "sourceMeaning": "Evening / dusk",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಸಂಧ್ಯಾ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-evening-dusk",
+          "form": "ಸಂಜೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: low.",
+          "etymologyParts": [
+            {
+              "form": "ಸಂಜೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "மாலை (mālai)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಸಂಜೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಸಂಜೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: low.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಸಂಧ್ಯಾ",
+        "sourceMeaning": "Evening / dusk",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-morning",
+      "sourceForm": "ಪ್ರಾತಃ",
+      "sourceMeaning": "Morning",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಪ್ರಾತಃ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-morning",
+          "form": "ಬೆಳಗು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಬೆಳಗು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "காலை (kālai)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಬೆಲ್ಗ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*weḷ-",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಬೆಳಗು",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಪ್ರಾತಃ",
+        "sourceMeaning": "Morning",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-noon",
+      "sourceForm": "ಮಧ್ಯಾಹ್ನ",
+      "sourceMeaning": "Noon",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಮಧ್ಯಾಹ್ನ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-noon",
+          "form": "ನಡುಹಗಲು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ನಡುಹಗಲು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "நண்பகல் (naṇpakal)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ನಡುಪಗಲ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*pakal",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ನಡುಪಗಲ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಮಧ್ಯಾಹ್ನ",
+        "sourceMeaning": "Noon",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-beginning",
+      "sourceForm": "ಆದಿ",
+      "sourceMeaning": "Beginning",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಆದಿ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-beginning",
+          "form": "ಮೊದಲ್",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high.",
+          "etymologyParts": [
+            {
+              "form": "ಮೊದಲ್",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "முதல் (mutal)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಮೊದಲ್",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*mutal",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಮೊದಲ್",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಆದಿ",
+        "sourceMeaning": "Beginning",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    },
+    {
+      "id": "supp-end",
+      "sourceForm": "ಅಂತ್ಯ",
+      "sourceMeaning": "End",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಅಂತ್ಯ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-end",
+          "form": "ಕಡೆ / ಮುಗಿವು",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: medium.",
+          "etymologyParts": [
+            {
+              "form": "ಕಡೆ / ಮುಗಿವು",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "contested",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "கடை (kaṭai)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಕಡೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*kaṭai",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "etymology-entries.js:origin-audit"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "etymology-entries.js:origin-audit",
+            "sources": [
+              "etymology-entries.js:origin-audit"
+            ]
+          }
+        },
+        {
+          "id": "contrib-005-1",
+          "form": "ಕೊನೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಕೊನೆ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-005-2",
+          "form": "ಮುಕ್ತಾಯ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ಮುಕ್ತಾಯ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        },
+        {
+          "id": "contrib-005-3",
+          "form": "ತುದಿ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
+          "etymologyParts": [
+            {
+              "form": "ತುದಿ",
+              "etymology": "unknown"
+            }
+          ],
+          "viability": "proposed",
+          "comparativeEvidence": [],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [
+              "contributor-equivalents.js"
+            ],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {
+            "sourceDataset": "contributor-equivalents.js",
+            "sources": [
+              "contributor-equivalents.js"
+            ]
+          }
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಕಡೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: medium. Contributor-supplied list. Source classification and each alternative require editorial review; do not treat as verified etymology.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "contributor-equivalents.js"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಅಂತ್ಯ",
+        "sourceMeaning": "End",
+        "sourceDataset": "contributor-equivalents.js",
+        "contributorSupplied": true,
+        "sources": [
+          "contributor-equivalents.js"
+        ]
+      }
+    },
+    {
+      "id": "supp-half",
+      "sourceForm": "ಅರ್ಧ",
+      "sourceMeaning": "Half",
+      "category": "Everyday",
+      "sourceEtymology": {
+        "form": "ಅರ್ಧ",
+        "etymology": "sanskrit_tatsama"
+      },
+      "candidates": [
+        {
+          "id": "alt-supp-half",
+          "form": "ಅರೆ",
+          "candidateKind": "unclassified",
+          "reviewStatus": "needs_review",
+          "note": "Contributor-supplied comparison; confidence: high.",
+          "etymologyParts": [
+            {
+              "form": "ಅರೆ",
+              "etymology": "dravidian"
+            }
+          ],
+          "viability": "clean",
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "அரை (arai)",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "tcy",
+              "form": "ಅರೆ",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            },
+            {
+              "language": "proto-dravidian",
+              "form": "*arai",
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": []
+            }
+          ],
+          "evidenceVariants": {},
+          "flags": {
+            "noAlternative": false,
+            "outsideTargetOrigin": false
+          },
+          "provenance": {
+            "sourceDatasets": [],
+            "sourceRefs": []
+          },
+          "editorial": {
+            "note": "",
+            "reviewedBy": null,
+            "reviewedAt": null
+          },
+          "legacyFields": {}
+        }
+      ],
+      "historicalEvidence": {
+        "form": "ಅರೆ",
+        "status": "not_assessed",
+        "sourceRefs": [],
+        "note": "Contributor-supplied form; historical attestation not independently checked.",
+        "legacyEvidence": {
+          "status": "provisional",
+          "note": "Contributor-supplied form; historical attestation not independently checked."
+        },
+        "legacyVariants": []
+      },
+      "scope": {
+        "noAlternative": false,
+        "outsideTargetOrigin": false,
+        "note": ""
+      },
+      "rejectedCandidates": [],
+      "editorial": {
+        "reviewStatus": "needs_review",
+        "note": "Contributor-supplied comparison; confidence: high.",
+        "reviewedBy": null,
+        "reviewedAt": null
+      },
+      "provenance": {
+        "sourceDatasets": [
+          "etymology-entries.js:origin-audit"
+        ],
+        "sourceRefs": []
+      },
+      "legacyFields": {
+        "sourceForm": "ಅರ್ಧ",
+        "sourceMeaning": "Half",
+        "sourceDataset": "etymology-entries.js:origin-audit"
+      }
+    }
+  ]
+}

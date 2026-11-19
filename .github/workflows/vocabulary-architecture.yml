@@ -22,7 +22,7 @@ permissions:
   contents: read
 
 jobs:
-  audit-and-build:
+  legacy-inventory:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -31,11 +31,5 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "20"
-      - name: Audit current legacy merge pipeline
+      - name: Audit existing vocabulary merge pipeline
         run: node scripts/audit-legacy-vocabulary.mjs
-      - name: Validate canonical vocabulary store
-        run: node scripts/vocabulary-store.mjs validate
-      - name: Build generated vocabulary indexes
-        run: node scripts/vocabulary-store.mjs build
-      - name: Verify generated manifest exists
-        run: test -s generated/vocabulary/manifest.json

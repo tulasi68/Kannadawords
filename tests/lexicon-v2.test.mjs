@@ -42,6 +42,22 @@ test("verified comparative evidence cannot be accepted without a source referenc
   assert.ok(result.errors.some(error=>error.includes("verified evidence requires at least one source reference")));
 });
 
+test("initial import does not promote unreviewed content to verified evidence", () => {
+  const baseline = readJson("migration/v2-import-snapshot.json");
+  for (const entry of baseline.entries) {
+    assert.equal(entry.editorial.reviewStatus,"needs_review");
+    for (const candidate of entry.candidates) {
+      assert.equal(candidate.candidateKind,"unclassified");
+      assert.equal(candidate.reviewStatus,"needs_review");
+      for (const evidence of candidate.comparativeEvidence) {
+        assert.equal(evidence.relationship,"unclassified");
+        assert.equal(evidence.status,"not_assessed");
+        assert.deepEqual(evidence.sourceRefs,[]);
+      }
+    }
+  }
+});
+
 test("generated runtime artifacts are reproducible and current", () => {
   const loaded = loadSource();
   const built = buildArtifacts(loaded);

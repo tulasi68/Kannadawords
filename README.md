@@ -332,14 +332,17 @@ Legacy source files remain in the repository for traceability but are not loaded
 
 The initial migration contains 450 entries and 962 candidates. Runtime shards contain at most 50 entries each. This layout is designed to grow to 7,000–10,000 entries without loading the entire vocabulary into the page. The writing-assistant index is separate and intentionally compact; the full comparative record is loaded only when its vocabulary page is requested.
 
-### Evidence fields (gradual migration)
+### Evidence and editorial model
 
-New or migrated candidate records should use:
+A candidate's comparative evidence is an array of independent records:
 
-- `senseKey`: stable sense identifier where spelling alone is ambiguous.
-- `etymologyParts`: analysis of the Kannada candidate.
-- `tamil`, `tulu`, `proto`: comparative forms, with explicit source/citation and evidence status to be added during the next migration stage.
-- `sources`: source dataset identifiers; contributor provenance is not independent verification.
-- `evidenceVariants`: automatically populated when duplicate records disagree.
+- `language`: `ta`, `tcy`, `okn` or `proto-dravidian`.
+- `form`: the attested or reconstructed form, preserving its script and notation.
+- `relationship`: `cognate`, `semantic_equivalent`, `loan`, `reconstruction`, `attested_form`, `proposed_coinage` or `unclassified`.
+- `status`: `not_assessed`, `provisional`, `verified`, `contested` or `rejected`.
+- `sourceRefs`: IDs from the source registry; a verified record must have at least one.
+- `note`: optional explanation of semantic fit, sound correspondence or uncertainty.
 
-Legacy fields remain supported so the existing vocabulary, voting IDs and current pages continue to work during migration. Do not bulk-rewrite source files or regenerate IDs while adding vocabulary. New entries should use the canonical schema and be reviewed before being labelled verified.
+Entry-level Old Kannada evidence is modelled separately in `historicalEvidence`. A candidate's `candidateKind` and `reviewStatus` are distinct from its old `viability) display field. Imported records are marked `needs_review`; their comparative strings are `not_assessed` until a human editor reviews the evidence.
+
+`provenance.sourceDatasets` records contributor or import lineage. It does not establish truth. `provenance.sourceRefs` contains bibliographic source IDs. `legacyFields` preserves fields that have not yet been formally modelled, so future schema work does not silently discard historical data. The `senseKey` field is optional but should be supplied when one spelling represents multiple meanings.

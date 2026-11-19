@@ -1254,12 +1254,12 @@ const contributorWordEntries = [
       {
         "id": "contrib-029-1",
         "word": "ಹಕ್ಕಿ",
-        "note": "Contributor-supplied candidate; semantic fit and word origin pending editorial review.",
-        "viability": "proposed",
+        "note": "Historical Kannada ಪಕ್ಕಿ (pakki) is traced to Prakrit pakkhi, from Sanskrit pakṣī; ಹಕ್ಕಿ is therefore not a secure native Dravidian alternative. Keep it as a familiar Kannada word, but do not classify it as a Dravidian cognate.",
+        "viability": "contested",
         "etymologyParts": [
           {
             "form": "ಹಕ್ಕಿ",
-            "etymology": "unknown"
+            "etymology": "tadbhava"
           }
         ]
       },

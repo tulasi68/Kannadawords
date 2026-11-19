@@ -94,6 +94,35 @@ test("canonical-to-display adapter preserves all existing user-visible vocabular
   }
 });
 
+test("writing-assistant index preserves the previous source-form grouping behavior", () => {
+  const legacy = readJson("migration/legacy-v1-snapshot.json");
+  const bySourceForm = new Map();
+  const split = value => String(value||"").split(/\\s*(?:\\/|,|;|\\|| ಅಥವಾ )\\s*/u).map(form=>form.trim()).filter(form=>form.length>=2);
+  const kind = alt => {
+    const origins=(alt.etymologyParts||[]).map(part=>part.etymology);
+    if(alt.viability==="coined"||origins.includes("coinage"))return "coined_from_dravidian";
+    if(origins.includes("tadbhava"))return "tadbhava";
+    if(origins.includes("dravidian")||origins.includes("native")||alt.viability==="clean")return "verified_dravidian";
+    if(alt.proto||/native|dravidian|desi|core/i.test(alt.note||""))return "verified_dravidian";
+    return "uncertain";
+  };
+  legacy.entries.filter(entry=>!entry.noAlternative&&!entry.scopeAudit&&Array.isArray(entry.alternatives)).forEach(entry=>{
+    const forms=[...split(entry.sanskrit||entry.sourceForm),...split(entry.sourceEtymology&&entry.sourceEtymology.form)];
+    const candidates=entry.alternatives.filter(alt=>alt.word&&!alt.isNoAlternative&&!alt.isScopeAudit).map(alt=>({
+      word:alt.word,origin:kind(alt),note:alt.note||"",proto:alt.proto||"",tamil:alt.tamil||"",tulu:alt.tulu||""
+    }));
+    forms.forEach(form=>{
+      const key=form.normalize("NFC");
+      const existing=bySourceForm.get(key)||{sourceForms:[form],meaning:entry.meaning||"",candidates:[]};
+      candidates.forEach(candidate=>{if(!existing.candidates.some(item=>item.word===candidate.word))existing.candidates.push(candidate);});
+      if(!existing.meaning&&entry.meaning)existing.meaning=entry.meaning;
+      bySourceForm.set(key,existing);
+    });
+  });
+  const generated=readJson("lexicon-dist/writing-index.json");
+  assert.deepEqual(generated.entries,[...bySourceForm.values()]);
+});
+
 test("lazy browser store loads one page, category totals and writing suggestions", async () => {
   const loaded = loadSource();
   const built = buildArtifacts(loaded);

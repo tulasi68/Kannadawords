@@ -1,0 +1,41 @@
+name: Vocabulary architecture checks
+
+on:
+  pull_request:
+    paths:
+      - "data.js"
+      - "sentence-examples.js"
+      - "contextual-examples.js"
+      - "etymology-entries.js"
+      - "contributor-equivalents.js"
+      - "coinage-review.js"
+      - "app.js"
+      - "vocabulary/**"
+      - "scripts/**"
+      - ".github/workflows/vocabulary-architecture.yml"
+  push:
+    branches:
+      - main
+      - "architecture/vocabulary-store-v1"
+
+permissions:
+  contents: read
+
+jobs:
+  audit-and-build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Audit current legacy merge pipeline
+        run: node scripts/audit-legacy-vocabulary.mjs
+      - name: Validate canonical vocabulary store
+        run: node scripts/vocabulary-store.mjs validate
+      - name: Build generated vocabulary indexes
+        run: node scripts/vocabulary-store.mjs build
+      - name: Verify generated manifest exists
+        run: test -s generated/vocabulary/manifest.json

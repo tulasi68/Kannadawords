@@ -3652,7 +3652,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "விலங்கு (vilaṅku)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-vilangu"
+              ],
+              "note": "University of Madras Tamil Lexicon: beast or bird, including a broad animal sense. Semantic equivalent only; no cognacy is claimed."
+            },
+            {
+              "language": "tcy",
+              "form": "ಮುರ್ಗ (murg)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tuluverse-animals"
+              ],
+              "note": "TuluVerse animal vocabulary page lists this as the generic Tulu form for Animal. Transliteration and dialect/register need Tulu-editor review; semantic equivalent only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

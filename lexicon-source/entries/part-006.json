@@ -1149,7 +1149,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "சூடு (cūṭu)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-sudu"
+              ],
+              "note": "University of Madras Tamil Lexicon: heat, warmth and feverishness. Semantic equivalent only."
+            },
+            {
+              "language": "tcy",
+              "form": "sekae",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "easytulu-weather-heat"
+              ],
+              "note": "Easy Tulu Lesson 25 records sekae / sekhe for hot; Lesson 49 identifies sekae as heat/warmth. Roman form retained as published; semantic equivalent only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

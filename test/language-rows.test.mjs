@@ -9,8 +9,7 @@ const end = app.indexOf("\nconst WORDS_PER_PAGE", start);
 assert.notEqual(start, -1, "languageRows must exist");
 assert.notEqual(end, -1, "languageRows boundary must exist");
 const functionSource = app.slice(start, end);
-
-test("language rows include evidence attached to later Kannada alternatives", () => {
+function render(entry, alts) {
   const context = {
     window: { KannadaLexiconStore: { getReference: () => null } },
     escapeHtml: value => String(value ?? "").replace(/[&<>"']/g, ch => ({
@@ -18,7 +17,11 @@ test("language rows include evidence attached to later Kannada alternatives", ()
     }[ch]))
   };
   vm.runInNewContext(functionSource + "\nglobalThis.renderLanguageRows = languageRows;", context);
-  const html = context.renderLanguageRows({ halegannada: "ಹಾಲು" }, [
+  return context.renderLanguageRows(entry, alts);
+}
+
+test("language rows include evidence attached to later Kannada alternatives", () => {
+  const html = render({ halegannada: "ಹಾಲು" }, [
     { word: "ಹಾಲು", comparativeEvidence: [] },
     { word: "ಪಾಲು", comparativeEvidence: [
       { language: "ta", form: "பால்", status: "not_assessed", sourceRefs: [] },
@@ -30,4 +33,10 @@ test("language rows include evidence attached to later Kannada alternatives", ()
   assert.match(html, /ಪಾಲು: ಪಾಲ್/);
   assert.match(html, /ಪಾಲು: \*pāl/);
   assert.match(html, /Halegannada/);
+});
+
+test("missing comparative evidence is labelled as not yet researched", () => {
+  const html = render({ halegannada: null }, [{ word: "ನೆಲೆ", comparativeEvidence: [] }]);
+  assert.equal((html.match(/Not yet researched/g) || []).length, 3);
+  assert.match(html, /Not yet sourced/);
 });

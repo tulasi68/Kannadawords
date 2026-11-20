@@ -489,7 +489,7 @@ async function findAchchaWords() {
   const original = (input && input.value || "").trim();
   if (!original) { input && input.focus(); return; }
 
-  const lexicon = buildAchchaLexicon();
+  const lexicon = buildAchchaLexicon(original);
   const forms = [];
   lexicon.forEach(entry => {
     (entry.sourceForms || []).forEach(sf => {
@@ -544,10 +544,71 @@ async function findAchchaWords() {
     list.classList.remove("hidden");
     container.innerHTML = '<p class="text-sm text-stone-600">ಈ ಪಠ್ಯದಲ್ಲಿ ಪರಿಶೀಲಿತ ಪದಪಟ್ಟಿಯಲ್ಲಿರುವ ಸಂಸ್ಕೃತ ಮೂಲದ ಪದಗಳು ಸಿಗಲಿಲ್ಲ.</p>';
     status.textContent = "0 words found";
+    const previewWrap = document.getElementById("achcha-preview-wrap");
+    const preview = document.getElementById("achcha-preview");
+    if (previewWrap) previewWrap.classList.add("hidden");
+    if (preview) preview.innerHTML = "";
     return;
   }
+  const previewWrap = document.getElementById("achcha-preview-wrap");
+  if (previewWrap) previewWrap.classList.remove("hidden");
 
-  status.textContent = matches.length + " word" + (matches.length === 1 ? "" : "s") + " found";
+  status.textContent = matches.length + " word" + (matches.length === 1 ? "" : "s") + " found · hover underlined words for alternatives";
+
+  // Build interactive underlined preview of the original text.
+  const preview = document.getElementById("achcha-preview");
+  if (preview) {
+    let html = "";
+    let cursor = 0;
+    const text = original;
+    matches.forEach((m, i) => {
+      if (m.start > cursor) {
+        html += escapeHtmlAchcha(text.slice(cursor, m.start));
+      }
+      const chosen = m.selected || (m.candidates[0] && m.candidates[0].word) || m.source;
+      const opts = m.candidates.map((c, j) => {
+        const active = (m.selected || m.candidates[0].word) === c.word ? " achcha-opt-active" : "";
+        return '<button type="button" class="achcha-opt kn' + active + '" data-match="' + i + '" data-word="' + escapeHtmlAchcha(c.word) + '">' + escapeHtmlAchcha(c.word) + '</button>';
+      }).join("");
+      const keepActive = (m.selected === m.source) ? " achcha-opt-active" : "";
+      const keep = '<button type="button" class="achcha-opt achcha-opt-keep' + keepActive + '" data-match="' + i + '" data-word="' + escapeHtmlAchcha(m.source) + '">keep “' + escapeHtmlAchcha(m.source) + '”</button>';
+      html += '<span class="achcha-hit" tabindex="0" data-match="' + i + '" role="button" aria-label="Alternatives for ' + escapeHtmlAchcha(m.source) + '">'
+        + '<span class="achcha-underline kn">' + escapeHtmlAchcha(m.source) + '</span>'
+        + '<span class="achcha-pop" role="listbox">'
+        + '<span class="achcha-pop-title">Native alternatives for <strong class="kn">' + escapeHtmlAchcha(m.source) + '</strong>'
+        + (m.meaning ? ' <span class="achcha-pop-meaning">(' + escapeHtmlAchcha(m.meaning) + ')</span>' : '')
+        + '</span>'
+        + '<span class="achcha-pop-opts">' + opts + keep + '</span>'
+        + '</span></span>';
+      cursor = m.end;
+    });
+    if (cursor < text.length) html += escapeHtmlAchcha(text.slice(cursor));
+    // Preserve newlines
+    html = html.replace(/\n/g, "<br>");
+    preview.innerHTML = html;
+    preview.classList.remove("hidden");
+
+    // Wire option clicks
+    preview.querySelectorAll(".achcha-opt").forEach(btn => {
+      btn.addEventListener("click", (ev) => {
+        ev.preventDefault();
+        ev.stopPropagation();
+        const i = Number(btn.getAttribute("data-match"));
+        const word = btn.getAttribute("data-word");
+        if (!Number.isFinite(i) || !achchaMatchState[i]) return;
+        achchaMatchState[i].selected = word;
+        // Refresh active styles inside this popover
+        const hit = btn.closest(".achcha-hit");
+        if (hit) {
+          hit.querySelectorAll(".achcha-opt").forEach(o => o.classList.toggle("achcha-opt-active", o.getAttribute("data-word") === word));
+        }
+        // Keep list radios in sync if present
+        const radios = document.querySelectorAll('input[name="achcha-sel-' + i + '"]');
+        radios.forEach(r => { r.checked = r.value === word; });
+      });
+    });
+  }
+
   container.innerHTML = matches.map((m, i) => {
     const opts = m.candidates.map((c, j) => {
       const checked = j === 0 ? "checked" : "";
@@ -555,12 +616,12 @@ async function findAchchaWords() {
       const note = c.note ? ' <span class="text-stone-400 text-xs">· ' + escapeHtmlAchcha(c.note.slice(0, 60)) + '</span>' : "";
       return '<label class="inline-flex items-center gap-1.5 mr-3 mb-1 cursor-pointer">'
         + '<input type="radio" name="achcha-sel-' + i + '" value="' + escapeHtmlAchcha(c.word) + '" ' + checked
-        + ' onchange="achchaMatchState[' + i + '].selected=this.value" class="accent-red-800">'
+        + ' onchange="achchaMatchState[' + i + '].selected=this.value;syncAchchaPreviewSelection(' + i + ', this.value)" class="accent-red-800">'
         + '<span class="kn text-sm font-medium text-stone-800">' + label + '</span>' + note + '</label>';
     }).join("");
     const keep = '<label class="inline-flex items-center gap-1.5 mr-3 mb-1 cursor-pointer">'
       + '<input type="radio" name="achcha-sel-' + i + '" value="' + escapeHtmlAchcha(m.source) + '"'
-      + ' onchange="achchaMatchState[' + i + '].selected=this.value" class="accent-stone-500">'
+      + ' onchange="achchaMatchState[' + i + '].selected=this.value;syncAchchaPreviewSelection(' + i + ', this.value)" class="accent-stone-500">'
       + '<span class="kn text-sm text-stone-500">ಉಳಿಸು · keep “' + escapeHtmlAchcha(m.source) + '”</span></label>';
     return '<div class="rounded-lg border border-amber-100 bg-amber-50/50 px-3 py-2.5">'
       + '<div class="flex flex-wrap items-baseline gap-2 mb-1.5">'
@@ -574,6 +635,15 @@ async function findAchchaWords() {
   list.classList.remove("hidden");
   list.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
+
+function syncAchchaPreviewSelection(i, word) {
+  const preview = document.getElementById("achcha-preview");
+  if (!preview) return;
+  const hit = preview.querySelector('.achcha-hit[data-match="' + i + '"]');
+  if (!hit) return;
+  hit.querySelectorAll(".achcha-opt").forEach(o => o.classList.toggle("achcha-opt-active", o.getAttribute("data-word") === word));
+}
+window.syncAchchaPreviewSelection = syncAchchaPreviewSelection;
 
 function resetAchchaSelections() {
   achchaMatchState.forEach((m, i) => {
@@ -640,10 +710,12 @@ function clearAchchaInput() {
   const input = document.getElementById("achcha-input");
   if (input) input.value = "";
   achchaMatchState = [];
-  ["achcha-word-list","achcha-output"].forEach(id => {
+  ["achcha-word-list","achcha-output","achcha-preview-wrap"].forEach(id => {
     const element = document.getElementById(id);
     if (element) element.classList.add("hidden");
   });
+  const preview = document.getElementById("achcha-preview");
+  if (preview) preview.innerHTML = "";
   const matches = document.getElementById("achcha-matches");
   if (matches) matches.replaceChildren();
   const notes = document.getElementById("achcha-notes");

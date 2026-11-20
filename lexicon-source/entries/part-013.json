@@ -1647,7 +1647,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "வியர்வை (viyarvai)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-wiktionary-viyarvai"
+              ],
+              "note": "Tamil Wiktionary defines viyarvai as sweat/perspiration and cites the DDSA edition. Provisional pending a primary lexicon headword check."
+            },
+            {
+              "language": "tcy",
+              "form": "begar",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "easytulu-body-parts"
+              ],
+              "note": "Easy Tulu body-parts vocabulary lists begar for perspire/sweat. Roman form retained as published; semantic equivalent only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -1734,7 +1755,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "கண்ணீர் (kaṇṇīr)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-kanneer"
+              ],
+              "note": "University of Madras Tamil Lexicon: tears."
+            },
+            {
+              "language": "tcy",
+              "form": "kaṇṇa-nīr",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-kanneer"
+              ],
+              "note": "The University of Madras Tamil Lexicon explicitly records the Tulu form Tu. kaṇṇa-nīr under the headword கண்ணீர். Roman transliteration retained from the dictionary; semantic equivalent only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -2672,7 +2714,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "களைப்பு (kaḷaippu)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-kalaippu"
+              ],
+              "note": "University of Madras Tamil Lexicon: fatigue, exhaustion."
+            },
+            {
+              "language": "tcy",
+              "form": "bacchel",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "easytulu-verbal-nouns"
+              ],
+              "note": "Easy Tulu Verbal Nouns lists bacchel as tiredness. Roman form retained as published; semantic equivalent only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

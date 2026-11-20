@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
   "name": "KannadaWords Writing Assistant",
-  "version": "0.1.0",
-  "description": "Rewrite selected Kannada text in natural, native-oriented Kannada using the KannadaWords AI service.",
+  "version": "0.2.1",
+  "description": "Local word-level Kannada suggestions plus optional selected-passage rewriting.",
   "permissions": [],
   "host_permissions": [
     "https://kannadawords-ai.tulasianand6.workers.dev/*"
@@ -16,9 +16,18 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["content.js"],
-      "css": ["styles.css"],
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "vocabulary.js",
+        "content.js",
+        "word-assistant.js"
+      ],
+      "css": [
+        "styles.css"
+      ],
       "run_at": "document_idle"
     }
   ]

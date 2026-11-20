@@ -103,9 +103,12 @@
   function searchAchchaLexicon(text) {
     if (!writingIndex) return [];
     const query = String(text || "").normalize("NFC");
-    return writingIndex.entries.filter(entry =>
+    const matched = writingIndex.entries.filter(entry =>
       entry.candidates.length && (!query || entry.sourceForms.some(form => query.includes(String(form).normalize("NFC"))))
-    ).slice(0, 100);
+    );
+    // When scanning a passage, return every matching entry (not a hard 100-cap).
+    // Cap only the unfiltered dump used for diagnostics.
+    return query ? matched : matched.slice(0, 100);
   }
   function getLabels() { return manifest?.etymologyLabels || {}; }
   function getReference(id) { return manifest?.references?.find(reference => reference.id === id) || null; }

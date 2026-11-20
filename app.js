@@ -139,9 +139,7 @@ function languageRows(entry, alts) {
   const rows = [
     ["Native Kannada", first.word || "—", null, []],
     ["Tamil", evidenceValue("ta") || first.tamil || "Not yet researched", first.evidenceVariants?.tamil, evidenceFor("ta")],
-    ["Tulu", evidenceValue("tcy") || first.tulu || "Not yet researched", first.evidenceVariants?.tulu, evidenceFor("tcy")],
-    ["Halegannada", entry.halegannada || "Not yet sourced", entry.halegannadaVariants, entry.halegannadaEvidence ? [entry.halegannadaEvidence] : []],
-    ["Proto-Dravidian root", evidenceValue("proto-dravidian") || first.proto || "Not yet researched", first.evidenceVariants?.proto, evidenceFor("proto-dravidian")]
+    ["Tulu", evidenceValue("tcy") || first.tulu || "Not yet researched", first.evidenceVariants?.tulu, evidenceFor("tcy")]
   ];
   const statusLabels = {
     not_assessed:"Not yet reviewed",

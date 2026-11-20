@@ -4538,7 +4538,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "உண்ணுதல் (uṇṇutal)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "dt-madurai-unnuthal"
+              ],
+              "note": "Tamil dictionary records uṇṇutal as eating/taking food; based on Tamil lexical sources."
+            },
+            {
+              "language": "tcy",
+              "form": "tinondu",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "easytulu-eating"
+              ],
+              "note": "Easy Tulu Lesson 16 gives tin + ondu > tinondu for 'eating' in a progressive construction. This is a verbal form, not asserted as a standalone noun."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

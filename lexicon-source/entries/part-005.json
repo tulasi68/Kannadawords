@@ -3526,7 +3526,30 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "இலை (ilai)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Leaf'. Semantic equivalents; not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಇರೆ (ire)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Leaf'. Semantic equivalents; not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -4561,7 +4584,30 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "தாய் (tāy)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Mother'. Semantic equivalents; not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಅಮ್ಮ (amma)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Mother'. Semantic equivalents; not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -4696,7 +4742,30 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "தந்தை (tantai)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Father'. Semantic equivalents; not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಅಪ್ಪ (appa)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Father'. Semantic equivalents; not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -5311,7 +5380,30 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "மனைவி (maṉaivi)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Wife'. Tulu spelling and IPA follow the source. Semantic equivalents; not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಬೊಡೆದಿ (/boɽɛd̪ i/)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Wife'. Tulu spelling and IPA follow the source. Semantic equivalents; not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

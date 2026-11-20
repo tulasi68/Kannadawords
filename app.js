@@ -166,7 +166,7 @@ function languageRows(entry, alts) {
     const note = notes.length ? '<span class="block text-xs text-stone-500 mt-1">'+notes.map(escapeHtml).join(" · ")+'</span>' : "";
     const relationship = relationships.length ? '<span class="block text-xs text-stone-500 mt-1">'+relationships.join(" · ")+'</span>' : "";
     const conflict = conflicts?.length
-      ? '<span class="block text-xs text-orange-700 mt-1">Conflicting source values: '+conflicts.map(escapeHtml).join(" · ")+'</span>'
+      ? '<span class="block text-xs text-orange-700 mt-1">Additional recorded forms: '+conflicts.map(escapeHtml).join(" · ")+'</span>'
       : "";
     const meta = (statusLabel ? '<span class="block text-xs '+statusClass+' mt-1">'+escapeHtml(statusLabel)+'</span>' : "") + relationship + sourceLinks + legacySource + note + conflict;
     return `

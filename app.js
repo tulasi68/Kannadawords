@@ -138,7 +138,6 @@ function languageRows(entry, alts) {
   };
   const rows = [
     ["Native Kannada", first.word || "—", null, []],
-    ["Kannada comparative form", evidenceValue("kn") || "Not yet sourced", null, evidenceFor("kn")],
     ["Tamil", evidenceValue("ta") || first.tamil || "Not yet researched", first.evidenceVariants?.tamil, evidenceFor("ta")],
     ["Tulu", evidenceValue("tcy") || first.tulu || "Not yet researched", first.evidenceVariants?.tulu, evidenceFor("tcy")],
     ["Halegannada", entry.halegannada || "Not yet sourced", entry.halegannadaVariants, entry.halegannadaEvidence ? [entry.halegannadaEvidence] : []],

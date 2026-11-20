@@ -1256,13 +1256,13 @@
             },
             {
               "language": "tcy",
-              "form": "ಪಂಜೀವ್ (/ponɟəu/)",
+              "form": "ಪೆಂಜೊವು (/ponɟəu/)",
               "relationship": "semantic_equivalent",
               "status": "provisional",
               "sourceRefs": [
                 "tulu-swadesh-list-2025"
               ],
-              "note": "Tulu equivalent; form transcribed from cited source. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025), 'Woman'. Semantic equivalents, not asserted as cognates."
+              "note": "Tulu form and IPA transcribed from the page image of SEL India, Tulu Swadesh Word List (2025), item 'Woman'. Semantic equivalent, not asserted as a cognate. Provisional pending dialect and lexical review."
             }
           ],
           "evidenceVariants": {},

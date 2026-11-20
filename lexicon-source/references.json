@@ -83,6 +83,48 @@
       "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/EnglishTulu_Dictionary_by_Rev._A._Manner_1888.pdf",
       "accessedAt": "2026-11-20",
       "note": "Historical English-to-Tulu dictionary. Used here for the Tulu equivalent of moon (ತಿಂಗಿಲು); historical spelling retained."
+    },
+    {
+      "id": "agarathi-vilangu",
+      "type": "dictionary",
+      "title": "விலங்கு (vilaṅku), University of Madras Tamil Lexicon headword",
+      "author": "University of Madras",
+      "year": "1924–1936",
+      "publisher": "University of Madras; digitized headword hosted by Agarathi",
+      "url": "https://agarathi.com/word/%E0%AE%B5%E0%AE%BF%E0%AE%B2%E0%AE%99%E0%AF%8D%E0%AE%95%E0%AF%81",
+      "accessedAt": "2026-11-20",
+      "note": "Headword defines vilaṅku as beast or bird, with a general animal sense. The online page reproduces the University of Madras Tamil Lexicon entry."
+    },
+    {
+      "id": "agarathi-kayiru",
+      "type": "dictionary",
+      "title": "கயிறு (kayiṟu), University of Madras Tamil Lexicon headword",
+      "author": "University of Madras",
+      "year": "1924–1936",
+      "publisher": "University of Madras; digitized headword hosted by Agarathi",
+      "url": "https://agarathi.com/word/%E0%AE%95%E0%AE%AF%E0%AE%BF%E0%AE%B1%E0%AF%81",
+      "accessedAt": "2026-11-20",
+      "note": "Headword defines kayiṟu as rope, cord, string, twine and cable. The online page reproduces the University of Madras Tamil Lexicon entry."
+    },
+    {
+      "id": "agarathi-karadi",
+      "type": "dictionary",
+      "title": "கரடி (karaṭi), University of Madras Tamil Lexicon headword",
+      "author": "University of Madras",
+      "year": "1924–1936",
+      "publisher": "University of Madras; digitized headword hosted by Agarathi",
+      "url": "https://agarathi.com/word/%E0%AE%95%E0%AE%B0%E0%AE%9F%E0%AE%BF",
+      "accessedAt": "2026-11-20",
+      "note": "Headword defines karaṭi as Indian black-bear/sloth-bear and includes the cross-language note [K. M. Tu. karaḍi], explicitly listing Tulu."
+    },
+    {
+      "id": "tuluverse-animals",
+      "type": "website",
+      "title": "TuluVerse: Animals vocabulary",
+      "author": "TuluVerse",
+      "url": "https://tuluverse.in/tulu-dictionary/animals",
+      "accessedAt": "2026-11-20",
+      "note": "Tulu vocabulary page lists the generic animal form as ಮುರ್ಗ (murg) and Bear as ಕರಡಿ. Dialect/register and transliteration should be reviewed by a Tulu language editor."
     }
   ]
 }

@@ -307,6 +307,15 @@
       "url": "https://agarathi.com/word/%E0%AE%A4%E0%AE%B3%E0%AE%BF%E0%AE%B0%E0%AF%8D",
       "accessedAt": "2026-11-20",
       "note": "Headword defines taḷir as sprout, tender shoot and bud."
+    },
+    {
+      "id": "tamil-swadesh-list",
+      "type": "publication",
+      "title": "Appendix: Tamil Swadesh list",
+      "author": "Wiktionary contributors",
+      "url": "https://en.wiktionary.org/wiki/Appendix:Tamil_Swadesh_list",
+      "accessedAt": "2026-11-20",
+      "note": "Lists Tamil taṭitta for the English gloss 'thick'. Secondary compilation; entry remains provisional pending dictionary-level editorial review."
     }
   ]
 }

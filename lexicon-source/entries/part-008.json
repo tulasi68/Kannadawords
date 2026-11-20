@@ -6189,7 +6189,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "கயிறு (kayiṟu)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-kayiru"
+              ],
+              "note": "University of Madras Tamil Lexicon: rope, cord, string, twine. Semantic equivalent only."
+            },
+            {
+              "language": "tcy",
+              "form": "ಬಲಲ್ (bəllɯ)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "SEL India Tulu Swadesh Word List, item 61 (Rope), gives ಬಲಲ್ and IPA /bəllɯ/. Retain source transcription; semantic equivalent only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

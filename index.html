@@ -19,6 +19,91 @@
     .main-choice strong { display:block; font-size:.88rem; line-height:1.35; }
     .main-choice small { display:block; margin-top:.1rem; color:#92400e; font-size:.68rem; line-height:1.25; }
     .choice-arrow { margin-left:auto; color:#b91c1c; font-size:1rem; font-weight:700; }
+
+    .achcha-preview {
+      font-family: 'Noto Sans Kannada', 'Noto Sans', sans-serif;
+      font-size: 1.05rem;
+      line-height: 2;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    .achcha-hit {
+      position: relative;
+      display: inline;
+      cursor: pointer;
+    }
+    .achcha-underline {
+      border-bottom: 2.5px solid #b91c1c;
+      background: rgba(254, 226, 226, 0.45);
+      border-radius: 2px;
+      padding: 0 1px;
+      transition: background .15s;
+    }
+    .achcha-hit:hover .achcha-underline,
+    .achcha-hit:focus .achcha-underline,
+    .achcha-hit:focus-within .achcha-underline {
+      background: rgba(254, 202, 202, 0.85);
+      outline: none;
+    }
+    .achcha-pop {
+      display: none;
+      position: absolute;
+      left: 0;
+      top: calc(100% + 6px);
+      z-index: 40;
+      min-width: 220px;
+      max-width: min(360px, 90vw);
+      padding: 0.65rem 0.75rem;
+      background: #fff;
+      border: 1px solid #fcd34d;
+      border-radius: 0.75rem;
+      box-shadow: 0 12px 28px rgba(120, 53, 15, 0.18);
+    }
+    .achcha-hit:hover .achcha-pop,
+    .achcha-hit:focus .achcha-pop,
+    .achcha-hit:focus-within .achcha-pop {
+      display: block;
+    }
+    .achcha-pop-title {
+      display: block;
+      font-size: 0.75rem;
+      color: #57534e;
+      margin-bottom: 0.45rem;
+      line-height: 1.35;
+    }
+    .achcha-pop-meaning { color: #78716c; }
+    .achcha-pop-opts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .achcha-opt {
+      border: 1px solid #fcd34d;
+      background: #fffbeb;
+      color: #7f1d1d;
+      border-radius: 9999px;
+      padding: 0.2rem 0.65rem;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+    .achcha-opt:hover { background: #fef3c7; border-color: #f59e0b; }
+    .achcha-opt-active {
+      background: #b91c1c;
+      border-color: #b91c1c;
+      color: #fff;
+    }
+    .achcha-opt-keep {
+      background: #f5f5f4;
+      border-color: #d6d3d1;
+      color: #57534e;
+      font-weight: 500;
+    }
+    .achcha-opt-keep.achcha-opt-active {
+      background: #57534e;
+      border-color: #57534e;
+      color: #fff;
+    }
   </style>
 </head>
 <body class="bg-stone-50 text-stone-800 min-h-screen">
@@ -183,6 +268,14 @@
         <p id="achcha-ai-status" class="text-xs text-stone-500 mt-2" aria-live="polite"></p>
       </div>
 
+
+      <div id="achcha-preview-wrap" class="hidden mt-4 rounded-xl border border-red-200 bg-white p-4 sm:p-5">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+          <h3 class="text-sm font-semibold text-stone-800">ಗುರುತಿಸಿದ ಪದಗಳು · Highlighted words</h3>
+          <p class="text-xs text-stone-500">Hover or focus an underlined word to choose a native alternative</p>
+        </div>
+        <div id="achcha-preview" class="achcha-preview text-stone-800" aria-live="polite"></div>
+      </div>
       <div id="achcha-word-list" class="hidden mt-5 rounded-xl border border-stone-200 bg-white p-4 sm:p-5">
         <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
           <h3 class="text-sm font-semibold text-stone-800">ಪದಗಳು ಮತ್ತು ಪರ್ಯಾಯಗಳು · Words &amp; alternatives</h3>
@@ -217,8 +310,8 @@
   <script src="contextual-examples.js"></script>
   <script src="coinage-review.js"></script>
   <script src="lexicon-display-adapter.js?v=20261119-v2"></script>
-  <script src="lexicon-store.js?v=20261119-v2"></script>
-  <script src="app.js?v=20261119-v2"></script>
+  <script src="lexicon-store.js?v=20261120-achcha"></script>
+  <script src="app.js?v=20261120-achcha"></script>
   <script src="mobile-assistant.js?v=1"></script>
 </body>
 </html>

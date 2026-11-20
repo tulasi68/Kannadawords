@@ -1584,7 +1584,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "செல்வம் (celvam)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-selvam"
+              ],
+              "note": "University of Madras Tamil Lexicon: wealth, riches and prosperity."
+            },
+            {
+              "language": "tcy",
+              "form": "asti (ಆಸ್ತಿ)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tudar-tulu-dictionary"
+              ],
+              "note": "Tudar Digital Tulu Dictionary records asti (ಆಸ್ತಿ) with the meaning property. Used here as a semantic equivalent; likely a loan form, not claimed as a cognate."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -2259,7 +2280,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "அருகில் (arukil)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-wiktionary-arukil"
+              ],
+              "note": "Tamil Wiktionary records arukil as near, close to and nearby. Provisional pending primary lexicon confirmation."
+            },
+            {
+              "language": "tcy",
+              "form": "keitalu / mutta",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "brigel-grammar-tulu-1872"
+              ],
+              "note": "J. Brigel's Tulu grammar lists keitalu and mutta with the meaning near, at hand. Roman forms retained from the source."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

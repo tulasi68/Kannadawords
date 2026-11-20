@@ -1243,7 +1243,30 @@
             }
           ],
           "viability": "clean",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பெண் (peṇ)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Woman'. The Tulu form is retained in the source transcription and IPA. Semantic equivalents; not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಪಂಜೀವ್ (/ponɟəu/)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Woman'. The Tulu form is retained in the source transcription and IPA. Semantic equivalents; not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -1317,7 +1340,30 @@
             }
           ],
           "viability": "clean",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "ஆண் (āṇ)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Man (adult male)'. Semantic equivalents; not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಆಂಜವ್ (/aːnɟəu/)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Man (adult male)'. Semantic equivalents; not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

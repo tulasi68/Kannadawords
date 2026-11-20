@@ -58,7 +58,7 @@
     if (!info) throw new Error("Unknown lexicon shard: " + shardId);
     const promise = (async () => {
       const url = new URL(info.file + "?v=" + encodeURIComponent(manifest.buildId), base);
-      const response = await fetch(url, { cache: "force-cache" });
+      const response = await fetch(url, { cache: "no-cache" });
       if (!response.ok) throw new Error("Could not load lexicon shard " + shardId + " (" + response.status + ").");
       const raw = await response.text();
       if (checksum(raw) !== info.checksum) throw new Error("Lexicon shard checksum mismatch: " + shardId);

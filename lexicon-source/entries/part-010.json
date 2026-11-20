@@ -1066,7 +1066,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "முள் (muḷ)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-mul"
+              ],
+              "note": "University of Madras Tamil Lexicon: thorn, brier, thistle and spine. This record covers the thorn sense, not the abstract obstacle sense."
+            },
+            {
+              "language": "tcy",
+              "form": "muḷ",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-mul"
+              ],
+              "note": "The same University of Madras Tamil Lexicon headword explicitly lists Tu. muḷ as the Tulu form. Roman form retained from the dictionary; thorn sense only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -1768,7 +1789,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "தளிர் (taḷir)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-thalir"
+              ],
+              "note": "University of Madras Tamil Lexicon: sprout, tender shoot and bud."
+            },
+            {
+              "language": "tcy",
+              "form": "agge",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tudar-tulu-dictionary"
+              ],
+              "note": "Tudar Digital Tulu Dictionary records agge (ಅಗ್ಗೆ) as a shoot of a branch. This is a close semantic match for sprout/tender shoot, not an asserted cognate."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

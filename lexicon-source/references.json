@@ -50,6 +50,39 @@
       "publisher": "Clarendon Press",
       "locator": "DEDR 4885",
       "note": "Bibliographic locator retained from contributor-supplied comparative evidence. Claim remains provisional pending editorial review."
+    },
+    {
+      "id": "tamil-lexicon-1924-1936",
+      "type": "dictionary",
+      "title": "Tamil Lexicon",
+      "author": "University of Madras",
+      "year": "1924–1936",
+      "publisher": "University of Madras",
+      "url": "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+      "accessedAt": "2026-11-20",
+      "note": "Digitized searchable edition of the University of Madras Tamil Lexicon, available through Digital Dictionaries of South Asia. Individual candidate forms remain provisional until checked against the relevant headword and sense."
+    },
+    {
+      "id": "tulu-swadesh-list-2025",
+      "type": "publication",
+      "title": "Tulu Swadesh Word List",
+      "author": "SEL India",
+      "year": 2025,
+      "publisher": "Society for Endangered Languages (SEL India)",
+      "url": "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf",
+      "accessedAt": "2026-11-20",
+      "note": "A 100-item Tulu word list with transcription and IPA. Forms and IPA are retained from the source; some PDF text extraction has encoding/OCR irregularities and should be checked against the page image before final verification."
+    },
+    {
+      "id": "manner-english-tulu-1888",
+      "type": "dictionary",
+      "title": "English-Tulu Dictionary",
+      "author": "A. Männer",
+      "year": 1888,
+      "publisher": "Basel Mission Press, Mangalore",
+      "url": "https://upload.wikimedia.org/wikipedia/commons/6/61/EnglishTulu_Dictionary_by_Rev._A._Manner_1888.pdf",
+      "accessedAt": "2026-11-20",
+      "note": "Historical English-to-Tulu dictionary. Used here for the Tulu equivalent of moon (ತಿಂಗಿಲು); historical spelling retained."
     }
   ]
 }

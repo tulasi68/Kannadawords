@@ -3526,7 +3526,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "இலை (ilai)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": "Tamil equivalent; lexical sense requires item-level editorial review. Tamil and Tulu forms correspond to 'Leaf'. Tulu form follows SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಇರೆ (ire)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "Tulu equivalent; form transcribed from cited source. Tamil and Tulu forms correspond to 'Leaf'. Tulu form follows SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -4561,7 +4582,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "தாய் (tāy)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": "Tamil equivalent; lexical sense requires item-level editorial review. Tamil and Tulu forms correspond to 'Mother'. Tulu form follows SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಅಮ್ಮ (amma)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "Tulu equivalent; form transcribed from cited source. Tamil and Tulu forms correspond to 'Mother'. Tulu form follows SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -4696,7 +4738,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "தந்தை (tantai)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": "Tamil equivalent; lexical sense requires item-level editorial review. Tamil and Tulu forms correspond to 'Father'. Tulu form follows SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಅಪ್ಪ (appa)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "Tulu equivalent; form transcribed from cited source. Tamil and Tulu forms correspond to 'Father'. Tulu form follows SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -5311,7 +5374,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "மனைவி (maṉaivi)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": "Tamil equivalent; lexical sense requires item-level editorial review. Tamil and Tulu forms correspond to 'Wife'. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಬೊಡೆದಿ (/boɽɛd̪ i/)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "Tulu equivalent; form transcribed from cited source. Tamil and Tulu forms correspond to 'Wife'. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

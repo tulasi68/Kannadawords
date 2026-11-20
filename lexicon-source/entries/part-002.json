@@ -4820,7 +4820,28 @@
             }
           ],
           "viability": "contested",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "திங்கள் (tiṅkaḷ)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": "Tamil equivalent; lexical sense requires item-level editorial review. Tamil form recorded as a lexical equivalent; Tulu ತಿಂಗಿಲು is listed for 'Moon' in A. Männer, English-Tulu Dictionary (1888). Semantic equivalents, not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ತಿಂಗಿಲು (tiṅgilu)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "manner-english-tulu-1888"
+              ],
+              "note": "Tulu equivalent; form transcribed from cited source. Tamil form recorded as a lexical equivalent; Tulu ತಿಂಗಿಲು is listed for 'Moon' in A. Männer, English-Tulu Dictionary (1888). Semantic equivalents, not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

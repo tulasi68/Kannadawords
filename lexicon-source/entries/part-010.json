@@ -4151,7 +4151,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "நாய் (nāy)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": "Tamil equivalent; lexical sense requires item-level editorial review. Tamil and Tulu forms correspond to 'Dog'. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ನಾಯಿ (/naːi/)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "Tulu equivalent; form transcribed from cited source. Tamil and Tulu forms correspond to 'Dog'. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

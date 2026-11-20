@@ -1243,7 +1243,28 @@
             }
           ],
           "viability": "clean",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பெண் (peṇ)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": "Tamil equivalent; lexical sense requires item-level editorial review. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025), 'Woman'. Semantic equivalents, not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಪೆಂಜೊವು (/ponɟəu/)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "Tulu form and IPA transcribed from the page image of SEL India, Tulu Swadesh Word List (2025), item 'Woman'. Semantic equivalent, not asserted as a cognate. Provisional pending dialect and lexical review."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -1317,7 +1338,28 @@
             }
           ],
           "viability": "clean",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "ஆண் (āṇ)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": "Tamil equivalent; lexical sense requires item-level editorial review. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025), 'Man (adult male)'. Semantic equivalents, not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ಆಂಜವ್ (/aːnɟəu/)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "Tulu equivalent; form transcribed from cited source. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025), 'Man (adult male)'. Semantic equivalents, not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

@@ -5211,17 +5211,19 @@
           "comparativeEvidence": [
             {
               "language": "ta",
-              "form": "அரசு / அரசன்",
-              "relationship": "unclassified",
+              "form": "அரசன் (arasan)",
+              "relationship": "semantic_equivalent",
               "status": "not_assessed",
-              "sourceRefs": []
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
             },
             {
               "language": "tcy",
               "form": "ಅರಸು",
-              "relationship": "unclassified",
+              "relationship": "semantic_equivalent",
               "status": "not_assessed",
-              "sourceRefs": []
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
             },
             {
               "language": "proto-dravidian",
@@ -5779,16 +5781,18 @@
             {
               "language": "ta",
               "form": "கடை (kaṭai)",
-              "relationship": "unclassified",
+              "relationship": "semantic_equivalent",
               "status": "not_assessed",
-              "sourceRefs": []
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
             },
             {
               "language": "tcy",
-              "form": "ಅಂಗಡಿ (aṅgaḍi)",
-              "relationship": "unclassified",
+              "form": "ಅಂಗடி (aṅgaḍi)",
+              "relationship": "semantic_equivalent",
               "status": "not_assessed",
-              "sourceRefs": []
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
             }
           ],
           "evidenceVariants": {},
@@ -5930,7 +5934,16 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "முகில் (mugil)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -6004,9 +6017,10 @@
             {
               "language": "ta",
               "form": "திரை (tirai)",
-              "relationship": "unclassified",
+              "relationship": "semantic_equivalent",
               "status": "not_assessed",
-              "sourceRefs": []
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
             },
             {
               "language": "tcy",
@@ -6177,9 +6191,10 @@
             {
               "language": "ta",
               "form": "கரும்பு (karumpu)",
-              "relationship": "unclassified",
+              "relationship": "semantic_equivalent",
               "status": "not_assessed",
-              "sourceRefs": []
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
             }
           ],
           "evidenceVariants": {},
@@ -6502,7 +6517,16 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "நாடு (nāṭu)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

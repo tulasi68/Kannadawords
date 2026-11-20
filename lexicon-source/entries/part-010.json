@@ -1885,22 +1885,18 @@
             {
               "language": "ta",
               "form": "பூ (pū; flower, blossom; DEDR 4348)",
-              "relationship": "semantic_equivalent",
-              "status": "provisional",
-              "sourceRefs": [
-                "tamil-lexicon-1924-1936"
-              ],
-              "note": "Legacy comparison retained without independent assessment. Entry-level matching and dialect/register review remain provisional."
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Legacy comparison retained without independent assessment."
             },
             {
               "language": "tcy",
               "form": "pū (flower; DEDR 4348)",
-              "relationship": "semantic_equivalent",
-              "status": "provisional",
-              "sourceRefs": [
-                "tulu-swadesh-list-2025"
-              ],
-              "note": "Legacy comparison retained without independent assessment. Entry-level matching and dialect/register review remain provisional."
+              "relationship": "unclassified",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Legacy comparison retained without independent assessment."
             },
             {
               "language": "proto-dravidian",
@@ -4164,7 +4160,7 @@
               "sourceRefs": [
                 "tamil-lexicon-1924-1936"
               ],
-              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Dog'. Semantic equivalents; not asserted as cognates. Entry-level matching and dialect/register review remain provisional."
+              "note": "Tamil equivalent; lexical sense requires item-level editorial review. Tamil and Tulu forms correspond to 'Dog'. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
             },
             {
               "language": "tcy",
@@ -4174,7 +4170,7 @@
               "sourceRefs": [
                 "tulu-swadesh-list-2025"
               ],
-              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Dog'. Semantic equivalents; not asserted as cognates. Entry-level matching and dialect/register review remain provisional."
+              "note": "Tulu equivalent; form transcribed from cited source. Tamil and Tulu forms correspond to 'Dog'. Tulu form and IPA follow SEL India, Tulu Swadesh Word List (2025). Semantic equivalents, not asserted as cognates."
             }
           ],
           "evidenceVariants": {},
@@ -4930,22 +4926,22 @@
             {
               "language": "ta",
               "form": "mīṉ",
-              "relationship": "semantic_equivalent",
+              "relationship": "attested_form",
               "status": "provisional",
               "sourceRefs": [
-                "tamil-lexicon-1924-1936"
+                "dedr-4885"
               ],
-              "note": "Gloss: fish Legacy citation: DEDR 4885 Contributor reports this as attested/related; retained as provisional pending editorial review. Entry-level matching and dialect/register review remain provisional."
+              "note": "Gloss: fish Legacy citation: DEDR 4885 Contributor reports this as attested/related; retained as provisional pending editorial review."
             },
             {
               "language": "tcy",
               "form": "mīnu",
-              "relationship": "semantic_equivalent",
+              "relationship": "attested_form",
               "status": "provisional",
               "sourceRefs": [
-                "tulu-swadesh-list-2025"
+                "dedr-4885"
               ],
-              "note": "Gloss: fish Legacy citation: DEDR 4885 Contributor reports this as attested/related; retained as provisional pending editorial review. Entry-level matching and dialect/register review remain provisional."
+              "note": "Gloss: fish Legacy citation: DEDR 4885 Contributor reports this as attested/related; retained as provisional pending editorial review."
             },
             {
               "language": "proto-dravidian",

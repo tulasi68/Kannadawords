@@ -4748,7 +4748,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "கரடி (karaṭi)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-karadi"
+              ],
+              "note": "University of Madras Tamil Lexicon: Indian black-bear/sloth-bear; its etymological note explicitly lists Kannada, Malayalam and Tulu forms. Semantic match; no specific Proto-Dravidian reconstruction asserted."
+            },
+            {
+              "language": "tcy",
+              "form": "ಕರಡಿ (karaḍi)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tuluverse-animals"
+              ],
+              "note": "TuluVerse animal vocabulary page lists ಕರಡಿ for Bear. University of Madras Tamil Lexicon also notes a Tulu form under this headword."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

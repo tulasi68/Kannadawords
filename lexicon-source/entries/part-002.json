@@ -198,6 +198,14 @@
               "status": "not_assessed",
               "sourceRefs": [],
               "note": "Candidate semantic equivalent; requires editorial/source verification."
+            },
+            {
+              "language": "tcy",
+              "form": "ಕಟ್ಟಳೆ (kaṭṭaḷe)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Tulu equivalent supplied for this entry; not independently assessed."
             }
           ],
           "evidenceVariants": {},
@@ -318,6 +326,14 @@
               "status": "not_assessed",
               "sourceRefs": [],
               "note": "Candidate semantic equivalent; requires editorial/source verification."
+            },
+            {
+              "language": "tcy",
+              "form": "ಅರಿವುಳ್ಳ ತೀರ್ಮಾನ",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Context-dependent rendering; proposed instead of ನೀತಿ / ಧರ್ಮ in the intended sense."
             }
           ],
           "evidenceVariants": {},
@@ -486,6 +502,14 @@
               "status": "not_assessed",
               "sourceRefs": [],
               "note": "Candidate semantic equivalent; requires editorial/source verification."
+            },
+            {
+              "language": "tcy",
+              "form": "ತೀರ್ಮಾನ (tīrmāna)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Tulu equivalent supplied for this entry; not independently assessed."
             }
           ],
           "evidenceVariants": {},
@@ -569,6 +593,14 @@
               "status": "not_assessed",
               "sourceRefs": [],
               "note": "Candidate semantic equivalent; requires editorial/source verification."
+            },
+            {
+              "language": "tcy",
+              "form": "ನಡೆಸುಗ (nadesuga)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Proposed Tulu equivalent; requires review."
             }
           ],
           "evidenceVariants": {},
@@ -652,6 +684,14 @@
               "status": "not_assessed",
               "sourceRefs": [],
               "note": "Candidate semantic equivalent; requires editorial/source verification."
+            },
+            {
+              "language": "tcy",
+              "form": "ನೆರವಿಗ (neraviga)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Proposed Tulu equivalent; requires review."
             }
           ],
           "evidenceVariants": {},
@@ -735,6 +775,14 @@
               "status": "not_assessed",
               "sourceRefs": [],
               "note": "Candidate semantic equivalent; requires editorial/source verification."
+            },
+            {
+              "language": "tcy",
+              "form": "ನಡೆವಳಿ (naḍavaḷi)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Tulu equivalent supplied for this entry; not independently assessed."
             }
           ],
           "evidenceVariants": {},
@@ -818,6 +866,14 @@
               "status": "not_assessed",
               "sourceRefs": [],
               "note": "Candidate semantic equivalent; requires editorial/source verification."
+            },
+            {
+              "language": "tcy",
+              "form": "ಜನರಾಳ್ವಿಕೆ (janarāḷvike)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Proposed Tulu equivalent; requires review."
             }
           ],
           "evidenceVariants": {},
@@ -901,6 +957,14 @@
               "status": "not_assessed",
               "sourceRefs": [],
               "note": "Candidate semantic equivalent; requires editorial/source verification."
+            },
+            {
+              "language": "tcy",
+              "form": "ಆರಿಕೆ (ārike)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Tulu equivalent supplied for this entry; not independently assessed."
             }
           ],
           "evidenceVariants": {},

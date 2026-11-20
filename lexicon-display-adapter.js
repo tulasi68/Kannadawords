@@ -1,9 +1,18 @@
 /* Converts canonical v2 records into the stable view model consumed by app.js. */
 (() => {
   "use strict";
-  function comparativeForm(candidate, language) {
-    return (candidate.comparativeEvidence || []).find(item => item.language === language)?.form || null;
+  const isText = value => typeof value === "string" && value.trim().length > 0;
+
+  function comparativeForm(candidate, language, variantKey, legacyKey) {
+    const record = (candidate.comparativeEvidence || []).find(item => item.language === language && isText(item.form));
+    if (record) return record.form;
+    const variants = candidate.evidenceVariants?.[variantKey];
+    const variant = Array.isArray(variants) ? variants.find(isText) : variants;
+    if (isText(variant)) return variant;
+    const legacy = candidate.legacyFields?.linguisticEvidence?.[legacyKey]?.form;
+    return isText(legacy) ? legacy : null;
   }
+
   function toDisplayCandidate(candidate) {
     const result = {
       ...(candidate.legacyFields || {}),
@@ -14,9 +23,9 @@
       note: candidate.note || "",
       etymologyParts: candidate.etymologyParts || [],
       viability: candidate.viability || undefined,
-      tamil: comparativeForm(candidate, "ta"),
-      tulu: comparativeForm(candidate, "tcy"),
-      proto: comparativeForm(candidate, "proto-dravidian"),
+      tamil: comparativeForm(candidate, "ta", "tamil", "tamil"),
+      tulu: comparativeForm(candidate, "tcy", "tulu", "tulu"),
+      proto: comparativeForm(candidate, "proto-dravidian", "proto", "protoDravidian"),
       evidenceVariants: candidate.evidenceVariants || {},
       comparativeEvidence: candidate.comparativeEvidence || []
     };
@@ -25,6 +34,7 @@
     if (candidate.editorial?.note) result.editorialNote = candidate.editorial.note;
     return result;
   }
+
   function toDisplayEntry(entry) {
     const result = {
       ...(entry.legacyFields || {}),
@@ -52,5 +62,6 @@
     if (entry.editorial?.note) result.editorialNote = entry.editorial.note;
     return result;
   }
+
   window.KannadaLexiconDisplayAdapter = { toDisplayEntry, toDisplayCandidate };
 })();

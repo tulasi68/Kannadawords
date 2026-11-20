@@ -119,14 +119,30 @@ function escapeHtml(value) {
 }
 function languageRows(entry, alts) {
   const first = alts[0] || {};
-  const evidenceFor = language => (first.comparativeEvidence || []).filter(item => item.language === language);
+  // Comparative evidence belongs to a Kannada candidate, not just to the first
+  // candidate in the card. Show every candidate's sourced forms so valid evidence
+  // on later alternatives is not silently hidden.
+  const evidenceFor = language => alts.flatMap(alt =>
+    (alt.comparativeEvidence || [])
+      .filter(item => item.language === language && item.form)
+      .map(item => ({ ...item, candidateForm: alt.word || "Candidate" }))
+  );
+  const evidenceValue = language => {
+    const seen = new Set();
+    return evidenceFor(language).map(item => {
+      const value = item.candidateForm + ": " + item.form;
+      if (seen.has(value)) return null;
+      seen.add(value);
+      return value;
+    }).filter(Boolean).join(" · ");
+  };
   const rows = [
     ["Native Kannada", first.word || "—", null, []],
-    ["Kannada comparative form", evidenceFor("kn").map(item=>item.form).join(" · ") || "—", null, evidenceFor("kn")],
-    ["Tamil", evidenceFor("ta").map(item=>item.form).join(" · ") || first.tamil || "—", first.evidenceVariants?.tamil, evidenceFor("ta")],
-    ["Tulu", evidenceFor("tcy").map(item=>item.form).join(" · ") || first.tulu || "—", first.evidenceVariants?.tulu, evidenceFor("tcy")],
+    ["Kannada comparative form", evidenceValue("kn") || "—", null, evidenceFor("kn")],
+    ["Tamil", evidenceValue("ta") || first.tamil || "—", first.evidenceVariants?.tamil, evidenceFor("ta")],
+    ["Tulu", evidenceValue("tcy") || first.tulu || "—", first.evidenceVariants?.tulu, evidenceFor("tcy")],
     ["Halegannada", entry.halegannada || "Not yet sourced", entry.halegannadaVariants, entry.halegannadaEvidence ? [entry.halegannadaEvidence] : []],
-    ["Proto-Dravidian root", evidenceFor("proto-dravidian").map(item=>item.form).join(" · ") || first.proto || "Not reconstructed / not yet sourced", first.evidenceVariants?.proto, evidenceFor("proto-dravidian")]
+    ["Proto-Dravidian root", evidenceValue("proto-dravidian") || first.proto || "Not reconstructed / not yet sourced", first.evidenceVariants?.proto, evidenceFor("proto-dravidian")]
   ];
   const statusLabels = {
     not_assessed:"Not yet reviewed",

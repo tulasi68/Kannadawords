@@ -24,7 +24,16 @@
             }
           ],
           "viability": "clean",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "அரசு (aracu)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -98,7 +107,16 @@
             }
           ],
           "viability": "coined",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "குழு (kuḻu)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -172,7 +190,16 @@
             }
           ],
           "viability": "clean",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "சட்டம் (caṭṭam)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -283,7 +310,16 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "அறம் (aṟam)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -442,7 +478,16 @@
             }
           ],
           "viability": "clean",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "முடிவு (muṭivu)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -516,7 +561,16 @@
             }
           ],
           "viability": "coined",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "இயக்குநர் (iyaḵkuṉar)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -590,7 +644,16 @@
             }
           ],
           "viability": "coined",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "துணையாளர் (tuṇaiyāḷar)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -664,7 +727,16 @@
             }
           ],
           "viability": "coined",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "முறை (muṟai)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -738,7 +810,16 @@
             }
           ],
           "viability": "coined",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "மக்களாட்சி (makkaḷāṭci)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -812,7 +893,16 @@
             }
           ],
           "viability": "coined",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "தேர்தல் (tērtal)",
+              "relationship": "semantic_equivalent",
+              "status": "not_assessed",
+              "sourceRefs": [],
+              "note": "Candidate semantic equivalent; requires editorial/source verification."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

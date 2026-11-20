@@ -1336,16 +1336,22 @@
             {
               "language": "ta",
               "form": "மருந்து (maruntu)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಮರ್ದ್",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "manner-english-tulu-1888"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -1494,16 +1500,22 @@
             {
               "language": "ta",
               "form": "நோய் (nōy)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಬೇನೆ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "manner-english-tulu-1888"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},
@@ -3435,16 +3447,22 @@
             {
               "language": "ta",
               "form": "ஆறு (āṟu)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಸುದೆ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "manner-english-tulu-1888"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},
@@ -4672,16 +4690,22 @@
             {
               "language": "ta",
               "form": "பழம் (paḻam)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಪರ್ಂದ್",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "manner-english-tulu-1888"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -4824,24 +4848,22 @@
             {
               "language": "ta",
               "form": "திங்கள் (tiṅkaḷ)",
-              "relationship": "attested_form",
-              "status": "attested",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
               "sourceRefs": [
-                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
-                "https://upload.wikimedia.org/wikipedia/commons/6/61/EnglishTulu_Dictionary_by_Rev._A._Manner_1888.pdf"
+                "tamil-lexicon-1924-1936"
               ],
-              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: A. Männer, English-Tulu Dictionary (1888), entry 'Moon' gives ತಿಂಗಿಲು. Semantic equivalents; not asserted as cognates."
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: A. Männer, English-Tulu Dictionary (1888), entry 'Moon' gives ತಿಂಗಿಲು. Semantic equivalents; not asserted as cognates. Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ತಿಂಗಿಲು (tiṅgilu)",
-              "relationship": "attested_form",
-              "status": "attested",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
               "sourceRefs": [
-                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
-                "https://upload.wikimedia.org/wikipedia/commons/6/61/EnglishTulu_Dictionary_by_Rev._A._Manner_1888.pdf"
+                "manner-english-tulu-1888"
               ],
-              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: A. Männer, English-Tulu Dictionary (1888), entry 'Moon' gives ತಿಂಗಿಲು. Semantic equivalents; not asserted as cognates."
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: A. Männer, English-Tulu Dictionary (1888), entry 'Moon' gives ತಿಂಗಿಲು. Semantic equivalents; not asserted as cognates. Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},

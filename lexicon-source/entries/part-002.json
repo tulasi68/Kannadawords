@@ -4820,7 +4820,30 @@
             }
           ],
           "viability": "contested",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "திங்கள் (tiṅkaḷ)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://upload.wikimedia.org/wikipedia/commons/6/61/EnglishTulu_Dictionary_by_Rev._A._Manner_1888.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: A. Männer, English-Tulu Dictionary (1888), entry 'Moon' gives ತಿಂಗಿಲು. Semantic equivalents; not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ತಿಂಗಿಲು (tiṅgilu)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://upload.wikimedia.org/wikipedia/commons/6/61/EnglishTulu_Dictionary_by_Rev._A._Manner_1888.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: A. Männer, English-Tulu Dictionary (1888), entry 'Moon' gives ತಿಂಗಿಲು. Semantic equivalents; not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

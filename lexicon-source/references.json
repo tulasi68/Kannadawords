@@ -125,6 +125,39 @@
       "url": "https://tuluverse.in/tulu-dictionary/animals",
       "accessedAt": "2026-11-20",
       "note": "Tulu vocabulary page lists the generic animal form as ಮುರ್ಗ (murg) and Bear as ಕರಡಿ. Dialect/register and transliteration should be reviewed by a Tulu language editor."
+    },
+    {
+      "id": "agarathi-puzhu",
+      "type": "dictionary",
+      "title": "புழு (puḻu), University of Madras Tamil Lexicon headword",
+      "author": "University of Madras",
+      "year": "1924–1936",
+      "publisher": "University of Madras; digitized headword hosted by Agarathi",
+      "url": "https://agarathi.com/word/%E0%AE%AA%E0%AF%81%E0%AE%B4%E0%AF%81",
+      "accessedAt": "2026-11-20",
+      "note": "Headword defines puḻu as worm and maggot. Online page reproduces the University of Madras Tamil Lexicon entry."
+    },
+    {
+      "id": "agarathi-pattai",
+      "type": "dictionary",
+      "title": "பட்டை (paṭṭai), University of Madras Tamil Lexicon headword",
+      "author": "University of Madras",
+      "year": "1924–1936",
+      "publisher": "University of Madras; digitized headword hosted by Agarathi",
+      "url": "https://agarathi.com/word/%E0%AE%AA%E0%AE%9F%E0%AF%8D%E0%AE%9F%E0%AF%88",
+      "accessedAt": "2026-11-20",
+      "note": "Headword defines paṭṭai as bark of a tree, among other senses. Online page reproduces the University of Madras Tamil Lexicon entry."
+    },
+    {
+      "id": "agarathi-kaadu",
+      "type": "dictionary",
+      "title": "காடு (kāṭu), University of Madras Tamil Lexicon headword",
+      "author": "University of Madras",
+      "year": "1924–1936",
+      "publisher": "University of Madras; digitized headword hosted by Agarathi",
+      "url": "https://agarathi.com/word/%E0%AE%95%E0%AE%BE%E0%AE%9F%E0%AF%81",
+      "accessedAt": "2026-11-20",
+      "note": "Headword defines kāṭu as forest, jungle and desert; its etymological note explicitly lists Tulu kāḍu."
     }
   ]
 }

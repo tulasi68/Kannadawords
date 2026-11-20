@@ -543,9 +543,12 @@
             {
               "language": "tcy",
               "form": "olame / olume (affection, love, kindness; DEDR 1006)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},
@@ -1247,24 +1250,22 @@
             {
               "language": "ta",
               "form": "பெண் (peṇ)",
-              "relationship": "attested_form",
-              "status": "attested",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
               "sourceRefs": [
-                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
-                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+                "tamil-lexicon-1924-1936"
               ],
-              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Woman'. The Tulu form is retained in the source transcription and IPA. Semantic equivalents; not asserted as cognates."
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Woman'. The Tulu form is retained in the source transcription and IPA. Semantic equivalents; not asserted as cognates. Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಪಂಜೀವ್ (/ponɟəu/)",
-              "relationship": "attested_form",
-              "status": "attested",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
               "sourceRefs": [
-                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
-                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+                "tulu-swadesh-list-2025"
               ],
-              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Woman'. The Tulu form is retained in the source transcription and IPA. Semantic equivalents; not asserted as cognates."
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Woman'. The Tulu form is retained in the source transcription and IPA. Semantic equivalents; not asserted as cognates. Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},
@@ -1344,24 +1345,22 @@
             {
               "language": "ta",
               "form": "ஆண் (āṇ)",
-              "relationship": "attested_form",
-              "status": "attested",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
               "sourceRefs": [
-                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
-                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+                "tamil-lexicon-1924-1936"
               ],
-              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Man (adult male)'. Semantic equivalents; not asserted as cognates."
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Man (adult male)'. Semantic equivalents; not asserted as cognates. Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಆಂಜವ್ (/aːnɟəu/)",
-              "relationship": "attested_form",
-              "status": "attested",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
               "sourceRefs": [
-                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
-                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+                "tulu-swadesh-list-2025"
               ],
-              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Man (adult male)'. Semantic equivalents; not asserted as cognates."
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Man (adult male)'. Semantic equivalents; not asserted as cognates. Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},
@@ -3512,16 +3511,22 @@
             {
               "language": "ta",
               "form": "நாக்கு (nākku)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ನಾಲಿಗೆ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -3659,16 +3664,22 @@
             {
               "language": "ta",
               "form": "விரல் (viral)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಬೆರಳ್",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -3758,16 +3769,22 @@
             {
               "language": "ta",
               "form": "உகிர் (ukir)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಉಗುರು",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -3857,16 +3874,22 @@
             {
               "language": "ta",
               "form": "முகம் (mukam)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಮೊಕ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -3956,16 +3979,22 @@
             {
               "language": "ta",
               "form": "நெஞ்சு (neñcu)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಎದೆ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -4177,16 +4206,22 @@
             {
               "language": "ta",
               "form": "வயிறு (vayiṟu)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಬಂಜಿ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},
@@ -4269,16 +4304,22 @@
             {
               "language": "ta",
               "form": "எலும்பு (elumpu)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಮೂಳೆ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},
@@ -4361,16 +4402,22 @@
             {
               "language": "ta",
               "form": "மூச்சு (mūccu)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಉಸಿರ್",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -4460,16 +4507,22 @@
             {
               "language": "ta",
               "form": "விண்மீன் (different)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಚುಕ್ಕೆ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},
@@ -4552,16 +4605,22 @@
             {
               "language": "ta",
               "form": "இலை (ilai)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಎಲೆ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -4651,16 +4710,22 @@
             {
               "language": "ta",
               "form": "வித்து (vittu)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಬಿತ್ತ್",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -4801,16 +4866,22 @@
             {
               "language": "ta",
               "form": "வேர் (vēr)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಬೇರ್",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -4900,16 +4971,22 @@
             {
               "language": "ta",
               "form": "புல் (pul)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಪುಲ್ಲು",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -4999,16 +5076,22 @@
             {
               "language": "ta",
               "form": "பாறை (pāṟai)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಬಂಡೆ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             }
           ],
           "evidenceVariants": {},
@@ -5190,16 +5273,22 @@
             {
               "language": "ta",
               "form": "கல் (kal)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಕಲ್ಲ್",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -5293,16 +5382,22 @@
             {
               "language": "ta",
               "form": "வெள்ளி (veḷḷi)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಬೊಳ್ಳಿ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -5406,16 +5501,22 @@
             {
               "language": "ta",
               "form": "நஞ்சு (nañcu)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ನಂಜಿ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -5505,16 +5606,22 @@
             {
               "language": "ta",
               "form": "வெளிச்சம் (veḷiccam)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಬೆಲ್ಕ್",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -5692,16 +5799,22 @@
             {
               "language": "ta",
               "form": "இருள் (iruḷ)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಇರುಳು",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -5876,16 +5989,22 @@
             {
               "language": "ta",
               "form": "குளிர் (kuḷir)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಚಳಿ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -5975,16 +6094,22 @@
             {
               "language": "ta",
               "form": "புகை (pukai)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಪೊಗೆ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -6074,16 +6199,22 @@
             {
               "language": "ta",
               "form": "தீ (tī)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಕಿಚ್ಚಿ",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",
@@ -6173,16 +6304,22 @@
             {
               "language": "ta",
               "form": "மணல் (maṇal)",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-lexicon-1924-1936"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "tcy",
               "form": "ಮರಳ್",
-              "relationship": "unclassified",
-              "status": "not_assessed",
-              "sourceRefs": []
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": " Entry-level matching and dialect/register review remain provisional."
             },
             {
               "language": "proto-dravidian",

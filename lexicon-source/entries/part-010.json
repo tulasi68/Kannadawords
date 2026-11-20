@@ -4151,7 +4151,30 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "நாய் (nāy)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Dog'. Semantic equivalents; not asserted as cognates."
+            },
+            {
+              "language": "tcy",
+              "form": "ನಾಯಿ (/naːi/)",
+              "relationship": "attested_form",
+              "status": "attested",
+              "sourceRefs": [
+                "https://dsal.uchicago.edu/dictionaries/tamil-lex/",
+                "https://selindia.org/wp-content/uploads/2025/05/SWL-Tulu_IPA.pdf"
+              ],
+              "note": "Tamil: University of Madras Tamil Lexicon; Tulu: SEL India, Tulu Swadesh Word List (2025), 'Dog'. Semantic equivalents; not asserted as cognates."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

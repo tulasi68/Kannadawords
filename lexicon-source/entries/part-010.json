@@ -1519,7 +1519,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "பட்டை (paṭṭai)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-pattai"
+              ],
+              "note": "University of Madras Tamil Lexicon: bark of a tree. This entry is limited to the bark sense, not every sense of peel."
+            },
+            {
+              "language": "tcy",
+              "form": "ಕೆತ್ತೆ (kɛt̪t̪ɛ)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "SEL India Tulu Swadesh Word List, item 58 (Bark of a tree), gives ಕೆತ್ತೆ and IPA /kɛt̪t̪ɛ/. Page-image transcription checked; semantic equivalent only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -2355,7 +2376,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "காடு (kāṭu)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-kaadu"
+              ],
+              "note": "University of Madras Tamil Lexicon: forest, jungle. Its headword note includes Tulu kāḍu; semantic equivalent only in this record."
+            },
+            {
+              "language": "tcy",
+              "form": "ಕಾಡ್ (kaːɽ)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "SEL India Tulu Swadesh Word List, item 52 (Forest), gives ಕಾಡ್ and IPA /kaːɽ/. Page-image transcription checked; semantic equivalent only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,
@@ -6358,7 +6400,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "புழு (puḻu)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "agarathi-puzhu"
+              ],
+              "note": "University of Madras Tamil Lexicon: worm, maggot. Semantic equivalent only."
+            },
+            {
+              "language": "tcy",
+              "form": "ಪುರಿ (puri)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "SEL India Tulu Swadesh Word List, item 50 (Worm), gives ಪುರಿ and IPA /puriː/. Source transcription retained; semantic equivalent only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

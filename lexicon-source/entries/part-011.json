@@ -2731,7 +2731,28 @@
             }
           ],
           "viability": "proposed",
-          "comparativeEvidence": [],
+          "comparativeEvidence": [
+            {
+              "language": "ta",
+              "form": "தடித்த (taṭitta)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tamil-swadesh-list"
+              ],
+              "note": "Tamil Swadesh list records taṭitta for 'thick'. This record covers the thick sense, not every sense in the combined English gloss."
+            },
+            {
+              "language": "tcy",
+              "form": "ದಪ್ಪ (dappa)",
+              "relationship": "semantic_equivalent",
+              "status": "provisional",
+              "sourceRefs": [
+                "tulu-swadesh-list-2025"
+              ],
+              "note": "SEL India Tulu Swadesh Word List, item 30 (Thick), gives ದಪ್ಪ with IPA /d̪ əppa/. Source transcription retained; thick sense only."
+            }
+          ],
           "evidenceVariants": {},
           "flags": {
             "noAlternative": false,

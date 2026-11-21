@@ -821,7 +821,7 @@ async function filterAndRender() {
       meaning:row[3],
       category:row[4],
       naturalness:row[5],
-      alternatives:row[2].split(/\\s*\\/\\s*/).filter(Boolean).map((word,index) => ({
+      alternatives:row[2].split(/\s*\/\s*/).filter(Boolean).map((word,index) => ({
         id:row[0] + "-" + (index + 1),
         word,
         unreviewed:true,

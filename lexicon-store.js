@@ -48,6 +48,21 @@
       if (writingIndex.schemaVersion !== manifest.schemaVersion || writingIndex.generatorVersion !== manifest.generatorVersion || writingIndex.buildId !== manifest.buildId || !Array.isArray(writingIndex.entries)) {
         throw new Error("Writing index and lexicon manifest versions do not match.");
       }
+      // Load the separately maintained master corpus for sentence-level lookup.
+      // A master-file problem must not prevent the original comparative lexicon loading.
+      try {
+        const masterUrl = new URL("../master-lexicon.json", base);
+        const masterData = await getJson(masterUrl, "no-cache");
+        if (masterData.schemaVersion !== 1 || !Array.isArray(masterData.entries) ||
+            masterData.entryCount !== masterData.entries.length ||
+            masterData.entries.some(row => !Array.isArray(row.fields) || row.fields.length !== 8)) {
+          throw new Error("Master lexicon structure or row count is invalid.");
+        }
+        masterWritingIndex = buildMasterWritingIndex(masterData);
+      } catch (masterError) {
+        masterWritingIndex = [];
+        console.warn("Master corpus unavailable for sentence lookup; canonical lexicon remains available.", masterError);
+      }
       return manifest;
     })().catch(error => { initPromise = null; throw error; });
     return initPromise;
@@ -100,12 +115,66 @@
     if (!manifest) return 0;
     return category === "all" ? manifest.entryCount : (manifest.categoryIds[category] || []).length;
   }
+  let masterWritingIndex = [];
+  function buildMasterWritingIndex(data) {
+    const bySource = new Map();
+    for (const row of data.entries) {
+      const fields = row.fields;
+      if (!Array.isArray(fields) || fields.length !== 8) continue;
+      const sourceForms = String(fields[1] || "").split(/\\s*\\/\\s*/).map(value => value.trim().normalize("NFC")).filter(Boolean);
+      const alternatives = String(fields[2] || "").split(/\\s*\\/\\s*/).map(value => value.trim()).filter(Boolean);
+      const meaning = String(fields[3] || "").trim();
+      const fit = String(fields[5] || "").trim();
+      const root = String(fields[6] || "").trim();
+      const usage = String(fields[7] || "").trim();
+      const noteParts = ["Master corpus entry"];
+      if (fit) noteParts.push("Naturalness fit: " + fit);
+      if (root) noteParts.push("Dravidian root recorded: " + root);
+      if (usage) noteParts.push(usage);
+      const note = noteParts.join(" · ");
+      const candidates = alternatives.map(word => ({
+        word,
+        origin: "uncertain",
+        reviewStatus: "needs_review",
+        originClassification: "uncertain",
+        note,
+        masterSourceId: row.id
+      }));
+      for (const form of sourceForms) {
+        if (!bySource.has(form)) bySource.set(form, { entryId: "master:" + row.id, sourceForms: [form], meaning, candidates: [] });
+        const target = bySource.get(form);
+        if (!target.meaning && meaning) target.meaning = meaning;
+        for (const candidate of candidates) {
+          if (!target.candidates.some(existing => existing.word === candidate.word)) target.candidates.push(candidate);
+        }
+      }
+    }
+    return [...bySource.values()];
+  }
   function searchAchchaLexicon(text) {
     if (!writingIndex) return [];
     const query = String(text || "").normalize("NFC");
-    const matched = writingIndex.entries.filter(entry =>
-      entry.candidates.length && (!query || entry.sourceForms.some(form => query.includes(String(form).normalize("NFC"))))
-    );
+    const canonical = writingIndex.entries.flatMap(entry => {
+      if (!entry.candidates.length) return [];
+      const forms = (entry.sourceForms || []).map(form => String(form).normalize("NFC")).filter(form => !query || query.includes(form));
+      return forms.map(form => ({ ...entry, sourceForms: [form] }));
+    });
+    const master = query
+      ? masterWritingIndex.filter(entry => entry.sourceForms.some(form => query.includes(form)))
+      : masterWritingIndex.slice(0, 100);
+    // Merge canonical and master corpus records by source spelling so a word
+    // found in both collections exposes all candidate alternatives in one popover.
+    const merged = new Map();
+    for (const entry of [...canonical, ...master]) {
+      const form = entry.sourceForms[0];
+      if (!merged.has(form)) merged.set(form, { ...entry, sourceForms: [form], candidates: [] });
+      const target = merged.get(form);
+      if (!target.meaning && entry.meaning) target.meaning = entry.meaning;
+      for (const candidate of entry.candidates || []) {
+        if (candidate.word && !target.candidates.some(existing => existing.word === candidate.word)) target.candidates.push(candidate);
+      }
+    }
+    const matched = [...merged.values()].filter(entry => entry.candidates.length);
     // When scanning a passage, return every matching entry (not a hard 100-cap).
     // Cap only the unfiltered dump used for diagnostics.
     return query ? matched : matched.slice(0, 100);

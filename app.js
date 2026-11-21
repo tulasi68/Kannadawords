@@ -92,7 +92,8 @@ function getSuggestions(entryId) {
     note: "Community suggestion — approved by administrator",
     proto: null, tamil: null, tulu: null,
     etymologyParts: [{form:item.word,etymology:"unknown"}],
-    viability:"proposed", unreviewed:true
+    viability:"proposed", unreviewed:true,
+    voteRefs: [{entryId:item.entryId,altId:"community-"+item.id}]
   }));
 }
 async function addSuggestion(entryId, word) {
@@ -940,11 +941,11 @@ async function loadUnifiedRows() {
   }));
   const all = [...canonicalEntries,...masterEntries,...landingEntries];
   const grouped = new Map();
-  const normalizeDisplayKey = value => String(value ?? "").normalize("NFC").replace(/\\s+/g," ").trim();
+  const normalizeDisplayKey = value => String(value ?? "").normalize("NFC").replace(/\s+/g," ").trim();
   for (const entry of all) {
     // Consolidate exact source-word + meaning matches for browsing only.
     // Different meanings stay separate; every original record remains untouched.
-    const key = normalizeDisplayKey(entry.sanskrit) + "\\u0000" + normalizeDisplayKey(entry.meaning);
+    const key = normalizeDisplayKey(entry.sanskrit) + "\u0000" + normalizeDisplayKey(entry.meaning);
     let group = grouped.get(key);
     if (!group) {
       group = { ...entry, categories: [], sourceRecordIds: [], alternatives: [], editorialNotes: [] };
@@ -968,7 +969,7 @@ async function loadUnifiedRows() {
   }
   const allGrouped = [...grouped.values()];
   for (const entry of allGrouped) {
-    entry.categories.sort((a,b) => a === "Public Signboards" ? -1 : b === "Public Signboards" ? 1 : a.localeCompare(b));
+    entry.categories.sort((a,b) => (a === "Public Signboards" ? 0 : 1) - (b === "Public Signboards" ? 0 : 1) || a.localeCompare(b));
     entry.category = entry.categories[0] || "Uncategorized";
     entry.editorialNote = [
       ...entry.editorialNotes,

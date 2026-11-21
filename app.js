@@ -54,6 +54,15 @@ function getVoteCount(entryId, altId) {
 function getSelectedVote(entryId) {
   return remoteVoteSelections["word:"+entryId] || null;
 }
+function getAltVoteRefs(entry, alt) {
+  return Array.isArray(alt.voteRefs) && alt.voteRefs.length ? alt.voteRefs : [{ entryId: entry.id, altId: alt.id }];
+}
+function getAltVoteCount(entry, alt) {
+  return getAltVoteRefs(entry, alt).reduce((total, ref) => total + getVoteCount(ref.entryId, ref.altId), 0);
+}
+function isAltSelected(entry, alt) {
+  return getAltVoteRefs(entry, alt).some(ref => getSelectedVote(ref.entryId) === ref.altId);
+}
 async function loadRemoteVotes() {
   try {
     const response=await fetch(MODERATION_API+"/api/votes?voterId="+encodeURIComponent(voterId),{cache:"no-store"});
@@ -226,26 +235,27 @@ function render(entries, totalEntries = entries.length) {
   entries.forEach(entry => {
     const card = document.createElement("article");
     card.className = "bg-white border border-amber-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-shadow";
-    const nativeAlts = [...entry.alternatives, ...getSuggestions(entry.id)];
+    const nativeAlts = [...entry.alternatives, ...(entry.sourceRecordIds || [entry.id]).flatMap(getSuggestions)];
     const originalOption = !entry.scopeAudit ? [{
       id: "original-" + entry.id,
       word: entry.sanskrit,
       isOriginal: true
     }] : [];
     const alts = [...nativeAlts, ...originalOption];
-    const totalVotes = alts.reduce((sum, alt) => sum + getVoteCount(entry.id,alt.id),0);
+    const totalVotes = alts.reduce((sum, alt) => sum + getAltVoteCount(entry,alt),0);
     const first = alts[0] || {};
     const rows = languageRows(entry, alts);
     const voteHtml = alts.map(alt => {
-      const count = getVoteCount(entry.id,alt.id);
-      const selected = getSelectedVote(entry.id) === alt.id;
+      const count = getAltVoteCount(entry,alt);
+      const selected = isAltSelected(entry,alt);
+      const voteRef = getAltVoteRefs(entry,alt)[0];
       const viabilityLabel = ({clean:"Clean Dravidian",coined:"Proposed coinage",contested:"Contested",no_alternative:"No viable native alternative"})[alt.viability] || "";
       const label = alt.isOriginal ? "Keep original: " + alt.word : alt.isNoAlternative || alt.viability==="no_alternative" ? "No viable native alternative" : alt.isScopeAudit ? "Outside Sanskrit-origin scope" : alt.unreviewed ? alt.word + " · etymology unknown" : alt.word + (viabilityLabel ? " · " + viabilityLabel : "");
-      return `<button onclick="castVote('${entry.id}','${alt.id}')" aria-pressed="${selected}" class="block w-full text-left text-sm border ${selected ? "border-emerald-600 bg-emerald-100 font-semibold" : "border-emerald-200 bg-white"} text-emerald-800 rounded-lg px-3 py-2 hover:bg-emerald-50">${selected ? "✓ " : ""}${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
+      return `<button onclick="castVote('${voteRef.entryId}','${voteRef.altId}')" aria-pressed="${selected}" class="block w-full text-left text-sm border ${selected ? "border-emerald-600 bg-emerald-100 font-semibold" : "border-emerald-200 bg-white"} text-emerald-800 rounded-lg px-3 py-2 hover:bg-emerald-50">${selected ? "✓ " : ""}${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
     }).join(" ");
     card.innerHTML = `
       <div class="flex items-start justify-between gap-2 mb-3">
-        <span class="text-xs font-bold uppercase tracking-wide text-red-800 bg-yellow-100 px-2 py-1 rounded-full">${escapeHtml(entry.category)}</span>
+        <span class="text-xs font-bold uppercase tracking-wide text-red-800 bg-yellow-100 px-2 py-1 rounded-full">${escapeHtml((entry.categories || [entry.category]).join(" · "))}</span>
         ${totalVotes ? `<span class="text-xs text-stone-400">${totalVotes} votes</span>` : ""}
       </div>
       ${entry.noAlternative ? '<div class="mb-3 rounded-lg border border-orange-200 bg-orange-50 px-3 py-2 text-sm text-orange-900"><strong>No viable native alternative</strong><p class="text-xs mt-1">This is an honest open category, not a failed card. Community proposals can still be added for review.</p></div>' : entry.scopeAudit ? '<div class="mb-3 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2 text-sm text-sky-900"><strong>Origin audit — outside the Sanskrit-derived replacement set</strong><p class="text-xs mt-1">The proposed loanword origin needs independent verification.</p></div>' : ''}
@@ -872,7 +882,7 @@ window.setWordDataset = setWordDataset;
 
 function populateCategoryOptions() {
   const selected = categorySelect.value || "all";
-  const categories = [...new Set((unifiedRows || []).map(entry => entry.category || "Uncategorized"))];
+  const categories = [...new Set((unifiedRows || []).flatMap(entry => entry.categories || [entry.category || "Uncategorized"]))];
   categories.sort((a,b) => {
     if (a === "Public Signboards") return -1;
     if (b === "Public Signboards") return 1;
@@ -929,12 +939,48 @@ async function loadUnifiedRows() {
     editorialNote:"Naturalness fit in the supplied spreadsheet: "+row[5]+"."
   }));
   const all = [...canonicalEntries,...masterEntries,...landingEntries];
-  const categoryRank = category => category === "Public Signboards" ? 0 : 1;
-  all.sort((a,b) => categoryRank(a.category)-categoryRank(b.category) ||
+  const grouped = new Map();
+  const normalizeDisplayKey = value => String(value ?? "").normalize("NFC").replace(/\\s+/g," ").trim();
+  for (const entry of all) {
+    // Consolidate exact source-word + meaning matches for browsing only.
+    // Different meanings stay separate; every original record remains untouched.
+    const key = normalizeDisplayKey(entry.sanskrit) + "\\u0000" + normalizeDisplayKey(entry.meaning);
+    let group = grouped.get(key);
+    if (!group) {
+      group = { ...entry, categories: [], sourceRecordIds: [], alternatives: [], editorialNotes: [] };
+      grouped.set(key, group);
+    }
+    group.sourceRecordIds.push(entry.id);
+    const category = entry.category || "Uncategorized";
+    if (!group.categories.includes(category)) group.categories.push(category);
+    if (entry.editorialNote && !group.editorialNotes.includes(entry.editorialNote)) group.editorialNotes.push(entry.editorialNote);
+    for (const alternative of entry.alternatives || []) {
+      const altKey = normalizeDisplayKey(alternative.word);
+      if (!altKey) continue;
+      const voteRef = { entryId: entry.id, altId: alternative.id };
+      const existing = group.alternatives.find(item => normalizeDisplayKey(item.word) === altKey);
+      if (existing) {
+        if (!existing.voteRefs.some(ref => ref.entryId === voteRef.entryId && ref.altId === voteRef.altId)) existing.voteRefs.push(voteRef);
+      } else {
+        group.alternatives.push({ ...alternative, voteRefs: [voteRef] });
+      }
+    }
+  }
+  const allGrouped = [...grouped.values()];
+  for (const entry of allGrouped) {
+    entry.categories.sort((a,b) => a === "Public Signboards" ? -1 : b === "Public Signboards" ? 1 : a.localeCompare(b));
+    entry.category = entry.categories[0] || "Uncategorized";
+    entry.editorialNote = [
+      ...entry.editorialNotes,
+      entry.sourceRecordIds.length > 1 ? "Displayed as one card from " + entry.sourceRecordIds.length + " preserved source records." : ""
+    ].filter(Boolean).join(" · ");
+  }
+  const categoryRank = entry => entry.categories.includes("Public Signboards") ? 0 : 1;
+  allGrouped.sort((a,b) => categoryRank(a)-categoryRank(b) ||
     String(a.category || "Uncategorized").localeCompare(String(b.category || "Uncategorized")) ||
     String(a.sanskrit || "").localeCompare(String(b.sanskrit || "")) ||
     String(a.id).localeCompare(String(b.id)));
-  unifiedRows = all;
+  unifiedRows = allGrouped;
   populateCategoryOptions();
   return unifiedRows;
 }
@@ -943,7 +989,7 @@ function getFilteredUnifiedRows() {
   const category = categorySelect.value || "all";
   const query = (wordSearchInput?.value || "").trim().toLocaleLowerCase();
   return unifiedRows.filter(entry =>
-    (category === "all" || (entry.category || "Uncategorized") === category) &&
+    (category === "all" || (entry.categories || [entry.category || "Uncategorized"]).includes(category)) &&
     (!query || [entry.sanskrit,entry.meaning,entry.category,...(entry.alternatives || []).map(alt=>alt.word)]
       .some(value => String(value ?? "").toLocaleLowerCase().includes(query)))
   );

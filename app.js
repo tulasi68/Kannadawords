@@ -240,7 +240,8 @@ function render(entries, totalEntries = entries.length) {
     const originalOption = !entry.scopeAudit ? [{
       id: "original-" + entry.id,
       word: entry.sanskrit,
-      isOriginal: true
+      isOriginal: true,
+      voteRefs: (entry.sourceRecordIds || [entry.id]).map(sourceId => ({entryId:sourceId,altId:"original-"+sourceId}))
     }] : [];
     const alts = [...nativeAlts, ...originalOption];
     const totalVotes = alts.reduce((sum, alt) => sum + getAltVoteCount(entry,alt),0);
@@ -952,6 +953,11 @@ async function loadUnifiedRows() {
       grouped.set(key, group);
     }
     group.sourceRecordIds.push(entry.id);
+    group.noAlternative = Boolean(group.noAlternative || entry.noAlternative);
+    group.scopeAudit = Boolean(group.scopeAudit || entry.scopeAudit);
+    if (entry.rejectedAlternatives?.length) {
+      group.rejectedAlternatives = [...(group.rejectedAlternatives || []), ...entry.rejectedAlternatives];
+    }
     const category = entry.category || "Uncategorized";
     if (!group.categories.includes(category)) group.categories.push(category);
     if (entry.editorialNote && !group.editorialNotes.includes(entry.editorialNote)) group.editorialNotes.push(entry.editorialNote);

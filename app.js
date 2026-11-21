@@ -938,7 +938,7 @@ async function filterAndRender() {
     const start = currentWordPage * WORDS_PER_PAGE;
     const pageEntries = filtered.slice(start,start+WORDS_PER_PAGE).map(row => ({
       id:row[0], sanskrit:row[1], meaning:row[3], category:row[4], naturalness:row[5],
-      alternatives:row[2].split(/\\s*\\/\\s*/).filter(Boolean).map((word,index) => ({
+      alternatives:row[2].split(/\s*\/\s*/).filter(Boolean).map((word,index) => ({
         id:row[0]+"-"+(index+1),word,unreviewed:true,viability:"proposed",
         note:"Spreadsheet proposal; community and editorial review may refine this wording.",
         etymologyParts:[{form:word,etymology:"unknown"}]

@@ -108,6 +108,18 @@
     if (missing.length) throw new Error("Lexicon page is incomplete; missing IDs: " + missing.join(", "));
     return { entries: pageIds.map(id => window.KannadaLexiconDisplayAdapter.toDisplayEntry(records.get(id))), total, page, pageSize };
   }
+  async function loadAllEntries() {
+    await initialize();
+    const entries = [];
+    const pageSize = 100;
+    const pages = Math.ceil(manifest.entryCount / pageSize);
+    for (let page = 0; page < pages; page++) {
+      const result = await loadPage("all", page, pageSize);
+      entries.push(...result.entries);
+    }
+    if (entries.length !== manifest.entryCount) throw new Error("Complete lexicon load returned an unexpected entry count.");
+    return entries;
+  }
   function getCategories() {
     return manifest ? Object.keys(manifest.categoryIds) : [];
   }
@@ -206,5 +218,5 @@
   }
   function getLabels() { return manifest?.etymologyLabels || {}; }
   function getReference(id) { return manifest?.references?.find(reference => reference.id === id) || null; }
-  window.KannadaLexiconStore = { ready: initialize, loadPage, getCategories, getCategoryCount, searchAchchaLexicon, getLabels, getReference };
+  window.KannadaLexiconStore = { ready: initialize, loadPage, loadAllEntries, getCategories, getCategoryCount, searchAchchaLexicon, getLabels, getReference };
 })();

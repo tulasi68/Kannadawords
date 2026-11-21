@@ -845,7 +845,8 @@ async function filterAndRender() {
   }
 }
 window.castVote=castVote; window.toggleImproveForm=toggleImproveForm; window.submitSuggestion=submitSuggestion; window.cancelImproveForm=cancelImproveForm;
-categorySelect.addEventListener("change",() => { currentWordPage = 0; filterAndRender(); });\nwordSearchInput?.addEventListener("input",() => { currentWordPage = 0; filterAndRender(); });
+categorySelect.addEventListener("change",() => { currentWordPage = 0; filterAndRender(); });
+wordSearchInput?.addEventListener("input",() => { currentWordPage = 0; filterAndRender(); });
 filterAndRender();
 renderContextual();
 loadRemoteVotes();

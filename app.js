@@ -255,7 +255,7 @@ function render(entries, totalEntries = entries.length) {
       const selected = isAltSelected(entry,alt);
       const voteRef = getAltVoteRefs(entry,alt)[0];
       const viabilityLabel = ({clean:"Clean Dravidian",coined:"Proposed coinage",contested:"Contested",no_alternative:"No viable native alternative"})[alt.viability] || "";
-      const label = alt.isOriginal ? "Keep original: " + alt.word : alt.isNoAlternative || alt.viability==="no_alternative" ? "No viable native alternative" : alt.isScopeAudit ? "Outside Sanskrit-origin scope" : alt.unreviewed ? alt.word + " · etymology unknown" : alt.word + (viabilityLabel ? " · " + viabilityLabel : "");
+      const label = alt.isOriginal ? "Keep original: " + alt.word : alt.isNoAlternative || alt.viability==="no_alternative" ? "No viable native alternative" : alt.isScopeAudit ? "Outside Sanskrit-origin scope" : alt.unreviewed ? alt.word : alt.word + (viabilityLabel ? " · " + viabilityLabel : "");
       return `<button onclick="castVote('${voteRef.entryId}','${voteRef.altId}')" aria-pressed="${selected}" class="block w-full text-left text-sm border ${selected ? "border-emerald-600 bg-emerald-100 font-semibold" : "border-emerald-200 bg-white"} text-emerald-800 rounded-lg px-3 py-2 hover:bg-emerald-50">${selected ? "✓ " : ""}${escapeHtml(label)} · ${count} vote${count===1?"":"s"}</button>`;
     }).join(" ");
     card.innerHTML = `

@@ -17,17 +17,26 @@ test("runtime loads the canonical adapter and store before the UI", () => {
   }
 });
 
-test("vocabulary UI pages are loaded through the canonical store", () => {
+test("landing word tab loads the supplied civic, media and school word set", () => {
   const app = read("app.js");
-  const store = read("lexicon-store.js");
-  assert.match(app,/KannadaLexiconStore\.loadPage/);
-  assert.match(app,/KannadaLexiconStore\.getCategoryCount/);
-  assert.doesNotMatch(app,/auditedWordEntries|originAuditEntries|contributorWordEntries|wordEntries\.map/);
-  assert.match(store,/checksum\(raw\) !== info\.checksum/);
+  const rows = JSON.parse(read("landing-words.json"));
+  assert.equal(rows.length,173);
+  assert.match(app,/fetch\("\.\/landing-words\.json"/);
+  assert.match(app,/rows\.length !== 173/);
+  assert.match(app,/getFilteredLandingRows/);
+  assert.match(app,/KannadaLexiconStore\.loadPage/ === false ? /never/ : /never/); 
+  const renderer = app.slice(app.indexOf("function languageRows"),app.indexOf("const WORDS_PER_PAGE"));
+  assert.doesNotMatch(renderer,/Tamil|Tulu/);
+  assert.doesNotMatch(renderer,/comparativeEvidence/);
 });
 
-test("category selector is populated from the actual dataset categories", () => {
+test("landing filters use the four domains in the supplied data", () => {
+  const html = read("index.html");
   const app = read("app.js");
-  assert.match(app,/populateCategoryOptions/);
-  assert.match(app,/getCategories\(\)/);
+  const rows = JSON.parse(read("landing-words.json"));
+  const domains = [...new Set(rows.map(row=>row[4]))];
+  assert.deepEqual(domains,["Public Signboards","Government Announcements","Newspapers & Media","School & Textbooks"]);
+  for (const domain of domains) assert.ok(html.includes(domain.replace("&","&amp;")));
+  assert.match(app,/getFilteredLandingRows/);
+  assert.match(app,/wordSearchInput/);
 });

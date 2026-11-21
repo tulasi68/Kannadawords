@@ -128,7 +128,10 @@ function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 }
 function languageRows(entry, alts) {
-  const first = alts[0] || {};
+  const nativeAlternatives = alts.filter(alt => !alt.isOriginal && alt.word);
+  // Show every distinct Kannada equivalent on the card. The voting controls below
+  // render each alternative as its own independently selectable option.
+  const nativeDisplay = nativeAlternatives.map(alt => alt.word).join(" · ") || "—";
   // Comparative evidence belongs to a Kannada candidate, not just to the first
   // candidate in the card. Show every candidate's sourced forms so valid evidence
   // on later alternatives is not silently hidden.
@@ -149,7 +152,7 @@ function languageRows(entry, alts) {
   // Tamil and Tulu comparisons remain in the research data, but are intentionally
   // masked in the public word-card interface.
   const rows = [
-    ["Native Kannada", first.word || "—", null, []]
+    ["Native Kannada", nativeDisplay, null, []]
   ];
   const statusLabels = {
     not_assessed:"Not yet reviewed",

@@ -121,8 +121,8 @@
     for (const row of data.entries) {
       const fields = row.fields;
       if (!Array.isArray(fields) || fields.length !== 8) continue;
-      const sourceForms = String(fields[1] || "").split(/\\s*\\/\\s*/).map(value => value.trim().normalize("NFC")).filter(Boolean);
-      const alternatives = String(fields[2] || "").split(/\\s*\\/\\s*/).map(value => value.trim()).filter(Boolean);
+      const sourceForms = String(fields[1] || "").split(/\s*\/\s*/).map(value => value.trim().normalize("NFC")).filter(Boolean);
+      const alternatives = String(fields[2] || "").split(/\s*\/\s*/).map(value => value.trim()).filter(Boolean);
       const meaning = String(fields[3] || "").trim();
       const fit = String(fields[5] || "").trim();
       const root = String(fields[6] || "").trim();

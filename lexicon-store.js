@@ -121,7 +121,19 @@
     for (const row of data.entries) {
       const fields = row.fields;
       if (!Array.isArray(fields) || fields.length !== 8) continue;
-      const sourceForms = String(fields[1] || "").split(/\s*\/\s*/).map(value => value.trim().normalize("NFC")).filter(Boolean);
+      const sourceForms = String(fields[1] || "").split(/\s*\/\s*/).flatMap(value => {
+        const source = value.trim().normalize("NFC");
+        if (!source) return [];
+        // Preserve the corpus spelling and expose parenthesized transliterations
+        // as independent lookup forms (e.g. "ವರ್ಣ (Varna)" -> "ವರ್ಣ", "Varna").
+        const forms = [source];
+        const parenthetical = source.match(/^(.+?)\s*\(([^()]*)\)\s*$/);
+        if (parenthetical) {
+          forms.push(parenthetical[1].trim().normalize("NFC"));
+          forms.push(parenthetical[2].trim().normalize("NFC"));
+        }
+        return [...new Set(forms.filter(Boolean))];
+      });
       const rawAlternatives = String(fields[2] || "").trim();
       let alternatives = [];
       // Some imported spreadsheet rows contain a JSON array escaped as a TSV cell.
@@ -166,13 +178,14 @@
   function searchAchchaLexicon(text) {
     if (!writingIndex) return [];
     const query = String(text || "").normalize("NFC");
+    const foldedQuery = query.toLocaleLowerCase();
     const canonical = writingIndex.entries.flatMap(entry => {
       if (!entry.candidates.length) return [];
-      const forms = (entry.sourceForms || []).map(form => String(form).normalize("NFC")).filter(form => !query || query.includes(form));
+      const forms = (entry.sourceForms || []).map(form => String(form).normalize("NFC")).filter(form => !query || foldedQuery.includes(String(form).toLocaleLowerCase()));
       return forms.map(form => ({ ...entry, sourceForms: [form] }));
     });
     const master = query
-      ? masterWritingIndex.filter(entry => entry.sourceForms.some(form => query.includes(form)))
+      ? masterWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
       : masterWritingIndex.slice(0, 100);
     // Merge canonical and master corpus records by source spelling so a word
     // found in both collections exposes all candidate alternatives in one popover.

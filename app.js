@@ -854,23 +854,33 @@ window.toggleSentenceForm = toggleSentenceForm;
 window.submitSentenceReview = submitSentenceReview;
 
 let landingRows = null;
+let masterRows = null;
 let wordDatasetMode = "canonical";
 const wordSearchInput = document.getElementById("word-search");
 const datasetDescription = document.getElementById("word-dataset-description");
 const canonicalDatasetButton = document.getElementById("canonical-dataset-button");
 const landingDatasetButton = document.getElementById("landing-dataset-button");
+const masterDatasetButton = document.getElementById("master-dataset-button");
 
 function setWordDataset(mode) {
-  if (!["canonical","landing"].includes(mode)) return;
+  if (!["canonical","landing","master"].includes(mode)) return;
   wordDatasetMode = mode;
   currentWordPage = 0;
   const isCanonical = mode === "canonical";
-  if (canonicalDatasetButton) canonicalDatasetButton.setAttribute("aria-pressed",String(isCanonical));
-  if (landingDatasetButton) landingDatasetButton.setAttribute("aria-pressed",String(!isCanonical));
+  [canonicalDatasetButton,landingDatasetButton,masterDatasetButton].forEach(button => {
+    if (!button) return;
+    const active = button === (mode === "canonical" ? canonicalDatasetButton : mode === "landing" ? landingDatasetButton : masterDatasetButton);
+    button.setAttribute("aria-pressed",String(active));
+    button.className = active
+      ? "rounded-xl border border-red-700 bg-red-700 text-white px-3 py-2.5 text-sm font-semibold"
+      : "rounded-xl border border-amber-300 bg-white text-red-800 px-3 py-2.5 text-sm font-semibold";
+  });
   if (wordSearchInput) wordSearchInput.classList.toggle("hidden",isCanonical);
   if (datasetDescription) datasetDescription.textContent = isCanonical
-    ? "Explore the original 637-entry Kannada lexicon, including Kannada alternatives and sourced Tamil and Tulu comparisons. The 173 civic, media and school entries remain available separately."
-    : "Explore the 173 additional proposals across public signboards, government announcements, newspapers and media, and school textbooks. These supplement—not replace—the original lexicon.";
+    ? "Explore the original 637-entry research lexicon, including Kannada alternatives and sourced Tamil and Tulu comparisons. The additional collections remain available separately."
+    : mode === "landing"
+      ? "Explore the 173 additional proposals across public signboards, government announcements, newspapers and media, and school textbooks. These supplement—not replace—the original lexicon."
+      : "Explore the complete master word list from 2087words.xlsx. All source fields, repeated entries and editorial notes are retained. This display collection is separate from the reviewed comparative lexicon.";
   populateCategoryOptions();
   filterAndRender();
 }
@@ -891,12 +901,26 @@ function populateCategoryOptions() {
     });
     const categories = window.KannadaLexiconStore.getCategories();
     categorySelect.value = categories.includes(selected) ? selected : "all";
+  } else if (wordDatasetMode === "master") {
+    categorySelect.add(new Option("All categories","all"));
+    const categories = [...new Set((masterRows || []).map(row => row.fields[4] || "Uncategorized"))].sort();
+    categories.forEach(category => categorySelect.add(new Option(category,category)));
+    categorySelect.value = categories.includes(selected) ? selected : "all";
   } else {
     categorySelect.add(new Option("All four domains","all"));
     const domains = [...new Set((landingRows || []).map(row => row[4]))];
     domains.forEach(domain => categorySelect.add(new Option(domain,domain)));
     categorySelect.value = domains.includes(selected) ? selected : "all";
   }
+}
+function getFilteredMasterRows() {
+  if (!masterRows) return [];
+  const category = categorySelect.value || "all";
+  const query = (wordSearchInput?.value || "").trim().toLocaleLowerCase();
+  return masterRows.filter(row =>
+    (category === "all" || (row.fields[4] || "Uncategorized") === category) &&
+    (!query || row.fields.some(value => String(value ?? "").toLocaleLowerCase().includes(query)))
+  );
 }
 function getFilteredLandingRows() {
   if (!landingRows) return [];
@@ -922,6 +946,41 @@ async function filterAndRender() {
       votingEntries = page.entries;
       render(page.entries,page.total);
       stats.textContent = page.total + " original lexicon entries" + (categorySelect.value === "all" ? "" : " · " + categorySelect.value);
+      return;
+    }
+    if (wordDatasetMode === "master") {
+      if (!masterRows) {
+        const response = await fetch("./master-lexicon.json",{cache:"no-cache"});
+        if (!response.ok) throw new Error("The master word list could not be loaded ("+response.status+").");
+        const data = await response.json();
+        if (data.schemaVersion !== 1 || data.sourceFile !== "2087words.xlsx" || !Array.isArray(data.entries) ||
+            data.entries.length !== data.entryCount || data.entries.some(row => !row.id || !Array.isArray(row.fields) || row.fields.length !== 8)) {
+          throw new Error("The master word list failed its integrity check.");
+        }
+        masterRows = data.entries;
+        populateCategoryOptions();
+      }
+      const filtered = getFilteredMasterRows();
+      const start = currentWordPage * WORDS_PER_PAGE;
+      const pageEntries = filtered.slice(start,start+WORDS_PER_PAGE).map(row => {
+        const fields = row.fields;
+        const alternatives = String(fields[2] || "").split(/\\s*\\/\\s*/).filter(Boolean);
+        const notes = [fields[7],fields[6] ? "Dravidian root: "+fields[6] : ""].filter(Boolean).join(" · ");
+        return {
+          id:row.id, sanskrit:fields[1], meaning:fields[3], category:fields[4] || "Uncategorized",
+          naturalness:fields[5], alternatives:alternatives.map((word,index) => ({
+            id:row.id+"-alt-"+(index+1),word,unreviewed:true,viability:"proposed",
+            note:notes || "From the master spreadsheet; editorial review may refine this wording.",
+            etymologyParts:[{form:word,etymology:"unknown"}]
+          })),
+          editorialNote:[fields[5] ? "Naturalness fit: "+fields[5] : "",notes].filter(Boolean).join(" · "),
+          sourceLine:row.sourceLine
+        };
+      });
+      if (request !== lexiconPageRequest) return;
+      votingEntries = pageEntries;
+      render(pageEntries,filtered.length);
+      stats.textContent = filtered.length+" master-list entries · "+(categorySelect.value === "all" ? "all categories" : categorySelect.value);
       return;
     }
     if (!landingRows) {

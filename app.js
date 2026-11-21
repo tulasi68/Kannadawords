@@ -118,76 +118,11 @@ function escapeHtml(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 }
 function languageRows(entry, alts) {
-  const first = alts[0] || {};
-  // Comparative evidence belongs to a Kannada candidate, not just to the first
-  // candidate in the card. Show every candidate's sourced forms so valid evidence
-  // on later alternatives is not silently hidden.
-  const evidenceFor = language => alts.flatMap(alt =>
-    (alt.comparativeEvidence || [])
-      .filter(item => item.language === language && item.form)
-      .map(item => ({ ...item, candidateForm: alt.word || "Candidate" }))
-  );
-  const evidenceValue = language => {
-    const seen = new Set();
-    return evidenceFor(language).map(item => {
-      const value = item.candidateForm + ": " + item.form;
-      if (seen.has(value)) return null;
-      seen.add(value);
-      return value;
-    }).filter(Boolean).join(" · ");
-  };
-  const rows = [
-    ["Native Kannada", first.word || "—", null, []],
-    ["Tamil", evidenceValue("ta") || first.tamil || "Not yet researched", first.evidenceVariants?.tamil, evidenceFor("ta")],
-    ["Tulu", evidenceValue("tcy") || first.tulu || "Not yet researched", first.evidenceVariants?.tulu, evidenceFor("tcy")]
-  ];
-  const statusLabels = {
-    not_assessed:"Not yet reviewed",
-    provisional:"Provisional evidence — primary check needed",
-    verified:"Verified source",
-    contested:"Contested evidence",
-    rejected:"Rejected evidence",
-    unverified:"Unverified — source needed"
-  };
-  const relationshipLabels = {
-    cognate:"Cognate",
-    semantic_equivalent:"Semantic equivalent",
-    loan:"Loan",
-    reconstruction:"Reconstruction",
-    attested_form:"Attested form",
-    proposed_coinage:"Proposed coinage"
-  };
-  return rows.map(([label,value,conflicts,evidenceRecords]) => {
-    const statuses = [...new Set(evidenceRecords.map(item=>item.status).filter(Boolean))];
-    const relationships = [...new Set(evidenceRecords.map(item=>relationshipLabels[item.relationship]).filter(Boolean))];
-    const status = statuses.includes("verified") ? "verified" : statuses[0] || null;
-    const statusLabel = statuses.map(item=>statusLabels[item]).filter(Boolean).join(" · ");
-    const statusClass = status==="verified" ? "text-emerald-700" : status==="provisional" ? "text-amber-700" : status==="contested" ? "text-orange-700" : status==="rejected" ? "text-red-700" : "text-stone-500";
-    const sourceIds = [...new Set(evidenceRecords.flatMap(item=>item.sourceRefs || []))];
-    const sourceLinks = sourceIds.map(id => {
-      const source = window.KannadaLexiconStore.getReference(id);
-      if (!source) return '<span class="block text-xs text-stone-500 mt-1">Source reference unavailable: '+escapeHtml(id)+'</span>';
-      const title = source.title + (source.locator ? " · "+source.locator : "");
-      return source.url
-        ? '<a class="block text-xs underline text-stone-600 mt-1" href="'+escapeHtml(source.url)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(title)+'</a>'
-        : '<span class="block text-xs text-stone-600 mt-1">'+escapeHtml(title)+'</span>';
-    }).join("");
-    const legacySource = evidenceRecords[0]?.sourceUrl && evidenceRecords[0]?.sourceTitle
-      ? '<a class="block text-xs underline text-stone-600 mt-1" href="'+escapeHtml(evidenceRecords[0].sourceUrl)+'" target="_blank" rel="noopener noreferrer">'+escapeHtml(evidenceRecords[0].sourceTitle)+'</a>'
-      : "";
-    const notes = [...new Set(evidenceRecords.map(item=>item.note).filter(Boolean))];
-    const note = notes.length ? '<span class="block text-xs text-stone-500 mt-1">'+notes.map(escapeHtml).join(" · ")+'</span>' : "";
-    const relationship = relationships.length ? '<span class="block text-xs text-stone-500 mt-1">'+relationships.join(" · ")+'</span>' : "";
-    const conflict = conflicts?.length
-      ? '<span class="block text-xs text-orange-700 mt-1">Additional recorded forms: '+conflicts.map(escapeHtml).join(" · ")+'</span>'
-      : "";
-    const meta = (statusLabel ? '<span class="block text-xs '+statusClass+' mt-1">'+escapeHtml(statusLabel)+'</span>' : "") + relationship + sourceLinks + legacySource + note + conflict;
-    return `
-    <div class="grid grid-cols-[112px_1fr] gap-2 py-2 border-b border-stone-100 last:border-0">
-      <span class="text-xs text-stone-500">${label}</span>
-      <span class="kn text-base text-stone-800">${escapeHtml(value)}${meta}</span>
+  return `
+    <div class="grid grid-cols-[112px_1fr] gap-2 py-2">
+      <span class="text-xs text-stone-500">Naturalness fit</span>
+      <span class="text-sm font-semibold ${entry.naturalness === "High" ? "text-emerald-700" : "text-amber-700"}">${escapeHtml(entry.naturalness || "Not assessed")}</span>
     </div>`;
-  }).join("");
 }
 const WORDS_PER_PAGE = 20;
 let currentWordPage = 0;
@@ -207,10 +142,9 @@ function updateWordPagination(total) {
   if (pagination) pagination.classList.toggle("hidden", total <= WORDS_PER_PAGE);
 }
 async function changeWordPage(direction) {
-  await window.KannadaLexiconStore.ready();
-  const total = window.KannadaLexiconStore.getCategoryCount(categorySelect.value);
-  const pageCount = Math.max(1, Math.ceil(total / WORDS_PER_PAGE));
-  currentWordPage = Math.max(0, Math.min(pageCount - 1, currentWordPage + direction));
+  const total = getFilteredLandingRows().length;
+  const pageCount = Math.max(1,Math.ceil(total / WORDS_PER_PAGE));
+  currentWordPage = Math.max(0,Math.min(pageCount - 1,currentWordPage + direction));
   await filterAndRender();
   document.getElementById("words-panel").scrollIntoView({behavior:"smooth",block:"start"});
 }
@@ -255,7 +189,7 @@ function render(entries, totalEntries = entries.length) {
         <p class="text-sm text-stone-600 mt-1">${escapeHtml(entry.meaning)}</p>
       </div>
       <section class="rounded-xl bg-yellow-50/70 border border-yellow-200 px-3 py-3">
-        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Language equivalents</h3>
+        <h3 class="text-xs font-semibold uppercase tracking-wide text-stone-500 mb-1">Suggested Kannada alternatives</h3>
         ${rows}
       </section>
       ${entry.rejectedAlternatives && entry.rejectedAlternatives.length ? `<div class="mt-3 rounded-lg border border-red-100 bg-red-50 px-3 py-2"><p class="text-xs font-semibold text-red-800 mb-1">Rejected / non-native proposals</p>${entry.rejectedAlternatives.map(item => `<p class="text-xs text-red-900 mt-1"><span class="kn font-semibold">${escapeHtml(item.word)}</span> · ${(item.etymologyParts || [{form:item.word,etymology:item.etymology}]).map(part => escapeHtml(part.form) + " (" + escapeHtml(etymologyName(part.etymology)) + ")").join(" · ")} — ${escapeHtml(item.reason || "Not accepted as a Dravidian-only alternative.")}</p>`).join("")}</div>` : ""}
@@ -848,43 +782,70 @@ window.showTab = showTab;
 window.toggleSentenceForm = toggleSentenceForm;
 window.submitSentenceReview = submitSentenceReview;
 
+let landingRows = null;
+const wordSearchInput = document.getElementById("word-search");
 function populateCategoryOptions() {
   const selected = categorySelect.value || "all";
-  const labels = {
-    "Civic":"Civic & Government",
-    "Origin audit":"Origin audit (non-Sanskrit loans)",
-    "No viable native alternative":"No viable native alternative"
-  };
-  categorySelect.replaceChildren(new Option("All categories","all"));
-  window.KannadaLexiconStore.getCategories().forEach(category => {
-    categorySelect.add(new Option(labels[category] || category, category));
-  });
-  categorySelect.value = window.KannadaLexiconStore.getCategories().includes(selected) ? selected : "all";
+  const domains = [...new Set(landingRows.map(row => row[4]))];
+  categorySelect.replaceChildren(new Option("All four domains","all"));
+  domains.forEach(domain => categorySelect.add(new Option(domain,domain)));
+  categorySelect.value = domains.includes(selected) ? selected : "all";
+}
+function getFilteredLandingRows() {
+  if (!landingRows) return [];
+  const domain = categorySelect.value || "all";
+  const query = (wordSearchInput?.value || "").trim().toLocaleLowerCase();
+  return landingRows.filter(row =>
+    (domain === "all" || row[4] === domain) &&
+    (!query || row.some(value => String(value).toLocaleLowerCase().includes(query)))
+  );
 }
 async function filterAndRender() {
   const request = ++lexiconPageRequest;
   try {
-    await window.KannadaLexiconStore.ready();
-    if (!lexiconInitialized) {
-      Object.assign(etymologyLabels, window.KannadaLexiconStore.getLabels());
+    if (!landingRows) {
+      const response = await fetch("./landing-words.json", {cache:"no-cache"});
+      if (!response.ok) throw new Error("Landing word list could not be loaded (" + response.status + ").");
+      const rows = await response.json();
+      if (!Array.isArray(rows) || rows.length !== 173 || rows.some(row => !Array.isArray(row) || row.length !== 6)) {
+        throw new Error("The landing word list failed its integrity check.");
+      }
+      landingRows = rows;
       populateCategoryOptions();
-      lexiconInitialized = true;
     }
-    const page = await window.KannadaLexiconStore.loadPage(categorySelect.value, currentWordPage, WORDS_PER_PAGE);
+    const filtered = getFilteredLandingRows();
+    const start = currentWordPage * WORDS_PER_PAGE;
+    const pageEntries = filtered.slice(start,start + WORDS_PER_PAGE).map(row => ({
+      id:row[0],
+      sanskrit:row[1],
+      meaning:row[3],
+      category:row[4],
+      naturalness:row[5],
+      alternatives:row[2].split(/\\s*\\/\\s*/).filter(Boolean).map((word,index) => ({
+        id:row[0] + "-" + (index + 1),
+        word,
+        unreviewed:true,
+        viability:"proposed",
+        note:"Spreadsheet proposal; community and editorial review may refine this wording.",
+        etymologyParts:[{form:word,etymology:"unknown"}]
+      })),
+      editorialNote:"Naturalness fit in the supplied spreadsheet: " + row[5] + "."
+    }));
     if (request !== lexiconPageRequest) return;
-    votingEntries = page.entries;
-    render(page.entries, page.total);
+    votingEntries = pageEntries;
+    render(pageEntries,filtered.length);
+    stats.textContent = filtered.length + " entries · " + (categorySelect.value === "all" ? "all four domains" : categorySelect.value);
   } catch (error) {
     if (request !== lexiconPageRequest) return;
     votingEntries = [];
     grid.innerHTML = '<div class="col-span-full rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800"><strong>Vocabulary could not be loaded.</strong><p class="mt-1">' + escapeHtml(error.message || "Please check your connection.") + '</p><button type="button" class="mt-3 rounded-lg border border-red-300 bg-white px-3 py-2" onclick="filterAndRender()">Retry</button></div>';
-    stats.textContent = "Lexicon unavailable";
+    stats.textContent = "Landing word list unavailable";
     updateWordPagination(0);
-    console.error("KannadaWords lexicon load failed:", error);
+    console.error("KannadaWords landing list load failed:",error);
   }
 }
 window.castVote=castVote; window.toggleImproveForm=toggleImproveForm; window.submitSuggestion=submitSuggestion; window.cancelImproveForm=cancelImproveForm;
-categorySelect.addEventListener("change",() => { currentWordPage = 0; filterAndRender(); });
+categorySelect.addEventListener("change",() => { currentWordPage = 0; filterAndRender(); });\nwordSearchInput?.addEventListener("input",() => { currentWordPage = 0; filterAndRender(); });
 filterAndRender();
 renderContextual();
 loadRemoteVotes();

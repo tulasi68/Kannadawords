@@ -906,7 +906,7 @@ async function loadUnifiedRows() {
   }
   const masterEntries = masterData.entries.map(row => {
     const fields = row.fields;
-    const alternatives = String(fields[2] || "").split(/\\s*\\/\\s*/).filter(Boolean);
+    const alternatives = String(fields[2] || "").split(/\s*\/\s*/).filter(Boolean);
     const notes = [fields[7],fields[6] ? "Dravidian root: "+fields[6] : ""].filter(Boolean).join(" · ");
     return {
       id:"master-"+row.id, sanskrit:fields[1], meaning:fields[3], category:fields[4] || "Uncategorized",
@@ -921,7 +921,7 @@ async function loadUnifiedRows() {
   });
   const landingEntries = landingData.map(row => ({
     id:"additional-"+row[0], sanskrit:row[1], meaning:row[3], category:row[4] || "Uncategorized", naturalness:row[5],
-    alternatives:String(row[2] || "").split(/\\s*\\/\\s*/).filter(Boolean).map((word,index) => ({
+    alternatives:String(row[2] || "").split(/\s*\/\s*/).filter(Boolean).map((word,index) => ({
       id:"additional-"+row[0]+"-"+(index+1),word,unreviewed:true,viability:"proposed",
       note:"Spreadsheet proposal; community and editorial review may refine this wording.",
       etymologyParts:[{form:word,etymology:"unknown"}]

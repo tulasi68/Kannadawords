@@ -143,8 +143,12 @@
       </button>
     </nav>
     <section id="words-panel">
+    <div class="mb-4 grid grid-cols-2 gap-2" role="group" aria-label="Choose word collection">
+      <button id="canonical-dataset-button" type="button" aria-pressed="true" onclick="setWordDataset('canonical')" class="rounded-xl border border-red-700 bg-red-700 text-white px-3 py-2.5 text-sm font-semibold">Original lexicon · 637</button>
+      <button id="landing-dataset-button" type="button" aria-pressed="false" onclick="setWordDataset('landing')" class="rounded-xl border border-amber-300 bg-white text-red-800 px-3 py-2.5 text-sm font-semibold">Additional words · 173</button>
+    </div>
     <div class="mb-5 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-      <div><h2 class="kn text-xl font-bold text-stone-900">ನುಡಿ ಆಯ್ಕೆ</h2><p class="text-sm text-stone-600 mt-1">Explore 173 proposed Achcha Kannada words and phrases across public signboards, government announcements, newspapers and media, and school textbooks. Choose the wording you find most natural.</p></div>
+      <div><h2 class="kn text-xl font-bold text-stone-900">ನುಡಿ ಆಯ್ಕೆ</h2><p id="word-dataset-description" class="text-sm text-stone-600 mt-1">Explore the original 637-entry Kannada lexicon, including Kannada alternatives and sourced Tamil and Tulu comparisons. The 173 civic, media and school entries remain available separately.</p></div>
       <div class="flex flex-col sm:flex-row gap-2">
         <input id="word-search" type="search" placeholder="Search Kannada word or English meaning" aria-label="Search words" class="px-3 py-2.5 text-sm border border-yellow-300 rounded-xl bg-white w-full sm:w-64">
         

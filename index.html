@@ -143,22 +143,14 @@
       </button>
     </nav>
     <section id="words-panel">
-    <div class="mb-4 grid grid-cols-1 sm:grid-cols-3 gap-2" role="group" aria-label="Choose word collection">
-      <button id="master-dataset-button" type="button" aria-pressed="false" onclick="setWordDataset('master')" class="rounded-xl border border-amber-300 bg-white text-red-800 px-3 py-2.5 text-sm font-semibold">Master list · 2,134</button>
-      <button id="canonical-dataset-button" type="button" aria-pressed="true" onclick="setWordDataset('canonical')" class="rounded-xl border border-red-700 bg-red-700 text-white px-3 py-2.5 text-sm font-semibold">Original lexicon · 637</button>
-      <button id="landing-dataset-button" type="button" aria-pressed="false" onclick="setWordDataset('landing')" class="rounded-xl border border-amber-300 bg-white text-red-800 px-3 py-2.5 text-sm font-semibold">Additional words · 173</button>
-    </div>
     <div class="mb-5 flex flex-col sm:flex-row gap-3 sm:items-center sm:justify-between">
-      <div><h2 class="kn text-xl font-bold text-stone-900">ನುಡಿ ಆಯ್ಕೆ</h2><p id="word-dataset-description" class="text-sm text-stone-600 mt-1">Explore the original 637-entry Kannada lexicon, including Kannada alternatives and sourced Tamil and Tulu comparisons. The 173 civic, media and school entries remain available separately.</p></div>
+      <div><h2 class="kn text-xl font-bold text-stone-900">ನುಡಿ ಆಯ್ಕೆ</h2><p id="word-dataset-description" class="text-sm text-stone-600 mt-1">Browse the complete Kannada word collection in one place. Public Signboards appear first, followed by the other categories.</p></div>
       <div class="flex flex-col sm:flex-row gap-2">
         <input id="word-search" type="search" placeholder="Search Kannada word or English meaning" aria-label="Search words" class="px-3 py-2.5 text-sm border border-yellow-300 rounded-xl bg-white w-full sm:w-64">
         
         <select id="category" class="px-3 py-2.5 text-sm border border-yellow-300 rounded-xl bg-white w-full sm:w-auto" aria-label="Filter by domain">
-          <option value="all">All four domains</option>
+          <option value="all">All categories</option>
           <option value="Public Signboards">Public Signboards</option>
-          <option value="Government Announcements">Government Announcements</option>
-          <option value="Newspapers &amp; Media">Newspapers &amp; Media</option>
-          <option value="School &amp; Textbooks">School &amp; Textbooks</option>
         </select>
       </div>
     </div>

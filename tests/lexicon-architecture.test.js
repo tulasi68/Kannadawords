@@ -24,7 +24,6 @@ test("landing word tab loads the supplied civic, media and school word set", () 
   assert.match(app,/fetch\("\.\/landing-words\.json"/);
   assert.match(app,/rows\.length !== 173/);
   assert.match(app,/getFilteredLandingRows/);
-  assert.match(app,/KannadaLexiconStore\.loadPage/ === false ? /never/ : /never/); 
   const renderer = app.slice(app.indexOf("function languageRows"),app.indexOf("const WORDS_PER_PAGE"));
   assert.doesNotMatch(renderer,/Tamil|Tulu/);
   assert.doesNotMatch(renderer,/comparativeEvidence/);

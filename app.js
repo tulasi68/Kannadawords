@@ -964,7 +964,7 @@ async function filterAndRender() {
       const start = currentWordPage * WORDS_PER_PAGE;
       const pageEntries = filtered.slice(start,start+WORDS_PER_PAGE).map(row => {
         const fields = row.fields;
-        const alternatives = String(fields[2] || "").split(/\\s*\\/\\s*/).filter(Boolean);
+        const alternatives = String(fields[2] || "").split(/\s*\/\s*/).filter(Boolean);
         const notes = [fields[7],fields[6] ? "Dravidian root: "+fields[6] : ""].filter(Boolean).join(" · ");
         return {
           id:row.id, sanskrit:fields[1], meaning:fields[3], category:fields[4] || "Uncategorized",

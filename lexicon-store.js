@@ -122,7 +122,19 @@
       const fields = row.fields;
       if (!Array.isArray(fields) || fields.length !== 8) continue;
       const sourceForms = String(fields[1] || "").split(/\s*\/\s*/).map(value => value.trim().normalize("NFC")).filter(Boolean);
-      const alternatives = String(fields[2] || "").split(/\s*\/\s*/).map(value => value.trim()).filter(Boolean);
+      const rawAlternatives = String(fields[2] || "").trim();
+      let alternatives = [];
+      // Some imported spreadsheet rows contain a JSON array escaped as a TSV cell.
+      // Decode that representation before falling back to the ordinary slash list.
+      if (rawAlternatives.startsWith('"[') && rawAlternatives.endsWith(']"')) {
+        try { alternatives = JSON.parse(rawAlternatives.slice(1, -1).replace(/""/g, '"')); } catch { alternatives = []; }
+      } else if (rawAlternatives.startsWith("[")) {
+        try { alternatives = JSON.parse(rawAlternatives); } catch { alternatives = []; }
+      }
+      if (!Array.isArray(alternatives) || !alternatives.length) {
+        alternatives = rawAlternatives.split(/\s*\/\s*/);
+      }
+      alternatives = alternatives.map(value => String(value).trim()).filter(Boolean);
       const meaning = String(fields[3] || "").trim();
       const fit = String(fields[5] || "").trim();
       const root = String(fields[6] || "").trim();

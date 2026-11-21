@@ -35,5 +35,6 @@ jobs:
             echo "Workbook is already current."
           else
             git commit -m "Build unified KannadaWords master workbook [skip ci]"
+            git pull --rebase origin main
             git push
           fi

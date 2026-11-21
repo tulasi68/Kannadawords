@@ -129,9 +129,11 @@ def master_rows():
     for item in data.get("entries", []):
         fields = item.get("fields", [])
         mapped = dict(zip(header, fields))
-        raw = compact({"id": item.get("id"), "sourceLine": item.get("sourceLine"), "fields": fields})
+        source_file = clean(item.get("sourceFile")) or "master-lexicon.json (generated from 2087words.xlsx)"
+        is_dump = source_file == "779Entries.txt"
+        raw = compact({"id": item.get("id"), "sourceLine": item.get("sourceLine"), "sourceFile": source_file, "fields": fields})
         rows.append({
-            "Collection": "2087words.xlsx Master Corpus",
+            "Collection": "Additional 779 Accha Kannada Dump" if is_dump else "2087words.xlsx Master Corpus",
             "Record ID": item.get("id", ""),
             "Record Type": "Master corpus entry",
             "Source Word / Loanword": mapped.get("Sanskrit / Loanword", ""),
@@ -143,9 +145,9 @@ def master_rows():
             "Usage & Etymology Notes": mapped.get("Usage & Etymology Notes", ""),
             "Tamil Evidence": "", "Tulu Evidence": "", "Proto-Dravidian Evidence": "",
             "Old Kannada Form": "", "Review Status": "needs_review",
-            "Editorial Notes": "Imported from the 2087words.xlsx master corpus; preserve source wording pending editorial review.",
-            "Source / Provenance": "2087words.xlsx; source line " + str(item.get("sourceLine", "")),
-            "Original Source File": "master-lexicon.json (generated from 2087words.xlsx)",
+            "Editorial Notes": "Imported from 779Entries.txt; source wording and alternatives preserved for review." if is_dump else "Imported from the 2087words.xlsx master corpus; preserve source wording pending editorial review.",
+            "Source / Provenance": source_file + "; source line " + str(item.get("sourceLine", "")),
+            "Original Source File": source_file,
             "Original Source Row": item.get("sourceLine", ""),
             "_raw": split_raw(raw),
         })
@@ -188,6 +190,12 @@ def main():
         ids = groups.get(key, [])
         row["Potential Duplicate IDs"] = ", ".join(x for x in ids if x != row["Record ID"]) if len(ids) > 1 else ""
     intake = preserve_intake()
+    for row in intake:
+        row["Collection"] = "Additional Intake"
+        rows.append(row)
+
+    # Keep every Public Signboards record at the top of this single unified list.
+    rows.sort(key=lambda row: 0 if clean(row.get("Category / Domain")) == "Public Signboards" else 1)
 
     wb = Workbook()
     ws = wb.active
@@ -197,13 +205,6 @@ def main():
         raw = row.pop("_raw", [])
         values = [row.get(h, "") for h in HEADERS[:20]] + raw + [""] * (3 - len(raw))
         ws.append(values)
-    for row in intake:
-        ws.append([row.get(h, "") for h in HEADERS])
-
-    # Add 100 empty, clearly labelled intake rows for future additions.
-    for _ in range(100):
-        ws.append(["New Intake"] + [""] * (len(HEADERS) - 1))
-
     ws.freeze_panes = "D2"
     ws.auto_filter.ref = f"A1:{get_column_letter(len(HEADERS))}{ws.max_row}"
     ws.row_dimensions[1].height = 34
@@ -217,10 +218,6 @@ def main():
     for row in ws.iter_rows(min_row=2):
         for cell in row:
             cell.alignment = Alignment(vertical="top", wrap_text=True)
-    for row_num in range(2, ws.max_row + 1):
-        if ws.cell(row_num, 1).value == "New Intake":
-            for cell in ws[row_num]:
-                cell.fill = PatternFill("solid", fgColor="FFF7E6")
     if ws.max_row >= 2:
         tab = Table(displayName="KannadaWordsAllEntries", ref=f"A1:{get_column_letter(len(HEADERS))}{ws.max_row}")
         tab.tableStyleInfo = TableStyleInfo(name="TableStyleMedium2", showFirstColumn=False, showLastColumn=False, showRowStripes=True, showColumnStripes=False)

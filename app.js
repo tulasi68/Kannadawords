@@ -493,8 +493,12 @@ async function findAchchaWords() {
   const input = document.getElementById("achcha-input");
   const original = (input && input.value || "").trim();
   if (!original) { input && input.focus(); return; }
+  // Match against a normalized, case-folded copy so Latin aliases such as
+  // Varna also match VARNA / varna. Keep offsets aligned with the displayed text.
+  const searchable = original.normalize("NFC");
+  const foldedText = searchable.toLocaleLowerCase();
 
-  const lexicon = buildAchchaLexicon(original);
+  const lexicon = buildAchchaLexicon(searchable);
   const forms = [];
   lexicon.forEach(entry => {
     (entry.sourceForms || []).forEach(sf => {
@@ -510,13 +514,14 @@ async function findAchchaWords() {
   const matches = [];
 
   for (const { form, entry } of forms) {
+    const foldedForm = form.toLocaleLowerCase();
     let from = 0;
-    while (from < original.length) {
-      const idx = original.indexOf(form, from);
+    while (from < searchable.length) {
+      const idx = foldedText.indexOf(foldedForm, from);
       if (idx < 0) break;
       const end = idx + form.length;
-      const leftBoundary = idx === 0 || !isWordCharacter(original[idx - 1]);
-      const rightBoundary = end === original.length || !isWordCharacter(original[end]);
+      const leftBoundary = idx === 0 || !isWordCharacter(searchable[idx - 1]);
+      const rightBoundary = end === searchable.length || !isWordCharacter(searchable[end]);
       let overlap = false;
       for (let i = idx; i < end; i++) if (occupied[i]) { overlap = true; break; }
       if (leftBoundary && rightBoundary && !overlap) {
@@ -524,7 +529,7 @@ async function findAchchaWords() {
         const candidates = (entry.candidates || []).filter(c => c.word);
         if (candidates.length) {
           matches.push({
-            source: form,
+            source: searchable.slice(idx, end),
             meaning: entry.meaning || "",
             candidates,
             selected: candidates[0].word,
@@ -565,7 +570,7 @@ async function findAchchaWords() {
   if (preview) {
     let html = "";
     let cursor = 0;
-    const text = original;
+    const text = searchable;
     matches.forEach((m, i) => {
       if (m.start > cursor) {
         html += escapeHtmlAchcha(text.slice(cursor, m.start));

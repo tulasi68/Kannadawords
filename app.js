@@ -1336,56 +1336,117 @@ window.resetCoinageForm=resetCoinageForm;
 window.renderCoinageRecords=renderCoinageRecords;
 coinageScoreControls();
 renderCoinageRecords();
-function applyAchchaGapReplacement(originalWord, replacementWord, card) {
+let achchaGapBaseText = "";
+let achchaGapPrefix = "";
+let achchaGapSuffix = "";
+let achchaGapSelectionState = new Map();
+
+function renderAchchaGapSelections() {
  const input=document.getElementById("achcha-input");
- if(!input)return;
- const escaped=originalWord.replace(/[.*+?^\${}()|[\]\\]/g,"\\$&");
- const pattern=new RegExp("(^|[^\\p{L}\\p{M}\\p{N}_])"+escaped+"(?=$|[^\\p{L}\\p{M}\\p{N}_])","gu");
- let count=0;
- const updated=input.value.replace(pattern,(whole,prefix)=>{count++;return prefix+replacementWord;});
- if(!count){const note=document.createElement("p");note.className="text-xs text-red-700 mt-2";note.textContent="ಮೂಲ ಪದವು ಈಗಿನ ಪಠ್ಯದಲ್ಲಿ ಸಿಗಲಿಲ್ಲ. ಮತ್ತೆ ಪದಗಳನ್ನು ಗುರುತಿಸಿ.";card.append(note);return;}
- input.value=updated;
- const applied=document.createElement("p");applied.className="text-sm font-semibold text-emerald-800 mt-2";applied.textContent="ಅಳವಡಿಸಲಾಗಿದೆ: "+originalWord+" → "+replacementWord+" ("+count+" ಸ್ಥಳಗಳಲ್ಲಿ)";card.append(applied);
- card.querySelectorAll("button[data-apply-gap]").forEach(button=>{button.disabled=true;button.textContent="ಅಳವಡಿಸಲಾಗಿದೆ";});
- achchaPreserveGapResults=true;
- findAchchaWords().finally(()=>{achchaPreserveGapResults=false;});
+ if(!input || !achchaGapBaseText)return;
+ const edits=[];
+ for(const [source,choice] of achchaGapSelectionState.entries()){
+  if(choice.replacement===source)continue;
+  for(const occurrence of choice.occurrences){
+   edits.push({start:occurrence.start,end:occurrence.end,replacement:choice.replacement});
+  }
+ }
+ edits.sort((a,b)=>a.start-b.start);
+ let cursor=0, output="";
+ for(const edit of edits){
+  if(edit.start<cursor)continue;
+  output+=achchaGapBaseText.slice(cursor,edit.start)+edit.replacement;
+  cursor=edit.end;
+ }
+ output+=achchaGapBaseText.slice(cursor);
+ input.value=achchaGapPrefix+output+achchaGapSuffix;
 }
+
+function selectAchchaGapAlternative(source,replacement) {
+ const choice=achchaGapSelectionState.get(source);
+ if(!choice)return;
+ choice.replacement=replacement;
+ renderAchchaGapSelections();
+}
+window.selectAchchaGapAlternative=selectAchchaGapAlternative;
+
 async function translateAchchaGapWords(){
- const selected=[...document.querySelectorAll("#achcha-gap-words input[data-gap-index]:checked")].map(x=>achchaDiscoveryState[Number(x.dataset.gapIndex)]).filter(Boolean);
+ const checked=[...document.querySelectorAll("#achcha-gap-words input[data-gap-index]:checked")];
+ const selected=checked.map(x=>achchaDiscoveryState[Number(x.dataset.gapIndex)]).filter(Boolean);
  const status=document.getElementById("achcha-gap-status"), results=document.getElementById("achcha-gap-results"), button=document.getElementById("achcha-gap-ai");
  if(!selected.length){if(status)status.textContent="ಮೊದಲು ನೀಲಿ ಗೆರೆ ಹಾಕಿರುವ ಪದಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.";return;}
- button.disabled=true;results.classList.remove("hidden");results.replaceChildren();
- const add=(word,payload,error)=>{
-  const card=document.createElement("article");card.className="rounded-lg border border-sky-200 bg-white p-3";card.dataset.word=word;
-  const source=document.createElement("p");source.className="kn font-semibold text-sky-900";source.textContent="ಮೂಲ ಪದ: "+word;card.append(source);
-  if(error){const p=document.createElement("p");p.className="text-sm text-red-700 mt-1";p.textContent=error;card.append(p);}
-  else{
-   if(payload.noteKannada){const note=document.createElement("p");note.className="text-sm text-stone-600 mt-1";note.textContent=payload.noteKannada;card.append(note);}
+ const input=document.getElementById("achcha-input");
+ const raw=input?.value||"";
+ const trimmed=raw.trim();
+ const leading=raw.length-raw.trimStart().length;
+ achchaGapPrefix=raw.slice(0,leading);
+ achchaGapSuffix=raw.slice(leading+trimmed.length);
+ achchaGapBaseText=trimmed.normalize("NFC");
+ achchaGapSelectionState=new Map();
+ const groups=new Map();
+ selected.forEach(item=>{
+  if(!groups.has(item.source))groups.set(item.source,[]);
+  groups.get(item.source).push({start:item.start,end:item.end});
+ });
+ groups.forEach((occurrences,source)=>achchaGapSelectionState.set(source,{occurrences,replacement:source}));
+ button.disabled=true;
+ results.classList.remove("hidden");
+ results.replaceChildren();
+ const heading=document.createElement("h3");
+ heading.className="text-sm font-semibold text-stone-800 mb-2";
+ heading.textContent="ಪದಗಳು ಮತ್ತು ಪರ್ಯಾಯಗಳು · Words & alternatives";
+ results.append(heading);
+ const add=(word,payload,error,index)=>{
+  const card=document.createElement("section");
+  card.className="rounded-lg border border-stone-200 bg-white px-3 py-3";
+  const source=document.createElement("h4");
+  source.className="kn text-base font-semibold text-stone-900 mb-2";
+  source.textContent=word;
+  card.append(source);
+  if(error){
+   const message=document.createElement("p");
+   message.className="text-sm text-red-700";
+   message.textContent=error;
+   card.append(message);
+  }else{
+   const options=document.createElement("div");
+   options.className="grid gap-2";
    const suggestions=Array.isArray(payload.suggestions)?payload.suggestions:[];
-   if(!suggestions.length){const empty=document.createElement("p");empty.className="text-sm text-amber-800 mt-2";empty.textContent=payload.needsContext?"ಈ ಪದಕ್ಕೆ ಸರಿಯಾದ ಪರ್ಯಾಯ ಸೂಚಿಸಲು ಹೆಚ್ಚಿನ ಸಂದರ್ಭ ಬೇಕು.":"ಈ ಬಾರಿ ನಂಬಿಕೆಯಿಂದ ಸೂಚಿಸಬಹುದಾದ ಅಚ್ಚ ಕನ್ನಡ ಪರ್ಯಾಯ ಸಿಗಲಿಲ್ಲ. ಮೂಲ ಪದವನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಬಹುದು.";card.append(empty);}
-   suggestions.forEach(suggestion=>{
-    const row=document.createElement("div");row.className="flex flex-wrap items-start justify-between gap-3 border-t border-stone-100 pt-3 mt-3";
-    const detail=document.createElement("div");detail.className="min-w-0 flex-1";
-    const candidate=document.createElement("p");candidate.className="kn text-lg font-semibold text-emerald-800";candidate.textContent=suggestion.replacement;detail.append(candidate);
-    const reason=document.createElement("p");reason.className="kn text-sm text-stone-600 mt-1";reason.textContent=suggestion.reasonKannada||"ಕಾರಣ ನೀಡಲಾಗಿಲ್ಲ.";detail.append(reason);
-    const basis=document.createElement("p");basis.className="text-xs text-amber-700 mt-1";basis.textContent=suggestion.basis==="verified_dravidian"?"ಪದಪಟ್ಟಿಯಲ್ಲಿ ಪರಿಶೀಲಿತ":suggestion.basis==="tadbhava"?"ತದ್ಭವ":suggestion.basis==="coined_from_dravidian"?"ದ್ರಾವಿಡ ಮೂಲದಿಂದ ರೂಪಿಸಿದ ಸಲಹೆ":"ಇನ್ನೂ ಪರಿಶೀಲಿಸಬೇಕಾದ AI ಸಲಹೆ";detail.append(basis);
-    const apply=document.createElement("button");apply.type="button";apply.dataset.applyGap="true";apply.className="rounded-lg bg-emerald-700 px-3 py-2 text-sm font-semibold text-white";apply.textContent="ಈ ಪದವನ್ನು ಅಳವಡಿಸಿ";
-    apply.addEventListener("click",()=>applyAchchaGapReplacement(word,suggestion.replacement,card));
-    row.append(detail,apply);card.append(row);
+   const choices=[{replacement:word},...suggestions.filter(item=>item&&typeof item.replacement==="string"&&item.replacement.trim()).filter((item,i,all)=>all.findIndex(x=>x.replacement===item.replacement)===i)];
+   choices.forEach((suggestion,choiceIndex)=>{
+    const label=document.createElement("label");
+    label.className="flex items-center gap-2 rounded-md px-2 py-2 hover:bg-amber-50 cursor-pointer";
+    const radio=document.createElement("input");
+    radio.type="radio";
+    radio.name="achcha-gap-choice-"+index;
+    radio.value=suggestion.replacement;
+    radio.checked=choiceIndex===0;
+    radio.className="accent-amber-700";
+    radio.addEventListener("change",()=>selectAchchaGapAlternative(word,suggestion.replacement));
+    const text=document.createElement("span");
+    text.className="kn text-base text-stone-800";
+    text.textContent=suggestion.replacement;
+    label.append(radio,text);
+    options.append(label);
    });
-   const keep=document.createElement("p");keep.className="text-xs text-stone-500 mt-3";keep.textContent="ಯಾವುದೇ ಪರ್ಯಾಯ ಸೂಕ್ತವಿಲ್ಲದಿದ್ದರೆ ಮೂಲ ಪದವನ್ನು ಹಾಗೆಯೇ ಬಿಡಬಹುದು. AI ಸಲಹೆಗಳು ಸ್ವಯಂಚಾಲಿತವಾಗಿ ಪದಕೋಶಕ್ಕೆ ಸೇರುವುದಿಲ್ಲ.";card.append(keep);
+   card.append(options);
   }
   results.append(card);
  };
- for(let i=0;i<selected.length;i++){
-  const item=selected[i];if(status)status.textContent=(i+1)+" / "+selected.length+" · "+item.source+" ಎಂಬ ಒಂದೇ ಪದವನ್ನು ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ";
+ let index=0;
+ for(const [word] of groups){
+  if(status)status.textContent=(index+1)+" / "+groups.size+" · "+word;
   try{
-   const response=await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite",{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify({text:item.source,wordOnly:true}),cache:"no-store"});
-   const payload=await response.json();if(!response.ok)throw new Error(payload.error||"AI ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ.");
-   if(payload.word!==item.source||!Array.isArray(payload.suggestions))throw new Error("AI ಉತ್ತರವು ನಿರೀಕ್ಷಿತ ಪದ-ಪರ್ಯಾಯ ಪಟ್ಟಿಯ ರೂಪದಲ್ಲಿಲ್ಲ.");
-   add(item.source,payload,null);
-  }catch(error){add(item.source,null,error.message||"AI ಸೇವೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಲಿಲ್ಲ.");}
+   const response=await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite",{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify({text:word,wordOnly:true}),cache:"no-store"});
+   const payload=await response.json();
+   if(!response.ok)throw new Error(payload.error||"AI ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ.");
+   if(payload.word!==word||!Array.isArray(payload.suggestions))throw new Error("AI ಉತ್ತರವನ್ನು ಓದಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ.");
+   add(word,payload,null,index);
+  }catch(error){
+   add(word,null,error.message||"AI ಸೇವೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಲಿಲ್ಲ.",index);
+  }
+  index++;
  }
- if(status)status.textContent=selected.length+" ಪದಗಳ ಪರಿಶೀಲನೆ ಮುಗಿದಿದೆ. ಪ್ರತಿ ಪರ್ಯಾಯವನ್ನು ಓದಿ ಬೇಕಾದದ್ದನ್ನು ಮಾತ್ರ ಅಳವಡಿಸಿ.";
+ if(status)status.textContent=groups.size+" ಪದಗಳ ಪರ್ಯಾಯಗಳು ಸಿದ್ಧವಾಗಿವೆ.";
  button.disabled=false;
 }

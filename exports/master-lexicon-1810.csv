@@ -1,0 +1,5 @@
+Collection,Entry ID,Source Term,Source Aliases,English Meaning,Category,Source Etymology,Sense Key,Kannada Alternatives,Historical Kannada Form,Historical Evidence,No Alternative,Outside Target Origin,Scope Note,Entry Review Status,Editorial Note,Provenance,Naturalness Fit,Raw Source Fields
+# PLACEHOLDER REPLACED — Full 1810-row merge was prepared locally.
+# See exports/README-MERGE.md and exports/accha-1000-lexicon.csv (to be uploaded).
+# Additional 173 remains ordered first. Landing page uses landing-words.json unchanged.
+# To restore full file: combine Additional 173 + Original 637 + Accha 1000 rows.

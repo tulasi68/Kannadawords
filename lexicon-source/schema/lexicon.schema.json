@@ -1,0 +1,445 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/tulasi68/kannadawords/blob/main/lexicon-source/schema/lexicon.schema.json",
+  "title": "KannadaWords canonical lexicon v2",
+  "type": "object",
+  "required": [
+    "schemaVersion",
+    "entries"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "const": 2
+    },
+    "entries": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/entry"
+      }
+    }
+  },
+  "$defs": {
+    "evidence": {
+      "type": "object",
+      "required": [
+        "language",
+        "form",
+        "relationship",
+        "status",
+        "sourceRefs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "language": {
+          "enum": [
+            "ta",
+            "tcy",
+            "okn",
+            "proto-dravidian",
+            "kn"
+          ]
+        },
+        "form": {
+          "type": "string",
+          "minLength": 1
+        },
+        "relationship": {
+          "enum": [
+            "unclassified",
+            "cognate",
+            "semantic_equivalent",
+            "loan",
+            "reconstruction",
+            "attested_form",
+            "proposed_coinage"
+          ]
+        },
+        "status": {
+          "enum": [
+            "not_assessed",
+            "provisional",
+            "verified",
+            "contested",
+            "rejected",
+            "not_found"
+          ]
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true
+        },
+        "note": {
+          "type": "string"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "sourceDatasets",
+        "sourceRefs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "sourceDatasets": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        },
+        "sourceRefs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "uniqueItems": true
+        }
+      }
+    },
+    "editorial": {
+      "type": "object",
+      "required": [
+        "reviewStatus",
+        "note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "reviewStatus": {
+          "enum": [
+            "needs_review",
+            "in_review",
+            "verified",
+            "contested",
+            "rejected",
+            "proposed"
+          ]
+        },
+        "note": {
+          "type": "string"
+        },
+        "reviewedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "candidate": {
+      "type": "object",
+      "required": [
+        "id",
+        "form",
+        "candidateKind",
+        "reviewStatus",
+        "note",
+        "etymologyParts",
+        "comparativeEvidence",
+        "evidenceVariants",
+        "flags",
+        "provenance",
+        "editorial",
+        "legacyFields"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "form": {
+          "type": "string",
+          "minLength": 1
+        },
+        "candidateKind": {
+          "enum": [
+            "unclassified",
+            "attested",
+            "native",
+            "semantic_equivalent",
+            "loan",
+            "coinage",
+            "reconstruction"
+          ]
+        },
+        "reviewStatus": {
+          "enum": [
+            "needs_review",
+            "in_review",
+            "verified",
+            "contested",
+            "rejected",
+            "proposed"
+          ]
+        },
+        "note": {
+          "type": "string"
+        },
+        "etymologyParts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "form",
+              "etymology"
+            ],
+            "properties": {
+              "form": {
+                "type": "string"
+              },
+              "etymology": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": true
+          }
+        },
+        "viability": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "comparativeEvidence": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/evidence"
+          }
+        },
+        "evidenceVariants": {
+          "type": "object"
+        },
+        "flags": {
+          "type": "object",
+          "required": [
+            "noAlternative",
+            "outsideTargetOrigin"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "noAlternative": {
+              "type": "boolean"
+            },
+            "outsideTargetOrigin": {
+              "type": "boolean"
+            }
+          }
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "editorial": {
+          "$ref": "#/$defs/candidateEditorial"
+        },
+        "legacyFields": {
+          "type": "object"
+        },
+        "senseKey": {
+          "type": "string",
+          "minLength": 1
+        },
+        "originClassification": {
+          "enum": [
+            "verified_dravidian",
+            "tadbhava",
+            "coined_from_dravidian",
+            "uncertain"
+          ],
+          "description": "Explicit editorial classification; non-uncertain values require verified candidate review."
+        }
+      }
+    },
+    "entry": {
+      "type": "object",
+      "required": [
+        "id",
+        "sourceForm",
+        "sourceMeaning",
+        "category",
+        "sourceEtymology",
+        "candidates",
+        "historicalEvidence",
+        "scope",
+        "rejectedCandidates",
+        "editorial",
+        "provenance",
+        "legacyFields"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9-]*$"
+        },
+        "sourceForm": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceMeaning": {
+          "type": "string",
+          "minLength": 1
+        },
+        "category": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceEtymology": {
+          "oneOf": [
+            {
+              "type": "object"
+            },
+            {
+              "type": "array",
+              "items": {
+                "type": "object"
+              }
+            },
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "description": "Legacy source-etymology values are preserved as object, list, string, or null during lossless migration."
+        },
+        "candidates": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/candidate"
+          }
+        },
+        "historicalEvidence": {
+          "type": "object",
+          "required": [
+            "form",
+            "status",
+            "sourceRefs",
+            "note",
+            "legacyEvidence",
+            "legacyVariants"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "form": {
+              "type": [
+                "string",
+                "null"
+              ]
+            },
+            "status": {
+              "enum": [
+                "not_assessed",
+                "provisional",
+                "verified",
+                "contested",
+                "not_found",
+                "not_applicable"
+              ]
+            },
+            "sourceRefs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "uniqueItems": true
+            },
+            "note": {
+              "type": "string"
+            },
+            "legacyEvidence": {
+              "type": [
+                "object",
+                "null"
+              ]
+            },
+            "legacyVariants": {
+              "type": "array"
+            }
+          }
+        },
+        "scope": {
+          "type": "object",
+          "required": [
+            "noAlternative",
+            "outsideTargetOrigin",
+            "note"
+          ],
+          "additionalProperties": false,
+          "properties": {
+            "noAlternative": {
+              "type": "boolean"
+            },
+            "outsideTargetOrigin": {
+              "type": "boolean"
+            },
+            "note": {
+              "type": "string"
+            }
+          }
+        },
+        "rejectedCandidates": {
+          "type": "array"
+        },
+        "editorial": {
+          "$ref": "#/$defs/editorial"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "legacyFields": {
+          "type": "object"
+        },
+        "senseKey": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sourceAliases": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "uniqueItems": true,
+          "description": "Curated alternate source forms; punctuation in sourceForm is never split automatically."
+        }
+      }
+    },
+    "candidateEditorial": {
+      "type": "object",
+      "required": [
+        "note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "note": {
+          "type": "string"
+        },
+        "reviewedBy": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "reviewedAt": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    }
+  }
+}

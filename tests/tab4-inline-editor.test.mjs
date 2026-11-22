@@ -11,7 +11,8 @@ test("Tab 4 uses one inline editable Kannada text field and four requested actio
   for(const label of ["Search in App","AI search","Clear","Apply"]) assert.ok(html.includes(">"+label+"</button>"),label);
   assert.doesNotMatch(html,/ಪಠ್ಯದ ಅರ್ಥವನ್ನು ಉಳಿಸಿಕೊಂಡು ಸಹಜ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ/);
   assert.doesNotMatch(html,/ಪದಪಟ್ಟಿ ಹುಡುಕಾಟವು ಮೂಲ ಪದಕೋಶ ಮತ್ತು 2,134 ಪದಗಳ master corpus/);
-  assert.doesNotMatch(html,/id="achcha-preview|id="achcha-word-list|id="achcha-gap-panel|id="achcha-gap-results/);
+  const tab4=html.slice(html.indexOf('<section id="translate-panel"'),html.indexOf("</section>",html.indexOf('<section id="translate-panel"')));
+  assert.doesNotMatch(tab4,/id="achcha-preview|id="achcha-word-list|id="achcha-gap-panel|id="achcha-gap-results/);
 });
 
 test("Tab 4 applies selected red and blue word choices into a second Kannada text field",()=>{

@@ -208,7 +208,7 @@
         ? row.sourceForms
         : expandMasterSourceForms(row.inputWord);
       const rawCandidates = [
-        ...String(row.primary || "").split(/\\s*\\/\\s*/u),
+        ...String(row.primary || "").split(/\s*\/\s*/u),
         ...(Array.isArray(row.alternatives) ? row.alternatives : [])
       ].map(value => String(value).trim()).filter(Boolean);
       const candidates = [...new Set(rawCandidates)].map(word => ({
@@ -240,10 +240,10 @@
   }
   function expandMasterSourceForms(value) {
     const forms = new Set();
-    for (const part of String(value || "").split(/\\s*\\/\\s*/u)) {
+    for (const part of String(value || "").split(/\s*\/\s*/u)) {
       const source = part.trim().normalize("NFC");
       if (!source) continue;
-      const parenthetical = source.match(/^(.+?)\\s*\\(([^()]*)\\)\\s*$/u);
+      const parenthetical = source.match(/^(.+?)\s*\(([^()]*)\)\s*$/u);
       if (parenthetical) {
         forms.add(parenthetical[1].trim().normalize("NFC"));
         forms.add(parenthetical[2].trim().normalize("NFC"));

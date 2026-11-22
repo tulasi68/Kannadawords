@@ -7,10 +7,10 @@ const KNOWN_SOURCE_ALIASES = new Map([
 
 export function expandTextbookSourceForms(value) {
   const forms = new Set();
-  for (const part of String(value || "").split(/\\s*\\/\\s*/u)) {
+  for (const part of String(value || "").split(/\s*\/\s*/u)) {
     const source = part.trim().normalize("NFC");
     if (!source) continue;
-    const parenthetical = source.match(/^(.+?)\\s*\\(([^()]*)\\)\\s*$/u);
+    const parenthetical = source.match(/^(.+?)\s*\(([^()]*)\)\s*$/u);
     if (parenthetical) {
       const base = parenthetical[1].trim().normalize("NFC");
       const alias = parenthetical[2].trim().normalize("NFC");

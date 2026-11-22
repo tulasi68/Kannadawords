@@ -91,6 +91,21 @@
         landingWritingIndex = [];
         console.warn("Landing vocabulary unavailable for sentence lookup; other lexicons remain available.", landingError);
       }
+      // Load the conservative, editorially maintained root-family index.
+      // It contains explicit word forms only; unknown forms are never guessed by suffix stripping.
+      try {
+        const familyUrl = new URL("../root-families.json", base);
+        const familyData = await getJson(familyUrl, "no-cache");
+        if (familyData.schemaVersion !== 1 || !Array.isArray(familyData.families) ||
+            familyData.families.some(family => !family.id || !family.root || !Array.isArray(family.forms) ||
+              family.forms.some(form => !form.word || !Array.isArray(form.alternatives)))) {
+          throw new Error("Root-family data structure is invalid.");
+        }
+        rootFamilyWritingIndex = buildRootFamilyWritingIndex(familyData);
+      } catch (familyError) {
+        rootFamilyWritingIndex = [];
+        console.warn("Root-family index unavailable; existing lexicons remain available.", familyError);
+      }
       return manifest;
     })().catch(error => { initPromise = null; throw error; });
     return initPromise;
@@ -158,6 +173,7 @@
   let masterWritingIndex = [];
   let textbookWritingIndex = [];
   let landingWritingIndex = [];
+  let rootFamilyWritingIndex = [];
 
   function cleanCandidateLabel(value) {
     const candidate = String(value || "").trim();
@@ -300,6 +316,33 @@
     }
     return [...bySource.values()];
   }
+  function buildRootFamilyWritingIndex(data) {
+    const entries = [];
+    for (const family of data.families) {
+      for (const form of family.forms) {
+        const candidates = [...new Set(form.alternatives.map(cleanCandidateLabel).filter(Boolean))].map(word => ({
+          word,
+          origin: "uncertain",
+          reviewStatus: "needs_review",
+          originClassification: "uncertain",
+          note: [form.note, "Root-family relationship is editorially maintained and awaiting linguistic review."].filter(Boolean).join(" · "),
+          rootFamilyId: family.id
+        }));
+        if (!candidates.length) continue;
+        entries.push({
+          entryId: "root-family:" + family.id + ":" + form.word,
+          sourceForms: [String(form.word).normalize("NFC")],
+          meaning: String(form.meaning || family.rootMeaning || "").trim(),
+          candidates,
+          rootFamilyId: family.id,
+          root: family.root,
+          relationshipType: family.relationshipType,
+          familyReviewStatus: family.reviewStatus || "needs_review"
+        });
+      }
+    }
+    return entries;
+  }
   // Carefully curated coverage additions for frequent forms missing from the
   // source collections. These remain provisional suggestions, not verified etymologies.
   function buildAchchaCoverageSupplements() {
@@ -347,14 +390,22 @@
     const landing = query
       ? landingWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
       : landingWritingIndex.slice(0, 100);
+    const rootFamilies = query
+      ? rootFamilyWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
+      : rootFamilyWritingIndex.slice(0, 100);
     // Merge every live source by source spelling so Tab 4 sees the same
     // alternatives available across the unified word collection.
     const merged = new Map();
-    for (const entry of [...canonical, ...master, ...textbook, ...landing]) {
+    for (const entry of [...canonical, ...master, ...textbook, ...landing, ...rootFamilies]) {
       const form = entry.sourceForms[0];
       if (!merged.has(form)) merged.set(form, { ...entry, sourceForms: [form], candidates: [] });
       const target = merged.get(form);
       if (!target.meaning && entry.meaning) target.meaning = entry.meaning;
+      if (entry.rootFamilyId) {
+        target.rootFamilyIds = [...new Set([...(target.rootFamilyIds || []), entry.rootFamilyId])];
+        target.rootFamilyRoots = [...new Set([...(target.rootFamilyRoots || []), entry.root])];
+        target.relationshipTypes = [...new Set([...(target.relationshipTypes || []), entry.relationshipType])];
+      }
       for (const candidate of entry.candidates || []) {
         if (candidate.word && !target.candidates.some(existing => existing.word === candidate.word)) target.candidates.push(candidate);
       }

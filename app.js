@@ -1623,8 +1623,9 @@ async function translateAchchaGapWords(){
     }
   };
 
-  window.completeAchchaRewrite = function() {
-    if (!sourceText) { window.findAchchaWords(); return; }
+  window.completeAchchaRewrite = async function() {
+    if (!sourceText) await window.findAchchaWords();
+    if (!sourceText) return;
     const edits=[];
     achchaMatchState.concat(achchaDiscoveryState).forEach(item=>{
       const replacement=item.selected||item.source;

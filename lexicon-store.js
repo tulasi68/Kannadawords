@@ -58,7 +58,7 @@
             masterData.entries.some(row => !Array.isArray(row.fields) || row.fields.length !== 8)) {
           throw new Error("Master lexicon structure or row count is invalid.");
         }
-        masterWritingIndex = buildMasterWritingIndex(masterData);
+        masterWritingIndex = [...buildMasterWritingIndex(masterData), ...buildAchchaCoverageSupplements()];
       } catch (masterError) {
         masterWritingIndex = [];
         console.warn("Master corpus unavailable for sentence lookup; canonical lexicon remains available.", masterError);
@@ -299,6 +299,35 @@
       }
     }
     return [...bySource.values()];
+  }
+  // Carefully curated coverage additions for frequent forms missing from the
+  // source collections. These remain provisional suggestions, not verified etymologies.
+  function buildAchchaCoverageSupplements() {
+    const rows = [
+      ["ಅತಿಥಿ", "Guest", ["ನೆಂಟ", "ಬಂದವರು"]],
+      ["ಅತಿಥಿಗಳು", "Guests", ["ನೆಂಟರು", "ಬಂದವರು"]],
+      ["ಅತಿಥಿಯನ್ನು", "Guest (object form)", ["ನೆಂಟರನ್ನು"]],
+      ["ಅತಿಥಿಗಳಿಗೆ", "To guests", ["ನೆಂಟರಿಗೆ"]],
+      ["ಆಯೋಜಿಸಿದ್ದ", "Had organised / arranged", ["ಏರ್ಪಡಿಸಿದ್ದ"]],
+      ["ಆಯೋಜಿಸಿದ", "Organised / arranged", ["ಏರ್ಪಡಿಸಿದ"]],
+      ["ಆಯೋಜಿಸಿರುವ", "Having organised / arranged", ["ಏರ್ಪಡಿಸಿರುವ"]],
+      ["ವರ್ಣರಂಜಿತ", "Colourful", ["ಬಣ್ಣಬಣ್ಣದ", "ರಂಗುರಂಗಿನ"]],
+      ["ವರ್ಣ ರಂಜಿತ", "Colourful", ["ಬಣ್ಣಬಣ್ಣದ", "ರಂಗುರಂಗಿನ"]],
+      ["ಶೈಲಿ", "Style", ["ಬಗೆ", "ರೀತಿ", "ಮಾದರಿ"]],
+      ["ಶೈಲಿಯ", "Of the style", ["ಬಗೆಯ", "ರೀತಿಯ", "ಮಾದರಿಯ"]]
+    ];
+    return rows.map(([form, meaning, words], index) => ({
+      entryId: "coverage-supplement:" + index,
+      sourceForms: [form],
+      meaning,
+      candidates: words.map(word => ({
+        word,
+        origin: "uncertain",
+        reviewStatus: "needs_review",
+        originClassification: "uncertain",
+        note: "Coverage supplement; semantic fit and natural usage should be checked in context."
+      }))
+    }));
   }
   function searchAchchaLexicon(text) {
     if (!writingIndex) return [];

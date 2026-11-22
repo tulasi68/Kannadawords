@@ -1481,8 +1481,9 @@ async function translateAchchaGapWords(){
       ? (item.candidates || []).map(c=>c.word).filter(Boolean)
       : (item.suggestions || []).map(s=>s.replacement).filter(Boolean);
     const unique = [...new Set(values)].filter(word=>word!==item.source);
-    const keep = '<button type="button" class="achcha-opt achcha-opt-keep" data-kind="'+item.kind+'" data-index="'+item.index+'" data-word="'+escapeHtmlAchcha(item.source)+'">Keep original</button>';
-    const choices = unique.map(word=>'<button type="button" class="achcha-opt kn" data-kind="'+item.kind+'" data-index="'+item.index+'" data-word="'+escapeHtmlAchcha(word)+'">'+escapeHtmlAchcha(word)+'</button>').join("");
+    const keepActive = item.selected===item.source ? " achcha-opt-active" : "";
+    const keep = '<button type="button" class="achcha-opt achcha-opt-keep'+keepActive+'" data-kind="'+item.kind+'" data-index="'+item.index+'" data-word="'+escapeHtmlAchcha(item.source)+'">Keep original</button>';
+    const choices = unique.map(word=>'<button type="button" class="achcha-opt kn'+(item.selected===word?" achcha-opt-active":"")+'" data-kind="'+item.kind+'" data-index="'+item.index+'" data-word="'+escapeHtmlAchcha(word)+'">'+escapeHtmlAchcha(word)+'</button>').join("");
     const empty = item.kind === "blue" && !unique.length
       ? '<span class="text-xs text-stone-500">No AI alternative returned for this word.</span>' : "";
     return '<span class="achcha-pop" contenteditable="false"><span class="achcha-pop-title">'+(item.kind==="red"?"Native words":"AI suggestions")+' for <strong class="kn">'+escapeHtmlAchcha(item.source)+'</strong></span><span class="achcha-pop-opts">'+keep+choices+'</span>'+empty+'</span>';

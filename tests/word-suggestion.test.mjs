@@ -49,9 +49,11 @@ test("word-only endpoint rejects sentences and does not call the AI model", asyn
   assert.equal(calls, 0);
 });
 
-test("frontend exposes an Apply action and applies exact standalone word replacements", async () => {
+test("frontend renders radio alternatives and applies selections using detected word positions", async () => {
   const source = await readFile(new URL("../app.js", import.meta.url), "utf8");
-  assert.match(source, /ಈ ಪದವನ್ನು ಅಳವಡಿಸಿ/);
-  assert.match(source, /applyAchchaGapReplacement/);
-  assert.match(source, /body:JSON\.stringify\(\{text:item\.source,wordOnly:true\}\)/);
+  assert.match(source, /type="radio"/);
+  assert.match(source, /selectAchchaGapAlternative/);
+  assert.match(source, /achchaGapBaseText\.slice\(cursor,edit\.start\)/);
+  assert.doesNotMatch(source, /ಈ ಪದವನ್ನು ಅಳವಡಿಸಿ/);
+  assert.match(source, /body:JSON\.stringify\(\{text:word,wordOnly:true\}\)/);
 });

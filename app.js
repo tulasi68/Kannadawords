@@ -354,7 +354,7 @@ function toggleThoughts(id) {
 }
 function cancelThoughts(id) {
   const input = document.getElementById("thought-input-" + id);
-  if (input) input.value = "";
+  if (input) setAchchaEditorText(input, "");
   document.getElementById("thoughts-" + id).classList.add("hidden");
 }
 async function submitThought(id) {
@@ -448,6 +448,15 @@ function achchaAlternativeKind(alt) {
  if (alt.reviewStatus !== "verified") return "uncertain";
  const classification = alt.originClassification;
  return ["verified_dravidian","tadbhava","coined_from_dravidian","uncertain"].includes(classification) ? classification : "uncertain";
+}
+function getAchchaEditorText(element) {
+  if (!element) return "";
+  // Tab 4 uses contenteditable, not an input/textarea element.
+  return String(element.innerText ?? element.textContent ?? "").replace(/\\u00a0/g, " ");
+}
+function setAchchaEditorText(element, value) {
+  if (!element) return;
+  element.textContent = String(value ?? "");
 }
 function buildAchchaLexicon(text = "") {
   return window.KannadaLexiconStore
@@ -567,7 +576,7 @@ async function findAchchaWords() {
     return;
   }
   const input = document.getElementById("achcha-input");
-  const original = (input && input.value || "").trim();
+  const original = getAchchaEditorText(input).trim();
   if (!original) { input && input.focus(); return; }
   // Match against a normalized, case-folded copy so Latin aliases such as
   // Varna also match VARNA / varna. Keep offsets aligned with the displayed text.
@@ -756,8 +765,10 @@ function resetAchchaSelections() {
 async function completeAchchaRewrite() {
   const input = document.getElementById("achcha-input");
   const original = (input && input.value || "").trim();
-  if (!original || !achchaMatchState.length) {
+  if (!original) { input && input.focus(); return; }
+  if (!achchaMatchState.length) {
     await findAchchaWords();
+    original = getAchchaEditorText(input).trim();
     if (!achchaMatchState.length) return;
   }
 
@@ -1359,7 +1370,7 @@ function renderAchchaGapSelections() {
   cursor=edit.end;
  }
  output+=achchaGapBaseText.slice(cursor);
- input.value=achchaGapPrefix+output+achchaGapSuffix;
+ setAchchaEditorText(input, achchaGapPrefix+output+achchaGapSuffix);
 }
 
 function selectAchchaGapAlternative(source,replacement) {
@@ -1376,7 +1387,7 @@ async function translateAchchaGapWords(){
  const status=document.getElementById("achcha-gap-status"), results=document.getElementById("achcha-gap-results"), button=document.getElementById("achcha-gap-ai");
  if(!selected.length){if(status)status.textContent="ಮೊದಲು ನೀಲಿ ಗೆರೆ ಹಾಕಿರುವ ಪದಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.";return;}
  const input=document.getElementById("achcha-input");
- const raw=input?.value||"";
+ const raw=getAchchaEditorText(input);
  const trimmed=raw.trim();
  const leading=raw.length-raw.trimStart().length;
  achchaGapPrefix=raw.slice(0,leading);

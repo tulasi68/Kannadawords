@@ -1,0 +1,22 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import fs from "node:fs";
+
+const html=fs.readFileSync(new URL("../index.html",import.meta.url),"utf8");
+const app=fs.readFileSync(new URL("../app.js",import.meta.url),"utf8");
+
+test("Tab 4 uses one inline editable Kannada text field and four requested actions",()=>{
+  assert.match(html,/id="achcha-input"[^>]*contenteditable="true"/);
+  for(const label of ["Search in App","AI search","Clear","Apply"]) assert.ok(html.includes(">"+label+"</button>"),label);
+  assert.doesNotMatch(html,/ಪಠ್ಯದ ಅರ್ಥವನ್ನು ಉಳಿಸಿಕೊಂಡು ಸಹಜ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ/);
+  assert.doesNotMatch(html,/ಪದಪಟ್ಟಿ ಹುಡುಕಾಟವು ಮೂಲ ಪದಕೋಶ ಮತ್ತು 2,134 ಪದಗಳ master corpus/);
+  assert.doesNotMatch(html,/achcha-preview|achcha-word-list|achcha-gap-panel|achcha-gap-results/);
+});
+
+test("Tab 4 applies selected red and blue word choices into a second Kannada text field",()=>{
+  assert.match(html,/id="achcha-result-text"/);
+  assert.match(app,/window\.findAchchaWords = async function/);
+  assert.match(app,/window\.translateAchchaGapWords = async function/);
+  assert.match(app,/achchaMatchState\.concat\(achchaDiscoveryState\)/);
+  assert.match(app,/item\.suggestions=suggestions/);
+});

@@ -57,3 +57,55 @@ test("frontend renders radio alternatives and applies selections using detected 
   assert.doesNotMatch(source, /ಈ ಪದವನ್ನು ಅಳವಡಿಸಿ/);
   assert.match(source, /body:JSON\.stringify\(\{text:word,wordOnly:true\}\)/);
 });
+
+test("sentence rewrite mode receives only user-selected replacements and returns one rewritten sentence", async () => {
+  let capturedOptions;
+  const env = { AI: { run: async (_model, options) => {
+    capturedOptions = options;
+    return { response: JSON.stringify({
+      rewrittenKannada: "ಔತಣವನ್ನು ಏರ್ಪಡಿಸಲಾಗಿತ್ತು.",
+      changed: true,
+      explanationKannada: "",
+      replacements: [{ original: "ಆಯೋಜಿಸಲಾಗಿತ್ತು", replacement: "ಏರ್ಪಡಿಸಲಾಗಿತ್ತು", basis: "uncertain", reasonKannada: "ಬಳಕೆದಾರರ ಆಯ್ಕೆ." }],
+      wordsNeedingReview: []
+    }) };
+  } } };
+  const response = await worker.fetch(new Request("https://example.test/api/rewrite", {
+    method: "POST", headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      text: "ಔತಣಕೂಟವನ್ನು ಆಯೋಜಿಸಲಾಗಿತ್ತು.",
+      sentenceRewrite: true,
+      selectedReplacements: [{ original: "ಆಯೋಜಿಸಲಾಗಿತ್ತು", replacement: "ಏರ್ಪಡಿಸಲಾಗಿತ್ತು" }]
+    })
+  }), env);
+  const payload = await response.json();
+  assert.equal(response.status, 200);
+  assert.equal(payload.rewrittenKannada, "ಔತಣವನ್ನು ಏರ್ಪಡಿಸಲಾಗಿತ್ತು.");
+  assert.match(capturedOptions.messages[0].content, /ಬಳಕೆದಾರರು ಆರಿಸಿದ ಪರ್ಯಾಯಗಳನ್ನೇ ಬಳಸಿ/);
+  assert.match(capturedOptions.messages[0].content, /ಹೊಸ ಪರ್ಯಾಯಗಳನ್ನು ಸೃಷ್ಟಿಸಬೇಡಿ/);
+  assert.match(capturedOptions.messages[1].content, /ಆಯೋಜಿಸಲಾಗಿತ್ತು/);
+});
+
+test("sentence rewrite mode rejects unrelated selected replacements without calling AI", async () => {
+  let calls = 0;
+  const env = { AI: { run: async () => { calls++; return {}; } } };
+  const response = await worker.fetch(new Request("https://example.test/api/rewrite", {
+    method: "POST", headers: { "content-type": "application/json" },
+    body: JSON.stringify({
+      text: "ಔತಣಕೂಟವನ್ನು ಆಯೋಜಿಸಲಾಗಿತ್ತು.",
+      sentenceRewrite: true,
+      selectedReplacements: [{ original: "ಶೃಂಗಸಭೆ", replacement: "ಕೂಟ" }]
+    })
+  }), env);
+  assert.equal(response.status, 400);
+  assert.equal(calls, 0);
+});
+
+test("Tab 4 Apply sends sentence-level requests with only selected replacements", async () => {
+  const source = await readFile(new URL("../app.js", import.meta.url), "utf8");
+  assert.match(source, /sentenceRewrite:true,selectedReplacements:choices/);
+  assert.match(source, /sourceText\\.matchAll\\(sentencePattern\\)/);
+  assert.match(source, /payload\\.rewrittenKannada/);
+  assert.match(source, /failedCount/);
+  assert.match(source, /achcha-rewrite-status/);
+});

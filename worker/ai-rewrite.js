@@ -195,9 +195,22 @@ export default {
     try { body = JSON.parse(await request.text()); } catch { return reply({ error: "Please send valid JSON." }, 400, origin); }
     const text = typeof body.text === "string" ? body.text.trim() : "";
     const wordOnly = body.wordOnly === true;
+    const sentenceRewrite = body.sentenceRewrite === true;
+    const selectedReplacements = Array.isArray(body.selectedReplacements)
+      ? body.selectedReplacements.slice(0, 30).map(item => ({
+          original: typeof item.original === "string" ? item.original.trim().slice(0, 100) : "",
+          replacement: typeof item.replacement === "string" ? item.replacement.trim().slice(0, 100) : ""
+        })).filter(item => item.original && item.replacement && item.original !== item.replacement)
+      : [];
+    if (wordOnly && sentenceRewrite) return reply({ error: "Choose either word suggestions or sentence rewriting, not both." }, 400, origin);
     if (!text || text.length > (wordOnly ? 100 : MAX_TEXT)) return reply({ error: wordOnly ? "Enter one Kannada word of up to 100 characters." : "Enter Kannada text of up to 4,000 characters." }, 400, origin);
-    if (!/[\u0C80-\u0CFF]/.test(text)) return reply({ error: "Please enter text containing Kannada script." }, 400, origin);
-    if (wordOnly && !/^[\u0C80-\u0CFF]+$/u.test(text)) return reply({ error: "Word suggestion mode accepts exactly one Kannada word, without spaces or punctuation." }, 400, origin);
+    if (!/[\\u0C80-\\u0CFF]/.test(text)) return reply({ error: "Please enter text containing Kannada script." }, 400, origin);
+    if (wordOnly && !/^[\\u0C80-\\u0CFF]+$/u.test(text)) return reply({ error: "Word suggestion mode accepts exactly one Kannada word, without spaces or punctuation." }, 400, origin);
+    if (sentenceRewrite && (!selectedReplacements.length || selectedReplacements.some(item =>
+      !/[\\u0C80-\\u0CFF]/u.test(item.original) || !/[\\u0C80-\\u0CFF]/u.test(item.replacement) ||
+      !matchesWholeForm(text.normalize("NFC"), item.original.normalize("NFC"))))) {
+      return reply({ error: "Sentence rewriting requires selected Kannada replacements that occur in the supplied sentence." }, 400, origin);
+    }
 
     const normalizedText = text.normalize("NFC");
     const lexicon = Array.isArray(body.lexicon) ? body.lexicon.slice(0, 400).map(entry => ({
@@ -218,6 +231,16 @@ export default {
 
     const system = wordOnly
       ? `ನೀವು ಕನ್ನಡ ಪದಕೋಶದ ಭಾಷಾ ಸಲಹೆಗಾರರು. ನಿಮಗೆ ಒಂದೇ ಒಂದು ಕನ್ನಡ ಪದ ಮಾತ್ರ ನೀಡಲಾಗಿದೆ. ಅದಕ್ಕೆ ಅರ್ಥಕ್ಕೆ ಹೊಂದುವ, ನಿಜವಾಗಿಯೂ ಸಹಜವಾಗಿ ಬಳಕೆಯಾಗಬಹುದಾದ ಅಚ್ಚ ಕನ್ನಡ ಅಥವಾ ದ್ರಾವಿಡ ಮೂಲದ ಪರ್ಯಾಯಗಳಿದ್ದರೆ ಗರಿಷ್ಠ ಮೂರು ಸೂಚನೆಗಳನ್ನು ನೀಡಿ. ಕೇವಲ ಸಂಸ್ಕೃತದಂತೆ ಕಾಣುತ್ತದೆ ಎಂಬ ಕಾರಣಕ್ಕೆ ಪದವನ್ನು ಬದಲಿಸಬೇಡಿ. ಪದಕ್ಕೆ ಸಂದರ್ಭವಿಲ್ಲದೆ ಅರ್ಥ ನಿರ್ಧರಿಸಲಾಗದಿದ್ದರೆ needsContext=true ಮಾಡಿ; ಊಹೆಯ ಪರ್ಯಾಯಗಳನ್ನು ಸೃಷ್ಟಿಸಬೇಡಿ. ಪರ್ಯಾಯವಿಲ್ಲದಿದ್ದರೆ suggestions ಖಾಲಿ ಇರಲಿ. ಪದದ ರೂಪವು ವಿಭಕ್ತಿ, ಬಹುವಚನ ಅಥವಾ ಕ್ರಿಯಾರೂಪವಾಗಿದ್ದರೆ ಸಾಧ್ಯವಾದಷ್ಟು ಅದೇ ವ್ಯಾಕರಣ ರೂಪವನ್ನು ಉಳಿಸಿ. ಪ್ರತಿಯೊಂದು ಸಲಹೆಯ ಕಾರಣವನ್ನು ಚಿಕ್ಕ ಕನ್ನಡ ವಾಕ್ಯದಲ್ಲಿ ಬರೆಯಿರಿ. basis ಅನ್ನು ಖಚಿತವಾಗಿ ಸಾಬೀತಾಗದಿದ್ದರೆ uncertain ಎಂದು ಗುರುತಿಸಿ. ಸಂಪೂರ್ಣ ವಾಕ್ಯ, ಪ್ಯಾರಾಗ್ರಾಫ್ ಅಥವಾ ಪ್ರಬಂಧವನ್ನು ಎಂದಿಗೂ ಬರೆಯಬೇಡಿ. JSON ಹೊರಗೆ ಏನನ್ನೂ ಬರೆಯಬೇಡಿ.`
+      : sentenceRewrite
+      ? `ನೀವು ಕನ್ನಡದ ನುರಿತ ವಾಕ್ಯ ಸಂಪಾದಕರು. ನಿಮಗೆ ಒಂದು ಮೂಲ ಕನ್ನಡ ವಾಕ್ಯ ಮತ್ತು ಬಳಕೆದಾರರು ಸ್ವತಃ ಆರಿಸಿದ ಪದಬದಲಾವಣೆಗಳ ಪಟ್ಟಿ ನೀಡಲಾಗಿದೆ.
+1. ವಾಕ್ಯದ ಅರ್ಥ, ಕರ್ತೃ-ಕರ್ಮ, ಕಾಲ, ಗೌರವಸೂಚಕ ಧಾಟಿ ಮತ್ತು ಸುದ್ದಿಯ ವಿವರಗಳನ್ನು ಹಾಗೆಯೇ ಉಳಿಸಿ.
+2. ಬಳಕೆದಾರರು ಆರಿಸಿದ ಪರ್ಯಾಯಗಳನ್ನೇ ಬಳಸಿ ವಾಕ್ಯವನ್ನು ಸಹಜ, ಸರಾಗ ಕನ್ನಡದಲ್ಲಿ ಮರುರಚಿಸಿ.
+3. ಆಯ್ದ ಪರ್ಯಾಯಕ್ಕೆ ಅಗತ್ಯವಿದ್ದರೆ ಮಾತ್ರ ವಿಭಕ್ತಿ, ವಚನ ಅಥವಾ ಕ್ರಿಯಾರೂಪದ ವ್ಯಾಕರಣ ಹೊಂದಾಣಿಕೆ ಮಾಡಿ; ಅದರ ಮೂಲ ಅರ್ಥವನ್ನು ಬದಲಿಸಬೇಡಿ.
+4. ಬಳಕೆದಾರರು ಆಯ್ಕೆ ಮಾಡದ ಬೇರೆ ಪದಗಳಿಗೆ ಹೊಸ ಪರ್ಯಾಯಗಳನ್ನು ಸೃಷ್ಟಿಸಬೇಡಿ; ಬೇರೆ ಪದಗಳನ್ನು ಊಹೆಯಿಂದ ಬದಲಿಸಬೇಡಿ.
+5. ಆಯ್ದ ಪರ್ಯಾಯವು ವಾಕ್ಯದಲ್ಲಿ ಸರಿಯಾಗಿ ಹೊಂದದಿದ್ದರೆ ಬಲವಂತವಾಗಿ ಬಳಸದೆ, ಮೂಲ ಪದವನ್ನು ಉಳಿಸಿ ಮತ್ತು wordsNeedingReview ನಲ್ಲಿ ಸೂಚಿಸಿ.
+6. ವ್ಯಕ್ತಿನಾಮ, ಸ್ಥಳನಾಮ, ದೇಶದ ಹೆಸರು, ಹುದ್ದೆ, ವಾಹನ/ಸಂಸ್ಥೆಯ ಹೆಸರು, ಸಂಖ್ಯೆಗಳು, ಉಲ್ಲೇಖಗಳು, ಘಟನೆಗಳು ಮತ್ತು ಮೂಲದಲ್ಲಿರುವ ಖಚಿತತೆ/ಅನಿಶ್ಚಿತತೆಯನ್ನು ಬದಲಿಸಬೇಡಿ. ಮೂಲದಲ್ಲಿಲ್ಲದ ಸಂಗತಿಯನ್ನು ಸೇರಿಸಬೇಡಿ.
+7. ಒಂದು ವಾಕ್ಯವನ್ನೇ ಮರುಬರೆಯಿರಿ; ಹೊಸ ವಾಕ್ಯ ಸೇರಿಸಬೇಡಿ. replacements ಪಟ್ಟಿಯಲ್ಲಿ ಬಳಕೆದಾರರು ಆರಿಸಿದ ಬದಲಾವಣೆಗಳನ್ನು ಮಾತ್ರ ದಾಖಲಿಸಿ.
+8. ಪದದ ಮೂಲ ಖಚಿತವಿಲ್ಲದಿದ್ದರೆ basis ಅನ್ನು uncertain ಎಂದು ಗುರುತಿಸಿ. JSON ಹೊರಗೆ ಏನನ್ನೂ ಬರೆಯಬೇಡಿ.`
       : `ನೀವು ಕನ್ನಡದ ಹಿರಿಯ ಭಾಷಾ ಸಂಪಾದಕರು. ನಿಮ್ಮ ಕೆಲಸ ಕೇವಲ ಪದಗಳನ್ನು ಬದಲಿಸುವುದಲ್ಲ; ಪಠ್ಯದ ಸಂಪೂರ್ಣ ಅರ್ಥವನ್ನು ಗ್ರಹಿಸಿ, ಅರ್ಥ ಮತ್ತು ಧ್ವನಿಯನ್ನು ಉಳಿಸಿಕೊಂಡು ಸಹಜ, ಸರಾಗ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯುವುದು.
 
 ಸಂಪಾದನೆಯ ಕ್ರಮ:
@@ -255,7 +278,9 @@ ${JSON.stringify(lexicon)}`;
     try {
       const userInstruction = wordOnly
         ? "ಈ ಒಂದು ಪದಕ್ಕೆ ಮಾತ್ರ ಸಲಹೆ ನೀಡಿ. ಪದ: " + text
-        : "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\n\n" + text;
+        : sentenceRewrite
+          ? "ಈ ಒಂದು ವಾಕ್ಯವನ್ನು ಮರುಬರೆಯಿರಿ. ಮೂಲ ವಾಕ್ಯ: " + text + "\\n\\nಬಳಕೆದಾರರು ಆಯ್ಕೆ ಮಾಡಿದ ಪದಬದಲಾವಣೆಗಳು (ಇವುಗಳನ್ನೇ ಬಳಸಿ; ಬೇರೆ ಪದಗಳನ್ನು ಬದಲಿಸಬೇಡಿ): " + JSON.stringify(selectedReplacements)
+          : "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\\n\\n" + text;
       const runModel = (model, retry = false) => {
         const options = {
           messages: [

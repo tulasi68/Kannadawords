@@ -1647,19 +1647,69 @@ async function translateAchchaGapWords(){
   window.completeAchchaRewrite = async function() {
     if (!sourceText) await window.findAchchaWords();
     if (!sourceText) return;
-    const edits=[];
-    achchaMatchState.concat(achchaDiscoveryState).forEach(item=>{
-      const replacement=item.selected||item.source;
-      if(replacement!==item.source) edits.push({start:item.start,end:item.end,replacement});
-    });
-    edits.sort((a,b)=>b.start-a.start);
-    let result=sourceText;
-    edits.forEach(edit=>{result=result.slice(0,edit.start)+edit.replacement+result.slice(edit.end);});
-    const output=document.getElementById("achcha-output");
-    const field=document.getElementById("achcha-result-text");
-    field.value=result;
-    output.classList.remove("hidden");
-    output.scrollIntoView({behavior:"smooth",block:"nearest"});
+    const selected = achchaMatchState.concat(achchaDiscoveryState)
+      .filter(item => (item.selected || item.source) !== item.source)
+      .sort((a,b) => a.start - b.start);
+    const output = document.getElementById("achcha-output");
+    const field = document.getElementById("achcha-result-text");
+    const status = document.getElementById("achcha-rewrite-status");
+    const applyButton = document.getElementById("achcha-apply");
+    if (!selected.length) {
+      field.value = sourceText;
+      if (status) status.textContent = "ಯಾವುದೇ ಪರ್ಯಾಯವನ್ನು ಆಯ್ಕೆ ಮಾಡಿಲ್ಲ. ಮೂಲ ಪಠ್ಯವನ್ನು ಉಳಿಸಲಾಗಿದೆ.";
+      output.classList.remove("hidden");
+      output.scrollIntoView({behavior:"smooth",block:"nearest"});
+      return;
+    }
+    const chunks = [];
+    const sentencePattern = /[^.!?।॥\\n]+[.!?।॥]*|[\\n]+/gu;
+    for (const match of sourceText.matchAll(sentencePattern)) {
+      chunks.push({text:match[0],start:match.index,end:match.index+match[0].length});
+    }
+    const eligibleCount = chunks.filter(chunk => selected.some(item => item.start >= chunk.start && item.end <= chunk.end)).length;
+    if (applyButton) { applyButton.disabled=true; applyButton.textContent="Rewording…"; }
+    if (status) status.textContent = "ಆಯ್ಕೆ ಮಾಡಿದ ಪದಗಳನ್ನು ಬಳಸಿ ವಾಕ್ಯಗಳನ್ನು ಮರುಬರೆಯಲಾಗುತ್ತಿದೆ…";
+    try {
+      const result = [];
+      let rewrittenCount = 0;
+      let failedCount = 0;
+      for (const chunk of chunks) {
+        const leading = (chunk.text.match(/^\\s*/u) || [""])[0];
+        const trailing = (chunk.text.match(/\\s*$/u) || [""])[0];
+        const sentence = chunk.text.slice(leading.length, chunk.text.length-trailing.length);
+        const sentenceStart = chunk.start + leading.length;
+        const sentenceEnd = sentenceStart + sentence.length;
+        const choices = selected.filter(item => item.start >= sentenceStart && item.end <= sentenceEnd)
+          .map(item => ({original:item.source,replacement:item.selected}));
+        if (!sentence || !choices.length) { result.push(chunk.text); continue; }
+        if (status) status.textContent = "ವಾಕ್ಯಗಳನ್ನು ಮರುಬರೆಯಲಾಗುತ್ತಿದೆ… " + (rewrittenCount + failedCount + 1) + " / " + eligibleCount;
+        try {
+          const response = await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite", {
+            method:"POST", headers:{"Content-Type":"text/plain;charset=UTF-8"},
+            body:JSON.stringify({text:sentence,sentenceRewrite:true,selectedReplacements:choices}),
+            cache:"no-store"
+          });
+          const payload = await response.json();
+          if (!response.ok || typeof payload.rewrittenKannada !== "string" || !payload.rewrittenKannada.trim()) {
+            throw new Error(payload.error || "AI ಮರುಬರಹ ಪೂರ್ಣಗೊಳ್ಳಲಿಲ್ಲ.");
+          }
+          result.push(leading + payload.rewrittenKannada.trim() + trailing);
+          rewrittenCount++;
+        } catch (error) {
+          console.warn("Sentence rewrite failed; original sentence retained.",error);
+          result.push(chunk.text);
+          failedCount++;
+        }
+      }
+      field.value = result.join("");
+      output.classList.remove("hidden");
+      if (status) status.textContent = failedCount
+        ? rewrittenCount + " ವಾಕ್ಯಗಳನ್ನು ಮರುಬರೆದಿದ್ದೇವೆ; " + failedCount + " ವಾಕ್ಯಗಳನ್ನು ಮೂಲದಂತೆಯೇ ಉಳಿಸಿದ್ದೇವೆ. ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಬಹುದು."
+        : rewrittenCount + " ವಾಕ್ಯಗಳನ್ನು ನಿಮ್ಮ ಆಯ್ಕೆ ಮಾಡಿದ ಪದಗಳ ಆಧಾರದಲ್ಲಿ ಮರುಬರೆದಿದ್ದೇವೆ.";
+      output.scrollIntoView({behavior:"smooth",block:"nearest"});
+    } finally {
+      if (applyButton) { applyButton.disabled=false; applyButton.textContent="Apply"; }
+    }
   };
 
   window.clearAchchaInput = function() {
@@ -1671,6 +1721,8 @@ async function translateAchchaGapWords(){
     document.getElementById("achcha-output")?.classList.add("hidden");
     const field=document.getElementById("achcha-result-text");
     if(field)field.value="";
+    const status=document.getElementById("achcha-rewrite-status");
+    if(status)status.textContent="";
     editor.focus();
   };
 })();

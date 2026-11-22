@@ -44,4 +44,16 @@ test("Tab 4 searches canonical, master and textbook collections including Latin 
  const kannada=store.searchAchchaLexicon("ಜಾಗತಿಕ");
  assert.ok(kannada.some(entry=>entry.candidates.some(candidate=>candidate.word==="ವಿಶ್ವದ")));
  assert.ok(kannada.every(entry=>entry.candidates.every(candidate=>candidate.origin==="uncertain")));
+ for (const [source, expected] of [
+  ["ಅತಿಥಿ","ನೆಂಟ"],
+  ["ಅತಿಥಿಗಳು","ನೆಂಟರು"],
+  ["ಆಯೋಜಿಸಿದ್ದ","ಏರ್ಪಡಿಸಿದ್ದ"],
+  ["ವರ್ಣರಂಜಿತ","ಬಣ್ಣಬಣ್ಣದ"],
+  ["ವರ್ಣ ರಂಜಿತ","ರಂಗುರಂಗಿನ"],
+  ["ಶೈಲಿ","ರೀತಿ"],
+  ["ಶೈಲಿಯ","ಬಗೆಯ"]
+ ]) {
+  const found=store.searchAchchaLexicon(source);
+  assert.ok(found.some(entry=>entry.sourceForms.includes(source) && entry.candidates.some(candidate=>candidate.word===expected)),source+" should be found with "+expected);
+ }
 });

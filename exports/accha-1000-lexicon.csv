@@ -1,4 +1,0 @@
-Collection,Entry ID,Source Term,Kannada Alternatives,English Meaning,Category,Naturalness Fit,Source Etymology,Editorial Note
-Accha 1000,A1000-0001,ಜಲ,ನೀರು,Water,Everyday,High,ನೀರು,Core Dravidian noun
-Accha 1000,A1000-0002,ಅನ್ನ,ಕೂಳು / ಅಡಿಗೆ,Cooked food / rice,Everyday,High,ಕೂಳು,ಕೂಳು is classic native Kannada
-# ... full 1000 rows prepared in local merge; see README-MERGE.md and the complete master-lexicon-merged.csv artifact. Duplicates retained. Additional 173 remains first in master ordering for landing showcase.

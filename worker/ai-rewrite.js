@@ -30,6 +30,28 @@ const responseSchema = {
   }
 };
 
+const wordSuggestionSchema = {
+  type: "json_schema",
+  json_schema: {
+    type: "object",
+    properties: {
+      word: { type: "string" },
+      suggestions: { type: "array", items: {
+        type: "object",
+        properties: {
+          replacement: { type: "string" },
+          reasonKannada: { type: "string" },
+          basis: { type: "string", enum: ["verified_dravidian", "tadbhava", "coined_from_dravidian", "uncertain"] }
+        },
+        required: ["replacement", "reasonKannada", "basis"]
+      }},
+      needsContext: { type: "boolean" },
+      noteKannada: { type: "string" }
+    },
+    required: ["word", "suggestions", "needsContext", "noteKannada"]
+  }
+};
+
 function matchesWholeForm(text, form) {
   const normalizedForm = String(form || "").normalize("NFC");
   if (!normalizedForm) return false;
@@ -172,8 +194,10 @@ export default {
     let body;
     try { body = JSON.parse(await request.text()); } catch { return reply({ error: "Please send valid JSON." }, 400, origin); }
     const text = typeof body.text === "string" ? body.text.trim() : "";
-    if (!text || text.length > MAX_TEXT) return reply({ error: "Enter Kannada text of up to 4,000 characters." }, 400, origin);
+    const wordOnly = body.wordOnly === true;
+    if (!text || text.length > (wordOnly ? 100 : MAX_TEXT)) return reply({ error: wordOnly ? "Enter one Kannada word of up to 100 characters." : "Enter Kannada text of up to 4,000 characters." }, 400, origin);
     if (!/[\u0C80-\u0CFF]/.test(text)) return reply({ error: "Please enter text containing Kannada script." }, 400, origin);
+    if (wordOnly && !/^[\u0C80-\u0CFF]+$/u.test(text)) return reply({ error: "Word suggestion mode accepts exactly one Kannada word, without spaces or punctuation." }, 400, origin);
 
     const normalizedText = text.normalize("NFC");
     const lexicon = Array.isArray(body.lexicon) ? body.lexicon.slice(0, 400).map(entry => ({
@@ -192,7 +216,9 @@ export default {
       .sort((a, b) => Math.max(...b.sourceForms.map(x => x.length)) - Math.max(...a.sourceForms.map(x => x.length)))
       .slice(0, 40) : [];
 
-    const system = (body.wordOnly === true ? "ನೀವು ಕನ್ನಡ ಪದಕೋಶ ಸಂಪಾದಕರು. ಒಂದು ಪದವನ್ನಷ್ಟೇ ಪರಿಶೀಲಿಸಿ; ಪೂರ್ಣ ವಾಕ್ಯ ಬರೆಯಬೇಡಿ. ಸಾಧ್ಯವಾದ ಅಚ್ಚ ಕನ್ನಡ ಪರ್ಯಾಯವಿದ್ದರೆ ಮಾತ್ರ ಸೂಚಿಸಿ. ಖಚಿತವಿಲ್ಲದಿದ್ದರೆ ಮೂಲ ಪದ ಉಳಿಸಿ ಮತ್ತು ಅನಿಶ್ಚಿತತೆಯನ್ನು ಕನ್ನಡದಲ್ಲಿ ತಿಳಿಸಿ. ಪದದ ವ್ಯಾಕರಣ ರೂಪವನ್ನು ಸಾಧ್ಯವಾದಷ್ಟು ಉಳಿಸಿ. " : "") + `ನೀವು ಕನ್ನಡದ ಹಿರಿಯ ಭಾಷಾ ಸಂಪಾದಕರು. ನಿಮ್ಮ ಕೆಲಸ ಕೇವಲ ಪದಗಳನ್ನು ಬದಲಿಸುವುದಲ್ಲ; ಪಠ್ಯದ ಸಂಪೂರ್ಣ ಅರ್ಥವನ್ನು ಗ್ರಹಿಸಿ, ಅರ್ಥ ಮತ್ತು ಧ್ವನಿಯನ್ನು ಉಳಿಸಿಕೊಂಡು ಸಹಜ, ಸರಾಗ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯುವುದು.
+    const system = wordOnly
+      ? `ನೀವು ಕನ್ನಡ ಪದಕೋಶದ ಭಾಷಾ ಸಲಹೆಗಾರರು. ನಿಮಗೆ ಒಂದೇ ಒಂದು ಕನ್ನಡ ಪದ ಮಾತ್ರ ನೀಡಲಾಗಿದೆ. ಅದಕ್ಕೆ ಅರ್ಥಕ್ಕೆ ಹೊಂದುವ, ನಿಜವಾಗಿಯೂ ಸಹಜವಾಗಿ ಬಳಕೆಯಾಗಬಹುದಾದ ಅಚ್ಚ ಕನ್ನಡ ಅಥವಾ ದ್ರಾವಿಡ ಮೂಲದ ಪರ್ಯಾಯಗಳಿದ್ದರೆ ಗರಿಷ್ಠ ಮೂರು ಸೂಚನೆಗಳನ್ನು ನೀಡಿ. ಕೇವಲ ಸಂಸ್ಕೃತದಂತೆ ಕಾಣುತ್ತದೆ ಎಂಬ ಕಾರಣಕ್ಕೆ ಪದವನ್ನು ಬದಲಿಸಬೇಡಿ. ಪದಕ್ಕೆ ಸಂದರ್ಭವಿಲ್ಲದೆ ಅರ್ಥ ನಿರ್ಧರಿಸಲಾಗದಿದ್ದರೆ needsContext=true ಮಾಡಿ; ಊಹೆಯ ಪರ್ಯಾಯಗಳನ್ನು ಸೃಷ್ಟಿಸಬೇಡಿ. ಪರ್ಯಾಯವಿಲ್ಲದಿದ್ದರೆ suggestions ಖಾಲಿ ಇರಲಿ. ಪದದ ರೂಪವು ವಿಭಕ್ತಿ, ಬಹುವಚನ ಅಥವಾ ಕ್ರಿಯಾರೂಪವಾಗಿದ್ದರೆ ಸಾಧ್ಯವಾದಷ್ಟು ಅದೇ ವ್ಯಾಕರಣ ರೂಪವನ್ನು ಉಳಿಸಿ. ಪ್ರತಿಯೊಂದು ಸಲಹೆಯ ಕಾರಣವನ್ನು ಚಿಕ್ಕ ಕನ್ನಡ ವಾಕ್ಯದಲ್ಲಿ ಬರೆಯಿರಿ. basis ಅನ್ನು ಖಚಿತವಾಗಿ ಸಾಬೀತಾಗದಿದ್ದರೆ uncertain ಎಂದು ಗುರುತಿಸಿ. ಸಂಪೂರ್ಣ ವಾಕ್ಯ, ಪ್ಯಾರಾಗ್ರಾಫ್ ಅಥವಾ ಪ್ರಬಂಧವನ್ನು ಎಂದಿಗೂ ಬರೆಯಬೇಡಿ. JSON ಹೊರಗೆ ಏನನ್ನೂ ಬರೆಯಬೇಡಿ.`
+      : `ನೀವು ಕನ್ನಡದ ಹಿರಿಯ ಭಾಷಾ ಸಂಪಾದಕರು. ನಿಮ್ಮ ಕೆಲಸ ಕೇವಲ ಪದಗಳನ್ನು ಬದಲಿಸುವುದಲ್ಲ; ಪಠ್ಯದ ಸಂಪೂರ್ಣ ಅರ್ಥವನ್ನು ಗ್ರಹಿಸಿ, ಅರ್ಥ ಮತ್ತು ಧ್ವನಿಯನ್ನು ಉಳಿಸಿಕೊಂಡು ಸಹಜ, ಸರಾಗ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯುವುದು.
 
 ಸಂಪಾದನೆಯ ಕ್ರಮ:
 1. ಮೊದಲು ಪ್ರತಿ ವಾಕ್ಯದ ಅರ್ಥ, ಕರ್ತೃ-ಕರ್ಮ, ಕಾಲ, ವಾಕ್ಯಗಳ ನಡುವಿನ ಸಂಬಂಧ ಮತ್ತು ಲೇಖಕನ ಉದ್ದೇಶವನ್ನು ಗ್ರಹಿಸಿ.
@@ -227,9 +253,8 @@ PROJECT LEXICON:
 ${JSON.stringify(lexicon)}`;
 
     try {
-      const wordOnly = body.wordOnly === true;
       const userInstruction = wordOnly
-        ? "ಪದವನ್ನು ಮಾತ್ರ ಪರಿಶೀಲಿಸಿ. ಈ ಒಂದೇ ಪದಕ್ಕೆ ಸಹಜವಾಗಿ ಬಳಕೆಯಾಗುವ ಅಚ್ಚ ಕನ್ನಡ ಪರ್ಯಾಯ ಇದ್ದರೆ ನೀಡಿ. ವಾಕ್ಯ ರಚಿಸಬೇಡಿ. ಖಚಿತವಾದ ಪರ್ಯಾಯವಿಲ್ಲದಿದ್ದರೆ ಮೂಲ ಪದವನ್ನೇ rewrittenKannada ಯಲ್ಲಿ ನೀಡಿ; ಊಹೆಯನ್ನು ಖಚಿತವೆಂದು ಹೇಳಬೇಡಿ. ಪದ: " + text
+        ? "ಈ ಒಂದು ಪದಕ್ಕೆ ಮಾತ್ರ ಸಲಹೆ ನೀಡಿ. ಪದ: " + text
         : "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\n\n" + text;
       const runModel = (model, retry = false) => {
         const options = {
@@ -237,7 +262,7 @@ ${JSON.stringify(lexicon)}`;
             { role: "system", content: system + (retry ? "\\n\\nಮತ್ತೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ: schema ಪ್ರಕಾರದ ಒಂದು ಸಂಪೂರ್ಣ JSON ವಸ್ತುವನ್ನು ಮಾತ್ರ ನೀಡಿ. JSON ಹೊರಗೆ ವಿವರಣೆ ಅಥವಾ Markdown ಬೇಡ. ಕನ್ನಡ ಅಕ್ಷರಗಳನ್ನು ನೇರವಾಗಿ ಬಳಸಿ." : "") },
             { role: "user", content: userInstruction }
           ],
-          response_format: responseSchema,
+          response_format: wordOnly ? wordSuggestionSchema : responseSchema,
           temperature: retry ? 0 : 0.15,
           max_tokens: retry ? 900 : 1100
         };
@@ -265,6 +290,15 @@ ${JSON.stringify(lexicon)}`;
         result = parseModelOutput(raw);
       }
       console.log("Kannada rewrite model completed", { durationMs: Date.now() - startedAt, model: raw && raw.model ? raw.model : "Workers AI" });
+      if (wordOnly) {
+        if (!result || !Array.isArray(result.suggestions)) throw new Error("The word suggestion model returned an incomplete response.");
+        const suggestions = result.suggestions.slice(0, 3).map(item => ({
+          replacement: typeof item.replacement === "string" ? item.replacement.trim() : "",
+          reasonKannada: typeof item.reasonKannada === "string" ? item.reasonKannada.trim() : "",
+          basis: "uncertain"
+        })).filter(item => item.replacement && item.replacement !== text && /^[\u0C80-\u0CFF]+$/u.test(item.replacement));
+        return reply({ word: text, suggestions, needsContext: result.needsContext === true, noteKannada: typeof result.noteKannada === "string" ? result.noteKannada.slice(0, 300) : "" }, 200, origin);
+      }
       if (!result || typeof result.rewrittenKannada !== "string" || !Array.isArray(result.replacements)) {
         throw new Error("The language model returned an incomplete response.");
       }

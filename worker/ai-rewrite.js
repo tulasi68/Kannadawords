@@ -192,7 +192,7 @@ export default {
       .sort((a, b) => Math.max(...b.sourceForms.map(x => x.length)) - Math.max(...a.sourceForms.map(x => x.length)))
       .slice(0, 40) : [];
 
-    const system = `ನೀವು ಕನ್ನಡದ ಹಿರಿಯ ಭಾಷಾ ಸಂಪಾದಕರು. ನಿಮ್ಮ ಕೆಲಸ ಕೇವಲ ಪದಗಳನ್ನು ಬದಲಿಸುವುದಲ್ಲ; ಪಠ್ಯದ ಸಂಪೂರ್ಣ ಅರ್ಥವನ್ನು ಗ್ರಹಿಸಿ, ಅರ್ಥ ಮತ್ತು ಧ್ವನಿಯನ್ನು ಉಳಿಸಿಕೊಂಡು ಸಹಜ, ಸರಾಗ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯುವುದು.
+    const system = (body.wordOnly === true ? "ನೀವು ಕನ್ನಡ ಪದಕೋಶ ಸಂಪಾದಕರು. ಒಂದು ಪದವನ್ನಷ್ಟೇ ಪರಿಶೀಲಿಸಿ; ಪೂರ್ಣ ವಾಕ್ಯ ಬರೆಯಬೇಡಿ. ಸಾಧ್ಯವಾದ ಅಚ್ಚ ಕನ್ನಡ ಪರ್ಯಾಯವಿದ್ದರೆ ಮಾತ್ರ ಸೂಚಿಸಿ. ಖಚಿತವಿಲ್ಲದಿದ್ದರೆ ಮೂಲ ಪದ ಉಳಿಸಿ ಮತ್ತು ಅನಿಶ್ಚಿತತೆಯನ್ನು ಕನ್ನಡದಲ್ಲಿ ತಿಳಿಸಿ. ಪದದ ವ್ಯಾಕರಣ ರೂಪವನ್ನು ಸಾಧ್ಯವಾದಷ್ಟು ಉಳಿಸಿ. " : "") + `ನೀವು ಕನ್ನಡದ ಹಿರಿಯ ಭಾಷಾ ಸಂಪಾದಕರು. ನಿಮ್ಮ ಕೆಲಸ ಕೇವಲ ಪದಗಳನ್ನು ಬದಲಿಸುವುದಲ್ಲ; ಪಠ್ಯದ ಸಂಪೂರ್ಣ ಅರ್ಥವನ್ನು ಗ್ರಹಿಸಿ, ಅರ್ಥ ಮತ್ತು ಧ್ವನಿಯನ್ನು ಉಳಿಸಿಕೊಂಡು ಸಹಜ, ಸರಾಗ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯುವುದು.
 
 ಸಂಪಾದನೆಯ ಕ್ರಮ:
 1. ಮೊದಲು ಪ್ರತಿ ವಾಕ್ಯದ ಅರ್ಥ, ಕರ್ತೃ-ಕರ್ಮ, ಕಾಲ, ವಾಕ್ಯಗಳ ನಡುವಿನ ಸಂಬಂಧ ಮತ್ತು ಲೇಖಕನ ಉದ್ದೇಶವನ್ನು ಗ್ರಹಿಸಿ.
@@ -227,7 +227,10 @@ PROJECT LEXICON:
 ${JSON.stringify(lexicon)}`;
 
     try {
-      const userInstruction = "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\n\n" + text;
+      const wordOnly = body.wordOnly === true;
+      const userInstruction = wordOnly
+        ? "ಪದವನ್ನು ಮಾತ್ರ ಪರಿಶೀಲಿಸಿ. ಈ ಒಂದೇ ಪದಕ್ಕೆ ಸಹಜವಾಗಿ ಬಳಕೆಯಾಗುವ ಅಚ್ಚ ಕನ್ನಡ ಪರ್ಯಾಯ ಇದ್ದರೆ ನೀಡಿ. ವಾಕ್ಯ ರಚಿಸಬೇಡಿ. ಖಚಿತವಾದ ಪರ್ಯಾಯವಿಲ್ಲದಿದ್ದರೆ ಮೂಲ ಪದವನ್ನೇ rewrittenKannada ಯಲ್ಲಿ ನೀಡಿ; ಊಹೆಯನ್ನು ಖಚಿತವೆಂದು ಹೇಳಬೇಡಿ. ಪದ: " + text
+        : "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\n\n" + text;
       const runModel = (model, retry = false) => {
         const options = {
           messages: [

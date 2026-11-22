@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "description": "Provisional starter candidates for possible Sanskrit-derived words not yet in the project lexicon. Not comprehensive; all candidates require linguistic review.",
+  "entries": [
+    {
+      "id": "vahana",
+      "forms": [
+        "ವಾಹನ",
+        "ವಾಹನಗಳು",
+        "ವಾಹನದ",
+        "ವಾಹನವನ್ನು",
+        "ವಾಹನದಲ್ಲಿ",
+        "ವಾಹನಗಳ",
+        "ವಾಹನಕ್ಕೆ",
+        "ವಾಹನದಿಂದ",
+        "vahana"
+      ]
+    },
+    {
+      "id": "nayaka",
+      "forms": [
+        "ನಾಯಕ",
+        "ನಾಯಕರು",
+        "ನಾಯಕನ",
+        "ನಾಯಕನನ್ನು",
+        "ನಾಯಕನಿಗೆ",
+        "ನಾಯಕತ್ವ",
+        "ನಾಯಕರ",
+        "nayaka"
+      ]
+    },
+    {
+      "id": "alankarisalpatta",
+      "forms": [
+        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟ",
+        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟಿದೆ",
+        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟಿದ್ದ",
+        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟಿರುವ",
+        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟಂತಹ"
+      ]
+    },
+    {
+      "id": "athithi",
+      "forms": [
+        "ಅತಿಥಿ",
+        "ಅತಿಥಿಗಳು",
+        "ಅತಿಥಿಯ",
+        "ಅತಿಥಿಯನ್ನು",
+        "ಅತಿಥಿಗಳಿಗೆ",
+        "ಅತಿಥಿಗಳ",
+        "athithi"
+      ]
+    }
+  ]
+}

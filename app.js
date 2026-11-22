@@ -488,6 +488,62 @@ function showAchchaResult(result,original){
 }
 // --- Word-by-word Achcha Kannada rewrite (lexicon-based) ---
 let achchaMatchState = [];
+let achchaDiscoveryState = [];
+let achchaDiscoveryData = null;
+async function loadAchchaDiscoveryData() {
+ if (achchaDiscoveryData) return achchaDiscoveryData;
+ const response=await fetch("./sanskrit-discovery-words.json",{cache:"no-cache"});
+ if(!response.ok) throw new Error("ಸಂಸ್ಕೃತ ಪದಗಳ ಪ್ರಾಥಮಿಕ ಪಟ್ಟಿ ಲಭ್ಯವಿಲ್ಲ.");
+ const data=await response.json();
+ if(data.schemaVersion!==1||!Array.isArray(data.entries)) throw new Error("ಸಂಸ್ಕೃತ ಪದಗಳ ಪಟ್ಟಿಯ ಸ್ವರೂಪ ಸರಿಯಿಲ್ಲ.");
+ achchaDiscoveryData=data.entries; return achchaDiscoveryData;
+}
+function addAchchaDiscoveryUnderlines(preview, original, knownMatches, entries) {
+ achchaDiscoveryState=[];
+ const stalePanel=document.getElementById("achcha-gap-panel"); if(stalePanel)stalePanel.classList.add("hidden");
+ const staleResults=document.getElementById("achcha-gap-results"); if(staleResults)staleResults.replaceChildren();
+ const staleButton=document.getElementById("achcha-gap-ai"); if(staleButton)staleButton.disabled=true;
+ const blocked=knownMatches.map(m=>[m.start,m.end]);
+ const forms=[];
+ entries.forEach(entry=>(entry.forms||[]).forEach(form=>{if(typeof form==="string"&&form)forms.push({form:form.normalize("NFC"),entry});}));
+ forms.sort((a,b)=>b.form.length-a.form.length);
+ const source=original.normalize("NFC"), lower=source.toLocaleLowerCase();
+ const isWord=ch=>!!ch&&/[\\p{L}\\p{M}\\p{N}_]/u.test(ch);
+ forms.forEach(item=>{
+  const needle=item.form.toLocaleLowerCase(); let from=0;
+  while(from<lower.length){
+   const at=lower.indexOf(needle,from); if(at<0)break;
+   const end=at+item.form.length;
+   const boundary=(at===0||!isWord(source[at-1]))&&(end===source.length||!isWord(source[end]));
+   const overlap=blocked.some(([s,e])=>at<e&&end>s);
+   if(boundary&&!overlap&&!achchaDiscoveryState.some(x=>x.start===at&&x.end===end)){
+    achchaDiscoveryState.push({source:source.slice(at,end),start:at,end,id:item.entry.id,selected:true}); blocked.push([at,end]);
+   }
+   from=at+1;
+  }
+ });
+ achchaDiscoveryState.sort((a,b)=>a.start-b.start);
+ if(!achchaDiscoveryState.length)return;
+ // Replace text nodes only; existing red lexicon hits are deliberately excluded.
+ const walker=document.createTreeWalker(preview,NodeFilter.SHOW_TEXT), nodes=[];
+ while(walker.nextNode()){const n=walker.currentNode;if(n.nodeValue&&n.parentElement&&!n.parentElement.closest(".achcha-hit"))nodes.push(n);}
+ let docOffset=0;
+ nodes.forEach(node=>{
+  const value=node.nodeValue, startOffset=original.normalize("NFC").indexOf(value,docOffset);
+  if(startOffset<0){docOffset+=value.length;return;}
+  const local=[];
+  achchaDiscoveryState.forEach((m,index)=>{if(m.start>=startOffset&&m.end<=startOffset+value.length)local.push({index,start:m.start-startOffset,end:m.end-startOffset});});
+  docOffset=startOffset+value.length;
+  if(!local.length)return;
+  local.sort((a,b)=>a.start-b.start);
+  const fragment=document.createDocumentFragment();let cursor=0;
+  local.forEach(hit=>{if(hit.start<cursor)return;fragment.append(document.createTextNode(value.slice(cursor,hit.start)));const span=document.createElement("span");span.className="achcha-discovery-underline";span.title="Possible Sanskrit-derived word · AI review";span.textContent=value.slice(hit.start,hit.end);fragment.append(span);cursor=hit.end;});
+  fragment.append(document.createTextNode(value.slice(cursor)));node.parentNode.replaceChild(fragment,node);
+ });
+ const panel=document.getElementById("achcha-gap-panel"), words=document.getElementById("achcha-gap-words"), button=document.getElementById("achcha-gap-ai");
+ if(panel&&words){panel.classList.remove("hidden");words.innerHTML=achchaDiscoveryState.map((m,i)=>'<label class="inline-flex items-center gap-2 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2"><input type="checkbox" data-gap-index="'+i+'" checked class="accent-sky-700"><span class="kn text-sm font-semibold text-sky-900">'+escapeHtmlAchcha(m.source)+'</span></label>').join("");}
+ if(button)button.disabled=false;
+}
 
 function escapeHtmlAchcha(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
@@ -561,13 +617,22 @@ async function findAchchaWords() {
   if (output) output.classList.add("hidden");
 
   if (!matches.length) {
-    list.classList.remove("hidden");
-    container.innerHTML = '<p class="text-sm text-stone-600">ಈ ಪಠ್ಯದಲ್ಲಿ ಪರಿಶೀಲಿತ ಪದಪಟ್ಟಿಯಲ್ಲಿರುವ ಸಂಸ್ಕೃತ ಮೂಲದ ಪದಗಳು ಸಿಗಲಿಲ್ಲ.</p>';
-    status.textContent = "0 words found";
+    list.classList.add("hidden");
+    container.replaceChildren();
+    status.textContent = "No known vocabulary matches; checking provisional Sanskrit candidates…";
     const previewWrap = document.getElementById("achcha-preview-wrap");
     const preview = document.getElementById("achcha-preview");
-    if (previewWrap) previewWrap.classList.add("hidden");
-    if (preview) preview.innerHTML = "";
+    if (previewWrap) previewWrap.classList.remove("hidden");
+    if (preview) {
+      preview.textContent = searchable;
+      try { addAchchaDiscoveryUnderlines(preview, searchable, [], await loadAchchaDiscoveryData()); }
+      catch(error) { console.warn("Sanskrit discovery list unavailable:",error); }
+    }
+    if (!achchaDiscoveryState.length) {
+      status.textContent = "ಪರಿಶೀಲಿತ ಪದಪಟ್ಟಿಯಲ್ಲಿಯೂ ಪ್ರಾಥಮಿಕ ಸಂಸ್ಕೃತ ಪದಪಟ್ಟಿಯಲ್ಲಿಯೂ ಹೊಂದಾಣಿಕೆ ಸಿಗಲಿಲ್ಲ.";
+    } else {
+      status.textContent = "0 known words · " + achchaDiscoveryState.length + " possible Sanskrit-origin word(s) for review";
+    }
     return;
   }
   const previewWrap = document.getElementById("achcha-preview-wrap");
@@ -608,6 +673,9 @@ async function findAchchaWords() {
     preview.innerHTML = html;
     preview.classList.remove("hidden");
 
+    // Add provisional blue underlines after red known-word matches.
+    try { addAchchaDiscoveryUnderlines(preview, searchable, matches, await loadAchchaDiscoveryData()); }
+    catch(error) { console.warn("Sanskrit discovery list unavailable:",error); achchaDiscoveryState=[]; }
     // Wire option clicks
     preview.querySelectorAll(".achcha-opt").forEach(btn => {
       btn.addEventListener("click", (ev) => {
@@ -730,7 +798,8 @@ function clearAchchaInput() {
   const input = document.getElementById("achcha-input");
   if (input) input.value = "";
   achchaMatchState = [];
-  ["achcha-word-list","achcha-output","achcha-preview-wrap"].forEach(id => {
+  achchaDiscoveryState = [];
+  ["achcha-word-list","achcha-output","achcha-preview-wrap","achcha-gap-panel"].forEach(id => {
     const element = document.getElementById(id);
     if (element) element.classList.add("hidden");
   });
@@ -742,6 +811,8 @@ function clearAchchaInput() {
   if (notes) notes.replaceChildren();
   const status = document.getElementById("achcha-ai-status");
   if (status) status.textContent = "";
+  const gapStatus=document.getElementById("achcha-gap-status"); if(gapStatus)gapStatus.textContent="";
+  const gapResults=document.getElementById("achcha-gap-results"); if(gapResults)gapResults.replaceChildren();
   const findStatus = document.getElementById("achcha-find-status");
   if (findStatus) findStatus.textContent = "";
   const button = document.getElementById("achcha-ai-scan");
@@ -802,6 +873,7 @@ window.findAchchaWords = findAchchaWords;
 window.resetAchchaSelections = resetAchchaSelections;
 window.completeAchchaRewrite = completeAchchaRewrite;
 window.translateAchchaKannada = translateAchchaKannada;
+window.translateAchchaGapWords = translateAchchaGapWords;
 
 function showTab(tab) {
  const tabs=["words","sentences","coinages","translate"];
@@ -1254,3 +1326,26 @@ window.resetCoinageForm=resetCoinageForm;
 window.renderCoinageRecords=renderCoinageRecords;
 coinageScoreControls();
 renderCoinageRecords();
+async function translateAchchaGapWords(){
+ const selected=[...document.querySelectorAll("#achcha-gap-words input[data-gap-index]:checked")].map(x=>achchaDiscoveryState[Number(x.dataset.gapIndex)]).filter(Boolean);
+ const status=document.getElementById("achcha-gap-status"), results=document.getElementById("achcha-gap-results"), button=document.getElementById("achcha-gap-ai");
+ if(!selected.length){if(status)status.textContent="ಮೊದಲು ನೀಲಿ ಗೆರೆ ಹಾಕಿರುವ ಪದಗಳನ್ನು ಆಯ್ಕೆಮಾಡಿ.";return;}
+ button.disabled=true;results.classList.remove("hidden");results.replaceChildren();
+ const add=(word,payload,error)=>{
+  const card=document.createElement("article");card.className="rounded-lg border border-sky-200 bg-white p-3";
+  const source=document.createElement("p");source.className="kn font-semibold text-sky-900";source.textContent=word;card.append(source);
+  if(error){const p=document.createElement("p");p.className="text-sm text-red-700 mt-1";p.textContent=error;card.append(p);}
+  else{const p=document.createElement("p");p.className="kn text-lg font-semibold text-emerald-800 mt-1";p.textContent=payload.rewrittenKannada||"ಪರ್ಯಾಯ ಸಿಗಲಿಲ್ಲ";card.append(p);
+   if(payload.explanationKannada){const n=document.createElement("p");n.className="text-sm text-stone-600 mt-1";n.textContent=payload.explanationKannada;card.append(n);}
+   const note=document.createElement("p");note.className="text-xs text-amber-700 mt-2";note.textContent="AI ಸಲಹೆ ಮಾತ್ರ · ಪರಿಶೀಲನೆಯ ನಂತರವೇ ಪದಪಟ್ಟಿಗೆ ಸೇರಿಸಿ.";card.append(note);}
+  results.append(card);
+ };
+ for(let i=0;i<selected.length;i++){
+  const item=selected[i];if(status)status.textContent=(i+1)+" / "+selected.length+" · "+item.source+" ಪರಿಶೀಲಿಸಲಾಗುತ್ತಿದೆ";
+  try{const response=await fetch("https://kannadawords-ai.tulasianand6.workers.dev/api/rewrite",{method:"POST",headers:{"Content-Type":"text/plain;charset=UTF-8"},body:JSON.stringify({text:item.source,wordOnly:true,lexicon:[]}),cache:"no-store"});
+   const payload=await response.json();if(!response.ok)throw new Error(payload.error||"AI ಪರಿಶೀಲನೆ ವಿಫಲವಾಗಿದೆ.");add(item.source,payload,null);
+  }catch(error){add(item.source,null,error.message||"AI ಸೇವೆಯನ್ನು ಸಂಪರ್ಕಿಸಲಾಗಲಿಲ್ಲ.");}
+ }
+ if(status)status.textContent=selected.length+" ಪದಗಳ ಪರಿಶೀಲನೆ ಮುಗಿದಿದೆ. ಸಲಹೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ; ದೃಢೀಕರಣವಿಲ್ಲದೆ ಪದಪಟ್ಟಿಗೆ ಸೇರಿಸಬೇಡಿ.";
+ button.disabled=false;
+}

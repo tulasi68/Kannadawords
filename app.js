@@ -901,15 +901,18 @@ function populateCategoryOptions() {
 async function loadUnifiedRows() {
   if (unifiedRows) return unifiedRows;
   await window.KannadaLexiconStore.ready();
-  const [canonicalEntries, masterResponse, landingResponse] = await Promise.all([
+  const [canonicalEntries, masterResponse, landingResponse, textbookResponse] = await Promise.all([
     window.KannadaLexiconStore.loadAllEntries(),
     fetch("./master-lexicon.json",{cache:"no-cache"}),
-    fetch("./landing-words.json",{cache:"no-cache"})
+    fetch("./landing-words.json",{cache:"no-cache"}),
+    fetch("./textbook-words.json",{cache:"no-cache"})
   ]);
   if (!masterResponse.ok) throw new Error("The master word list could not be loaded ("+masterResponse.status+").");
   if (!landingResponse.ok) throw new Error("The civic, media and education words could not be loaded ("+landingResponse.status+").");
+  if (!textbookResponse.ok) throw new Error("The textbook vocabulary could not be loaded ("+textbookResponse.status+").");
   const masterData = await masterResponse.json();
   const landingData = await landingResponse.json();
+  const textbookData = await textbookResponse.json();
   if (masterData.schemaVersion !== 1 || masterData.sourceFile !== "2087words.xlsx" ||
       !Array.isArray(masterData.entries) || masterData.entries.length !== masterData.entryCount ||
       masterData.entries.some(row => !row.id || !Array.isArray(row.fields) || row.fields.length !== 8)) {
@@ -918,6 +921,11 @@ async function loadUnifiedRows() {
   if (!Array.isArray(landingData) || landingData.length !== 173 ||
       landingData.some(row => !Array.isArray(row) || row.length !== 6)) {
     throw new Error("The civic, media and education list failed its integrity check.");
+  }
+  if (textbookData.schemaVersion !== 1 || textbookData.sourceFile !== "newwords.txt" ||
+      !Array.isArray(textbookData.entries) || textbookData.entries.length !== textbookData.entryCount ||
+      textbookData.entries.some(row => !row.id || !row.inputWord || !row.primary || !Number.isInteger(row.sourceLine))) {
+    throw new Error("The Kannada textbook word list failed its integrity check.");
   }
   const masterEntries = masterData.entries.map(row => {
     const fields = row.fields;
@@ -943,7 +951,19 @@ async function loadUnifiedRows() {
     })),
     editorialNote:"Naturalness fit in the supplied spreadsheet: "+row[5]+"."
   }));
-  const all = [...canonicalEntries,...masterEntries,...landingEntries];
+  const textbookEntries = textbookData.entries.map(row => ({
+    id:row.id, sanskrit:row.inputWord, meaning:row.meaning || "Textbook vocabulary suggestion",
+    category:"School Textbooks",
+    alternatives:[...String(row.primary || "").split(/\s*\/\s*/).filter(Boolean),...(row.alternatives || [])]
+      .filter((word,index,all) => word && all.indexOf(word) === index)
+      .map((word,index) => ({id:row.id+"-alt-"+(index+1),word,unreviewed:true,viability:"proposed",
+        note:"User-supplied textbook suggestion. Editorial review is pending; no etymological claim is made.",
+        etymologyParts:[{form:word,etymology:"unknown"}]})),
+    editorialNote:"Source: newwords.txt, row "+row.sourceNumber+" (line "+row.sourceLine+"). "+
+      (row.sourceCategory ? "Domain: "+row.sourceCategory+". " : "")+"Unreviewed editorial suggestion.",
+    sourceDataset:row.sourceDataset,sourceLine:row.sourceLine
+  }));
+  const all = [...canonicalEntries,...masterEntries,...landingEntries,...textbookEntries];
   const grouped = new Map();
   const normalizeDisplayKey = value => String(value ?? "").normalize("NFC").replace(/\s+/g," ").trim();
   for (const entry of all) {
@@ -1000,7 +1020,7 @@ function getFilteredUnifiedRows() {
   const query = (wordSearchInput?.value || "").trim().toLocaleLowerCase();
   return unifiedRows.filter(entry =>
     (category === "all" || (entry.categories || [entry.category || "Uncategorized"]).includes(category)) &&
-    (!query || [entry.sanskrit,entry.meaning,entry.category,...(entry.alternatives || []).map(alt=>alt.word)]
+    (!query || [entry.sanskrit,entry.meaning,entry.category,entry.editorialNote,...(entry.alternatives || []).map(alt=>alt.word)]
       .some(value => String(value ?? "").toLocaleLowerCase().includes(query)))
   );
 }

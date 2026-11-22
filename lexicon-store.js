@@ -63,6 +63,20 @@
         masterWritingIndex = [];
         console.warn("Master corpus unavailable for sentence lookup; canonical lexicon remains available.", masterError);
       }
+      // The textbook vocabulary is a separate editorial source. Load it into the
+      // sentence matcher as unreviewed suggestions, without promoting its origin.
+      try {
+        const textbookUrl = new URL("../textbook-words.json", base);
+        const textbookData = await getJson(textbookUrl, "no-cache");
+        if (textbookData.schemaVersion !== 1 || textbookData.sourceFile !== "newwords.txt" ||
+            !Array.isArray(textbookData.entries) || textbookData.entryCount !== textbookData.entries.length) {
+          throw new Error("Textbook vocabulary structure or row count is invalid.");
+        }
+        textbookWritingIndex = buildTextbookWritingIndex(textbookData);
+      } catch (textbookError) {
+        textbookWritingIndex = [];
+        console.warn("Textbook vocabulary unavailable for sentence lookup; other lexicons remain available.", textbookError);
+      }
       return manifest;
     })().catch(error => { initPromise = null; throw error; });
     return initPromise;
@@ -187,6 +201,56 @@
     }
     return [...bySource.values()];
   }
+  function buildTextbookWritingIndex(data) {
+    const bySource = new Map();
+    for (const row of data.entries) {
+      const forms = Array.isArray(row.sourceForms) && row.sourceForms.length
+        ? row.sourceForms
+        : expandMasterSourceForms(row.inputWord);
+      const rawCandidates = [
+        ...String(row.primary || "").split(/\\s*\\/\\s*/u),
+        ...(Array.isArray(row.alternatives) ? row.alternatives : [])
+      ].map(value => String(value).trim()).filter(Boolean);
+      const candidates = [...new Set(rawCandidates)].map(word => ({
+        word,
+        origin:"uncertain",
+        reviewStatus:"needs_review",
+        originClassification:"uncertain",
+        note:"User-supplied textbook suggestion; editorial and etymological review is pending.",
+        textbookSourceId:row.id
+      }));
+      if (!candidates.length) continue;
+      const meaning = String(row.meaning || "").trim();
+      const note = [row.sourceCategory, row.usageNote].filter(Boolean).join(" · ");
+      for (const rawForm of forms) {
+        const form = String(rawForm || "").trim().normalize("NFC");
+        if (!form) continue;
+        if (!bySource.has(form)) bySource.set(form, {
+          entryId:"textbook:" + row.id, sourceForms:[form], meaning, candidates:[], note,
+          sourceDataset:"kannada-textbooks", sourceLine:row.sourceLine
+        });
+        const target = bySource.get(form);
+        if (!target.meaning && meaning) target.meaning = meaning;
+        for (const candidate of candidates) {
+          if (!target.candidates.some(existing => existing.word === candidate.word)) target.candidates.push(candidate);
+        }
+      }
+    }
+    return [...bySource.values()];
+  }
+  function expandMasterSourceForms(value) {
+    const forms = new Set();
+    for (const part of String(value || "").split(/\\s*\\/\\s*/u)) {
+      const source = part.trim().normalize("NFC");
+      if (!source) continue;
+      const parenthetical = source.match(/^(.+?)\\s*\\(([^()]*)\\)\\s*$/u);
+      if (parenthetical) {
+        forms.add(parenthetical[1].trim().normalize("NFC"));
+        forms.add(parenthetical[2].trim().normalize("NFC"));
+      } else forms.add(source);
+    }
+    return [...forms];
+  }
   function searchAchchaLexicon(text) {
     if (!writingIndex) return [];
     const query = String(text || "").normalize("NFC");
@@ -199,10 +263,13 @@
     const master = query
       ? masterWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
       : masterWritingIndex.slice(0, 100);
+    const textbook = query
+      ? textbookWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
+      : textbookWritingIndex.slice(0, 100);
     // Merge canonical and master corpus records by source spelling so a word
     // found in both collections exposes all candidate alternatives in one popover.
     const merged = new Map();
-    for (const entry of [...canonical, ...master]) {
+    for (const entry of [...canonical, ...master, ...textbook]) {
       const form = entry.sourceForms[0];
       if (!merged.has(form)) merged.set(form, { ...entry, sourceForms: [form], candidates: [] });
       const target = merged.get(form);

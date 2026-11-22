@@ -1,6 +1,30 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+const KNOWN_SOURCE_ALIASES = new Map([
+  ["ಜಾಗತಿಕ", ["Jagathika"]]
+]);
+
+export function expandTextbookSourceForms(value) {
+  const forms = new Set();
+  for (const part of String(value || "").split(/\\s*\\/\\s*/u)) {
+    const source = part.trim().normalize("NFC");
+    if (!source) continue;
+    const parenthetical = source.match(/^(.+?)\\s*\\(([^()]*)\\)\\s*$/u);
+    if (parenthetical) {
+      const base = parenthetical[1].trim().normalize("NFC");
+      const alias = parenthetical[2].trim().normalize("NFC");
+      if (base) forms.add(base);
+      if (alias) forms.add(alias);
+      for (const known of KNOWN_SOURCE_ALIASES.get(base) || []) forms.add(known);
+    } else {
+      forms.add(source);
+      for (const known of KNOWN_SOURCE_ALIASES.get(source) || []) forms.add(known);
+    }
+  }
+  return [...forms];
+}
+
 export function parseTextbookWords(markdown) {
   const entries = [], review = [];
   let mode = "nuance";
@@ -28,7 +52,7 @@ export function parseTextbookWords(markdown) {
     const alternatives = String(alternativeText).split(/\s*[,/]\s*/u).map(value => value.trim()).filter(value => value && value !== "—" && value !== "-");
     entries.push({
       id:"textbook-line-" + (index + 1), sourceLine:index + 1, sourceNumber,
-      inputWord, primary, alternativeText, alternatives, meaning,
+      inputWord, sourceForms:expandTextbookSourceForms(inputWord), primary, alternativeText, alternatives, meaning,
       usageNote:mode === "nuance" ? meaning : "", sourceCategory, sourceFormat:mode, sourceDataset:"kannada-textbooks"
     });
   }

@@ -35,3 +35,12 @@ test("generated artifacts label source proposals as unreviewed",()=>{
  assert.equal(data.sourceFile,"newwords.txt");assert.equal(data.entryCount,4559);assert.equal(audit.reviewCount,0);
  assert.match(data.sourceDescription,/not etymological verification/);
 });
+
+test("extracts Kannada and Latin source aliases for Tab 4 lookup",()=>{
+ const parsed=parseTextbookWords(source);
+ const entry=parsed.entries.find(row=>row.inputWord.startsWith("ಜಾಗತಿಕ"));
+ assert.ok(entry);
+ assert.ok(entry.sourceForms.includes("ಜಾಗತಿಕ"));
+ assert.ok(entry.sourceForms.includes("Jagatika"));
+ assert.ok(entry.sourceForms.includes("Jagathika"));
+});

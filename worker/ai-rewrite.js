@@ -204,10 +204,10 @@ export default {
       : [];
     if (wordOnly && sentenceRewrite) return reply({ error: "Choose either word suggestions or sentence rewriting, not both." }, 400, origin);
     if (!text || text.length > (wordOnly ? 100 : MAX_TEXT)) return reply({ error: wordOnly ? "Enter one Kannada word of up to 100 characters." : "Enter Kannada text of up to 4,000 characters." }, 400, origin);
-    if (!/[\\u0C80-\\u0CFF]/.test(text)) return reply({ error: "Please enter text containing Kannada script." }, 400, origin);
-    if (wordOnly && !/^[\\u0C80-\\u0CFF]+$/u.test(text)) return reply({ error: "Word suggestion mode accepts exactly one Kannada word, without spaces or punctuation." }, 400, origin);
+    if (!/[\u0C80-\u0CFF]/.test(text)) return reply({ error: "Please enter text containing Kannada script." }, 400, origin);
+    if (wordOnly && !/^[\u0C80-\u0CFF]+$/u.test(text)) return reply({ error: "Word suggestion mode accepts exactly one Kannada word, without spaces or punctuation." }, 400, origin);
     if (sentenceRewrite && (!selectedReplacements.length || selectedReplacements.some(item =>
-      !/[\\u0C80-\\u0CFF]/u.test(item.original) || !/[\\u0C80-\\u0CFF]/u.test(item.replacement) ||
+      !/[\u0C80-\u0CFF]/u.test(item.original) || !/[\u0C80-\u0CFF]/u.test(item.replacement) ||
       !matchesWholeForm(text.normalize("NFC"), item.original.normalize("NFC"))))) {
       return reply({ error: "Sentence rewriting requires selected Kannada replacements that occur in the supplied sentence." }, 400, origin);
     }
@@ -279,8 +279,8 @@ ${JSON.stringify(lexicon)}`;
       const userInstruction = wordOnly
         ? "ಈ ಒಂದು ಪದಕ್ಕೆ ಮಾತ್ರ ಸಲಹೆ ನೀಡಿ. ಪದ: " + text
         : sentenceRewrite
-          ? "ಈ ಒಂದು ವಾಕ್ಯವನ್ನು ಮರುಬರೆಯಿರಿ. ಮೂಲ ವಾಕ್ಯ: " + text + "\\n\\nಬಳಕೆದಾರರು ಆಯ್ಕೆ ಮಾಡಿದ ಪದಬದಲಾವಣೆಗಳು (ಇವುಗಳನ್ನೇ ಬಳಸಿ; ಬೇರೆ ಪದಗಳನ್ನು ಬದಲಿಸಬೇಡಿ): " + JSON.stringify(selectedReplacements)
-          : "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\\n\\n" + text;
+          ? "ಈ ಒಂದು ವಾಕ್ಯವನ್ನು ಮರುಬರೆಯಿರಿ. ಮೂಲ ವಾಕ್ಯ: " + text + "\n\nಬಳಕೆದಾರರು ಆಯ್ಕೆ ಮಾಡಿದ ಪದಬದಲಾವಣೆಗಳು (ಇವುಗಳನ್ನೇ ಬಳಸಿ; ಬೇರೆ ಪದಗಳನ್ನು ಬದಲಿಸಬೇಡಿ): " + JSON.stringify(selectedReplacements)
+          : "Rewrite this Kannada text now. Produce a genuinely native-word-oriented Kannada version, not a description of the task:\n\n" + text;
       const runModel = (model, retry = false) => {
         const options = {
           messages: [

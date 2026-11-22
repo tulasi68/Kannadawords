@@ -104,8 +104,8 @@ test("sentence rewrite mode rejects unrelated selected replacements without call
 test("Tab 4 Apply sends sentence-level requests with only selected replacements", async () => {
   const source = await readFile(new URL("../app.js", import.meta.url), "utf8");
   assert.match(source, /sentenceRewrite:true,selectedReplacements:choices/);
-  assert.match(source, /sourceText\\.matchAll\\(sentencePattern\\)/);
-  assert.match(source, /payload\\.rewrittenKannada/);
+  assert.match(source, /sourceText\.matchAll\(sentencePattern\)/);
+  assert.match(source, /payload\.rewrittenKannada/);
   assert.match(source, /failedCount/);
   assert.match(source, /achcha-rewrite-status/);
 });

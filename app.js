@@ -1662,7 +1662,7 @@ async function translateAchchaGapWords(){
       return;
     }
     const chunks = [];
-    const sentencePattern = /[^.!?।॥\\n]+[.!?।॥]*|[\\n]+/gu;
+    const sentencePattern = /[^.!?।॥\n]+[.!?।॥]*|[\n]+/gu;
     for (const match of sourceText.matchAll(sentencePattern)) {
       chunks.push({text:match[0],start:match.index,end:match.index+match[0].length});
     }
@@ -1674,8 +1674,8 @@ async function translateAchchaGapWords(){
       let rewrittenCount = 0;
       let failedCount = 0;
       for (const chunk of chunks) {
-        const leading = (chunk.text.match(/^\\s*/u) || [""])[0];
-        const trailing = (chunk.text.match(/\\s*$/u) || [""])[0];
+        const leading = (chunk.text.match(/^\s*/u) || [""])[0];
+        const trailing = (chunk.text.match(/\s*$/u) || [""])[0];
         const sentence = chunk.text.slice(leading.length, chunk.text.length-trailing.length);
         const sentenceStart = chunk.start + leading.length;
         const sentenceEnd = sentenceStart + sentence.length;

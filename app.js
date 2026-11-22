@@ -1529,8 +1529,17 @@ async function translateAchchaGapWords(){
     const item = list[Number(option.dataset.index)];
     if (!item) return;
     item.selected = option.dataset.word || item.source;
-    option.closest(".achcha-pop")?.querySelectorAll(".achcha-opt").forEach(button =>
+    const popover = option.closest(".achcha-pop");
+    popover?.querySelectorAll(".achcha-opt").forEach(button =>
       button.classList.toggle("achcha-opt-active",button.dataset.word===item.selected));
+    // Close immediately after choosing; it can reopen on the next hover.
+    popover?.classList.add("achcha-pop-closed");
+  });
+  editor.addEventListener("pointerout", event => {
+    const hit = event.target.closest(".achcha-hit");
+    if (hit && !hit.contains(event.relatedTarget)) {
+      hit.querySelector(".achcha-pop")?.classList.remove("achcha-pop-closed");
+    }
   });
   editor.addEventListener("keydown", event => {
     if (event.key==="Enter" && !event.shiftKey) {

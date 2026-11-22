@@ -77,6 +77,20 @@
         textbookWritingIndex = [];
         console.warn("Textbook vocabulary unavailable for sentence lookup; other lexicons remain available.", textbookError);
       }
+      // The civic/media/school signboard list is also part of the unified
+      // lookup corpus; load it here so Tab 4 sees the same collection as Tab 1.
+      try {
+        const landingUrl = new URL("../landing-words.json", base);
+        const landingData = await getJson(landingUrl, "no-cache");
+        if (!Array.isArray(landingData) || landingData.length !== 173 ||
+            landingData.some(row => !Array.isArray(row) || row.length !== 6)) {
+          throw new Error("Landing vocabulary structure or row count is invalid.");
+        }
+        landingWritingIndex = buildLandingWritingIndex(landingData);
+      } catch (landingError) {
+        landingWritingIndex = [];
+        console.warn("Landing vocabulary unavailable for sentence lookup; other lexicons remain available.", landingError);
+      }
       return manifest;
     })().catch(error => { initPromise = null; throw error; });
     return initPromise;
@@ -143,6 +157,7 @@
   }
   let masterWritingIndex = [];
   let textbookWritingIndex = [];
+  let landingWritingIndex = [];
 
   function cleanCandidateLabel(value) {
     const candidate = String(value || "").trim();
@@ -261,6 +276,30 @@
     }
     return [...forms];
   }
+  function buildLandingWritingIndex(rows) {
+    const bySource = new Map();
+    for (const row of rows) {
+      const sourceForms = expandMasterSourceForms(row[1]);
+      const alternatives = String(row[2] || "").split(/\s*\/\s*/u).map(cleanCandidateLabel).filter(Boolean);
+      const candidates = [...new Set(alternatives)].map(word => ({
+        word, origin:"uncertain", reviewStatus:"needs_review",
+        originClassification:"uncertain",
+        note:"Civic, media or education collection proposal; editorial review is pending.",
+        landingSourceId:String(row[0] || "")
+      }));
+      for (const form of sourceForms) {
+        if (!bySource.has(form)) bySource.set(form, {
+          entryId:"landing:"+String(row[0] || form), sourceForms:[form],
+          meaning:String(row[3] || "").trim(), candidates:[]
+        });
+        const target=bySource.get(form);
+        for (const candidate of candidates) {
+          if (!target.candidates.some(existing=>existing.word===candidate.word)) target.candidates.push(candidate);
+        }
+      }
+    }
+    return [...bySource.values()];
+  }
   function searchAchchaLexicon(text) {
     if (!writingIndex) return [];
     const query = String(text || "").normalize("NFC");
@@ -276,10 +315,13 @@
     const textbook = query
       ? textbookWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
       : textbookWritingIndex.slice(0, 100);
-    // Merge canonical and master corpus records by source spelling so a word
-    // found in both collections exposes all candidate alternatives in one popover.
+    const landing = query
+      ? landingWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
+      : landingWritingIndex.slice(0, 100);
+    // Merge every live source by source spelling so Tab 4 sees the same
+    // alternatives available across the unified word collection.
     const merged = new Map();
-    for (const entry of [...canonical, ...master, ...textbook]) {
+    for (const entry of [...canonical, ...master, ...textbook, ...landing]) {
       const form = entry.sourceForms[0];
       if (!merged.has(form)) merged.set(form, { ...entry, sourceForms: [form], candidates: [] });
       const target = merged.get(form);

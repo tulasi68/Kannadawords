@@ -146,7 +146,7 @@
 
   function cleanCandidateLabel(value) {
     const candidate = String(value || "").trim();
-    const parenthetical = candidate.match(/^(.+?)\\s*\\(([^()]*)\\)\\s*$/u);
+    const parenthetical = candidate.match(/^(.+?)\s*\(([^()]*)\)\s*$/u);
     if (parenthetical && /^[A-Za-z][A-Za-z .'-]*$/.test(parenthetical[2].trim())) {
       return parenthetical[1].trim();
     }

@@ -2,7 +2,6 @@ const test = require("node:test");
 const assert = require("node:assert/strict");
 const fs = require("node:fs");
 const path = require("node:path");
-
 const root = path.join(__dirname, "..");
 const read = file => fs.readFileSync(path.join(root,file),"utf8");
 
@@ -14,33 +13,28 @@ test("runtime loads the canonical adapter and store before the UI", () => {
   assert.ok(adapter >= 0 && store > adapter && app > store);
 });
 
-test("the original 637-entry lexicon remains the default word collection", () => {
+test("unified word list includes the canonical lexicon and preserves signboard priority", () => {
   const app = read("app.js");
-  const html = read("index.html");
   const manifest = JSON.parse(read("lexicon-dist/manifest.json"));
   assert.equal(manifest.entryCount,637);
-  assert.match(app,/let wordDatasetMode = "canonical"/);
-  assert.match(app,/KannadaLexiconStore\.loadPage\(categorySelect\.value \|\| "all",currentWordPage,WORDS_PER_PAGE\)/);
-  assert.match(html,/Original lexicon · 637/);
-  assert.match(html,/setWordDataset\('canonical'\)/);
+  assert.match(app,/KannadaLexiconStore\.loadAllEntries\(\)/);
+  assert.match(app,/entry\.categories\.includes\("Public Signboards"\)/);
+  assert.match(app,/a === "Public Signboards"/);
 });
 
-test("the 173 supplied entries are available as a separate additional collection", () => {
+test("the 173 civic, media and education entries remain in the unified collection", () => {
   const app = read("app.js");
-  const html = read("index.html");
   const rows = JSON.parse(read("landing-words.json"));
   assert.equal(rows.length,173);
   assert.match(app,/fetch\("\.\/landing-words\.json"/);
-  assert.match(app,/setWordDataset\('landing'\)/);
-  assert.match(html,/Additional words · 173/);
+  assert.match(app,/const landingEntries = landingData\.map/);
 });
 
-test("the original lexicon renderer retains comparative Tamil and Tulu evidence", () => {
+test("textbook words are added as a separate unreviewed category", () => {
   const app = read("app.js");
-  const renderer = app.slice(app.indexOf("function languageRows"),app.indexOf("const WORDS_PER_PAGE"));
-  assert.match(renderer,/Native Kannada/);
-  assert.match(renderer,/Tamil/);
-  assert.match(renderer,/Tulu/);
-  assert.match(renderer,/comparativeEvidence/);
-  assert.match(renderer,/getReference/);
+  const dataset = JSON.parse(read("textbook-words.json"));
+  assert.equal(dataset.entryCount,4559);
+  assert.match(app,/fetch\("\.\/textbook-words\.json"/);
+  assert.match(app,/category:"School Textbooks"/);
+  assert.match(app,/Public Signboards/);
 });

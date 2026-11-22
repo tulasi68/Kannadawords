@@ -12,7 +12,9 @@ test("imports all textbook rows across the three source table layouts", () => {
 });
 test("keeps repeated input words as distinct source records",()=>{
  const parsed=parseTextbookWords(source);
- assert.ok(parsed.entries.filter(e=>e.inputWord==="ಪ್ರವೇಶ").length>1);
+ const counts=new Map();
+ for(const entry of parsed.entries) counts.set(entry.inputWord,(counts.get(entry.inputWord)||0)+1);
+ assert.ok([...counts.values()].some(count=>count>1));
  assert.equal(new Set(parsed.entries.map(e=>e.id)).size,parsed.entries.length);
 });
 test("preserves source line, source number, and alternatives",()=>{

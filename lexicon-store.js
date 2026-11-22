@@ -142,6 +142,16 @@
     return category === "all" ? manifest.entryCount : (manifest.categoryIds[category] || []).length;
   }
   let masterWritingIndex = [];
+  let textbookWritingIndex = [];
+
+  function cleanCandidateLabel(value) {
+    const candidate = String(value || "").trim();
+    const parenthetical = candidate.match(/^(.+?)\\s*\\(([^()]*)\\)\\s*$/u);
+    if (parenthetical && /^[A-Za-z][A-Za-z .'-]*$/.test(parenthetical[2].trim())) {
+      return parenthetical[1].trim();
+    }
+    return candidate;
+  }
   function buildMasterWritingIndex(data) {
     const bySource = new Map();
     for (const row of data.entries) {
@@ -172,7 +182,7 @@
       if (!Array.isArray(alternatives) || !alternatives.length) {
         alternatives = rawAlternatives.split(/\s*\/\s*/);
       }
-      alternatives = alternatives.map(value => String(value).trim()).filter(Boolean);
+      alternatives = alternatives.map(cleanCandidateLabel).filter(Boolean);
       const meaning = String(fields[3] || "").trim();
       const fit = String(fields[5] || "").trim();
       const root = String(fields[6] || "").trim();
@@ -210,7 +220,7 @@
       const rawCandidates = [
         ...String(row.primary || "").split(/\s*\/\s*/u),
         ...(Array.isArray(row.alternatives) ? row.alternatives : [])
-      ].map(value => String(value).trim()).filter(Boolean);
+      ].map(cleanCandidateLabel).filter(Boolean);
       const candidates = [...new Set(rawCandidates)].map(word => ({
         word,
         origin:"uncertain",

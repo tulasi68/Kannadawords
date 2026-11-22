@@ -18,7 +18,8 @@ test("keeps repeated input words as distinct source records",()=>{
  assert.equal(new Set(parsed.entries.map(e=>e.id)).size,parsed.entries.length);
 });
 test("preserves source line, source number, and alternatives",()=>{
- const [e]=parseTextbookWords("| # | Input Word | Primary Accha Kannada | Alternative Native Options | Nuance / Usage Note |\n|---|---|---|---|---|\n| 7 | ಪರೀಕ್ಷೆ | ಒರೆ | ಅಳೆ, ನೋಡಿ | ಪರೀಕ್ಷಿಸಿ ತಿಳಿಯಿರಿ |");
+ const {entries}=parseTextbookWords("| # | Input Word | Primary Accha Kannada | Alternative Native Options | Nuance / Usage Note |\n|---|---|---|---|---|\n| 7 | ಪರೀಕ್ಷೆ | ಒರೆ | ಅಳೆ, ನೋಡಿ | ಪರೀಕ್ಷಿಸಿ ತಿಳಿಯಿರಿ |");
+ const [e]=entries;
  assert.deepEqual(e.alternatives,["ಅಳೆ","ನೋಡಿ"]);assert.equal(e.sourceNumber,7);assert.equal(e.sourceLine,3);assert.equal(e.meaning,"ಪರೀಕ್ಷಿಸಿ ತಿಳಿಯಿರಿ");
 });
 test("a missing final note does not discard a valid row",()=>{

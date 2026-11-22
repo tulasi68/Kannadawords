@@ -23,7 +23,8 @@ test("Tab 4 applies selected red and blue word choices into a second Kannada tex
   assert.match(app,/item\.suggestions=suggestions/);
 });
 
-test("Tab 4 lookup includes canonical, master, textbook and 173-row landing collections",()=>{
+test("Tab 4 lookup includes canonical, master, textbook, landing and root-family collections",()=>{
   assert.match(store,/landingWritingIndex = buildLandingWritingIndex\(landingData\)/);
-  assert.match(store,/\[\.\.\.canonical, \.\.\.master, \.\.\.textbook, \.\.\.landing\]/);
+  assert.match(store,/rootFamilyWritingIndex = buildRootFamilyWritingIndex\(familyData\)/);
+  assert.match(store,/\[\.\.\.canonical, \.\.\.master, \.\.\.textbook, \.\.\.landing, \.\.\.rootFamilies\]/);
 });

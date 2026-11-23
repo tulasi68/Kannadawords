@@ -170,7 +170,7 @@ def main():
         "top_level_entries": len(entries),
         "source_definitions": counts["source_definitions"],
         "unique_search_records": unique_count,
-        "duplicate_search_records_collapsed_removed": counts["duplicate_search_records_collapsed"],
+        "duplicate_search_records_collapsed": counts["duplicate_search_records_collapsed"],
         "records_with_ascii_letters": ascii_count,
         "records_with_searchable_english_tokens": searchable_count,
         "records_without_searchable_english_tokens": unique_count - searchable_count,
@@ -200,7 +200,7 @@ def main():
 
     print(f"Top-level YAML entries: {len(entries):,}")
     print(f"Source definitions: {counts['source_definitions']:,}")
-    print(f"Unique complete records written: {unique_count:,}")
+    print(f"Unique search records written: {unique_count:,}")
     print(
         "Duplicate search records collapsed: "
         f"{counts['duplicate_search_records_collapsed']:,}"

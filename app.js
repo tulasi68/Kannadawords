@@ -499,13 +499,16 @@ function showAchchaResult(result,original){
 let achchaMatchState = [];
 let achchaDiscoveryState = [];
 let achchaDiscoveryData = null;
+let achchaExcludedForms = [];
 let achchaPreserveGapResults = false;
 async function loadAchchaDiscoveryData() {
  if (achchaDiscoveryData) return achchaDiscoveryData;
  const response=await fetch("./sanskrit-discovery-words.json",{cache:"no-cache"});
  if(!response.ok) throw new Error("ಸಂಸ್ಕೃತ ಪದಗಳ ಪ್ರಾಥಮಿಕ ಪಟ್ಟಿ ಲಭ್ಯವಿಲ್ಲ.");
  const data=await response.json();
- if(data.schemaVersion!==1||!Array.isArray(data.entries)) throw new Error("ಸಂಸ್ಕೃತ ಪದಗಳ ಪಟ್ಟಿಯ ಸ್ವರೂಪ ಸರಿಯಿಲ್ಲ.");
+ if(data.schemaVersion!==2||!Array.isArray(data.entries)||!Array.isArray(data.excludedForms)) throw new Error("ಸಂಸ್ಕೃತ ಪದಗಳ ಪಟ್ಟಿಯ ಸ್ವರೂಪ ಸರಿಯಿಲ್ಲ.");
+ if(data.entries.some(entry=>!entry.id||!Array.isArray(entry.forms)||!entry.forms.length||entry.originStatus!=="candidate")) throw new Error("ಸಂಸ್ಕೃತ ಮೂಲದ ಅಭ್ಯರ್ಥಿ ಪಟ್ಟಿಯಲ್ಲಿ ತಪ್ಪಾದ ದಾಖಲೆ ಇದೆ.");
+ achchaExcludedForms=data.excludedForms.map(form=>String(form).normalize("NFC"));
  achchaDiscoveryData=data.entries; return achchaDiscoveryData;
 }
 function addAchchaDiscoveryUnderlines(preview, original, knownMatches, entries) {
@@ -1497,7 +1500,7 @@ async function translateAchchaGapWords(){
     const choices = unique.map(word=>'<button type="button" class="achcha-opt kn'+(item.selected===word?" achcha-opt-active":"")+'" data-kind="'+item.kind+'" data-index="'+item.index+'" data-word="'+escapeHtmlAchcha(word)+'">'+escapeHtmlAchcha(word)+'</button>').join("");
     const empty = item.kind === "blue" && !unique.length
       ? '<span class="text-xs text-stone-500">No AI alternative returned for this word.</span>' : "";
-    return '<span class="achcha-pop" contenteditable="false"><span class="achcha-pop-title">'+(item.kind==="red"?"Native words":"AI suggestions")+' for <strong class="kn">'+escapeHtmlAchcha(item.source)+'</strong></span><span class="achcha-pop-opts">'+keep+choices+'</span>'+empty+'</span>';
+    return '<span class="achcha-pop" contenteditable="false"><span class="achcha-pop-title">'+(item.kind==="red"?"Kannada alternatives":"Origin candidate")+' for <strong class="kn">'+escapeHtmlAchcha(item.source)+'</strong></span><span class="achcha-pop-opts">'+keep+choices+'</span>'+empty+'</span>';
   };
   function renderEditor() {
     const text = sourceText;
@@ -1568,14 +1571,19 @@ async function translateAchchaGapWords(){
     sourceText = original;
     achchaMatchState = [];
     achchaDiscoveryState = [];
+    let discoveryEntries=[];
+    try { discoveryEntries=await loadAchchaDiscoveryData(); }
+    catch(error) { console.warn("Sanskrit-origin candidate list unavailable:",error); }
+    const excludedForms=new Set(achchaExcludedForms);
+    const isExcluded=form=>excludedForms.has(String(form||"").normalize("NFC"));
     const lexicon = buildAchchaLexicon(original);
     const forms = [];
     lexicon.forEach(entry=>(entry.sourceForms||[]).forEach(form=>{
-      if(form && form.length>=2) forms.push({form:form.normalize("NFC"),entry});
+      if(form && form.length>=2 && !isExcluded(form)) forms.push({form:form.normalize("NFC"),entry});
     }));
     forms.sort((a,b)=>b.form.length-a.form.length);
     const occupied = new Array(original.length).fill(false);
-    const isWord = ch => !!ch && /[\p{L}\p{M}\p{N}_]/u.test(ch);
+    const isWord = ch => !!ch && /[\\p{L}\\p{M}\\p{N}_]/u.test(ch);
     const folded = original.toLocaleLowerCase();
     for (const {form,entry} of forms) {
       let from=0, needle=form.toLocaleLowerCase();
@@ -1584,7 +1592,7 @@ async function translateAchchaGapWords(){
         const end=at+form.length;
         const boundary=(at===0||!isWord(original[at-1]))&&(end===original.length||!isWord(original[end]));
         let overlap=false; for(let n=at;n<end;n++) if(occupied[n]){overlap=true;break;}
-        if(boundary&&!overlap) {
+        if(boundary&&!overlap&&!isExcluded(original.slice(at,end))) {
           for(let n=at;n<end;n++)occupied[n]=true;
           const candidates=(entry.candidates||[]).filter(c=>c.word);
           if(candidates.length) achchaMatchState.push({source:original.slice(at,end),meaning:entry.meaning||"",candidates,selected:original.slice(at,end),start:at,end});
@@ -1593,26 +1601,23 @@ async function translateAchchaGapWords(){
       }
     }
     achchaMatchState.sort((a,b)=>a.start-b.start);
-    try {
-      const entries=await loadAchchaDiscoveryData();
-      const blueForms=[];
-      entries.forEach(entry=>(entry.forms||[]).forEach(form=>{if(form)blueForms.push({form:form.normalize("NFC"),entry});}));
-      blueForms.sort((a,b)=>b.form.length-a.form.length);
-      for(const {form,entry} of blueForms) {
-        let from=0,needle=form.toLocaleLowerCase();
-        while(from<original.length) {
-          const at=folded.indexOf(needle,from); if(at<0)break;
-          const end=at+form.length;
-          const boundary=(at===0||!isWord(original[at-1]))&&(end===original.length||!isWord(original[end]));
-          let overlap=false; for(let n=at;n<end;n++)if(occupied[n]){overlap=true;break;}
-          if(boundary&&!overlap) {
-            for(let n=at;n<end;n++)occupied[n]=true;
-            achchaDiscoveryState.push({source:original.slice(at,end),start:at,end,id:entry.id,selected:original.slice(at,end),suggestions:[]});
-          }
-          from=at+1;
+    const blueForms=[];
+    discoveryEntries.forEach(entry=>(entry.forms||[]).forEach(form=>{if(form&&!isExcluded(form))blueForms.push({form:form.normalize("NFC"),entry});}));
+    blueForms.sort((a,b)=>b.form.length-a.form.length);
+    for(const {form,entry} of blueForms) {
+      let from=0,needle=form.toLocaleLowerCase();
+      while(from<original.length) {
+        const at=folded.indexOf(needle,from); if(at<0)break;
+        const end=at+form.length;
+        const boundary=(at===0||!isWord(original[at-1]))&&(end===original.length||!isWord(original[end]));
+        let overlap=false; for(let n=at;n<end;n++)if(occupied[n]){overlap=true;break;}
+        if(boundary&&!overlap&&!isExcluded(original.slice(at,end))) {
+          for(let n=at;n<end;n++)occupied[n]=true;
+          achchaDiscoveryState.push({source:original.slice(at,end),start:at,end,id:entry.id,selected:original.slice(at,end),suggestions:[],originStatus:entry.originStatus});
         }
+        from=at+1;
       }
-    } catch(error) { console.warn("Sanskrit discovery list unavailable:",error); }
+    }
     achchaDiscoveryState.sort((a,b)=>a.start-b.start);
     renderEditor();
   };

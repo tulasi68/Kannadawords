@@ -256,12 +256,67 @@
         <div id="achcha-input" class="achcha-preview kn w-full min-h-44 max-h-[32rem] overflow-y-auto rounded-xl border border-stone-300 bg-white px-3 py-3 text-base leading-8 whitespace-pre-wrap break-words focus:outline-none focus:ring-2 focus:ring-amber-500" contenteditable="true" role="textbox" aria-multiline="true" spellcheck="false" data-placeholder="ಕನ್ನಡ ವಾಕ್ಯ ಅಥವಾ ಪ್ಯಾರಾಗ್ರಾಫ್ ಇಲ್ಲಿ ಬರೆಯಿರಿ ಅಥವಾ ಅಂಟಿಸಿ…"></div>
         <div class="flex flex-wrap gap-2 mt-3">
           <button id="achcha-find" type="button" onclick="findAchchaWords()" class="rounded-lg bg-amber-700 px-4 py-2.5 text-sm font-semibold text-white">Search in App</button>
-          <button id="achcha-ai-scan" type="button" onclick="translateAchchaGapWords()" class="rounded-lg bg-sky-800 px-4 py-2.5 text-sm font-semibold text-white">AI search</button>
+          <button id="meaning-workbench-toggle" type="button" onclick="toggleMeaningWorkbench()" class="rounded-lg bg-sky-800 px-4 py-2.5 text-sm font-semibold text-white">English meaning workbench</button>
           <button id="achcha-clear" type="button" onclick="clearAchchaInput()" class="rounded-lg border border-stone-300 px-4 py-2.5 text-sm font-semibold text-stone-700">Clear</button>
           <button id="achcha-apply" type="button" onclick="completeAchchaRewrite()" class="rounded-lg bg-red-800 px-4 py-2.5 text-sm font-semibold text-white">Apply</button>
         </div>
-        <p class="mt-3 text-xs leading-5 text-stone-600">Red underline: words with Kannada alternatives in the project vocabulary; this does not identify their origin. Blue dashed underline: provisional Sanskrit-origin candidates that still need Kannada-to-English dictionary and Alar evidence.</p>
+        <p class="mt-3 text-xs leading-5 text-stone-600">Red underline: words with alternatives already in the project vocabulary. For other words, use the English meaning workbench below: establish the English definition first, then search for Kannada equivalents.</p>
       </div>
+      <section id="meaning-workbench" class="hidden mt-4 rounded-xl border border-sky-200 bg-sky-50/60 p-4 sm:p-5" aria-labelledby="meaning-workbench-title">
+        <div class="flex flex-wrap items-start justify-between gap-3">
+          <div><h3 id="meaning-workbench-title" class="text-lg font-bold text-stone-900">Meaning-first word discovery</h3>
+          <p class="mt-1 text-sm text-stone-600">Look up the Kannada word in a Kannada → English dictionary. Enter its exact English sense, then search that meaning for Kannada words. No AI-generated replacements.</p></div>
+          <button type="button" onclick="toggleMeaningWorkbench(false)" class="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm">Close</button>
+        </div>
+        <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <label class="text-sm text-stone-700">Original Kannada word
+            <input id="mw-source-word" class="kn mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2" value="ವಿಭಜನೆ" placeholder="e.g. ವಿಭಜನೆ">
+          </label>
+          <label class="text-sm text-stone-700">English meaning / dictionary definition
+            <textarea id="mw-english-meaning" rows="2" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2" placeholder="Enter the meaning from the Kannada-English dictionary">a dividing or being divided; division</textarea>
+          </label>
+          <label class="text-sm text-stone-700 sm:col-span-2">Sentence / intended sense (optional)
+            <textarea id="mw-context" rows="2" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2" placeholder="Paste the sentence so candidates can be checked in context"></textarea>
+          </label>
+        </div>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <a id="mw-alar-link" href="https://alar.ink/" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm font-semibold text-stone-700">Look up Kannada word in Alar ↗</a>
+          <button type="button" onclick="searchMeaningInRala()" class="rounded-lg bg-sky-800 px-3 py-2 text-sm font-semibold text-white">Search English meaning ↗</button>
+          <button type="button" onclick="saveMeaningRecord()" class="rounded-lg border border-sky-300 bg-white px-3 py-2 text-sm font-semibold text-sky-900">Save word record</button>
+          <button type="button" onclick="exportMeaningRecords()" class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm">Export records (JSON)</button>
+        </div>
+        <p class="mt-2 text-xs leading-5 text-stone-600">Reverse search opens Rala, which combines Alar and Padakanaja. Check each result’s source and record Alar evidence separately; do not assume every result is from Alar or is native Kannada.</p>
+        <div class="mt-5 border-t border-sky-200 pt-4">
+          <h4 class="font-semibold text-stone-900">Record a candidate</h4>
+          <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <label class="text-sm text-stone-700">Kannada candidate
+              <input id="mw-candidate" class="kn mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2" placeholder="e.g. ಹಂಚಿಕೆ">
+            </label>
+            <label class="text-sm text-stone-700">Dictionary / evidence source
+              <select id="mw-candidate-source" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2">
+                <option value="Alar">Alar</option><option value="Padakanaja">Padakanaja</option><option value="Existing project list">Existing project list</option><option value="Other / not checked">Other / not checked</option>
+              </select>
+            </label>
+            <label class="text-sm text-stone-700">Origin assessment
+              <select id="mw-origin-status" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2">
+                <option value="not-verified">Not verified</option><option value="dravidian-supported">Dravidian origin supported by evidence</option><option value="uncertain">Uncertain / needs more evidence</option><option value="not-native">Not native / loanword</option>
+              </select>
+            </label>
+            <label class="text-sm text-stone-700">Evidence / usage note
+              <input id="mw-candidate-note" class="mt-1 block w-full rounded-lg border border-stone-300 bg-white px-3 py-2" placeholder="Definition, entry reference, root, or context note">
+            </label>
+          </div>
+          <div class="mt-3 flex flex-wrap gap-2">
+            <button type="button" onclick="addMeaningCandidate()" class="rounded-lg bg-amber-700 px-4 py-2 text-sm font-semibold text-white">Add candidate</button>
+            <span id="mw-status" class="self-center text-sm text-stone-600" aria-live="polite"></span>
+          </div>
+          <div id="mw-candidate-list" class="mt-3 grid gap-2"></div>
+        </div>
+        <div class="mt-5 border-t border-sky-200 pt-4">
+          <h4 class="font-semibold text-stone-900">Saved word investigations</h4>
+          <div id="mw-saved-list" class="mt-2 grid gap-2"></div>
+        </div>
+      </section>
       <div id="achcha-output" class="hidden mt-4 rounded-xl border border-emerald-200 bg-white p-4 sm:p-5">
         <label for="achcha-result-text" class="block text-sm font-semibold text-stone-700 mb-2">Kannada text / ಕನ್ನಡ ಪಠ್ಯ</label>
         <textarea id="achcha-result-text" rows="7" class="kn w-full rounded-xl border border-stone-300 px-3 py-3 text-base leading-8" spellcheck="false"></textarea>
@@ -274,7 +329,8 @@
   <script src="coinage-review.js"></script>
   <script src="lexicon-display-adapter.js?v=20261119-v2"></script>
   <script src="lexicon-store.js?v=20261122-root-families"></script>
-  <script src="app.js?v=20261123-origin-candidates"></script>
+  <script src="app.js?v=20261123-meaning-first"></script>
   <script src="mobile-assistant.js?v=1"></script>
+  <script src="meaning-workbench.js?v=20261123-1"></script>
 </body>
 </html>

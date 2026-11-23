@@ -154,8 +154,8 @@ def main():
             for key in (
                 "top_level_entries",
                 "source_definitions",
-                "unique_complete_records",
-                "exact_duplicate_occurrences_removed",
+                "unique_search_records",
+                "duplicate_search_records_collapsed",
                 "records_with_ascii_letters",
                 "records_with_searchable_english_tokens",
                 "records_without_searchable_english_tokens",

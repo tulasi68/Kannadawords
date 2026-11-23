@@ -22,7 +22,7 @@ from pathlib import Path
 
 ASCII_LETTER_RE = re.compile(r"[A-Za-z]")
 ENGLISH_TOKEN_RE = re.compile(r"[a-z0-9]+")
-COMBINING_MARKS_RE = re.compile(r"[\\u0300-\\u036f]")
+COMBINING_MARKS_RE = re.compile(r"[\u0300-\u036f]")
 STOP = {"a", "an", "the", "of", "or", "and", "being", "be", "is", "are",
         "to", "for", "in", "on", "by", "as", "that", "which", "with",
         "from", "into", "this", "it", "its"}

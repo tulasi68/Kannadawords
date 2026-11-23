@@ -518,7 +518,7 @@ function addAchchaDiscoveryUnderlines(preview, original, knownMatches, entries) 
  entries.forEach(entry=>(entry.forms||[]).forEach(form=>{if(typeof form==="string"&&form)forms.push({form:form.normalize("NFC"),entry});}));
  forms.sort((a,b)=>b.form.length-a.form.length);
  const source=original.normalize("NFC"), lower=source.toLocaleLowerCase();
- const isWord=ch=>!!ch&&/[\\p{L}\\p{M}\\p{N}_]/u.test(ch);
+ const isWord=ch=>!!ch&&/[\p{L}\p{M}\p{N}_]/u.test(ch);
  forms.forEach(item=>{
   const needle=item.form.toLocaleLowerCase(); let from=0;
   while(from<lower.length){
@@ -1583,7 +1583,7 @@ async function translateAchchaGapWords(){
     }));
     forms.sort((a,b)=>b.form.length-a.form.length);
     const occupied = new Array(original.length).fill(false);
-    const isWord = ch => !!ch && /[\\p{L}\\p{M}\\p{N}_]/u.test(ch);
+    const isWord = ch => !!ch && /[\p{L}\p{M}\p{N}_]/u.test(ch);
     const folded = original.toLocaleLowerCase();
     for (const {form,entry} of forms) {
       let from=0, needle=form.toLocaleLowerCase();

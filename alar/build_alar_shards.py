@@ -21,7 +21,7 @@ STOP = {"a", "an", "the", "of", "or", "and", "being", "be", "is", "are",
         "to", "for", "in", "on", "by", "as", "that", "which", "with",
         "from", "into", "this", "it", "its"}
 TOKEN_RE = re.compile(r"[a-z0-9]+")
-COMBINING_MARKS_RE = re.compile(r"[\\u0300-\\u036f]")
+COMBINING_MARKS_RE = re.compile(r"[\u0300-\u036f]")
 RARE_TOKEN_LIMIT = 500
 
 

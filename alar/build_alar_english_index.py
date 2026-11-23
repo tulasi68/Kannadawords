@@ -143,7 +143,7 @@ def main():
                     kind,
                 )
                 if identity in seen:
-                    counts["exact_duplicate_occurrences"] += 1
+                    counts["duplicate_search_records_collapsed"] += 1
                     continue
                 seen.add(identity)
 
@@ -169,8 +169,8 @@ def main():
         "generated_utc": datetime.now(timezone.utc).isoformat(),
         "top_level_entries": len(entries),
         "source_definitions": counts["source_definitions"],
-        "unique_complete_records": unique_count,
-        "exact_duplicate_occurrences_removed": counts["exact_duplicate_occurrences"],
+        "unique_search_records": unique_count,
+        "duplicate_search_records_collapsed_removed": counts["duplicate_search_records_collapsed"],
         "records_with_ascii_letters": ascii_count,
         "records_with_searchable_english_tokens": searchable_count,
         "records_without_searchable_english_tokens": unique_count - searchable_count,
@@ -202,8 +202,8 @@ def main():
     print(f"Source definitions: {counts['source_definitions']:,}")
     print(f"Unique complete records written: {unique_count:,}")
     print(
-        "Exact duplicate occurrences removed: "
-        f"{counts['exact_duplicate_occurrences']:,}"
+        "Duplicate search records collapsed: "
+        f"{counts['duplicate_search_records_collapsed']:,}"
     )
     print(f"Records with ASCII English letters: {ascii_count:,}")
     print(f"Records with searchable English tokens: {searchable_count:,}")

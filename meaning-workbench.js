@@ -179,7 +179,8 @@
         if (!rawDefinition) continue;
         const normalizedDefinition = normalizeEnglish(rawDefinition);
         const phraseHits = phrases.filter(phrase => normalizedDefinition.includes(phrase));
-        const matchedTerms = terms.filter(term => normalizedDefinition.includes(term));
+        const definitionWords = new Set(normalizedDefinition.split(" "));
+        const matchedTerms = terms.filter(term => definitionWords.has(term));
         if (!phraseHits.length && !matchedTerms.length) continue;
         const coverage = matchedTerms.length / terms.length;
         const score = (phraseHits.length ? 100 : 0) + Math.round(coverage * 20) + matchedTerms.length;

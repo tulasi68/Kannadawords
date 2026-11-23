@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "description": "Conservative Tab 4 origin-candidate list. Entries are user-supplied candidates for linguistic verification, not verified etymologies. The intended research workflow is Kannada-to-English dictionary meaning followed by Alar lookup; record evidence before promoting any entry to verified status.",
+  "description": "Conservative Tab 4 origin-candidate list. Entries are provisional user-supplied candidates for linguistic verification, not verified etymologies. The intended research workflow is Kannada-to-English dictionary meaning followed by Alar lookup; record evidence before promoting any entry to verified status.",
   "verificationWorkflow": [
     "Find the accepted Kannada headword in a Kannada-to-English dictionary.",
     "Use its English gloss to search Alar; do not search Alar for the Kannada headword and treat that as independent proof.",
@@ -8,12 +8,19 @@
   ],
   "excludedForms": [
     "ಕೊರತೆ",
+    "ಕೊರತೆಯ",
+    "ಕೊರತೆಯು",
+    "ಕೊರತೆಯನ್ನು",
+    "ಕೊರತೆಯಿಂದ",
+    "ಕೊರತೆಗೆ",
+    "ಕೊರತೆಯಲ್ಲಿ",
+    "ಕೊರತೆಗಳು",
     "ಮತ್ತು"
   ],
   "exclusions": [
     {
       "form": "ಕೊರತೆ",
-      "reason": "Do not treat this ordinary Kannada word as a Sanskrit-origin candidate."
+      "reason": "Ordinary Kannada word; exclude the base form and common inflections from Sanskrit-origin detection."
     },
     {
       "form": "ಮತ್ತು",

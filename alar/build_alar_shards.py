@@ -13,6 +13,7 @@ import json
 import re
 import hashlib
 import unicodedata
+import shutil
 from pathlib import Path
 from collections import defaultdict
 from datetime import datetime, timezone
@@ -112,12 +113,17 @@ def main():
 
     index_dir = Path("alar/search-index")
     record_dir = Path("alar/search-records")
-    index_dir.mkdir(parents=True, exist_ok=True)
-    # Remove stale generated shards, including previous record chunks.
-    for folder in (index_dir, record_dir):
+    staging_dir = Path("alar/.search-index-staging")
+    backup_dir = Path("alar/.search-index-backup")
+    metadata_path = Path("alar/search-metadata.json")
+    metadata_temp = Path("alar/search-metadata.json.tmp")
+
+    # Build the complete replacement away from the live shard directory. If
+    # generation fails, the previous index remains intact.
+    for folder in (staging_dir, backup_dir):
         if folder.exists():
-            for old in folder.glob("*.json"):
-                old.unlink()
+            shutil.rmtree(folder)
+    staging_dir.mkdir(parents=True, exist_ok=True)
 
     for prefix, token_map in postings.items():
         shard = {}
@@ -126,7 +132,7 @@ def main():
             if len(ids) <= RARE_TOKEN_LIMIT:
                 item["records"] = rare_records[prefix].get(token, [])
             shard[token] = item
-        out = index_dir / f"{prefix}.json"
+        out = staging_dir / f"{prefix}.json"
         out.write_text(
             json.dumps(shard, ensure_ascii=False, separators=(",", ":")),
             encoding="utf-8",
@@ -162,9 +168,29 @@ def main():
         "index_shards": len(postings),
         "design": "lazy two-character English-token shards with embedded records for rare exact tokens"
     }
-    Path("alar/search-metadata.json").write_text(
+    metadata_temp.write_text(
         json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8"
     )
+
+    # Promote only after every shard and the metadata file have been written.
+    had_previous_index = index_dir.exists()
+    if had_previous_index:
+        index_dir.rename(backup_dir)
+    try:
+        staging_dir.rename(index_dir)
+    except Exception:
+        if had_previous_index and backup_dir.exists() and not index_dir.exists():
+            backup_dir.rename(index_dir)
+        raise
+    if backup_dir.exists():
+        shutil.rmtree(backup_dir)
+
+    # Retire obsolete record chunks only after the new shard directory is live.
+    if record_dir.exists():
+        for old in record_dir.glob("*.json"):
+            old.unlink()
+    metadata_temp.replace(metadata_path)
+
     print(
         f"\nDone: {valid_count:,} retained records; "
         f"{searchable_count:,} have searchable English tokens."

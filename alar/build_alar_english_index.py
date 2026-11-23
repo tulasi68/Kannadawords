@@ -8,8 +8,10 @@ All non-empty definitions with a Kannada headword are retained, including
 definitions without searchable ASCII English tokens. Those records remain in
 the intermediate JSON but do not produce English-token postings.
 
-Only exact duplicate source records are removed. The identity key includes
-headword, source entry ID, definition ID, definition text, and part of speech.
+Duplicate search records are collapsed using headword, definition ID,
+definition text, and part of speech. When matching records have different
+source entry IDs, the first encountered entry ID is retained as representative
+provenance. This avoids duplicate candidate rows and redundant search postings.
 """
 import hashlib
 import json
@@ -131,9 +133,9 @@ def main():
                 kind = str(definition_row.get("type") or "").strip()
                 definition_id = definition_row.get("id", "")
 
-                # Alar may repeat the same headword/definition across
-                # separate source entry IDs. Treat those as duplicate
-                # dictionary records while preserving the first entry ID.
+                # Collapse identical search records even when Alar assigns
+                # them different source entry IDs. Keep the first entry ID as
+                # representative provenance to avoid duplicate search results.
                 identity = (
                     head,
                     scalar_key(definition_id),
@@ -180,6 +182,10 @@ def main():
         "deduplication_key": [
             "word", "definitionId", "definition", "type"
         ],
+        "entry_id_policy": (
+            "When records match on the deduplication key, retain the first "
+            "source entryId as representative provenance."
+        ),
         "intermediate_file": output_path.name,
         "note": (
             "All non-empty definitions with a headword are retained, including "

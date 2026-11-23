@@ -1,22 +1,39 @@
 #!/usr/bin/env python3
-"""Build a lazy-loaded, sharded Alar reverse index from alar-english-index.json.
+"""Build compact, lazy Alar reverse-search shards.
 
 Run from the repository root:
   py alar/build_alar_shards.py alar/alar-english-index.json
 
-Creates:
-  alar/search-index/<prefix>.json   English token -> record IDs
-  alar/search-records/<chunk>.json  compact records, 5,000 per file
-  alar/search-metadata.json
+Each two-letter shard contains exact token postings. For tokens with at most
+RARE_TOKEN_LIMIT matches, it also embeds those matching records. The browser
+can then retrieve a small, relevant candidate set without downloading broad
+record chunks containing thousands of unrelated entries.
 """
-import sys, json, re, hashlib
+import sys
+import json
+import re
+import hashlib
 from pathlib import Path
 from collections import defaultdict
 from datetime import datetime, timezone
 
-STOP = {"a","an","the","of","or","and","being","be","is","are","to","for","in","on","by","as","that","which","with","from","into","this","it","its"}
+STOP = {"a", "an", "the", "of", "or", "and", "being", "be", "is", "are",
+        "to", "for", "in", "on", "by", "as", "that", "which", "with",
+        "from", "into", "this", "it", "its"}
 TOKEN_RE = re.compile(r"[a-z0-9]+")
-CHUNK_SIZE = 5000
+RARE_TOKEN_LIMIT = 500
+
+
+def compact_record(rid, row):
+    return {
+        "id": rid,
+        "word": str(row.get("word", "")).strip(),
+        "definition": str(row.get("definition", "")).strip(),
+        "entryId": row.get("entryId", ""),
+        "definitionId": row.get("definitionId", ""),
+        "type": row.get("type", "")
+    }
+
 
 def main():
     if len(sys.argv) != 2:
@@ -24,6 +41,7 @@ def main():
     source = Path(sys.argv[1])
     if not source.is_file():
         raise SystemExit(f"File not found: {source}")
+
     raw = source.read_bytes()
     rows = json.loads(raw.decode("utf-8-sig"))
     if not isinstance(rows, list):
@@ -32,54 +50,72 @@ def main():
     if rows and not required.issubset(rows[0]):
         raise SystemExit("JSON records must contain word and definition.")
 
-    index = defaultdict(lambda: defaultdict(list))
-    record_dir = Path("alar/search-records")
-    index_dir = Path("alar/search-index")
-    record_dir.mkdir(parents=True, exist_ok=True)
-    index_dir.mkdir(parents=True, exist_ok=True)
+    # First pass: exact token postings and their frequencies.
+    postings = defaultdict(lambda: defaultdict(list))
+    valid_count = 0
+    for rid, row in enumerate(rows):
+        record = compact_record(rid, row)
+        if not record["word"] or not record["definition"]:
+            continue
+        valid_count += 1
+        tokens = set(TOKEN_RE.findall(record["definition"].lower())) - STOP
+        for token in tokens:
+            postings[token[:2]][token].append(rid)
 
-    record_count = 0
-    for start in range(0, len(rows), CHUNK_SIZE):
-        chunk_no = start // CHUNK_SIZE
-        compact = []
-        for offset, row in enumerate(rows[start:start + CHUNK_SIZE]):
-            rid = start + offset
-            word = str(row.get("word", "")).strip()
-            definition = str(row.get("definition", "")).strip()
-            if not word or not definition:
+    # Second pass: embed records only for rare tokens. These are the useful
+    # candidate pools for precise searches and avoid loading unrelated chunks.
+    rare_records = defaultdict(dict)
+    rare_tokens = {
+        token for shard in postings.values()
+        for token, ids in shard.items()
+        if len(ids) <= RARE_TOKEN_LIMIT
+    }
+    if rare_tokens:
+        for rid, row in enumerate(rows):
+            record = compact_record(rid, row)
+            if not record["word"] or not record["definition"]:
                 continue
-            compact.append({
-                "id": rid, "word": word, "definition": definition,
-                "entryId": row.get("entryId", ""),
-                "definitionId": row.get("definitionId", ""),
-                "type": row.get("type", "")
-            })
-            tokens = set(TOKEN_RE.findall(definition.lower()))
-            for token in tokens - STOP:
-                index[token[:2]][token].append(rid)
-            record_count += 1
-        out = record_dir / f"{chunk_no:03d}.json"
-        out.write_text(json.dumps(compact, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
-        print(f"Records: {out} ({len(compact):,})")
+            tokens = set(TOKEN_RE.findall(record["definition"].lower())) & rare_tokens
+            for token in tokens:
+                rare_records[token[:2]].setdefault(token, []).append(record)
 
-    for prefix, mapping in index.items():
+    index_dir = Path("alar/search-index")
+    record_dir = Path("alar/search-records")
+    index_dir.mkdir(parents=True, exist_ok=True)
+    # Remove stale generated shards, including the previous large record chunks.
+    for folder in (index_dir, record_dir):
+        if folder.exists():
+            for old in folder.glob("*.json"):
+                old.unlink()
+
+    for prefix, token_map in postings.items():
+        shard = {}
+        for token, ids in token_map.items():
+            item = {"ids": ids}
+            if len(ids) <= RARE_TOKEN_LIMIT:
+                item["records"] = rare_records[prefix].get(token, [])
+            shard[token] = item
         out = index_dir / f"{prefix}.json"
-        out.write_text(json.dumps(dict(mapping), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        out.write_text(json.dumps(shard, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        print(f"Index: {out} ({len(shard):,} tokens)")
+
     meta = {
         "source_file": source.name,
         "source_sha256": hashlib.sha256(raw).hexdigest(),
         "generated_utc": datetime.now(timezone.utc).isoformat(),
         "source_records": len(rows),
-        "indexed_records": record_count,
-        "record_chunk_size": CHUNK_SIZE,
-        "token_prefix_length": 2,
-        "index_shards": len(index),
-        "design": "lazy two-character English-token shards plus 5000-record chunks"
+        "indexed_records": valid_count,
+        "rare_token_limit": RARE_TOKEN_LIMIT,
+        "index_shards": len(postings),
+        "design": "lazy two-character shards with embedded records for rare exact tokens"
     }
-    Path("alar/search-metadata.json").write_text(json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8")
-    print(f"\nDone: {record_count:,} records; {len(index)} English index shards.")
-    print("Upload alar/search-index/, alar/search-records/, and alar/search-metadata.json.")
-    print("Do not upload the original 32 MB JSON or the .gz file for browser search.")
+    Path("alar/search-metadata.json").write_text(
+        json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8"
+    )
+    print(f"\nDone: {valid_count:,} records; {len(postings)} index shards.")
+    print(f"Rare tokens with embedded records: {len(rare_tokens):,}.")
+    print("The browser no longer needs alar/search-records/*.json.")
+
 
 if __name__ == "__main__":
     main()

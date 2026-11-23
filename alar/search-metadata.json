@@ -1,0 +1,11 @@
+{
+  "source_file": "alar-english-index.json",
+  "source_sha256": "3185bbc0a35341cb60a203db81e320abec4a93eb11ccc4c72aa430802aad348c",
+  "generated_utc": "2026-11-23T14:35:44.707255+00:00",
+  "source_records": 203753,
+  "indexed_records": 203753,
+  "record_chunk_size": 5000,
+  "token_prefix_length": 2,
+  "index_shards": 503,
+  "design": "lazy two-character English-token shards plus 5000-record chunks"
+}

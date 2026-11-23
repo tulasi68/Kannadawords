@@ -27,7 +27,7 @@
     sourceWord: byId("mw-source-word").value.trim(),
     englishMeaning: byId("mw-english-meaning").value.trim(),
     context: byId("mw-context").value.trim(),
-    candidates: current?.candidates ? [...current.candidates] : [],
+    candidates: current?.sourceWord === byId("mw-source-word").value.trim() && current?.candidates ? [...current.candidates] : [],
     updatedAt: new Date().toISOString()
   });
   const persist = () => {
@@ -86,7 +86,7 @@
   window.addMeaningCandidate = function() {
     const word=byId("mw-candidate").value.trim();
     if(!word){status("Enter a Kannada candidate first.");byId("mw-candidate").focus();return;}
-    if(!current) current=snapshot();
+    if(!current || current.sourceWord!==byId("mw-source-word").value.trim()) current=snapshot();
     if(current.candidates.some(item=>item.word===word)){status("That candidate is already recorded.");return;}
     current.candidates.push({
       word,
@@ -100,7 +100,7 @@
   window.saveMeaningRecord = function() {
     const record=snapshot();
     if(!record.sourceWord||!record.englishMeaning){status("Enter both the Kannada word and its English meaning.");return;}
-    record.candidates=current?.candidates?[...current.candidates]:[];
+    record.candidates=current?.sourceWord===record.sourceWord && current?.candidates?[...current.candidates]:[];
     const index=records.findIndex(item=>item.sourceWord===record.sourceWord);
     if(index>=0) records[index]=record; else records.unshift(record);
     current=JSON.parse(JSON.stringify(record));persist();renderCurrent();renderSaved();

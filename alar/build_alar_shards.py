@@ -32,7 +32,7 @@ def main():
     if rows and not required.issubset(rows[0]):
         raise SystemExit("JSON records must contain word and definition.")
 
-    index = defaultdict(list)
+    index = defaultdict(lambda: defaultdict(list))
     record_dir = Path("alar/search-records")
     index_dir = Path("alar/search-index")
     record_dir.mkdir(parents=True, exist_ok=True)
@@ -56,7 +56,7 @@ def main():
             })
             tokens = set(TOKEN_RE.findall(definition.lower()))
             for token in tokens - STOP:
-                index[token[:2]].append(rid)
+                index[token[:2]][token].append(rid)
             record_count += 1
         out = record_dir / f"{chunk_no:03d}.json"
         out.write_text(json.dumps(compact, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
@@ -64,7 +64,7 @@ def main():
 
     for prefix, mapping in index.items():
         out = index_dir / f"{prefix}.json"
-        out.write_text(json.dumps(mapping, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        out.write_text(json.dumps(dict(mapping), ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
     meta = {
         "source_file": source.name,
         "source_sha256": hashlib.sha256(raw).hexdigest(),

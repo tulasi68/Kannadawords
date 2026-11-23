@@ -189,8 +189,9 @@ def main():
         "intermediate_file": output_path.name,
         "note": (
             "All non-empty definitions with a headword are retained, including "
-            "definitions without searchable English tokens. Only exact duplicate "
-            "complete source records are removed."
+            "definitions without searchable English tokens. Duplicate search "
+            "records are collapsed using the documented identity key; the first "
+            "source entryId is retained as representative provenance."
         ),
     }
     sidecar_path.write_text(

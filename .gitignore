@@ -2,3 +2,6 @@
 /alar/alar.yml
 /alar/alar-english-index.json
 /alar/alar-english-index.metadata.json
+/alar/.search-index-staging/
+/alar/.search-index-backup/
+/alar/search-metadata.json.tmp

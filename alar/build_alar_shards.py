@@ -43,22 +43,40 @@ def main():
         raise SystemExit(f"File not found: {source}")
 
     raw = source.read_bytes()
-    rows = json.loads(raw.decode("utf-8-sig"))
+    try:
+        rows = json.loads(raw.decode("utf-8-sig"))
+    except Exception as exc:
+        raise SystemExit(f"Could not parse intermediate JSON: {exc}") from exc
     if not isinstance(rows, list):
         raise SystemExit("Expected a JSON array.")
     required = {"word", "definition"}
     if rows and not required.issubset(rows[0]):
         raise SystemExit("JSON records must contain word and definition.")
 
+    # The converter writes a sidecar manifest containing the original YAML
+    # checksum and transparent source/deduplication counts.
+    sidecar = source.with_suffix(".metadata.json")
+    source_manifest = {}
+    if sidecar.is_file():
+        try:
+            source_manifest = json.loads(sidecar.read_text(encoding="utf-8"))
+        except Exception as exc:
+            raise SystemExit(f"Could not parse source manifest {sidecar}: {exc}") from exc
+
     # First pass: exact token postings and their frequencies.
     postings = defaultdict(lambda: defaultdict(list))
     valid_count = 0
+    searchable_count = 0
     for rid, row in enumerate(rows):
+        if not isinstance(row, dict):
+            continue
         record = compact_record(rid, row)
         if not record["word"] or not record["definition"]:
             continue
         valid_count += 1
         tokens = set(TOKEN_RE.findall(record["definition"].lower())) - STOP
+        if tokens:
+            searchable_count += 1
         for token in tokens:
             postings[token[:2]][token].append(rid)
 
@@ -72,6 +90,8 @@ def main():
     }
     if rare_tokens:
         for rid, row in enumerate(rows):
+            if not isinstance(row, dict):
+                continue
             record = compact_record(rid, row)
             if not record["word"] or not record["definition"]:
                 continue
@@ -102,18 +122,38 @@ def main():
     meta = {
         "source_file": source.name,
         "source_sha256": hashlib.sha256(raw).hexdigest(),
+        "source_yaml_sha256": source_manifest.get("source_yaml_sha256", ""),
+        "source_yaml_file": source_manifest.get("source_file", ""),
         "generated_utc": datetime.now(timezone.utc).isoformat(),
         "source_records": len(rows),
         "indexed_records": valid_count,
+        "searchable_records": searchable_count,
+        "records_without_english_tokens": valid_count - searchable_count,
+        "source_conversion": {
+            key: source_manifest.get(key)
+            for key in (
+                "top_level_entries",
+                "source_definitions",
+                "unique_complete_records",
+                "exact_duplicate_occurrences_removed",
+                "definitions_with_ascii_letters",
+                "definitions_with_english_tokens",
+                "definitions_without_english_tokens",
+                "definitions_skipped_missing_head",
+                "deduplication_key",
+            )
+            if key in source_manifest
+        },
         "rare_token_limit": RARE_TOKEN_LIMIT,
         "index_shards": len(postings),
-        "design": "lazy two-character shards with embedded records for rare exact tokens"
+        "design": "lazy two-character English-token shards with embedded records for rare exact tokens"
     }
     Path("alar/search-metadata.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    print(f"\nDone: {valid_count:,} records; {len(postings)} index shards.")
+    print(f"\nDone: {valid_count:,} retained records; {searchable_count:,} have English search tokens.")
     print(f"Rare tokens with embedded records: {len(rare_tokens):,}.")
+    print("Records without English tokens remain in the intermediate JSON but are not token-searchable.")
     print("The browser no longer needs alar/search-records/*.json.")
 
 

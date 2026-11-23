@@ -281,11 +281,12 @@
         </div>
         <div class="mt-3 flex flex-wrap gap-2">
           <a id="mw-alar-link" href="https://alar.ink/dictionary/kannada/english" target="_blank" rel="noopener noreferrer" class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm font-semibold text-stone-700">Look up this word in Alar ↗</a>
-          <button type="button" onclick="searchMeaningInRala()" class="rounded-lg bg-sky-800 px-3 py-2 text-sm font-semibold text-white">Search English meaning ↗</button>
+          <button id="mw-search-alar" type="button" onclick="searchAlarMeaning()" class="rounded-lg bg-sky-800 px-3 py-2 text-sm font-semibold text-white">Search Alar for Kannada equivalents</button>
           <button type="button" onclick="saveMeaningRecord()" class="rounded-lg border border-sky-300 bg-white px-3 py-2 text-sm font-semibold text-sky-900">Save word record</button>
           <button type="button" onclick="exportMeaningRecords()" class="rounded-lg border border-stone-300 bg-white px-3 py-2 text-sm">Export records (JSON)</button>
         </div>
-        <p class="mt-2 text-xs leading-5 text-stone-600">Reverse search opens Rala, which combines Alar and Padakanaja. Check each result’s source and record Alar evidence separately; do not assume every result is from Alar or is native Kannada.</p>
+        <p class="mt-2 text-xs leading-5 text-stone-600">This searches the Alar Kannada → English corpus directly. Only Alar headwords are shown; Padakanaja and AI suggestions are excluded. The first search downloads Alar’s full dictionary corpus and may use substantial data; Wi-Fi is recommended. A dictionary match is a candidate, not proof of native / Dravidian origin.</p>
+        <div id="mw-search-results" class="mt-3 grid gap-2" aria-live="polite"></div>
         <div class="mt-5 border-t border-sky-200 pt-4">
           <h4 class="font-semibold text-stone-900">Record a candidate</h4>
           <div class="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-3">
@@ -331,6 +332,7 @@
   <script src="lexicon-store.js?v=20261122-root-families"></script>
   <script src="app.js?v=20261123-meaning-first"></script>
   <script src="mobile-assistant.js?v=1"></script>
-  <script src="meaning-workbench.js?v=20261123-1"></script>
+  <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+  <script src="meaning-workbench.js?v=20261123-2"></script>
 </body>
 </html>

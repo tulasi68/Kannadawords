@@ -256,7 +256,7 @@
         <div id="achcha-input" class="achcha-preview kn w-full min-h-44 max-h-[32rem] overflow-y-auto rounded-xl border border-stone-300 bg-white px-3 py-3 text-base leading-8 whitespace-pre-wrap break-words focus:outline-none focus:ring-2 focus:ring-amber-500" contenteditable="true" role="textbox" aria-multiline="true" spellcheck="false" data-placeholder="ಕನ್ನಡ ವಾಕ್ಯ ಅಥವಾ ಪ್ಯಾರಾಗ್ರಾಫ್ ಇಲ್ಲಿ ಬರೆಯಿರಿ ಅಥವಾ ಅಂಟಿಸಿ…"></div>
         <div class="flex flex-wrap gap-2 mt-3">
           <button id="achcha-find" type="button" onclick="findAchchaWords()" class="rounded-lg bg-amber-700 px-4 py-2.5 text-sm font-semibold text-white">Search in App</button>
-          <button id="meaning-workbench-investigate" type="button" onclick="investigateSelectedWord()" class="hidden rounded-lg bg-sky-800 px-4 py-2.5 text-sm font-semibold text-white">Investigate this word</button>
+          <button id="meaning-workbench-investigate" type="button" onclick="investigateSelectedWord()" onmousedown="event.preventDefault()" class="hidden rounded-lg bg-sky-800 px-4 py-2.5 text-sm font-semibold text-white">Investigate this word</button>
           <button id="achcha-clear" type="button" onclick="clearAchchaInput()" class="rounded-lg border border-stone-300 px-4 py-2.5 text-sm font-semibold text-stone-700">Clear</button>
           <button id="achcha-apply" type="button" onclick="completeAchchaRewrite()" class="rounded-lg bg-red-800 px-4 py-2.5 text-sm font-semibold text-white">Apply</button>
         </div>

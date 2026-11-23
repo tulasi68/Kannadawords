@@ -1512,16 +1512,65 @@ async function translateAchchaGapWords(){
     editor.innerHTML = html.replace(/\n/g,"<br>");
     editor.dataset.rendered = "true";
   }
-  editor.addEventListener("input", () => {
-    if (rendering) return;
-    const text = readPlain(editor);
+  // Count the editor's plain-text characters before a DOM position. Unlike
+  // Range.toString(), this also accounts for BR and block boundaries.
+  function plainTextLength(node) {
+    let length = 0;
+    const walk = current => {
+      if (current.nodeType === Node.TEXT_NODE) { length += current.nodeValue.length; return; }
+      if (current.nodeType !== Node.ELEMENT_NODE && current.nodeType !== Node.DOCUMENT_FRAGMENT_NODE) return;
+      if (current.classList?.contains("achcha-pop")) return;
+      if (current.tagName === "BR") { length += 1; return; }
+      const block = current !== editor && current.nodeType === Node.ELEMENT_NODE && /^(DIV|P)$/.test(current.tagName);
+      const before = length;
+      for (const child of current.childNodes) walk(child);
+      if (block && length > before) length += 1;
+    };
+    walk(node);
+    return length;
+  }
+  function caretOffset() {
+    const selection = window.getSelection();
+    if (!selection || !selection.rangeCount || !editor.contains(selection.anchorNode)) return null;
+    const range = document.createRange();
+    range.selectNodeContents(editor);
+    range.setEnd(selection.anchorNode, selection.anchorOffset);
+    return plainTextLength(range.cloneContents());
+  }
+  function flattenEditor(text) {
+    const offset = caretOffset();
     rendering = true;
     editor.textContent = text;
     rendering = false;
+    if (offset === null) return;
+    const range = document.createRange();
+    const textNode = editor.firstChild;
+    if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+      range.setStart(textNode, Math.min(offset, textNode.length));
+    } else {
+      range.selectNodeContents(editor);
+      range.collapse(false);
+    }
+    range.collapse(true);
+    const selection = window.getSelection();
+    selection?.removeAllRanges();
+    selection?.addRange(range);
+  }
+  editor.addEventListener("input", event => {
+    if (rendering) return;
+    const text = readPlain(editor);
     sourceText = text;
     achchaMatchState = [];
     achchaDiscoveryState = [];
     document.getElementById("achcha-output")?.classList.add("hidden");
+    // Do not replace the editable DOM during IME composition; doing so can
+    // interrupt Kannada input methods. Flatten once composition is complete.
+    if (!event.isComposing) flattenEditor(text);
+  });
+  editor.addEventListener("compositionend", () => {
+    const text = readPlain(editor);
+    sourceText = text;
+    flattenEditor(text);
   });
   editor.addEventListener("paste", event => {
     event.preventDefault();

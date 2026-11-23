@@ -8,7 +8,7 @@ const store=fs.readFileSync(new URL("../lexicon-store.js",import.meta.url),"utf8
 
 test("Tab 4 uses one inline editable Kannada text field and four requested actions",()=>{
   assert.match(html,/id="achcha-input"[^>]*contenteditable="true"/);
-  for(const label of ["Search in App","English meaning workbench","Clear","Apply"]) assert.ok(html.includes(">"+label+"</button>"),label);
+  for(const label of ["Search in App","Investigate this word","Clear","Apply"]) assert.ok(html.includes(">"+label+"</button>"),label);
   assert.doesNotMatch(html,/ಪಠ್ಯದ ಅರ್ಥವನ್ನು ಉಳಿಸಿಕೊಂಡು ಸಹಜ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ/);
   assert.doesNotMatch(html,/ಪದಪಟ್ಟಿ ಹುಡುಕಾಟವು ಮೂಲ ಪದಕೋಶ ಮತ್ತು 2,134 ಪದಗಳ master corpus/);
   const tab4=html.slice(html.indexOf('<section id="translate-panel"'),html.indexOf("</section>",html.indexOf('<section id="translate-panel"')));

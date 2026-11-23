@@ -43,16 +43,24 @@ definition text. This includes definitions that have no ASCII English letters;
 those remain in the intermediate JSON but cannot produce English-token
 postings.
 
-Only exact duplicate complete source records are removed. The identity key is:
+Duplicate search records are collapsed using this identity key:
 
-`word + definitionId + definition + type` (the first matching source entry ID is retained)
+`word + definitionId + definition + type`
+
+The source `entryId` is deliberately not part of the identity key. If matching
+records have different source entry IDs, the first encountered ID is retained
+as representative provenance. This keeps the candidate list and token index
+compact without showing repeated copies of the same headword and gloss.
 
 Consequently:
 - The same English gloss under different Kannada headwords is retained.
 - The same headword/definition ID with different part-of-speech labels is retained.
-- Repeated records under different source entry IDs are deduplicated when the headword, definition ID, definition text and part-of-speech label match; the first entry ID is retained.
-- A repeated occurrence with all five fields identical is removed.
+- Matching records under different source entry IDs collapse to one searchable record; the first entry ID is retained for reference.
 - Definitions with no English tokens are counted and retained in the intermediate.
+
+This is search-result deduplication, not a claim that the collapsed YAML rows
+are byte-for-byte identical source records. The original Alar YAML remains the
+complete source of truth.
 
 The metadata records the source YAML SHA-256, total source definitions, retained
 record count, exact duplicates removed, records with and without English search

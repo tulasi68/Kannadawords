@@ -14,6 +14,7 @@
   };
   let records = [];
   let current = null;
+  let selectedWord = "";
   const byId = id => document.getElementById(id);
   const read = () => {
     try {
@@ -68,13 +69,72 @@
     byId("mw-source-word").value=current.sourceWord;
     byId("mw-english-meaning").value=current.englishMeaning;
     byId("mw-context").value=current.context||"";
+    updateAlarLink(current.sourceWord);
     renderCurrent();status("Loaded saved word investigation.");
   }
+  function sentenceAroundWord(word) {
+    const editor = byId("achcha-input");
+    const text = editor ? (editor.innerText || editor.textContent || "") : "";
+    const at = text.indexOf(word);
+    if (at < 0) return text.trim();
+    const stops = /[.!?।\n]/u;
+    let start = at, end = at + word.length;
+    while (start > 0 && !stops.test(text[start - 1])) start--;
+    while (end < text.length && !stops.test(text[end])) end++;
+    return text.slice(start, end).trim();
+  }
+  function updateAlarLink(word) {
+    const link = byId("mw-alar-link");
+    if (link) link.href = "https://alar.ink/dictionary/kannada/english?q=" + encodeURIComponent(word || byId("mw-source-word").value.trim());
+  }
+  window.investigateSelectedWord = function() {
+    const word = selectedWord.trim();
+    if (!word) return;
+    const existing = records.findIndex(item => item.sourceWord === word);
+    if (existing >= 0) {
+      loadRecord(existing);
+    } else {
+      current = { id: "word-" + Date.now(), sourceWord: word, englishMeaning: "", context: sentenceAroundWord(word), candidates: [] };
+      byId("mw-source-word").value = word;
+      byId("mw-english-meaning").value = "";
+      byId("mw-context").value = current.context;
+      renderCurrent();
+      status("Word selected. Open Alar and enter the English definition for the exact sense.");
+    }
+    updateAlarLink(word);
+    window.toggleMeaningWorkbench(true);
+  };
+  document.addEventListener("selectionchange", () => {
+    const editor = byId("achcha-input");
+    const button = byId("meaning-workbench-investigate");
+    const selection = window.getSelection();
+    if (!editor || !button || !selection || selection.isCollapsed || !selection.rangeCount) {
+      if (button) button.classList.add("hidden");
+      selectedWord = "";
+      return;
+    }
+    const range = selection.getRangeAt(0);
+    const node = range.commonAncestorContainer;
+    const element = node.nodeType === Node.ELEMENT_NODE ? node : node.parentElement;
+    if (!element || !editor.contains(element)) {
+      button.classList.add("hidden");
+      selectedWord = "";
+      return;
+    }
+    const candidate = selection.toString().trim().normalize("NFC");
+    if (!/^[\\u0C80-\\u0CFF]+$/u.test(candidate)) {
+      button.classList.add("hidden");
+      selectedWord = "";
+      return;
+    }
+    selectedWord = candidate;
+    button.classList.remove("hidden");
+  });
   window.toggleMeaningWorkbench = function(force) {
     const panel=byId("meaning-workbench"); if(!panel)return;
     const show=typeof force==="boolean"?force:panel.classList.contains("hidden");
     panel.classList.toggle("hidden",!show);
-    if(show){panel.scrollIntoView({behavior:"smooth",block:"nearest"});byId("mw-source-word")?.focus();}
+    if(show){panel.scrollIntoView({behavior:"smooth",block:"nearest"});byId("mw-source-word")?.focus();updateAlarLink(byId("mw-source-word").value.trim());}
   };
   window.searchMeaningInRala = function() {
     const meaning=byId("mw-english-meaning").value.trim();
@@ -112,6 +172,7 @@
     a.href=url;a.download="kannadawords-meaning-investigations.json";a.click();URL.revokeObjectURL(url);
     status("JSON export prepared.");
   };
+  byId("mw-source-word")?.addEventListener("input", () => updateAlarLink(byId("mw-source-word").value.trim()));
   read();
   const initial=records.findIndex(item=>item.sourceWord==="ವಿಭಜನೆ");
   if(initial>=0) loadRecord(initial);

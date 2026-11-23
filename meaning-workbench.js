@@ -185,7 +185,7 @@
     for (const shard of shards) {
       for (const [prefix, ids] of Object.entries(shard)) postings.set(prefix, ids);
     }
-    const lists = terms.map(term => postings.get(term.slice(0, 2)) || [])
+    const lists = terms.map(term => postings.get(term) || [])
       .map(ids => ids.filter(id => Number.isInteger(id)));
     if (lists.some(list => !list.length)) return [];
 

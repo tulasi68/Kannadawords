@@ -4,10 +4,9 @@
 Run from the repository root:
   py alar/build_alar_shards.py alar/alar-english-index.json
 
-Each two-letter shard contains exact token postings. For tokens with at most
-RARE_TOKEN_LIMIT matches, it also embeds those matching records. The browser
-can then retrieve a small, relevant candidate set without downloading broad
-record chunks containing thousands of unrelated entries.
+Each two-character shard contains exact English-token postings. For tokens
+with at most RARE_TOKEN_LIMIT matches, it also embeds matching records so the
+browser does not need to download unrelated record chunks.
 """
 import sys
 import json
@@ -22,6 +21,14 @@ STOP = {"a", "an", "the", "of", "or", "and", "being", "be", "is", "are",
         "from", "into", "this", "it", "its"}
 TOKEN_RE = re.compile(r"[a-z0-9]+")
 RARE_TOKEN_LIMIT = 500
+
+
+def searchable_tokens(definition):
+    """Match the browser's minimum three-character English query terms."""
+    return {
+        token for token in TOKEN_RE.findall(definition.lower())
+        if len(token) >= 3 and token not in STOP
+    }
 
 
 def compact_record(rid, row):
@@ -53,8 +60,8 @@ def main():
     if rows and not required.issubset(rows[0]):
         raise SystemExit("JSON records must contain word and definition.")
 
-    # The converter writes a sidecar manifest containing the original YAML
-    # checksum and transparent source/deduplication counts.
+    # The converter writes a sidecar manifest with the original YAML checksum
+    # and transparent source/deduplication counts.
     sidecar = source.with_suffix(".metadata.json")
     source_manifest = {}
     if sidecar.is_file():
@@ -74,14 +81,14 @@ def main():
         if not record["word"] or not record["definition"]:
             continue
         valid_count += 1
-        tokens = set(TOKEN_RE.findall(record["definition"].lower())) - STOP
+        tokens = searchable_tokens(record["definition"])
         if tokens:
             searchable_count += 1
         for token in tokens:
             postings[token[:2]][token].append(rid)
 
-    # Second pass: embed records only for rare tokens. These are the useful
-    # candidate pools for precise searches and avoid loading unrelated chunks.
+    # Second pass: embed records only for rare tokens. This bounds browser
+    # downloads to relevant candidates instead of broad 5,000-record chunks.
     rare_records = defaultdict(dict)
     rare_tokens = {
         token for shard in postings.values()
@@ -95,14 +102,14 @@ def main():
             record = compact_record(rid, row)
             if not record["word"] or not record["definition"]:
                 continue
-            tokens = set(TOKEN_RE.findall(record["definition"].lower())) & rare_tokens
+            tokens = searchable_tokens(record["definition"]) & rare_tokens
             for token in tokens:
                 rare_records[token[:2]].setdefault(token, []).append(record)
 
     index_dir = Path("alar/search-index")
     record_dir = Path("alar/search-records")
     index_dir.mkdir(parents=True, exist_ok=True)
-    # Remove stale generated shards, including the previous large record chunks.
+    # Remove stale generated shards, including previous record chunks.
     for folder in (index_dir, record_dir):
         if folder.exists():
             for old in folder.glob("*.json"):
@@ -116,7 +123,10 @@ def main():
                 item["records"] = rare_records[prefix].get(token, [])
             shard[token] = item
         out = index_dir / f"{prefix}.json"
-        out.write_text(json.dumps(shard, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        out.write_text(
+            json.dumps(shard, ensure_ascii=False, separators=(",", ":")),
+            encoding="utf-8",
+        )
         print(f"Index: {out} ({len(shard):,} tokens)")
 
     meta = {
@@ -128,7 +138,7 @@ def main():
         "source_records": len(rows),
         "indexed_records": valid_count,
         "searchable_records": searchable_count,
-        "records_without_english_tokens": valid_count - searchable_count,
+        "records_without_searchable_english_tokens": valid_count - searchable_count,
         "source_conversion": {
             key: source_manifest.get(key)
             for key in (
@@ -136,9 +146,9 @@ def main():
                 "source_definitions",
                 "unique_complete_records",
                 "exact_duplicate_occurrences_removed",
-                "definitions_with_ascii_letters",
-                "definitions_with_english_tokens",
-                "definitions_without_english_tokens",
+                "records_with_ascii_letters",
+                "records_with_searchable_english_tokens",
+                "records_without_searchable_english_tokens",
                 "definitions_skipped_missing_head",
                 "deduplication_key",
             )
@@ -151,9 +161,15 @@ def main():
     Path("alar/search-metadata.json").write_text(
         json.dumps(meta, ensure_ascii=False, indent=2), encoding="utf-8"
     )
-    print(f"\nDone: {valid_count:,} retained records; {searchable_count:,} have English search tokens.")
+    print(
+        f"\nDone: {valid_count:,} retained records; "
+        f"{searchable_count:,} have searchable English tokens."
+    )
     print(f"Rare tokens with embedded records: {len(rare_tokens):,}.")
-    print("Records without English tokens remain in the intermediate JSON but are not token-searchable.")
+    print(
+        "Records without searchable English tokens remain in the intermediate "
+        "JSON but do not create token postings."
+    )
     print("The browser no longer needs alar/search-records/*.json.")
 
 

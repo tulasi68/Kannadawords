@@ -189,17 +189,21 @@
       .map(ids => ids.filter(id => Number.isInteger(id)));
     if (lists.some(list => !list.length)) return [];
 
-    // Intersect the rarest posting lists first to avoid fetching unrelated records.
-    lists.sort((a, b) => a.length - b.length);
-    let ids = new Set(lists[0]);
-    for (const list of lists.slice(1)) {
-      const allowed = new Set(list);
-      ids = new Set([...ids].filter(id => allowed.has(id)));
-      if (!ids.size) break;
+    // Rank by token overlap instead of requiring every query word to occur.
+    // This keeps broad dictionary glosses useful while bounding browser work.
+    const hitCounts = new Map();
+    for (const list of lists) {
+      for (const id of list) hitCounts.set(id, (hitCounts.get(id) || 0) + 1);
     }
-    if (!ids.size) return [];
+    const minimumHits = terms.length <= 2 ? 1 : Math.max(2, Math.ceil(terms.length * 0.4));
+    const ids = [...hitCounts.entries()]
+      .filter(([, count]) => count >= minimumHits)
+      .sort((a, b) => b[1] - a[1])
+      .slice(0, 2500)
+      .map(([id]) => id);
+    if (!ids.length) return [];
 
-    const chunkNumbers = [...new Set([...ids].map(id => Math.floor(id / RECORD_CHUNK_SIZE)))];
+    const chunkNumbers = [...new Set(ids.map(id => Math.floor(id / RECORD_CHUNK_SIZE)))];
     const chunks = await Promise.all(chunkNumbers.map(loadRecordChunk));
     const byId = new Map();
     chunks.flat().forEach(record => byId.set(record.id, record));

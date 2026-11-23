@@ -30,7 +30,9 @@ The first script creates:
 - `alar/alar-english-index.json`: intermediate records used by the shard builder.
 - `alar/alar-english-index.metadata.json`: source checksum and conversion counts.
 
-The converter and shard builder use the same English normalization as the browser: Unicode NFKD decomposition, removal of combining marks, ASCII tokenization, stop-word removal, and a minimum token length of three characters. This keeps indexed tokens aligned with what Tab 4 can query.\n\nThe second script creates:
+The converter and shard builder use the same English normalization as the browser: Unicode NFKD decomposition, removal of combining marks, ASCII tokenization, stop-word removal, and a minimum token length of three characters. This keeps indexed tokens aligned with what Tab 4 can query.
+
+The second script creates:
 - `alar/search-index/*.json`: lazy two-character English-token shards.
 - `alar/search-metadata.json`: index statistics and source provenance.
 

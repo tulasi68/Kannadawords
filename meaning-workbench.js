@@ -108,6 +108,7 @@
     const editor = byId("achcha-input");
     const button = byId("meaning-workbench-investigate");
     const selection = window.getSelection();
+    if (button && document.activeElement === button) return;
     if (!editor || !button || !selection || selection.isCollapsed || !selection.rangeCount) {
       if (button) button.classList.add("hidden");
       selectedWord = "";
@@ -122,7 +123,7 @@
       return;
     }
     const candidate = selection.toString().trim().normalize("NFC");
-    if (!/^[\\u0C80-\\u0CFF]+$/u.test(candidate)) {
+    if (!/^[\u0C80-\u0CFF]+$/u.test(candidate)) {
       button.classList.add("hidden");
       selectedWord = "";
       return;

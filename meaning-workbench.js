@@ -137,16 +137,15 @@
     panel.classList.toggle("hidden",!show);
     if(show){panel.scrollIntoView({behavior:"smooth",block:"nearest"});byId("mw-source-word")?.focus();updateAlarLink(byId("mw-source-word").value.trim());}
   };
-  // Lazy-load only the English token shards and record chunks needed for a query.
+  // Load only exact English-token shards. Rare-token shards carry their
+  // matching records, so searches never fetch unrelated 5,000-record chunks.
   const ALAR_INDEX_BASE = "./alar/search-index/";
-  const ALAR_RECORD_BASE = "./alar/search-records/";
-  const RECORD_CHUNK_SIZE = 5000;
+  const RARE_TOKEN_LIMIT = 500;
   const ENGLISH_STOP_WORDS = new Set([
     "a","an","the","of","or","and","being","be","is","are","to","for",
     "in","on","by","as","that","which","with","from","into","this","it","its"
   ]);
   const indexShardCache = new Map();
-  const recordChunkCache = new Map();
 
   function normalizeEnglish(text) {
     return String(text || "").toLowerCase().normalize("NFKD")
@@ -165,14 +164,6 @@
     }
     return indexShardCache.get(prefix);
   }
-  async function loadRecordChunk(chunkNo) {
-    const key = String(chunkNo).padStart(3, "0");
-    if (!recordChunkCache.has(key)) {
-      recordChunkCache.set(key, fetchJson(ALAR_RECORD_BASE + key + ".json")
-        .catch(error => { recordChunkCache.delete(key); throw error; }));
-    }
-    return recordChunkCache.get(key);
-  }
   async function findAlarMatches(englishMeaning, originalWord) {
     const normalized = normalizeEnglish(englishMeaning);
     const terms = [...new Set(normalized.split(" ")
@@ -181,46 +172,36 @@
 
     const prefixes = [...new Set(terms.map(term => term.slice(0, 2)))];
     const shards = await Promise.all(prefixes.map(loadIndexShard));
-    const postings = new Map();
+    const tokenData = new Map();
     for (const shard of shards) {
-      for (const [prefix, ids] of Object.entries(shard)) postings.set(prefix, ids);
+      for (const [token, data] of Object.entries(shard)) tokenData.set(token, data);
     }
-    const lists = terms.map(term => postings.get(term) || [])
-      .map(ids => ids.filter(id => Number.isInteger(id)));
-    if (lists.some(list => !list.length)) return [];
 
-    // Rank by token overlap instead of requiring every query word to occur.
-    // This keeps broad dictionary glosses useful while bounding browser work.
-    const hitCounts = new Map();
-    for (const list of lists) {
-      for (const id of list) hitCounts.set(id, (hitCounts.get(id) || 0) + 1);
+    const available = terms
+      .map(term => ({ term, data: tokenData.get(term) }))
+      .filter(item => item.data && Array.isArray(item.data.ids) && item.data.ids.length);
+    if (!available.length) return [];
+
+    // Start with the rarest query token. The generator embeds complete records
+    // for tokens up to RARE_TOKEN_LIMIT, giving a bounded, relevant candidate set.
+    available.sort((a, b) => a.data.ids.length - b.data.ids.length);
+    const anchor = available[0];
+    if (anchor.data.ids.length > RARE_TOKEN_LIMIT || !Array.isArray(anchor.data.records)) {
+      throw new Error("This English term is too broad for a precise search. Add another descriptive word (for example, 'dividing' or 'splitting').");
     }
-    const minimumHits = terms.length <= 2 ? 1 : Math.max(2, Math.ceil(terms.length * 0.4));
-    const ids = [...hitCounts.entries()]
-      .filter(([, count]) => count >= minimumHits)
-      .sort((a, b) => b[1] - a[1])
-      .slice(0, 2500)
-      .map(([id]) => id);
-    if (!ids.length) return [];
-
-    const chunkNumbers = [...new Set(ids.map(id => Math.floor(id / RECORD_CHUNK_SIZE)))];
-    const chunks = await Promise.all(chunkNumbers.map(loadRecordChunk));
-    const byId = new Map();
-    chunks.flat().forEach(record => byId.set(record.id, record));
 
     const excluded = String(originalWord || "").normalize("NFC").trim();
     const phrase = normalized;
     const results = [];
-    for (const id of ids) {
-      const record = byId.get(id);
-      if (!record) continue;
+    for (const record of anchor.data.records) {
       const word = String(record.word || "").normalize("NFC").trim();
       const definition = String(record.definition || "").trim();
       if (!word || word === excluded || !definition) continue;
       const normalizedDefinition = normalizeEnglish(definition);
-      const matchedTerms = terms.filter(term => normalizedDefinition.split(" ").includes(term));
-      const coverage = matchedTerms.length / terms.length;
+      const definitionTokens = new Set(normalizedDefinition.split(" "));
+      const matchedTerms = terms.filter(term => definitionTokens.has(term));
       if (!matchedTerms.length) continue;
+      const coverage = matchedTerms.length / terms.length;
       const phraseHit = phrase.length >= 5 && normalizedDefinition.includes(phrase);
       results.push({
         word, definition, entryId: record.entryId ?? "",
@@ -229,13 +210,14 @@
         matchedTerms, phraseHits: phraseHit ? [englishMeaning.trim()] : []
       });
     }
+
     const bestByWord = new Map();
     for (const item of results) {
       const old = bestByWord.get(item.word);
       if (!old || item.score > old.score) bestByWord.set(item.word, item);
     }
     return [...bestByWord.values()]
-      .sort((a,b) => b.score-a.score || a.word.localeCompare(b.word, "kn"))
+      .sort((a, b) => b.score - a.score || a.word.localeCompare(b.word, "kn"))
       .slice(0, 80);
   }
   function renderAlarMatches(matches) {
@@ -302,10 +284,10 @@
     const button = byId("mw-search-alar");
     if (button) { button.disabled = true; button.textContent = "Searching Alar…"; }
     try {
-      status("Loading only the English index shards needed for this search…");
+      status("Loading the smallest matching Alar token shard…");
       const matches = await findAlarMatches(meaning, byId("mw-source-word").value);
       renderAlarMatches(matches);
-      status("Search complete. Only matching index shards and record chunks were loaded. Dictionary matches do not prove native origin.");
+      status("Search complete. Only matching token shards and their relevant records were loaded. Dictionary matches do not prove native origin.");
     } catch (error) {
       status(error.message || "Alar search failed. Please retry.");
       const host = byId("mw-search-results");

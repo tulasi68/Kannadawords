@@ -1576,10 +1576,12 @@ async function translateAchchaGapWords(){
     catch(error) { console.warn("Sanskrit-origin candidate list unavailable:",error); }
     const excludedForms=new Set(achchaExcludedForms);
     const isExcluded=form=>excludedForms.has(String(form||"").normalize("NFC"));
+    const originCandidateForms=new Set(discoveryEntries.flatMap(entry=>entry.forms||[]).map(form=>String(form).normalize("NFC")));
+    const isOriginCandidate=form=>originCandidateForms.has(String(form||"").normalize("NFC"));
     const lexicon = buildAchchaLexicon(original);
     const forms = [];
     lexicon.forEach(entry=>(entry.sourceForms||[]).forEach(form=>{
-      if(form && form.length>=2 && !isExcluded(form)) forms.push({form:form.normalize("NFC"),entry});
+      if(form && form.length>=2 && !isExcluded(form) && !isOriginCandidate(form)) forms.push({form:form.normalize("NFC"),entry});
     }));
     forms.sort((a,b)=>b.form.length-a.form.length);
     const occupied = new Array(original.length).fill(false);
@@ -1592,7 +1594,7 @@ async function translateAchchaGapWords(){
         const end=at+form.length;
         const boundary=(at===0||!isWord(original[at-1]))&&(end===original.length||!isWord(original[end]));
         let overlap=false; for(let n=at;n<end;n++) if(occupied[n]){overlap=true;break;}
-        if(boundary&&!overlap&&!isExcluded(original.slice(at,end))) {
+        if(boundary&&!overlap&&!isExcluded(original.slice(at,end))&&!isOriginCandidate(original.slice(at,end))) {
           for(let n=at;n<end;n++)occupied[n]=true;
           const candidates=(entry.candidates||[]).filter(c=>c.word);
           if(candidates.length) achchaMatchState.push({source:original.slice(at,end),meaning:entry.meaning||"",candidates,selected:original.slice(at,end),start:at,end});

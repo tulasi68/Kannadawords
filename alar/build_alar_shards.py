@@ -161,6 +161,7 @@ def main():
                 "records_without_searchable_english_tokens",
                 "definitions_skipped_missing_head",
                 "deduplication_key",
+                "entry_id_policy",
             )
             if key in source_manifest
         },

@@ -256,16 +256,16 @@
         <div id="achcha-input" class="achcha-preview kn w-full min-h-44 max-h-[32rem] overflow-y-auto rounded-xl border border-stone-300 bg-white px-3 py-3 text-base leading-8 whitespace-pre-wrap break-words focus:outline-none focus:ring-2 focus:ring-amber-500" contenteditable="true" role="textbox" aria-multiline="true" spellcheck="false" data-placeholder="ಕನ್ನಡ ವಾಕ್ಯ ಅಥವಾ ಪ್ಯಾರಾಗ್ರಾಫ್ ಇಲ್ಲಿ ಬರೆಯಿರಿ ಅಥವಾ ಅಂಟಿಸಿ…"></div>
         <div class="flex flex-wrap gap-2 mt-3">
           <button id="achcha-find" type="button" onclick="findAchchaWords()" class="rounded-lg bg-amber-700 px-4 py-2.5 text-sm font-semibold text-white">Search in App</button>
-          <button id="meaning-workbench-investigate" type="button" onclick="investigateSelectedWord()" onmousedown="event.preventDefault()" class="hidden rounded-lg bg-sky-800 px-4 py-2.5 text-sm font-semibold text-white">Investigate this word</button>
+          <button id="meaning-workbench-investigate" type="button" onclick="investigateSelectedWord()" onmousedown="event.preventDefault()" title="Open optional dictionary research for the selected Kannada word" class="hidden rounded-lg bg-sky-800 px-4 py-2.5 text-sm font-semibold text-white">Advanced research</button>
           <button id="achcha-clear" type="button" onclick="clearAchchaInput()" class="rounded-lg border border-stone-300 px-4 py-2.5 text-sm font-semibold text-stone-700">Clear</button>
           <button id="achcha-apply" type="button" onclick="completeAchchaRewrite()" class="rounded-lg bg-red-800 px-4 py-2.5 text-sm font-semibold text-white">Apply</button>
         </div>
-        <p class="mt-3 text-xs leading-5 text-stone-600">Red underline: words with alternatives already in the project vocabulary. For other words, use the English meaning workbench below: establish the English definition first, then search for Kannada equivalents.</p>
+        <p class="mt-3 text-xs leading-5 text-stone-600">Red underline: words with alternatives already in the project vocabulary. You can use the suggested alternatives directly. Optional dictionary research is available only when you select a word and choose Advanced research.</p>
       </div>
       <section id="meaning-workbench" class="hidden mt-4 rounded-xl border border-sky-200 bg-sky-50/60 p-4 sm:p-5" aria-labelledby="meaning-workbench-title">
         <div class="flex flex-wrap items-start justify-between gap-3">
-          <div><h3 id="meaning-workbench-title" class="text-lg font-bold text-stone-900">Meaning-first word discovery</h3>
-          <p class="mt-1 text-sm text-stone-600">Look up the Kannada word in a Kannada → English dictionary. Enter its exact English sense, then search that meaning for Kannada words. No AI-generated replacements.</p></div>
+          <div><h3 id="meaning-workbench-title" class="text-lg font-bold text-stone-900">Advanced word research</h3>
+          <p class="mt-1 text-sm text-stone-600">Research facility for checking dictionary meanings and exploring possible Kannada equivalents. Most users do not need to open this section. Dictionary matches are candidates, not proof of word origin.</p></div>
           <button type="button" onclick="toggleMeaningWorkbench(false)" class="rounded-lg border border-stone-300 bg-white px-3 py-1.5 text-sm">Close</button>
         </div>
         <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3">

@@ -641,19 +641,14 @@ async function findAchchaWords() {
   if (!matches.length) {
     list.classList.add("hidden");
     container.replaceChildren();
-    status.textContent = "No known vocabulary matches; checking provisional Sanskrit candidates…";
+    status.textContent = "No known vocabulary matches. Use the English meaning workbench to investigate this word.";
+    achchaDiscoveryState = [];
     const previewWrap = document.getElementById("achcha-preview-wrap");
     const preview = document.getElementById("achcha-preview");
     if (previewWrap) previewWrap.classList.remove("hidden");
     if (preview) {
       preview.textContent = searchable;
-      try { addAchchaDiscoveryUnderlines(preview, searchable, [], await loadAchchaDiscoveryData()); }
-      catch(error) { console.warn("Sanskrit discovery list unavailable:",error); }
-    }
-    if (!achchaDiscoveryState.length) {
-      status.textContent = "ಪರಿಶೀಲಿತ ಪದಪಟ್ಟಿಯಲ್ಲಿಯೂ ಪ್ರಾಥಮಿಕ ಸಂಸ್ಕೃತ ಪದಪಟ್ಟಿಯಲ್ಲಿಯೂ ಹೊಂದಾಣಿಕೆ ಸಿಗಲಿಲ್ಲ.";
-    } else {
-      status.textContent = "0 known words · " + achchaDiscoveryState.length + " possible Sanskrit-origin word(s) for review";
+      preview.classList.remove("hidden");
     }
     return;
   }
@@ -695,9 +690,8 @@ async function findAchchaWords() {
     preview.innerHTML = html;
     preview.classList.remove("hidden");
 
-    // Add provisional blue underlines after red known-word matches.
-    try { addAchchaDiscoveryUnderlines(preview, searchable, matches, await loadAchchaDiscoveryData()); }
-    catch(error) { console.warn("Sanskrit discovery list unavailable:",error); achchaDiscoveryState=[]; }
+    // Origin is not inferred from a word list; use the meaning-first evidence workbench instead.
+    achchaDiscoveryState = [];
     // Wire option clicks
     preview.querySelectorAll(".achcha-opt").forEach(btn => {
       btn.addEventListener("click", (ev) => {

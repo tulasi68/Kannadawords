@@ -15,12 +15,14 @@ import hashlib
 import json
 import re
 import sys
+import unicodedata
 from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 
 ASCII_LETTER_RE = re.compile(r"[A-Za-z]")
 ENGLISH_TOKEN_RE = re.compile(r"[a-z0-9]+")
+COMBINING_MARKS_RE = re.compile(r"[\\u0300-\\u036f]")
 STOP = {"a", "an", "the", "of", "or", "and", "being", "be", "is", "are",
         "to", "for", "in", "on", "by", "as", "that", "which", "with",
         "from", "into", "this", "it", "its"}
@@ -46,9 +48,11 @@ def source_record(head, entry_id, definition_id, definition, kind):
 
 
 def searchable_tokens(definition):
-    """Use the same token length and stop-word rules as the shard builder."""
+    """Mirror the browser's NFKD/diacritic normalization and query rules."""
+    normalized = unicodedata.normalize("NFKD", definition.lower())
+    normalized = COMBINING_MARKS_RE.sub("", normalized)
     return {
-        token for token in ENGLISH_TOKEN_RE.findall(definition.lower())
+        token for token in ENGLISH_TOKEN_RE.findall(normalized)
         if len(token) >= 3 and token not in STOP
     }
 

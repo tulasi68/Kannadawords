@@ -45,11 +45,12 @@ postings.
 
 Only exact duplicate complete source records are removed. The identity key is:
 
-`word + entryId + definitionId + definition + type`
+`word + definitionId + definition + type` (the first matching source entry ID is retained)
 
 Consequently:
 - The same English gloss under different Kannada headwords is retained.
 - The same headword/definition ID with different part-of-speech labels is retained.
+- Repeated records under different source entry IDs are deduplicated when the headword, definition ID, definition text and part-of-speech label match; the first entry ID is retained.
 - A repeated occurrence with all five fields identical is removed.
 - Definitions with no English tokens are counted and retained in the intermediate.
 

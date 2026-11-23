@@ -1,55 +1,80 @@
 {
-  "schemaVersion": 1,
-  "description": "Provisional starter candidates for possible Sanskrit-derived words not yet in the project lexicon. Not comprehensive; all candidates require linguistic review.",
+  "schemaVersion": 2,
+  "description": "Conservative Tab 4 origin-candidate list. Entries are user-supplied candidates for linguistic verification, not verified etymologies. The intended research workflow is Kannada-to-English dictionary meaning followed by Alar lookup; record evidence before promoting any entry to verified status.",
+  "verificationWorkflow": [
+    "Find the accepted Kannada headword in a Kannada-to-English dictionary.",
+    "Use its English gloss to search Alar; do not search Alar for the Kannada headword and treat that as independent proof.",
+    "Record the exact Alar entry and relevant meaning before changing evidenceStatus to verified."
+  ],
+  "excludedForms": [
+    "ಕೊರತೆ",
+    "ಮತ್ತು"
+  ],
+  "exclusions": [
+    {
+      "form": "ಕೊರತೆ",
+      "reason": "Do not treat this ordinary Kannada word as a Sanskrit-origin candidate."
+    },
+    {
+      "form": "ಮತ್ತು",
+      "reason": "Common Kannada conjunction; not a Sanskrit-origin candidate. Whole-word matching also prevents matching this sequence inside a longer word such as ಕಿಮ್ಮತ್ತು."
+    }
+  ],
   "entries": [
     {
-      "id": "vahana",
+      "id": "avadhi",
       "forms": [
-        "ವಾಹನ",
-        "ವಾಹನಗಳು",
-        "ವಾಹನದ",
-        "ವಾಹನವನ್ನು",
-        "ವಾಹನದಲ್ಲಿ",
-        "ವಾಹನಗಳ",
-        "ವಾಹನಕ್ಕೆ",
-        "ವಾಹನದಿಂದ",
-        "vahana"
-      ]
+        "ಅವಧಿ",
+        "ಅವಧಿಗೂ",
+        "ಅವಧಿಯ",
+        "ಅವಧಿಗೆ",
+        "ಅವಧಿಯನ್ನು",
+        "ಅವಧಿಯಿಂದ",
+        "ಅವಧಿಯಲ್ಲಿ"
+      ],
+      "englishGloss": "duration; period; time limit; deadline",
+      "originStatus": "candidate",
+      "evidenceStatus": "pending",
+      "submittedBy": "user-example",
+      "verificationMethod": "Kannada-to-English dictionary gloss → Alar lookup",
+      "evidence": [],
+      "note": "User-identified Sanskrit-origin candidate. Do not promote until the Kannada dictionary sense and corresponding Alar entry are recorded."
     },
     {
-      "id": "nayaka",
+      "id": "parinaama",
       "forms": [
-        "ನಾಯಕ",
-        "ನಾಯಕರು",
-        "ನಾಯಕನ",
-        "ನಾಯಕನನ್ನು",
-        "ನಾಯಕನಿಗೆ",
-        "ನಾಯಕತ್ವ",
-        "ನಾಯಕರ",
-        "nayaka"
-      ]
+        "ಪರಿಣಾಮ",
+        "ಪರಿಣಾಮದ",
+        "ಪರಿಣಾಮದಿಂದ",
+        "ಪರಿಣಾಮಕ್ಕೆ",
+        "ಪರಿಣಾಮವನ್ನು",
+        "ಪರಿಣಾಮದಲ್ಲಿ"
+      ],
+      "englishGloss": "result; effect; consequence",
+      "originStatus": "candidate",
+      "evidenceStatus": "pending",
+      "submittedBy": "user-example",
+      "verificationMethod": "Kannada-to-English dictionary gloss → Alar lookup",
+      "evidence": [],
+      "note": "User-identified Sanskrit-origin candidate. Do not promote until the Kannada dictionary sense and corresponding Alar entry are recorded."
     },
     {
-      "id": "alankarisalpatta",
+      "id": "nireeksha",
       "forms": [
-        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟ",
-        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟಿದೆ",
-        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟಿದ್ದ",
-        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟಿರುವ",
-        "ಅಲಂಕರಿಸಲ್ಪಟ್ಟಂತಹ"
-      ]
-    },
-    {
-      "id": "athithi",
-      "forms": [
-        "ಅತಿಥಿ",
-        "ಅತಿಥಿಗಳು",
-        "ಅತಿಥಿಯ",
-        "ಅತಿಥಿಯನ್ನು",
-        "ಅತಿಥಿಗಳಿಗೆ",
-        "ಅತಿಥಿಗಳ",
-        "athithi"
-      ]
+        "ನಿರೀಕ್ಷೆ",
+        "ನಿರೀಕ್ಷೆಯ",
+        "ನಿರೀಕ್ಷೆಯಿದೆ",
+        "ನಿರೀಕ್ಷೆಗೆ",
+        "ನಿರೀಕ್ಷೆಯನ್ನು",
+        "ನಿರೀಕ್ಷೆಯಿಂದ"
+      ],
+      "englishGloss": "expectation; anticipation; waiting",
+      "originStatus": "candidate",
+      "evidenceStatus": "pending",
+      "submittedBy": "user-example",
+      "verificationMethod": "Kannada-to-English dictionary gloss → Alar lookup",
+      "evidence": [],
+      "note": "User-identified Sanskrit-origin candidate. Do not promote until the Kannada dictionary sense and corresponding Alar entry are recorded."
     }
   ]
 }

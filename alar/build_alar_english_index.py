@@ -5,8 +5,8 @@ Run from the repository root:
   py alar/build_alar_english_index.py alar/alar.yml alar/alar-english-index.json
 
 All non-empty definitions with a Kannada headword are retained, including
-definitions without ASCII English letters. Such records remain in the
-intermediate JSON but naturally produce no English-token postings.
+definitions without searchable ASCII English tokens. Those records remain in
+the intermediate JSON but do not produce English-token postings.
 
 Only exact duplicate source records are removed. The identity key includes
 headword, source entry ID, definition ID, definition text, and part of speech.
@@ -21,6 +21,9 @@ from pathlib import Path
 
 ASCII_LETTER_RE = re.compile(r"[A-Za-z]")
 ENGLISH_TOKEN_RE = re.compile(r"[a-z0-9]+")
+STOP = {"a", "an", "the", "of", "or", "and", "being", "be", "is", "are",
+        "to", "for", "in", "on", "by", "as", "that", "which", "with",
+        "from", "into", "this", "it", "its"}
 
 
 def scalar_key(value):
@@ -39,6 +42,14 @@ def source_record(head, entry_id, definition_id, definition, kind):
         "entryId": "" if entry_id is None else entry_id,
         "definitionId": "" if definition_id is None else definition_id,
         "type": kind,
+    }
+
+
+def searchable_tokens(definition):
+    """Use the same token length and stop-word rules as the shard builder."""
+    return {
+        token for token in ENGLISH_TOKEN_RE.findall(definition.lower())
+        if len(token) >= 3 and token not in STOP
     }
 
 
@@ -77,12 +88,12 @@ def main():
     counts = Counter()
     unique_count = 0
     ascii_count = 0
-    token_count = 0
+    searchable_count = 0
     missing_head_definitions = 0
     empty_definitions = 0
     malformed_definitions = 0
 
-    # Stream the JSON array so the converted records need not all remain in RAM.
+    # Stream the JSON array so converted record objects need not all remain in RAM.
     with output_path.open("w", encoding="utf-8", newline="\n") as out:
         out.write("[\n")
         first = True
@@ -139,8 +150,8 @@ def main():
 
                 if ASCII_LETTER_RE.search(definition):
                     ascii_count += 1
-                if ENGLISH_TOKEN_RE.search(definition.lower()):
-                    token_count += 1
+                if searchable_tokens(definition):
+                    searchable_count += 1
 
         out.write("\n]\n")
 
@@ -152,9 +163,9 @@ def main():
         "source_definitions": counts["source_definitions"],
         "unique_complete_records": unique_count,
         "exact_duplicate_occurrences_removed": counts["exact_duplicate_occurrences"],
-        "definitions_with_ascii_letters": ascii_count,
-        "definitions_with_english_tokens": token_count,
-        "definitions_without_english_tokens": unique_count - token_count,
+        "records_with_ascii_letters": ascii_count,
+        "records_with_searchable_english_tokens": searchable_count,
+        "records_without_searchable_english_tokens": unique_count - searchable_count,
         "definitions_skipped_missing_head": missing_head_definitions,
         "empty_definitions_skipped": empty_definitions,
         "malformed_definitions_skipped": malformed_definitions,
@@ -166,8 +177,8 @@ def main():
         "intermediate_file": output_path.name,
         "note": (
             "All non-empty definitions with a headword are retained, including "
-            "definitions without English tokens. Only exact duplicate complete "
-            "source records are removed."
+            "definitions without searchable English tokens. Only exact duplicate "
+            "complete source records are removed."
         ),
     }
     sidecar_path.write_text(
@@ -183,10 +194,10 @@ def main():
         f"{counts['exact_duplicate_occurrences']:,}"
     )
     print(f"Records with ASCII English letters: {ascii_count:,}")
-    print(f"Records with English search tokens: {token_count:,}")
+    print(f"Records with searchable English tokens: {searchable_count:,}")
     print(
-        "Records retained but not English-token searchable: "
-        f"{unique_count - token_count:,}"
+        "Records retained but not searchable by English tokens: "
+        f"{unique_count - searchable_count:,}"
     )
     print(f"Skipped (missing headword): {missing_head_definitions:,}")
     print(f"Intermediate JSON: {output_path}")

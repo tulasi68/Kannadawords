@@ -131,9 +131,11 @@ def main():
                 kind = str(definition_row.get("type") or "").strip()
                 definition_id = definition_row.get("id", "")
 
+                # Alar may repeat the same headword/definition across
+                # separate source entry IDs. Treat those as duplicate
+                # dictionary records while preserving the first entry ID.
                 identity = (
                     head,
-                    scalar_key(entry_id),
                     scalar_key(definition_id),
                     definition,
                     kind,
@@ -176,7 +178,7 @@ def main():
         "malformed_entries_skipped": counts["malformed_entries"],
         "malformed_definition_lists_skipped": counts["malformed_definition_lists"],
         "deduplication_key": [
-            "word", "entryId", "definitionId", "definition", "type"
+            "word", "definitionId", "definition", "type"
         ],
         "intermediate_file": output_path.name,
         "note": (

@@ -146,6 +146,7 @@
     "in","on","by","as","that","which","with","from","into","this","it","its"
   ]);
   const indexShardCache = new Map();
+  const recordChunkCache = new Map();
 
   function normalizeEnglish(text) {
     return String(text || "").toLowerCase().normalize("NFKD")
@@ -164,6 +165,15 @@
     }
     return indexShardCache.get(prefix);
   }
+  async function loadRecordChunk(number) {
+    if (!recordChunkCache.has(number)) {
+      const name = String(number).padStart(3, "0");
+      recordChunkCache.set(number, fetchJson("./alar/search-records/" + name + ".json")
+        .catch(error => { recordChunkCache.delete(number); throw error; }));
+    }
+    return recordChunkCache.get(number);
+  }
+
   async function findAlarMatches(englishMeaning, originalWord) {
     const normalized = normalizeEnglish(englishMeaning);
     const terms = [...new Set(normalized.split(" ")
@@ -177,23 +187,57 @@
       for (const [token, data] of Object.entries(shard)) tokenData.set(token, data);
     }
 
-    const available = terms
-      .map(term => ({ term, data: tokenData.get(term) }))
-      .filter(item => item.data && Array.isArray(item.data.ids) && item.data.ids.length);
+    // Support both published index formats:
+    // 1. Older shards: token -> [record IDs], with records in 5,000-row chunks.
+    // 2. Newer shards: token -> { ids, records }, with rare records embedded.
+    const available = terms.map(term => {
+      const data = tokenData.get(term);
+      const ids = Array.isArray(data) ? data :
+        (data && Array.isArray(data.ids) ? data.ids : []);
+      return { term, data, ids };
+    }).filter(item => item.ids.length);
+
     if (!available.length) return [];
 
-    // Start with the rarest query token. The generator embeds complete records
-    // for tokens up to RARE_TOKEN_LIMIT, giving a bounded, relevant candidate set.
-    available.sort((a, b) => a.data.ids.length - b.data.ids.length);
-    const anchor = available[0];
-    if (anchor.data.ids.length > RARE_TOKEN_LIMIT || !Array.isArray(anchor.data.records)) {
-      throw new Error("This English term is too broad for a precise search. Add another descriptive word (for example, 'dividing' or 'splitting').");
+    // Search across several selective tokens, not only the rarest one.
+    // Anchoring on just one token (e.g. "skills") can hide relevant entries
+    // whose definitions contain another part of the meaning (e.g. "study").
+    available.sort((a, b) => a.ids.length - b.ids.length);
+    const selected = available.filter(item => item.ids.length <= RARE_TOKEN_LIMIT).slice(0, 4);
+    if (!selected.length) {
+      throw new Error("This meaning is too broad for a precise search. Add a more specific word, such as 'learning', 'study', or 'teaching'.");
     }
 
     const excluded = String(originalWord || "").normalize("NFC").trim();
+    const candidateIds = new Set();
+    const recordsById = new Map();
+
+    for (const item of selected) {
+      if (item.data && !Array.isArray(item.data) && Array.isArray(item.data.records)) {
+        for (const record of item.data.records) {
+          if (record && record.id !== undefined) recordsById.set(String(record.id), record);
+        }
+      } else {
+        for (const id of item.ids) candidateIds.add(String(id));
+      }
+    }
+
+    // Older published shards store IDs only. Retrieve only the record chunks
+    // that contain IDs selected by the rare-token postings.
+    const chunkNumbers = [...new Set([...candidateIds].map(id =>
+      Math.floor(Number(id) / 5000)))];
+    const chunks = await Promise.all(chunkNumbers.map(loadRecordChunk));
+    for (const chunk of chunks) {
+      for (const record of chunk) {
+        if (record && record.id !== undefined && candidateIds.has(String(record.id))) {
+          recordsById.set(String(record.id), record);
+        }
+      }
+    }
+
     const phrase = normalized;
     const results = [];
-    for (const record of anchor.data.records) {
+    for (const record of recordsById.values()) {
       const word = String(record.word || "").normalize("NFC").trim();
       const definition = String(record.definition || "").trim();
       if (!word || word === excluded || !definition) continue;

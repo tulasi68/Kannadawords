@@ -150,8 +150,8 @@
 
   function normalizeEnglish(text) {
     return String(text || "").toLowerCase().normalize("NFKD")
-      .replace(/[\\u0300-\\u036f]/g, "").replace(/[^a-z0-9]+/g, " ")
-      .trim().replace(/\\s+/g, " ");
+      .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ")
+      .trim().replace(/\s+/g, " ");
   }
   async function fetchJson(url) {
     const response = await fetch(url, { cache: "force-cache" });
@@ -246,7 +246,7 @@
     heading.className = "text-sm font-semibold text-stone-800";
     heading.textContent = matches.length
       ? matches.length + " Alar headwords matched this English meaning (up to 80 shown). Dictionary matching does not establish origin."
-      : "No Alar headwords matched all searchable English terms. Try a shorter or more precise meaning.";
+      : "No Alar headwords matched the searchable English terms. Try a shorter or more precise meaning.";
     host.append(heading);
     matches.forEach(item => {
       const card = document.createElement("article");

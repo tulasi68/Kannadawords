@@ -140,7 +140,7 @@
   // Load the locally generated Alar reverse index. The 40 MB YAML file is never
   // downloaded or parsed in the browser.
   let alarRecordsPromise = null;
-  const ALAR_INDEX_URL = "./alar/alar-english-index.json";
+  const ALAR_INDEX_URL = "./alar/alar-english-index.json.gz";
   const ENGLISH_STOP_WORDS = new Set([
     "a","an","the","of","or","and","being","be","is","are","to","for",
     "in","on","by","as","that","which","with","from","into","this","it","its"
@@ -157,9 +157,19 @@
       const response = await fetch(ALAR_INDEX_URL, { cache: "force-cache" });
       if (!response.ok) {
         throw new Error("The Alar index was not found at " + ALAR_INDEX_URL +
-          ". Add the generated JSON file to the repository's alar/ folder.");
+          ". Add alar-english-index.json.gz to the repository's alar/ folder.");
       }
-      const records = await response.json();
+      if (typeof DecompressionStream !== "function") {
+        throw new Error("This browser cannot decompress the Alar index. Please use a recent version of Chrome, Edge, or Firefox.");
+      }
+      let records;
+      try {
+        const decompressed = response.body.pipeThrough(new DecompressionStream("gzip"));
+        const jsonText = await new Response(decompressed).text();
+        records = JSON.parse(jsonText);
+      } catch (error) {
+        throw new Error("Could not decompress or parse the Alar .json.gz file: " + (error.message || error));
+      }
       if (!Array.isArray(records) || !records.length ||
           typeof records[0]?.word !== "string" ||
           typeof records[0]?.definition !== "string") {

@@ -7,7 +7,8 @@ const workbench=fs.readFileSync(new URL("../meaning-workbench.js",import.meta.ur
 const app=fs.readFileSync(new URL("../app.js",import.meta.url),"utf8");
 
 test("Tab 4 provides a meaning-first discovery workflow instead of AI-generated replacements",()=>{
-  assert.match(html,/English meaning workbench/);
+  assert.match(html,/Investigate this word/);
+  assert.match(html,/meaning-workbench-investigate/);
   assert.match(html,/mw-source-word/);
   assert.match(html,/mw-english-meaning/);
   assert.match(html,/mw-candidate/);
@@ -15,6 +16,9 @@ test("Tab 4 provides a meaning-first discovery workflow instead of AI-generated 
   assert.doesNotMatch(html,/>AI search<\/button>/);
   assert.match(workbench,/https:\/\/rala\.kutuhula\.in\/index\.html\?q=/);
   assert.match(workbench,/Alar/);
+  assert.match(workbench,/investigateSelectedWord/);
+  assert.match(workbench,/dictionary\\/kannada\\/english\\?q=/);
+  assert.match(workbench,/selectionchange/);
   assert.match(workbench,/Padakanaja/);
   assert.match(workbench,/localStorage/);
   assert.match(workbench,/exportMeaningRecords/);

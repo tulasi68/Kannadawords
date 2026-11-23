@@ -19,7 +19,7 @@ test("Tab 4 provides a meaning-first discovery workflow instead of AI-generated 
   assert.match(workbench,/investigateSelectedWord/);
   assert.ok(workbench.includes("https://alar.ink/dictionary/kannada/english?q="));
   assert.match(workbench,/selectionchange/);
-  assert.match(workbench,/Padakanaja/);
+  assert.match(html,/Padakanaja/);
   assert.match(workbench,/localStorage/);
   assert.match(workbench,/exportMeaningRecords/);
 });

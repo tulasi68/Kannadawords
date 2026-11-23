@@ -137,65 +137,88 @@
     panel.classList.toggle("hidden",!show);
     if(show){panel.scrollIntoView({behavior:"smooth",block:"nearest"});byId("mw-source-word")?.focus();updateAlarLink(byId("mw-source-word").value.trim());}
   };
-  // Lazy-load Alar's published Kannada -> English corpus only when reverse discovery is requested.
-  // Search is restricted to Alar definitions: no Padakanaja, synonym API, or AI suggestions.
-  let alarEntriesPromise = null;
-  const ALAR_DATA_URL = "https://raw.githubusercontent.com/alar-dict/data/master/alar.yml";
-  const ENGLISH_STOP_WORDS = new Set(["a","an","the","of","or","and","being","be","is","are","to","for","in","on","by","as","that","which","with","from","into","this","it","its"]);
+  // Load the locally generated Alar reverse index. The 40 MB YAML file is never
+  // downloaded or parsed in the browser.
+  let alarRecordsPromise = null;
+  const ALAR_INDEX_URL = "./alar/alar-english-index.json";
+  const ENGLISH_STOP_WORDS = new Set([
+    "a","an","the","of","or","and","being","be","is","are","to","for",
+    "in","on","by","as","that","which","with","from","into","this","it","its"
+  ]);
   function normalizeEnglish(text) {
     return String(text || "").toLowerCase().normalize("NFKD")
-      .replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, " ")
-      .trim().replace(/\s+/g, " ");
+      .replace(/[\\u0300-\\u036f]/g, "").replace(/[^a-z0-9]+/g, " ")
+      .trim().replace(/\\s+/g, " ");
   }
-  async function loadAlarEntries() {
-    if (alarEntriesPromise) return alarEntriesPromise;
-    alarEntriesPromise = (async () => {
-      if (!window.jsyaml || typeof window.jsyaml.load !== "function") {
-        throw new Error("The YAML reader did not load. Refresh the page and try again.");
+  async function loadAlarRecords() {
+    if (alarRecordsPromise) return alarRecordsPromise;
+    alarRecordsPromise = (async () => {
+      status("Loading the local Alar English–Kannada index…");
+      const response = await fetch(ALAR_INDEX_URL, { cache: "force-cache" });
+      if (!response.ok) {
+        throw new Error("The Alar index was not found at " + ALAR_INDEX_URL +
+          ". Add the generated JSON file to the repository's alar/ folder.");
       }
-      status("Downloading Alar's Kannada–English dictionary. The first search may take a little time…");
-      const response = await fetch(ALAR_DATA_URL, { cache: "force-cache" });
-      if (!response.ok) throw new Error("Alar data could not be downloaded (HTTP " + response.status + ").");
-      const yamlText = await response.text();
-      status("Reading Alar dictionary entries…");
-      const entries = window.jsyaml.load(yamlText);
-      if (!Array.isArray(entries) || !entries.length) throw new Error("Alar data was empty or could not be read.");
-      return entries;
-    })().catch(error => { alarEntriesPromise = null; throw error; });
-    return alarEntriesPromise;
+      const records = await response.json();
+      if (!Array.isArray(records) || !records.length ||
+          typeof records[0]?.word !== "string" ||
+          typeof records[0]?.definition !== "string") {
+        throw new Error("The Alar JSON index has an unexpected format. Expected records with word and definition fields.");
+      }
+      status("Loaded " + records.length.toLocaleString() +
+        " Alar definition records. Searching locally…");
+      return records;
+    })().catch(error => { alarRecordsPromise = null; throw error; });
+    return alarRecordsPromise;
   }
-  function findAlarMatches(entries, englishMeaning, originalWord) {
+  function findAlarMatches(records, englishMeaning, originalWord) {
     const normalizedQuery = normalizeEnglish(englishMeaning);
-    const terms = [...new Set(normalizedQuery.split(" ").filter(term => term.length >= 3 && !ENGLISH_STOP_WORDS.has(term)))];
+    const terms = [...new Set(normalizedQuery.split(" ")
+      .filter(term => term.length >= 3 && !ENGLISH_STOP_WORDS.has(term)))];
     if (!terms.length) return [];
-    const phrases = String(englishMeaning).split(/[;,.]/).map(normalizeEnglish).filter(phrase => phrase.length >= 3);
+    const phrases = String(englishMeaning).split(/[;,.]/)
+      .map(normalizeEnglish).filter(phrase => phrase.length >= 3);
     const excluded = String(originalWord || "").normalize("NFC").trim();
-    const results = [];
-    for (const entry of entries) {
-      const headword = String(entry?.entry || "").normalize("NFC").trim();
-      if (!headword || headword === excluded || !Array.isArray(entry.defs)) continue;
-      for (const definition of entry.defs) {
-        const rawDefinition = String(definition?.entry || "").trim();
-        if (!rawDefinition) continue;
-        const normalizedDefinition = normalizeEnglish(rawDefinition);
-        const phraseHits = phrases.filter(phrase => normalizedDefinition.includes(phrase));
-        const definitionWords = new Set(normalizedDefinition.split(" "));
-        const matchedTerms = terms.filter(term => definitionWords.has(term));
-        if (!phraseHits.length && !matchedTerms.length) continue;
-        const coverage = matchedTerms.length / terms.length;
-        const score = (phraseHits.length ? 100 : 0) + Math.round(coverage * 20) + matchedTerms.length;
-        results.push({ word: headword, definition: rawDefinition, entryId: entry.id ?? "",
-          definitionId: definition.id ?? "", type: definition.type || "", score, matchedTerms, phraseHits });
-      }
+    const bestByWord = new Map();
+
+    for (const record of records) {
+      const headword = String(record?.word || "").normalize("NFC").trim();
+      const rawDefinition = String(record?.definition || "").trim();
+      if (!headword || headword === excluded || !rawDefinition) continue;
+
+      const normalizedDefinition = normalizeEnglish(rawDefinition);
+      const definitionWords = new Set(normalizedDefinition.split(" "));
+      const phraseHits = phrases.filter(phrase =>
+        normalizedDefinition.includes(phrase));
+      const matchedTerms = terms.filter(term => definitionWords.has(term));
+      const coverage = matchedTerms.length / terms.length;
+
+      // Exact phrase evidence ranks highest. Partial token overlap is retained
+      // for discovery, but a single incidental word is not enough for long queries.
+      const minimumHits = terms.length <= 2 ? 1 : Math.max(2, Math.ceil(terms.length * 0.4));
+      if (!phraseHits.length && matchedTerms.length < minimumHits) continue;
+
+      const score = phraseHits.length * 100 +
+        Math.round(coverage * 30) + matchedTerms.length;
+      const item = {
+        word: headword,
+        definition: rawDefinition,
+        entryId: record.entryId ?? "",
+        definitionId: record.definitionId ?? "",
+        type: record.type || "",
+        score,
+        matchedTerms,
+        phraseHits
+      };
+      const previous = bestByWord.get(headword);
+      if (!previous || item.score > previous.score) bestByWord.set(headword, item);
     }
-    results.sort((a,b) => b.score-a.score || a.word.localeCompare(b.word, "kn") ||
-      String(a.definitionId).localeCompare(String(b.definitionId)));
-    const seen = new Set();
-    return results.filter(item => {
-      if (seen.has(item.word)) return false;
-      seen.add(item.word);
-      return true;
-    }).slice(0, 80);
+
+    return [...bestByWord.values()]
+      .sort((a,b) => b.score-a.score ||
+        a.word.localeCompare(b.word, "kn") ||
+        String(a.definitionId).localeCompare(String(b.definitionId)))
+      .slice(0, 80);
   }
   function renderAlarMatches(matches) {
     const host = byId("mw-search-results");
@@ -215,9 +238,13 @@
       const word = document.createElement("strong");
       word.className = "kn text-lg text-stone-900";
       word.textContent = item.word;
+      const refs = [];
+      if (item.entryId !== "") refs.push("entry " + item.entryId);
+      if (item.definitionId !== "") refs.push("definition " + item.definitionId);
+      if (item.type) refs.push(item.type);
       const meta = document.createElement("span");
       meta.className = "text-xs text-stone-500";
-      meta.textContent = "Alar entry " + item.entryId + (item.type ? " · " + item.type : "");
+      meta.textContent = "Alar " + refs.join(" · ");
       top.append(word, meta);
       const definition = document.createElement("p");
       definition.className = "mt-1 text-sm text-stone-700";
@@ -225,7 +252,7 @@
       const evidence = document.createElement("p");
       evidence.className = "mt-1 text-xs text-stone-500";
       evidence.textContent = item.phraseHits.length
-        ? "Definition contains: " + item.phraseHits.join("; ")
+        ? "Matching phrase: " + item.phraseHits.join("; ")
         : "Matching English terms: " + item.matchedTerms.join(", ");
       const actions = document.createElement("div");
       actions.className = "mt-2 flex flex-wrap gap-3";
@@ -243,7 +270,9 @@
         byId("mw-candidate").value = item.word;
         byId("mw-candidate-source").value = "Alar";
         byId("mw-origin-status").value = "not-verified";
-        byId("mw-candidate-note").value = "Alar entry " + item.entryId + ": " + item.definition;
+        byId("mw-candidate-note").value = "Alar entry " + item.entryId +
+          (item.definitionId ? ", definition " + item.definitionId : "") +
+          ": " + item.definition;
         window.addMeaningCandidate();
       });
       actions.append(alarLink, add);
@@ -257,11 +286,11 @@
     const button = byId("mw-search-alar");
     if (button) { button.disabled = true; button.textContent = "Searching Alar…"; }
     try {
-      const entries = await loadAlarEntries();
-      status("Searching Alar definitions for the English meaning…");
+      const entries = await loadAlarRecords();
+      status("Searching the local Alar index for the English meaning…");
       const matches = findAlarMatches(entries, meaning, byId("mw-source-word").value);
       renderAlarMatches(matches);
-      status("Alar-only search complete. Review the definitions; dictionary matches do not prove native origin.");
+      status("Local Alar search complete. Review the definitions; dictionary matches do not prove native origin.");
     } catch (error) {
       status(error.message || "Alar search failed. Please retry.");
       const host = byId("mw-search-results");

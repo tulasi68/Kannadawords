@@ -12,6 +12,7 @@ import sys
 import json
 import re
 import hashlib
+import unicodedata
 from pathlib import Path
 from collections import defaultdict
 from datetime import datetime, timezone
@@ -20,13 +21,16 @@ STOP = {"a", "an", "the", "of", "or", "and", "being", "be", "is", "are",
         "to", "for", "in", "on", "by", "as", "that", "which", "with",
         "from", "into", "this", "it", "its"}
 TOKEN_RE = re.compile(r"[a-z0-9]+")
+COMBINING_MARKS_RE = re.compile(r"[\\u0300-\\u036f]")
 RARE_TOKEN_LIMIT = 500
 
 
 def searchable_tokens(definition):
-    """Match the browser's minimum three-character English query terms."""
+    """Mirror the browser's NFKD/diacritic normalization and query rules."""
+    normalized = unicodedata.normalize("NFKD", definition.lower())
+    normalized = COMBINING_MARKS_RE.sub("", normalized)
     return {
-        token for token in TOKEN_RE.findall(definition.lower())
+        token for token in TOKEN_RE.findall(normalized)
         if len(token) >= 3 and token not in STOP
     }
 

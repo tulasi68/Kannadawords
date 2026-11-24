@@ -11,10 +11,10 @@
 })(typeof globalThis !== "undefined" ? globalThis : this, function () {
   "use strict";
 
-  const SOURCE_KEYS = ["sourceForm", "sourceWord", "source", "inputWord", "sanskritWord", "skt", "word"];
-  const CANDIDATE_KEYS = ["candidateForms", "candidates", "nativeWords", "nativeWord", "replacement", "alternative", "target", "nat"];
+  const SOURCE_KEYS = ["sourceForm", "sourceWord", "source", "inputWord", "sanskritWord", "sanskrit", "skt", "word"];
+  const CANDIDATE_KEYS = ["candidateForms", "candidates", "nativeWords", "nativeWord", "native", "replacement", "alternative", "target", "nat"];
   const HEADER_SOURCE = new Set(["sourceform", "sourceword", "source", "inputword", "sanskritword", "skt", "word", "ಮೂಲಪದ"]);
-  const HEADER_CANDIDATE = new Set(["candidateforms", "candidates", "nativewords", "nativeword", "replacement", "alternative", "target", "nat", "ಪರ್ಯಾಯ", "ಪರ್ಯಾಯಪದ"]);
+  const HEADER_CANDIDATE = new Set(["candidateforms", "candidates", "nativewords", "nativeword", "native", "replacement", "alternative", "target", "nat", "ಪರ್ಯಾಯ", "ಪರ್ಯಾಯಪದ"]);
 
   const normalize = value => String(value ?? "").normalize("NFC").trim();
   const isControlText = value => /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F]/u.test(value);

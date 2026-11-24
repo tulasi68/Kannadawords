@@ -146,3 +146,30 @@ The website, Tab 4 and browser extensions should call this shared contract. They
 - Do not use raw suffix replacement as a substitute for morphology.
 - Do not make automatic edits in the browser.
 - Do not change the existing vocabulary's editorial classifications.
+
+
+## Vocabulary file ingestion (review queue only)
+
+The legacy bulk-upload idea is retained as an ingestion utility, not as a second dictionary and not as a Chrome-storage replacement operation.
+
+```text
+JSON / CSV / TSV / TXT
+  -> format-aware parser (quoted CSV fields supported)
+  -> field validation and Unicode NFC normalization
+  -> duplicate-source consolidation (all distinct candidates retained)
+  -> proposed vocabulary review queue
+  -> human editorial review
+  -> explicit migration into the canonical vocabulary pipeline, when approved
+```
+
+The current parser is `language-engine/vocabulary-import.js`. Its contract is deliberately non-destructive:
+
+- Accepts legacy JSON maps, JSON arrays/pair arrays, header-based CSV/TSV, and headerless two-column CSV/TSV/TXT.
+- Preserves a source row reference and source filename for traceability.
+- Consolidates repeated source forms while retaining distinct candidate alternatives.
+- Reports malformed rows separately instead of silently dropping them.
+- Supports quoted CSV fields and escaped quote characters.
+- Marks every imported source and candidate as `proposed`; it does not assert etymology or native status.
+- Returns a review package only. It does not write to `chrome.storage`, overwrite an existing dictionary, modify canonical lexicon files, or auto-approve any record.
+
+This staging package is intentionally not a canonical lexicon-v2 entry. A later, separately reviewed workflow must map accepted proposals into the canonical schema, assign stable IDs, add meaning/sense and evidence, and retain provenance. Importing a file must never directly alter the authoritative vocabulary or runtime lexicon build.

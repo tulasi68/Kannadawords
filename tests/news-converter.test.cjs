@@ -31,6 +31,6 @@ test("replaces phrases before individual words", () => {
 });
 
 test("preserves unknown words and surrounding punctuation", () => {
-  assert.equal(context.convertText("ಸರ್ಕಾರಕ್ಕೆ ಹೊಸ ಮಾಹಿತಿ!"), "ಆಳ್ವಿಕೆಗೆ ಹೊಸತು ತಿಳಿವು!");
+  assert.equal(context.convertText("ಸರ್ಕಾರಕ್ಕೆ ಹೊಸ ಮಾಹಿತಿ!"), "ಆಳ್ವಿಕೆಗೆ ಹೊಸ ತಿಳಿವು!");
   assert.equal(context.convertText("ಬೆಂಗಳೂರು ಉತ್ತಮ ನಗರ."), "ಬೆಂಗಳೂರು ಉತ್ತಮ ನಗರ.");
 });

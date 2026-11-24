@@ -30,7 +30,6 @@
     { form: "ಅನ್ನು", features: ["case:accusative"], label: "accusative" },
     { form: "ನ", features: ["case:genitive"], label: "genitive (ambiguous)" },
     { form: "ದ", features: ["case:genitive"], label: "genitive (ambiguous)" },
-    { form: "ಗಳು", features: ["number:plural"], label: "plural" },
     { form: "ಗಳು", features: ["number:plural"], label: "plural" }
   ]);
 

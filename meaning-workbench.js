@@ -84,8 +84,89 @@
     return text.slice(start, end).trim();
   }
   function updateAlarLink(word) {
+    const selected = word || byId("mw-source-word").value.trim();
     const link = byId("mw-alar-link");
-    if (link) link.href = "https://alar.ink/dictionary/kannada/english?q=" + encodeURIComponent(word || byId("mw-source-word").value.trim());
+    if (link) link.href = "https://alar.ink/dictionary/kannada/english/" + encodeURIComponent(selected);
+  }
+  let alarLookupSequence = 0;
+  async function lookupAlarWord(word) {
+    const selected = String(word || "").normalize("NFC").trim();
+    const host = byId("mw-dictionary-results");
+    if (!host || !selected) return;
+    const sequence = ++alarLookupSequence;
+    host.replaceChildren();
+    const loading = document.createElement("p");
+    loading.className = "text-sm text-sky-800";
+    loading.textContent = "Looking up “" + selected + "” in Alar…";
+    host.append(loading);
+    try {
+      const response = await fetch("/api/alar-lookup?word=" + encodeURIComponent(selected), {
+        headers: { "Accept": "application/json" },
+        cache: "default"
+      });
+      const payload = await response.json();
+      if (sequence !== alarLookupSequence) return;
+      if (!response.ok) throw new Error(payload.error || "Alar lookup failed.");
+      host.replaceChildren();
+      const entries = Array.isArray(payload.entries) ? payload.entries : [];
+      if (!entries.length) {
+        const empty = document.createElement("p");
+        empty.className = "text-sm text-stone-600";
+        empty.textContent = "No Alar dictionary entry was found for this exact word. You can still open Alar to check spelling or related forms.";
+        host.append(empty);
+        return;
+      }
+      let firstDefinition = "";
+      entries.forEach(entry => {
+        const card = document.createElement("article");
+        card.className = "rounded-md border border-stone-200 bg-stone-50 p-3";
+        const title = document.createElement("div");
+        title.className = "kn font-semibold text-stone-900";
+        title.textContent = entry.word || selected;
+        card.append(title);
+        if (entry.pronunciation) {
+          const pronunciation = document.createElement("p");
+          pronunciation.className = "mt-0.5 text-xs text-stone-500";
+          pronunciation.textContent = entry.pronunciation;
+          card.append(pronunciation);
+        }
+        (Array.isArray(entry.definitions) ? entry.definitions : []).forEach((definition, index) => {
+          const row = document.createElement("div");
+          row.className = "mt-2 border-t border-stone-200 pt-2";
+          const gloss = document.createElement("p");
+          gloss.className = "text-sm leading-6 text-stone-800";
+          gloss.textContent = (definition.type ? "(" + definition.type + ") " : "") + definition.text;
+          row.append(gloss);
+          const use = document.createElement("button");
+          use.type = "button";
+          use.className = "mt-1 text-xs font-semibold text-sky-800 underline";
+          use.textContent = "Use this definition";
+          use.addEventListener("click", () => {
+            byId("mw-english-meaning").value = definition.text;
+            byId("mw-english-meaning").dataset.alarAutoMeaning = definition.text;
+            status("Selected Alar definition for “" + selected + "”. You can now search for Kannada equivalents.");
+          });
+          row.append(use);
+          card.append(row);
+          if (!firstDefinition) firstDefinition = definition.text;
+        });
+        host.append(card);
+      });
+      const meaningField = byId("mw-english-meaning");
+      const previousAuto = meaningField.dataset.alarAutoMeaning || "";
+      if (firstDefinition && (!meaningField.value.trim() || meaningField.value.trim() === previousAuto)) {
+        meaningField.value = firstDefinition;
+        meaningField.dataset.alarAutoMeaning = firstDefinition;
+      }
+      status("Alar dictionary meaning loaded. Choose the definition that best fits the sentence before searching for equivalents.");
+    } catch (error) {
+      if (sequence !== alarLookupSequence) return;
+      host.replaceChildren();
+      const message = document.createElement("p");
+      message.className = "text-sm text-red-700";
+      message.textContent = error.message || "Could not retrieve the Alar dictionary entry. Please try the Alar link.";
+      host.append(message);
+    }
   }
   window.investigateSelectedWord = function() {
     const word = selectedWord.trim();
@@ -103,6 +184,7 @@
     }
     updateAlarLink(word);
     window.toggleMeaningWorkbench(true);
+    lookupAlarWord(word);
   };
   document.addEventListener("selectionchange", () => {
     const editor = byId("achcha-input");
@@ -300,7 +382,7 @@
       actions.className = "mt-2 flex flex-wrap gap-3";
       const alarLink = document.createElement("a");
       alarLink.className = "text-xs font-semibold text-sky-800 underline";
-      alarLink.href = "https://alar.ink/dictionary/kannada/english?q=" + encodeURIComponent(item.word);
+      alarLink.href = "https://alar.ink/dictionary/kannada/english/" + encodeURIComponent(item.word);
       alarLink.target = "_blank";
       alarLink.rel = "noopener noreferrer";
       alarLink.textContent = "Open headword in Alar";
@@ -370,6 +452,7 @@
     status("JSON export prepared.");
   };
   byId("mw-source-word")?.addEventListener("input", () => updateAlarLink(byId("mw-source-word").value.trim()));
+  byId("mw-source-word")?.addEventListener("change", () => lookupAlarWord(byId("mw-source-word").value.trim()));
   read();
   const initial=records.findIndex(item=>item.sourceWord==="ವಿಭಜನೆ");
   if(initial>=0) loadRecord(initial);

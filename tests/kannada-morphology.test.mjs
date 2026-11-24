@@ -24,10 +24,16 @@ test("unknown stem is not accepted just because a suffix matches", () => {
   assert.deepEqual(result.analyses, []);
 });
 
-test("ambiguous suffix hypotheses are surfaced instead of silently choosing one", () => {
+test("plural suffix analysis is identified when the stem is known", () => {
   const result = morphology.analyzeInflection("ಮನೆಗಳು", ["ಮನೆ"]);
   assert.equal(result.status, "analyzed");
   assert.ok(result.analyses.some(item => item.features.includes("number:plural")));
+});
+
+test("competing known segmentations are surfaced as ambiguous", () => {
+  const result = morphology.analyzeInflection("ಮನೆಗಳಿಗೆ", ["ಮನೆ", "ಮನೆಗಳ"]);
+  assert.equal(result.status, "ambiguous");
+  assert.equal(result.analyses.length, 2);
 });
 
 test("non-Kannada and multiword inputs are not analysed as single words", () => {

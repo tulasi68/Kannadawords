@@ -22,11 +22,6 @@ on:
       - "landing-words.json"
       - "root-families.json"
       - "textbook-words.json"
-      - "master-lexicon.json"
-      - "master-vocabulary.json"
-      - "landing-words.json"
-      - "root-families.json"
-      - "textbook-words.json"
       - ".github/workflows/lexicon.yml"
   pull_request:
     paths:
@@ -43,6 +38,11 @@ on:
       - "README.md"
       - "docs/**"
       - "migration/**"
+      - "master-lexicon.json"
+      - "master-vocabulary.json"
+      - "landing-words.json"
+      - "root-families.json"
+      - "textbook-words.json"
       - ".github/workflows/lexicon.yml"
 
 permissions:

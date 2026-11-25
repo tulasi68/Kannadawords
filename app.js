@@ -1084,7 +1084,7 @@ function parseMasterJsonArray(value, label) {
     // malformed JSON-array cell. Preserve slash-delimited text; quarantine
     // malformed bracketed arrays instead of guessing their intended values.
     if (raw.startsWith("[")) return [];
-    return raw.split(/\\s*\\/\\s*/u).map(item => item.trim()).filter(Boolean);
+    return raw.split(/\s*\/\s*/u).map(item => item.trim()).filter(Boolean);
   }
   if (!Array.isArray(parsed)) throw new Error("Expected JSON array in master vocabulary CSV: " + label);
   return parsed.map(item => String(item || "").trim()).filter(Boolean);

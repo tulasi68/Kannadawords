@@ -152,7 +152,14 @@
     const bySource = new Map();
     for (const fields of rows) {
       const id = String(fields[0] || "").trim();
-      const sourceForms = String(fields[1] || "").split(/\s*\/\s*/u).map(value => value.trim().normalize("NFC")).filter(Boolean);
+      const sourceForms = String(fields[1] || "").split(/\s*\/\s*/u).flatMap(value => {
+        const source = value.trim().normalize("NFC");
+        if (!source) return [];
+        const parenthetical = source.match(/^(.+?)\s*\(([^()]*)\)\s*$/u);
+        return parenthetical
+          ? [source, parenthetical[1].trim().normalize("NFC"), parenthetical[2].trim().normalize("NFC")]
+          : [source];
+      }).filter(Boolean);
       let primary, alternatives;
       const parseOptions = raw => {
         const value = String(raw || "").trim();

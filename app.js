@@ -413,7 +413,7 @@ function renderContextual() {
   const visibleExamples = allExamples.filter(item => {
     const domain = item.sourceDomain || (item.id === "gruha-mandali" ? "Legislative Council" : item.submitted ? "Community submissions" : "Earlier examples");
     if (activeContextualDomain !== "all" && domain !== activeContextualDomain) return false;
-    const sentenceKey = [item.original, item.proposed].map(value => String(value || "").replace(/\\s+/g, " ").trim()).join("|||");
+    const sentenceKey = [item.original, item.proposed].map(value => String(value || "").replace(/\s+/g, " ").trim()).join("|||");
     if (seenSentences.has(sentenceKey)) return false;
     seenSentences.add(sentenceKey);
     return true;
@@ -990,120 +990,106 @@ function populateCategoryOptions() {
 }
 async function loadUnifiedRows() {
   if (unifiedRows) return unifiedRows;
-  await window.KannadaLexiconStore.ready();
-  const [canonicalEntries, masterResponse, landingResponse, textbookResponse] = await Promise.all([
-    window.KannadaLexiconStore.loadAllEntries(),
-    fetch("./master-lexicon.json",{cache:"no-cache"}),
-    fetch("./landing-words.json",{cache:"no-cache"}),
-    fetch("./textbook-words.json",{cache:"no-cache"})
-  ]);
-  if (!masterResponse.ok) throw new Error("The master word list could not be loaded ("+masterResponse.status+").");
-  if (!landingResponse.ok) throw new Error("The civic, media and education words could not be loaded ("+landingResponse.status+").");
-  if (!textbookResponse.ok) throw new Error("The textbook vocabulary could not be loaded ("+textbookResponse.status+").");
-  const masterData = await masterResponse.json();
-  const landingData = await landingResponse.json();
-  const textbookData = await textbookResponse.json();
-  if (masterData.schemaVersion !== 1 || masterData.sourceFile !== "2087words.xlsx" ||
-      !Array.isArray(masterData.entries) || masterData.entries.length !== masterData.entryCount ||
-      masterData.entries.some(row => !row.id || !Array.isArray(row.fields) || row.fields.length !== 8)) {
-    throw new Error("The master word list failed its integrity check.");
-  }
-  if (!Array.isArray(landingData) || landingData.length !== 173 ||
-      landingData.some(row => !Array.isArray(row) || row.length !== 6)) {
-    throw new Error("The civic, media and education list failed its integrity check.");
-  }
-  if (textbookData.schemaVersion !== 1 || textbookData.sourceFile !== "newwords.txt" ||
-      !Array.isArray(textbookData.entries) || textbookData.entries.length !== textbookData.entryCount ||
-      textbookData.entries.some(row => !row.id || !row.inputWord || !row.primary || !Number.isInteger(row.sourceLine))) {
-    throw new Error("The Kannada textbook word list failed its integrity check.");
-  }
-  const masterEntries = masterData.entries.map(row => {
-    const fields = row.fields;
-    const alternatives = String(fields[2] || "").split(/\s*\/\s*/).filter(Boolean);
-    const notes = [fields[7],fields[6] ? "Dravidian root: "+fields[6] : ""].filter(Boolean).join(" · ");
-    return {
-      id:"master-"+row.id, sanskrit:fields[1], meaning:fields[3], category:fields[4] || "Uncategorized",
-      naturalness:fields[5], alternatives:alternatives.map((word,index) => ({
-        id:"master-"+row.id+"-alt-"+(index+1),word,unreviewed:true,viability:"proposed",
-        note:notes || "From the master spreadsheet; editorial review may refine this wording.",
-        etymologyParts:[{form:word,etymology:"unknown"}]
-      })),
-      editorialNote:[fields[5] ? "Naturalness fit: "+fields[5] : "",notes].filter(Boolean).join(" · "),
-      sourceLine:row.sourceLine
-    };
-  });
-  const landingEntries = landingData.map(row => ({
-    id:"additional-"+row[0], sanskrit:row[1], meaning:row[3], category:row[4] || "Uncategorized", naturalness:row[5],
-    alternatives:String(row[2] || "").split(/\s*\/\s*/).filter(Boolean).map((word,index) => ({
-      id:"additional-"+row[0]+"-"+(index+1),word,unreviewed:true,viability:"proposed",
-      note:"Spreadsheet proposal; community and editorial review may refine this wording.",
-      etymologyParts:[{form:word,etymology:"unknown"}]
-    })),
-    editorialNote:"Naturalness fit in the supplied spreadsheet: "+row[5]+"."
-  }));
-  const textbookEntries = textbookData.entries.map(row => ({
-    id:row.id, sanskrit:row.inputWord, meaning:row.meaning || "Textbook vocabulary suggestion",
-    category:"School Textbooks",
-    alternatives:[...String(row.primary || "").split(/\s*\/\s*/).filter(Boolean),...(row.alternatives || [])]
-      .filter((word,index,all) => word && all.indexOf(word) === index)
-      .map((word,index) => ({id:row.id+"-alt-"+(index+1),word,unreviewed:true,viability:"proposed",
-        note:"User-supplied textbook suggestion. Editorial review is pending; no etymological claim is made.",
-        etymologyParts:[{form:word,etymology:"unknown"}]})),
-    editorialNote:"Source: newwords.txt, row "+row.sourceNumber+" (line "+row.sourceLine+"). "+
-      (row.sourceCategory ? "Domain: "+row.sourceCategory+". " : "")+"Unreviewed editorial suggestion.",
-    sourceDataset:row.sourceDataset,sourceLine:row.sourceLine
-  }));
-  const all = [...canonicalEntries,...masterEntries,...landingEntries,...textbookEntries];
-  const grouped = new Map();
-  const normalizeDisplayKey = value => String(value ?? "").normalize("NFC").replace(/\s+/g," ").trim();
-  for (const entry of all) {
-    // Consolidate exact source-word + meaning matches for browsing only.
-    // Different meanings stay separate; every original record remains untouched.
-    const key = normalizeDisplayKey(entry.sanskrit) + "\u0000" + normalizeDisplayKey(entry.meaning);
-    let group = grouped.get(key);
-    if (!group) {
-      group = { ...entry, categories: [], sourceRecordIds: [], alternatives: [], editorialNotes: [] };
-      grouped.set(key, group);
+  const response = await fetch("./MergedMasterCopy_10000.csv", { cache: "no-cache" });
+  if (!response.ok) throw new Error("The authoritative master vocabulary CSV could not be loaded (" + response.status + ").");
+  const csvText = await response.text();
+  const parsed = parseMasterVocabularyCsv(csvText);
+  if (parsed.length !== 8470) throw new Error("Master vocabulary CSV row-count check failed: expected 8470, received " + parsed.length + ".");
+  const grouped = [];
+  for (const row of parsed) {
+    const forms = String(row.sourceWord || "").split(/\s*\/\s*/u).map(value => value.trim().normalize("NFC")).filter(Boolean);
+    const primary = row.primary;
+    const alternatives = [...new Set([...primary, ...row.alternatives])];
+    for (let formIndex = 0; formIndex < forms.length; formIndex++) {
+      const form = forms[formIndex];
+      grouped.push({
+        id: "csv-" + row.id + "-" + (formIndex + 1),
+        sanskrit: form,
+        meaning: row.meaning || "",
+        category: row.category || "Uncategorized",
+        categories: [row.category || "Uncategorized"],
+        naturalness: row.naturalness || "",
+        alternatives: alternatives.map((word, index) => ({
+          id: "csv-" + row.id + "-alt-" + (index + 1),
+          word,
+          unreviewed: true,
+          viability: "proposed",
+          note: "Suggestion reproduced from MergedMasterCopy_10000.csv; this migration does not add linguistic or etymological claims.",
+          etymologyParts: [{ form: word, etymology: "unknown" }]
+        })),
+        editorialNote: [
+          row.naturalness ? "Naturalness fit: " + row.naturalness : "",
+          row.dravidianRoot ? "Dravidian root field: " + row.dravidianRoot : "",
+          row.usageNotes
+        ].filter(Boolean).join(" · "),
+        sourceRecordIds: ["csv-" + row.id],
+        sourceFile: "MergedMasterCopy_10000.csv"
+      });
     }
-    group.sourceRecordIds.push(entry.id);
-    group.noAlternative = Boolean(group.noAlternative || entry.noAlternative);
-    group.scopeAudit = Boolean(group.scopeAudit || entry.scopeAudit);
-    if (entry.rejectedAlternatives?.length) {
-      group.rejectedAlternatives = [...(group.rejectedAlternatives || []), ...entry.rejectedAlternatives];
-    }
-    const category = entry.category || "Uncategorized";
-    if (!group.categories.includes(category)) group.categories.push(category);
-    if (entry.editorialNote && !group.editorialNotes.includes(entry.editorialNote)) group.editorialNotes.push(entry.editorialNote);
-    for (const alternative of entry.alternatives || []) {
-      const altKey = normalizeDisplayKey(alternative.word);
-      if (!altKey) continue;
-      const voteRef = { entryId: entry.id, altId: alternative.id };
-      const existing = group.alternatives.find(item => normalizeDisplayKey(item.word) === altKey);
-      if (existing) {
-        if (!existing.voteRefs.some(ref => ref.entryId === voteRef.entryId && ref.altId === voteRef.altId)) existing.voteRefs.push(voteRef);
-      } else {
-        group.alternatives.push({ ...alternative, voteRefs: [voteRef] });
-      }
-    }
-  }
-  const allGrouped = [...grouped.values()];
-  for (const entry of allGrouped) {
-    entry.categories.sort((a,b) => (a === "Public Signboards" ? 0 : 1) - (b === "Public Signboards" ? 0 : 1) || a.localeCompare(b));
-    entry.category = entry.categories[0] || "Uncategorized";
-    entry.editorialNote = [
-      ...entry.editorialNotes,
-      entry.sourceRecordIds.length > 1 ? "Displayed as one card from " + entry.sourceRecordIds.length + " preserved source records." : ""
-    ].filter(Boolean).join(" · ");
   }
   const categoryRank = entry => entry.categories.includes("Public Signboards") ? 0 : 1;
-  allGrouped.sort((a,b) => categoryRank(a)-categoryRank(b) ||
-    String(a.category || "Uncategorized").localeCompare(String(b.category || "Uncategorized")) ||
-    String(a.sanskrit || "").localeCompare(String(b.sanskrit || "")) ||
+  grouped.sort((a, b) => categoryRank(a) - categoryRank(b) ||
+    String(a.category).localeCompare(String(b.category)) ||
+    String(a.sanskrit).localeCompare(String(b.sanskrit)) ||
     String(a.id).localeCompare(String(b.id)));
-  unifiedRows = allGrouped;
+  unifiedRows = grouped;
   populateCategoryOptions();
   return unifiedRows;
 }
+
+function parseMasterVocabularyCsv(csvText) {
+  const rows = parseMasterCsvRows(csvText);
+  const expected = ["Entry ID", "Source Word / Loanword", "Primary Accha Kannada", "Alternative Native Options", "English Meaning", "Category / Domain", "Naturalness Fit", "Dravidian Root", "Usage & Etymology Notes", "Dataset Origin", "Resolution Status", "All Sources"];
+  if (!rows.length || expected.some((name, index) => rows[0][index] !== name)) {
+    throw new Error("Master vocabulary CSV header does not match the approved 12-column schema.");
+  }
+  return rows.slice(1).filter(row => row.some(value => value.trim())).map((row, index) => {
+    if (row.length !== 12) throw new Error("Master vocabulary CSV row " + (index + 2) + " has " + row.length + " columns; expected 12.");
+    return {
+      id: row[0].trim(),
+      sourceWord: row[1],
+      primary: parseMasterJsonArray(row[2], "primary, row " + (index + 2)),
+      alternatives: parseMasterJsonArray(row[3], "alternatives, row " + (index + 2)),
+      meaning: row[4],
+      category: row[5],
+      naturalness: row[6],
+      dravidianRoot: row[7],
+      usageNotes: row[8]
+    };
+  });
+}
+function parseMasterCsvRows(text) {
+  const rows = []; let row = [], cell = "", quoted = false;
+  for (let i = 0; i < text.length; i++) {
+    const ch = text[i];
+    if (quoted) {
+      if (ch === '"' && text[i + 1] === '"') { cell += '"'; i++; }
+      else if (ch === '"') quoted = false;
+      else cell += ch;
+    } else if (ch === '"') quoted = true;
+    else if (ch === ",") { row.push(cell); cell = ""; }
+    else if (ch === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; }
+    else if (ch !== "\r") cell += ch;
+  }
+  if (cell.length || row.length) { row.push(cell); rows.push(row); }
+  if (quoted) throw new Error("Master vocabulary CSV contains an unterminated quoted field.");
+  return rows;
+}
+function parseMasterJsonArray(value, label) {
+  const raw = String(value || "").trim();
+  let parsed;
+  try { parsed = JSON.parse(raw || "[]"); }
+  catch {
+    // The supplied CSV contains some legacy plain-text option cells and one
+    // malformed JSON-array cell. Preserve slash-delimited text; quarantine
+    // malformed bracketed arrays instead of guessing their intended values.
+    if (raw.startsWith("[")) return [];
+    return raw.split(/\s*\/\s*/u).map(item => item.trim()).filter(Boolean);
+  }
+  if (!Array.isArray(parsed)) throw new Error("Expected JSON array in master vocabulary CSV: " + label);
+  return parsed.map(item => String(item || "").trim()).filter(Boolean);
+}
+
 function getFilteredUnifiedRows() {
   if (!unifiedRows) return [];
   const category = categorySelect.value || "all";

@@ -48,64 +48,20 @@
       if (writingIndex.schemaVersion !== manifest.schemaVersion || writingIndex.generatorVersion !== manifest.generatorVersion || writingIndex.buildId !== manifest.buildId || !Array.isArray(writingIndex.entries)) {
         throw new Error("Writing index and lexicon manifest versions do not match.");
       }
-      // Load the separately maintained master corpus for sentence-level lookup.
-      // A master-file problem must not prevent the original comparative lexicon loading.
-      try {
-        const masterUrl = new URL("../master-lexicon.json", base);
-        const masterData = await getJson(masterUrl, "no-cache");
-        if (masterData.schemaVersion !== 1 || !Array.isArray(masterData.entries) ||
-            masterData.entryCount !== masterData.entries.length ||
-            masterData.entries.some(row => !Array.isArray(row.fields) || row.fields.length !== 8)) {
-          throw new Error("Master lexicon structure or row count is invalid.");
-        }
-        masterWritingIndex = [...buildMasterWritingIndex(masterData), ...buildAchchaCoverageSupplements()];
-      } catch (masterError) {
-        masterWritingIndex = [];
-        console.warn("Master corpus unavailable for sentence lookup; canonical lexicon remains available.", masterError);
-      }
-      // The textbook vocabulary is a separate editorial source. Load it into the
-      // sentence matcher as unreviewed suggestions, without promoting its origin.
-      try {
-        const textbookUrl = new URL("../textbook-words.json", base);
-        const textbookData = await getJson(textbookUrl, "no-cache");
-        if (textbookData.schemaVersion !== 1 || textbookData.sourceFile !== "newwords.txt" ||
-            !Array.isArray(textbookData.entries) || textbookData.entryCount !== textbookData.entries.length) {
-          throw new Error("Textbook vocabulary structure or row count is invalid.");
-        }
-        textbookWritingIndex = buildTextbookWritingIndex(textbookData);
-      } catch (textbookError) {
-        textbookWritingIndex = [];
-        console.warn("Textbook vocabulary unavailable for sentence lookup; other lexicons remain available.", textbookError);
-      }
-      // The civic/media/school signboard list is also part of the unified
-      // lookup corpus; load it here so Tab 4 sees the same collection as Tab 1.
-      try {
-        const landingUrl = new URL("../landing-words.json", base);
-        const landingData = await getJson(landingUrl, "no-cache");
-        if (!Array.isArray(landingData) || landingData.length !== 173 ||
-            landingData.some(row => !Array.isArray(row) || row.length !== 6)) {
-          throw new Error("Landing vocabulary structure or row count is invalid.");
-        }
-        landingWritingIndex = buildLandingWritingIndex(landingData);
-      } catch (landingError) {
-        landingWritingIndex = [];
-        console.warn("Landing vocabulary unavailable for sentence lookup; other lexicons remain available.", landingError);
-      }
-      // Load the conservative, editorially maintained root-family index.
-      // It contains explicit word forms only; unknown forms are never guessed by suffix stripping.
-      try {
-        const familyUrl = new URL("../root-families.json", base);
-        const familyData = await getJson(familyUrl, "no-cache");
-        if (familyData.schemaVersion !== 1 || !Array.isArray(familyData.families) ||
-            familyData.families.some(family => !family.id || !family.root || !Array.isArray(family.forms) ||
-              family.forms.some(form => !form.word || !Array.isArray(form.alternatives)))) {
-          throw new Error("Root-family data structure is invalid.");
-        }
-        rootFamilyWritingIndex = buildRootFamilyWritingIndex(familyData);
-      } catch (familyError) {
-        rootFamilyWritingIndex = [];
-        console.warn("Root-family index unavailable; existing lexicons remain available.", familyError);
-      }
+      // The master CSV is the sole source for vocabulary suggestions in Tab 4.
+      // Legacy datasets remain in the repository for historical/reference purposes only.
+      const csvUrl = new URL("../MergedMasterCopy_10000.csv", base);
+      const csvResponse = await fetch(csvUrl, { cache: "no-cache" });
+      if (!csvResponse.ok) throw new Error("Master vocabulary CSV could not be loaded (" + csvResponse.status + ").");
+      const csvRows = parseMasterCsvRows(await csvResponse.text());
+      const expectedHeader = ["Entry ID", "Source Word / Loanword", "Primary Accha Kannada", "Alternative Native Options", "English Meaning", "Category / Domain", "Naturalness Fit", "Dravidian Root", "Usage & Etymology Notes", "Dataset Origin", "Resolution Status", "All Sources"];
+      if (!csvRows.length || expectedHeader.some((name, index) => csvRows[0][index] !== name)) throw new Error("Master vocabulary CSV header failed integrity validation.");
+      const records = csvRows.slice(1).filter(row => row.some(value => value.trim()));
+      if (records.length !== 8470 || records.some(row => row.length !== 12)) throw new Error("Master vocabulary CSV row count or schema failed integrity validation.");
+      masterWritingIndex = buildMergedCsvWritingIndex(records);
+      textbookWritingIndex = [];
+      landingWritingIndex = [];
+      rootFamilyWritingIndex = [];
       return manifest;
     })().catch(error => { initPromise = null; throw error; });
     return initPromise;
@@ -175,6 +131,71 @@
   let landingWritingIndex = [];
   let rootFamilyWritingIndex = [];
 
+  function parseMasterCsvRows(text) {
+    const rows = []; let row = [], cell = "", quoted = false;
+    for (let i = 0; i < text.length; i++) {
+      const ch = text[i];
+      if (quoted) {
+        if (ch === '"' && text[i + 1] === '"') { cell += '"'; i++; }
+        else if (ch === '"') quoted = false;
+        else cell += ch;
+      } else if (ch === '"') quoted = true;
+      else if (ch === ",") { row.push(cell); cell = ""; }
+      else if (ch === "\n") { row.push(cell); rows.push(row); row = []; cell = ""; }
+      else if (ch !== "\r") cell += ch;
+    }
+    if (cell.length || row.length) { row.push(cell); rows.push(row); }
+    if (quoted) throw new Error("Master vocabulary CSV contains an unterminated quoted field.");
+    return rows;
+  }
+  function buildMergedCsvWritingIndex(rows) {
+    const bySource = new Map();
+    for (const fields of rows) {
+      const id = String(fields[0] || "").trim();
+      const sourceForms = String(fields[1] || "").split(/\s*\/\s*/u).flatMap(value => {
+        const source = value.trim().normalize("NFC");
+        if (!source) return [];
+        const parenthetical = source.match(/^(.+?)\s*\(([^()]*)\)\s*$/u);
+        return parenthetical
+          ? [source, parenthetical[1].trim().normalize("NFC"), parenthetical[2].trim().normalize("NFC")]
+          : [source];
+      }).filter(Boolean);
+      let primary, alternatives;
+      const parseOptions = raw => {
+        const value = String(raw || "").trim();
+        try {
+          const parsed = JSON.parse(value || "[]");
+          if (Array.isArray(parsed)) return parsed;
+        } catch {}
+        // Plain-text legacy cells are slash-delimited. Malformed bracketed
+        // arrays are quarantined rather than heuristically reconstructed.
+        return value.startsWith("[") ? [] : value.split(/\s*\/\s*/u).filter(Boolean);
+      };
+      primary = parseOptions(fields[2]);
+      alternatives = parseOptions(fields[3]);
+      const words = [...new Set([...primary, ...alternatives].map(cleanCandidateLabel).filter(Boolean))];
+      if (!words.length) continue;
+      const meaning = String(fields[4] || "").trim();
+      const notes = [
+        fields[6] ? "Naturalness fit: " + fields[6] : "",
+        fields[7] ? "Dravidian root field: " + fields[7] : "",
+        fields[8] ? String(fields[8]).trim() : ""
+      ].filter(Boolean).join(" · ");
+      for (const form of sourceForms) {
+        if (!bySource.has(form)) bySource.set(form, { entryId: "merged-csv:" + id, sourceForms: [form], meaning, candidates: [] });
+        const target = bySource.get(form);
+        if (!target.meaning && meaning) target.meaning = meaning;
+        for (const word of words) {
+          if (!target.candidates.some(candidate => candidate.word === word)) target.candidates.push({
+            word, origin: "uncertain", reviewStatus: "needs_review", originClassification: "uncertain",
+            note: notes || "Suggestion from MergedMasterCopy_10000.csv; no new linguistic or etymological claim is made.",
+            masterCsvEntryId: id
+          });
+        }
+      }
+    }
+    return [...bySource.values()];
+  }
   function cleanCandidateLabel(value) {
     const candidate = String(value || "").trim();
     const parenthetical = candidate.match(/^(.+?)\s*\(([^()]*)\)\s*$/u);
@@ -373,47 +394,15 @@
     }));
   }
   function searchAchchaLexicon(text) {
-    if (!writingIndex) return [];
+    if (!masterWritingIndex.length) return [];
     const query = String(text || "").normalize("NFC");
     const foldedQuery = query.toLocaleLowerCase();
-    const canonical = writingIndex.entries.flatMap(entry => {
-      if (!entry.candidates.length) return [];
-      const forms = (entry.sourceForms || []).map(form => String(form).normalize("NFC")).filter(form => !query || foldedQuery.includes(String(form).toLocaleLowerCase()));
-      return forms.map(form => ({ ...entry, sourceForms: [form] }));
-    });
-    const master = query
+    const matches = query
       ? masterWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
       : masterWritingIndex.slice(0, 100);
-    const textbook = query
-      ? textbookWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
-      : textbookWritingIndex.slice(0, 100);
-    const landing = query
-      ? landingWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
-      : landingWritingIndex.slice(0, 100);
-    const rootFamilies = query
-      ? rootFamilyWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
-      : rootFamilyWritingIndex.slice(0, 100);
-    // Merge every live source by source spelling so Tab 4 sees the same
-    // alternatives available across the unified word collection.
-    const merged = new Map();
-    for (const entry of [...canonical, ...master, ...textbook, ...landing, ...rootFamilies]) {
-      const form = entry.sourceForms[0];
-      if (!merged.has(form)) merged.set(form, { ...entry, sourceForms: [form], candidates: [] });
-      const target = merged.get(form);
-      if (!target.meaning && entry.meaning) target.meaning = entry.meaning;
-      if (entry.rootFamilyId) {
-        target.rootFamilyIds = [...new Set([...(target.rootFamilyIds || []), entry.rootFamilyId])];
-        target.rootFamilyRoots = [...new Set([...(target.rootFamilyRoots || []), entry.root])];
-        target.relationshipTypes = [...new Set([...(target.relationshipTypes || []), entry.relationshipType])];
-      }
-      for (const candidate of entry.candidates || []) {
-        if (candidate.word && !target.candidates.some(existing => existing.word === candidate.word)) target.candidates.push(candidate);
-      }
-    }
-    const matched = [...merged.values()].filter(entry => entry.candidates.length);
-    // When scanning a passage, return every matching entry (not a hard 100-cap).
-    // Cap only the unfiltered dump used for diagnostics.
-    return query ? matched : matched.slice(0, 100);
+    return matches
+      .map(entry => ({ ...entry, sourceForms: [...entry.sourceForms] }))
+      .sort((a, b) => b.sourceForms[0].length - a.sourceForms[0].length);
   }
   function getLabels() { return manifest?.etymologyLabels || {}; }
   function getReference(id) { return manifest?.references?.find(reference => reference.id === id) || null; }

@@ -38,7 +38,7 @@ test("Tab 4 uses the master CSV only and supports explicit parenthetical aliases
   await store.ready();
 
   const varna = store.searchAchchaLexicon("varna");
-  assert.ok(varna.some(entry => entry.sourceForms.includes("varna") &&
+  assert.ok(varna.some(entry => entry.sourceForms.some(form => form.toLocaleLowerCase() === "varna") &&
     entry.candidates.some(candidate => candidate.word === "ಬಣ್ಣ")));
 
   const jagatika = store.searchAchchaLexicon("ಜಾಗತಿಕ");

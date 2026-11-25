@@ -28,3 +28,24 @@ New source batches should be committed as UTF-8 text or structured source files 
 The workbook is a consolidated editorial workspace/export. The website continues to load its validated runtime artifacts: `master-lexicon.json` for sentence-level lookup and `lexicon-dist/` for the comparative vocabulary UI. Do not edit generated runtime files by hand.
 
 GitHub Actions rebuilds the workbook when any of its source collections change, and can also be run manually from the Actions tab. The script is `scripts/export-master-workbook.py`.
+
+ 
+## Compact master vocabulary JSON
+
+The generated root-level file `master-vocabulary.json` is the compact consumption export for the browser extension and other clients. It consolidates the canonical comparative lexicon, the master writing corpus (including the retained 779-entry dump), the civic/media/education list, the explicit root-family forms, and any populated textbook vocabulary export.
+
+Each record contains only:
+- `word`: the Kannada/source form to recognise.
+- `meaning`: an English gloss when available.
+- `alternatives`: distinct Kannada alternatives.
+
+It deliberately contains no per-record source lineage, provenance, review status, reviewer, or audit fields. The original source collections remain unchanged and continue to hold that information.
+
+Regenerate and verify it with:
+
+```sh
+npm run vocabulary:build
+npm run vocabulary:check
+```
+
+The build is deterministic. Exact source-form matches are consolidated and duplicate alternatives are removed; different spellings are not merged by fuzzy matching.

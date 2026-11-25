@@ -152,7 +152,7 @@
     const bySource = new Map();
     for (const fields of rows) {
       const id = String(fields[0] || "").trim();
-      const sourceForms = String(fields[1] || "").split(/\\s*\\/\\s*/u).map(value => value.trim().normalize("NFC")).filter(Boolean);
+      const sourceForms = String(fields[1] || "").split(/\s*\/\s*/u).map(value => value.trim().normalize("NFC")).filter(Boolean);
       let primary, alternatives;
       try {
         primary = JSON.parse(fields[2] || "[]");

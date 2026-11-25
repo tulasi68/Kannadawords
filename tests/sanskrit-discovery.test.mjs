@@ -7,7 +7,7 @@ const workbench=fs.readFileSync(new URL("../meaning-workbench.js",import.meta.ur
 const app=fs.readFileSync(new URL("../app.js",import.meta.url),"utf8");
 
 test("Tab 4 provides a meaning-first discovery workflow instead of AI-generated replacements",()=>{
-  assert.match(html,/Investigate this word/);
+  assert.match(html,/Advanced research/);
   assert.match(html,/meaning-workbench-investigate/);
   assert.match(html,/mw-source-word/);
   assert.match(html,/mw-english-meaning/);

@@ -152,12 +152,17 @@ test("lazy browser store loads one page, category totals and writing suggestions
   const loaded = loadSource();
   const built = buildArtifacts(loaded);
   const artifactMap = new Map(built.artifacts);
+  const csv = read("MergedMasterCopy_10000.csv");
   const sandbox = {
     window:{},
     document:{currentScript:{src:"https://example.test/kannadawords/lexicon-store.js"}},
     URL,
     fetch:async input=>{
       const url = new URL(String(input));
+      const relativePath = url.pathname.split("/kannadawords/")[1];
+      if (relativePath === "MergedMasterCopy_10000.csv") {
+        return { ok: true, status: 200, text: async () => csv };
+      }
       const relative = "lexicon-dist/" + url.pathname.split("/lexicon-dist/")[1];
       const raw = artifactMap.get(relative);
       if (raw === undefined) return {ok:false,status:404};

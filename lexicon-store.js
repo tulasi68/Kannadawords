@@ -154,11 +154,18 @@
       const id = String(fields[0] || "").trim();
       const sourceForms = String(fields[1] || "").split(/\s*\/\s*/u).map(value => value.trim().normalize("NFC")).filter(Boolean);
       let primary, alternatives;
-      try {
-        primary = JSON.parse(fields[2] || "[]");
-        alternatives = JSON.parse(fields[3] || "[]");
-      } catch { throw new Error("Invalid Kannada suggestion JSON in master CSV row " + id); }
-      if (!Array.isArray(primary) || !Array.isArray(alternatives)) throw new Error("Kannada suggestion columns must be JSON arrays in master CSV row " + id);
+      const parseOptions = raw => {
+        const value = String(raw || "").trim();
+        try {
+          const parsed = JSON.parse(value || "[]");
+          if (Array.isArray(parsed)) return parsed;
+        } catch {}
+        // Plain-text legacy cells are slash-delimited. Malformed bracketed
+        // arrays are quarantined rather than heuristically reconstructed.
+        return value.startsWith("[") ? [] : value.split(/\\s*\\/\\s*/u).filter(Boolean);
+      };
+      primary = parseOptions(fields[2]);
+      alternatives = parseOptions(fields[3]);
       const words = [...new Set([...primary, ...alternatives].map(cleanCandidateLabel).filter(Boolean))];
       if (!words.length) continue;
       const meaning = String(fields[4] || "").trim();

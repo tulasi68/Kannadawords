@@ -413,7 +413,7 @@ function renderContextual() {
   const visibleExamples = allExamples.filter(item => {
     const domain = item.sourceDomain || (item.id === "gruha-mandali" ? "Legislative Council" : item.submitted ? "Community submissions" : "Earlier examples");
     if (activeContextualDomain !== "all" && domain !== activeContextualDomain) return false;
-    const sentenceKey = [item.original, item.proposed].map(value => String(value || "").replace(/\\s+/g, " ").trim()).join("|||");
+    const sentenceKey = [item.original, item.proposed].map(value => String(value || "").replace(/\s+/g, " ").trim()).join("|||");
     if (seenSentences.has(sentenceKey)) return false;
     seenSentences.add(sentenceKey);
     return true;
@@ -997,7 +997,7 @@ async function loadUnifiedRows() {
   if (parsed.length !== 8470) throw new Error("Master vocabulary CSV row-count check failed: expected 8470, received " + parsed.length + ".");
   const grouped = [];
   for (const row of parsed) {
-    const forms = String(row.sourceWord || "").split(/\\s*\\/\\s*/u).map(value => value.trim().normalize("NFC")).filter(Boolean);
+    const forms = String(row.sourceWord || "").split(/\s*\/\s*/u).map(value => value.trim().normalize("NFC")).filter(Boolean);
     const primary = row.primary;
     const alternatives = [...new Set([...primary, ...row.alternatives])];
     for (let formIndex = 0; formIndex < forms.length; formIndex++) {

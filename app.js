@@ -1076,9 +1076,16 @@ function parseMasterCsvRows(text) {
   return rows;
 }
 function parseMasterJsonArray(value, label) {
+  const raw = String(value || "").trim();
   let parsed;
-  try { parsed = JSON.parse(String(value || "[]")); }
-  catch { throw new Error("Invalid JSON array in master vocabulary CSV: " + label); }
+  try { parsed = JSON.parse(raw || "[]"); }
+  catch {
+    // The supplied CSV contains some legacy plain-text option cells and one
+    // malformed JSON-array cell. Preserve slash-delimited text; quarantine
+    // malformed bracketed arrays instead of guessing their intended values.
+    if (raw.startsWith("[")) return [];
+    return raw.split(/\\s*\\/\\s*/u).map(item => item.trim()).filter(Boolean);
+  }
   if (!Array.isArray(parsed)) throw new Error("Expected JSON array in master vocabulary CSV: " + label);
   return parsed.map(item => String(item || "").trim()).filter(Boolean);
 }

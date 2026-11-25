@@ -119,7 +119,7 @@ The browser loads the manifest and writing index first. It loads full comparativ
 
 The current shard size is 50. This is a tuning parameter, not part of record identity. At 7,000 entries the same model yields approximately 140 shards.
 
-## 8. Build, validate and test
+## 9. Build, validate and test
 
 ```sh
 npm run lexicon:validate
@@ -137,7 +137,7 @@ npm run lexicon:check
 
 CI runs these checks on changes to source records, schemas, generated output, scripts, UI loader and tests. Source changes and generated output must be committed together.
 
-## 9. Migration baseline
+## 10. Migration baseline
 
 `migration/legacy-v1-snapshot.json` is the former user-visible 450-entry snapshot. `migration/v2-import-snapshot.json` is its deterministic canonical-v2 conversion. The adapter parity test verifies that user-visible words, meanings, categories, candidates, language forms, notes, flags and evidence variants survive the conversion.
 

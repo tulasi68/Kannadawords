@@ -327,3 +327,8 @@ A candidate's comparative evidence is an array of independent records:
 Entry-level Old Kannada evidence is modelled separately in `historicalEvidence`. A candidate's `candidateKind` and `reviewStatus` are distinct from its old `viability` display field. Imported records are marked `needs_review`; their comparative strings are `not_assessed` until a human editor reviews the evidence.
 
 `provenance.sourceDatasets` records contributor or import lineage. It does not establish truth. `provenance.sourceRefs` contains bibliographic source IDs. `legacyFields` preserves fields that have not yet been formally modelled, so future schema work does not silently discard historical data. The `senseKey` field is optional but should be supplied when one spelling represents multiple meanings.
+
+
+## Authoritative vocabulary source
+
+The active website word browser and Tab 4 contextual rewrite suggestions are sourced from `MergedMasterCopy_10000.csv` (8,470 data rows; 12 columns). This CSV is the single vocabulary source of truth. Legacy vocabulary exports and source collections remain in the repository for traceability and other still-used features, but are not merged into the active word browser or Tab 4 suggestion index. Public Signboards remains the first category in the browser. The standalone browser extension builds its offline dictionary from this same CSV.

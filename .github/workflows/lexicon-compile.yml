@@ -5,6 +5,11 @@ on:
     branches: [main, "architecture/**", "fix/**"]
     paths:
       - "lexicon-source/**"
+      - "master-lexicon.json"
+      - "master-vocabulary.json"
+      - "landing-words.json"
+      - "root-families.json"
+      - "textbook-words.json"
       - "lexicon-dist/**"
       - "scripts/**"
       - "package.json"
@@ -12,6 +17,11 @@ on:
   pull_request:
     paths:
       - "lexicon-source/**"
+      - "master-lexicon.json"
+      - "master-vocabulary.json"
+      - "landing-words.json"
+      - "root-families.json"
+      - "textbook-words.json"
       - "lexicon-dist/**"
       - "scripts/**"
       - "package.json"
@@ -33,3 +43,5 @@ jobs:
       - run: npm run lexicon:check
       - run: npm run lexicon:build
       - run: npm run lexicon:check
+      - run: npm run vocabulary:build
+      - run: npm run vocabulary:check

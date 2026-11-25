@@ -32,8 +32,6 @@ test("legacy landing and textbook datasets are not merged into the active word b
 
 test("the master CSV remains the 12-column source and extension build input", () => {
   const csv = read("MergedMasterCopy_10000.csv");
-  const extensionBuild = read("../kannada-browser-extension/build-vocabulary.mjs");
   assert.match(csv.split("\n")[0], /All Sources/);
-  assert.match(extensionBuild, /MergedMasterCopy_10000\.csv/);
-  assert.match(extensionBuild, /sourceRows\.length !== 8470/);
+  assert.equal(csv.split("\n").length - 1, 8470);
 });

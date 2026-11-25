@@ -162,7 +162,7 @@
         } catch {}
         // Plain-text legacy cells are slash-delimited. Malformed bracketed
         // arrays are quarantined rather than heuristically reconstructed.
-        return value.startsWith("[") ? [] : value.split(/\\s*\\/\\s*/u).filter(Boolean);
+        return value.startsWith("[") ? [] : value.split(/\s*\/\s*/u).filter(Boolean);
       };
       primary = parseOptions(fields[2]);
       alternatives = parseOptions(fields[3]);

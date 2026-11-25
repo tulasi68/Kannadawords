@@ -11,6 +11,7 @@
     "lexicon:migration-check": "node scripts/migrate-legacy-v1.mjs --check",
     "lexicon:find": "node scripts/find-entry.mjs",
     "lexicon:coverage": "node scripts/check-contributor-coverage.mjs",
-    "textbook:import": "node scripts/import-textbook-words.mjs"
+    "textbook:import": "node scripts/import-textbook-words.mjs",
+    "extension:vocabulary:build": "node editorExtension/build-vocabulary.mjs"
   }
 }

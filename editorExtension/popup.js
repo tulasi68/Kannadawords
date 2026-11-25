@@ -12,6 +12,23 @@ const DEFAULT_DOMAINS = [
 ];
 
 const statusDiv = document.getElementById("status");
+let bundledStats = null;
+
+async function loadBundledVocabulary() {
+  const response = await fetch(chrome.runtime.getURL("vocabulary.json"));
+  if (!response.ok) throw new Error("Vocabulary index could not be loaded");
+  const index = await response.json();
+  const shards = await Promise.all((index.shards || []).map(async file => {
+    const result = await fetch(chrome.runtime.getURL(file));
+    if (!result.ok) throw new Error("Vocabulary shard could not be loaded: " + file);
+    return result.json();
+  }));
+  const entries = shards.flat().map(tuple => Array.isArray(tuple) ? ({
+    inputWord: tuple[0], primary: tuple[1], alternatives: tuple[2] || [],
+    notes: tuple[3] || [], ambiguous: Boolean(tuple[4]), autoConvert: !Boolean(tuple[4])
+  }) : tuple);
+  return { index, entries };
+}
 function showStatus(msg) {
   statusDiv.textContent = msg;
   setTimeout(() => (statusDiv.textContent = ""), 2500);
@@ -50,15 +67,21 @@ chrome.storage.local.get(
 
     renderCustomWords(data.customWords);
     renderDomains(data.allowedDomains);
-    updateCountBadge(data.masterDictionary, data.customWords);
+    fetch(chrome.runtime.getURL("vocabulary.json"))
+      .then(response => response.json())
+      .then(dataset => { bundledStats = dataset.stats; updateCountBadge(data.masterDictionary, data.customWords, dataset.stats); })
+      .catch(() => updateCountBadge(data.masterDictionary, data.customWords, null));
   }
 );
 
-function updateCountBadge(masterDict, customWords) {
+function updateCountBadge(masterDict, customWords, builtInStats) {
   const masterCount = masterDict ? Object.keys(masterDict).length : 0;
   const customCount = customWords ? Object.keys(customWords).length : 0;
+  const stats = builtInStats || bundledStats;
+  const builtInCount = stats ? stats.uniqueForms : 0;
+  const ambiguous = stats ? stats.ambiguousForms : 0;
   document.getElementById("dictCountBadge").textContent =
-    `ಲೋಡ್ ಆದ ಪದಗಳು: ${masterCount + customCount} (Master: ${masterCount}, Custom: ${customCount})`;
+    `ಪದರೂಪಗಳು: ${builtInCount} ನಿಘಂಟು / ${masterCount} ಆಮದು / ${customCount} ಸ್ವಂತ; ಪರಿಶೀಲನೆ: ${ambiguous}`;
 }
 
 // Toggles
@@ -74,8 +97,8 @@ document.getElementById("toggleWhitelist").addEventListener("change", (e) => {
 
 // Add single custom root word
 document.getElementById("addWordBtn").addEventListener("click", () => {
-  const skt = document.getElementById("sanskritInput").value.trim();
-  const nat = document.getElementById("nativeInput").value.trim();
+  const skt = document.getElementById("sanskritInput").value.trim().normalize("NFC");
+  const nat = document.getElementById("nativeInput").value.trim().normalize("NFC");
   const alts = document.getElementById("altInput").value
     .split(",")
     .map((s) => s.trim())
@@ -102,18 +125,28 @@ document.getElementById("addWordBtn").addEventListener("click", () => {
 
 function renderCustomWords(words) {
   const box = document.getElementById("customList");
-  box.innerHTML = "";
-  for (const [skt, val] of Object.entries(words)) {
+  box.replaceChildren();
+  for (const [skt, val] of Object.entries(words || {})) {
     const primary = typeof val === "string" ? val : val.primary;
     const div = document.createElement("div");
     div.className = "list-item";
-    div.innerHTML = `<span>${skt} → <b>${primary}</b></span><span class="del-btn" data-skt="${skt}">✕</span>`;
+    const label = document.createElement("span");
+    label.textContent = skt + " → ";
+    const strong = document.createElement("b");
+    strong.textContent = primary || "";
+    label.appendChild(strong);
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "del-btn";
+    remove.dataset.skt = skt;
+    remove.textContent = "✕";
+    div.append(label, remove);
     box.appendChild(div);
   }
-  box.querySelectorAll(".del-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const key = e.target.dataset.skt;
-      chrome.storage.local.get({ customWords: {}, masterDictionary: {} }, (data) => {
+  box.querySelectorAll(".del-btn").forEach(btn => {
+    btn.addEventListener("click", event => {
+      const key = event.currentTarget.dataset.skt;
+      chrome.storage.local.get({ customWords: {}, masterDictionary: {} }, data => {
         delete data.customWords[key];
         chrome.storage.local.set({ customWords: data.customWords }, () => {
           renderCustomWords(data.customWords);
@@ -125,70 +158,32 @@ function renderCustomWords(words) {
   });
 }
 
-// Live Morphology Tester inside popup
+// Live exact-form tester using the same bundled vocabulary as page conversion.
 document.getElementById("runTestBtn").addEventListener("click", () => {
   const sampleText = document.getElementById("testInput").value.trim();
   if (!sampleText) return;
-
-  chrome.storage.local.get({ masterDictionary: {}, customWords: {} }, (settings) => {
-    fetch(chrome.runtime.getURL("accagannada_news_dictionary.json"))
-      .then((r) => r.json())
-      .then((builtIn) => {
+  chrome.storage.local.get({ masterDictionary: {}, customWords: {} }, settings => {
+    loadBundledVocabulary()
+      .then(bundle => {
+        const merged = new Map(bundle.entries.map(entry => [entry.inputWord, entry]));
+        for (const [word, value] of Object.entries(settings.masterDictionary || {})) {
+          merged.set(word, { inputWord: word, ...(typeof value === "string" ? { primary: value } : value) });
+        }
+        for (const [word, value] of Object.entries(settings.customWords || {})) {
+          merged.set(word, { inputWord: word, ...(typeof value === "string" ? { primary: value } : value) });
+        }
         const testTrie = new AccagannadaTrie();
-        testTrie.loadDictionary({
-          ...(builtIn.phrases || {}),
-          ...(builtIn.roots || {}),
-          ...(settings.masterDictionary || {}),
-          ...(settings.customWords || {})
-        });
-        const segs = testTrie.tokenizeAndConvert(sampleText);
-        document.getElementById("testOutput").textContent = segs.map((s) => s.text).join("");
-      });
+        testTrie.loadDictionary({ entries: [...merged.values()] });
+        document.getElementById("testOutput").textContent = testTrie.convertText(sampleText);
+      })
+      .catch(() => showStatus("ಪದಕೋಶ ತೆರೆಯಲು ಆಗಲಿಲ್ಲ (Could not load vocabulary)"));
   });
 });
 
-// 5-Column / CSV / TSV / JSON Bulk Parser
+// Robust import for Markdown, CSV, TSV and JSON vocabulary files.
 function parseVocabularyFile(rawText, fileName) {
-  if (fileName.endsWith(".json")) {
-    const parsed = JSON.parse(rawText);
-    const normalized = {};
-    for (const [k, v] of Object.entries(parsed)) {
-      normalized[k.trim()] = typeof v === "string" ? { primary: v.trim(), alts: [], note: "" } : v;
-    }
-    return normalized;
-  }
-
-  const dictionary = {};
-  const lines = rawText.split(/\r?\n/);
-
-  for (const line of lines) {
-    const trimmed = line.trim();
-    if (!trimmed || trimmed.startsWith("|---") || trimmed.startsWith("| #")) continue;
-
-    let cols = [];
-    if (trimmed.startsWith("|")) {
-      cols = trimmed.split("|").map((c) => c.trim()).filter(Boolean);
-    } else if (trimmed.includes("\t")) {
-      cols = trimmed.split("\t").map((c) => c.trim());
-    } else {
-      cols = trimmed.match(/(".*?"|[^",\s]+)(?=\s*,|\s*$)/g)?.map((c) => c.replace(/^"|"$/g, "").trim()) || [];
-    }
-
-    const hasIndexCol = /^\d+$/.test(cols[0]);
-    const inputWord = hasIndexCol ? cols[1] : cols[0];
-    const primaryNative = hasIndexCol ? cols[2] : cols[1];
-    const alternatives = (hasIndexCol ? cols[3] : cols[2]) || "";
-    const note = (hasIndexCol ? cols[4] : cols[3]) || "";
-
-    if (!inputWord || !primaryNative || inputWord === "Input Word") continue;
-
-    dictionary[inputWord] = {
-      primary: primaryNative,
-      alts: alternatives.split(",").map((s) => s.trim()).filter(Boolean),
-      note: note
-    };
-  }
-  return dictionary;
+  if (!window.AccaVocabularyImport) throw new Error("Vocabulary importer is unavailable");
+  return window.AccaVocabularyImport.parseVocabularyFile(rawText, fileName);
 }
 
 document.getElementById("importBulkBtn").addEventListener("click", () => {
@@ -198,24 +193,29 @@ document.getElementById("importBulkBtn").addEventListener("click", () => {
     showStatus("ಮೊದಲು ಫೈಲ್ ಆಯ್ಕೆ ಮಾಡಿ (Select a file first)");
     return;
   }
-
   const reader = new FileReader();
-  reader.onload = (e) => {
+  reader.onload = event => {
     try {
-      const parsedDict = parseVocabularyFile(e.target.result, file.name.toLowerCase());
+      const parsed = parseVocabularyFile(event.target.result, file.name.toLowerCase());
+      const parsedDict = Object.fromEntries(parsed.map(entry => [entry.inputWord, entry]));
       const count = Object.keys(parsedDict).length;
-      if (count === 0) {
+      if (!count) {
         showStatus("ಯಾವುದೇ ಪದಗಳು ಸಿಗಲಿಲ್ಲ (No valid rows found)");
         return;
       }
-      chrome.storage.local.get({ customWords: {} }, (data) => {
+      const ambiguous = parsed.filter(entry => entry.ambiguous).length;
+      chrome.storage.local.get({ customWords: {} }, data => {
         chrome.storage.local.set({ masterDictionary: parsedDict }, () => {
-          updateCountBadge(parsedDict, data.customWords);
-          showStatus(`${count} ಪದಗಳನ್ನು ಯಶಸ್ವಿಯಾಗಿ ಸೇರಿಸಲಾಗಿದೆ!`);
+          fetch(chrome.runtime.getURL("vocabulary.json"))
+            .then(response => response.json())
+            .then(dataset => updateCountBadge(parsedDict, data.customWords, dataset.stats))
+            .catch(() => updateCountBadge(parsedDict, data.customWords));
+          showStatus(`${count} ಪದಗಳು ಆಮದು; ${ambiguous} ಪದಗಳಿಗೆ ಪರಿಶೀಲನೆ ಬೇಕು`);
           reloadActiveTab();
         });
       });
-    } catch (err) {
+    } catch (error) {
+      console.error(error);
       showStatus("ಫೈಲ್ ಓದುವಲ್ಲಿ ದೋಷ (Invalid file format)");
     }
   };
@@ -223,23 +223,32 @@ document.getElementById("importBulkBtn").addEventListener("click", () => {
 });
 
 document.getElementById("exportJsonBtn").addEventListener("click", () => {
-  chrome.storage.local.get({ masterDictionary: {}, customWords: {} }, (data) => {
-    const merged = { ...(data.masterDictionary || {}), ...(data.customWords || {}) };
-    const blob = new Blob([JSON.stringify(merged, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "accagannada_12k_dictionary.json";
-    a.click();
-    URL.revokeObjectURL(url);
+  chrome.storage.local.get({ masterDictionary: {}, customWords: {} }, settings => {
+    loadBundledVocabulary()
+      .then(bundle => {
+        const merged = new Map(bundle.entries.map(entry => [entry.inputWord, entry]));
+        for (const [word, value] of Object.entries(settings.masterDictionary || {})) {
+          merged.set(word, { inputWord: word, ...(typeof value === "string" ? { primary: value } : value) });
+        }
+        for (const [word, value] of Object.entries(settings.customWords || {})) {
+          merged.set(word, { inputWord: word, ...(typeof value === "string" ? { primary: value } : value) });
+        }
+        const blob = new Blob([JSON.stringify({ schemaVersion: 2, entries: [...merged.values()] }, null, 2)], { type: "application/json" });
+        const url = URL.createObjectURL(blob);
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.download = "accagannada-vocabulary.json";
+        anchor.click();
+        URL.revokeObjectURL(url);
+      });
   });
 });
 
 document.getElementById("clearMasterBtn").addEventListener("click", () => {
-  chrome.storage.local.get({ customWords: {} }, (data) => {
+  chrome.storage.local.get({ customWords: {} }, data => {
     chrome.storage.local.set({ masterDictionary: {} }, () => {
       updateCountBadge({}, data.customWords);
-      showStatus("ಬಲ್ಕ್ ಪದಕೋಶ ತೆರವುಗೊಳಿಸಲಾಗಿದೆ (Cleared)");
+      showStatus("ಆಮದು ಪದಕೋಶ ತೆರವುಗೊಳಿಸಲಾಗಿದೆ (Cleared)");
       reloadActiveTab();
     });
   });
@@ -248,18 +257,25 @@ document.getElementById("clearMasterBtn").addEventListener("click", () => {
 // Website Whitelist Management
 function renderDomains(domains) {
   const box = document.getElementById("domainList");
-  box.innerHTML = "";
-  for (const d of domains) {
+  box.replaceChildren();
+  for (const domain of domains || []) {
     const div = document.createElement("div");
     div.className = "list-item";
-    div.innerHTML = `<span>${d}</span><span class="del-btn" data-domain="${d}">✕</span>`;
+    const label = document.createElement("span");
+    label.textContent = domain;
+    const remove = document.createElement("button");
+    remove.type = "button";
+    remove.className = "del-btn";
+    remove.dataset.domain = domain;
+    remove.textContent = "✕";
+    div.append(label, remove);
     box.appendChild(div);
   }
-  box.querySelectorAll(".del-btn").forEach((btn) => {
-    btn.addEventListener("click", (e) => {
-      const target = e.target.dataset.domain;
-      chrome.storage.local.get({ allowedDomains: DEFAULT_DOMAINS }, (data) => {
-        const updated = data.allowedDomains.filter((item) => item !== target);
+  box.querySelectorAll(".del-btn").forEach(btn => {
+    btn.addEventListener("click", event => {
+      const target = event.currentTarget.dataset.domain;
+      chrome.storage.local.get({ allowedDomains: DEFAULT_DOMAINS }, data => {
+        const updated = data.allowedDomains.filter(item => item !== target);
         chrome.storage.local.set({ allowedDomains: updated }, () => {
           renderDomains(updated);
           reloadActiveTab();

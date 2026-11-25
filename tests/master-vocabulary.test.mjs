@@ -29,6 +29,6 @@ test("master vocabulary export has no duplicate source words", () => {
 });
 
 test("master vocabulary export contains no per-record audit metadata", () => {
-  const forbidden = /"(?:source|sourceFile|sourceLine|sourceBlobSha|status|reviewStatus|editorial|provenance|sourceRefs|sourceDatasets|reviewedBy|reviewedAt)"\\s*:/i;
+  const forbidden = /"(?:source|sourceFile|sourceLine|sourceBlobSha|status|reviewStatus|editorial|provenance|sourceRefs|sourceDatasets|reviewedBy|reviewedAt)"\s*:/i;
   assert.equal(forbidden.test(JSON.stringify(vocabulary)), false);
 });

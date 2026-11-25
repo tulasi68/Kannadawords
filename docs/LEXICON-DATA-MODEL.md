@@ -97,7 +97,13 @@ Use a source ID in `sourceRefs`; do not paste an untraceable source title into a
 8. Unknown legacy fields remain in `legacyFields` until explicitly migrated.
 9. Data migration is not a linguistic review. Do not change meanings, spellings, etymologies or viability labels as a side effect of structural work.
 
-## 7. Source shards and generated runtime
+## 7. Authoritative vocabulary CSV and generated runtime
+
+`MergedMasterCopy_10000.csv` is the single authoritative source for the website vocabulary browser and Tab 4 contextual rewrite suggestions. Its 12-column header and JSON-array suggestion columns are validated at load/build time. The website reads this CSV directly; the browser extension build reads the same CSV and emits local vocabulary shards so conversion remains offline. The two consumers must not merge legacy datasets into the active vocabulary. Existing canonical shards, spreadsheets, `newwords.txt`, landing lists and root-family files are retained as historical/reference material until their remaining non-vocabulary dependencies are reviewed. They are not additional sources for the active master vocabulary.
+
+The CSV's dataset-origin, resolution-status and all-sources columns remain preserved in the source file; they are not copied wholesale into runtime payloads. No etymology, review status or linguistic certainty is inferred during this structural migration.
+
+## 8. Source shards and generated runtime
 
 Canonical source files are split into ordered groups of at most 50 entries:
 

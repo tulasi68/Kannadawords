@@ -327,3 +327,8 @@ A candidate's comparative evidence is an array of independent records:
 Entry-level Old Kannada evidence is modelled separately in `historicalEvidence`. A candidate's `candidateKind` and `reviewStatus` are distinct from its old `viability` display field. Imported records are marked `needs_review`; their comparative strings are `not_assessed` until a human editor reviews the evidence.
 
 `provenance.sourceDatasets` records contributor or import lineage. It does not establish truth. `provenance.sourceRefs` contains bibliographic source IDs. `legacyFields` preserves fields that have not yet been formally modelled, so future schema work does not silently discard historical data. The `senseKey` field is optional but should be supplied when one spelling represents multiple meanings.
+
+
+## Master vocabulary source and multiple suggestions
+
+`MergedMasterCopy_10000.csv` is the curated master vocabulary source for the merged word list. The `vocabulary:build` pipeline reads its source-word, primary-suggestion and alternative-suggestion columns when generating `master-vocabulary.json`. It retains every distinct Kannada suggestion found in either suggestion column, including entries with multiple valid choices. Legacy plain-text suggestion cells are split only at list separators and non-Kannada/transliteration fragments are excluded; malformed or empty suggestions are not guessed. A word with several valid alternatives remains available as a set of choices. Whether a writing assistant may apply a replacement automatically is a separate user-interface policy and must not be used to discard vocabulary choices.

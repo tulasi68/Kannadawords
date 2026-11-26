@@ -95,6 +95,73 @@ const supplements = [
 ];
 for (const [word,meaning,alts] of supplements) add(word,meaning,alts);
 
+
+function parseMergedCsvLine(line) {
+  const fields = [];
+  let field = "", quoted = false;
+  for (let i = 0; i < line.length; i++) {
+    const char = line[i];
+    if (quoted) {
+      if (char === '"' && line[i + 1] === '"') { field += '"'; i++; }
+      else if (char === '"') quoted = false;
+      else field += char;
+    } else if (char === '"') quoted = true;
+    else if (char === ",") { fields.push(field); field = ""; }
+    else field += char;
+  }
+  if (quoted) throw new Error("Unclosed quote in MergedMasterCopy_10000.csv");
+  fields.push(field);
+  return fields;
+}
+
+function mergedCsvSuggestions(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return [];
+  let values;
+  try {
+    const parsed = JSON.parse(raw);
+    values = Array.isArray(parsed) ? parsed.map(String) : [raw];
+  } catch {
+    values = [raw];
+  }
+  const suggestions = [];
+  for (let value of values) {
+    value = String(value || "").trim()
+      .replace(/\\s*\\([^)]*[A-Za-z][^)]*\\)\\s*$/u, "")
+      .trim();
+    for (const part of value.split(/\\s*[\\/,;]\\s*/u)) {
+      const candidate = part.replace(/^[\\s"'[\\]]+|[\\s"'\\]]+$/gu, "").trim().normalize("NFC");
+      if (candidate && /[\\u0C80-\\u0CFF]/u.test(candidate) && !/[A-Za-z]/u.test(candidate)) suggestions.push(candidate);
+    }
+  }
+  return [...new Set(suggestions)];
+}
+
+function addMergedMasterCsv() {
+  const csvPath = path.join(root, "MergedMasterCopy_10000.csv");
+  const lines = fs.readFileSync(csvPath, "utf8").replace(/^\\uFEFF/u, "").split(/\\r?\\n/u).filter(Boolean);
+  if (!lines.length) throw new Error("MergedMasterCopy_10000.csv is empty");
+  const header = parseMergedCsvLine(lines[0]);
+  const columns = Object.fromEntries(header.map((name, index) => [name, index]));
+  const required = ["Source Word / Loanword", "Primary Accha Kannada", "Alternative Native Options", "English Meaning"];
+  for (const name of required) if (columns[name] === undefined) throw new Error("Missing master CSV column: " + name);
+  for (let index = 1; index < lines.length; index++) {
+    const row = parseMergedCsvLine(lines[index]);
+    if (row.length !== header.length) throw new Error("Malformed master CSV row " + (index + 1));
+    const source = String(row[columns["Source Word / Loanword"]] || "").trim();
+    if (!source) continue;
+    const alternatives = [...new Set([
+      ...mergedCsvSuggestions(row[columns["Primary Accha Kannada"]]),
+      ...mergedCsvSuggestions(row[columns["Alternative Native Options"]])
+    ])];
+    if (!alternatives.length) continue;
+    const forms = expandForms(source).filter(form => /[\\u0C80-\\u0CFF]/u.test(form) && !/[A-Za-z]/u.test(form));
+    for (const form of forms) add(form, row[columns["English Meaning"]], alternatives);
+  }
+}
+
+addMergedMasterCsv();
+
 const output = {schemaVersion:1,entryCount:merged.size,entries:[...merged.values()]};
 const serialized = JSON.stringify(output,null,2)+"\n";
 const forbidden = /"(?:source|sourceFile|sourceLine|sourceBlobSha|status|reviewStatus|editorial|provenance|sourceRefs|sourceDatasets|reviewedBy|reviewedAt)"\s*:/i;

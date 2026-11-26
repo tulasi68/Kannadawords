@@ -451,13 +451,14 @@ function achchaAlternativeKind(alt) {
 }
 function getAchchaEditorText(element) {
   if (!element) return "";
-  // Tab 4 uses contenteditable, not an input/textarea element.
-  return String(element.innerText ?? element.textContent ?? "").replace(/\\u00a0/g, " ");
+  // textContent stays exact when the editor wraps matched words in spans.
+  return String(element.textContent || "").replace(/\u00a0/g, " ");
 }
 function setAchchaEditorText(element, value) {
   if (!element) return;
   element.textContent = String(value ?? "");
 }
+
 function buildAchchaLexicon(text = "") {
   return window.KannadaLexiconStore
     ? window.KannadaLexiconStore.searchAchchaLexicon(text)
@@ -635,18 +636,18 @@ function initAchchaEditorHistory() {
 function decorateAchchaEditor(text, matches) {
   const editor = document.getElementById("achcha-input");
   if (!editor) return;
+  const fragment = document.createDocumentFragment();
   let cursor = 0;
-  let markup = "";
   matches.forEach((match, index) => {
-    markup += escapeHtmlAchcha(text.slice(cursor, match.start));
-    markup += '<span class="achcha-hit achcha-underline kn" data-match="' + index + '" tabindex="0" role="button" title="Choose a Kannada alternative">' + escapeHtmlAchcha(text.slice(match.start, match.end)) + '</span>';
-    cursor = match.end;
-  });
-  markup += escapeHtmlAchcha(text.slice(cursor));
-  editor.innerHTML = markup.replace(/\n/g, "<br>");
-  editor.querySelectorAll(".achcha-hit").forEach(hit => {
+    if (match.start > cursor) fragment.appendChild(document.createTextNode(text.slice(cursor, match.start)));
+    const hit = document.createElement("span");
+    hit.className = "achcha-hit achcha-underline kn";
+    hit.dataset.match = String(index);
+    hit.tabIndex = 0;
+    hit.setAttribute("role", "button");
+    hit.title = "Choose a Kannada alternative";
+    hit.textContent = text.slice(match.start, match.end);
     const activate = () => {
-      const index = Number(hit.getAttribute("data-match"));
       const card = document.getElementById("achcha-match-" + index);
       if (card) {
         card.scrollIntoView({ behavior: "smooth", block: "nearest" });
@@ -658,16 +659,23 @@ function decorateAchchaEditor(text, matches) {
     hit.addEventListener("keydown", event => {
       if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activate(); }
     });
+    fragment.appendChild(hit);
+    cursor = match.end;
   });
+  if (cursor < text.length) fragment.appendChild(document.createTextNode(text.slice(cursor)));
+  editor.replaceChildren(fragment);
 }
 
 function applyAchchaReplacement(index, word) {
   const match = achchaMatchState[index];
   const editor = document.getElementById("achcha-input");
+  const status = document.getElementById("achcha-find-status");
   if (!match || !editor) return;
   const current = getAchchaEditorText(editor);
-  if (current.slice(match.start, match.end) !== match.source) {
+  const actual = current.slice(match.start, match.end);
+  if (actual !== match.source) {
     resetAchchaMatchUI("ಪಠ್ಯ ಬದಲಾಗಿದೆ. ಪದಗಳನ್ನು ಮತ್ತೆ ಹುಡುಕಿ.");
+    if (status) status.textContent = "ಪದದ ಸ್ಥಾನ ಬದಲಾಗಿದೆ. Search in App ಒತ್ತಿ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ.";
     return;
   }
   if (word === match.source) return;
@@ -677,6 +685,7 @@ function applyAchchaReplacement(index, word) {
   const updated = current.slice(0, match.start) + word + current.slice(match.end);
   setAchchaEditorText(editor, updated);
   editor.focus();
+  if (status) status.textContent = "ಬದಲಾವಣೆ ಮಾಡಲಾಗಿದೆ: " + match.source + " → " + word;
   findAchchaWords();
 }
 window.applyAchchaReplacement = applyAchchaReplacement;
@@ -695,6 +704,7 @@ async function findAchchaWords() {
     return;
   }
   const searchable = original.normalize("NFC");
+  if (searchable !== original) setAchchaEditorText(editor, searchable);
   const foldedText = searchable.toLocaleLowerCase();
   const forms = [];
   buildAchchaLexicon(searchable).forEach(entry => {
@@ -739,17 +749,36 @@ async function findAchchaWords() {
   decorateAchchaEditor(searchable, matches);
   if (status) status.textContent = matches.length + " word" + (matches.length === 1 ? "" : "s") + " found. Click an underlined word or choose an alternative below; the text changes immediately.";
   if (container) {
-    container.innerHTML = matches.map((match, index) => {
-      const options = match.candidates.map(candidate =>
-        '<button type="button" class="achcha-opt kn" data-match="' + index + '" data-word="' + escapeHtmlAchcha(candidate.word) + '">' + escapeHtmlAchcha(candidate.word) + '</button>'
-      ).join("");
-      return '<article id="achcha-match-' + index + '" class="rounded-lg border border-amber-200 bg-amber-50/60 p-3 mb-2">'
-        + '<div class="flex flex-wrap items-baseline gap-2 mb-2"><span class="kn font-semibold text-red-900 underline decoration-red-700 decoration-2 underline-offset-4">' + escapeHtmlAchcha(match.source) + '</span>'
-        + (match.meaning ? '<span class="text-xs text-stone-500">' + escapeHtmlAchcha(match.meaning) + '</span>' : '') + '</div>'
-        + '<div class="flex flex-wrap gap-2">' + options + '</div></article>';
-    }).join("");
-    container.querySelectorAll(".achcha-opt").forEach(button => {
-      button.addEventListener("click", () => applyAchchaReplacement(Number(button.dataset.match), button.dataset.word));
+    container.replaceChildren();
+    matches.forEach((match, index) => {
+      const card = document.createElement("article");
+      card.id = "achcha-match-" + index;
+      card.className = "rounded-lg border border-amber-200 bg-amber-50/60 p-3 mb-2";
+      const heading = document.createElement("div");
+      heading.className = "flex flex-wrap items-baseline gap-2 mb-2";
+      const source = document.createElement("span");
+      source.className = "kn font-semibold text-red-900 underline decoration-red-700 decoration-2 underline-offset-4";
+      source.textContent = match.source;
+      heading.appendChild(source);
+      if (match.meaning) {
+        const meaning = document.createElement("span");
+        meaning.className = "text-xs text-stone-500";
+        meaning.textContent = match.meaning;
+        heading.appendChild(meaning);
+      }
+      card.appendChild(heading);
+      const options = document.createElement("div");
+      options.className = "flex flex-wrap gap-2";
+      match.candidates.forEach(candidate => {
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "achcha-opt kn";
+        button.textContent = candidate.word;
+        button.addEventListener("click", () => applyAchchaReplacement(index, candidate.word));
+        options.appendChild(button);
+      });
+      card.appendChild(options);
+      container.appendChild(card);
     });
   }
 }

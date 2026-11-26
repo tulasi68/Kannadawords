@@ -25,7 +25,8 @@ test("Tab 4 keeps matches and replacements in the original editable text",()=>{
 test("Tab 4 replacement choices preserve the source text and refresh remaining matches",()=>{
   assert.match(app,/current\.slice\(0, match\.start\) \+ word \+ current\.slice\(match\.end\)/);
   assert.match(app,/decorateAchchaEditor\(searchable, matches\)/);
-  assert.ok(app.includes('container.querySelectorAll(".achcha-opt")'));
+  assert.match(app,/button\.addEventListener\("click", \(\) => applyAchchaReplacement\(index, candidate\.word\)\)/);
+  assert.match(app,/container\.classList\.remove\("hidden"\)/);
 });
 
 test("Tab 4 lookup includes canonical, master, textbook, landing and root-family collections",()=>{

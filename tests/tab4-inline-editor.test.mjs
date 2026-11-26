@@ -29,6 +29,13 @@ test("Tab 4 replacement choices preserve the source text and refresh remaining m
   assert.match(app,/container\.classList\.remove\("hidden"\)/);
 });
 
+test("Tab 4 choice click mutates the source text instead of only changing popup selection",()=>{
+  assert.match(app,/const chosen = option\.dataset\.word \|\| item\.source/);
+  assert.match(app,/sourceText = sourceText\.slice\(0, item\.start\) \+ chosen \+ sourceText\.slice\(item\.end\)/);
+  assert.match(app,/editor\.textContent = sourceText/);
+  assert.match(app,/window\.findAchchaWords\(\)/);
+});
+
 test("Tab 4 lookup includes canonical, master, textbook, landing and root-family collections",()=>{
   assert.match(store,/landingWritingIndex = buildLandingWritingIndex\(landingData\)/);
   assert.match(store,/rootFamilyWritingIndex = buildRootFamilyWritingIndex\(familyData\)/);

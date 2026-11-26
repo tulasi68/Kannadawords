@@ -26,7 +26,7 @@ test("the 173 civic, media and education entries remain in the unified collectio
   const app = read("app.js");
   const rows = JSON.parse(read("landing-words.json"));
   assert.equal(rows.length,173);
-  assert.match(app,/fetch\("\.\\/landing-words\.json"/);
+  assert.ok(app.includes('fetch("./landing-words.json"'));
   assert.match(app,/const landingEntries = landingData\.map/);
 });
 
@@ -34,7 +34,7 @@ test("textbook words are added as a separate unreviewed category", () => {
   const app = read("app.js");
   const dataset = JSON.parse(read("textbook-words.json"));
   assert.equal(dataset.entryCount,4559);
-  assert.match(app,/fetch\("\.\\/textbook-words\.json"/);
+  assert.ok(app.includes('fetch("./textbook-words.json"'));
   assert.match(app,/category:"School Textbooks"/);
   assert.match(app,/Public Signboards/);
 });

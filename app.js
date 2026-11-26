@@ -1601,11 +1601,30 @@ async function translateAchchaGapWords(){
     const list = option.dataset.kind==="red" ? achchaMatchState : achchaDiscoveryState;
     const item = list[Number(option.dataset.index)];
     if (!item) return;
-    item.selected = option.dataset.word || item.source;
+    const chosen = option.dataset.word || item.source;
+    if (chosen !== item.source) {
+      // Apply the choice to the actual editable source immediately. Merely
+      // changing item.selected only updates the popup and leaves the text intact.
+      const before = sourceText;
+      if (before.slice(item.start, item.end) !== item.source) {
+        sourceText = readPlain(editor).normalize("NFC");
+        if (sourceText.slice(item.start, item.end) !== item.source) {
+          window.findAchchaWords();
+          return;
+        }
+      }
+      sourceText = sourceText.slice(0, item.start) + chosen + sourceText.slice(item.end);
+      editor.textContent = sourceText;
+      editor.dataset.rendered = "";
+      window.findAchchaWords();
+      const status = document.getElementById("achcha-find-status");
+      if (status) status.textContent = "ಬದಲಾವಣೆ ಮಾಡಲಾಗಿದೆ: " + item.source + " → " + chosen;
+      return;
+    }
+    item.selected = item.source;
     const popover = option.closest(".achcha-pop");
     popover?.querySelectorAll(".achcha-opt").forEach(button =>
       button.classList.toggle("achcha-opt-active",button.dataset.word===item.selected));
-    // Close immediately after choosing; it can reopen on the next hover.
     popover?.classList.add("achcha-pop-closed");
   });
   editor.addEventListener("pointerout", event => {

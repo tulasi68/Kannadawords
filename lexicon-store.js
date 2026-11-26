@@ -91,6 +91,23 @@
         landingWritingIndex = [];
         console.warn("Landing vocabulary unavailable for sentence lookup; other lexicons remain available.", landingError);
       }
+      // Load the consolidated master export used by the main vocabulary browser.
+      // All choices remain provisional; this export does not certify linguistic origin.
+      try {
+        const mergedUrl = new URL("../master-vocabulary.json", base);
+        const mergedData = await getJson(mergedUrl, "no-cache");
+        if (mergedData.schemaVersion !== 1 || !Array.isArray(mergedData.entries) ||
+            mergedData.entryCount !== mergedData.entries.length ||
+            mergedData.entries.some(row => typeof row.word !== "string" || !row.word.trim() ||
+              typeof row.meaning !== "string" || !Array.isArray(row.alternatives) ||
+              row.alternatives.some(word => typeof word !== "string" || !word.trim()))) {
+          throw new Error("Merged master vocabulary structure or row count is invalid.");
+        }
+        mergedMasterWritingIndex = buildMergedMasterWritingIndex(mergedData);
+      } catch (mergedError) {
+        mergedMasterWritingIndex = [];
+        console.warn("Merged master vocabulary unavailable for sentence lookup; other lexicons remain available.", mergedError);
+      }
       // Load the conservative, editorially maintained root-family index.
       // It contains explicit word forms only; unknown forms are never guessed by suffix stripping.
       try {
@@ -174,6 +191,7 @@
   let textbookWritingIndex = [];
   let landingWritingIndex = [];
   let rootFamilyWritingIndex = [];
+  let mergedMasterWritingIndex = [];
 
   function cleanCandidateLabel(value) {
     const candidate = String(value || "").trim();
@@ -241,6 +259,28 @@
       }
     }
     return [...bySource.values()];
+  }
+  function buildMergedMasterWritingIndex(data) {
+    const entries = [];
+    for (const row of data.entries) {
+      const form = String(row.word || "").trim().normalize("NFC");
+      if (!form) continue;
+      const candidates = [...new Set((row.alternatives || []).map(cleanCandidateLabel).filter(Boolean))].map(word => ({
+        word,
+        origin:"uncertain",
+        reviewStatus:"needs_review",
+        originClassification:"uncertain",
+        note:"Merged master vocabulary suggestion; linguistic and contextual review is pending."
+      }));
+      if (!candidates.length) continue;
+      entries.push({
+        entryId:"merged-master:"+form,
+        sourceForms:[form],
+        meaning:String(row.meaning || "").trim(),
+        candidates
+      });
+    }
+    return entries;
   }
   function buildTextbookWritingIndex(data) {
     const bySource = new Map();
@@ -393,10 +433,13 @@
     const rootFamilies = query
       ? rootFamilyWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
       : rootFamilyWritingIndex.slice(0, 100);
+    const mergedMaster = query
+      ? mergedMasterWritingIndex.filter(entry => entry.sourceForms.some(form => foldedQuery.includes(String(form).toLocaleLowerCase())))
+      : mergedMasterWritingIndex.slice(0, 100);
     // Merge every live source by source spelling so Tab 4 sees the same
     // alternatives available across the unified word collection.
     const merged = new Map();
-    for (const entry of [...canonical, ...master, ...textbook, ...landing, ...rootFamilies]) {
+    for (const entry of [...canonical, ...master, ...textbook, ...landing, ...rootFamilies, ...mergedMaster]) {
       const form = entry.sourceForms[0];
       if (!merged.has(form)) merged.set(form, { ...entry, sourceForms: [form], candidates: [] });
       const target = merged.get(form);

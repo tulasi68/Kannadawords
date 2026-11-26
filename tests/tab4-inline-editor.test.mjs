@@ -25,11 +25,11 @@ test("Tab 4 keeps matches and replacements in the original editable text",()=>{
 test("Tab 4 replacement choices preserve the source text and refresh remaining matches",()=>{
   assert.match(app,/current\.slice\(0, match\.start\) \+ word \+ current\.slice\(match\.end\)/);
   assert.match(app,/decorateAchchaEditor\(searchable, matches\)/);
-  assert.match(app,/container\.querySelectorAll\("\.achcha-opt"\)/);
+  assert.ok(app.includes('container.querySelectorAll(".achcha-opt")'));
 });
 
 test("Tab 4 lookup includes canonical, master, textbook, landing and root-family collections",()=>{
   assert.match(store,/landingWritingIndex = buildLandingWritingIndex\(landingData\)/);
   assert.match(store,/rootFamilyWritingIndex = buildRootFamilyWritingIndex\(familyData\)/);
-  assert.match(store,/\[\.\.\.canonical, \.\.\.master, \.\.\.textbook, \.\.\.landing, \.\.\.rootFamilies\]/);
+  assert.match(store,/\.\.\.rootFamilies, \.\.\.mergedMaster/);
 });

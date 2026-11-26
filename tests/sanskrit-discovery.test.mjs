@@ -32,8 +32,9 @@ test("The first worked example starts from the English definition and keeps cand
   assert.match(workbench,/not-verified/);
 });
 
-test("Tab 4 does not automatically infer word origin from a Sanskrit candidate list",()=>{
-  assert.match(app,/Origin is not inferred from a word list/);
-  assert.match(app,/Use the English meaning workbench/);
+test("Tab 4 uses explicit vocabulary matches and leaves word-origin research optional",()=>{
+  assert.match(app,/buildAchchaLexicon\(searchable\)/);
+  assert.match(app,/function applyAchchaReplacement\(index, word\)/);
+  assert.match(app,/Advanced research/);
   assert.doesNotMatch(app,/addAchchaDiscoveryUnderlines\(preview, searchable/);
 });

@@ -566,246 +566,193 @@ function escapeHtmlAchcha(value) {
   return String(value ?? "").replace(/[&<>"']/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[ch]));
 }
 
-async function findAchchaWords() {
-  if (!achchaPreserveGapResults) {
-    const oldPanel=document.getElementById("achcha-gap-panel"); if(oldPanel)oldPanel.classList.add("hidden");
-    const oldResults=document.getElementById("achcha-gap-results"); if(oldResults)oldResults.replaceChildren();
-    const oldButton=document.getElementById("achcha-gap-ai"); if(oldButton)oldButton.disabled=true;
-  }
+let achchaUndoStack = [];
+let achchaRedoStack = [];
+let achchaBeforeInputText = null;
+let achchaHistoryReady = false;
+
+function clearAchchaMatchDecorations() {
+  const editor = document.getElementById("achcha-input");
+  if (!editor) return;
+  editor.querySelectorAll(".achcha-hit").forEach(span => span.replaceWith(document.createTextNode(span.textContent || "")));
+  editor.normalize();
+}
+function resetAchchaMatchUI(message = "") {
+  achchaMatchState = [];
+  const matches = document.getElementById("achcha-matches");
+  if (matches) matches.replaceChildren();
   const status = document.getElementById("achcha-find-status");
-  try { await window.KannadaLexiconStore.ready(); }
-  catch (error) {
+  if (status) status.textContent = message;
+}
+function restoreAchchaEditorText(value) {
+  const editor = document.getElementById("achcha-input");
+  if (!editor) return;
+  setAchchaEditorText(editor, value);
+  editor.focus();
+  resetAchchaMatchUI("ಪಠ್ಯ ಬದಲಾಗಿದೆ. ಪದಗಳನ್ನು ಮತ್ತೆ ಹುಡುಕಿ.");
+}
+function initAchchaEditorHistory() {
+  if (achchaHistoryReady) return;
+  const editor = document.getElementById("achcha-input");
+  if (!editor) return;
+  achchaHistoryReady = true;
+  editor.addEventListener("beforeinput", () => {
+    achchaBeforeInputText = getAchchaEditorText(editor);
+  });
+  editor.addEventListener("input", () => {
+    if (achchaBeforeInputText !== null && achchaBeforeInputText !== getAchchaEditorText(editor)) {
+      achchaUndoStack.push(achchaBeforeInputText);
+      if (achchaUndoStack.length > 100) achchaUndoStack.shift();
+      achchaRedoStack = [];
+    }
+    achchaBeforeInputText = null;
+    resetAchchaMatchUI("ಪಠ್ಯ ಬದಲಾಗಿದೆ. ಪದಗಳನ್ನು ಮತ್ತೆ ಹುಡುಕಿ.");
+  });
+  editor.addEventListener("keydown", event => {
+    const mod = event.ctrlKey || event.metaKey;
+    if (!mod || event.key.toLowerCase() !== "z") return;
+    event.preventDefault();
+    if (event.shiftKey) {
+      if (!achchaRedoStack.length) return;
+      achchaUndoStack.push(getAchchaEditorText(editor));
+      restoreAchchaEditorText(achchaRedoStack.pop());
+    } else {
+      if (!achchaUndoStack.length) return;
+      achchaRedoStack.push(getAchchaEditorText(editor));
+      restoreAchchaEditorText(achchaUndoStack.pop());
+    }
+  });
+  editor.addEventListener("keydown", event => {
+    if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "y") {
+      event.preventDefault();
+      if (!achchaRedoStack.length) return;
+      achchaUndoStack.push(getAchchaEditorText(editor));
+      restoreAchchaEditorText(achchaRedoStack.pop());
+    }
+  });
+}
+
+function decorateAchchaEditor(text, matches) {
+  const editor = document.getElementById("achcha-input");
+  if (!editor) return;
+  let cursor = 0;
+  let markup = "";
+  matches.forEach((match, index) => {
+    markup += escapeHtmlAchcha(text.slice(cursor, match.start));
+    markup += '<span class="achcha-hit achcha-underline kn" data-match="' + index + '" tabindex="0" role="button" title="Choose a Kannada alternative">' + escapeHtmlAchcha(text.slice(match.start, match.end)) + '</span>';
+    cursor = match.end;
+  });
+  markup += escapeHtmlAchcha(text.slice(cursor));
+  editor.innerHTML = markup.replace(/\n/g, "<br>");
+  editor.querySelectorAll(".achcha-hit").forEach(hit => {
+    const activate = () => {
+      const index = Number(hit.getAttribute("data-match"));
+      const card = document.getElementById("achcha-match-" + index);
+      if (card) {
+        card.scrollIntoView({ behavior: "smooth", block: "nearest" });
+        card.classList.add("ring-2", "ring-amber-500");
+        setTimeout(() => card.classList.remove("ring-2", "ring-amber-500"), 1200);
+      }
+    };
+    hit.addEventListener("click", activate);
+    hit.addEventListener("keydown", event => {
+      if (event.key === "Enter" || event.key === " ") { event.preventDefault(); activate(); }
+    });
+  });
+}
+
+function applyAchchaReplacement(index, word) {
+  const match = achchaMatchState[index];
+  const editor = document.getElementById("achcha-input");
+  if (!match || !editor) return;
+  const current = getAchchaEditorText(editor);
+  if (current.slice(match.start, match.end) !== match.source) {
+    resetAchchaMatchUI("ಪಠ್ಯ ಬದಲಾಗಿದೆ. ಪದಗಳನ್ನು ಮತ್ತೆ ಹುಡುಕಿ.");
+    return;
+  }
+  if (word === match.source) return;
+  achchaUndoStack.push(current);
+  if (achchaUndoStack.length > 100) achchaUndoStack.shift();
+  achchaRedoStack = [];
+  const updated = current.slice(0, match.start) + word + current.slice(match.end);
+  setAchchaEditorText(editor, updated);
+  editor.focus();
+  findAchchaWords();
+}
+window.applyAchchaReplacement = applyAchchaReplacement;
+
+async function findAchchaWords() {
+  initAchchaEditorHistory();
+  const status = document.getElementById("achcha-find-status");
+  const editor = document.getElementById("achcha-input");
+  if (!editor) return;
+  const original = getAchchaEditorText(editor);
+  if (!original.trim()) { editor.focus(); resetAchchaMatchUI(""); return; }
+  try {
+    await window.KannadaLexiconStore.ready();
+  } catch (error) {
     if (status) status.textContent = "Vocabulary could not load: " + (error.message || "Please retry.");
     return;
   }
-  const input = document.getElementById("achcha-input");
-  const original = getAchchaEditorText(input).trim();
-  if (!original) { input && input.focus(); return; }
-  // Match against a normalized, case-folded copy so Latin aliases such as
-  // Varna also match VARNA / varna. Keep offsets aligned with the displayed text.
   const searchable = original.normalize("NFC");
   const foldedText = searchable.toLocaleLowerCase();
-
-  const lexicon = buildAchchaLexicon(searchable);
   const forms = [];
-  lexicon.forEach(entry => {
-    (entry.sourceForms || []).forEach(sf => {
-      if (sf && sf.length >= 2) forms.push({ form: sf.normalize("NFC"), entry });
+  buildAchchaLexicon(searchable).forEach(entry => {
+    (entry.sourceForms || []).forEach(sourceForm => {
+      if (sourceForm && sourceForm.length >= 2) forms.push({ form: sourceForm.normalize("NFC"), entry });
     });
   });
-  forms.sort((a, b) => b.form.length - a.form.length);
-
-  // Match complete Kannada words, not accidental substrings inside longer words.
-  // Unicode marks are included because Kannada vowel signs/viramas are combining marks.
+  forms.sort((left, right) => right.form.length - left.form.length);
   const isWordCharacter = char => !!char && /[\p{L}\p{M}\p{N}_]/u.test(char);
-  const occupied = new Array(original.length).fill(false);
+  const occupied = new Array(searchable.length).fill(false);
   const matches = [];
-
   for (const { form, entry } of forms) {
-    const foldedForm = form.toLocaleLowerCase();
+    const needle = form.toLocaleLowerCase();
     let from = 0;
     while (from < searchable.length) {
-      const idx = foldedText.indexOf(foldedForm, from);
-      if (idx < 0) break;
-      const end = idx + form.length;
-      const leftBoundary = idx === 0 || !isWordCharacter(searchable[idx - 1]);
-      const rightBoundary = end === searchable.length || !isWordCharacter(searchable[end]);
+      const start = foldedText.indexOf(needle, from);
+      if (start < 0) break;
+      const end = start + form.length;
+      const boundaries = (start === 0 || !isWordCharacter(searchable[start - 1])) &&
+        (end === searchable.length || !isWordCharacter(searchable[end]));
       let overlap = false;
-      for (let i = idx; i < end; i++) if (occupied[i]) { overlap = true; break; }
-      if (leftBoundary && rightBoundary && !overlap) {
-        for (let i = idx; i < end; i++) occupied[i] = true;
-        const candidates = (entry.candidates || []).filter(c => c.word);
+      for (let pos = start; pos < end; pos++) if (occupied[pos]) { overlap = true; break; }
+      if (boundaries && !overlap) {
+        const candidates = (entry.candidates || []).filter(candidate => candidate.word);
         if (candidates.length) {
-          matches.push({
-            source: searchable.slice(idx, end),
-            meaning: entry.meaning || "",
-            candidates,
-            selected: candidates[0].word,
-            start: idx,
-            end
-          });
+          for (let pos = start; pos < end; pos++) occupied[pos] = true;
+          matches.push({ source: searchable.slice(start, end), meaning: entry.meaning || "", candidates, start, end });
         }
       }
-      from = idx + 1;
+      from = start + 1;
     }
   }
-
-  matches.sort((a, b) => a.start - b.start);
+  matches.sort((left, right) => left.start - right.start);
   achchaMatchState = matches;
-
-  const list = document.getElementById("achcha-word-list");
   const container = document.getElementById("achcha-matches");
-  const output = document.getElementById("achcha-output");
-  if (output) output.classList.add("hidden");
-
   if (!matches.length) {
-    list.classList.add("hidden");
-    container.replaceChildren();
-    status.textContent = "No known vocabulary matches. Use the English meaning workbench to investigate this word.";
-    achchaDiscoveryState = [];
-    const previewWrap = document.getElementById("achcha-preview-wrap");
-    const preview = document.getElementById("achcha-preview");
-    if (previewWrap) previewWrap.classList.remove("hidden");
-    if (preview) {
-      preview.textContent = searchable;
-      preview.classList.remove("hidden");
-    }
+    clearAchchaMatchDecorations();
+    if (container) container.replaceChildren();
+    if (status) status.textContent = "No known vocabulary matches. You can still edit the text or use Advanced research for a selected word.";
     return;
   }
-  const previewWrap = document.getElementById("achcha-preview-wrap");
-  if (previewWrap) previewWrap.classList.remove("hidden");
-
-  status.textContent = matches.length + " word" + (matches.length === 1 ? "" : "s") + " found · hover underlined words for alternatives";
-
-  // Build interactive underlined preview of the original text.
-  const preview = document.getElementById("achcha-preview");
-  if (preview) {
-    let html = "";
-    let cursor = 0;
-    const text = searchable;
-    matches.forEach((m, i) => {
-      if (m.start > cursor) {
-        html += escapeHtmlAchcha(text.slice(cursor, m.start));
-      }
-      const chosen = m.selected || (m.candidates[0] && m.candidates[0].word) || m.source;
-      const opts = m.candidates.map((c, j) => {
-        const active = (m.selected || m.candidates[0].word) === c.word ? " achcha-opt-active" : "";
-        return '<button type="button" class="achcha-opt kn' + active + '" data-match="' + i + '" data-word="' + escapeHtmlAchcha(c.word) + '">' + escapeHtmlAchcha(c.word) + '</button>';
-      }).join("");
-      const keepActive = (m.selected === m.source) ? " achcha-opt-active" : "";
-      const keep = '<button type="button" class="achcha-opt achcha-opt-keep' + keepActive + '" data-match="' + i + '" data-word="' + escapeHtmlAchcha(m.source) + '">keep “' + escapeHtmlAchcha(m.source) + '”</button>';
-      html += '<span class="achcha-hit" tabindex="0" data-match="' + i + '" role="button" aria-label="Alternatives for ' + escapeHtmlAchcha(m.source) + '">'
-        + '<span class="achcha-underline kn">' + escapeHtmlAchcha(m.source) + '</span>'
-        + '<span class="achcha-pop" role="listbox">'
-        + '<span class="achcha-pop-title">Native alternatives for <strong class="kn">' + escapeHtmlAchcha(m.source) + '</strong>'
-        + (m.meaning ? ' <span class="achcha-pop-meaning">(' + escapeHtmlAchcha(m.meaning) + ')</span>' : '')
-        + '</span>'
-        + '<span class="achcha-pop-opts">' + opts + keep + '</span>'
-        + '</span></span>';
-      cursor = m.end;
-    });
-    if (cursor < text.length) html += escapeHtmlAchcha(text.slice(cursor));
-    // Preserve newlines
-    html = html.replace(/\n/g, "<br>");
-    preview.innerHTML = html;
-    preview.classList.remove("hidden");
-
-    // Origin is not inferred from a word list; use the meaning-first evidence workbench instead.
-    achchaDiscoveryState = [];
-    // Wire option clicks
-    preview.querySelectorAll(".achcha-opt").forEach(btn => {
-      btn.addEventListener("click", (ev) => {
-        ev.preventDefault();
-        ev.stopPropagation();
-        const i = Number(btn.getAttribute("data-match"));
-        const word = btn.getAttribute("data-word");
-        if (!Number.isFinite(i) || !achchaMatchState[i]) return;
-        achchaMatchState[i].selected = word;
-        // Refresh active styles inside this popover
-        const hit = btn.closest(".achcha-hit");
-        if (hit) {
-          hit.querySelectorAll(".achcha-opt").forEach(o => o.classList.toggle("achcha-opt-active", o.getAttribute("data-word") === word));
-        }
-        // Keep list radios in sync if present
-        const radios = document.querySelectorAll('input[name="achcha-sel-' + i + '"]');
-        radios.forEach(r => { r.checked = r.value === word; });
-      });
-    });
-  }
-
-  container.innerHTML = matches.map((m, i) => {
-    const opts = m.candidates.map((c, j) => {
-      const checked = j === 0 ? "checked" : "";
-      const label = escapeHtmlAchcha(c.word);
-      const note = c.note ? ' <span class="text-stone-400 text-xs">· ' + escapeHtmlAchcha(c.note.slice(0, 60)) + '</span>' : "";
-      return '<label class="inline-flex items-center gap-1.5 mr-3 mb-1 cursor-pointer">'
-        + '<input type="radio" name="achcha-sel-' + i + '" value="' + escapeHtmlAchcha(c.word) + '" ' + checked
-        + ' onchange="achchaMatchState[' + i + '].selected=this.value;syncAchchaPreviewSelection(' + i + ', this.value)" class="accent-red-800">'
-        + '<span class="kn text-sm font-medium text-stone-800">' + label + '</span>' + note + '</label>';
+  decorateAchchaEditor(searchable, matches);
+  if (status) status.textContent = matches.length + " word" + (matches.length === 1 ? "" : "s") + " found. Click an underlined word or choose an alternative below; the text changes immediately.";
+  if (container) {
+    container.innerHTML = matches.map((match, index) => {
+      const options = match.candidates.map(candidate =>
+        '<button type="button" class="achcha-opt kn" data-match="' + index + '" data-word="' + escapeHtmlAchcha(candidate.word) + '">' + escapeHtmlAchcha(candidate.word) + '</button>'
+      ).join("");
+      return '<article id="achcha-match-' + index + '" class="rounded-lg border border-amber-200 bg-amber-50/60 p-3 mb-2">'
+        + '<div class="flex flex-wrap items-baseline gap-2 mb-2"><span class="kn font-semibold text-red-900 underline decoration-red-700 decoration-2 underline-offset-4">' + escapeHtmlAchcha(match.source) + '</span>'
+        + (match.meaning ? '<span class="text-xs text-stone-500">' + escapeHtmlAchcha(match.meaning) + '</span>' : '') + '</div>'
+        + '<div class="flex flex-wrap gap-2">' + options + '</div></article>';
     }).join("");
-    const keep = '<label class="inline-flex items-center gap-1.5 mr-3 mb-1 cursor-pointer">'
-      + '<input type="radio" name="achcha-sel-' + i + '" value="' + escapeHtmlAchcha(m.source) + '"'
-      + ' onchange="achchaMatchState[' + i + '].selected=this.value;syncAchchaPreviewSelection(' + i + ', this.value)" class="accent-stone-500">'
-      + '<span class="kn text-sm text-stone-500">ಉಳಿಸು · keep “' + escapeHtmlAchcha(m.source) + '”</span></label>';
-    return '<div class="rounded-lg border border-amber-100 bg-amber-50/50 px-3 py-2.5">'
-      + '<div class="flex flex-wrap items-baseline gap-2 mb-1.5">'
-      + '<span class="kn text-base font-semibold text-red-900">' + escapeHtmlAchcha(m.source) + '</span>'
-      + (m.meaning ? '<span class="text-xs text-stone-500">(' + escapeHtmlAchcha(m.meaning) + ')</span>' : '')
-      + '</div>'
-      + '<div class="flex flex-wrap items-center">' + opts + keep + '</div>'
-      + '</div>';
-  }).join("");
-
-  list.classList.remove("hidden");
-  list.scrollIntoView({ behavior: "smooth", block: "nearest" });
-}
-
-function syncAchchaPreviewSelection(i, word) {
-  const preview = document.getElementById("achcha-preview");
-  if (!preview) return;
-  const hit = preview.querySelector('.achcha-hit[data-match="' + i + '"]');
-  if (!hit) return;
-  hit.querySelectorAll(".achcha-opt").forEach(o => o.classList.toggle("achcha-opt-active", o.getAttribute("data-word") === word));
-}
-window.syncAchchaPreviewSelection = syncAchchaPreviewSelection;
-
-function resetAchchaSelections() {
-  achchaMatchState.forEach((m, i) => {
-    m.selected = m.candidates[0] ? m.candidates[0].word : m.source;
-    const radios = document.querySelectorAll('input[name="achcha-sel-' + i + '"]');
-    radios.forEach((r, j) => { r.checked = j === 0; });
-  });
-  const out = document.getElementById("achcha-output");
-  if (out) out.classList.add("hidden");
-}
-
-async function completeAchchaRewrite() {
-  const input = document.getElementById("achcha-input");
-  const original = (input && input.value || "").trim();
-  if (!original) { input && input.focus(); return; }
-  if (!achchaMatchState.length) {
-    await findAchchaWords();
-    original = getAchchaEditorText(input).trim();
-    if (!achchaMatchState.length) return;
-  }
-
-  const ordered = [...achchaMatchState].sort((a, b) => b.start - a.start);
-  let result = original;
-  const applied = [];
-  ordered.forEach(m => {
-    const chosen = m.selected || m.source;
-    if (chosen !== m.source) {
-      result = result.slice(0, m.start) + chosen + result.slice(m.end);
-      applied.push({ original: m.source, replacement: chosen });
-    }
-  });
-  applied.reverse();
-
-  const output = document.getElementById("achcha-output");
-  output.classList.remove("hidden");
-  document.getElementById("achcha-original").textContent = original;
-  document.getElementById("achcha-result").textContent = result;
-  document.getElementById("achcha-version-label").textContent = applied.length
-    ? ("ನಿಮ್ಮ ಆಯ್ಕೆ · " + applied.length + " ಪದ ಬದಲಾಯಿಸಲಾಗಿದೆ")
-    : "ಯಾವುದೇ ಪದ ಬದಲಾಯಿಸಲಾಗಿಲ್ಲ";
-
-  const notes = document.getElementById("achcha-notes");
-  notes.replaceChildren();
-  if (applied.length) {
-    const title = document.createElement("p");
-    title.className = "font-semibold text-stone-700 mb-1";
-    title.textContent = "ಆಯ್ಕೆ ಮಾಡಿದ ಬದಲಾವಣೆಗಳು:";
-    notes.append(title);
-    applied.forEach(item => {
-      const p = document.createElement("p");
-      p.className = "kn mt-1 text-sm";
-      p.textContent = item.original + " → " + item.replacement;
-      notes.append(p);
+    container.querySelectorAll(".achcha-opt").forEach(button => {
+      button.addEventListener("click", () => applyAchchaReplacement(Number(button.dataset.match), button.dataset.word));
     });
   }
-  output.scrollIntoView({ behavior: "smooth", block: "nearest" });
 }
-
 let achchaRewriteRun = 0;
 let achchaRewriteController = null;
 
@@ -814,10 +761,10 @@ function clearAchchaInput() {
   if (achchaRewriteController) achchaRewriteController.abort();
   achchaRewriteController = null;
   const input = document.getElementById("achcha-input");
-  if (input) input.value = "";
+  if (input) input.textContent = "";\n  achchaUndoStack = []; achchaRedoStack = []; achchaBeforeInputText = null;
   achchaMatchState = [];
   achchaDiscoveryState = [];
-  ["achcha-word-list","achcha-output","achcha-preview-wrap","achcha-gap-panel"].forEach(id => {
+  ["achcha-matches","achcha-word-list","achcha-output","achcha-preview-wrap","achcha-gap-panel"].forEach(id => {
     const element = document.getElementById(id);
     if (element) element.classList.add("hidden");
   });

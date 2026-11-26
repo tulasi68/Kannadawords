@@ -12,8 +12,8 @@ test("Tab 4 keeps matches and replacements in the original editable text",()=>{
   assert.ok(html.includes(">Clear</button>"));
   assert.ok(html.includes('id="achcha-find-status"'));
   assert.ok(html.includes('id="achcha-matches"'));
-  assert.doesNotMatch(html,/id="achcha-apply"|>Apply</button>/);
-  assert.doesNotMatch(html,/id="achcha-output"|id="achcha-result-text"/);
+  assert.ok(!html.includes('id="achcha-apply"') && !html.includes(">Apply</button>"));
+  assert.ok(!html.includes('id="achcha-output"') && !html.includes('id="achcha-result-text"'));
   assert.match(app,/function decorateAchchaEditor\(text, matches\)/);
   assert.match(app,/function applyAchchaReplacement\(index, word\)/);
   assert.match(app,/findAchchaWords\(\);/);

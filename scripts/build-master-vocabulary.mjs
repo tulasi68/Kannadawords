@@ -122,16 +122,17 @@ function mergedCsvSuggestions(value) {
     const parsed = JSON.parse(raw);
     values = Array.isArray(parsed) ? parsed.map(String) : [raw];
   } catch {
+    if (raw.startsWith("[") || raw.startsWith('"[')) return [];
     values = [raw];
   }
   const suggestions = [];
   for (let value of values) {
     value = String(value || "").trim()
-      .replace(/\\s*\\([^)]*[A-Za-z][^)]*\\)\\s*$/u, "")
+      .replace(/\s*\([^)]*[A-Za-z][^)]*\)\s*$/u, "")
       .trim();
-    for (const part of value.split(/\\s*[\\/,;]\\s*/u)) {
-      const candidate = part.replace(/^[\\s"'[\\]]+|[\\s"'\\]]+$/gu, "").trim().normalize("NFC");
-      if (candidate && /[\\u0C80-\\u0CFF]/u.test(candidate) && !/[A-Za-z]/u.test(candidate)) suggestions.push(candidate);
+    for (const part of value.split(/\s*[\/,;]\s*/u)) {
+      const candidate = part.replace(/^[\s"'[\]]+|[\s"'\]]+$/gu, "").trim().normalize("NFC");
+      if (candidate && /[\u0C80-\u0CFF]/u.test(candidate) && !/[A-Za-z]/u.test(candidate)) suggestions.push(candidate);
     }
   }
   return [...new Set(suggestions)];
@@ -139,7 +140,7 @@ function mergedCsvSuggestions(value) {
 
 function addMergedMasterCsv() {
   const csvPath = path.join(root, "MergedMasterCopy_10000.csv");
-  const lines = fs.readFileSync(csvPath, "utf8").replace(/^\\uFEFF/u, "").split(/\\r?\\n/u).filter(Boolean);
+  const lines = fs.readFileSync(csvPath, "utf8").replace(/^\uFEFF/u, "").split(/\r?\n/u).filter(Boolean);
   if (!lines.length) throw new Error("MergedMasterCopy_10000.csv is empty");
   const header = parseMergedCsvLine(lines[0]);
   const columns = Object.fromEntries(header.map((name, index) => [name, index]));
@@ -155,7 +156,7 @@ function addMergedMasterCsv() {
       ...mergedCsvSuggestions(row[columns["Alternative Native Options"]])
     ])];
     if (!alternatives.length) continue;
-    const forms = expandForms(source).filter(form => /[\\u0C80-\\u0CFF]/u.test(form) && !/[A-Za-z]/u.test(form));
+    const forms = expandForms(source).filter(form => /[\u0C80-\u0CFF]/u.test(form) && !/[A-Za-z]/u.test(form));
     for (const form of forms) add(form, row[columns["English Meaning"]], alternatives);
   }
 }

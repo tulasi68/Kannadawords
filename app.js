@@ -991,18 +991,21 @@ function populateCategoryOptions() {
 async function loadUnifiedRows() {
   if (unifiedRows) return unifiedRows;
   await window.KannadaLexiconStore.ready();
-  const [canonicalEntries, masterResponse, landingResponse, textbookResponse] = await Promise.all([
+  const [canonicalEntries, masterResponse, landingResponse, textbookResponse, mergedVocabularyResponse] = await Promise.all([
     window.KannadaLexiconStore.loadAllEntries(),
     fetch("./master-lexicon.json",{cache:"no-cache"}),
     fetch("./landing-words.json",{cache:"no-cache"}),
-    fetch("./textbook-words.json",{cache:"no-cache"})
+    fetch("./textbook-words.json",{cache:"no-cache"}),
+    fetch("./master-vocabulary.json",{cache:"no-cache"})
   ]);
   if (!masterResponse.ok) throw new Error("The master word list could not be loaded ("+masterResponse.status+").");
   if (!landingResponse.ok) throw new Error("The civic, media and education words could not be loaded ("+landingResponse.status+").");
   if (!textbookResponse.ok) throw new Error("The textbook vocabulary could not be loaded ("+textbookResponse.status+").");
+  if (!mergedVocabularyResponse.ok) throw new Error("The merged master vocabulary could not be loaded ("+mergedVocabularyResponse.status+").");
   const masterData = await masterResponse.json();
   const landingData = await landingResponse.json();
   const textbookData = await textbookResponse.json();
+  const mergedVocabularyData = await mergedVocabularyResponse.json();
   if (masterData.schemaVersion !== 1 || masterData.sourceFile !== "2087words.xlsx" ||
       !Array.isArray(masterData.entries) || masterData.entries.length !== masterData.entryCount ||
       masterData.entries.some(row => !row.id || !Array.isArray(row.fields) || row.fields.length !== 8)) {
@@ -1017,6 +1020,41 @@ async function loadUnifiedRows() {
       textbookData.entries.some(row => !row.id || !row.inputWord || !row.primary || !Number.isInteger(row.sourceLine))) {
     throw new Error("The Kannada textbook word list failed its integrity check.");
   }
+  if (mergedVocabularyData.schemaVersion !== 1 ||
+      !Array.isArray(mergedVocabularyData.entries) ||
+      mergedVocabularyData.entries.length !== mergedVocabularyData.entryCount ||
+      mergedVocabularyData.entries.some(row => typeof row.word !== "string" || !row.word.trim() ||
+        typeof row.meaning !== "string" || !Array.isArray(row.alternatives) || !row.alternatives.length ||
+        row.alternatives.some(value => typeof value !== "string" || !value.trim()))) {
+    throw new Error("The merged master vocabulary failed its integrity check.");
+  }
+  const mergedVocabularyWords = mergedVocabularyData.entries.map(row => row.word.normalize("NFC"));
+  if (new Set(mergedVocabularyWords).size !== mergedVocabularyWords.length) {
+    throw new Error("The merged master vocabulary contains duplicate source words.");
+  }
+  const mergedMasterEntries = mergedVocabularyData.entries.map((row,index) => {
+    const sourceWord = row.word.normalize("NFC").trim();
+    const stableId = [...sourceWord].map(character => character.codePointAt(0).toString(16)).join("-");
+    const alternatives = [...new Set(row.alternatives.map(word => word.normalize("NFC").trim()).filter(Boolean))];
+    return {
+      id:"merged-master-"+stableId,
+      sanskrit:sourceWord,
+      meaning:row.meaning.trim(),
+      category:"Merged Master Vocabulary",
+      alternatives:alternatives.map((word,altIndex) => {
+        const altId = [...word].map(character => character.codePointAt(0).toString(16)).join("-");
+        return {
+          id:"merged-master-"+stableId+"-alt-"+altId,
+          word,
+          unreviewed:true,
+          viability:"proposed",
+          note:"Merged master vocabulary suggestion; linguistic and contextual review is still required.",
+          etymologyParts:[{form:word,etymology:"unknown"}]
+        };
+      }),
+      editorialNote:"From the consolidated master vocabulary. Alternatives are retained as choices and are not automatically certified as Dravidian-origin."
+    };
+  });
   const masterEntries = masterData.entries.map(row => {
     const fields = row.fields;
     const alternatives = String(fields[2] || "").split(/\s*\/\s*/).filter(Boolean);
@@ -1053,7 +1091,7 @@ async function loadUnifiedRows() {
       (row.sourceCategory ? "Domain: "+row.sourceCategory+". " : "")+"Unreviewed editorial suggestion.",
     sourceDataset:row.sourceDataset,sourceLine:row.sourceLine
   }));
-  const all = [...canonicalEntries,...masterEntries,...landingEntries,...textbookEntries];
+  const all = [...canonicalEntries,...masterEntries,...landingEntries,...textbookEntries,...mergedMasterEntries];
   const grouped = new Map();
   const normalizeDisplayKey = value => String(value ?? "").normalize("NFC").replace(/\s+/g," ").trim();
   for (const entry of all) {

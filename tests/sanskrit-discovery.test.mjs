@@ -16,7 +16,7 @@ test("Tab 4 provides a meaning-first discovery workflow instead of AI-generated 
   assert.doesNotMatch(html,/>AI search<\/button>/);
   assert.match(workbench,/Alar/);
   assert.match(workbench,/investigateSelectedWord/);
-  assert.ok(workbench.includes("https://alar.ink/dictionary/kannada/english?q="));
+  assert.ok(workbench.includes("https://alar.ink/dictionary/kannada/english/"));
   assert.match(workbench,/selectionchange/);
   assert.match(html,/Padakanaja/);
   assert.match(workbench,/localStorage/);

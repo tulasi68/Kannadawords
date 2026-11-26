@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "ಅಚ್ಚ ಕನ್ನಡ News Converter",
+  "version": "1.0.0",
+  "description": "Converts selected Sanskrit-heavy Kannada news vocabulary into native Kannada alternatives.",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["converter.js", "content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

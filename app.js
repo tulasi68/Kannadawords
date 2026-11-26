@@ -835,8 +835,8 @@ async function translateAchchaKannada() {
 }
 window.clearAchchaInput = clearAchchaInput;
 window.findAchchaWords = findAchchaWords;
-window.resetAchchaSelections = resetAchchaSelections;
-window.completeAchchaRewrite = completeAchchaRewrite;
+
+
 window.translateAchchaKannada = translateAchchaKannada;
 window.translateAchchaGapWords = translateAchchaGapWords;
 

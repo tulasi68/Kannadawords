@@ -6,21 +6,26 @@ const html=fs.readFileSync(new URL("../index.html",import.meta.url),"utf8");
 const app=fs.readFileSync(new URL("../app.js",import.meta.url),"utf8");
 const store=fs.readFileSync(new URL("../lexicon-store.js",import.meta.url),"utf8");
 
-test("Tab 4 uses one inline editable Kannada text field and four requested actions",()=>{
+test("Tab 4 keeps matches and replacements in the original editable text",()=>{
   assert.match(html,/id="achcha-input"[^>]*contenteditable="true"/);
-  for(const label of ["Search in App","Investigate this word","Clear","Apply"]) assert.ok(html.includes(">"+label+"</button>"),label);
-  assert.doesNotMatch(html,/ಪಠ್ಯದ ಅರ್ಥವನ್ನು ಉಳಿಸಿಕೊಂಡು ಸಹಜ ಕನ್ನಡದಲ್ಲಿ ಮರುಬರೆಯಿರಿ/);
-  assert.doesNotMatch(html,/ಪದಪಟ್ಟಿ ಹುಡುಕಾಟವು ಮೂಲ ಪದಕೋಶ ಮತ್ತು 2,134 ಪದಗಳ master corpus/);
-  const tab4=html.slice(html.indexOf('<section id="translate-panel"'),html.indexOf("</section>",html.indexOf('<section id="translate-panel"')));
-  assert.doesNotMatch(tab4,/id="achcha-preview|id="achcha-word-list|id="achcha-gap-panel|id="achcha-gap-results/);
+  assert.ok(html.includes(">Search in App</button>"));
+  assert.ok(html.includes(">Clear</button>"));
+  assert.ok(html.includes('id="achcha-find-status"'));
+  assert.ok(html.includes('id="achcha-matches"'));
+  assert.doesNotMatch(html,/id="achcha-apply"|>Apply</button>/);
+  assert.doesNotMatch(html,/id="achcha-output"|id="achcha-result-text"/);
+  assert.match(app,/function decorateAchchaEditor\(text, matches\)/);
+  assert.match(app,/function applyAchchaReplacement\(index, word\)/);
+  assert.match(app,/findAchchaWords\(\);/);
+  assert.match(app,/achchaUndoStack\.push\(current\)/);
+  assert.match(html,/Ctrl\+Z/);
+  assert.match(html,/meaning-workbench\.js/);
 });
 
-test("Tab 4 applies selected red and blue word choices into a second Kannada text field",()=>{
-  assert.match(html,/id="achcha-result-text"/);
-  assert.match(app,/window\.findAchchaWords = async function/);
-  assert.match(html,/meaning-workbench\.js/);
-  assert.match(app,/achchaMatchState\.concat\(achchaDiscoveryState\)/);
-  assert.match(app,/item\.suggestions=suggestions/);
+test("Tab 4 replacement choices preserve the source text and refresh remaining matches",()=>{
+  assert.match(app,/current\.slice\(0, match\.start\) \+ word \+ current\.slice\(match\.end\)/);
+  assert.match(app,/decorateAchchaEditor\(searchable, matches\)/);
+  assert.match(app,/container\.querySelectorAll\("\.achcha-opt"\)/);
 });
 
 test("Tab 4 lookup includes canonical, master, textbook, landing and root-family collections",()=>{

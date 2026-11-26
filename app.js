@@ -742,13 +742,14 @@ async function findAchchaWords() {
   const container = document.getElementById("achcha-matches");
   if (!matches.length) {
     clearAchchaMatchDecorations();
-    if (container) container.replaceChildren();
+    if (container) { container.replaceChildren(); container.classList.add("hidden"); }
     if (status) status.textContent = "No known vocabulary matches. You can still edit the text or use Advanced research for a selected word.";
     return;
   }
   decorateAchchaEditor(searchable, matches);
   if (status) status.textContent = matches.length + " word" + (matches.length === 1 ? "" : "s") + " found. Click an underlined word or choose an alternative below; the text changes immediately.";
   if (container) {
+    container.classList.remove("hidden");
     container.replaceChildren();
     matches.forEach((match, index) => {
       const card = document.createElement("article");

@@ -761,7 +761,8 @@ function clearAchchaInput() {
   if (achchaRewriteController) achchaRewriteController.abort();
   achchaRewriteController = null;
   const input = document.getElementById("achcha-input");
-  if (input) input.textContent = "";\n  achchaUndoStack = []; achchaRedoStack = []; achchaBeforeInputText = null;
+  if (input) input.textContent = "";
+  achchaUndoStack = []; achchaRedoStack = []; achchaBeforeInputText = null;
   achchaMatchState = [];
   achchaDiscoveryState = [];
   ["achcha-matches","achcha-word-list","achcha-output","achcha-preview-wrap","achcha-gap-panel"].forEach(id => {

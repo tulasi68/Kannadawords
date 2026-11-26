@@ -53,3 +53,12 @@ test("multi-option source entries retain every distinct Kannada choice", () => {
   assert.ok(tree.alternatives.includes("ಮರ"));
   assert.ok(tree.alternatives.includes("ಗಿಡ"));
 });
+
+test("combined source labels and their individual forms are retained", () => {
+  const byWord = new Map(vocabulary.entries.map(entry => [entry.word, entry]));
+  for (const word of ["ಸರ್ಪ / ನಾಗ", "ಸರ್ಪ", "ನಾಗ"]) {
+    const entry = byWord.get(word);
+    assert.ok(entry, word + " is present");
+    assert.ok(entry.alternatives.includes("ಹಾವು"));
+  }
+});

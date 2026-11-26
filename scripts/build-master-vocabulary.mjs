@@ -156,8 +156,21 @@ function addMergedMasterCsv() {
       ...mergedCsvSuggestions(row[columns["Alternative Native Options"]])
     ])];
     if (!alternatives.length) continue;
-    const forms = expandForms(source).filter(form => /[\u0C80-\u0CFF]/u.test(form) && !/[A-Za-z]/u.test(form));
-    for (const form of forms) add(form, row[columns["English Meaning"]], alternatives);
+
+    // Keep the original combined source label as well as its individual aliases.
+    const sourcePhrase = source
+      .replace(/\s*\([^)]*[A-Za-z][^)]*\)\s*$/u, "")
+      .trim()
+      .normalize("NFC");
+    const forms = new Set([
+      sourcePhrase,
+      ...expandForms(source).filter(form => /[\u0C80-\u0CFF]/u.test(form) && !/[A-Za-z]/u.test(form))
+    ]);
+    for (const form of forms) {
+      if (form && /[\u0C80-\u0CFF]/u.test(form) && !/[A-Za-z]/u.test(form)) {
+        add(form, row[columns["English Meaning"]], alternatives);
+      }
+    }
   }
 }
 

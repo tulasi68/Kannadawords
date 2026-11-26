@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "entryCount": 6901,
+  "entryCount": 6952,
   "entries": [
     {
       "word": "ಕ್ಷೀರ",
@@ -250,7 +250,8 @@
       "word": "ಅರಣ್ಯ / ವನ",
       "meaning": "Forest",
       "alternatives": [
-        "ಕಾಡು"
+        "ಕಾಡು",
+        "ಅಡವಿ"
       ]
     },
     {
@@ -1246,7 +1247,8 @@
       "meaning": "Word",
       "alternatives": [
         "ನುಡಿ",
-        "ಸೊಲ್ಲು / ನುಡಿ"
+        "ಸೊಲ್ಲು / ನುಡಿ",
+        "ಸೊಲ್ಲು"
       ]
     },
     {
@@ -1965,7 +1967,9 @@
       "word": "ಪ್ರಾಣ / ಆತ್ಮ",
       "meaning": "Life-breath / self",
       "alternatives": [
-        "ಉಸಿರು / ಉಯಿರ್"
+        "ಉಸಿರು / ಉಯಿರ್",
+        "ಉಸಿರು",
+        "ಉಯಿರ್"
       ]
     },
     {
@@ -7082,6 +7086,7 @@
         "ಅರಿಕೆ",
         "ವಿವರ",
         "Outside Sanskrit-origin scope",
+        "ವರದಿ",
         "ಒಪ್ಪು",
         "ಒಳಹೊಕ್ಕು"
       ]
@@ -25106,6 +25111,381 @@
       "meaning": "ಏರ್ಪಡಿಸುವವರು",
       "alternatives": [
         "ಏರ್ಪಡಿಸುವವರು"
+      ]
+    },
+    {
+      "word": "ಪರಿವಿಡಿ / ಪಾಠದ ಸಾರಾಂಶ",
+      "meaning": "Lesson Summary",
+      "alternatives": [
+        "ಪಾಠದ ತಿರುಳು"
+      ]
+    },
+    {
+      "word": "ಖರ / ಕಠೋರ",
+      "meaning": "Rough / Harsh",
+      "alternatives": [
+        "ಒರಟು",
+        "ಗಡುಸು"
+      ]
+    },
+    {
+      "word": "ತೃಷೆ / ಪಿಪಾಸೆ",
+      "meaning": "Thirst",
+      "alternatives": [
+        "ಬಾಯಾರಿಕೆ",
+        "ನೀರಡಿಕೆ"
+      ]
+    },
+    {
+      "word": "ಕಾಲೇಜು / ಮಹಾವಿದ್ಯಾಲಯ",
+      "meaning": "College",
+      "alternatives": [
+        "ಮೇಲ್ಕಲಿಕೆಮನೆ",
+        "ಕಾಲೇಜು"
+      ]
+    },
+    {
+      "word": "ಪೆಟ್ರೋಲ್ / ತೈಲ",
+      "meaning": "Petroleum / Crude oil",
+      "alternatives": [
+        "ನೆಲದೆಣ್ಣೆ"
+      ]
+    },
+    {
+      "word": "ಪೃಥ್ವಿ / ಭೂಮಿ",
+      "meaning": "Earth / Land / Soil",
+      "alternatives": [
+        "ನೆಲ",
+        "ಮಣ್ಣು",
+        "ಧರೆ"
+      ]
+    },
+    {
+      "word": "ಶಿಲೆ / ಪಾಷಾಣ",
+      "meaning": "Stone / Rock",
+      "alternatives": [
+        "ಕಲ್ಲು",
+        "ಬಂಡೆ"
+      ]
+    },
+    {
+      "word": "ಮೃಗ / ಪ್ರಾಣಿ",
+      "meaning": "Animal / Living being",
+      "alternatives": [
+        "ಮೃಗ",
+        "ಜೀವಿ",
+        "ಕಾಡುಪ್ರಾಣಿ"
+      ]
+    },
+    {
+      "word": "ಧೇನು / ಗೋವು",
+      "meaning": "Cow",
+      "alternatives": [
+        "ಆಕಳು",
+        "ಹಸು"
+      ]
+    },
+    {
+      "word": "ನೇತ್ರ / ಚಕ್ಷು",
+      "meaning": "Eye",
+      "alternatives": [
+        "ಕಣ್ಣು"
+      ]
+    },
+    {
+      "word": "ವದನ / ಆಸ್ಯ",
+      "meaning": "Mouth",
+      "alternatives": [
+        "ಬಾಯಿ"
+      ]
+    },
+    {
+      "word": "ಕಂಠ / ಗ್ರೀವ",
+      "meaning": "Neck / Throat",
+      "alternatives": [
+        "ಕುತ್ತಿಗೆ",
+        "ಕೊರಳು"
+      ]
+    },
+    {
+      "word": "ಹಸ್ತ / ಕರ",
+      "meaning": "Hand",
+      "alternatives": [
+        "ಕೈ"
+      ]
+    },
+    {
+      "word": "ಪಾದ / ಚರಣ",
+      "meaning": "Foot / Leg",
+      "alternatives": [
+        "ಕಾಲು",
+        "ಅಡಿ"
+      ]
+    },
+    {
+      "word": "ಮರಣ / ಮೃತ್ಯು",
+      "meaning": "Death",
+      "alternatives": [
+        "ಸಾವು"
+      ]
+    },
+    {
+      "word": "ಊರ್ಧ್ವ / ಉಪರಿ",
+      "meaning": "Up / Above",
+      "alternatives": [
+        "ಮೇಲೆ"
+      ]
+    },
+    {
+      "word": "ಪುರತಃ / ಅಗ್ರ",
+      "meaning": "Front / Ahead",
+      "alternatives": [
+        "ಮುಂದೆ"
+      ]
+    },
+    {
+      "word": "ಗಡಿ / ಸೀಮೆ",
+      "meaning": "Border / Boundary",
+      "alternatives": [
+        "ಗಡಿ",
+        "ಎಲ್ಲೆ"
+      ]
+    },
+    {
+      "word": "ಅಸತ್ಯ / ಮಿಥ್ಯ",
+      "meaning": "Lie / Falsehood",
+      "alternatives": [
+        "ಸುಳ್ಳು",
+        "ಹುಸಿ"
+      ]
+    },
+    {
+      "word": "ಪ್ರೇಮ / ಸ್ನೇಹ",
+      "meaning": "Love / Friendship",
+      "alternatives": [
+        "ಒಲವು",
+        "ನಲ್ಮೆ",
+        "ಗೆಳೆತನ"
+      ]
+    },
+    {
+      "word": "ದ್ವೇಷ / ಕ್ರೋಧ",
+      "meaning": "Hatred / Anger",
+      "alternatives": [
+        "ಹಗೆ",
+        "ಸಿಟ್ಟು",
+        "ಕೋಪ",
+        "ಮುನಿಸು"
+      ]
+    },
+    {
+      "word": "ಆನಂದ / ಸಂತೋಷ",
+      "meaning": "Joy / Happiness",
+      "alternatives": [
+        "ನಲಿವು",
+        "ಹಿಗ್ಗು",
+        "ಸಂತಸ"
+      ]
+    },
+    {
+      "word": "ಶಕ್ತಿ / ಬಲ",
+      "meaning": "Strength / Power / Capacity",
+      "alternatives": [
+        "ಕಸುವು",
+        "ತಾಕತ್ತು",
+        "ಅಳವು"
+      ]
+    },
+    {
+      "word": "ಕನಸು / ಸ್ವಪ್ನ",
+      "meaning": "Dream",
+      "alternatives": [
+        "ಕನಸು"
+      ]
+    },
+    {
+      "word": "ಚಿಂತೆ / ಆಲೋಚನೆ",
+      "meaning": "Thought",
+      "alternatives": [
+        "ಯೋಚನೆ",
+        "ಎಣಿಕೆ",
+        "ಚಿಂತನೆ"
+      ]
+    },
+    {
+      "word": "ನಿರ್ಣಯ / ತೀರ್ಮಾನ",
+      "meaning": "Decision / Resolution",
+      "alternatives": [
+        "ತೀರ್ಮಾನ",
+        "ನಿಲುವು",
+        "ಕಟ್ಟಳೆ"
+      ]
+    },
+    {
+      "word": "ವಿಶ್ವಾಸ / ನಂಬಿಕೆ",
+      "meaning": "Trust / Belief",
+      "alternatives": [
+        "ನಂಬಿಕೆ"
+      ]
+    },
+    {
+      "word": "ಬೃಹತ್ / ವಿಶಾಲ",
+      "meaning": "Big / Large / Vast",
+      "alternatives": [
+        "ದೊಡ್ಡ",
+        "ಹಿರಿದು",
+        "ವಿಶಾಲ"
+      ]
+    },
+    {
+      "word": "ಸೂಕ್ಷ್ಮ / ಲಘು",
+      "meaning": "Small / Subtle",
+      "alternatives": [
+        "ಸಣ್ಣ",
+        "ಕಿರಿದು",
+        "ನುಣ್ಣನೆಯ"
+      ]
+    },
+    {
+      "word": "ಕಡಿಮೆ / ಅಲ್ಪ",
+      "meaning": "Less / Little",
+      "alternatives": [
+        "ಕಡಿಮೆ",
+        "ಕೊಂಚ",
+        "ತುಸು"
+      ]
+    },
+    {
+      "word": "ಕೆಟ್ಟ / ಅಧಮ",
+      "meaning": "Bad / Inferior",
+      "alternatives": [
+        "ಕೆಟ್ಟ",
+        "ಕೀಳು"
+      ]
+    },
+    {
+      "word": "ಮನುಷ್ಯ / ಮಾನವ",
+      "meaning": "Human / Person",
+      "alternatives": [
+        "ಮನುಷ್ಯ",
+        "ಮಂದಿ",
+        "ಆಳು"
+      ]
+    },
+    {
+      "word": "ಸ್ತ್ರೀ / ಮಹಿಳೆ",
+      "meaning": "Woman / Female",
+      "alternatives": [
+        "ಹೆಂಗಸು",
+        "ಹೆಣ್ಣು"
+      ]
+    },
+    {
+      "word": "ಬಾಲಕ / ಶಿಶು",
+      "meaning": "Boy / Child / Infant",
+      "alternatives": [
+        "ಹುಡುಗ",
+        "ಕೂಸು",
+        "ಮಗು"
+      ]
+    },
+    {
+      "word": "ಪಿತ / ಜನಕ",
+      "meaning": "Father",
+      "alternatives": [
+        "ತಂದೆ",
+        "ಅಪ್ಪ"
+      ]
+    },
+    {
+      "word": "ಮಾತಾ / ಜನನಿ",
+      "meaning": "Mother",
+      "alternatives": [
+        "ತಾಯಿ",
+        "ಅಮ್ಮ"
+      ]
+    },
+    {
+      "word": "ವರ್ತಕ / ವ್ಯಾಪಾರಿ",
+      "meaning": "Merchant / Seller",
+      "alternatives": [
+        "ಬಣಜಿಗ",
+        "ಮಾರಾಟಗಾರ"
+      ]
+    },
+    {
+      "word": "ಶಬ್ದ / ಪದ",
+      "meaning": "Word",
+      "alternatives": [
+        "ಪದ",
+        "ಸೊಲ್ಲು",
+        "ನುಡಿ"
+      ]
+    },
+    {
+      "word": "ವಾಣಿಜ್ಯ / ವ್ಯಾಪಾರ",
+      "meaning": "Trade / Commerce",
+      "alternatives": [
+        "ಮಾರಾಟ",
+        "ವಹಿವಾಟು",
+        "ಕೊಳ್ಳುಕೊಡುಗೆ"
+      ]
+    },
+    {
+      "word": "ಕರ / ತೆರಿಗೆ",
+      "meaning": "Tax / Toll",
+      "alternatives": [
+        "ತೆರಿಗೆ",
+        "ಸುಂಕ"
+      ]
+    },
+    {
+      "word": "ವಿದ್ಯೆ / ಶಿಕ್ಷಣ",
+      "meaning": "Education / Learning",
+      "alternatives": [
+        "ಕಲಿಕೆ",
+        "ಓದು"
+      ]
+    },
+    {
+      "word": "ಶಿಕ್ಷಕ / ಗುರು",
+      "meaning": "Teacher",
+      "alternatives": [
+        "ಕಲಿಸುವವ",
+        "ಕಲಿಸುಗ"
+      ]
+    },
+    {
+      "word": "ಶಾಲೆ / ವಿದ್ಯಾಲಯ",
+      "meaning": "School",
+      "alternatives": [
+        "ಕಲಿಕೆಮನೆ",
+        "ಶಾಲೆ",
+        "ಬಯಲುಶಾಲೆ"
+      ]
+    },
+    {
+      "word": "ಪುಸ್ತಕ / ಗ್ರಂಥ",
+      "meaning": "Book",
+      "alternatives": [
+        "ಹೊತ್ತಗೆ",
+        "ಹೊತ್ತಿಗೆ"
+      ]
+    },
+    {
+      "word": "ಕವಿ / ಲೇಖಕ",
+      "meaning": "Writer / Author",
+      "alternatives": [
+        "ಬರಹಗಾರ",
+        "ಕವಿ"
+      ]
+    },
+    {
+      "word": "ಹುಡುಕಾಟ / ಅನ್ವೇಷಣೆ",
+      "meaning": "Search",
+      "alternatives": [
+        "ಹುಡುಕಾಟ",
+        "ಶೋಧ"
       ]
     },
     {
@@ -53352,6 +53732,14 @@
       ]
     },
     {
+      "word": "ಆಯ್ಕೆ",
+      "meaning": "Politics / Daily life",
+      "alternatives": [
+        "ಅರಿಸುವಿಕೆ",
+        "ಆರಿಸುವಿಕೆ"
+      ]
+    },
+    {
       "word": "ಕುತೂಹಲ",
       "meaning": "Emotion / Media",
       "alternatives": [
@@ -53508,6 +53896,14 @@
       ]
     },
     {
+      "word": "ಸಂಚು",
+      "meaning": "Law / Politics",
+      "alternatives": [
+        "ಒಳಸಂಚು",
+        "ಮೋಸದ ಯೋಜನೆ"
+      ]
+    },
+    {
       "word": "ವಿಫಲ",
       "meaning": "General / Daily life",
       "alternatives": [
@@ -53556,6 +53952,14 @@
       ]
     },
     {
+      "word": "ಕರಡು",
+      "meaning": "Administration / Law",
+      "alternatives": [
+        "ಮೊದಲ ಬರಹ",
+        "ತಾತ್ಕಾಲಿಕ ಬರಹ"
+      ]
+    },
+    {
       "word": "ಘೋರ",
       "meaning": "Media / Law",
       "alternatives": [
@@ -53593,6 +53997,15 @@
       "alternatives": [
         "ಬೂಷ್ಟು",
         "ಅಣಬೆ ಜಾತಿ"
+      ]
+    },
+    {
+      "word": "ಪ್ರಯತ್ನ / ಯತ್ನ",
+      "meaning": "Daily life / Action",
+      "alternatives": [
+        "ಹವಣಿಕೆ",
+        "ಹೆಣಗಾಟ",
+        "ತೊಡಗುವಿಕೆ"
       ]
     },
     {
@@ -53739,6 +54152,14 @@
       "meaning": "No Spitting",
       "alternatives": [
         "ಉಗುಳುವಂತಿಲ್ಲ"
+      ]
+    },
+    {
+      "word": "ತಂಪು ನೆರಳು / ವಿಶ್ರಾಂತಿ ಜಾಗ",
+      "meaning": "Shade / Rest Spot",
+      "alternatives": [
+        "ನೆರಳಿನ ಜಾಗ",
+        "ತಂಗುವ ಜಾಗ"
       ]
     },
     {

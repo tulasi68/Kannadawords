@@ -1060,9 +1060,7 @@ async function loadUnifiedRows() {
           etymologyParts:[{form:word,etymology:"unknown"}]
         };
       }),
-      editorialNote:metadata
-        ? newspaperNote+" Naturalness fit supplied: "+(metadata.naturalnessFit || "not supplied")+". Dravidian-root note supplied: "+(metadata.dravidianRoot || "not supplied")+". These notes are not independently verified."
-        : ""
+      editorialNote:""
     };
   });
   const masterEntries = masterData.entries.map(row => {
@@ -1076,7 +1074,7 @@ async function loadUnifiedRows() {
         note:notes || "From the master spreadsheet; editorial review may refine this wording.",
         etymologyParts:[{form:word,etymology:"unknown"}]
       })),
-      editorialNote:[fields[5] ? "Naturalness fit: "+fields[5] : "",notes].filter(Boolean).join(" · "),
+      editorialNote:"",
       sourceLine:row.sourceLine
     };
   });

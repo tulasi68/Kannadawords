@@ -1062,7 +1062,7 @@ async function loadUnifiedRows() {
       }),
       editorialNote:metadata
         ? newspaperNote+" Naturalness fit supplied: "+(metadata.naturalnessFit || "not supplied")+". Dravidian-root note supplied: "+(metadata.dravidianRoot || "not supplied")+". These notes are not independently verified."
-        : "From the consolidated master vocabulary. Alternatives are retained as choices and are not automatically certified as Dravidian-origin."
+        : ""
     };
   });
   const masterEntries = masterData.entries.map(row => {
@@ -1138,10 +1138,7 @@ async function loadUnifiedRows() {
   for (const entry of allGrouped) {
     entry.categories.sort((a,b) => (a === "Public Signboards" ? 0 : 1) - (b === "Public Signboards" ? 0 : 1) || a.localeCompare(b));
     entry.category = entry.categories[0] || "Uncategorized";
-    entry.editorialNote = [
-      ...entry.editorialNotes,
-      entry.sourceRecordIds.length > 1 ? "Displayed as one card from " + entry.sourceRecordIds.length + " preserved source records." : ""
-    ].filter(Boolean).join(" · ");
+    entry.editorialNote = entry.editorialNotes.join(" · ");
   }
   const categoryRank = entry => entry.categories.includes("Public Signboards") ? 0 : 1;
   allGrouped.sort((a,b) => categoryRank(a)-categoryRank(b) ||

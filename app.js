@@ -952,6 +952,29 @@ function setWordDataset() {
 }
 window.setWordDataset = setWordDataset;
 
+function parseAlternativeList(value) {
+  const raw = String(value ?? "").trim();
+  if (!raw) return [];
+  // Some imported spreadsheet cells contain a JSON array wrapped in CSV quotes.
+  // Decode the doubled CSV quotes before parsing the array into separate options.
+  const candidates = [raw];
+  if (raw.startsWith('"') && raw.endsWith('"')) {
+    candidates.unshift(raw.slice(1, -1).replace(/""/g, '"'));
+  }
+  for (const candidate of candidates) {
+    try {
+      const parsed = JSON.parse(candidate);
+      if (Array.isArray(parsed)) {
+        return [...new Set(parsed
+          .filter(item => typeof item === "string")
+          .map(item => item.normalize("NFC").trim())
+          .filter(Boolean))];
+      }
+    } catch {}
+  }
+  return [...new Set(raw.split(/\\s*\\/\\s*/).map(item => item.trim()).filter(Boolean))];
+}
+
 function populateCategoryOptions() {
   const selected = categorySelect.value || "all";
   const categories = [...new Set((unifiedRows || []).flatMap(entry => entry.categories || [entry.category || "Uncategorized"]))];
@@ -1064,7 +1087,7 @@ async function loadUnifiedRows() {
   });
   const masterEntries = masterData.entries.map(row => {
     const fields = row.fields;
-    const alternatives = String(fields[2] || "").split(/\s*\/\s*/).filter(Boolean);
+    const alternatives = parseAlternativeList(fields[2]);
     const notes = [fields[7],fields[6] ? "Dravidian root: "+fields[6] : ""].filter(Boolean).join(" · ");
     return {
       id:"master-"+row.id, sanskrit:fields[1], meaning:fields[3], category:fields[4] || "Uncategorized",

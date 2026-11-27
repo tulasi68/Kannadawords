@@ -59,7 +59,9 @@
     if (entry.scope?.outsideTargetOrigin) result.scopeAudit = true;
     if (entry.scope?.note) result.scopeNote = entry.scope.note;
     if (entry.rejectedCandidates?.length) result.rejectedAlternatives = entry.rejectedCandidates;
-    if (entry.editorial?.note) result.editorialNote = entry.editorial.note;
+    if (entry.editorial?.note && !entry.editorial.note.startsWith("Batch 3 candidate. User-supplied gloss and alternatives retained.")) {
+      result.editorialNote = entry.editorial.note;
+    }
     return result;
   }
 

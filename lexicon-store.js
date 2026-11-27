@@ -103,8 +103,9 @@
               row.alternatives.some(word => typeof word !== "string" || !word.trim()))) {
           throw new Error("Merged master vocabulary structure or row count is invalid.");
         }
-        const combinedByWord = new Map(mergedData.entries.map(row => [row.word.normalize("NFC").trim(),{
-          word:row.word.normalize("NFC").trim(),meaning:row.meaning,alternatives:[...new Set(row.alternatives)]
+        const baseMergedMasterWritingIndex = buildMergedMasterWritingIndex(mergedData);
+        const combinedByWord = new Map(baseMergedMasterWritingIndex.map(entry => [entry.sourceForms[0],{
+          ...entry,candidates:[...entry.candidates]
         }]));
         try {
           const newspaperData = await getJson(new URL("../newspaper-vocabulary.json", base), "no-cache");
@@ -117,18 +118,28 @@
             const word = row.word.normalize("NFC").trim();
             if (!word || seen.has(word) || !Array.isArray(row.alternatives)) throw new Error("Newspaper vocabulary has an empty/duplicate word or invalid alternatives.");
             seen.add(word);
+            if (!row.alternatives.length) continue;
             let target = combinedByWord.get(word);
-            if (!target) { target={word,meaning:"",alternatives:[],newspaperSourceRows:[],newspaperAlternatives:[]}; combinedByWord.set(word,target); }
+            if (!target) {
+              target={entryId:"newspaper:"+word,sourceForms:[word],meaning:"",candidates:[]};
+              combinedByWord.set(word,target);
+            }
             const meanings = [...new Set([...(target.meaning ? target.meaning.split(" / ") : []),...(row.meaning ? row.meaning.split(" / ") : [])].map(value=>value.trim()).filter(Boolean))];
             target.meaning = meanings.join(" / ");
-            target.alternatives = [...new Set([...target.alternatives,...row.alternatives])];
-            target.newspaperSourceRows = [...new Set([...(target.newspaperSourceRows||[]),...row.sourceRows])];
-            target.newspaperAlternatives = [...new Set([...(target.newspaperAlternatives||[]),...row.alternatives])];
+            for (const candidate of row.alternatives) {
+              const form = cleanCandidateLabel(candidate);
+              if (form && !target.candidates.some(existing => existing.word === form)) {
+                target.candidates.push({
+                  word:form,origin:"uncertain",reviewStatus:"needs_review",originClassification:"uncertain",
+                  note:"Newspaper-derived proposal; source rows "+row.sourceRows.join(", ")+". Linguistic and contextual review is pending."
+                });
+              }
+            }
           }
         } catch (newspaperError) {
           console.warn("Newspaper vocabulary unavailable; existing merged vocabulary remains available.", newspaperError);
         }
-        mergedMasterWritingIndex = buildMergedMasterWritingIndex({entries:[...combinedByWord.values()]});
+        mergedMasterWritingIndex = [...combinedByWord.values()];
       } catch (mergedError) {
         mergedMasterWritingIndex = [];
         console.warn("Merged master vocabulary unavailable for sentence lookup; other lexicons remain available.", mergedError);

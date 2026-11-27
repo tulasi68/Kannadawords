@@ -260,7 +260,7 @@ function render(entries, totalEntries = entries.length) {
     }).join(" ");
     card.innerHTML = `
       <div class="flex items-start justify-between gap-2 mb-3">
-        <span class="text-xs font-bold uppercase tracking-wide text-red-800 bg-yellow-100 px-2 py-1 rounded-full">${escapeHtml((entry.categories || [entry.category]).join(" · "))}</span>
+        <span class="text-xs font-bold uppercase tracking-wide text-red-800 bg-yellow-100 px-2 py-1 rounded-full">${escapeHtml(getUserFacingCategories(entry).join(" · ") || entry.category || "Uncategorized")}</span>
         ${totalVotes ? `<span class="text-xs text-stone-400">${totalVotes} votes</span>` : ""}
       </div>
       ${entry.noAlternative ? '<div class="mb-3 rounded-lg border border-orange-200 bg-orange-50 px-3 py-2 text-sm text-orange-900"><strong>No viable native alternative</strong><p class="text-xs mt-1">This is an honest open category, not a failed card. Community proposals can still be added for review.</p></div>' : entry.scopeAudit ? '<div class="mb-3 rounded-lg border border-sky-200 bg-sky-50 px-3 py-2 text-sm text-sky-900"><strong>Origin audit — outside the Sanskrit-derived replacement set</strong><p class="text-xs mt-1">The proposed loanword origin needs independent verification.</p></div>' : ''}
@@ -975,9 +975,19 @@ function parseAlternativeList(value) {
   return [...new Set(raw.split(/\s*\/\s*/).map(item => item.trim()).filter(Boolean))];
 }
 
+function getUserFacingCategories(entry) {
+  const values = entry.categories || [entry.category || "Uncategorized"];
+  return [...new Set(values
+    .map(value => String(value || "").trim())
+    // These are source/provenance labels, not useful vocabulary categories.
+    .filter(value => value && value !== "Merged Master Vocabulary" && value !== "Uncategorized")
+    .map(value => value.startsWith("Newspaper / ") ? value.slice("Newspaper / ".length).trim() : value)
+    .filter(Boolean))];
+}
+
 function populateCategoryOptions() {
   const selected = categorySelect.value || "all";
-  const categories = [...new Set((unifiedRows || []).flatMap(entry => entry.categories || [entry.category || "Uncategorized"]))];
+  const categories = [...new Set((unifiedRows || []).flatMap(getUserFacingCategories))];
   categories.sort((a,b) => {
     if (a === "Public Signboards") return -1;
     if (b === "Public Signboards") return 1;

@@ -103,7 +103,32 @@
               row.alternatives.some(word => typeof word !== "string" || !word.trim()))) {
           throw new Error("Merged master vocabulary structure or row count is invalid.");
         }
-        mergedMasterWritingIndex = buildMergedMasterWritingIndex(mergedData);
+        const combinedByWord = new Map(mergedData.entries.map(row => [row.word.normalize("NFC").trim(),{
+          word:row.word.normalize("NFC").trim(),meaning:row.meaning,alternatives:[...new Set(row.alternatives)]
+        }]));
+        try {
+          const newspaperData = await getJson(new URL("../newspaper-vocabulary.json", base), "no-cache");
+          if (newspaperData.schemaVersion !== 1 || newspaperData.sourceFile !== "moreKannadawords_newspapers1.csv" ||
+              !Array.isArray(newspaperData.entries) || newspaperData.entryCount !== newspaperData.entries.length) {
+            throw new Error("Newspaper vocabulary structure or row count is invalid.");
+          }
+          const seen = new Set();
+          for (const row of newspaperData.entries) {
+            const word = row.word.normalize("NFC").trim();
+            if (!word || seen.has(word) || !Array.isArray(row.alternatives)) throw new Error("Newspaper vocabulary has an empty/duplicate word or invalid alternatives.");
+            seen.add(word);
+            let target = combinedByWord.get(word);
+            if (!target) { target={word,meaning:"",alternatives:[],newspaperSourceRows:[],newspaperAlternatives:[]}; combinedByWord.set(word,target); }
+            const meanings = [...new Set([...(target.meaning ? target.meaning.split(" / ") : []),...(row.meaning ? row.meaning.split(" / ") : [])].map(value=>value.trim()).filter(Boolean))];
+            target.meaning = meanings.join(" / ");
+            target.alternatives = [...new Set([...target.alternatives,...row.alternatives])];
+            target.newspaperSourceRows = [...new Set([...(target.newspaperSourceRows||[]),...row.sourceRows])];
+            target.newspaperAlternatives = [...new Set([...(target.newspaperAlternatives||[]),...row.alternatives])];
+          }
+        } catch (newspaperError) {
+          console.warn("Newspaper vocabulary unavailable; existing merged vocabulary remains available.", newspaperError);
+        }
+        mergedMasterWritingIndex = buildMergedMasterWritingIndex({entries:[...combinedByWord.values()]});
       } catch (mergedError) {
         mergedMasterWritingIndex = [];
         console.warn("Merged master vocabulary unavailable for sentence lookup; other lexicons remain available.", mergedError);
@@ -270,7 +295,9 @@
         origin:"uncertain",
         reviewStatus:"needs_review",
         originClassification:"uncertain",
-        note:"Merged master vocabulary suggestion; linguistic and contextual review is pending."
+        note:row.newspaperAlternatives?.includes(word)
+          ? "Newspaper-derived proposal; source rows "+(row.newspaperSourceRows || []).join(", ")+". Linguistic and contextual review is pending."
+          : "Merged master vocabulary suggestion; linguistic and contextual review is pending."
       }));
       if (!candidates.length) continue;
       entries.push({

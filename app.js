@@ -969,21 +969,24 @@ function populateCategoryOptions() {
 async function loadUnifiedRows() {
   if (unifiedRows) return unifiedRows;
   await window.KannadaLexiconStore.ready();
-  const [canonicalEntries, masterResponse, landingResponse, textbookResponse, mergedVocabularyResponse] = await Promise.all([
+  const [canonicalEntries, masterResponse, landingResponse, textbookResponse, mergedVocabularyResponse, newspaperVocabularyResponse] = await Promise.all([
     window.KannadaLexiconStore.loadAllEntries(),
     fetch("./master-lexicon.json",{cache:"no-cache"}),
     fetch("./landing-words.json",{cache:"no-cache"}),
     fetch("./textbook-words.json",{cache:"no-cache"}),
-    fetch("./master-vocabulary.json",{cache:"no-cache"})
+    fetch("./master-vocabulary.json",{cache:"no-cache"}),
+    fetch("./newspaper-vocabulary.json",{cache:"no-cache"})
   ]);
   if (!masterResponse.ok) throw new Error("The master word list could not be loaded ("+masterResponse.status+").");
   if (!landingResponse.ok) throw new Error("The civic, media and education words could not be loaded ("+landingResponse.status+").");
   if (!textbookResponse.ok) throw new Error("The textbook vocabulary could not be loaded ("+textbookResponse.status+").");
   if (!mergedVocabularyResponse.ok) throw new Error("The merged master vocabulary could not be loaded ("+mergedVocabularyResponse.status+").");
+  if (!newspaperVocabularyResponse.ok) throw new Error("The newspaper vocabulary could not be loaded ("+newspaperVocabularyResponse.status+").");
   const masterData = await masterResponse.json();
   const landingData = await landingResponse.json();
   const textbookData = await textbookResponse.json();
   const mergedVocabularyData = await mergedVocabularyResponse.json();
+  const newspaperVocabularyData = await newspaperVocabularyResponse.json();
   if (masterData.schemaVersion !== 1 || masterData.sourceFile !== "2087words.xlsx" ||
       !Array.isArray(masterData.entries) || masterData.entries.length !== masterData.entryCount ||
       masterData.entries.some(row => !row.id || !Array.isArray(row.fields) || row.fields.length !== 8)) {
@@ -1010,27 +1013,56 @@ async function loadUnifiedRows() {
   if (new Set(mergedVocabularyWords).size !== mergedVocabularyWords.length) {
     throw new Error("The merged master vocabulary contains duplicate source words.");
   }
-  const mergedMasterEntries = mergedVocabularyData.entries.map((row,index) => {
-    const sourceWord = row.word.normalize("NFC").trim();
+  if (newspaperVocabularyData.schemaVersion !== 1 || newspaperVocabularyData.sourceFile !== "moreKannadawords_newspapers1.csv" ||
+      !Array.isArray(newspaperVocabularyData.entries) || newspaperVocabularyData.entryCount !== newspaperVocabularyData.entries.length ||
+      newspaperVocabularyData.entries.some(row => typeof row.word !== "string" || !row.word.trim() ||
+        typeof row.meaning !== "string" || !Array.isArray(row.alternatives) ||
+        !Array.isArray(row.sourceRows) || row.reviewStatus !== "needs_review")) {
+    throw new Error("The newspaper vocabulary failed its integrity check.");
+  }
+  const newspaperByWord = new Map();
+  for (const row of newspaperVocabularyData.entries) {
+    const word = row.word.normalize("NFC").trim();
+    if (newspaperByWord.has(word)) throw new Error("The newspaper vocabulary contains duplicate source words.");
+    newspaperByWord.set(word,row);
+  }
+  const combinedByWord = new Map(mergedVocabularyData.entries.map(row => [row.word.normalize("NFC").trim(),{
+    word:row.word.normalize("NFC").trim(),meaning:row.meaning.trim(),
+    alternatives:[...new Set(row.alternatives.map(value=>value.normalize("NFC").trim()).filter(Boolean))]
+  }]));
+  for (const row of newspaperVocabularyData.entries) {
+    const word = row.word.normalize("NFC").trim();
+    let target = combinedByWord.get(word);
+    if (!target) { target={word,meaning:"",alternatives:[]}; combinedByWord.set(word,target); }
+    const meanings = [...new Set([...(target.meaning ? target.meaning.split(" / ") : []),...(row.meaning ? row.meaning.split(" / ") : [])].map(value=>value.trim()).filter(Boolean))];
+    target.meaning = meanings.join(" / ");
+    target.alternatives = [...new Set([...target.alternatives,...row.alternatives.map(value=>value.normalize("NFC").trim()).filter(Boolean)])];
+  }
+  const mergedMasterEntries = [...combinedByWord.values()].map(row => {
+    const sourceWord = row.word;
     const stableId = [...sourceWord].map(character => character.codePointAt(0).toString(16)).join("-");
-    const alternatives = [...new Set(row.alternatives.map(word => word.normalize("NFC").trim()).filter(Boolean))];
+    const metadata = newspaperByWord.get(sourceWord);
+    const sourceRows = metadata ? metadata.sourceRows.join(", ") : "";
+    const newspaperNote = metadata ? "Newspaper-derived proposals; source rows "+sourceRows+". Editorial and etymological review is pending." : "";
     return {
       id:"merged-master-"+stableId,
       sanskrit:sourceWord,
-      meaning:row.meaning.trim(),
-      category:"Merged Master Vocabulary",
-      alternatives:alternatives.map((word,altIndex) => {
+      meaning:row.meaning,
+      category:metadata ? "Newspaper / "+(metadata.category || "Uncategorized") : "Merged Master Vocabulary",
+      alternatives:row.alternatives.map(word => {
         const altId = [...word].map(character => character.codePointAt(0).toString(16)).join("-");
         return {
           id:"merged-master-"+stableId+"-alt-"+altId,
           word,
           unreviewed:true,
           viability:"proposed",
-          note:"Merged master vocabulary suggestion; linguistic and contextual review is still required.",
+          note:metadata && metadata.alternatives.includes(word) ? newspaperNote : "Merged master vocabulary suggestion; linguistic and contextual review is still required.",
           etymologyParts:[{form:word,etymology:"unknown"}]
         };
       }),
-      editorialNote:"From the consolidated master vocabulary. Alternatives are retained as choices and are not automatically certified as Dravidian-origin."
+      editorialNote:metadata
+        ? newspaperNote+" Naturalness fit supplied: "+(metadata.naturalnessFit || "not supplied")+". Dravidian-root note supplied: "+(metadata.dravidianRoot || "not supplied")+". These notes are not independently verified."
+        : "From the consolidated master vocabulary. Alternatives are retained as choices and are not automatically certified as Dravidian-origin."
     };
   });
   const masterEntries = masterData.entries.map(row => {

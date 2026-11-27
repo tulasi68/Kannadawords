@@ -176,6 +176,25 @@ function addMergedMasterCsv() {
 
 addMergedMasterCsv();
 
+// Newspaper-extracted words are kept as a separate, traceable source collection.
+// Repeated source words have already been consolidated; exact source matches merge
+// their distinct alternatives into the existing master vocabulary record.
+const newspaperPath = path.join(root,"newspaper-vocabulary.json");
+if (fs.existsSync(newspaperPath)) {
+  const newspaper = readJson("newspaper-vocabulary.json");
+  if (newspaper.schemaVersion !== 1 || newspaper.sourceFile !== "moreKannadawords_newspapers1.csv" ||
+      !Array.isArray(newspaper.entries) || newspaper.entryCount !== newspaper.entries.length) {
+    throw new Error("Newspaper vocabulary source structure or row count is invalid.");
+  }
+  const seen = new Set();
+  for (const row of newspaper.entries) {
+    const word = String(row.word || "").trim().normalize("NFC");
+    if (!word || seen.has(word)) throw new Error("Newspaper vocabulary contains an empty or duplicate source word: "+word);
+    seen.add(word);
+    if (Array.isArray(row.alternatives) && row.alternatives.length) add(word,row.meaning,row.alternatives);
+  }
+}
+
 const output = {schemaVersion:1,entryCount:merged.size,entries:[...merged.values()]};
 const serialized = JSON.stringify(output,null,2)+"\n";
 const forbidden = /"(?:source|sourceFile|sourceLine|sourceBlobSha|status|reviewStatus|editorial|provenance|sourceRefs|sourceDatasets|reviewedBy|reviewedAt)"\s*:/i;

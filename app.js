@@ -972,7 +972,7 @@ function parseAlternativeList(value) {
       }
     } catch {}
   }
-  return [...new Set(raw.split(/\\s*\\/\\s*/).map(item => item.trim()).filter(Boolean))];
+  return [...new Set(raw.split(/\s*\/\s*/).map(item => item.trim()).filter(Boolean))];
 }
 
 function populateCategoryOptions() {
